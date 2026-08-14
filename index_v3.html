@@ -1310,6 +1310,12 @@
           <option value="" selected>Coming soon</option>
         </select>
         <div class="filter-chips" id="filter-chips"></div>
+        <select class="select-pill" id="account-class-filter">
+          <option value="">All Classes</option>
+          <option value="Client">Client</option>
+          <option value="Pre-live">Pre-live</option>
+          <option value="Prospect">Prospect</option>
+        </select>
         <select class="select-pill" id="business-type-filter">
           <option value="">All Business Types</option>
           <option value="Wholesaler">Wholesaler</option>
@@ -3652,6 +3658,7 @@ function computeKPIs(evidenceList) {
 
 /* ─── FILTER CHIPS RENDERER ─────────────────────────────────────── */
 function renderFilterChips() {
+  var accountClassFilter = document.getElementById('account-class-filter').value;
   var businessTypeFilter = document.getElementById('business-type-filter').value;
   var productTierFilter = document.getElementById('product-tier-filter').value;
   var gmvBandFilter = document.getElementById('gmv-band-filter').value;
@@ -3664,6 +3671,9 @@ function renderFilterChips() {
   if (!container) return;
 
   var chips = [];
+  if (accountClassFilter) {
+    chips.push('<div class="chip" onclick="clearFilter(\'account-class-filter\')">' + escHtml(accountClassFilter) + ' <span class="chip-x">&times;</span></div>');
+  }
   if (businessTypeFilter) {
     chips.push('<div class="chip" onclick="clearFilter(\'business-type-filter\')">' + escHtml(businessTypeFilter) + ' <span class="chip-x">&times;</span></div>');
   }
@@ -3766,6 +3776,7 @@ function _getGmvBand(ev) {
 
 function applyFilters() {
   var tf = _adapterTf();
+  var accountClassFilter = document.getElementById('account-class-filter').value;
   var businessTypeFilter = document.getElementById('business-type-filter').value;
   var productTierFilter = document.getElementById('product-tier-filter').value;
   var gmvBandFilter = document.getElementById('gmv-band-filter').value;
@@ -3780,6 +3791,10 @@ function applyFilters() {
     var identity = ev.identity;
     if (!identity) return false;
 
+    if (accountClassFilter) {
+      var ac = identity.account_class || '';
+      if (ac !== accountClassFilter) return false;
+    }
     if (businessTypeFilter) {
       var bt = identity.business_type || '';
       if (bt !== businessTypeFilter) return false;
@@ -4071,6 +4086,7 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
   // Bind controls
   document.getElementById('timeframe-select').addEventListener('change', onTimeframeChange);
   document.getElementById('comparison-select').addEventListener('change', applyFilters);
+  document.getElementById('account-class-filter').addEventListener('change', applyFilters);
   document.getElementById('business-type-filter').addEventListener('change', applyFilters);
   document.getElementById('product-tier-filter').addEventListener('change', applyFilters);
   document.getElementById('sell-channel-filter').addEventListener('change', applyFilters);
@@ -4121,7 +4137,8 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
 
 /* ─── MATRIX DRILL-DOWN ─── */
 function drillFromMatrix(tier, band) {
-  // Set filters to match the clicked cell
+  // Set filters to match the clicked cell — Client + Wholesaler (same as matrix)
+  document.getElementById('account-class-filter').value = 'Client';
   document.getElementById('business-type-filter').value = 'Wholesaler';
   document.getElementById('product-tier-filter').value = tier;
   document.getElementById('gmv-band-filter').value = band;
