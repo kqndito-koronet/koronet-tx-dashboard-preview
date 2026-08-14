@@ -664,24 +664,22 @@
     // Will be null unless we load it from V2 fees_domain
     var feesYtd2025 = null;
 
-    // ── Online % (online is a subset of total — should never exceed 100%)
-    var sellOnlinePct = null;
-    if (sellAgg && sellAgg.total > 0) {
-      sellOnlinePct = (sellAgg.online / sellAgg.total) * 100;
-    }
-    var buyOnlinePct = null;
-    if (buyAgg && buyAgg.total > 0) {
-      buyOnlinePct = (buyAgg.online / buyAgg.total) * 100;
-    }
-
     // Offline amounts
     var sellOfflineYtd = sellAggYtd ? (sellAggYtd.offline > 0 ? sellAggYtd.offline : null) : null;
     var buyOfflineYtd  = buyAggYtd  ? (buyAggYtd.offline  > 0 ? buyAggYtd.offline  : null) : null;
 
-    // ── Penetration — HONEST
-    // Use gmv_reference from accounts_v3 (Christine cascade) as denominator
-    // If gmv_source is 'not in Christine cascade' or gmv_reference is null → gap
-    // NEVER use koronet_actual_annualized as denominator
+    // ── Koronet YTD totals
+    var koronetSellYtd = sellAggYtd ? sellAggYtd.total : null;
+    var koronetBuyYtd  = buyAggYtd  ? buyAggYtd.total  : null;
+
+    // ── Online amounts (for online % calculation below)
+    var onlineSellYtd = sellAggYtd ? sellAggYtd.online : 0;
+    var onlineBuyYtd  = buyAggYtd  ? buyAggYtd.online  : 0;
+
+    // ── Penetration + Piso logic
+    // Rule: Est GMV can never be less than what we already measure.
+    // If annualized Koronet sell > gmv_reference → the estimate was wrong.
+    // Upgrade to "Piso de red" (network floor = measured minimum).
     var sellPenetration = null;
     var sellPenEv = 'gap';
     var sellPenNote = null;
@@ -689,41 +687,78 @@
     var buyPenEv = 'gap';
     var buyPenNote = null;
 
-    var koronetSellYtd = sellAggYtd ? sellAggYtd.total : null;
-    var koronetBuyYtd  = buyAggYtd  ? buyAggYtd.total  : null;
-
     if (gmvRef && gmvRef > 0 && gmvSource !== 'not in Christine cascade' && gmvSource !== 'Sin dato') {
-      // Tautological check: if gmv_reference IS Koronet data (Medido, Piso),
-      // penetration = Koronet / Koronet → meaningless. Mark as tautological.
       var isTautological = /^(Medido|Piso)/.test(gmvSource || '');
 
       var ytdMonths = sellAggYtd ? sellAggYtd.months.length : 0;
       if (koronetSellYtd && koronetSellYtd > 0 && ytdMonths > 0) {
+        var annualizedSell = koronetSellYtd * (12 / ytdMonths);
+
         if (isTautological) {
+          // Medido/Piso: reference IS Koronet → tautological
+          sellPenetration = 100;
+          sellPenEv = 'tautological';
+        } else if (annualizedSell > gmvRef) {
+          // Estimado is wrong — Koronet already exceeds it. Upgrade to Piso.
+          gmvRef = annualizedSell;
+          gmvSource = 'Piso de red';
+          gmvConfidence = 'Alta';
+          gmvIsFloor = true;
+          buyGmvEst = gmvRef * 0.45;
           sellPenetration = 100;
           sellPenEv = 'tautological';
         } else {
-          var annualized = koronetSellYtd * (12 / ytdMonths);
-          sellPenetration = (annualized / gmvRef) * 100;
+          // Real external estimate > Koronet → meaningful penetration
+          sellPenetration = (annualizedSell / gmvRef) * 100;
           sellPenEv = gmvConfidence === 'Alta' ? 'model' : 'proxy';
         }
         sellPenNote = gmvSource;
       }
 
-      // Buy penetration
+      // Buy penetration — same piso logic
       if (buyGmvEst && buyGmvEst > 0 && koronetBuyYtd && koronetBuyYtd > 0) {
         var buyYtdMonths = buyAggYtd ? buyAggYtd.months.length : 0;
         if (buyYtdMonths > 0) {
-          if (isTautological) {
+          var annualizedBuy = koronetBuyYtd * (12 / buyYtdMonths);
+
+          if (isTautological || sellPenEv === 'tautological') {
+            buyPenetration = 100;
+            buyPenEv = 'tautological';
+          } else if (annualizedBuy > buyGmvEst) {
+            // Buy estimate wrong — upgrade
+            buyGmvEst = annualizedBuy;
             buyPenetration = 100;
             buyPenEv = 'tautological';
           } else {
-            var buyAnnualized = koronetBuyYtd * (12 / buyYtdMonths);
-            buyPenetration = (buyAnnualized / buyGmvEst) * 100;
+            buyPenetration = (annualizedBuy / buyGmvEst) * 100;
             buyPenEv = gmvConfidence === 'Alta' ? 'model' : 'proxy';
           }
           buyPenNote = gmvSource;
         }
+      }
+    }
+
+    // ── Online % = online / Est GMV (% of total business that's digital through us)
+    // For tautological (Medido/Piso): use same-period Koronet total as denominator
+    //   (gmvRef is trailing 12M, YTD online uses different months → period mismatch)
+    // For external estimates: annualize and divide by gmvRef
+    var sellOnlinePct = null;
+    if (onlineSellYtd > 0) {
+      if (sellPenEv === 'tautological' && koronetSellYtd && koronetSellYtd > 0) {
+        // Same period: online YTD / total YTD → always ≤ 100%
+        sellOnlinePct = (onlineSellYtd / koronetSellYtd) * 100;
+      } else if (gmvRef && gmvRef > 0 && sellAggYtd && sellAggYtd.months.length > 0) {
+        var annOnlineSell = onlineSellYtd * (12 / sellAggYtd.months.length);
+        sellOnlinePct = (annOnlineSell / gmvRef) * 100;
+      }
+    }
+    var buyOnlinePct = null;
+    if (onlineBuyYtd > 0) {
+      if (buyPenEv === 'tautological' && koronetBuyYtd && koronetBuyYtd > 0) {
+        buyOnlinePct = (onlineBuyYtd / koronetBuyYtd) * 100;
+      } else if (buyGmvEst && buyGmvEst > 0 && buyAggYtd && buyAggYtd.months.length > 0) {
+        var annOnlineBuy = onlineBuyYtd * (12 / buyAggYtd.months.length);
+        buyOnlinePct = (annOnlineBuy / buyGmvEst) * 100;
       }
     }
 
