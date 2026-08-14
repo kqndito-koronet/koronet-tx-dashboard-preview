@@ -69,7 +69,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "470794",
@@ -95,7 +96,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "198117",
@@ -122,7 +125,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "18322",
@@ -154,7 +158,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "453081",
@@ -181,7 +186,8 @@
       "has_active_pmt": true,
       "pmt_lead": "George Velez",
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "54343",
@@ -208,7 +214,8 @@
       "has_active_pmt": true,
       "pmt_lead": "George Velez",
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "613695",
@@ -235,7 +242,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "1614",
@@ -262,7 +270,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "25489",
@@ -289,7 +298,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "561453",
@@ -316,7 +326,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "7631",
@@ -348,7 +359,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "672147",
@@ -375,7 +387,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "738936",
@@ -407,7 +420,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "665296",
@@ -439,7 +453,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "796715",
@@ -466,7 +481,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "664719",
@@ -498,7 +514,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "624737",
@@ -525,7 +542,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "795674",
@@ -552,7 +570,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "521854",
@@ -579,7 +598,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "650721",
@@ -611,7 +631,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "798243",
@@ -638,7 +659,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "643672",
@@ -665,7 +687,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "73730",
@@ -697,7 +720,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "743681",
@@ -724,7 +748,8 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "20769",
@@ -751,7 +776,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "393475",
@@ -778,7 +804,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "295299",
@@ -804,7 +831,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "505063",
@@ -831,7 +860,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "507518",
@@ -858,7 +888,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "654944",
@@ -885,7 +916,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "193828",
@@ -917,7 +949,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "477128",
@@ -949,7 +982,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "507479",
@@ -981,7 +1015,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "592806",
@@ -1008,7 +1043,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "830406",
@@ -1034,7 +1070,9 @@
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
       "pmt_lead": "Manuel Szajowicz",
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "651277",
@@ -1066,7 +1104,8 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "652251",
@@ -1098,7 +1137,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "654374",
@@ -1125,7 +1165,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "655098",
@@ -1157,7 +1198,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "623491",
@@ -1189,7 +1231,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "17789",
@@ -1216,7 +1259,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "765583",
@@ -1243,7 +1287,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "509751",
@@ -1270,7 +1315,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "7030",
@@ -1302,7 +1348,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "321023",
@@ -1329,7 +1376,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "199908",
@@ -1356,7 +1404,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "671046",
@@ -1383,7 +1432,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "734065",
@@ -1410,7 +1460,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "618758",
@@ -1442,7 +1493,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "2516",
@@ -1469,7 +1521,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "313164",
@@ -1496,7 +1549,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "664988",
@@ -1528,7 +1582,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "498992",
@@ -1555,7 +1610,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "652302",
@@ -1587,7 +1643,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "624816",
@@ -1619,7 +1676,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "731381",
@@ -1651,7 +1709,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "651959",
@@ -1683,7 +1742,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "617226",
@@ -1710,7 +1770,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "665080",
@@ -1742,7 +1803,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "182870",
@@ -1769,7 +1831,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "735300",
@@ -1796,7 +1859,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "397194",
@@ -1828,7 +1892,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "341499",
@@ -1855,7 +1920,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "591877",
@@ -1887,7 +1953,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "159761",
@@ -1919,7 +1986,8 @@
       "has_active_pmt": true,
       "pmt_lead": "Camila Peña",
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "650767",
@@ -1951,7 +2019,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "453771",
@@ -1978,7 +2047,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "453769",
@@ -2005,7 +2075,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "41934",
@@ -2032,7 +2103,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "471458",
@@ -2059,7 +2131,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "505896",
@@ -2086,7 +2159,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "146846",
@@ -2113,7 +2187,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "821768",
@@ -2140,7 +2215,8 @@
       "pmt_lead": "Manuel Szajowicz",
       "pmt_status": "Go-Live and Growth",
       "pmt_health": "On Track",
-      "has_active_pmt": true
+      "has_active_pmt": true,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "815425",
@@ -2172,7 +2248,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "825773",
@@ -2199,7 +2276,8 @@
       "pmt_lead": "Nahomi Enriquez",
       "pmt_status": "Go-Live and Growth",
       "pmt_health": "On Track",
-      "has_active_pmt": true
+      "has_active_pmt": true,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "732518",
@@ -2231,7 +2309,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "200279",
@@ -2258,7 +2337,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "654131",
@@ -2290,7 +2370,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "672205",
@@ -2317,7 +2398,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "808448",
@@ -2349,13 +2431,14 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "819114",
       "company_name": "Details Direct",
       "business_type": "Retailer",
-      "product_tier": "Core+",
+      "product_tier": "K2K",
       "sell_channel": "K2K-dominant",
       "komet_status": "Production - Live",
       "industry": "Floral - Retailer",
@@ -2376,7 +2459,8 @@
       "pmt_lead": null,
       "pmt_status": null,
       "pmt_health": null,
-      "has_active_pmt": false
+      "has_active_pmt": false,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "734128",
@@ -2403,7 +2487,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "529464",
@@ -2435,7 +2520,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "640460",
@@ -2467,7 +2553,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "571220",
@@ -2494,7 +2581,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "397789",
@@ -2521,7 +2609,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "765491",
@@ -2553,7 +2642,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "378264",
@@ -2580,7 +2670,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "477673",
@@ -2607,7 +2698,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "20749",
@@ -2634,7 +2726,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "146183",
@@ -2661,7 +2754,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "727131",
@@ -2688,7 +2782,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "130337",
@@ -2715,7 +2810,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "769085",
@@ -2742,7 +2838,8 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "672728",
@@ -2769,7 +2866,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "635064",
@@ -2801,7 +2899,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "395159",
@@ -2828,7 +2927,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "664623",
@@ -2860,7 +2960,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "811196",
@@ -2887,7 +2988,8 @@
       "pmt_lead": "Milena Mezamell",
       "pmt_status": "Completed",
       "pmt_health": "On Track",
-      "has_active_pmt": false
+      "has_active_pmt": false,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "594981",
@@ -2914,7 +3016,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "716166",
@@ -2946,7 +3049,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "813857",
@@ -2973,13 +3077,14 @@
       "pmt_lead": "Valentina Espinel",
       "pmt_status": "Completed",
       "pmt_health": "Completed",
-      "has_active_pmt": false
+      "has_active_pmt": false,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "809546",
       "company_name": "Expobloom - BOG",
       "business_type": "Grower",
-      "product_tier": "Core+",
+      "product_tier": "K2K",
       "sell_channel": "no_fees_data",
       "komet_status": "Production - Live",
       "industry": "Floral - Grower",
@@ -3000,7 +3105,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "652793",
@@ -3032,7 +3138,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "804758",
@@ -3064,7 +3171,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "577566",
@@ -3091,7 +3199,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "670423",
@@ -3123,7 +3232,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "670450",
@@ -3155,7 +3265,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "401680",
@@ -3182,7 +3293,8 @@
       "pmt_lead": "Valentina Espinel",
       "pmt_status": "Completed",
       "pmt_health": "Completed",
-      "has_active_pmt": false
+      "has_active_pmt": false,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "46206",
@@ -3209,7 +3321,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "489148",
@@ -3236,7 +3349,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "664019",
@@ -3268,7 +3382,8 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "664540",
@@ -3300,7 +3415,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "762941",
@@ -3327,7 +3443,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "612783",
@@ -3359,7 +3476,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "153536",
@@ -3386,7 +3504,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "189685",
@@ -3413,7 +3532,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "1241",
@@ -3440,7 +3560,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "610818",
@@ -3467,7 +3588,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "732830",
@@ -3499,7 +3621,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "541854",
@@ -3531,7 +3654,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "700340",
@@ -3563,7 +3687,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "676090",
@@ -3590,7 +3715,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "681739",
@@ -3622,7 +3748,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "675361",
@@ -3654,7 +3781,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "769099",
@@ -3681,7 +3809,8 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "601933",
@@ -3713,7 +3842,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "319143",
@@ -3740,7 +3870,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "153031",
@@ -3767,7 +3898,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "664314",
@@ -3799,7 +3931,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "139851",
@@ -3826,7 +3959,8 @@
       "has_active_pmt": true,
       "pmt_lead": "Manuel Szajowicz",
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "37745",
@@ -3853,7 +3987,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "670311",
@@ -3885,7 +4020,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "561518",
@@ -3911,7 +4047,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "449683",
@@ -3938,7 +4076,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "815558",
@@ -3965,7 +4104,8 @@
       "pmt_lead": "Manuel Szajowicz",
       "pmt_status": "Completed",
       "pmt_health": "On Track",
-      "has_active_pmt": false
+      "has_active_pmt": false,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "822938",
@@ -3992,7 +4132,8 @@
       "pmt_lead": "Manuel Szajowicz",
       "pmt_status": "Go-Live and Growth",
       "pmt_health": "On Track",
-      "has_active_pmt": true
+      "has_active_pmt": true,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "601280",
@@ -4019,7 +4160,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "584973",
@@ -4046,7 +4188,8 @@
       "pmt_lead": "Valentina Espinel",
       "pmt_status": "Completed",
       "pmt_health": "On Track",
-      "has_active_pmt": false
+      "has_active_pmt": false,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "817285",
@@ -4073,7 +4216,8 @@
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
       "pmt_lead": "George Velez",
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "296458",
@@ -4100,7 +4244,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "699974",
@@ -4126,7 +4271,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "496600",
@@ -4158,7 +4305,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "762172",
@@ -4190,7 +4338,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "756140",
@@ -4217,7 +4366,8 @@
       "pmt_lead": "Milena Mezamell",
       "pmt_status": "Go-Live and Growth",
       "pmt_health": "Closed, not Completed",
-      "has_active_pmt": true
+      "has_active_pmt": true,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "673823",
@@ -4244,7 +4394,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "578194",
@@ -4276,7 +4427,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "665316",
@@ -4308,7 +4460,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "492201",
@@ -4335,7 +4488,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "543610",
@@ -4367,7 +4521,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "103112",
@@ -4399,7 +4554,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "640251",
@@ -4426,7 +4582,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "642076",
@@ -4458,7 +4615,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "600370",
@@ -4490,7 +4648,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "603611",
@@ -4517,7 +4676,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "650252",
@@ -4544,7 +4704,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "38582",
@@ -4571,7 +4732,8 @@
       "has_active_pmt": true,
       "pmt_lead": "Valentina Espinel",
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "343614",
@@ -4598,7 +4760,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "508421",
@@ -4625,7 +4788,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "654566",
@@ -4657,7 +4821,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "484037",
@@ -4689,7 +4854,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "529514",
@@ -4715,7 +4881,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "188968",
@@ -4742,7 +4910,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "77300",
@@ -4769,7 +4938,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "667626",
@@ -4796,7 +4966,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "321907",
@@ -4823,7 +4994,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "751350",
@@ -4850,7 +5022,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "166363",
@@ -4876,7 +5049,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "812869",
@@ -4903,7 +5078,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "194206",
@@ -4930,7 +5106,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "498865",
@@ -4962,7 +5139,8 @@
       "has_active_pmt": true,
       "pmt_lead": "Camila Peña",
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "713789",
@@ -4994,7 +5172,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "503075",
@@ -5021,7 +5200,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "651216",
@@ -5053,7 +5233,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "665358",
@@ -5085,7 +5266,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "664341",
@@ -5117,7 +5299,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "764867",
@@ -5144,7 +5327,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "670508",
@@ -5176,7 +5360,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "39124",
@@ -5203,7 +5388,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "640563",
@@ -5230,7 +5416,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "631459",
@@ -5262,7 +5449,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "808527",
@@ -5289,7 +5477,8 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "806417",
@@ -5321,7 +5510,8 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "572900",
@@ -5348,7 +5538,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "144192",
@@ -5375,7 +5566,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "554187",
@@ -5402,7 +5594,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "492219",
@@ -5429,7 +5622,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "817168",
@@ -5456,7 +5650,8 @@
       "pmt_lead": "George Velez",
       "pmt_status": "Go-Live and Growth",
       "pmt_health": "On Track",
-      "has_active_pmt": true
+      "has_active_pmt": true,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "322928",
@@ -5483,7 +5678,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "573661",
@@ -5510,7 +5706,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "808079",
@@ -5537,7 +5734,8 @@
       "pmt_lead": "Manuel Szajowicz",
       "pmt_status": "Completed",
       "pmt_health": "On Track",
-      "has_active_pmt": false
+      "has_active_pmt": false,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "652199",
@@ -5569,7 +5767,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "651200",
@@ -5601,7 +5800,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "800562",
@@ -5628,7 +5828,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "412951",
@@ -5655,7 +5856,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "469713",
@@ -5682,7 +5884,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "731091",
@@ -5714,7 +5917,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "44150",
@@ -5746,7 +5950,8 @@
       "has_active_pmt": false,
       "pmt_lead": "Camila Peña",
       "pmt_status": "Go-Live and Growth",
-      "pmt_health": "On Track"
+      "pmt_health": "On Track",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "796779",
@@ -5773,7 +5978,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "25120",
@@ -5800,7 +6006,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "755593",
@@ -5827,7 +6034,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "575819",
@@ -5854,7 +6062,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "652551",
@@ -5886,7 +6095,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "654758",
@@ -5918,7 +6128,8 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "814810",
@@ -5945,7 +6156,8 @@
       "pmt_lead": "Manuel Szajowicz",
       "pmt_status": "Completed",
       "pmt_health": "Completed",
-      "has_active_pmt": false
+      "has_active_pmt": false,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "598944",
@@ -5977,7 +6189,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "189419",
@@ -6004,7 +6217,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "541415",
@@ -6036,7 +6250,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "35266",
@@ -6063,7 +6278,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "664133",
@@ -6095,7 +6311,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "813947",
@@ -6122,7 +6339,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "476379",
@@ -6149,7 +6367,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "586784",
@@ -6181,7 +6400,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "152602",
@@ -6208,7 +6428,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "727605",
@@ -6240,7 +6461,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "651574",
@@ -6272,7 +6494,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "619847",
@@ -6299,7 +6522,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "536956",
@@ -6326,7 +6550,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "664494",
@@ -6358,7 +6583,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "670554",
@@ -6390,7 +6616,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "821576",
@@ -6417,7 +6644,8 @@
       "pmt_lead": "Camila Peña",
       "pmt_status": "Go-Live and Growth",
       "pmt_health": "On Track",
-      "has_active_pmt": true
+      "has_active_pmt": true,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "620453",
@@ -6444,7 +6672,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "505603",
@@ -6471,7 +6700,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "608547",
@@ -6498,7 +6728,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "731558",
@@ -6530,7 +6761,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "610510",
@@ -6557,7 +6789,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "770224",
@@ -6584,7 +6817,8 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "588171",
@@ -6611,7 +6845,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "827180",
@@ -6638,7 +6873,8 @@
       "pmt_lead": "Milena Mezamell",
       "pmt_status": null,
       "pmt_health": null,
-      "has_active_pmt": false
+      "has_active_pmt": false,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "641341",
@@ -6670,7 +6906,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "799014",
@@ -6697,7 +6934,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "103078",
@@ -6729,7 +6967,8 @@
       "has_active_pmt": true,
       "pmt_lead": "Christine Nickelsen",
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "257477",
@@ -6756,7 +6995,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "701220",
@@ -6788,7 +7028,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "751391",
@@ -6815,7 +7056,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "622743",
@@ -6847,7 +7089,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "655985",
@@ -6879,7 +7122,8 @@
       "pmt_lead": "Angie Ramirez",
       "pmt_status": "Training and Activation",
       "pmt_health": "Completed",
-      "has_active_pmt": true
+      "has_active_pmt": true,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "498769",
@@ -6911,7 +7155,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "394783",
@@ -6938,7 +7183,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "600558",
@@ -6965,7 +7211,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "733807",
@@ -6997,7 +7244,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "375054",
@@ -7024,7 +7272,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "665027",
@@ -7056,7 +7305,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "664255",
@@ -7088,7 +7338,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "649745",
@@ -7115,7 +7366,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "716378",
@@ -7142,7 +7394,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "751334",
@@ -7169,7 +7422,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "193829",
@@ -7196,7 +7450,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "377256",
@@ -7223,7 +7478,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "729666",
@@ -7250,7 +7506,8 @@
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
       "pmt_lead": "Christine Nickelsen",
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "672781",
@@ -7277,7 +7534,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "592615",
@@ -7304,7 +7562,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "395382",
@@ -7331,7 +7590,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "795517",
@@ -7358,7 +7618,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "398856",
@@ -7390,7 +7651,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "591665",
@@ -7417,7 +7679,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "732448",
@@ -7444,7 +7707,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "742781",
@@ -7476,7 +7740,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "640977",
@@ -7503,7 +7768,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "632322",
@@ -7535,7 +7801,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "743217",
@@ -7562,7 +7829,8 @@
       "pmt_lead": "Milena Mezamell",
       "pmt_status": "Go-Live and Growth",
       "pmt_health": "On Track",
-      "has_active_pmt": true
+      "has_active_pmt": true,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "751341",
@@ -7588,7 +7856,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "676861",
@@ -7615,7 +7885,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "592345",
@@ -7647,7 +7918,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "14422",
@@ -7674,7 +7946,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "651513",
@@ -7706,7 +7979,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "665443",
@@ -7738,7 +8012,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "664944",
@@ -7770,7 +8045,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "654661",
@@ -7802,7 +8078,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "802590",
@@ -7829,7 +8106,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "675363",
@@ -7861,7 +8139,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "399890",
@@ -7888,7 +8167,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "649585",
@@ -7915,7 +8195,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "739329",
@@ -7942,7 +8223,8 @@
       "pmt_lead": "Camila Peña",
       "pmt_status": "Go-Live and Growth",
       "pmt_health": "At Risk",
-      "has_active_pmt": true
+      "has_active_pmt": true,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "620160",
@@ -7969,7 +8251,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "395357",
@@ -8001,7 +8284,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "44225",
@@ -8033,7 +8317,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "378242",
@@ -8060,7 +8345,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "483642",
@@ -8087,7 +8373,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "144369",
@@ -8114,7 +8401,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "816515",
@@ -8146,7 +8434,8 @@
       "pmt_lead": "Milena Mezamell",
       "pmt_status": "Go-Live and Growth",
       "pmt_health": "On Track",
-      "has_active_pmt": true
+      "has_active_pmt": true,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "33023",
@@ -8178,7 +8467,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "734521",
@@ -8205,7 +8495,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "13989",
@@ -8232,7 +8523,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "467802",
@@ -8264,13 +8556,14 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "812278",
       "company_name": "Quimflowers - UIO",
       "business_type": "Grower",
-      "product_tier": "Core+",
+      "product_tier": "K2K",
       "sell_channel": "K2K-dominant",
       "komet_status": "Production - Live",
       "industry": "Floral - Grower",
@@ -8290,7 +8583,9 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "554905",
@@ -8317,7 +8612,8 @@
       "has_active_pmt": true,
       "pmt_lead": "George Velez",
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "650536",
@@ -8349,7 +8645,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "733250",
@@ -8375,7 +8672,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "680251",
@@ -8401,7 +8700,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "701292",
@@ -8427,7 +8728,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "664096",
@@ -8459,7 +8762,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "672799",
@@ -8486,7 +8790,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "557903",
@@ -8512,7 +8817,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "295294",
@@ -8538,7 +8845,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "12941",
@@ -8564,7 +8873,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "712429",
@@ -8596,7 +8907,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "327132",
@@ -8623,7 +8935,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "33986",
@@ -8649,7 +8962,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "22143",
@@ -8675,7 +8990,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "189002",
@@ -8701,7 +9018,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "588417",
@@ -8727,7 +9046,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "400914",
@@ -8753,7 +9074,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "17503",
@@ -8785,7 +9108,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "828336",
@@ -8812,7 +9136,8 @@
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
       "pmt_lead": "Valentina Espinel",
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "670668",
@@ -8843,7 +9168,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "498842",
@@ -8869,7 +9196,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "615898",
@@ -8895,7 +9224,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "664201",
@@ -8927,7 +9258,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "809201",
@@ -8954,7 +9286,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "13982",
@@ -8980,7 +9313,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "730920",
@@ -9012,7 +9347,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "585613",
@@ -9039,7 +9375,8 @@
       "has_active_pmt": true,
       "pmt_lead": "Fernando Yepez",
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "600910",
@@ -9071,7 +9408,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "488495",
@@ -9103,7 +9441,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "649935",
@@ -9130,7 +9469,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "6864",
@@ -9162,7 +9502,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "38477",
@@ -9188,7 +9529,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "655643",
@@ -9220,7 +9563,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "475168",
@@ -9247,7 +9591,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "454705",
@@ -9279,7 +9624,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "449344",
@@ -9311,7 +9657,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "665425",
@@ -9342,7 +9689,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "655382",
@@ -9374,7 +9723,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "734327",
@@ -9400,7 +9750,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "200503",
@@ -9432,7 +9784,8 @@
       "has_active_pmt": true,
       "pmt_lead": "Manuel Szajowicz",
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "742939",
@@ -9459,7 +9812,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "22218",
@@ -9485,7 +9839,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "828357",
@@ -9511,7 +9867,9 @@
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
       "pmt_lead": "Christine Nickelsen",
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "664054",
@@ -9543,7 +9901,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "653842",
@@ -9575,7 +9934,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "731457",
@@ -9606,7 +9966,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "476679",
@@ -9633,7 +9995,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "182872",
@@ -9659,7 +10022,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "530493",
@@ -9685,7 +10050,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "610504",
@@ -9717,7 +10084,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "665232",
@@ -9748,7 +10116,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "669090",
@@ -9780,7 +10150,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "315007",
@@ -9806,7 +10177,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "614448",
@@ -9832,7 +10205,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "665336",
@@ -9864,7 +10239,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "665261",
@@ -9896,7 +10272,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "664648",
@@ -9928,7 +10305,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "632203",
@@ -9960,7 +10338,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "537092",
@@ -9992,7 +10371,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "579932",
@@ -10018,7 +10398,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "468041",
@@ -10044,7 +10426,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "704636",
@@ -10076,7 +10460,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "767361",
@@ -10102,7 +10487,9 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "664381",
@@ -10134,7 +10521,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "808064",
@@ -10160,7 +10548,9 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "670675",
@@ -10192,7 +10582,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "770796",
@@ -10218,7 +10609,9 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "635167",
@@ -10244,7 +10637,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "475084",
@@ -10270,7 +10665,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "740646",
@@ -10302,7 +10699,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "740734",
@@ -10334,7 +10732,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "740696",
@@ -10366,7 +10765,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "6554",
@@ -10392,7 +10792,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "755509",
@@ -10423,7 +10825,9 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "534902",
@@ -10449,7 +10853,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "474847",
@@ -10481,7 +10887,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "650815",
@@ -10513,7 +10920,8 @@
       "pmt_lead": "Camila Peña",
       "pmt_status": "Go-Live and Growth",
       "pmt_health": "On Track",
-      "has_active_pmt": true
+      "has_active_pmt": true,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "735220",
@@ -10545,7 +10953,8 @@
       "has_active_pmt": true,
       "pmt_lead": "Valentina Espinel",
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "651344",
@@ -10571,7 +10980,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "713840",
@@ -10603,7 +11014,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "400013",
@@ -10630,7 +11042,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "670701",
@@ -10662,7 +11075,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "640762",
@@ -10694,7 +11108,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "642311",
@@ -10726,7 +11141,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "726631",
@@ -10758,7 +11174,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "664820",
@@ -10790,7 +11207,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "743648",
@@ -10822,7 +11240,8 @@
       "has_active_pmt": false,
       "pmt_status": null,
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "533116",
@@ -10853,7 +11272,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "77787",
@@ -10879,7 +11300,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "831651",
@@ -10905,7 +11328,9 @@
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
       "pmt_lead": "Christine Nickelsen",
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "831754",
@@ -10931,7 +11356,9 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -10957,7 +11384,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -10983,7 +11412,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11009,7 +11440,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11035,7 +11468,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11061,7 +11496,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11087,7 +11524,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11113,7 +11552,9 @@
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
       "pmt_lead": "Nahomi Enriquez",
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11139,7 +11580,9 @@
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
       "pmt_lead": "Christine Nickelsen",
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11165,7 +11608,9 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11191,7 +11636,9 @@
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
       "pmt_lead": "Christine Nickelsen",
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11217,7 +11664,9 @@
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
       "pmt_lead": "Fernando Yepez",
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11243,7 +11692,9 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11269,7 +11720,9 @@
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
       "pmt_lead": "Christine Nickelsen",
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11295,7 +11748,9 @@
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
       "pmt_lead": "Milena Mezamell",
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11321,7 +11776,9 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11347,7 +11804,9 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11373,7 +11832,9 @@
       "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11399,7 +11860,9 @@
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
       "pmt_lead": "Christine Nickelsen",
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11425,7 +11888,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11451,7 +11916,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11477,7 +11944,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11503,7 +11972,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11529,7 +12000,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11555,7 +12028,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11581,7 +12056,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11607,7 +12084,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11633,7 +12112,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11659,7 +12140,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11685,7 +12168,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11711,7 +12196,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11737,7 +12224,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11763,7 +12252,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11789,7 +12280,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11815,7 +12308,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11841,7 +12336,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11867,7 +12364,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11893,7 +12392,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11919,7 +12420,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11945,7 +12448,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11971,7 +12476,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -11997,7 +12504,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -12023,7 +12532,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -12049,7 +12560,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -12075,7 +12588,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -12101,7 +12616,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -12127,7 +12644,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -12153,7 +12672,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -12179,7 +12700,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -12205,7 +12728,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -12231,7 +12756,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -12257,7 +12784,9 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "priority_level": "",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "825239",
@@ -12280,13 +12809,14 @@
       "priority_level": "ECOSYSTEM",
       "buy_gmv_estimated": 19358,
       "digital_pct": null,
-      "in_christine_sheet": true
+      "in_christine_sheet": true,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "822905",
       "company_name": "GQ FLOWERS",
       "business_type": "Grower",
-      "product_tier": "eSuite",
+      "product_tier": "K2K",
       "sell_channel": "no_fees_data",
       "komet_status": "Production - Live",
       "industry": "Floral - Grower",
@@ -12303,13 +12833,14 @@
       "priority_level": "ECOSYSTEM",
       "buy_gmv_estimated": 12139,
       "digital_pct": 100.0,
-      "in_christine_sheet": true
+      "in_christine_sheet": true,
+      "digital_pct_caveat": "solo_digital_visible"
     },
     {
       "company_id": "816923",
       "company_name": "JOSE MIGUEL CRUZ GOMEZ",
       "business_type": "Grower",
-      "product_tier": "eSuite",
+      "product_tier": "K2K",
       "sell_channel": "no_fees_data",
       "komet_status": "Production - Live",
       "industry": "Floral - Grower",
@@ -12322,7 +12853,7 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000LDVbNYAX",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured",
+      "potential_tier": "Seed",
       "engagement_status": "Unknown",
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
@@ -12330,13 +12861,14 @@
       "has_active_pmt": false,
       "pmt_lead": "Fernando Yepez",
       "pmt_status": "Completed",
-      "pmt_health": "On Track"
+      "pmt_health": "On Track",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "816979",
       "company_name": "MARIA SARA YANEZ TOAPANTA",
       "business_type": "Grower",
-      "product_tier": "eSuite",
+      "product_tier": "K2K",
       "sell_channel": "no_fees_data",
       "komet_status": "Production - Live",
       "industry": "Floral - Grower",
@@ -12349,7 +12881,7 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000oU8ZfYAK",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured",
+      "potential_tier": "Seed",
       "engagement_status": "Unknown",
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
@@ -12357,7 +12889,8 @@
       "has_active_pmt": false,
       "pmt_lead": "Nahomi Enriquez",
       "pmt_status": "Completed",
-      "pmt_health": "Completed"
+      "pmt_health": "Completed",
+      "digital_pct_caveat": null
     },
     {
       "company_id": "735642",
@@ -12384,7 +12917,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "815945",
@@ -12403,7 +12937,7 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000o9iOSYAY",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured",
+      "potential_tier": "Activate",
       "engagement_status": "Unknown",
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
@@ -12411,7 +12945,8 @@
       "has_active_pmt": false,
       "pmt_lead": null,
       "pmt_status": null,
-      "pmt_health": null
+      "pmt_health": null,
+      "digital_pct_caveat": null
     },
     {
       "company_id": "650986",
@@ -12429,7 +12964,8 @@
       "has_active_pmt": true,
       "pmt_lead": "Camila Peña",
       "priority_level": "",
-      "in_christine_sheet": true
+      "in_christine_sheet": true,
+      "digital_pct_caveat": null
     },
     {
       "company_id": null,
@@ -12447,7 +12983,8 @@
       "has_active_pmt": true,
       "pmt_lead": "Christine Nickelsen",
       "priority_level": "",
-      "in_christine_sheet": true
+      "in_christine_sheet": true,
+      "digital_pct_caveat": null
     }
   ]
 }

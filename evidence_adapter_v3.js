@@ -549,6 +549,7 @@
       sell_channel:     rec.sell_channel || null,
       potential_tier:   rec.potential_tier || null,
       impl_stage_display: rec.impl_stage_display || null,
+      digital_pct_caveat: rec.digital_pct_caveat || null,
       has_active_pmt:   rec.has_active_pmt || false,
       pmt_lead:         rec.pmt_lead || null,
       pmt_status:       rec.pmt_status || null,
