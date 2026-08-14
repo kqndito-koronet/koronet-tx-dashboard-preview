@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html><head><title>Filter Test</title></head>
+<body>
+<pre id="log">Loading...</pre>
+<script src="evidence_adapter_v3.js"></script>
+<script>
+var log = document.getElementById('log');
+function addLog(msg) { log.textContent += '\n' + msg; }
+
+EvidenceAdapter.init().then(function() {
+  var ids = EvidenceAdapter.getAllAccountIds();
+  addLog('Accounts: ' + ids.length);
+
+  // Check filter fields
+  var withPriority = 0, withImplStage = 0, withActivePmt = 0, withPotTier = 0;
+  var priorities = {}, implStages = {}, potTiers = {};
+
+  ids.forEach(function(cid) {
+    var ev = EvidenceAdapter.getAccountEvidence(cid, 'ytd');
+    if (!ev || !ev.identity) return;
+    var id = ev.identity;
+
+    if (id.priority_level) { withPriority++; priorities[id.priority_level] = (priorities[id.priority_level]||0)+1; }
+    if (id.impl_stage_display) { withImplStage++; implStages[id.impl_stage_display] = (implStages[id.impl_stage_display]||0)+1; }
+    if (id.has_active_pmt) { withActivePmt++; }
+    if (id.potential_tier) { withPotTier++; potTiers[id.potential_tier] = (potTiers[id.potential_tier]||0)+1; }
+  });
+
+  addLog('\nPriority level: ' + withPriority + ' accounts');
+  addLog(JSON.stringify(priorities, null, 2));
+
+  addLog('\nImpl stage: ' + withImplStage + ' accounts');
+  addLog(JSON.stringify(implStages, null, 2));
+
+  addLog('\nActive PMT: ' + withActivePmt + ' accounts');
+
+  addLog('\nPotential tier: ' + withPotTier + ' accounts');
+  addLog(JSON.stringify(potTiers, null, 2));
+});
+</script>
+</body></html>
