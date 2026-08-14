@@ -869,9 +869,11 @@ function buildDiagnosis(ev) {
     parts.push(offBuyers.toLocaleString() + ' offline buyers not yet invited');
   }
   var cfg = ev.list && ev.list.config && ev.list.config.value;
-  if (cfg && cfg.raw) {
-    var bunches = cfg.raw.sell_in_bunches;
-    if (bunches === false || bunches === 'false' || bunches === 0) {
+  if (cfg) {
+    var bunchReality = cfg.bunches_reality ? cfg.bunches_reality.actually_sells_bunches_ecom : null;
+    var bunchFlag = cfg.raw ? (cfg.raw.is_on_hand_inventory_units != null ? cfg.raw.is_on_hand_inventory_units : cfg.raw.sell_in_bunches) : null;
+    var bunchesActive = bunchReality === true || (bunchReality == null && (bunchFlag === true || bunchFlag === 1));
+    if (!bunchesActive && bunchReality !== true) {
       parts.push('Bunches OFF \u2014 retail TAM blocked');
     }
   }
@@ -1133,8 +1135,10 @@ function renderRow(ev, idx) {
   var cfgEv = ev.list && ev.list.config ? ev.list.config.value : null;
   var cfgRawEv = cfgEv && cfgEv.raw ? cfgEv.raw : null;
   if (cfgRawEv) {
-    var bunchesEv = cfgRawEv.sell_in_bunches != null ? cfgRawEv.sell_in_bunches : cfgRawEv.bunches;
-    if (bunchesEv === false || bunchesEv === 'false' || bunchesEv === 0) interventionCount++;
+    var bunchRealityEv = cfgEv && cfgEv.bunches_reality ? cfgEv.bunches_reality.actually_sells_bunches_ecom : null;
+    var bunchFlagEv = cfgRawEv.is_on_hand_inventory_units != null ? cfgRawEv.is_on_hand_inventory_units : cfgRawEv.sell_in_bunches != null ? cfgRawEv.sell_in_bunches : cfgRawEv.bunches;
+    var bunchesActiveEv = bunchRealityEv === true || (bunchRealityEv == null && (bunchFlagEv === true || bunchFlagEv === 1));
+    if (!bunchesActiveEv && bunchRealityEv !== true) interventionCount++;
     var maxAgeEv = cfgRawEv.max_age_sell != null ? cfgRawEv.max_age_sell : cfgRawEv.MaxAge;
     if (maxAgeEv != null && maxAgeEv < 30) interventionCount++;
   }
