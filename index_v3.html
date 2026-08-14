@@ -529,6 +529,7 @@
         </select>
         <select class="select-pill" id="impl-stage-filter">
           <option value="">All Stages</option>
+          <option value="active-pmt">Active PMT</option>
           <option value="Pre-live">Pre-live</option>
           <option value="Recently live (2026)">Go-live 2026</option>
           <option value="Recently live (H2 2025)">Go-live H2 2025</option>
@@ -2195,7 +2196,13 @@ function applyFilters() {
     }
     if (prFilter && (id.priority_level || '').toLowerCase() !== prFilter) return false;
     if (potFilter && (id.potential_tier || '').toLowerCase() !== potFilter) return false;
-    if (implFilter && (id.impl_stage_display || '') !== implFilter) return false;
+    if (implFilter) {
+      if (implFilter === 'active-pmt') {
+        if (!id.has_active_pmt) return false;
+      } else {
+        if ((id.impl_stage_display || '') !== implFilter) return false;
+      }
+    }
     if (search && (ev._company_name || '').toLowerCase().indexOf(search) < 0) return false;
     return true;
   });
