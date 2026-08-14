@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TX Dashboard V3 — Visual Mockup · Koronet Revenue OS</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --border: #e2e8f0;
+    --border-light: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --text-caption: #64748b;
+
+    --green: #16a34a;
+    --green-bg: #f0fdf4;
+    --green-border: #bbf7d0;
+    --amber: #d97706;
+    --amber-bg: #fffbeb;
+    --amber-border: #fde68a;
+    --red: #dc2626;
+    --red-bg: #fef2f2;
+    --red-border: #fecaca;
+    --blue: #2563eb;
+    --blue-bg: #eff6ff;
+    --blue-border: #bfdbfe;
+    --blue-light: #3b82f6;
+    --teal: #0d9488;
+    --teal-bg: #f0fdfa;
+    --teal-border: #99f6e4;
+    --purple: #7c3aed;
+    --purple-bg: #f5f3ff;
+    --purple-border: #ddd6fe;
+
+    --font-body: 11px;
+    --font-emphasis: 12px;
+    --font-section: 14px;
+    --font-card: 16px;
+
+    --radius: 6px;
+    --radius-sm: 4px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    font-size: var(--font-body);
+    color: var(--text-primary);
+    background: var(--bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── TOP BAR ──────────────────────────────── */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
+  .topbar-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .topbar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 8px;
+    border-bottom: 1px solid var(--border-light);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-name {
+    font-size: var(--font-card);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+  }
+
+  .brand-badge {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--border-light);
+    padding: 2px 6px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .brand-v3 {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--blue);
+    background: var(--blue-bg);
+    border: 1px solid var(--blue-border);
+    padding: 2px 6px;
+    border-radius: 10px;
+    letter-spacing: 0.3px;
+  }
+
+  .mockup-banner {
+    font-size: 10px;
+    font-weight: 700;
+    color: #7c2d12;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .topbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .period-label {
+    font-size: var(--font-body);
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .select-pill {
+    font-size: var(--font-body);
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--border-light);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 24px;
+  }
+
+  .search-input {
+    font-size: var(--font-body);
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--border-light);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    width: 160px;
+  }
+
+  .search-input::placeholder { color: var(--text-muted); }
+
+  .filter-divider {
+    width: 1px;
+    height: 18px;
+    background: var(--border);
+    margin: 0 2px;
+  }
+
+  /* ─── KPI STRIP ──────────────────────────────── */
+  .kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    padding: 8px 0 6px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .kpi-item {
+    padding: 4px 16px 4px 0;
+    border-right: 1px solid var(--border-light);
+  }
+
+  .kpi-item:last-child { border-right: none; }
+  .kpi-item:first-child { padding-left: 0; }
+
+  .kpi-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+
+  .kpi-delta {
+    font-size: 10px;
+    font-weight: 600;
+    margin-left: 4px;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
+  .kpi-delta.up { color: var(--green); background: var(--green-bg); }
+  .kpi-delta.down { color: var(--red); background: var(--red-bg); }
+  .kpi-delta.neutral { color: var(--text-secondary); background: var(--border-light); }
+
+  .kpi-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
+  }
+
+  /* ─── COVERAGE WARNING ──────────────────────────────── */
+  .coverage-warn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 0;
+    font-size: 10px;
+    color: var(--amber);
+    font-weight: 500;
+  }
+
+  .warn-icon { font-size: 11px; }
+  .coverage-warn span.muted { color: var(--text-muted); font-weight: 400; }
+
+  /* ─── MAIN LAYOUT ──────────────────────────────── */
+  .main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px 24px 40px;
+  }
+
+  /* ─── TABS ──────────────────────────────── */
+  .tabs-nav {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0;
+  }
+
+  .tab-btn {
+    font-size: var(--font-body);
+    font-weight: 600;
+    color: var(--text-muted);
+    padding: 7px 14px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .tab-btn:hover { color: var(--text-secondary); }
+  .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
+
+  .tab-count {
+    font-size: 9px;
+    font-weight: 700;
+    background: var(--border-light);
+    border-radius: 8px;
+    padding: 1px 5px;
+    margin-left: 4px;
+    color: var(--text-muted);
+  }
+
+  .tab-btn.active .tab-count { background: var(--blue-bg); color: var(--blue); }
+
+  /* ─── SECTION LABEL ──────────────────────────────── */
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  /* ─── PORTFOLIO TABLE ──────────────────────────────── */
+  .portfolio-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: var(--surface);
+    margin-bottom: 16px;
+  }
+
+  .portfolio-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-body);
+  }
+
+  .portfolio-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #f8fafc;
+  }
+
+  .portfolio-table th {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    background: #f8fafc;
+  }
+
+  .portfolio-table th.sticky-col {
+    position: sticky;
+    background: #f8fafc;
+    z-index: 11;
+  }
+
+  .portfolio-table th.sticky-col-1 { left: 0; }
+  .portfolio-table th.sticky-col-2 { left: 32px; min-width: 240px; }
+
+  .portfolio-table td {
+    padding: 0;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: top;
+  }
+
+  .portfolio-table td.sticky-col {
+    position: sticky;
+    background: var(--surface);
+    z-index: 5;
+  }
+
+  .portfolio-table td.sticky-col-1 { left: 0; width: 32px; }
+  .portfolio-table td.sticky-col-2 { left: 32px; min-width: 240px; }
+
+  .portfolio-table tr:last-child td { border-bottom: none; }
+  .portfolio-table tr:hover td { background: #fafbfd; }
+  .portfolio-table tr:hover td.sticky-col { background: #fafbfd; }
+  .row-expanded td { background: var(--blue-bg) !important; }
+  .row-expanded td.sticky-col { background: var(--blue-bg) !important; }
+
+  /* Toggle cell */
+  .toggle-cell {
+    width: 32px;
+    padding: 0 !important;
+    text-align: center;
+  }
+
+  .toggle-btn {
+    width: 100%;
+    height: 100%;
+    min-height: 62px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    transition: color 0.15s;
+  }
+
+  .toggle-btn:hover { color: var(--blue); }
+  .toggle-btn.open { color: var(--blue); }
+
+  .toggle-chevron {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    font-size: 9px;
+  }
+
+  .toggle-btn.open .toggle-chevron { transform: rotate(90deg); }
+
+  /* Account name cell */
+  .account-cell { padding: 10px 12px !important; }
+
+  .account-name {
+    font-size: var(--font-emphasis);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+
+  /* ─── ACCOUNT META BADGES ──────────────────────────────── */
+  .account-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 3px;
+  }
+
+  .meta-badge {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+
+  /* Business type colors */
+  .badge-wholesaler { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+  .badge-importer   { background: var(--teal-bg); color: var(--teal); border: 1px solid var(--teal-border); }
+  .badge-grower     { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .badge-retailer   { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+
+  /* Product tier styles */
+  .badge-core-plus  { background: var(--text-primary); color: white; border: 1px solid var(--text-primary); }
+  .badge-esuite     { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
+  .badge-procurement { background: transparent; color: var(--amber); border: 1px dashed var(--amber-border); }
+  .badge-k2k        { background: transparent; color: var(--blue); border: 1px dotted var(--blue-border); }
+
+  /* Sell channel */
+  .badge-eshop   { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+  .badge-k2k-ch  { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+  .badge-api     { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .badge-none    { background: #f8fafc; color: var(--text-muted); border: 1px solid var(--border); }
+
+  /* Engagement */
+  .badge-purchasing  { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .badge-onboarding  { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+
+  /* Metric cells */
+  .metric-cell {
+    padding: 10px 12px !important;
+    white-space: nowrap;
+  }
+
+  .metric-value {
+    font-size: var(--font-emphasis);
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .metric-delta {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--green);
+    margin-left: 3px;
+  }
+
+  .metric-delta.neg { color: var(--red); }
+
+  .metric-qualifier {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 1px;
+    font-weight: 400;
+  }
+
+  .online-value { color: var(--blue); font-weight: 600; font-size: var(--font-emphasis); }
+  .online-low { color: var(--red); font-weight: 600; font-size: var(--font-emphasis); }
+  .online-full { color: var(--green); font-weight: 600; font-size: var(--font-emphasis); }
+  .online-zero { color: var(--text-muted); font-weight: 600; font-size: var(--font-emphasis); }
+
+  .fees-value { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-primary); }
+  .fees-zero  { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-muted); }
+  .takerate { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-secondary); }
+
+  /* ─── GMV PROVENANCE TAG ──────────────────────────────── */
+  .gmv-wrap { display: flex; flex-direction: column; gap: 2px; }
+
+  .gmv-value { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-primary); }
+
+  .provenance-tag {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+    display: inline-block;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  .prov-medido    { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .prov-ora       { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+  .prov-piso      { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+  .prov-fcs       { background: #f8fafc; color: var(--text-muted); border: 1px solid var(--border); }
+  .prov-estimado  { background: transparent; color: var(--red); border: 1px solid var(--red-border); }
+
+  /* Sparkline */
+  .sparkline { display: flex; align-items: flex-end; gap: 2px; height: 20px; }
+  .spark-bar { width: 6px; border-radius: 2px 2px 0 0; background: var(--border); }
+  .spark-bar.up { background: var(--green); }
+  .spark-bar.down { background: var(--red); }
+  .spark-bar.flat { background: var(--text-muted); }
+
+  /* $ at stake cell */
+  .stake-value { font-size: var(--font-emphasis); font-weight: 700; color: var(--text-primary); }
+  .stake-value.sfdc { color: var(--blue); }
+  .stake-opps { font-size: 10px; color: var(--text-muted); margin-top: 1px; }
+
+  /* ─── EXPANDED ACCOUNT SECTION ──────────────────────────────── */
+  .expanded-row td { padding: 0 !important; }
+
+  .expanded-section {
+    padding: 16px 20px 20px 36px;
+    background: var(--blue-bg);
+    border-top: 1px solid var(--blue-border);
+  }
+
+  .cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* ─── CARDS ──────────────────────────────── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px 14px;
+    cursor: pointer;
+    user-select: none;
+    gap: 8px;
+  }
+
+  .card-header:hover { background: #fafbfd; }
+
+  .card-header-left { flex: 1; min-width: 0; }
+
+  .card-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card-title {
+    font-size: var(--font-card);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.2px;
+    line-height: 1.3;
+  }
+
+  .card-subtitle {
+    font-size: var(--font-body);
+    color: var(--text-secondary);
+    margin-top: 2px;
+  }
+
+  .card-toggle {
+    font-size: 12px;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: transform 0.2s ease;
+  }
+
+  .card.open .card-toggle { transform: rotate(180deg); }
+
+  .card-body {
+    padding: 0 14px 14px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  /* ─── CONTENT BLOCKS ──────────────────────────────── */
+  .content-gap { height: 12px; }
+  .content-gap-sm { height: 6px; }
+
+  /* Callout */
+  .callout {
+    border-left: 3px solid var(--blue-border);
+    background: var(--blue-bg);
+    padding: 8px 10px;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: var(--font-body);
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+
+  .callout.amber { border-left-color: var(--amber); background: var(--amber-bg); color: #92400e; }
+  .callout.red   { border-left-color: var(--red); background: var(--red-bg); color: #991b1b; }
+  .callout.green { border-left-color: var(--green); background: var(--green-bg); color: #166534; }
+  .callout strong { font-weight: 700; }
+
+  /* Evidence table */
+  .ev-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-body);
+  }
+
+  .ev-table th {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    padding: 6px 10px;
+    text-align: left;
+    background: #f8fafc;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .ev-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-primary);
+    vertical-align: top;
+  }
+
+  .ev-table tr:last-child td { border-bottom: none; }
+  .ev-table .row-label { font-weight: 600; font-size: var(--font-body); white-space: nowrap; }
+
+  .ev-state {
+    display: block;
+    font-size: 9px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 1px;
+    letter-spacing: 0.3px;
+  }
+
+  .ev-state.observed { color: var(--green); }
+  .ev-state.proxy    { color: var(--amber); }
+  .ev-state.gap      { color: var(--red); }
+  .ev-state.model    { color: var(--blue); }
+
+  .ev-table .highlight { font-weight: 700; color: var(--text-primary); }
+  .ev-table .warn      { font-weight: 600; color: var(--amber); }
+  .ev-table .danger    { font-weight: 600; color: var(--red); }
+  .ev-table .online    { font-weight: 600; color: var(--blue); }
+  .ev-table .good      { font-weight: 600; color: var(--green); }
+
+  .table-wrap {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  /* ─── GMV CHALLENGE TABLE (POTENTIAL card) ──────────────────────────── */
+  .gmv-challenge-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-body);
+  }
+
+  .gmv-challenge-table th {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    padding: 7px 10px;
+    text-align: right;
+    background: #f8fafc;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  .gmv-challenge-table th:first-child { text-align: left; }
+
+  .gmv-challenge-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: middle;
+    text-align: right;
+    font-size: var(--font-body);
+    color: var(--text-primary);
+  }
+
+  .gmv-challenge-table td:first-child { text-align: left; font-weight: 600; }
+  .gmv-challenge-table tr:last-child td { border-bottom: none; }
+
+  .discrepancy-cell {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--amber);
+  }
+
+  .discrepancy-cell.aligned { color: var(--green); }
+
+  .gmv-source-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+  .gmv-source-label { font-size: 9px; color: var(--text-muted); }
+  .gmv-source-count { font-size: 9px; color: var(--text-muted); font-style: italic; }
+
+  /* ─── OPP ROWS ──────────────────────────────── */
+  .opp-row {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    background: var(--surface);
+  }
+
+  .opp-row:last-child { margin-bottom: 0; }
+
+  .opp-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+
+  .opp-stage {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .stage-buy    { background: #fff7ed; color: #ea580c; border: 1px solid #fed7aa; }
+  .stage-list   { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+  .stage-sell   { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .stage-config { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+
+  .opp-effort {
+    font-size: 9px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+
+  .badge-quick   { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+  .badge-invest  { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+  .badge-project { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+
+  .opp-desc { font-size: var(--font-body); color: var(--text-secondary); }
+
+  /* ─── STAKE BANNER ──────────────────────────────── */
+  .stake-banner {
+    background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+    color: white;
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .stake-banner-value { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+  .stake-banner-label { font-size: 10px; opacity: 0.8; font-weight: 500; margin-top: 1px; }
+  .stake-banner-right { text-align: right; }
+  .stake-banner-count { font-size: 13px; font-weight: 700; }
+  .stake-banner-sub   { font-size: 9px; opacity: 0.7; }
+
+  /* ─── SECTION HEADER ──────────────────────────────── */
+  .section-header {
+    font-size: var(--font-section);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 16px 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ─── METRIC PILL ──────────────────────────────── */
+  .metrics-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .metric-pill {
+    font-size: var(--font-body);
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: #f8fafc;
+    color: var(--text-secondary);
+  }
+
+  .metric-pill strong { font-weight: 700; color: var(--text-primary); }
+  .metric-pill.good-pill { border-color: var(--green-border); background: var(--green-bg); }
+  .metric-pill.warn-pill { border-color: var(--amber-border); background: var(--amber-bg); }
+  .metric-pill.blue-pill { border-color: var(--blue-border); background: var(--blue-bg); }
+  .metric-pill.red-pill  { border-color: var(--red-border); background: var(--red-bg); }
+
+  /* ─── TAB PANELS ──────────────────────────────── */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ─── PROCUREMENT QUADRANT ──────────────────────────────── */
+  .quadrant-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    height: 420px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--border);
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+  }
+
+  .quadrant {
+    background: var(--surface);
+    padding: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quadrant-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .quadrant-desc {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .quadrant-A { border-bottom: 2px solid var(--border-light); }
+  .quadrant-B { border-bottom: 2px solid var(--border-light); border-left: 2px solid var(--border-light); }
+  .quadrant-C {}
+  .quadrant-D { border-left: 2px solid var(--border-light); }
+
+  .q-label-A { color: var(--green); }
+  .q-label-B { color: var(--amber); }
+  .q-label-C { color: var(--red); }
+  .q-label-D { color: var(--blue); }
+
+  .q-badge {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+
+  .q-badge-A { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .q-badge-B { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+  .q-badge-C { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+  .q-badge-D { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+
+  .account-dot {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 6px;
+    border-radius: var(--radius-sm);
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    background: var(--bg);
+    border: 1px solid var(--border-light);
+  }
+
+  .dot-circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-green  { background: var(--green); }
+  .dot-amber  { background: var(--amber); }
+  .dot-red    { background: var(--red); }
+  .dot-blue   { background: var(--blue); }
+
+  .q-axes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .q-axis-label {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+  }
+
+  .quadrant-axis-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 12px;
+    padding: 6px 12px;
+    background: #f8fafc;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+  }
+
+  .axis-arrow { font-size: 12px; }
+
+  /* ─── DEFINITIONS PANEL ──────────────────────────────── */
+  .definitions-panel {
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--text-muted);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .definitions-panel h2 {
+    font-size: var(--font-section);
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+
+  .definitions-panel p {
+    font-size: var(--font-body);
+    color: var(--text-muted);
+  }
+
+  /* ─── LOAD MORE ──────────────────────────────── */
+  .load-more-wrap { text-align: center; padding: 12px; }
+
+  .load-more-btn {
+    font-size: var(--font-body);
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--blue-bg);
+    border: 1px solid var(--blue-border);
+    border-radius: var(--radius-sm);
+    padding: 6px 20px;
+    cursor: pointer;
+  }
+
+  /* ─── NOTE STRIP ──────────────────────────────── */
+  .note-strip {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 4px 0 2px;
+  }
+
+  /* ─── COLLAPSE ROW ──────────────────────────────── */
+  .collapse-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: var(--font-body);
+    margin-bottom: 6px;
+    background: #fafbfd;
+    transition: background 0.15s;
+  }
+
+  .collapse-row:hover { background: var(--border-light); }
+  .collapse-row span  { color: var(--text-muted); font-size: 10px; }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════
+     TOP BAR (sticky)
+════════════════════════════════════════════════ -->
+<div class="topbar">
+  <div class="topbar-inner">
+
+    <div class="topbar-header">
+      <div class="brand">
+        <span class="brand-name">TX Dashboard</span>
+        <span class="brand-badge">Revenue OS</span>
+        <span class="brand-v3">V3</span>
+        <span class="mockup-banner">Visual Mockup</span>
+      </div>
+      <div class="topbar-controls">
+        <span class="period-label">Period</span>
+        <select class="select-pill" id="timeframe-select">
+          <option value="ytd_2026" selected>YTD 2026</option>
+          <option value="jul_2026">Jul 2026</option>
+          <option value="jun_2026">Jun 2026</option>
+          <option value="q2_2026">Q2 2026</option>
+          <option value="h1_2026">H1 2026</option>
+        </select>
+
+        <div class="filter-divider"></div>
+
+        <!-- NEW V3 FILTER TRIO -->
+        <select class="select-pill" id="business-type-filter">
+          <option value="">All Types</option>
+          <option value="Wholesaler">Wholesaler (210)</option>
+          <option value="Importer">Importer (148)</option>
+          <option value="Grower">Grower (61)</option>
+          <option value="Retailer">Retailer (11)</option>
+        </select>
+
+        <select class="select-pill" id="product-tier-filter">
+          <option value="">All Tiers</option>
+          <option value="Core+">Core+ (333)</option>
+          <option value="Procurement">Procurement (46)</option>
+          <option value="K2K">K2K (4)</option>
+          <option value="eSuite">eSuite (20)</option>
+        </select>
+
+        <select class="select-pill" id="sell-channel-filter">
+          <option value="">All Channels</option>
+          <option value="eShop">eShop (94)</option>
+          <option value="K2K">K2K (99)</option>
+          <option value="API">API (5)</option>
+          <option value="None">No digital (238)</option>
+        </select>
+
+        <div class="filter-divider"></div>
+
+        <input class="search-input" id="search-input" type="text" placeholder="Search account…">
+      </div>
+    </div>
+
+    <!-- KPI Strip -->
+    <div class="kpi-strip">
+      <div class="kpi-item">
+        <div>
+          <span class="kpi-value">$215.9M</span>
+          <span class="kpi-delta up">▲18%</span>
+        </div>
+        <div class="kpi-label">Est GMV (Medido)</div>
+      </div>
+      <div class="kpi-item">
+        <div>
+          <span class="kpi-value">$171K</span>
+          <span class="kpi-delta up">▲32%</span>
+        </div>
+        <div class="kpi-label">Fees YTD</div>
+      </div>
+      <div class="kpi-item">
+        <div>
+          <span class="kpi-value">430</span>
+          <span class="kpi-delta neutral">5 sources</span>
+        </div>
+        <div class="kpi-label">Accounts with Data</div>
+      </div>
+      <div class="kpi-item">
+        <div>
+          <span class="kpi-value">18.2%</span>
+          <span class="kpi-delta down">▼2.1pp</span>
+        </div>
+        <div class="kpi-label">Avg % Digital</div>
+      </div>
+      <div class="kpi-item">
+        <div>
+          <span class="kpi-value">0.08%</span>
+          <span class="kpi-delta up">▲0.01pp</span>
+        </div>
+        <div class="kpi-label">Avg Take Rate</div>
+      </div>
+    </div>
+
+    <!-- Coverage warning -->
+    <div class="coverage-warn">
+      <span class="warn-icon">&#9888;</span>
+      <span>192 accounts have no GMV data — showing as Piso de red.</span>
+      <span class="muted">82% GMV offline at $0 fees · ORA vs Medido discrepancy flagged on 34 accounts</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════
+     MAIN CONTENT
+════════════════════════════════════════════════ -->
+<div class="main">
+
+  <!-- Tabs (static — V3 adds Procurement Behavior and Definitions) -->
+  <div class="tabs-nav">
+    <button class="tab-btn active" id="tab-portfolio" onclick="showTab('portfolio')">
+      Portfolio <span class="tab-count">430</span>
+    </button>
+    <button class="tab-btn" id="tab-procurement" onclick="showTab('procurement')">
+      Procurement Behavior <span class="tab-count">46</span>
+    </button>
+    <button class="tab-btn" id="tab-definitions" onclick="showTab('definitions')">
+      Definitions <span class="tab-count">—</span>
+    </button>
+  </div>
+
+  <!-- ══ TAB: Portfolio ══ -->
+  <div class="tab-panel active" id="panel-portfolio">
+
+    <div class="section-label">430 accounts · YTD 2026 · Sorted by Fees YTD desc</div>
+
+    <div class="portfolio-wrap">
+      <table class="portfolio-table">
+        <thead>
+          <tr>
+            <th class="sticky-col sticky-col-1"></th>
+            <th class="sticky-col sticky-col-2">Account</th>
+            <th>Engagement</th>
+            <th>Est GMV</th>
+            <th>Koronet Sell YTD</th>
+            <th>% Digital</th>
+            <th>MoM Δ</th>
+            <th>Koronet Buy YTD</th>
+            <th>Fees YTD</th>
+            <th>Take Rate</th>
+            <th>Trend</th>
+            <th>$ at Stake</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- ══ ROW 1: Kennicott — EXPANDED ══ -->
+          <tr class="row-expanded" id="tr-kennicott">
+            <td class="sticky-col sticky-col-1 toggle-cell">
+              <button class="toggle-btn open">
+                <span class="toggle-chevron">&#9658;</span>
+              </button>
+            </td>
+            <td class="sticky-col sticky-col-2 account-cell">
+              <div class="account-name">Kennicott Brothers Company</div>
+              <div class="account-meta-row">
+                <span class="meta-badge badge-wholesaler">Wholesaler</span>
+                <span class="meta-badge badge-core-plus">Core+</span>
+                <span class="meta-badge badge-api">API</span>
+                <span class="meta-badge badge-purchasing">Purchasing</span>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="meta-badge badge-purchasing">Purchasing</span>
+            </td>
+            <td class="metric-cell">
+              <div class="gmv-wrap">
+                <span class="gmv-value">$120M</span>
+                <span class="provenance-tag prov-medido">Medido</span>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-value">$9.8M</span>
+            </td>
+            <td class="metric-cell">
+              <span class="online-value">8.2%</span>
+              <div class="metric-qualifier">online</div>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-delta">▲4.2%</span>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-value">$4.4M</span>
+            </td>
+            <td class="metric-cell">
+              <span class="fees-value">$87K</span>
+            </td>
+            <td class="metric-cell">
+              <span class="takerate">0.89%</span>
+            </td>
+            <td class="metric-cell">
+              <div class="sparkline">
+                <div class="spark-bar up" style="height:55%"></div>
+                <div class="spark-bar flat" style="height:60%"></div>
+                <div class="spark-bar up" style="height:75%"></div>
+                <div class="spark-bar up" style="height:100%"></div>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="stake-value sfdc">$250K</span>
+              <div class="stake-opps">SFDC · 2 opps</div>
+            </td>
+          </tr>
+
+          <!-- ══ EXPANDED SECTION: Kennicott ══ -->
+          <tr class="expanded-row">
+            <td colspan="12">
+              <div class="expanded-section">
+                <div class="cards-grid">
+
+                  <!-- CARD: Potential (GMV Challenge) -->
+                  <div class="card open">
+                    <div class="card-header">
+                      <div class="card-header-left">
+                        <div class="card-label">Potential</div>
+                        <div class="card-title">91.8% offline — $110M at $0 fees</div>
+                        <div class="card-subtitle">ORA shows +25% above Medido — discrepancy flagged</div>
+                      </div>
+                      <div class="card-toggle">&#9650;</div>
+                    </div>
+                    <div class="card-body">
+                      <div class="content-gap-sm"></div>
+
+                      <div class="callout amber">
+                        <strong>GMV Challenge:</strong> 3 sources disagree on Kennicott's true market size. Medido is the floor; ORA may be inflated. External estimate (15 hubs surveyed) aligns closest to Medido.
+                      </div>
+
+                      <div class="table-wrap">
+                        <table class="gmv-challenge-table">
+                          <thead>
+                            <tr>
+                              <th>Dimension</th>
+                              <th>
+                                <div class="gmv-source-wrap">
+                                  <span>Medido</span>
+                                  <span class="provenance-tag prov-medido" style="align-self:flex-end">Measured</span>
+                                </div>
+                              </th>
+                              <th>
+                                <div class="gmv-source-wrap">
+                                  <span>External Est.</span>
+                                  <span class="gmv-source-count">15 hubs surveyed</span>
+                                </div>
+                              </th>
+                              <th>
+                                <div class="gmv-source-wrap">
+                                  <span>ORA</span>
+                                  <span class="provenance-tag prov-ora" style="align-self:flex-end">Oracle</span>
+                                </div>
+                              </th>
+                              <th>Discrepancy</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>SELL GMV</td>
+                              <td><strong>$120M</strong></td>
+                              <td>$115M</td>
+                              <td>$150M</td>
+                              <td class="discrepancy-cell">ORA +25% over Medido</td>
+                            </tr>
+                            <tr>
+                              <td>BUY GMV</td>
+                              <td><strong>$54M</strong></td>
+                              <td>$52M</td>
+                              <td>n/a</td>
+                              <td class="discrepancy-cell aligned">Aligned ✓</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div class="content-gap-sm"></div>
+                      <div class="metrics-row">
+                        <div class="metric-pill red-pill"><strong>$110M</strong> offline sell at $0 fees</div>
+                        <div class="metric-pill warn-pill"><strong>8.2%</strong> digital — far below platform avg 18%</div>
+                        <div class="metric-pill blue-pill">API channel active — monetization unrealized</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CARD: Opportunities (no ARR) -->
+                  <div class="card open">
+                    <div class="card-header">
+                      <div class="card-header-left">
+                        <div class="card-label">Opportunities</div>
+                        <div class="card-title">$ at Stake: $250K · 2 open SFDC opps</div>
+                        <div class="card-subtitle">3 plays identified · 1 quick fix, 1 investigation, 1 project</div>
+                      </div>
+                      <div class="card-toggle">&#9650;</div>
+                    </div>
+                    <div class="card-body">
+                      <div class="content-gap-sm"></div>
+
+                      <div class="stake-banner">
+                        <div>
+                          <div class="stake-banner-value">$250K</div>
+                          <div class="stake-banner-label">$ at Stake (SFDC open opps)</div>
+                        </div>
+                        <div class="stake-banner-right">
+                          <div class="stake-banner-count">2 opportunities</div>
+                          <div class="stake-banner-sub">Source: Salesforce · As of Aug 2026</div>
+                        </div>
+                      </div>
+
+                      <div class="opp-row">
+                        <div class="opp-header">
+                          <span class="opp-stage stage-sell">SELL</span>
+                          <span class="opp-effort badge-quick">Quick Fix</span>
+                        </div>
+                        <div class="opp-desc">API orders flowing but 0 eShop buyers invited. Enable buyer invitation flow — estimated 200+ eligible retail buyers on Kennicott's hub.</div>
+                      </div>
+
+                      <div class="opp-row">
+                        <div class="opp-header">
+                          <span class="opp-stage stage-list">LIST</span>
+                          <span class="opp-effort badge-invest">Investigation</span>
+                        </div>
+                        <div class="opp-desc">Catalog coverage unknown — no data on SKU count vs platform average. Audit needed to determine if listing gaps drive low digital %.</div>
+                      </div>
+
+                      <div class="opp-row">
+                        <div class="opp-header">
+                          <span class="opp-stage stage-buy">BUY</span>
+                          <span class="opp-effort badge-project">Project</span>
+                        </div>
+                        <div class="opp-desc">Buy/Sell ratio is 37% — below 45% platform benchmark. Procurement activation could unlock upstream volume and cross-sell revenue.</div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <!-- ══ ROW 2: Fresca Farms ══ -->
+          <tr id="tr-fresca">
+            <td class="sticky-col sticky-col-1 toggle-cell">
+              <button class="toggle-btn">
+                <span class="toggle-chevron">&#9658;</span>
+              </button>
+            </td>
+            <td class="sticky-col sticky-col-2 account-cell">
+              <div class="account-name">Fresca Farms</div>
+              <div class="account-meta-row">
+                <span class="meta-badge badge-importer">Importer</span>
+                <span class="meta-badge badge-core-plus">Core+</span>
+                <span class="meta-badge badge-eshop">eShop</span>
+                <span class="meta-badge badge-purchasing">Purchasing</span>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="meta-badge badge-purchasing">Purchasing</span>
+            </td>
+            <td class="metric-cell">
+              <div class="gmv-wrap">
+                <span class="gmv-value">$65M</span>
+                <span class="provenance-tag prov-medido">Medido</span>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-value">$34.5M</span>
+            </td>
+            <td class="metric-cell">
+              <span class="online-value">53%</span>
+              <div class="metric-qualifier">online</div>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-delta neg">▼1.8%</span>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-value">$15.6M</span>
+            </td>
+            <td class="metric-cell">
+              <span class="fees-value">$84K</span>
+            </td>
+            <td class="metric-cell">
+              <span class="takerate">0.24%</span>
+            </td>
+            <td class="metric-cell">
+              <div class="sparkline">
+                <div class="spark-bar flat" style="height:80%"></div>
+                <div class="spark-bar down" style="height:70%"></div>
+                <div class="spark-bar flat" style="height:68%"></div>
+                <div class="spark-bar down" style="height:60%"></div>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="stake-value sfdc">$120K</span>
+              <div class="stake-opps">SFDC · 1 opp</div>
+            </td>
+          </tr>
+
+          <!-- ══ ROW 3: Price's Floral Wholesale ══ -->
+          <tr id="tr-prices">
+            <td class="sticky-col sticky-col-1 toggle-cell">
+              <button class="toggle-btn">
+                <span class="toggle-chevron">&#9658;</span>
+              </button>
+            </td>
+            <td class="sticky-col sticky-col-2 account-cell">
+              <div class="account-name">Price's Floral Wholesale</div>
+              <div class="account-meta-row">
+                <span class="meta-badge badge-wholesaler">Wholesaler</span>
+                <span class="meta-badge badge-core-plus">Core+</span>
+                <span class="meta-badge badge-eshop">eShop</span>
+                <span class="meta-badge badge-onboarding">Onboarding</span>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="meta-badge badge-onboarding">Onboarding</span>
+            </td>
+            <td class="metric-cell">
+              <div class="gmv-wrap">
+                <span class="gmv-value">$158K</span>
+                <span class="provenance-tag prov-piso">Piso</span>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-value">$3.5K</span>
+            </td>
+            <td class="metric-cell">
+              <span class="online-low">2.2%</span>
+              <div class="metric-qualifier">online</div>
+            </td>
+            <td class="metric-cell">
+              <span style="color:var(--text-muted);font-size:10px;">—</span>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-value">$1.6K</span>
+            </td>
+            <td class="metric-cell">
+              <span class="fees-zero">$0</span>
+            </td>
+            <td class="metric-cell">
+              <span class="takerate" style="color:var(--text-muted)">—</span>
+            </td>
+            <td class="metric-cell">
+              <div class="sparkline">
+                <div class="spark-bar flat" style="height:30%"></div>
+                <div class="spark-bar flat" style="height:25%"></div>
+                <div class="spark-bar up" style="height:35%"></div>
+                <div class="spark-bar flat" style="height:33%"></div>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="stake-value" style="color:var(--text-muted)">—</span>
+              <div class="stake-opps">No SFDC opp</div>
+            </td>
+          </tr>
+
+          <!-- ══ ROW 4: Arizona Floral Exchange ══ -->
+          <tr id="tr-azf">
+            <td class="sticky-col sticky-col-1 toggle-cell">
+              <button class="toggle-btn">
+                <span class="toggle-chevron">&#9658;</span>
+              </button>
+            </td>
+            <td class="sticky-col sticky-col-2 account-cell">
+              <div class="account-name">Arizona Floral Exchange</div>
+              <div class="account-meta-row">
+                <span class="meta-badge badge-wholesaler">Wholesaler</span>
+                <span class="meta-badge badge-procurement">Procurement</span>
+                <span class="meta-badge badge-none">No digital</span>
+                <span class="meta-badge badge-purchasing">Purchasing</span>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="meta-badge badge-purchasing">Purchasing</span>
+            </td>
+            <td class="metric-cell">
+              <div class="gmv-wrap">
+                <span class="gmv-value">$8M</span>
+                <span class="provenance-tag prov-ora">ORA</span>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-value">$0</span>
+            </td>
+            <td class="metric-cell">
+              <span class="online-zero">0%</span>
+              <div class="metric-qualifier">all offline</div>
+            </td>
+            <td class="metric-cell">
+              <span style="color:var(--text-muted);font-size:10px;">—</span>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-value">$3.6M</span>
+            </td>
+            <td class="metric-cell">
+              <span class="fees-zero">$0</span>
+            </td>
+            <td class="metric-cell">
+              <span class="takerate" style="color:var(--text-muted)">—</span>
+            </td>
+            <td class="metric-cell">
+              <div class="sparkline">
+                <div class="spark-bar flat" style="height:50%"></div>
+                <div class="spark-bar flat" style="height:50%"></div>
+                <div class="spark-bar flat" style="height:50%"></div>
+                <div class="spark-bar flat" style="height:50%"></div>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="stake-value" style="color:var(--text-muted)">—</span>
+              <div class="stake-opps">No SFDC opp</div>
+            </td>
+          </tr>
+
+          <!-- ══ ROW 5: GQ Flowers ══ -->
+          <tr id="tr-gq">
+            <td class="sticky-col sticky-col-1 toggle-cell">
+              <button class="toggle-btn">
+                <span class="toggle-chevron">&#9658;</span>
+              </button>
+            </td>
+            <td class="sticky-col sticky-col-2 account-cell">
+              <div class="account-name">GQ Flowers</div>
+              <div class="account-meta-row">
+                <span class="meta-badge badge-grower">Grower</span>
+                <span class="meta-badge badge-esuite">eSuite</span>
+                <span class="meta-badge badge-eshop">eShop</span>
+                <span class="meta-badge badge-purchasing">Purchasing</span>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="meta-badge badge-purchasing">Purchasing</span>
+            </td>
+            <td class="metric-cell">
+              <div class="gmv-wrap">
+                <span class="gmv-value">$27K</span>
+                <span class="provenance-tag prov-piso">Piso</span>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-value">$27K</span>
+            </td>
+            <td class="metric-cell">
+              <span class="online-full">100%</span>
+              <div class="metric-qualifier">all digital</div>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-delta">▲12.0%</span>
+            </td>
+            <td class="metric-cell">
+              <span style="color:var(--text-muted)">—</span>
+            </td>
+            <td class="metric-cell">
+              <span class="fees-zero">$0</span>
+            </td>
+            <td class="metric-cell">
+              <span class="takerate" style="color:var(--text-muted)">—</span>
+            </td>
+            <td class="metric-cell">
+              <div class="sparkline">
+                <div class="spark-bar up" style="height:40%"></div>
+                <div class="spark-bar up" style="height:60%"></div>
+                <div class="spark-bar up" style="height:80%"></div>
+                <div class="spark-bar up" style="height:100%"></div>
+              </div>
+            </td>
+            <td class="metric-cell">
+              <span class="stake-value" style="color:var(--text-muted)">—</span>
+              <div class="stake-opps">No SFDC opp</div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="load-more-wrap">
+      <button class="load-more-btn">Load more accounts (425 remaining)</button>
+    </div>
+
+    <div class="note-strip">
+      Mockup data — 5 fictional accounts shown. GMV provenance: Medido = measured via Koronet data, ORA = Oracle estimate, Piso = network floor (minimum observed). $ at Stake = SFDC open opps only, no modeled ARR.
+    </div>
+
+  </div><!-- /panel-portfolio -->
+
+  <!-- ══ TAB: Procurement Behavior ══ -->
+  <div class="tab-panel" id="panel-procurement">
+
+    <div class="section-label">46 Procurement accounts · 2x2 by purchasing frequency vs catalog depth</div>
+
+    <!-- Axis labels above quadrant -->
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; padding:0 2px;">
+      <div style="font-size:10px; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;">
+        &#8592; Low Catalog Depth
+      </div>
+      <div style="font-size:11px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px; text-align:center;">
+        Catalog Depth (SKUs listed)
+      </div>
+      <div style="font-size:10px; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;">
+        High Catalog Depth &#8594;
+      </div>
+    </div>
+
+    <div style="display:flex; gap:12px; align-items:flex-start;">
+
+      <!-- Y-axis label -->
+      <div style="display:flex; align-items:center; writing-mode:vertical-rl; transform:rotate(180deg); font-size:10px; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; white-space:nowrap; padding:8px 0;">
+        Purchasing Frequency &#8595; Low · High &#8593;
+      </div>
+
+      <div style="flex:1;">
+        <div class="quadrant-container">
+
+          <!-- Q A: High Frequency, High Depth (top-left) -->
+          <div class="quadrant quadrant-A">
+            <div class="quadrant-label q-label-A">
+              <span class="q-badge q-badge-A">A</span>
+              Champions
+            </div>
+            <div class="quadrant-desc">High frequency · Deep catalog · Full platform users</div>
+            <div class="account-dot">
+              <div class="dot-circle dot-green"></div>
+              Fresca Farms — 53% digital, $65M
+            </div>
+            <div class="account-dot">
+              <div class="dot-circle dot-green"></div>
+              Pacific Coast Floral — 41% digital, $38M
+            </div>
+            <div class="account-dot">
+              <div class="dot-circle dot-green"></div>
+              Miami Flowers — 38% digital, $22M
+            </div>
+            <div style="font-size:10px; color:var(--text-muted); margin-top:8px; font-style:italic;">+8 more accounts</div>
+          </div>
+
+          <!-- Q B: High Frequency, Low Depth (top-right in 2x2 grid — col 2, row 1) -->
+          <div class="quadrant quadrant-B">
+            <div class="quadrant-label q-label-B">
+              <span class="q-badge q-badge-B">B</span>
+              Repeat Buyers, Shallow Catalog
+            </div>
+            <div class="quadrant-desc">Buys often but doesn't list — procurement tool only</div>
+            <div class="account-dot">
+              <div class="dot-circle dot-amber"></div>
+              Arizona Floral Exchange — 0% digital, $8M
+            </div>
+            <div class="account-dot">
+              <div class="dot-circle dot-amber"></div>
+              Rio Grande Wholesale — 0% digital, $5M
+            </div>
+            <div style="font-size:10px; color:var(--text-muted); margin-top:8px; font-style:italic;">+12 more accounts</div>
+          </div>
+
+          <!-- Q C: Low Frequency, High Depth (bottom-left) -->
+          <div class="quadrant quadrant-C">
+            <div class="quadrant-label q-label-C">
+              <span class="q-badge q-badge-C">C</span>
+              Dormant Listers
+            </div>
+            <div class="quadrant-desc">Listed catalog but barely buying — activation risk</div>
+            <div class="account-dot">
+              <div class="dot-circle dot-red"></div>
+              Blue Ridge Flowers — 12% digital, $2M
+            </div>
+            <div class="account-dot">
+              <div class="dot-circle dot-red"></div>
+              Desert Blooms WS — 8% digital, $1.4M
+            </div>
+            <div style="font-size:10px; color:var(--text-muted); margin-top:8px; font-style:italic;">+7 more accounts</div>
+          </div>
+
+          <!-- Q D: Low Frequency, Low Depth (bottom-right) -->
+          <div class="quadrant quadrant-D">
+            <div class="quadrant-label q-label-D">
+              <span class="q-badge q-badge-D">D</span>
+              At Risk / New
+            </div>
+            <div class="quadrant-desc">Low engagement on both dimensions — churn or new</div>
+            <div class="account-dot">
+              <div class="dot-circle dot-blue"></div>
+              Price's Floral WS — 2.2% digital, onboarding
+            </div>
+            <div class="account-dot">
+              <div class="dot-circle dot-blue"></div>
+              Sunrise Wholesale — 0% digital, new impl.
+            </div>
+            <div style="font-size:10px; color:var(--text-muted); margin-top:8px; font-style:italic;">+14 more accounts</div>
+          </div>
+
+        </div><!-- /quadrant-container -->
+
+        <div class="note-strip">
+          Mockup visualization. X-axis = SKU catalog depth (# active products listed). Y-axis = procurement frequency (orders/month). Each dot = 1 account. Quadrant assignment = live, not static — will update with data refresh.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /panel-procurement -->
+
+  <!-- ══ TAB: Definitions ══ -->
+  <div class="tab-panel" id="panel-definitions">
+    <div class="definitions-panel">
+      <h2>Definitions</h2>
+      <p>Coming soon — metric definitions, data provenance guide, and methodology reference will live here.</p>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<script>
+  // Tab switching — pure static, no data logic
+  function showTab(name) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + name).classList.add('active');
+    document.getElementById('tab-' + name).classList.add('active');
+  }
+
+  // Toggle expand row (visual only)
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      this.classList.toggle('open');
+      const row = this.closest('tr');
+      const nextRow = row.nextElementSibling;
+      if (nextRow && nextRow.classList.contains('expanded-row')) {
+        const isOpen = this.classList.contains('open');
+        nextRow.style.display = isOpen ? '' : 'none';
+        row.classList.toggle('row-expanded', isOpen);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
