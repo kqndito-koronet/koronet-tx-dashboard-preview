@@ -4181,10 +4181,20 @@ function populateTierMatrix() {
       + '<div style="font-size:9px">' + sLabel + ' · ' + bLabel + '</div></td>';
   }
 
-  // Update description with actual count
+  // Count how many actually land in a band (have GMV > 0)
+  var wsInMatrix = 0;
+  var wsNoGmv = [];
+  ws.forEach(function(ev) {
+    var gmv = ev.potential && ev.potential.gmv_reference ? (ev.potential.gmv_reference.value || 0) : 0;
+    if (gmv > 0) wsInMatrix++;
+    else wsNoGmv.push(ev._company_name);
+  });
+
   var descEl = document.getElementById('matrix-description');
   if (descEl) {
-    descEl.textContent = ws.length + ' client wholesalers with known product tier. %S = online sell / Est GMV (sell penetration). %B = online buy / Est Buy GMV (buy penetration). Procurement can\u2019t sell (\u2014%S).';
+    var desc = wsInMatrix + ' client wholesalers in matrix. %S = online sell / Est GMV. %B = online buy / Est Buy GMV. Procurement can\u2019t sell (\u2014%S).';
+    if (wsNoGmv.length > 0) desc += ' ' + wsNoGmv.length + ' excluded (no GMV): ' + wsNoGmv.join(', ') + '.';
+    descEl.textContent = desc;
   }
 
   var tbody = document.getElementById('tier-matrix-body');
