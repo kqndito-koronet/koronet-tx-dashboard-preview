@@ -31,7 +31,9 @@
     "potential_tier_added": true,
     "engagement_status_computed": true,
     "buy_digital_pct_computed": true,
-    "removed_dc_flowers_komet_sales": true
+    "removed_dc_flowers_komet_sales": true,
+    "archetypes_mapped": 153,
+    "archetypes_source": "koronet-network/ux-research-hub/public/companies.js"
   },
   "accounts": [
     {
@@ -53,7 +55,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "470794",
@@ -116,7 +123,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Flagship",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.5
+      "buy_digital_pct": 0.5,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0037
     },
     {
       "company_id": "453081",
@@ -263,7 +275,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0014
     },
     {
       "company_id": "672147",
@@ -305,7 +322,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 1.3
+      "buy_digital_pct": 1.3,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0357
     },
     {
       "company_id": "665296",
@@ -326,7 +348,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Dormant",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "796715",
@@ -368,7 +395,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 71875.9475696,
+      "kp_total_orders": 411,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "624737",
@@ -452,7 +484,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 92083.1247249,
+      "kp_total_orders": 623,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "798243",
@@ -515,7 +552,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Flagship",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 2.4
+      "buy_digital_pct": 2.4,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 30766.4381776,
+      "kp_total_orders": 163,
+      "kp_active_buyer_pct": 0.002
     },
     {
       "company_id": "743681",
@@ -683,7 +725,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 86.8044,
+      "kp_total_orders": 2,
+      "kp_active_buyer_pct": 0.0052
     },
     {
       "company_id": "477128",
@@ -704,7 +751,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 71.0
+      "buy_digital_pct": 71.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 28327.9438782,
+      "kp_total_orders": 284,
+      "kp_active_buyer_pct": 0.0213
     },
     {
       "company_id": "507479",
@@ -725,7 +777,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 217023.9779462,
+      "kp_total_orders": 1639,
+      "kp_active_buyer_pct": 0.0938
     },
     {
       "company_id": "592806",
@@ -788,7 +845,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Onboarding",
-      "buy_digital_pct": null
+      "buy_digital_pct": null,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "652251",
@@ -809,7 +871,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Activate",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 149141.6103536,
+      "kp_total_orders": 1386,
+      "kp_active_buyer_pct": 0.0228
     },
     {
       "company_id": "654374",
@@ -851,7 +918,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 38053.0793502,
+      "kp_total_orders": 328,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "623491",
@@ -872,7 +944,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Activate",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 99.9
+      "buy_digital_pct": 99.9,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 19562.2215162,
+      "kp_total_orders": 153,
+      "kp_active_buyer_pct": 0.0025
     },
     {
       "company_id": "17789",
@@ -956,7 +1033,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Flagship",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 3.6
+      "buy_digital_pct": 3.6,
+      "archetype": "B1",
+      "archetype_name": "Enterprise · top-volume",
+      "kp_purchase_amount": 1509964.3551423,
+      "kp_total_orders": 12005,
+      "kp_active_buyer_pct": 0.0245
     },
     {
       "company_id": "321023",
@@ -1061,7 +1143,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 274750.9002565,
+      "kp_total_orders": 1603,
+      "kp_active_buyer_pct": 0.0137
     },
     {
       "company_id": "2516",
@@ -1124,7 +1211,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "At Risk",
-      "buy_digital_pct": 0.3
+      "buy_digital_pct": 0.3,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "498992",
@@ -1166,7 +1258,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 90468.452171,
+      "kp_total_orders": 505,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "624816",
@@ -1187,7 +1284,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Activate",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "731381",
@@ -1208,7 +1310,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 77407.546288,
+      "kp_total_orders": 464,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "651959",
@@ -1229,7 +1336,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 56.8
+      "buy_digital_pct": 56.8,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 50218.8547563,
+      "kp_total_orders": 387,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "617226",
@@ -1271,7 +1383,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 133565.9402739,
+      "kp_total_orders": 1001,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "182870",
@@ -1334,7 +1451,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.1111
     },
     {
       "company_id": "341499",
@@ -1376,7 +1498,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 141646.1490808,
+      "kp_total_orders": 731,
+      "kp_active_buyer_pct": 0.1429
     },
     {
       "company_id": "159761",
@@ -1397,7 +1524,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Activate",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 99.4
+      "buy_digital_pct": 99.4,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "650767",
@@ -1418,7 +1550,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 97.6
+      "buy_digital_pct": 97.6,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 120254.4449717,
+      "kp_total_orders": 1175,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "453771",
@@ -1586,7 +1723,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Activate",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 2085.08179,
+      "kp_total_orders": 16,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "825773",
@@ -1628,7 +1770,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Dormant",
-      "buy_digital_pct": 99.9
+      "buy_digital_pct": 99.9,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 497292.9954128,
+      "kp_total_orders": 3143,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "200279",
@@ -1670,7 +1817,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 98.0
+      "buy_digital_pct": 98.0,
+      "archetype": "B1",
+      "archetype_name": "Enterprise · top-volume",
+      "kp_purchase_amount": 1146009.2779043,
+      "kp_total_orders": 3283,
+      "kp_active_buyer_pct": 0.2857
     },
     {
       "company_id": "672205",
@@ -1712,7 +1864,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Dormant",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.6667
     },
     {
       "company_id": "819114",
@@ -1775,7 +1932,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0066
     },
     {
       "company_id": "640460",
@@ -1796,7 +1958,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 23.1
+      "buy_digital_pct": 23.1,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 156784.7048221,
+      "kp_total_orders": 952,
+      "kp_active_buyer_pct": 0.3333
     },
     {
       "company_id": "571220",
@@ -1859,7 +2026,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 13531.73035,
+      "kp_total_orders": 94,
+      "kp_active_buyer_pct": 0.2857
     },
     {
       "company_id": "378264",
@@ -2048,7 +2220,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 88.9
+      "buy_digital_pct": 88.9,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 47708.829146,
+      "kp_total_orders": 297,
+      "kp_active_buyer_pct": 0.0252
     },
     {
       "company_id": "395159",
@@ -2090,7 +2267,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Dormant",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 224.45,
+      "kp_total_orders": 2,
+      "kp_active_buyer_pct": 0.5
     },
     {
       "company_id": "811196",
@@ -2153,7 +2335,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 94.5
+      "buy_digital_pct": 94.5,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 58340.2207125,
+      "kp_total_orders": 223,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "813857",
@@ -2216,7 +2403,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 665.01075,
+      "kp_total_orders": 7,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "804758",
@@ -2237,7 +2429,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0714
     },
     {
       "company_id": "577566",
@@ -2279,7 +2476,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "At Risk",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 204.0,
+      "kp_total_orders": 2,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "670450",
@@ -2300,7 +2502,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 87.6
+      "buy_digital_pct": 87.6,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 6772.0332219,
+      "kp_total_orders": 46,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "401680",
@@ -2384,7 +2591,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Onboarding",
-      "buy_digital_pct": null
+      "buy_digital_pct": null,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "664540",
@@ -2405,7 +2617,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 96.5
+      "buy_digital_pct": 96.5,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 7935.234718,
+      "kp_total_orders": 71,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "762941",
@@ -2447,7 +2664,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "153536",
@@ -2552,7 +2774,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 10.4
+      "buy_digital_pct": 10.4,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "541854",
@@ -2573,7 +2800,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 3823.45025,
+      "kp_total_orders": 26,
+      "kp_active_buyer_pct": 0.0294
     },
     {
       "company_id": "700340",
@@ -2594,7 +2826,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 6907.0810295,
+      "kp_total_orders": 28,
+      "kp_active_buyer_pct": 0.0159
     },
     {
       "company_id": "676090",
@@ -2636,7 +2873,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 164615.2940138,
+      "kp_total_orders": 980,
+      "kp_active_buyer_pct": 0.033
     },
     {
       "company_id": "675361",
@@ -2657,7 +2899,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 96.3
+      "buy_digital_pct": 96.3,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "769099",
@@ -2699,7 +2946,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Flagship",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.3
+      "buy_digital_pct": 0.3,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 577.4,
+      "kp_total_orders": 4,
+      "kp_active_buyer_pct": 0.0019
     },
     {
       "company_id": "319143",
@@ -2762,7 +3014,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 159947.3115977,
+      "kp_total_orders": 906,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "139851",
@@ -2825,7 +3082,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 1908.880397,
+      "kp_total_orders": 15,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "561518",
@@ -3035,7 +3297,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Activate",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 1.0
+      "buy_digital_pct": 1.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 33.6,
+      "kp_total_orders": 1,
+      "kp_active_buyer_pct": 0.0045
     },
     {
       "company_id": "762172",
@@ -3056,7 +3323,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 99.2
+      "buy_digital_pct": 99.2,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "756140",
@@ -3119,7 +3391,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 417481.7109298,
+      "kp_total_orders": 2470,
+      "kp_active_buyer_pct": 0.0354
     },
     {
       "company_id": "665316",
@@ -3140,7 +3417,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "At Risk",
-      "buy_digital_pct": 0.4
+      "buy_digital_pct": 0.4,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "492201",
@@ -3182,7 +3464,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0016
     },
     {
       "company_id": "103112",
@@ -3203,7 +3490,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Flagship",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "640251",
@@ -3245,7 +3537,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Dormant",
-      "buy_digital_pct": 99.0
+      "buy_digital_pct": 99.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 349718.8565769,
+      "kp_total_orders": 2737,
+      "kp_active_buyer_pct": 0.913
     },
     {
       "company_id": "600370",
@@ -3266,7 +3563,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "603611",
@@ -3392,7 +3694,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 43925.7766443,
+      "kp_total_orders": 468,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "484037",
@@ -3413,7 +3720,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0036
     },
     {
       "company_id": "529514",
@@ -3623,7 +3935,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.4
+      "buy_digital_pct": 0.4,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 1253.6,
+      "kp_total_orders": 2,
+      "kp_active_buyer_pct": 0.0169
     },
     {
       "company_id": "713789",
@@ -3644,7 +3961,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 93.7
+      "buy_digital_pct": 93.7,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 124951.3594288,
+      "kp_total_orders": 798,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "503075",
@@ -3686,7 +4008,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 247891.3043194,
+      "kp_total_orders": 1429,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "665358",
@@ -3707,7 +4034,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Activate",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 99.1
+      "buy_digital_pct": 99.1,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 35244.6805928,
+      "kp_total_orders": 226,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "664341",
@@ -3728,7 +4060,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 407.502,
+      "kp_total_orders": 4,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "764867",
@@ -3770,7 +4107,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Dormant",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 47737.3988172,
+      "kp_total_orders": 461,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "39124",
@@ -3833,7 +4175,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 6258.4942278,
+      "kp_total_orders": 66,
+      "kp_active_buyer_pct": 0.0179
     },
     {
       "company_id": "808527",
@@ -3875,7 +4222,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 19.1
+      "buy_digital_pct": 19.1,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 1801.18,
+      "kp_total_orders": 12,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "572900",
@@ -4064,7 +4416,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 99.9
+      "buy_digital_pct": 99.9,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 143614.30778,
+      "kp_total_orders": 732,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "651200",
@@ -4085,7 +4442,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 298989.2739002,
+      "kp_total_orders": 1320,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "800562",
@@ -4169,7 +4531,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "At Risk",
-      "buy_digital_pct": 28.2
+      "buy_digital_pct": 28.2,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "44150",
@@ -4190,7 +4557,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Flagship",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 23.8
+      "buy_digital_pct": 23.8,
+      "archetype": "B1",
+      "archetype_name": "Enterprise · top-volume",
+      "kp_purchase_amount": 3847810.841742,
+      "kp_total_orders": 23540,
+      "kp_active_buyer_pct": 0.0024
     },
     {
       "company_id": "796779",
@@ -4295,7 +4667,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 160218.7047673,
+      "kp_total_orders": 1105,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "654758",
@@ -4316,7 +4693,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 66.7
+      "buy_digital_pct": 66.7,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 1737.21054,
+      "kp_total_orders": 10,
+      "kp_active_buyer_pct": 0.6667
     },
     {
       "company_id": "814810",
@@ -4358,7 +4740,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Activate",
       "engagement_status": "Dormant",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 1229.898,
+      "kp_total_orders": 8,
+      "kp_active_buyer_pct": 0.0206
     },
     {
       "company_id": "189419",
@@ -4400,7 +4787,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0288
     },
     {
       "company_id": "35266",
@@ -4442,7 +4834,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 805.872383,
+      "kp_total_orders": 5,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "813947",
@@ -4505,7 +4902,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "152602",
@@ -4547,7 +4949,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 104074.127264,
+      "kp_total_orders": 720,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "651574",
@@ -4568,7 +4975,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 229962.6541864,
+      "kp_total_orders": 1992,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "619847",
@@ -4631,7 +5043,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 98.3
+      "buy_digital_pct": 98.3,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 70701.6763065,
+      "kp_total_orders": 424,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "670554",
@@ -4652,7 +5069,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "At Risk",
-      "buy_digital_pct": 24.2
+      "buy_digital_pct": 24.2,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 104.25,
+      "kp_total_orders": 1,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "821576",
@@ -4757,7 +5179,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 32487.1784416,
+      "kp_total_orders": 183,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "610510",
@@ -4862,7 +5289,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Activate",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 18.8
+      "buy_digital_pct": 18.8,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 61810.6657129,
+      "kp_total_orders": 508,
+      "kp_active_buyer_pct": 0.0097
     },
     {
       "company_id": "799014",
@@ -4904,7 +5336,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Flagship",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.9
+      "buy_digital_pct": 0.9,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0014
     },
     {
       "company_id": "257477",
@@ -4946,7 +5383,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "At Risk",
-      "buy_digital_pct": 44.2
+      "buy_digital_pct": 44.2,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 90.4,
+      "kp_total_orders": 1,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "751391",
@@ -4988,7 +5430,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 1.2
+      "buy_digital_pct": 1.2,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0022
     },
     {
       "company_id": "655985",
@@ -5009,7 +5456,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Dormant",
-      "buy_digital_pct": 93.9
+      "buy_digital_pct": 93.9,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 29781.6088219,
+      "kp_total_orders": 191,
+      "kp_active_buyer_pct": 0.5
     },
     {
       "company_id": "498769",
@@ -5030,7 +5482,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Flagship",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.2
+      "buy_digital_pct": 0.2,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0034
     },
     {
       "company_id": "394783",
@@ -5093,7 +5550,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 112506.974284,
+      "kp_total_orders": 485,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "375054",
@@ -5135,7 +5597,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 19627.2575451,
+      "kp_total_orders": 138,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "664255",
@@ -5156,7 +5623,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 582.837,
+      "kp_total_orders": 6,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "649745",
@@ -5387,7 +5859,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0172
     },
     {
       "company_id": "591665",
@@ -5450,7 +5927,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 16.4
+      "buy_digital_pct": 16.4,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 18837.372044,
+      "kp_total_orders": 84,
+      "kp_active_buyer_pct": 0.2143
     },
     {
       "company_id": "640977",
@@ -5492,7 +5974,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 461.954,
+      "kp_total_orders": 7,
+      "kp_active_buyer_pct": 0.04
     },
     {
       "company_id": "743217",
@@ -5576,7 +6063,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.1
+      "buy_digital_pct": 0.1,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 2682.4927895,
+      "kp_total_orders": 25,
+      "kp_active_buyer_pct": 0.0119
     },
     {
       "company_id": "14422",
@@ -5618,7 +6110,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 39904.36328,
+      "kp_total_orders": 195,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "665443",
@@ -5639,7 +6136,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 67582.40962,
+      "kp_total_orders": 206,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "664944",
@@ -5660,7 +6162,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 61345.0637716,
+      "kp_total_orders": 319,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "654661",
@@ -5681,7 +6188,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 33127.74774,
+      "kp_total_orders": 132,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "802590",
@@ -5723,7 +6235,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 375636.2986621,
+      "kp_total_orders": 2498,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "399890",
@@ -5828,7 +6345,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 81.6
+      "buy_digital_pct": 81.6,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 16665.075234,
+      "kp_total_orders": 110,
+      "kp_active_buyer_pct": 0.0036
     },
     {
       "company_id": "44225",
@@ -5849,7 +6371,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.8
+      "buy_digital_pct": 0.8,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0031
     },
     {
       "company_id": "378242",
@@ -5933,7 +6460,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 57.1
+      "buy_digital_pct": 57.1,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 50433.27083,
+      "kp_total_orders": 315,
+      "kp_active_buyer_pct": 0.5
     },
     {
       "company_id": "33023",
@@ -5954,7 +6486,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.4
+      "buy_digital_pct": 0.4,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 9560.61979,
+      "kp_total_orders": 57,
+      "kp_active_buyer_pct": 0.0352
     },
     {
       "company_id": "734521",
@@ -6017,7 +6554,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0011
     },
     {
       "company_id": "812278",
@@ -6080,7 +6622,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 263619.4060292,
+      "kp_total_orders": 1583,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "733250",
@@ -6164,7 +6711,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Activate",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 16.0
+      "buy_digital_pct": 16.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 55175.5990852,
+      "kp_total_orders": 219,
+      "kp_active_buyer_pct": 0.0248
     },
     {
       "company_id": "672799",
@@ -6269,7 +6821,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 9.8
+      "buy_digital_pct": 9.8,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 4433.3142,
+      "kp_total_orders": 17,
+      "kp_active_buyer_pct": 0.1429
     },
     {
       "company_id": "327132",
@@ -6416,7 +6973,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0099
     },
     {
       "company_id": "828336",
@@ -6458,7 +7020,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 4479.1858,
+      "kp_total_orders": 25,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "498842",
@@ -6521,7 +7088,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Dormant",
-      "buy_digital_pct": 68.7
+      "buy_digital_pct": 68.7,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 22745.9405832,
+      "kp_total_orders": 205,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "809201",
@@ -6584,7 +7156,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 88113.9870948,
+      "kp_total_orders": 756,
+      "kp_active_buyer_pct": 0.0192
     },
     {
       "company_id": "585613",
@@ -6626,7 +7203,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 72.3
+      "buy_digital_pct": 72.3,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 10811.7086992,
+      "kp_total_orders": 48,
+      "kp_active_buyer_pct": 0.0172
     },
     {
       "company_id": "488495",
@@ -6647,7 +7229,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0055
     },
     {
       "company_id": "649935",
@@ -6689,7 +7276,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 9.5
+      "buy_digital_pct": 9.5,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 1596.890796,
+      "kp_total_orders": 14,
+      "kp_active_buyer_pct": 0.0288
     },
     {
       "company_id": "38477",
@@ -6731,7 +7323,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 327284.4287341,
+      "kp_total_orders": 1950,
+      "kp_active_buyer_pct": 0.0435
     },
     {
       "company_id": "475168",
@@ -6773,7 +7370,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Activate",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "449344",
@@ -6794,7 +7396,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 99.9
+      "buy_digital_pct": 99.9,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 619483.9144488,
+      "kp_total_orders": 3842,
+      "kp_active_buyer_pct": 0.0739
     },
     {
       "company_id": "665425",
@@ -6815,7 +7422,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "At Risk",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 268.0,
+      "kp_total_orders": 3,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "655382",
@@ -6836,7 +7448,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 99.2
+      "buy_digital_pct": 99.2,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 135234.2543895,
+      "kp_total_orders": 1040,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "734327",
@@ -6878,7 +7495,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0013
     },
     {
       "company_id": "742939",
@@ -6962,7 +7584,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 157394.4282549,
+      "kp_total_orders": 955,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "653842",
@@ -6983,7 +7610,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 199658.3470578,
+      "kp_total_orders": 1524,
+      "kp_active_buyer_pct": 0.05
     },
     {
       "company_id": "731457",
@@ -7004,7 +7636,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Dormant",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "476679",
@@ -7088,7 +7725,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 15.6
+      "buy_digital_pct": 15.6,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 11061.6993944,
+      "kp_total_orders": 81,
+      "kp_active_buyer_pct": 0.0042
     },
     {
       "company_id": "665232",
@@ -7109,7 +7751,12 @@
       "in_christine_sheet": false,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 95.1
+      "buy_digital_pct": 95.1,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 26137.1269479,
+      "kp_total_orders": 206,
+      "kp_active_buyer_pct": 0.0
     },
     {
       "company_id": "669090",
@@ -7130,7 +7777,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 4863.64607,
+      "kp_total_orders": 38,
+      "kp_active_buyer_pct": 0.0435
     },
     {
       "company_id": "315007",
@@ -7193,7 +7845,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 92.4
+      "buy_digital_pct": 92.4,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 76014.8432752,
+      "kp_total_orders": 261,
+      "kp_active_buyer_pct": 0.5
     },
     {
       "company_id": "665261",
@@ -7214,7 +7871,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 159577.7811352,
+      "kp_total_orders": 701,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "664648",
@@ -7235,7 +7897,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 161922.5712458,
+      "kp_total_orders": 741,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "632203",
@@ -7256,7 +7923,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 86.3
+      "buy_digital_pct": 86.3,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 59.232,
+      "kp_total_orders": 1,
+      "kp_active_buyer_pct": 0.0156
     },
     {
       "company_id": "537092",
@@ -7277,7 +7949,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0216
     },
     {
       "company_id": "579932",
@@ -7340,7 +8017,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 84.0
+      "buy_digital_pct": 84.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 56247.982124,
+      "kp_total_orders": 241,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "767361",
@@ -7382,7 +8064,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 99.0
+      "buy_digital_pct": 99.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 131937.1954769,
+      "kp_total_orders": 567,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "808064",
@@ -7424,7 +8111,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 83.7
+      "buy_digital_pct": 83.7,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 79066.5004874,
+      "kp_total_orders": 575,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "770796",
@@ -7508,7 +8200,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 159608.2315223,
+      "kp_total_orders": 1212,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "740734",
@@ -7529,7 +8226,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 22184.0641022,
+      "kp_total_orders": 64,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "740696",
@@ -7550,7 +8252,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 140223.6842915,
+      "kp_total_orders": 831,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "6554",
@@ -7592,7 +8299,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Onboarding",
-      "buy_digital_pct": null
+      "buy_digital_pct": null,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "534902",
@@ -7634,7 +8346,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Activate",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 1.1
+      "buy_digital_pct": 1.1,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 5174.9157027,
+      "kp_total_orders": 39,
+      "kp_active_buyer_pct": 0.0132
     },
     {
       "company_id": "650815",
@@ -7655,7 +8372,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Dormant",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 92031.8535287,
+      "kp_total_orders": 599,
+      "kp_active_buyer_pct": 0.375
     },
     {
       "company_id": "735220",
@@ -7676,7 +8398,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.4
+      "buy_digital_pct": 0.4,
+      "archetype": "B4",
+      "archetype_name": "Occasional · low-volume",
+      "kp_purchase_amount": 7492.28135,
+      "kp_total_orders": 63,
+      "kp_active_buyer_pct": 0.1333
     },
     {
       "company_id": "651344",
@@ -7718,7 +8445,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Seed",
       "engagement_status": "At Risk",
-      "buy_digital_pct": 51.0
+      "buy_digital_pct": 51.0,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 136262.9308753,
+      "kp_total_orders": 785,
+      "kp_active_buyer_pct": 0.5
     },
     {
       "company_id": "400013",
@@ -7760,7 +8492,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 99.5
+      "buy_digital_pct": 99.5,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 42606.1367557,
+      "kp_total_orders": 500,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "640762",
@@ -7781,7 +8518,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Dormant",
-      "buy_digital_pct": 97.4
+      "buy_digital_pct": 97.4,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 59101.4139364,
+      "kp_total_orders": 302,
+      "kp_active_buyer_pct": 0.5
     },
     {
       "company_id": "642311",
@@ -7802,7 +8544,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0357
     },
     {
       "company_id": "726631",
@@ -7823,7 +8570,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Unmeasured",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 133631.7108543,
+      "kp_total_orders": 533,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "664820",
@@ -7844,7 +8596,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 100.0
+      "buy_digital_pct": 100.0,
+      "archetype": "B2",
+      "archetype_name": "Scheduled · high-volume",
+      "kp_purchase_amount": 19991.942646,
+      "kp_total_orders": 154,
+      "kp_active_buyer_pct": 1.0
     },
     {
       "company_id": "743648",
@@ -7865,7 +8622,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Growth Engine",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 15.5
+      "buy_digital_pct": 15.5,
+      "archetype": "B3",
+      "archetype_name": "Steady · mid-volume",
+      "kp_purchase_amount": 51770.91417,
+      "kp_total_orders": 172,
+      "kp_active_buyer_pct": 0.0172
     },
     {
       "company_id": "533116",
@@ -7886,7 +8648,12 @@
       "in_christine_sheet": true,
       "potential_tier": "Activate",
       "engagement_status": "Purchasing",
-      "buy_digital_pct": 0.0
+      "buy_digital_pct": 0.0,
+      "archetype": "Never purchased",
+      "archetype_name": "Never purchased",
+      "kp_purchase_amount": 0.0,
+      "kp_total_orders": 0,
+      "kp_active_buyer_pct": 0.0024
     },
     {
       "company_id": "77787",
