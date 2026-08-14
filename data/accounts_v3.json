@@ -420,7 +420,8 @@
       "buy_digital_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "664719",
@@ -497,7 +498,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "521854",
@@ -574,7 +576,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "643672",
@@ -651,7 +654,8 @@
       "buy_digital_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "20769",
@@ -699,7 +703,8 @@
       "buy_digital_pct": 100.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "295299",
@@ -928,7 +933,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "651277",
@@ -957,7 +963,8 @@
       "kp_active_buyer_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "652251",
@@ -1116,7 +1123,8 @@
       "buy_digital_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "509751",
@@ -1952,7 +1960,8 @@
       "kp_active_buyer_pct": 1.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "825773",
@@ -2061,7 +2070,8 @@
       "kp_active_buyer_pct": 0.2857,
       "priority_level": "TA",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "672205",
@@ -2139,9 +2149,9 @@
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
       "pmt_lead": null,
-      "pmt_status": null,
+      "pmt_status": "Go-Live and Growth (inferred)",
       "pmt_health": null,
-      "has_active_pmt": false
+      "has_active_pmt": true
     },
     {
       "company_id": "734128",
@@ -2300,7 +2310,8 @@
       "kp_active_buyer_pct": 0.2857,
       "priority_level": "TA",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "378264",
@@ -2468,7 +2479,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "672728",
@@ -2705,7 +2717,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "652793",
@@ -2763,7 +2776,8 @@
       "kp_active_buyer_pct": 0.0714,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "577566",
@@ -2949,7 +2963,8 @@
       "kp_active_buyer_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "664540",
@@ -3002,7 +3017,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "612783",
@@ -3156,7 +3172,8 @@
       "kp_active_buyer_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "541854",
@@ -3320,7 +3337,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "601933",
@@ -3349,7 +3367,8 @@
       "kp_active_buyer_pct": 0.0019,
       "priority_level": "TA",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "319143",
@@ -3679,7 +3698,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "296458",
@@ -4378,7 +4398,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "166363",
@@ -4425,7 +4446,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "194206",
@@ -4772,7 +4794,8 @@
       "buy_digital_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "806417",
@@ -4801,7 +4824,8 @@
       "kp_active_buyer_pct": 1.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "572900",
@@ -5081,7 +5105,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "412951",
@@ -5211,7 +5236,8 @@
       "buy_digital_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "25120",
@@ -5259,7 +5285,8 @@
       "buy_digital_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "575819",
@@ -5341,7 +5368,8 @@
       "kp_active_buyer_pct": 0.6667,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "814810",
@@ -5527,7 +5555,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "476379",
@@ -5944,7 +5973,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "588171",
@@ -6048,7 +6078,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "103078",
@@ -6547,7 +6578,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "672781",
@@ -6643,7 +6675,8 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "398856",
@@ -6749,7 +6782,8 @@
       "kp_active_buyer_pct": 0.2143,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "640977",
@@ -7069,7 +7103,8 @@
       "buy_digital_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "675363",
@@ -7488,7 +7523,8 @@
       "engagement_status": "Purchasing",
       "buy_digital_pct": null,
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "554905",
@@ -7953,7 +7989,8 @@
       "buy_digital_pct": 0.0,
       "priority_level": "IMPL",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "670668",
@@ -8080,7 +8117,8 @@
       "buy_digital_pct": 0.0,
       "priority_level": "NEEDS_REVIEW",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "13982",
@@ -8580,7 +8618,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": 0.0,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "664054",
@@ -9111,7 +9150,8 @@
       "engagement_status": "Purchasing",
       "buy_digital_pct": 0.0,
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "664381",
@@ -9163,7 +9203,8 @@
       "engagement_status": "Purchasing",
       "buy_digital_pct": 0.0,
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "670675",
@@ -9215,7 +9256,8 @@
       "engagement_status": "Purchasing",
       "buy_digital_pct": 0.0,
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "635167",
@@ -9319,7 +9361,8 @@
       "kp_active_buyer_pct": 1.0,
       "priority_level": "WATCH",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "740696",
@@ -9399,7 +9442,8 @@
       "kp_total_orders": 0,
       "kp_active_buyer_pct": 1.0,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "534902",
@@ -9762,7 +9806,8 @@
       "kp_active_buyer_pct": 0.0172,
       "priority_level": "P1",
       "impl_stage_display": "Recently live (2026)",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Go-Live and Growth (inferred)"
     },
     {
       "company_id": "533116",
@@ -9836,7 +9881,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": "831754",
@@ -9859,7 +9905,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": null,
@@ -10020,7 +10067,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": null,
@@ -10043,7 +10091,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": null,
@@ -10066,7 +10115,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": null,
@@ -10089,7 +10139,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": null,
@@ -10112,7 +10163,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": null,
@@ -10135,7 +10187,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": null,
@@ -10158,7 +10211,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": null,
@@ -10181,7 +10235,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": null,
@@ -10204,7 +10259,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": null,
@@ -10227,7 +10283,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": null,
@@ -10250,7 +10307,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": null,
@@ -10273,7 +10331,8 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false
+      "has_active_pmt": true,
+      "pmt_status": "Pre-live (inferred)"
     },
     {
       "company_id": null,
