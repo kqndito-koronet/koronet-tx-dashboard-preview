@@ -1,0 +1,846 @@
+{
+  "_metadata": {
+    "generated": "2026-08-05 21:11",
+    "generated_by": "Rose (Data Agent)",
+    "source_files": [
+      "sell_domain_v2.json (434 companies)",
+      "buy_domain_v2.json (417 companies)",
+      "buyers_evidence_v2.json (397 companies)",
+      "vendors_evidence_v2.json (524 companies)",
+      "temporal_evidence_v2.json (sell_anticipation: 294 cos, variety_freshness: 214 cos)",
+      "account_universe_v1.json (756 companies, ct_id segmentation)"
+    ],
+    "methodology": "Percentiles computed on full population with data for each metric. YTD 2026 period used for sell/buy pcts. Weighted avg for sell_anticipation. Sum across freshness buckets for variety_count. Segments from account_universe_v1 ct_id field.",
+    "rules_applied": "R1 (ks_flag=TRUE inherited from source), R4 (sales<100k inherited), R5 (dedup inherited), R6 (sell-side vs buy-side online separated), R8 (semantic views), R9 (provenance), R12 (dump disclosed), R13 (channels.json), R16 (no customer_location_id), R17 (total_cost for BUY)",
+    "period": "YTD 2026 (Jan-Jul 2026 where available)",
+    "known_issues": [
+      "login_cvr and new_user_cvr are identical in buyers_evidence_v2.json -- source USER_STATS data does not distinguish existing vs new users. Treat as a single 'user_cvr' metric until source differentiates them.",
+      "331 companies in account_universe have empty ct_id ('') -- these are UNMATCHED accounts not yet classified. They appear in benchmarks under the '' segment key.",
+      "Hardgoods and Plants are nearly 100% offline (HG: 0.14% online, Plants: 0.21%). Benchmarks will show median=0 for online_pct in those categories."
+    ],
+    "segments": [
+      "",
+      "GRW",
+      "IMP_CORE",
+      "IMP_K2K",
+      "RET_PURE",
+      "RET_WHOLESALE_BEHAVIOR",
+      "UNKNOWN",
+      "WH_CORE",
+      "WH_ESUITE",
+      "WH_K2K",
+      "WH_PROC",
+      "WH_UNCLASSIFIED"
+    ]
+  },
+  "benchmarks": {
+    "1_online_sell_pct": {
+      "description": "% of sell GMV via online channels (eCommerce + K2K + API), YTD 2026",
+      "source": "sell_domain_v2.json",
+      "filter": "companies with sell_total YTD 2026 > 0",
+      "network": {
+        "n": 341,
+        "median": 28.58,
+        "p75": 100.0,
+        "p90": 100.0,
+        "best_account": "* Continental Farms",
+        "best_value": 100.0
+      },
+      "by_segment": {
+        "": {
+          "n": 39,
+          "median": 18.56,
+          "p75": 99.98,
+          "p90": 100.0,
+          "best_account": "Olimpo Flowers Finca",
+          "best_value": 100.0
+        },
+        "GRW": {
+          "n": 37,
+          "median": 76.15,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Akarana Farms - UIO",
+          "best_value": 100.0
+        },
+        "IMP_CORE": {
+          "n": 98,
+          "median": 5.22,
+          "p75": 18.47,
+          "p90": 34.16,
+          "best_account": "Hyperactive Farms Inc.",
+          "best_value": 100.0
+        },
+        "IMP_K2K": {
+          "n": 16,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "* Continental Farms",
+          "best_value": 100.0
+        },
+        "RET_PURE": {
+          "n": 6,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+          "best_value": 100.0
+        },
+        "RET_WHOLESALE_BEHAVIOR": {
+          "n": 1,
+          "median": 0.0,
+          "p75": 0.0,
+          "p90": 0.0,
+          "best_account": "Dr Delphinium",
+          "best_value": 0.0
+        },
+        "WH_CORE": {
+          "n": 57,
+          "median": 18.19,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "COWARD WHOLESALE",
+          "best_value": 100.0
+        },
+        "WH_ESUITE": {
+          "n": 3,
+          "median": 92.4,
+          "p75": 92.4,
+          "p90": 92.4,
+          "best_account": "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN",
+          "best_value": 100.0
+        },
+        "WH_K2K": {
+          "n": 28,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "A Florist First",
+          "best_value": 100.0
+        },
+        "WH_PROC": {
+          "n": 30,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "ALLIANCE FLORAL COMPANY. 6270",
+          "best_value": 100.0
+        },
+        "WH_UNCLASSIFIED": {
+          "n": 26,
+          "median": 8.82,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Allied Cut Flower",
+          "best_value": 100.0
+        }
+      }
+    },
+    "2_online_buy_pct": {
+      "description": "% of buy GMV via online channels (Procurement + K2K + Web), YTD 2026",
+      "source": "buy_domain_v2.json",
+      "filter": "companies with buy_total YTD 2026 > 0",
+      "network": {
+        "n": 320,
+        "median": 0.1,
+        "p75": 100.0,
+        "p90": 100.0,
+        "best_account": "ACA Flowers",
+        "best_value": 100.0
+      },
+      "by_segment": {
+        "": {
+          "n": 31,
+          "median": 0.0,
+          "p75": 0.0,
+          "p90": 95.57,
+          "best_account": "STRANGE`S FLORIST, INC.",
+          "best_value": 100.0
+        },
+        "GRW": {
+          "n": 24,
+          "median": 0.0,
+          "p75": 0.0,
+          "p90": 0.0,
+          "best_account": "Mellano Sales",
+          "best_value": 98.35
+        },
+        "IMP_CORE": {
+          "n": 92,
+          "median": 0.0,
+          "p75": 0.0,
+          "p90": 0.6,
+          "best_account": "ACA Flowers",
+          "best_value": 100.0
+        },
+        "IMP_K2K": {
+          "n": 9,
+          "median": 0.0,
+          "p75": 76.87,
+          "p90": 100.0,
+          "best_account": "Faguaflowers Intl LLC",
+          "best_value": 100.0
+        },
+        "RET_PURE": {
+          "n": 8,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+          "best_value": 100.0
+        },
+        "RET_WHOLESALE_BEHAVIOR": {
+          "n": 1,
+          "median": 24.28,
+          "p75": 24.28,
+          "p90": 24.28,
+          "best_account": "Dr Delphinium",
+          "best_value": 24.28
+        },
+        "WH_CORE": {
+          "n": 63,
+          "median": 18.49,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "COWARD WHOLESALE",
+          "best_value": 100.0
+        },
+        "WH_ESUITE": {
+          "n": 3,
+          "median": 86.21,
+          "p75": 86.21,
+          "p90": 86.21,
+          "best_account": "Floropolis",
+          "best_value": 98.73
+        },
+        "WH_K2K": {
+          "n": 29,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "American Agroproducts",
+          "best_value": 100.0
+        },
+        "WH_PROC": {
+          "n": 36,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "ALLIANCE FLORAL COMPANY. 6270",
+          "best_value": 100.0
+        },
+        "WH_UNCLASSIFIED": {
+          "n": 24,
+          "median": 51.42,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Allied Cut Flower",
+          "best_value": 100.0
+        }
+      }
+    },
+    "3_login_cvr": {
+      "description": "% of unique eCommerce users who made at least 1 purchase, YTD 2026",
+      "source": "buyers_evidence_v2.json \u2192 login_cvr",
+      "filter": "companies with unique_ecom_users > 0",
+      "network": {
+        "n": 373,
+        "median": 36.64,
+        "p75": 61.56,
+        "p90": 100.0,
+        "best_account": "CONNECTION FLOWERS SAS",
+        "best_value": 100.0
+      },
+      "by_segment": {
+        "": {
+          "n": 48,
+          "median": 17.45,
+          "p75": 53.85,
+          "p90": 73.51,
+          "best_account": "STRANGE`S FLORIST, INC.",
+          "best_value": 100.0
+        },
+        "GRW": {
+          "n": 37,
+          "median": 10.0,
+          "p75": 26.56,
+          "p90": 56.16,
+          "best_account": "CONNECTION FLOWERS SAS",
+          "best_value": 100.0
+        },
+        "IMP_CORE": {
+          "n": 91,
+          "median": 41.18,
+          "p75": 56.57,
+          "p90": 70.0,
+          "best_account": "Bella Blossom LLC",
+          "best_value": 84.88
+        },
+        "IMP_K2K": {
+          "n": 17,
+          "median": 21.74,
+          "p75": 65.16,
+          "p90": 74.69,
+          "best_account": "FLORIAD- MONTREAL CANADA INC.",
+          "best_value": 100.0
+        },
+        "RET_PURE": {
+          "n": 11,
+          "median": 33.33,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Littlefloyd Investments, LLC",
+          "best_value": 100.0
+        },
+        "RET_WHOLESALE_BEHAVIOR": {
+          "n": 1,
+          "median": 25.0,
+          "p75": 25.0,
+          "p90": 25.0,
+          "best_account": "Dr Delphinium",
+          "best_value": 25.0
+        },
+        "WH_CORE": {
+          "n": 70,
+          "median": 39.05,
+          "p75": 60.0,
+          "p90": 100.0,
+          "best_account": "Rose Runners",
+          "best_value": 100.0
+        },
+        "WH_ESUITE": {
+          "n": 4,
+          "median": 19.45,
+          "p75": 25.0,
+          "p90": 25.0,
+          "best_account": "Penn Valley Flora",
+          "best_value": 50.0
+        },
+        "WH_K2K": {
+          "n": 31,
+          "median": 52.38,
+          "p75": 56.67,
+          "p90": 66.67,
+          "best_account": "Lubbock Wholesale",
+          "best_value": 100.0
+        },
+        "WH_PROC": {
+          "n": 42,
+          "median": 66.67,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Florabundance.",
+          "best_value": 100.0
+        },
+        "WH_UNCLASSIFIED": {
+          "n": 21,
+          "median": 50.0,
+          "p75": 60.0,
+          "p90": 100.0,
+          "best_account": "Staalduinen Floral-LTF1118",
+          "best_value": 100.0
+        }
+      }
+    },
+    "4_new_user_cvr": {
+      "description": "% of new eCommerce users who made at least 1 purchase, YTD 2026",
+      "source": "buyers_evidence_v2.json \u2192 new_user_cvr",
+      "filter": "companies with new_user_count > 0",
+      "network": {
+        "n": 373,
+        "median": 36.64,
+        "p75": 61.56,
+        "p90": 100.0,
+        "best_account": "CONNECTION FLOWERS SAS",
+        "best_value": 100.0
+      },
+      "by_segment": {
+        "": {
+          "n": 48,
+          "median": 17.45,
+          "p75": 53.85,
+          "p90": 73.51,
+          "best_account": "STRANGE`S FLORIST, INC.",
+          "best_value": 100.0
+        },
+        "GRW": {
+          "n": 37,
+          "median": 10.0,
+          "p75": 26.56,
+          "p90": 56.16,
+          "best_account": "CONNECTION FLOWERS SAS",
+          "best_value": 100.0
+        },
+        "IMP_CORE": {
+          "n": 91,
+          "median": 41.18,
+          "p75": 56.57,
+          "p90": 70.0,
+          "best_account": "Bella Blossom LLC",
+          "best_value": 84.88
+        },
+        "IMP_K2K": {
+          "n": 17,
+          "median": 21.74,
+          "p75": 65.16,
+          "p90": 74.69,
+          "best_account": "FLORIAD- MONTREAL CANADA INC.",
+          "best_value": 100.0
+        },
+        "RET_PURE": {
+          "n": 11,
+          "median": 33.33,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Littlefloyd Investments, LLC",
+          "best_value": 100.0
+        },
+        "RET_WHOLESALE_BEHAVIOR": {
+          "n": 1,
+          "median": 25.0,
+          "p75": 25.0,
+          "p90": 25.0,
+          "best_account": "Dr Delphinium",
+          "best_value": 25.0
+        },
+        "WH_CORE": {
+          "n": 70,
+          "median": 39.05,
+          "p75": 60.0,
+          "p90": 100.0,
+          "best_account": "Rose Runners",
+          "best_value": 100.0
+        },
+        "WH_ESUITE": {
+          "n": 4,
+          "median": 19.45,
+          "p75": 25.0,
+          "p90": 25.0,
+          "best_account": "Penn Valley Flora",
+          "best_value": 50.0
+        },
+        "WH_K2K": {
+          "n": 31,
+          "median": 52.38,
+          "p75": 56.67,
+          "p90": 66.67,
+          "best_account": "Lubbock Wholesale",
+          "best_value": 100.0
+        },
+        "WH_PROC": {
+          "n": 42,
+          "median": 66.67,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Florabundance.",
+          "best_value": 100.0
+        },
+        "WH_UNCLASSIFIED": {
+          "n": 21,
+          "median": 50.0,
+          "p75": 60.0,
+          "p90": 100.0,
+          "best_account": "Staalduinen Floral-LTF1118",
+          "best_value": 100.0
+        }
+      }
+    },
+    "5_repeat_rate": {
+      "description": "% of online buyers who purchased more than once, YTD 2026",
+      "source": "buyers_evidence_v2.json \u2192 repeat_rate",
+      "filter": "companies with total_online_buyers > 0",
+      "network": {
+        "n": 206,
+        "median": 89.84,
+        "p75": 97.3,
+        "p90": 100.0,
+        "best_account": "Orlando Wholesale Florist",
+        "best_value": 100.0
+      },
+      "by_segment": {
+        "": {
+          "n": 24,
+          "median": 86.14,
+          "p75": 96.37,
+          "p90": 98.61,
+          "best_account": "VERA",
+          "best_value": 100.0
+        },
+        "GRW": {
+          "n": 17,
+          "median": 84.93,
+          "p75": 88.89,
+          "p90": 100.0,
+          "best_account": "Dramm & Echter, Inc",
+          "best_value": 100.0
+        },
+        "IMP_CORE": {
+          "n": 78,
+          "median": 86.03,
+          "p75": 95.15,
+          "p90": 98.62,
+          "best_account": "EF FLOWERS",
+          "best_value": 100.0
+        },
+        "IMP_K2K": {
+          "n": 13,
+          "median": 92.99,
+          "p75": 98.34,
+          "p90": 98.66,
+          "best_account": "Kennicott Brothers West",
+          "best_value": 100.0
+        },
+        "RET_PURE": {
+          "n": 2,
+          "median": 72.22,
+          "p75": 66.67,
+          "p90": 66.67,
+          "best_account": "Details Direct - Core",
+          "best_value": 77.78
+        },
+        "WH_CORE": {
+          "n": 31,
+          "median": 93.29,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Orlando Wholesale Florist",
+          "best_value": 100.0
+        },
+        "WH_ESUITE": {
+          "n": 2,
+          "median": 27.27,
+          "p75": 0.0,
+          "p90": 0.0,
+          "best_account": "Floropolis",
+          "best_value": 54.55
+        },
+        "WH_K2K": {
+          "n": 25,
+          "median": 95.45,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Riverside Wholesale Florists KY",
+          "best_value": 100.0
+        },
+        "WH_PROC": {
+          "n": 1,
+          "median": 80.0,
+          "p75": 80.0,
+          "p90": 80.0,
+          "best_account": "Dreisbach Wholesale",
+          "best_value": 80.0
+        },
+        "WH_UNCLASSIFIED": {
+          "n": 13,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Vosz Floral LLC",
+          "best_value": 100.0
+        }
+      }
+    },
+    "6_concentration_top5": {
+      "description": "% of online GMV from top 5 buyers, YTD 2026",
+      "source": "buyers_evidence_v2.json \u2192 concentration",
+      "filter": "companies with total_online_gmv > 0",
+      "network": {
+        "n": 205,
+        "median": 68.85,
+        "p75": 97.93,
+        "p90": 100.0,
+        "best_account": "JFS Wholesale Floral",
+        "best_value": 100.0
+      },
+      "by_segment": {
+        "": {
+          "n": 24,
+          "median": 49.34,
+          "p75": 85.79,
+          "p90": 100.0,
+          "best_account": "* AquaRose",
+          "best_value": 100.0
+        },
+        "GRW": {
+          "n": 16,
+          "median": 88.9,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Dramm & Echter, Inc",
+          "best_value": 100.0
+        },
+        "IMP_CORE": {
+          "n": 78,
+          "median": 49.1,
+          "p75": 73.19,
+          "p90": 100.0,
+          "best_account": "Farm To Canada",
+          "best_value": 100.0
+        },
+        "IMP_K2K": {
+          "n": 13,
+          "median": 71.53,
+          "p75": 87.87,
+          "p90": 97.23,
+          "best_account": "FGS.Flowers.MIA",
+          "best_value": 100.0
+        },
+        "RET_PURE": {
+          "n": 2,
+          "median": 96.97,
+          "p75": 96.91,
+          "p90": 96.91,
+          "best_account": "Details Direct - Core",
+          "best_value": 97.04
+        },
+        "WH_CORE": {
+          "n": 31,
+          "median": 83.21,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "JFS Wholesale Floral",
+          "best_value": 100.0
+        },
+        "WH_ESUITE": {
+          "n": 2,
+          "median": 94.56,
+          "p75": 89.11,
+          "p90": 89.11,
+          "best_account": "SPRINGFIELD FLORIST SUPPLY INC",
+          "best_value": 100.0
+        },
+        "WH_K2K": {
+          "n": 25,
+          "median": 80.05,
+          "p75": 99.28,
+          "p90": 100.0,
+          "best_account": "Riverside Wholesale Florists KY",
+          "best_value": 100.0
+        },
+        "WH_PROC": {
+          "n": 1,
+          "median": 88.21,
+          "p75": 88.21,
+          "p90": 88.21,
+          "best_account": "Dreisbach Wholesale",
+          "best_value": 88.21
+        },
+        "WH_UNCLASSIFIED": {
+          "n": 13,
+          "median": 98.7,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Tropical Blooms Inc.",
+          "best_value": 100.0
+        }
+      }
+    },
+    "7_variety_count": {
+      "description": "Total distinct varieties sold (across all freshness buckets), YTD 2026",
+      "source": "temporal_evidence_v2.json \u2192 variety_freshness",
+      "filter": "companies present in variety_freshness data",
+      "network": {
+        "n": 214,
+        "median": 331.0,
+        "p75": 1016,
+        "p90": 1913,
+        "best_account": "Bill Doran Company",
+        "best_value": 25450
+      },
+      "by_segment": {
+        "": {
+          "n": 4,
+          "median": 28.5,
+          "p75": 31,
+          "p90": 31,
+          "best_account": "Floramix, Inc.",
+          "best_value": 180
+        },
+        "GRW": {
+          "n": 33,
+          "median": 37,
+          "p75": 142,
+          "p90": 353,
+          "best_account": "FLORISOL& CO FLOWER TRADING LLC DBA MARVEL FLOWERS",
+          "best_value": 1365
+        },
+        "IMP_CORE": {
+          "n": 81,
+          "median": 399,
+          "p75": 1217,
+          "p90": 2731,
+          "best_account": "* Jet Fresh Flower Distributors Inc.",
+          "best_value": 21286
+        },
+        "IMP_K2K": {
+          "n": 11,
+          "median": 79,
+          "p75": 111,
+          "p90": 1058,
+          "best_account": "Continental Flowers",
+          "best_value": 1257
+        },
+        "RET_PURE": {
+          "n": 4,
+          "median": 100.5,
+          "p75": 153,
+          "p90": 153,
+          "best_account": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+          "best_value": 841
+        },
+        "RET_WHOLESALE_BEHAVIOR": {
+          "n": 1,
+          "median": 844,
+          "p75": 844,
+          "p90": 844,
+          "best_account": "Dr Delphinium",
+          "best_value": 844
+        },
+        "WH_CORE": {
+          "n": 26,
+          "median": 1168.0,
+          "p75": 2390,
+          "p90": 5456,
+          "best_account": "Bill Doran Company",
+          "best_value": 25450
+        },
+        "WH_ESUITE": {
+          "n": 1,
+          "median": 34,
+          "p75": 34,
+          "p90": 34,
+          "best_account": "Floropolis",
+          "best_value": 34
+        },
+        "WH_K2K": {
+          "n": 25,
+          "median": 365,
+          "p75": 734,
+          "p90": 1127,
+          "best_account": "Cleveland Plant & Flower Co.",
+          "best_value": 2357
+        },
+        "WH_PROC": {
+          "n": 24,
+          "median": 471.0,
+          "p75": 910,
+          "p90": 1028,
+          "best_account": "M&M CUT FLORA",
+          "best_value": 2022
+        },
+        "WH_UNCLASSIFIED": {
+          "n": 4,
+          "median": 20.5,
+          "p75": 26,
+          "p90": 26,
+          "best_account": "BlossomR",
+          "best_value": 64
+        }
+      }
+    },
+    "8_sell_anticipation_avg_days": {
+      "description": "GMV-weighted average days between order creation and shipping, YTD 2026",
+      "source": "temporal_evidence_v2.json \u2192 sell_anticipation",
+      "filter": "companies with sell_anticipation data and total_gmv > 0",
+      "network": {
+        "n": 294,
+        "median": 4.02,
+        "p75": 6.28,
+        "p90": 10.81,
+        "best_account": "Royal Flowers Inc, International",
+        "best_value": 120.0
+      },
+      "by_segment": {
+        "": {
+          "n": 21,
+          "median": 4.0,
+          "p75": 10.52,
+          "p90": 29.7,
+          "best_account": "Royal Flowers Inc, International",
+          "best_value": 120.0
+        },
+        "GRW": {
+          "n": 36,
+          "median": 3.24,
+          "p75": 5.0,
+          "p90": 12.48,
+          "best_account": "GRUPO DEL PACIFICO",
+          "best_value": 30.0
+        },
+        "IMP_CORE": {
+          "n": 97,
+          "median": 3.66,
+          "p75": 4.74,
+          "p90": 7.21,
+          "best_account": "Herradura Growers",
+          "best_value": 19.09
+        },
+        "IMP_K2K": {
+          "n": 15,
+          "median": 3.92,
+          "p75": 5.0,
+          "p90": 5.09,
+          "best_account": "FLORIAD- MONTREAL CANADA INC.",
+          "best_value": 12.73
+        },
+        "RET_PURE": {
+          "n": 6,
+          "median": 4.0,
+          "p75": 4.22,
+          "p90": 4.29,
+          "best_account": "Details Direct",
+          "best_value": 5.34
+        },
+        "RET_WHOLESALE_BEHAVIOR": {
+          "n": 1,
+          "median": 17.91,
+          "p75": 17.91,
+          "p90": 17.91,
+          "best_account": "Dr Delphinium",
+          "best_value": 17.91
+        },
+        "WH_CORE": {
+          "n": 43,
+          "median": 5.11,
+          "p75": 7.1,
+          "p90": 9.45,
+          "best_account": "Apex Floral Distributors Mississauga",
+          "best_value": 25.33
+        },
+        "WH_ESUITE": {
+          "n": 2,
+          "median": 9.11,
+          "p75": 7.83,
+          "p90": 7.83,
+          "best_account": "Floropolis",
+          "best_value": 10.39
+        },
+        "WH_K2K": {
+          "n": 28,
+          "median": 8.18,
+          "p75": 10.73,
+          "p90": 13.47,
+          "best_account": "Frank Adams Wholesale Florist",
+          "best_value": 16.1
+        },
+        "WH_PROC": {
+          "n": 29,
+          "median": 2.57,
+          "p75": 3.66,
+          "p90": 4.38,
+          "best_account": "Dreisbach Wholesale",
+          "best_value": 10.56
+        },
+        "WH_UNCLASSIFIED": {
+          "n": 16,
+          "median": 6.26,
+          "p75": 10.81,
+          "p90": 11.05,
+          "best_account": "Ontario Flower Growers Cooperative Ltd.",
+          "best_value": 30.0
+        }
+      }
+    }
+  }
+}

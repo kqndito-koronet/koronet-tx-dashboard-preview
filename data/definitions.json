@@ -1,0 +1,441 @@
+{
+  "product_types": {
+    "WH_CORE": {
+      "display": "Wholesaler + Core ERP",
+      "desc": "Full capabilities: inventory, Standing Orders, Future Sales, Open Market, eShop. Core IS the ERP.",
+      "examples": "Maple Grove, Bill Doran, Price's, Dreisbach, Cleveland P&F",
+      "can_do": ["Full inventory management", "Standing Orders (recurring auto-POs, offline)", "Future Sales (forward inventory)", "Open Market upload (XLS/manual)", "Open boxes → sell by bunch/unit", "K2K Procurement buying", "eShop/eCommerce"],
+      "cannot_do": ["No digital standing orders ($1.2M TAM blocked)", "No volume discounts in Procurement", "No bundling (carne y hueso)"],
+      "config_to_optimize": ["MaxAge 30+ (default 10 too low)", "Truck Days After 14-21+ (DIFFERENT from MaxAge)", "Bunches: Sell by Units ON", "Future Sales: enable + FS customer + sold_as_future=YES", "k2kClassifySalesAsOpenMarket=ON", "hideCheckoutWithoutPayment: verify", "Pricing -1-2% online vs call-in", "prebookDaysInAdvance=21+"],
+      "benchmark": "Maple Grove: 300d MaxAge, 43 SOs, 62% manual upload, 30% online sell, 56 buyers, 76% repeat, $3,609 fees H1 (+33% YoY)",
+      "count": 47,
+      "listing_paths": ["K2K Vendor Availability", "Buy more via K2K/Procurement", "Manual upload (Open Market)", "Future Sales POs", "Standing Orders → auto-PO", "API integration"]
+    },
+    "WH_ESUITE": {
+      "display": "Wholesaler + eSuite",
+      "desc": "Digital layer + another ERP. Can upload inventory (XLS), K2K buying, branded eShop. No SOs or Future Sales.",
+      "examples": "Main Phila, Penn Valley, Tennessee FS",
+      "can_do": ["Upload boxes and bunches (XLS or manual)", "K2K purchases → OWN inventory", "Sell bunches on eShop (via upload)", "Procurement/K2K buying", "Branded eSuite storefront"],
+      "cannot_do": ["Open boxes → units (Core-only)", "Future Sales POs (Core-only)", "Standing Orders (Core-only)", "Full ERP operations"],
+      "config_to_optimize": ["MaxAge 30+ for on-hand", "Bunches upload via XLS", "Vendor Availability ON", "hideCheckoutWithoutPayment: verify"],
+      "count": 5,
+      "listing_paths": ["K2K Vendor Availability", "Buy more via K2K/Procurement", "Manual upload (Open Market)", "API integration with their ERP"]
+    },
+    "WH_K2K": {
+      "display": "Wholesaler + K2K Only (Drop-Ship)",
+      "desc": "Shows vendor inventory on eShop. Cannot upload own inventory. 100% dependent on vendor quality.",
+      "examples": "Main NJ",
+      "can_do": ["Show K2K vendor inventory on eShop (drop-ship)", "Buy via K2K/Procurement"],
+      "cannot_do": ["Upload own inventory", "Sell bunches from own stock", "Future Sales, Standing Orders, Open Market", "Control pricing/depth/breadth independently"],
+      "config_to_optimize": ["Vendor Availability ON (both flags)", "K2K connections: quality + quantity", "Connect vendors WITH BUNCHES"],
+      "count": 28,
+      "listing_paths": ["K2K Vendor Availability ONLY"]
+    },
+    "WH_PROC": {
+      "display": "Wholesaler + Procurement Only",
+      "desc": "Buy-only channel. No eShop, no selling online. Every purchase = indirect fees for Koronet (vendor side).",
+      "examples": "",
+      "can_do": ["Buy via Koronet Procurement", "Track orders"],
+      "cannot_do": ["Sell online (no eShop)", "Manage inventory", "Anything LIST or SELL"],
+      "count": 40,
+      "listing_paths": [],
+      "upgrade_path": "K2K Only → eSuite → Core"
+    },
+    "IMP_CORE": {
+      "display": "Importer + Core",
+      "desc": "Publishes inventory for wholesalers via K2K. DIFFERENT plays — they SELL into the network, not buy from it. Largest segment (84 accounts, 58% of Core).",
+      "examples": "San Miguel, Allure Farms, Sofi's Flowers, Rosaprima",
+      "can_do": ["Full ERP", "Publish inventory for wholesalers via K2K", "K2K Future Sales", "eShop for direct sales", "Standing Orders from wholesale buyers"],
+      "cannot_do": [],
+      "count": 84,
+      "key_metric": "How many wholesaler buyers connected and actively buying via K2K?"
+    },
+    "IMP_K2K": { "display": "Importer + K2K", "desc": "Publishes inventory, receives orders from wholesalers.", "examples": "", "count": 16 },
+    "RET_WHOLESALE_BEHAVIOR": { "display": "Retailer (wholesale behavior)", "desc": "Buys from importers/farms and resells. Treated as wholesaler for plays.", "examples": "Dr Delphinium" },
+    "RET_PURE": { "display": "Pure Retailer", "desc": "Buys from wholesalers for own shop. Limited plays.", "examples": "" },
+    "GRW": { "display": "Grower", "desc": "Produces flowers. Some have K2K/distribution activity. Verify behavior before excluding.", "examples": "Veldkamp's ($82K K2K)" }
+  },
+
+  "tx_scorecard_contract": {
+    "refresh": "daily dashboard materialization",
+    "purpose": "Koronet independent Transactions scorecard. It joins expected transaction motion, applicable configuration evidence, activity and outcome without replacing implementation health.",
+    "per_account_fields": ["ct_id", "expected_motion", "tx_config_state_with_source_date_trust", "activation_state_with_evidence", "activity_state_last_next_owner_due_or_trigger", "outcome_state_change_or_no_change", "blocker_or_falta_contexto"],
+    "rules": ["Only evaluate stages applicable to the account type and actual modules.", "Missing evidence is FALTA_CONTEXTO, never a failure or a green pass.", "Activity is read from approved control-plane work/commitment projections; this file never creates tasks.", "No aggregate health score may hide which prerequisite, activity or evidence is missing."],
+    "implementation_health_boundary": "George and Christine calibrate config applicability and account exceptions. TX scorecard retains independent transaction expectation, activity, priority and reporting."
+  },
+
+  "config_objectives": {
+    "gate_eshop": {
+      "setting": "ecommerceEnabled",
+      "question": "¿Existe el eShop?",
+      "desc": "Master switch. Enables eShop and all eCommerce. Without this = $0 online.",
+      "if_wrong": "eShop inaccessible. No inventory visible. Zero online sales possible.",
+      "fix": "ON at setup. If OFF, Implementation must enable.",
+      "tx_impact": "MUST HAVE",
+      "applies_to": ["WH_CORE", "WH_ESUITE", "WH_K2K"]
+    },
+    "can_show_inventory": {
+      "setting": "MaxAge (ecommerceMaxAge)",
+      "question": "¿Puede mostrar inventory?",
+      "desc": "Days products visible on eShop. 4-level precedence: product > category > customer > company. Default 10 = only spot buying. Top sellers use 30-365.",
+      "if_wrong": "Too low (e.g. 4d): inventory 5+ days old disappears. Too high: stale inventory. Zero/blank: no inventory visible.",
+      "fix": "5-min fix: increase MaxAge in admin. 30+ for on-hand, 100+ for Open Market.",
+      "tx_impact": "MUST HAVE (non-zero)",
+      "applies_to": ["WH_CORE", "WH_ESUITE"]
+    },
+    "can_show_future": {
+      "setting": "ecommerceAllowFutureSales + Show Future Inventory",
+      "question": "¿Puede mostrar a futuro?",
+      "desc": "Shows inventory not yet in warehouse. Without this, eShop = only TODAY's warehouse. Truck Days After controls visibility (DIFFERENT from MaxAge).",
+      "if_wrong": "Future availability invisible. Buyers can't browse upcoming inventory catalog. Forward catalog empty.",
+      "fix": "Enable ecommerceAllowFutureSales + Show Future Inventory. Create 'Future Sales' customer. Set Truck Days After to match buying horizon (14-21+d).",
+      "tx_impact": "SHOULD HAVE",
+      "applies_to": ["WH_CORE"]
+    },
+    "can_sell_bunches": {
+      "setting": "Sell by Units + ecommerceEnableSalesOnHandInventoryUnits",
+      "question": "¿Puede vender bunches?",
+      "desc": "95-98% of retail buys bunches. Without bunches = 2-5% TAM. Two settings: (1) Sell by Units = foundation toggle (company), (2) eShop bunches tab = paid add-on (location).",
+      "if_wrong": "Bunches tab doesn't appear in eShop. Buyers cannot see/order bunches. NOTE: flag controls eShop UI only — API/K2K bypass it.",
+      "fix": "5-min fix for Sell by Units toggle. Bunches add-on = paid, request via Komet Support.",
+      "tx_impact": "SHOULD HAVE",
+      "applies_to": ["WH_CORE", "WH_ESUITE"]
+    },
+    "checkout_works": {
+      "setting": "hideCheckoutWithoutPayment",
+      "question": "¿Funciona el checkout?",
+      "desc": "When ON, blocks checkout without payment method. Price's case: all config correct, $0 revenue because buyers had no payment method on file.",
+      "if_wrong": "Silent $0 revenue. No error visible. Buyers browse but CANNOT buy.",
+      "fix": "5-min fix: verify correct value (ON for Wholesaler, OFF for Grower). Then verify buyers have payment methods on file.",
+      "tx_impact": "MUST HAVE",
+      "applies_to": ["WH_CORE", "WH_ESUITE", "WH_K2K"]
+    },
+    "sold_as_future": {
+      "setting": "sold_as_future = YES on procurement POs",
+      "question": "¿Lo que compran aparece en el eShop?",
+      "desc": "Controls whether procurement inventory creates Open Market listings. Price's: 93% of prebooks have sold_as_future=No → cooler inventory invisible online.",
+      "if_wrong": "Procurement inventory never appears in eShop catalog. Bought product invisible to online buyers.",
+      "fix": "5-min fix: toggle to YES on prebook items.",
+      "tx_impact": "SHOULD HAVE",
+      "applies_to": ["WH_CORE"]
+    },
+    "vendor_availability": {
+      "setting": "Vendor Availability + Show Vendor Availability on eCommerce",
+      "question": "¿Se ven los productos K2K en el eShop?",
+      "desc": "Two linked settings: (1) company-level enables K2K ingestion, (2) location-level exposes in eShop. 72% of KBC's fees come from K2K — this is foundational.",
+      "if_wrong": "K2K vendor inventory bought but invisible in eShop. K2K revenue still flows via API/back-office but eShop channel is dark.",
+      "fix": "5-min fix: turn both ON.",
+      "tx_impact": "MUST HAVE",
+      "applies_to": ["WH_CORE", "WH_ESUITE", "WH_K2K"]
+    }
+  },
+
+  "buy_funnel": {
+    "stages": [
+      {
+        "name": "CONEXIONES",
+        "question": "¿Tiene conexiones K2K?",
+        "if_no": "Map needs, match vendors, create connections.",
+        "lead": "Day 3 sin primera compra post go-live",
+        "if_yes": "Next stage.",
+        "lead_if_yes": "Conexión activa → 30D sin compra | Compra offline de vendor conectado"
+      },
+      {
+        "name": "SUPPLY",
+        "question": "¿Supply suficiente vs lo que vende?",
+        "if_no": "Connect vendors for missing categories, activate vendor availability, resolve format gaps (boxes vs bunches).",
+        "if_yes": "Next stage."
+      },
+      {
+        "name": "ACTIVACIÓN",
+        "question": "¿Compra regularmente?",
+        "if_no": "Guided first purchases, training on procurement workflow.",
+        "lead": "Primera compra → 14D sin segunda",
+        "if_yes": "Next stage."
+      },
+      {
+        "name": "HÁBITO",
+        "question": "¿Compra consistentemente semana a semana?",
+        "if_no": "Weekly reminders, best sellers, promotions.",
+        "lead": "Semana sin compra después de 3+ consecutivas",
+        "if_yes": "Next stage."
+      },
+      {
+        "name": "RETENCIÓN",
+        "question": "¿Mantiene o crece el volumen?",
+        "if_no": "Vendor loss analysis, price competitiveness, supply quality.",
+        "lead": "8+ vendors perdidos en 60D"
+      }
+    ],
+    "leakage_vs_gap": {
+      "leakage": "Compra OFFLINE de vendor con K2K activo → behavioral problem. The infrastructure exists, they're not using it.",
+      "gap": "Compra OFFLINE de vendor SIN K2K → infrastructure problem. Vendor isn't in the network."
+    },
+    "objection_procurement_expensive": {
+      "description": "RECURRING objection, NOT CLOSED. Bill Doran and WGF raised it.",
+      "what_to_do": "Do NOT dismiss. Run side-by-side pricing audit — NOT 2 samples, systematic. Compare Procurement prices vs offline for same product, same vendor, same period. If more expensive: escalate with data. If comparable/cheaper: show client with real numbers.",
+      "root_causes": ["Volume discounts not available in Procurement (offline reps negotiate)", "Landed cost calculation differences", "Delivery cost differences"]
+    },
+    "cs_procurement_tracking": "CS must actively track procurement improvement in every active account. Not optional. Not only implementation. Metrics: adoption % at go-live vs current, if NOT improving after 30/60/90 days → investigate WHY, vendor activation rate, monthly procurement $ vs total buy-side $."
+  },
+
+  "buy_leads": [
+    {"type": "SUPPLY_VENDOR_GAP", "detects": "Categorías que vende pero vendor no conectado K2K", "action": "Conectar vendor"},
+    {"type": "SUPPLY_OFFLINE_CONNECTED", "detects": "Tiene K2K pero compra offline A ESE MISMO vendor", "action": "Discovery: ¿precio? ¿SO offline? ¿servicio?"},
+    {"type": "SUPPLY_OFFLINE_DISCONNECTED", "detects": "Compra offline a vendor NO en K2K", "action": "¿Vendor existe en red? Si sí → conectar. Si no → gap de red."},
+    {"type": "SUPPLY_STOPPED_ONLINE", "detects": "Compraba online, migró 100% offline", "action": "¿Qué se rompió? ¿SO? ¿Pricing? ¿Bug?"},
+    {"type": "SUPPLY_EH_NO_PURCHASE", "detects": "Se conectó por Easy Handshake, nunca compró", "action": "¿Window shopping o blocker?"}
+  ],
+
+  "list_rubiks_cube": {
+    "formula": "VARIETIES × TIME × FORMAT",
+    "varieties": "How many categories visible online? Benchmark: Maple Grove 112.",
+    "time": "How far ahead? On-hand = MaxAge controls. Future = Truck Days After controls. DIFFERENT settings.",
+    "format": "Bunches? Core = open boxes or upload. eSuite = upload only. K2K = depends on vendor. 95-98% retail = bunches. Without bunches = 2-5% TAM.",
+    "insight": "Most wholesalers have one face partially solved. 100 categories but same-day/boxes-only = 1 of 3 faces."
+  },
+
+  "list_inventory_paths": [
+    {"path": "K2K Vendor Availability", "effort": "LOW (config)", "who": "All with K2K", "covers": "Vendor's inventory, not own. Breadth = vendor quality."},
+    {"path": "Buy more via K2K/Procurement", "effort": "LOW-MED (behavioral)", "who": "eSuite (→ own inv), K2K Only (→ vendor inv)", "covers": "More in Koronet = more in eShop."},
+    {"path": "Manual upload (Open Market, XLS)", "effort": "MED (ongoing)", "who": "eSuite + Core", "covers": "Upload what's in cooler or coming. Fast but manual."},
+    {"path": "Future Sales POs", "effort": "MED (setup + ongoing)", "who": "Core ONLY", "covers": "Show what's COMING 2-3 weeks ahead. Bunches auto-calculated."},
+    {"path": "Standing Orders → auto-PO", "effort": "HIGH (setup, then automated)", "who": "Core ONLY", "covers": "Recurring categories auto-generate. Maple Grove model."},
+    {"path": "API integration with ERP", "effort": "VERY HIGH (dev)", "who": "eSuite + Core (with dev)", "covers": "Sync from other ERP automatically. Highest coverage."}
+  ],
+
+  "list_coverage_metrics": {
+    "coverage_pct": "categorías listadas online / categorías vendidas total",
+    "depth_pct": "SKUs visible online / SKUs en inventario total",
+    "time_pct": "días de disponibilidad publicados / días de anticipación con los que compran"
+  },
+
+  "list_leading_indicators": [
+    "30% of purchases through procurement",
+    "40% adding product by the bunch",
+    "80% of in-transit POs published"
+  ],
+
+  "sell_7stage_flow": [
+    {"stage": 1, "name": "Infrastructure", "question": "Does the eShop exist AND is it findable?", "if_no": "Fix: link eShop from website, CTAs, public products"},
+    {"stage": 2, "name": "Supply", "question": "Is supply sufficient for what they want to SELL?", "if_no": "Fix: category coverage, format (bunches), vendor churn, forward availability"},
+    {"stage": 3, "name": "Listing", "question": "Is the listing attractive enough to convert?", "if_no": "Fix: catalog depth, photos, consistency, pricing, format messaging"},
+    {"stage": 4, "name": "Discovery", "question": "Are buyers finding the eShop?", "if_no": "Fix: SEO, CRM/email, social, website-to-eShop path, GA4 tracking"},
+    {"stage": 5, "name": "Activation", "question": "Do they browse AND buy?", "if_no": "Fix: supply gaps, pricing, format, delivery, registration friction"},
+    {"stage": 6, "name": "Retention", "question": "Do they repeat?", "if_no": "Fix: event follow-up, habit building, seasonal anticipation, systematic email"},
+    {"stage": 7, "name": "Growth", "question": "Are they growing?", "if_no": "Fix: cross-sell, upsell, new buyer acquisition, referral"}
+  ],
+
+  "sell_sustainability_score": {
+    "concentration": "Top 2 buyers < 50% of online GMV = healthy",
+    "repeat_rate": "> 60% of buyers repeat in 90D = sticky",
+    "channel_diversification": "2+ channels with > 10% each = resilient",
+    "fee_yield": "Actual fees / expected fees at SFDC rate > 90% = clean billing"
+  },
+
+  "sell_payment_gate": "Before escalating 'mandatory payment blocks conversions' → need FUNNEL DATA first. How much traffic? How many registered? How deep does the funnel go? If traffic is near-zero, payment gate isn't the real blocker — discovery is.",
+
+  "tx_measurement_contract": {
+    "entry_route_distribution": "Hostname or branded-domain route is an adoption/attribution diagnostic only. It must never rank eShop performance or account priority.",
+    "conversion_readiness_rule": "Conversion is interpretable only with inventory readiness and data coverage for the same account, channel and period. If either is absent or stale, display NOT_ASSESSABLE — never infer a conversion bottleneck.",
+    "conversion_diagnostic_chain": [
+      "demand: sessions and funnel progression",
+      "conversion: eligible sessions to completed online transaction",
+      "inventory_readiness: gate, breadth, depth, format and competitive price/terms"
+    ],
+    "diagnostic_outcomes": {
+      "demand_low_readiness_good": "Discovery/demand hypothesis; not a conversion verdict.",
+      "demand_good_readiness_low": "Supply/listing/readiness hypothesis; not a conversion verdict.",
+      "demand_and_readiness_good_conversion_low": "Checkout, price, terms or UX hypothesis; requires evidence before action.",
+      "any_required_input_missing": "NOT_ASSESSABLE"
+    },
+    "monetization": {
+      "grain": "account_id × channel × period × transaction_side",
+      "transaction_side": ["DIRECT", "INDIRECT", "UNATTRIBUTED"],
+      "direct_indirect_rule": "Direct and indirect GMV and fees must be calculated separately from validated transaction-side mapping. Unknown or ambiguous mappings remain UNATTRIBUTED; they must not be guessed.",
+      "monetizable_gmv": "GMV eligible to generate a Koronet fee under the validated account/channel/side rule. It is not synonymous with online GMV.",
+      "effective_take_rate": "SUM(fee_amount) / SUM(relevant_gross_gmv), shown only when denominator coverage is valid.",
+      "billed_coverage": "SUM(billed_fee_amount) / SUM(expected_fee_amount on monetizable_gmv), shown only when rate and attribution coverage are valid.",
+      "unmonetized_monetizable_gap": "monetizable_gmv less the validated fee-bearing GMV; never estimated from an unverified fee rate."
+    },
+    "source_gate": [
+      "Stable account/storefront join to the account spine",
+      "Daily source freshness and stated period cut-off",
+      "Coverage and reconciliation against the authoritative fee/account-rate source",
+      "Validated transaction-side mapping before DIRECT or INDIRECT is shown"
+    ]
+  },
+
+  "sell_buyer_onboarding": [
+    "Identify top offline buyers (rank by offline GMV, no eShop activity)",
+    "Create eShop users for each buyer",
+    "Send activation emails / invitations",
+    "Walk through first order with customer on the phone",
+    "Follow up on second order within 7 days",
+    "KBC Pittsburgh: 14 customers = $688K offline with no eShop access. Onboarding = immediate opportunity.",
+    "Pricing incentive: set -1-2% online vs call-in"
+  ],
+
+  "sell_benchmarks": {
+    "maple_grove": {
+      "name": "Maple Grove",
+      "max_age": 300,
+      "standing_orders": 43,
+      "manual_upload_pct": 62,
+      "online_sell_pct": 30,
+      "buyers": 56,
+      "repeat_rate_pct": 76,
+      "fees_h1": 3609,
+      "fees_yoy": "+33%",
+      "note": "LIST FIRST approach — eCom from Day 1, K2K came 10 months later."
+    },
+    "zeidler": {
+      "name": "Zeidler",
+      "max_age": 365,
+      "open_market_pct": 100,
+      "bunches_pct": 100,
+      "note": "Only wholesaler doing live cooler → eShop sync. Uses 'open inventory' workaround."
+    },
+    "kbc_pittsburgh": {
+      "name": "KBC Pittsburgh",
+      "with_eshop": "14 customers = $953K (58%)",
+      "without_eshop": "14 customers = $688K (42%)",
+      "standing_orders_boxes": "31 (all boxes, zero bunch usage)",
+      "fees": "$1,229 Jan-May ($250/mo) — lowest location",
+      "onboarding_update": "9 of 14 offline customers now have online purchases"
+    }
+  },
+
+  "sell_program_levels": {
+    "green_belt": {
+      "who": "Any wholesaler with active eShop + 1 K2K connection",
+      "what": "Automated scorecard, template emails, SEO keywords, monthly snapshots",
+      "cost": "~30 min/month/account (mostly automated)",
+      "scale": "All 90+ eShop wholesalers"
+    },
+    "black_belt": {
+      "who": "Green Belt achieved + champion + strategic value",
+      "criteria": ["eShop findable (linked, public products, CTA)", "Supply > 50% category coverage online", "First buyer activated (non-internal online order)", "Champion identified and engaged", "Strategic value confirmed (GMV potential justifies investment)"],
+      "cost": "1-2 hours/week/account",
+      "scale": "6-10 strategic accounts"
+    }
+  },
+
+  "known_issues_by_product": {
+    "WH_CORE": [
+      "\"Procurement is expensive\" — recurring objection, NOT closed. Side-by-side audit needed per account.",
+      "No digital standing orders — SOs are 100% offline (Core). $1.2M TAM blocked.",
+      "No volume discounts in Procurement — offline reps negotiate, online can't.",
+      "No bundling (\"carne y hueso\") — offline reps bundle product, eShop can't.",
+      "Future Sales bunches UI bug — \"Add\" button broken in Cards view (default). Only works in List view.",
+      "Multi-location carrier — 1 carrier per days-of-service. Blocks multi-location accounts."
+    ],
+    "WH_ESUITE": [
+      "No SOs = no automated recurring inventory. Manual upload is the only path.",
+      "Most inventory lives in their other ERP, invisible to Koronet.",
+      "API integration is ideal but requires dev investment.",
+      "No Future Sales = can't show \"what's coming in 2 weeks.\""
+    ],
+    "WH_K2K": [
+      "100% dependent on vendor quality. Poor vendor inventory = poor eShop.",
+      "Cannot differentiate from other K2K wholesalers showing same vendor inventory.",
+      "No own inventory = no competitive advantage on supply.",
+      "Buyers may go directly to vendor eShop instead."
+    ]
+  },
+
+  "plays": [
+    {"type": 1, "name": "Buy Better (Procurement Optimization)", "signal": "Low vendor diversity or suboptimal mix", "stage": "BUY: Conexiones + Supply", "status": "DESIGNED"},
+    {"type": 2, "name": "Publish (Inventory Online)", "signal": "Offline units/bunches not listed on eShop", "stage": "LIST: Features + Usage", "status": "DESIGNED"},
+    {"type": 3, "name": "Price & Parity", "signal": "Online prices higher than offline", "stage": "LIST→SELL: Pricing gate", "status": "CONCEPT"},
+    {"type": 4, "name": "Bring Traffic", "signal": "Supply parity + competitive pricing ready", "stage": "SELL: Growth (GATED on LIST)", "status": "DESIGNED"},
+    {"type": 5, "name": "Deal Desk (Free Fees)", "signal": "Willing but hesitant on cost", "stage": "SELL: Activation", "status": "DESIGNED"},
+    {"type": 6, "name": "Rep Enablement", "signal": "Sales reps don't use platform", "stage": "SELL: Activation + Habit", "status": "CONCEPT"},
+    {"type": 7, "name": "Supply Analysis (Always-On)", "signal": "Any account entering system", "stage": "BUY: Supply diagnostic", "status": "TESTED (9 accounts)"},
+    {"type": 8, "name": "Demand/Cohort Analysis", "signal": "Any account with sell-side data", "stage": "SELL: all stages", "status": "TESTED"},
+    {"type": 9, "name": "Discovery Post-Connection", "signal": "K2K connected, $0 transactions", "stage": "BUY: Activación", "status": "DESIGNED"},
+    {"type": 10, "name": "Wholesale Procurement Acquisition", "signal": "Buys from vendors by phone but vendors in K2K", "stage": "BUY: Conexiones + Supply", "status": "DESIGNED"},
+    {"type": 11, "name": "Kickoff Activation", "signal": "New account in implementation", "stage": "BUY: Conexiones day 1", "status": "DESIGNED"},
+    {"type": 12, "name": "CONFIG", "signal": "System not ready to sell online", "stage": "CONFIG: pre-gate", "status": "ALPHA (5 accounts verified)"}
+  ],
+
+  "config_alpha_accounts": [
+    {"account": "Price's Floral", "issue": "hideCheckoutWithoutPayment=1, buyers sin payment method", "fix": "Toggle OFF o ayudar buyers a agregar payment", "time": "5 min", "impact": "Desbloquea checkout para 4 eCom buyers"},
+    {"account": "Price's Floral", "issue": "MaxAge=5", "fix": "Subir a 30+", "time": "5 min", "impact": "Más catálogo visible (hoy solo 5 días)"},
+    {"account": "Price's Floral", "issue": "sold_as_future=No en 93% de prebook items", "fix": "Toggle a Yes", "time": "5 min", "impact": "Procurement auto-aparece en eShop"},
+    {"account": "Maple Grove", "issue": "futureSalesWindow=7 (compra a 18d con SOs pero solo muestra 7)", "fix": "Subir a 30", "time": "5 min", "impact": "57% más inventory visible (18 vs 7 días)"},
+    {"account": "Main NJ", "issue": "eCommerce NOT CONFIGURED (future avail, bunches, merchant ID)", "fix": "Correr checklist completo", "time": "30 min", "impact": "Desbloquea posibilidad de vender online"}
+  ],
+
+  "abbreviations": {
+    "K2K": "Koronet-to-Koronet connection (vendor↔buyer). Both sides pay fees.",
+    "GMV": "Gross Merchandise Value (total sales volume)",
+    "TX": "Transaction fees from online transactions",
+    "ORA": "Online Revenue Achieved",
+    "KP": "Koronet Payments",
+    "SO": "Standing Order (recurring auto-PO, Core only, 100% offline)",
+    "SFDC": "Salesforce CRM",
+    "MaxAge": "Days inventory visible on eShop. Default 10, benchmark 300. 4-level precedence: product > category > customer > company.",
+    "Truck Days After": "Days Future Sales inventory stays visible. DIFFERENT from MaxAge. Controls future inventory only.",
+    "API": "External integration channel (e.g., Mayesh.com). API sales = $0 take-rate for Koronet — not good.",
+    "eShop": "Customer's online storefront powered by Koronet",
+    "Open Market": "Manual inventory upload (XLS or manual). Requires ecommerceAllowFutureSales.",
+    "Future Sales": "Inventory not in warehouse yet, published via PO to 'Future Sales' customer. Core only.",
+    "Bunches": "Individual flower bunches (vs boxes). 95-98% retail buys bunches. Without = 2-5% TAM.",
+    "Prebook": "Forward purchase order. Buyer commits to future delivery date. Works without ecommerceAllowFutureSales. 90%+ of online accounts use this.",
+    "LEAKAGE": "Buys OFFLINE from vendor with active K2K — behavioral problem, addressable now.",
+    "GAP": "Buys OFFLINE from vendor WITHOUT K2K — infrastructure problem, needs vendor onboarding.",
+    "Web Hold": "Per-line checkbox in Pricing screen. When ON, inventory invisible in eShop. Most common 'empty eShop' cause.",
+    "ARR": "Annual Recurring Revenue",
+    "H1": "First half of 2026 (Jan-Jun)",
+    "CS": "Customer Success (Cata's team)",
+    "Impl": "Implementation (Christine's team)",
+    "GPM": "Gross Profit Margin (default 30% for wholesalers, 0% for growers)"
+  },
+
+  "trust_journey": [
+    {"step": 0, "name": "CONFIG", "desc": "Implementation Day 0. Get settings right. Without this = $0 online.", "action": "Fix MaxAge, bunches, future, checkout, vendor availability."},
+    {"step": 1, "name": "BUY", "desc": "Help them source via Procurement → gain trust → REVENUE from Day 1.", "action": "Discovery: what/who/how much/when? Then: connect vendors, activate procurement."},
+    {"step": 2, "name": "LIST", "desc": "Get inventory visible on eShop → gain more trust. Rubik's Cube: Varieties × Time × Format.", "action": "Challenger: 'lo que no mostrás no existe'. Open Market upload. Future Sales. Standing Orders."},
+    {"step": 3, "name": "SELL", "desc": "Studio + eShop → only if catalog has parity with offline. 7-stage decision flow.", "action": "Buyer onboarding. Repeat rate. Pricing incentive -1-2%."},
+    {"step": 4, "name": "GROWTH", "desc": "Top accounts only. Perfect inventory required. Green Belt → Black Belt.", "action": "Expand categories, advance buying, seasonal planning, SEO, CRM."}
+  ],
+
+  "list_challenger": [
+    "Lo que no está en tu eShop no existe para tus clientes online.",
+    "No podés vender lo que no mostrás. (100 cats en cooler, 5 en eShop = tienda vacía)",
+    "Si solo comprás para mañana, tu eShop solo tiene lo de hoy.",
+    "Si solo vendés boxes online, el 95% de tu mercado no te puede comprar. (bunches = retail)",
+    "Lo que comprás por Koronet PUEDE aparecer automáticamente — pero no está configurado. (sold_as_future, 5 min fix)",
+    "No sabés cuántas ventas estás perdiendo. (los que entran, no encuentran, y se van → nunca los ves)",
+    "Si lo que mostrás online es PEOR que lo que tenés en el cooler → tus clientes van al cooler o compran en Mayesh.",
+    "Si querés ahorrar tiempo y tomar órdenes automáticas, subir inventario te lo ahorra. Tus vendedores pueden ser PROACTIVOS.",
+    "Si consistentemente ofrecés boxes Y bunches, con fulfillment local y mejor servicio → así te diferenciás de Mayesh."
+  ],
+
+  "buy_discovery": [
+    "¿Qué comprás, a quién, cuánto, cuándo?",
+    "¿Qué tipos de flores? ¿Solo boxes o también bunches?",
+    "¿Qué te importa cuando elegís un proveedor? ¿Precio? ¿Servicio? ¿Variedad?",
+    "¿Tenés backup para tus proveedores principales?",
+    "¿Planificás compras a futuro o comprás para mañana?",
+    "¿Qué te piden tus clientes que no tenés disponible?"
+  ],
+
+  "buy_challenger": [
+    "Estás gastando $[X]/mes comprando offline de vendors que ESTÁN en la red. Eso es leakage — el producto existe online pero llamás por teléfono.",
+    "Sin compra anticipada, pagás precios spot. Vendors con 14-30d de visibilidad dan mejor precio porque pueden planificar.",
+    "Tus top 3 vendors por volumen son [X, Y, Z]. Si alguno tiene K2K, podés comparar precios en 2 minutos en vez de 3 llamadas.",
+    "Valentine's = 90 días de anticipación. Mother's = 60 días. Sin compra anticipada = spot a 2-3x.",
+    "Tenés [X] proveedores de rosas. Si uno tiene problema de cultivo, no tenés backup. 3+ vendors = reducción de riesgo."
+  ],
+
+  "readiness_layers": [
+    {"layer": 1, "name": "GATE", "question": "Can they sell online at all?", "checks": ["eCommerceEnabled ON", "MaxAge non-zero", "Koronet Payments active", "hideCheckoutWithoutPayment correct", "Web Hold not blocking all", "Vendor Availability both ON (K2K)"]},
+    {"layer": 2, "name": "BREADTH", "question": "How much catalog is online?", "metric": "Categories online / Categories total", "benchmarks": {"HIGH": ">70%", "MED": "30-70%", "LOW": "10-30%", "MINIMAL": "<10%"}},
+    {"layer": 3, "name": "DEPTH", "question": "How far ahead can buyers see?", "metric": "MaxAge days + sold_as_future + prebookDaysInAdvance"},
+    {"layer": 4, "name": "FORMAT", "question": "Can buyers buy by the bunch?", "metric": "Sell by Units ON + eShop bunches enabled. 95-98% of retail = bunches."},
+    {"layer": 5, "name": "BUYERS", "question": "How many buyers have eShop access?", "metric": "Buyers with eShop access / Total active buyers"},
+    {"layer": 6, "name": "COMPETITIVE", "question": "Is online competitive with calling?", "metric": "Markup/markdown -1-2%, Price Lists, allocation managed"}
+  ]
+}

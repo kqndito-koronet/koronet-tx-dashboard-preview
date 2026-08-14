@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "generated": "2026-07-30",
+    "source": "SFDC Account.AnnualRevenue + Opportunity amounts",
+    "query_1": "SELECT Name, AnnualRevenue, Website FROM Account WHERE Name IN (...)",
+    "query_2": "SELECT Account.Name, Amount, StageName FROM Opportunity WHERE Account.Name IN (...) AND StageName NOT IN ('Closed Lost')",
+    "note": "No ORA_Annual__c or Estimated_Annual_Revenue__c fields exist in SFDC. AnnualRevenue is the only revenue field on Account object. Tennessee Florist Supply Inc (L1) variant has $1M AnnualRevenue."
+  },
+  "accounts": [
+    {
+      "account_name": "Arizona Family Florist",
+      "sfdc_account_id": "00116000023rB8qAAE",
+      "company_id": "193828",
+      "annual_revenue": 10000000,
+      "website": "http://azfamilyflorist.com/",
+      "total_opp_amount_closed_won": 10755.50,
+      "opp_count": 12
+    },
+    {
+      "account_name": "A Florist First",
+      "sfdc_account_id": "00116000021c3HoAAI",
+      "company_id": "561453",
+      "annual_revenue": null,
+      "website": "http://www.kuhnflorist.com/",
+      "total_opp_amount_closed_won": 3043.30,
+      "opp_count": 5
+    },
+    {
+      "account_name": "Nova Packaging Solutions, Inc.",
+      "sfdc_account_id": "001VL00000TUGt3YAH",
+      "company_id": "743217",
+      "annual_revenue": null,
+      "website": "https://icpakco.com/",
+      "total_opp_amount_closed_won": 0,
+      "opp_count": 0,
+      "note": "No opportunities found"
+    },
+    {
+      "account_name": "Avon Valley Floral",
+      "sfdc_account_id": "001G000001DW4OGIA1",
+      "company_id": "822374",
+      "annual_revenue": null,
+      "website": "http://www.avonvalleyfloral.com",
+      "total_opp_amount_closed_won": 5124.00,
+      "opp_count": 1
+    },
+    {
+      "account_name": "Tennessee Florist Supply - Knox",
+      "sfdc_account_id": "001G000001TsJPUIA3",
+      "company_id": "650986",
+      "annual_revenue": null,
+      "annual_revenue_l1_variant": 1000000,
+      "annual_revenue_l1_variant_id": "001VL00000H4VTZYA3",
+      "website": "http://www.tfsflowers.net",
+      "total_opp_amount_closed_won": 698.00,
+      "opp_count": 2
+    },
+    {
+      "account_name": "SPRINGFIELD FLORIST SUPPLY INC",
+      "sfdc_account_id": "001G000001L8zkpIAB",
+      "company_id": "828336",
+      "annual_revenue": 1000000,
+      "website": "http://www.sfsflowers.com",
+      "total_opp_amount_closed_won": 5622.79,
+      "opp_count": 3
+    }
+  ],
+  "est_gmv_mapping": {
+    "193828": {
+      "est_sell_gmv": 10000000,
+      "est_sell_source": "SFDC",
+      "est_sell_confidence": "MEDIUM",
+      "rationale": "SFDC AnnualRevenue = $10M"
+    },
+    "561453": {
+      "est_sell_gmv": 601002,
+      "est_sell_source": "ESTIMATED",
+      "est_sell_confidence": "LOW",
+      "rationale": "No SFDC AnnualRevenue. H1 sell_total=$300,501 x2 annualized. K2K wholesaler, small."
+    },
+    "743217": {
+      "est_sell_gmv": 3000000,
+      "est_sell_source": "KOMET",
+      "est_sell_confidence": "LOW",
+      "rationale": "No SFDC AnnualRevenue. Using Komet annual_sales_est=$3M from companies_sv."
+    },
+    "822374": {
+      "est_sell_gmv": 4600000,
+      "est_sell_source": "KOMET",
+      "est_sell_confidence": "LOW",
+      "rationale": "No SFDC AnnualRevenue. Using Komet annual_sales_est=$4.6M from companies_sv. Still in implementation."
+    },
+    "650986": {
+      "est_sell_gmv": 1000000,
+      "est_sell_source": "SFDC",
+      "est_sell_confidence": "LOW",
+      "rationale": "Main account has null AnnualRevenue. L1 variant (Tennessee Florist Supply Inc) shows $1M. Very low platform activity ($1.9K H1). Payment blocker."
+    },
+    "828336": {
+      "est_sell_gmv": 1000000,
+      "est_sell_source": "SFDC",
+      "est_sell_confidence": "MEDIUM",
+      "rationale": "SFDC AnnualRevenue=$1M. Note in accounts.json says '$0.8M est'. Low platform activity ($6.9K H1)."
+    }
+  }
+}

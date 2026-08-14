@@ -1,0 +1,712 @@
+{
+  "_metadata": {
+    "generated": "2026-07-31",
+    "generated_by": "Rose (Data Agent)",
+    "source_files": [
+      "metrics_v2_sell.json (435 companies)",
+      "metrics_v2_buy.json (417 companies)",
+      "repeat_rate.json (280 accounts)",
+      "buyer_concentration.json (278 accounts)",
+      "ga4_eshop.json (21 days, Jul 11-31 2026)",
+      "loop2_list_time_depth_v2.json (131 companies)",
+      "loop2_list_usage_v2.json (339 companies)",
+      "accounts.json (segment mapping)"
+    ],
+    "methodology": "Percentiles computed on full population per metric. Filters noted per metric. Segments from accounts.json ct_id field.",
+    "rules_applied": "R1,R4,R5,R6,R8,R9,R12,R13,R16 (inherited from source queries)"
+  },
+  "benchmarks": {
+    "1_online_sell_pct_ytd": {
+      "description": "% of sell GMV via online channels (eCommerce + K2K + API), YTD 2026",
+      "source": "metrics_v2_sell.json",
+      "filter": "companies with sell_total YTD > 0 and online_pct available",
+      "network": {
+        "n": 342,
+        "median": 27.91,
+        "p75": 100.0,
+        "p90": 100.0,
+        "best_account": "FloraLink",
+        "best_value": 100.0
+      },
+      "by_segment": {
+        "GRW": {
+          "n": 37,
+          "median": 76.15,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "VELDKAMP´S FLOWERS",
+          "best_value": 100.0
+        },
+        "IMP_CORE": {
+          "n": 98,
+          "median": 5.22,
+          "p75": 18.84,
+          "p90": 34.85,
+          "best_account": "Liberty Blooms",
+          "best_value": 100.0
+        },
+        "IMP_K2K": {
+          "n": 16,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Miaflora Farms",
+          "best_value": 100.0
+        },
+        "RET_PURE": {
+          "n": 6,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+          "best_value": 100.0
+        },
+        "RET_WHOLESALE_BEHAVIOR": {
+          "n": 1,
+          "median": 0.0,
+          "p75": 0.0,
+          "p90": 0.0,
+          "best_account": "Dr Delphinium",
+          "best_value": 0.0
+        },
+        "UNMATCHED": {
+          "n": 67,
+          "median": 14.23,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "The Queens Flowers Corp",
+          "best_value": 100.0
+        },
+        "WH_CORE": {
+          "n": 57,
+          "median": 13.78,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "FloraLink",
+          "best_value": 100.0
+        },
+        "WH_ESUITE": {
+          "n": 2,
+          "median": 96.2,
+          "p75": 98.1,
+          "p90": 99.24,
+          "best_account": "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN",
+          "best_value": 100.0
+        },
+        "WH_K2K": {
+          "n": 28,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Cleveland Plant & Flower Co.",
+          "best_value": 100.0
+        },
+        "WH_PROC": {
+          "n": 30,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Palm Beach Whsle Flowers, Inc.",
+          "best_value": 100.0
+        }
+      }
+    },
+    "2_sell_total_ytd": {
+      "description": "Total sell-side GMV YTD 2026 ($)",
+      "source": "metrics_v2_sell.json",
+      "filter": "companies with sell_total YTD > 0",
+      "network": {
+        "n": 342,
+        "median": 229801.03,
+        "p75": 1583935.4,
+        "p90": 5118029.63,
+        "best_account": "Mayesh Wholesale Florist Inc",
+        "best_value": 101084131.18
+      },
+      "by_segment": {
+        "GRW": {
+          "n": 37,
+          "median": 45025.05,
+          "p75": 671801.25,
+          "p90": 1629670.76,
+          "best_account": "Dramm & Echter, Inc",
+          "best_value": 6942576.92
+        },
+        "IMP_CORE": {
+          "n": 98,
+          "median": 1644727.1,
+          "p75": 4748417.35,
+          "p90": 9674094.35,
+          "best_account": "EQR USA",
+          "best_value": 49547587.3
+        },
+        "IMP_K2K": {
+          "n": 16,
+          "median": 115909.97,
+          "p75": 912537.92,
+          "p90": 1356853.55,
+          "best_account": "Continental Flowers",
+          "best_value": 4035654.26
+        },
+        "RET_PURE": {
+          "n": 6,
+          "median": 45770.91,
+          "p75": 75924.98,
+          "p90": 96568.34,
+          "best_account": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+          "best_value": 113542.24
+        },
+        "RET_WHOLESALE_BEHAVIOR": {
+          "n": 1,
+          "median": 1579328.15,
+          "p75": 1579328.15,
+          "p90": 1579328.15,
+          "best_account": "Dr Delphinium",
+          "best_value": 1579328.15
+        },
+        "UNMATCHED": {
+          "n": 67,
+          "median": 195927.88,
+          "p75": 1149379.31,
+          "p90": 2842895.84,
+          "best_account": "Rosaprima International, LLC",
+          "best_value": 60927165.47
+        },
+        "WH_CORE": {
+          "n": 57,
+          "median": 234473.2,
+          "p75": 1924224.44,
+          "p90": 4534645.04,
+          "best_account": "Mayesh Wholesale Florist Inc",
+          "best_value": 101084131.18
+        },
+        "WH_ESUITE": {
+          "n": 2,
+          "median": 6529.2,
+          "p75": 8528.17,
+          "p90": 9727.55,
+          "best_account": "Floropolis",
+          "best_value": 10527.14
+        },
+        "WH_K2K": {
+          "n": 28,
+          "median": 79019.17,
+          "p75": 182498.55,
+          "p90": 433371.47,
+          "best_account": "Riverside Wholesale Florists KY",
+          "best_value": 817779.02
+        },
+        "WH_PROC": {
+          "n": 30,
+          "median": 63414.91,
+          "p75": 149386.03,
+          "p90": 281343.51,
+          "best_account": "Palm Beach Whsle Flowers, Inc.",
+          "best_value": 353392.12
+        }
+      }
+    },
+    "3_online_buy_pct_ytd": {
+      "description": "% of buy GMV via online channels (Procurement + K2K + Web), YTD 2026",
+      "source": "metrics_v2_buy.json",
+      "filter": "companies with buy_total YTD > 0 and buy_online_pct available",
+      "network": {
+        "n": 320,
+        "median": 0.06,
+        "p75": 100.0,
+        "p90": 100.0,
+        "best_account": "Flowers Direct Inc",
+        "best_value": 100.0
+      },
+      "by_segment": {
+        "GRW": {
+          "n": 24,
+          "median": 0.0,
+          "p75": 0.0,
+          "p90": 0.0,
+          "best_account": "Mellano Sales",
+          "best_value": 98.35
+        },
+        "IMP_CORE": {
+          "n": 92,
+          "median": 0.0,
+          "p75": 0.0,
+          "p90": 0.66,
+          "best_account": "Sierra Flower Trading",
+          "best_value": 100.0
+        },
+        "IMP_K2K": {
+          "n": 9,
+          "median": 0.0,
+          "p75": 76.87,
+          "p90": 100.0,
+          "best_account": "FleuraMetz LA",
+          "best_value": 100.0
+        },
+        "RET_PURE": {
+          "n": 8,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "WB FLORAL GROUP, LLC.-MD",
+          "best_value": 100.0
+        },
+        "RET_WHOLESALE_BEHAVIOR": {
+          "n": 1,
+          "median": 24.46,
+          "p75": 24.46,
+          "p90": 24.46,
+          "best_account": "Dr Delphinium",
+          "best_value": 24.46
+        },
+        "UNMATCHED": {
+          "n": 56,
+          "median": 0.0,
+          "p75": 93.71,
+          "p90": 100.0,
+          "best_account": "Washington Floral Service, Inc",
+          "best_value": 100.0
+        },
+        "WH_CORE": {
+          "n": 63,
+          "median": 16.41,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Solo Wholesale Flower LLC",
+          "best_value": 100.0
+        },
+        "WH_ESUITE": {
+          "n": 2,
+          "median": 93.83,
+          "p75": 96.28,
+          "p90": 97.75,
+          "best_account": "Floropolis",
+          "best_value": 98.73
+        },
+        "WH_K2K": {
+          "n": 29,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Flowers Direct Inc",
+          "best_value": 100.0
+        },
+        "WH_PROC": {
+          "n": 36,
+          "median": 100.0,
+          "p75": 100.0,
+          "p90": 100.0,
+          "best_account": "Palm Beach Whsle Flowers, Inc.",
+          "best_value": 100.0
+        }
+      }
+    },
+    "4_repeat_rate_pct": {
+      "description": "% of online buyers who bought in 2+ distinct months, H1 2026",
+      "source": "repeat_rate.json",
+      "filter": "accounts with >= 10 online buyers (statistical relevance)",
+      "network": {
+        "n": 140,
+        "median": 70.7,
+        "p75": 83.3,
+        "p90": 88.89,
+        "best_account": "Kennicott Brothers West",
+        "best_value": 100.0
+      },
+      "by_segment": {
+        "GRW": {
+          "n": 7,
+          "median": 70.7,
+          "p75": 74.3,
+          "p90": 76.68,
+          "best_account": "Naranjo Farms LLC",
+          "best_value": 80.1
+        },
+        "IMP_CORE": {
+          "n": 63,
+          "median": 76.1,
+          "p75": 84.85,
+          "p90": 88.5,
+          "best_account": "Fresca Farms",
+          "best_value": 96.1
+        },
+        "IMP_K2K": {
+          "n": 9,
+          "median": 88.8,
+          "p75": 94.9,
+          "p90": 96.96,
+          "best_account": "Kennicott Brothers West",
+          "best_value": 100.0
+        },
+        "UNMATCHED": {
+          "n": 24,
+          "median": 70.25,
+          "p75": 83.75,
+          "p90": 91.14,
+          "best_account": "Rosaprima International, LLC",
+          "best_value": 94.8
+        },
+        "WH_CORE": {
+          "n": 20,
+          "median": 61.6,
+          "p75": 73.65,
+          "p90": 79.31,
+          "best_account": "FloraLink",
+          "best_value": 93.1
+        },
+        "WH_ESUITE": {
+          "n": 1,
+          "median": 45.5,
+          "p75": 45.5,
+          "p90": 45.5,
+          "best_account": "Floropolis",
+          "best_value": 45.5
+        },
+        "WH_K2K": {
+          "n": 16,
+          "median": 61.15,
+          "p75": 71.75,
+          "p90": 80.0,
+          "best_account": "Flowers Direct Inc",
+          "best_value": 87.5
+        }
+      }
+    },
+    "5_top2_pct_concentration": {
+      "description": "% of online GMV from top 2 buyers (lower = more diversified = better)",
+      "source": "buyer_concentration.json",
+      "filter": "accounts with >= 10 online buyers",
+      "note": "LOWER IS BETTER — inverted metric. p25 = best quartile.",
+      "network": {
+        "n": 140,
+        "median": 29.35,
+        "p75": 47.55,
+        "p90": 60.26,
+        "best_account": "Kennicott Brothers Company",
+        "best_value": 3.6
+      },
+      "by_segment": {
+        "GRW": {
+          "n": 7,
+          "median": 37.9,
+          "p75": 46.8,
+          "p90": 60.84,
+          "best_account": "MONTEROSAS LLC",
+          "best_value": 12.9
+        },
+        "IMP_CORE": {
+          "n": 63,
+          "median": 19.0,
+          "p75": 36.75,
+          "p90": 50.56,
+          "best_account": "Bella Blossom LLC",
+          "best_value": 6.0
+        },
+        "IMP_K2K": {
+          "n": 9,
+          "median": 21.5,
+          "p75": 47.3,
+          "p90": 62.04,
+          "best_account": "* Continental Farms",
+          "best_value": 9.2
+        },
+        "UNMATCHED": {
+          "n": 24,
+          "median": 33.25,
+          "p75": 51.25,
+          "p90": 59.35,
+          "best_account": "Rosaprima International, LLC",
+          "best_value": 5.6
+        },
+        "WH_CORE": {
+          "n": 20,
+          "median": 39.85,
+          "p75": 51.88,
+          "p90": 61.02,
+          "best_account": "Kennicott Brothers Company",
+          "best_value": 3.6
+        },
+        "WH_ESUITE": {
+          "n": 1,
+          "median": 63.0,
+          "p75": 63.0,
+          "p90": 63.0,
+          "best_account": "Floropolis",
+          "best_value": 63.0
+        },
+        "WH_K2K": {
+          "n": 16,
+          "median": 44.35,
+          "p75": 53.73,
+          "p90": 56.6,
+          "best_account": "Georgia State Floral Distributors",
+          "best_value": 23.0
+        }
+      },
+      "network_inverted": {
+        "n": 140,
+        "median": 29.35,
+        "p25_best_quartile": 14.47,
+        "p10_best_decile": 9.98,
+        "p75_worst_quartile": 47.55,
+        "most_diversified": "Kennicott Brothers Company",
+        "most_diversified_value": 3.6
+      }
+    },
+    "6_cvr_ga4_own_hostname": {
+      "description": "eShop conversion rate (transactions/sessions) for accounts with own branded hostname",
+      "source": "ga4_eshop.json",
+      "filter": "own hostname (excludes platform hostnames), sessions >= 10",
+      "period": "Jul 11-31 2026 (21 days)",
+      "note": "Segment not available from GA4 data. Split into active (txn>0) and all.",
+      "active_eshops_only": {
+        "description": "eShops with at least 1 transaction in period",
+        "n": 8,
+        "median": 0.1006,
+        "p75": 0.1933,
+        "p90": 0.2586,
+        "best_account": "komet.billdoran.com",
+        "best_value": 0.3304
+      },
+      "all_eshops_incl_zero": {
+        "description": "All branded hostnames including those with 0 transactions",
+        "n": 14,
+        "median": 0.0124,
+        "p75": 0.1258,
+        "p90": 0.214
+      },
+      "detail": [
+        {
+          "hostname": "komet.billdoran.com",
+          "cvr": 0.3304,
+          "rank": 2
+        },
+        {
+          "hostname": "shop.kennicott.com",
+          "cvr": 0.2278,
+          "rank": 1
+        },
+        {
+          "hostname": "eshop.solefarms.com",
+          "cvr": 0.1818,
+          "rank": 5
+        },
+        {
+          "hostname": "shop.pikespeakfloral.com",
+          "cvr": 0.151,
+          "rank": 3
+        },
+        {
+          "hostname": "shop.allurefarms.com",
+          "cvr": 0.0502,
+          "rank": 4
+        },
+        {
+          "hostname": "details.direct",
+          "cvr": 0.049,
+          "rank": 6
+        },
+        {
+          "hostname": "shop.usgreenscorp.com",
+          "cvr": 0.0139,
+          "rank": 8
+        },
+        {
+          "hostname": "shop.frescafarms.com",
+          "cvr": 0.011,
+          "rank": 7
+        }
+      ]
+    },
+    "7_time_depth_pct_over_90_days": {
+      "description": "% of online variety catalog with last shipment > 90 days ago (stale catalog — LOWER IS BETTER)",
+      "source": "loop2_list_time_depth_v2.json",
+      "filter": "all companies in dataset",
+      "note": "LOWER IS BETTER — high % means stale catalog. Measures catalog freshness.",
+      "network": {
+        "n": 112,
+        "median": 28.4,
+        "p75": 35.92,
+        "p90": 46.09,
+        "best_account": "PETALS WEST, INC.",
+        "best_value": 1.1
+      },
+      "by_segment": {
+        "GRW": {
+          "n": 2,
+          "median": 32.2,
+          "p75": 38.25,
+          "p90": 41.88,
+          "best_account": "Naranjo Farms LLC",
+          "best_value": 20.1
+        },
+        "IMP_CORE": {
+          "n": 29,
+          "median": 20.7,
+          "p75": 26.3,
+          "p90": 28.88,
+          "best_account": "Floral Chain Direct",
+          "best_value": 7.1
+        },
+        "IMP_K2K": {
+          "n": 6,
+          "median": 15.5,
+          "p75": 18.8,
+          "p90": 21.45,
+          "best_account": "* Continental Farms",
+          "best_value": 11.8
+        },
+        "RET_PURE": {
+          "n": 2,
+          "median": 36.7,
+          "p75": 40.65,
+          "p90": 43.02,
+          "best_account": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+          "best_value": 28.8
+        },
+        "UNMATCHED": {
+          "n": 13,
+          "median": 23.8,
+          "p75": 39.4,
+          "p90": 46.08,
+          "best_account": "Rosaprima International, LLC",
+          "best_value": 9.2
+        },
+        "WH_CORE": {
+          "n": 26,
+          "median": 30.05,
+          "p75": 37.6,
+          "p90": 48.55,
+          "best_account": "Zeidler Floral",
+          "best_value": 1.1
+        },
+        "WH_K2K": {
+          "n": 15,
+          "median": 35.9,
+          "p75": 42.05,
+          "p90": 48.1,
+          "best_account": "Baisch & Skinner",
+          "best_value": 20.6
+        },
+        "WH_PROC": {
+          "n": 19,
+          "median": 32.8,
+          "p75": 36.35,
+          "p90": 49.08,
+          "best_account": "PETALS WEST, INC.",
+          "best_value": 1.1
+        }
+      },
+      "network_inverted": {
+        "n": 112,
+        "median": 28.4,
+        "p25_freshest": 20.68,
+        "p10_freshest": 14.53,
+        "p75_stalest": 35.92,
+        "freshest_account": "PETALS WEST, INC.",
+        "freshest_value": 1.1
+      }
+    },
+    "8_distinct_varieties": {
+      "description": "Count of distinct product varieties sold, H1 2026",
+      "source": "loop2_list_usage_v2.json",
+      "filter": "companies with distinct_varieties > 0",
+      "network": {
+        "n": 337,
+        "median": 212.0,
+        "p75": 537.0,
+        "p90": 960.2,
+        "best_account": "* Jet Fresh Flower Distributors Inc.",
+        "best_value": 6184
+      },
+      "by_segment": {
+        "GRW": {
+          "n": 36,
+          "median": 19.5,
+          "p75": 103.5,
+          "p90": 361.5,
+          "best_account": "FLORISOL& CO FLOWER TRADING LLC DBA MARVEL FLOWERS",
+          "best_value": 602
+        },
+        "IMP_CORE": {
+          "n": 98,
+          "median": 212.5,
+          "p75": 574.25,
+          "p90": 1069.0,
+          "best_account": "* Jet Fresh Flower Distributors Inc.",
+          "best_value": 6184
+        },
+        "IMP_K2K": {
+          "n": 14,
+          "median": 57.0,
+          "p75": 667.0,
+          "p90": 909.5,
+          "best_account": "Miaflora Farms",
+          "best_value": 1013
+        },
+        "RET_PURE": {
+          "n": 6,
+          "median": 166.5,
+          "p75": 350.75,
+          "p90": 498.5,
+          "best_account": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+          "best_value": 604
+        },
+        "RET_WHOLESALE_BEHAVIOR": {
+          "n": 1,
+          "median": 525.0,
+          "p75": 525.0,
+          "p90": 525.0,
+          "best_account": "Dr Delphinium",
+          "best_value": 525
+        },
+        "UNMATCHED": {
+          "n": 65,
+          "median": 117.0,
+          "p75": 346.0,
+          "p90": 587.4,
+          "best_account": "Sunburst Farms",
+          "best_value": 3218
+        },
+        "WH_CORE": {
+          "n": 59,
+          "median": 501.0,
+          "p75": 871.0,
+          "p90": 1208.0,
+          "best_account": "Bill Doran Company",
+          "best_value": 5834
+        },
+        "WH_ESUITE": {
+          "n": 1,
+          "median": 24.0,
+          "p75": 24.0,
+          "p90": 24.0,
+          "best_account": "Floropolis",
+          "best_value": 24
+        },
+        "WH_K2K": {
+          "n": 28,
+          "median": 282.0,
+          "p75": 475.75,
+          "p90": 975.2,
+          "best_account": "Cleveland Plant & Flower Co.",
+          "best_value": 1490
+        },
+        "WH_PROC": {
+          "n": 29,
+          "median": 335.0,
+          "p75": 597.0,
+          "p90": 803.6,
+          "best_account": "M&M CUT FLORA",
+          "best_value": 1243
+        }
+      }
+    },
+    "9_take_rate": {
+      "description": "TX fees / sell GMV (fee yield per dollar of online GMV)",
+      "status": "NOT_COMPUTABLE",
+      "reason": "NOT_AVAILABLE - fee data not in these JSON files (lives in Snowflake TRANSACTION_FEES). Cannot compute take_rate without fee-by-account data.",
+      "action_required": "Load fee-by-account data from Snowflake to compute. Rose can run this query on demand."
+    }
+  }
+}

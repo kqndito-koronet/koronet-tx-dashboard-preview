@@ -1,0 +1,2226 @@
+{
+  "generated_at": "2026-08-04T08:25:12.186761+00:00",
+  "source_contract": "Live Salesforce Opportunity query; open opportunities only; matched by AccountId; no priority inference.",
+  "records": [
+    {
+      "opportunity_id": "006VL000005fnbQYAQ",
+      "account_id": "001G000001f8YLFIA2",
+      "opp_name": "FleuraMetz: Komet Core - Multilocation",
+      "stage": "Negotiating",
+      "amount": 46539,
+      "close_date": "2026-09-30",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-06-22T20:43:12.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000AlksrYAB",
+      "account_id": "001G000001TsFyvIAF",
+      "opp_name": "Louisiana Wholesale Florist: Core Multilocation",
+      "stage": "Closing",
+      "amount": 11369,
+      "close_date": "2026-08-21",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-05T21:31:47.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000DWZuQYAX",
+      "account_id": "0014p000022R9RlAAK",
+      "opp_name": "Honey Bee Wholesale Florist, LLC: Koronet Procurement",
+      "stage": "Negotiating",
+      "amount": 299,
+      "close_date": "2026-08-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-06-22T20:43:12.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000GHJHzYAP",
+      "account_id": "001G000001DW4RwIAL",
+      "opp_name": "Miaflora Farms LLC: Komet Core",
+      "stage": "Negotiating",
+      "amount": 51689,
+      "close_date": "2026-08-31",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-06-22T20:43:12.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Gb3YoYAJ",
+      "account_id": "001G000001V5PivIAF",
+      "opp_name": "Full Pot - Ft. Lauderdale: Multilocation Komet Core",
+      "stage": "Selling",
+      "amount": 5598,
+      "close_date": "2026-08-14",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-05T21:32:33.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000H5ttJYAR",
+      "account_id": "0011L00002h0CH9QAM",
+      "opp_name": "Vosz Floral LLC: Vosz Floral: Koronet Procurement",
+      "stage": "Negotiating",
+      "amount": 699,
+      "close_date": "2026-10-08",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-08-03T17:10:24.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000HUUi1YAH",
+      "account_id": "0011L00002rCC5zQAG",
+      "opp_name": "Floristcentric, LLC: Koronet Procurement",
+      "stage": "Negotiating",
+      "amount": 299,
+      "close_date": "2026-08-12",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-08-03T20:00:16.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000IAEk8YAH",
+      "account_id": "0014p0000220MfNAAU",
+      "opp_name": "The Flower Emporium LLC: Koronet Procurement",
+      "stage": "Negotiating",
+      "amount": 299,
+      "close_date": "2026-08-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-08-03T18:40:10.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000JAPevYAH",
+      "account_id": "001G000001DW4PzIAL",
+      "opp_name": "Fresca Farms: Koronet Procurement",
+      "stage": "Selling",
+      "amount": 699,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-06-22T20:43:14.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000KH4JsYAL",
+      "account_id": "001VL00000JGRHRYA5",
+      "opp_name": "Fleurametz USA NYC: Fleurametz NYC - Koronet Procurement",
+      "stage": "Selling",
+      "amount": 299,
+      "close_date": "2026-08-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-23T21:00:14.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000LD4rKYAT",
+      "account_id": "001G000001DW4QWIA1",
+      "opp_name": "Jet Fresh Flower Distributors Inc.: eShops",
+      "stage": "Negotiating",
+      "amount": 459,
+      "close_date": "2026-08-14",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-08-03T19:00:13.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000LD8TVYA1",
+      "account_id": "001G000001DW4TQIA1",
+      "opp_name": "A Trilogy Floral - Zamba Flowers: Eshops",
+      "stage": "Negotiating",
+      "amount": 299,
+      "close_date": "2026-08-18",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-07-06T17:33:58.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Lgz7pYAB",
+      "account_id": "001G000001TsIX2IAN",
+      "opp_name": "The Oklahoma Flower Market: Sunset Project Komet Core",
+      "stage": "Selling",
+      "amount": 3298,
+      "close_date": "2026-08-31",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-06-22T20:43:14.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000M1uBZYAZ",
+      "account_id": "0011L00002h0CH9QAM",
+      "opp_name": "Vosz Floral LLC: Renewal 2026 - 2027",
+      "stage": "Discovery",
+      "amount": 1829,
+      "close_date": "2026-08-06",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-08-03T20:10:03.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000M3E1nYAF",
+      "account_id": "00116000021BDnbAAG",
+      "opp_name": "Washington Floral Service, Inc: Sunset Project Komet Core Multilocation",
+      "stage": "Negotiating",
+      "amount": 8298,
+      "close_date": "2026-08-21",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-08-03T19:24:44.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000MaZDtYAN",
+      "account_id": "0011600001uTH0wAAG",
+      "opp_name": "Frank Adams Wholesale Florist: Sunset Project Komet Core Single Location",
+      "stage": "Negotiating",
+      "amount": 4579,
+      "close_date": "2026-08-30",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-07-14T18:00:20.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000MkRF4YAN",
+      "account_id": "0014p000022FEx7AAG",
+      "opp_name": "Faguaflowers Intl LLC: Renewal Opportunity",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-09-24",
+      "owner": "Revenue Operations",
+      "last_modified_at": "2026-07-29T22:47:07.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000MqcPVYAZ",
+      "account_id": "001G000001a07MXIAY",
+      "opp_name": "ACA Flowers: Koronet Procurement",
+      "stage": "Closing",
+      "amount": 299,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-06-22T20:43:12.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000MrrJFYAZ",
+      "account_id": "0014p00001zrPfKAAU",
+      "opp_name": "J Van Vliet: Van Vliet - eShops",
+      "stage": "Selling",
+      "amount": 11900,
+      "close_date": "2026-07-28",
+      "owner": "Davie van Eekelen",
+      "last_modified_at": "2026-07-20T12:52:43.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000NLCYuYAP",
+      "account_id": "001VL000007lgETYAY",
+      "opp_name": "Bloemen en planten groothandel A. vd Hoorn B.V.: HBM - ERP Annual Contract",
+      "stage": "Discovery",
+      "amount": 8260.6,
+      "close_date": "2026-05-29",
+      "owner": "Davie van Eekelen",
+      "last_modified_at": "2026-06-22T20:43:13.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000NStZ0YAL",
+      "account_id": "001160000222AFqAAM",
+      "opp_name": "Metropolitan Wholesale/Cityside Flowers: eSuite",
+      "stage": "Negotiating",
+      "amount": 1798,
+      "close_date": "2026-08-28",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-22T21:30:02.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Ng8vDYAR",
+      "account_id": "0011600001uSZXFAA4",
+      "opp_name": "Exclusive Wholesale: eSuites Wholesaler",
+      "stage": "Selling",
+      "amount": 3298,
+      "close_date": "2026-08-29",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-27T13:29:04.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000O0xtWYAR",
+      "account_id": "0011L00002rEB34QAG",
+      "opp_name": "Farms Connect: Renewal Opportunity",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-09-12",
+      "owner": "Revenue Operations",
+      "last_modified_at": "2026-02-11T21:05:08.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000PLfMjYAL",
+      "account_id": "001VL000007lmzjYAA",
+      "opp_name": "EZ flowers BV: EZ Flower - eShops",
+      "stage": "Discovery",
+      "amount": 399,
+      "close_date": "2026-05-20",
+      "owner": "Davie van Eekelen",
+      "last_modified_at": "2026-04-14T07:15:39.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Pa141YAB",
+      "account_id": "0011L00002BInj0QAD",
+      "opp_name": "Greens and Flowers Connection: eShops",
+      "stage": "Closing",
+      "amount": 349,
+      "close_date": "2026-11-07",
+      "owner": "Juan Diego Toro",
+      "last_modified_at": "2026-05-19T19:41:18.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Pa1btYAB",
+      "account_id": "0011L00002BInj0QAD",
+      "opp_name": "Greens and Flowers Connection: Koronet Ads",
+      "stage": "Negotiating",
+      "amount": 500,
+      "close_date": "2026-10-30",
+      "owner": "Juan Diego Toro",
+      "last_modified_at": "2026-06-22T20:43:12.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000PmYfJYAV",
+      "account_id": "001VL0000074b1mYAA",
+      "opp_name": "Tessaroses S.A.: Automatic Swap Development",
+      "stage": "Closing",
+      "amount": 46200,
+      "close_date": "2026-12-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-04-02T19:53:18.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000PmZLFYA3",
+      "account_id": "001VL0000074b1mYAA",
+      "opp_name": "Tessaroses S.A.: Purchasing Module",
+      "stage": "Closing",
+      "amount": 19800,
+      "close_date": "2026-12-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-04-02T19:52:51.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000QWgd3YAD",
+      "account_id": "0011L00002h0CH9QAM",
+      "opp_name": "Vosz Floral LLC: eShops",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-10-15",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-08-03T17:50:14.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Qhq1BYAR",
+      "account_id": "0011600001uRvGlAAK",
+      "opp_name": "RUMHORA GREENS LLC: Renewal Opportunity",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-11-26",
+      "owner": "Revenue Operations",
+      "last_modified_at": "2026-02-11T21:05:08.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000RBCPhYAP",
+      "account_id": "001VL00000fnpkwYAA",
+      "opp_name": "Blumelii: Komet Core",
+      "stage": "Negotiating",
+      "amount": 3498,
+      "close_date": "2026-10-29",
+      "owner": "Santiago Navarro",
+      "last_modified_at": "2026-08-03T19:07:58.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000RozGrYAJ",
+      "account_id": "001VL000001BrA7YAK",
+      "opp_name": "Albra Roses - eSuite Grower",
+      "stage": "Negotiating",
+      "amount": 1548,
+      "close_date": "2026-08-31",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-06-22T20:43:12.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000S8aMMYAZ",
+      "account_id": "001G000001DW4QmIAL",
+      "opp_name": "Legacy Flowers - eShops Gold",
+      "stage": "Negotiating",
+      "amount": 349,
+      "close_date": "2026-08-14",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-07-27T17:14:58.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Tkb5VYAR",
+      "account_id": "001VL000007lt1uYAA",
+      "opp_name": "Holex Flower B.V. (HCN) - Holex China -Annual Contract",
+      "stage": "Negotiating",
+      "amount": 1673.8,
+      "close_date": "2026-05-21",
+      "owner": "Davie van Eekelen",
+      "last_modified_at": "2026-05-07T20:04:57.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000TkrWrYAJ",
+      "account_id": "001VL000007lijNYAQ",
+      "opp_name": "Algro Flowers & Plants - Algro - Annual Contract",
+      "stage": "Negotiating",
+      "amount": 3719.9,
+      "close_date": "2026-07-15",
+      "owner": "Davie van Eekelen",
+      "last_modified_at": "2026-06-30T11:40:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000TqJqfYAF",
+      "account_id": "0011L00001zzDR9QAM",
+      "opp_name": "Orlando Wholesale Florist - Koronet Procurement",
+      "stage": "Negotiating",
+      "amount": null,
+      "close_date": "2026-09-20",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-06-22T20:43:12.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000UXfZNYA1",
+      "account_id": "0011600001lgc6sAAA",
+      "opp_name": "Northline Wholesale Flowers - Komet Core + Koronet Procurement",
+      "stage": "Selling",
+      "amount": 1449,
+      "close_date": "2026-08-24",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-07-06T16:48:05.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000VFVBJYA5",
+      "account_id": "0011600001uTH0wAAG",
+      "opp_name": "Frank Adams Wholesale Florist - Renewal 2026 - 2027",
+      "stage": "Negotiating",
+      "amount": 799,
+      "close_date": "2026-08-24",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-08-03T18:26:07.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000VKvybYAD",
+      "account_id": "001VL000007lckEYAQ",
+      "opp_name": "Tuning BV - DeTulp - Annual Contract",
+      "stage": "Discovery",
+      "amount": 194.4,
+      "close_date": "2026-05-27",
+      "owner": "Davie van Eekelen",
+      "last_modified_at": "2026-07-23T08:55:34.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000VRwKcYAL",
+      "account_id": "0011600001mK5aiAAC",
+      "opp_name": "Gal\u00e1pagos Flores - Komet Core",
+      "stage": "Selling",
+      "amount": null,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-06-22T20:43:14.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Vau0DYAR",
+      "account_id": "00116000026WSexAAG",
+      "opp_name": "First Choice Floral - Sunset Project Komet Core Multilocation",
+      "stage": "Discovery",
+      "amount": 2098,
+      "close_date": "2026-08-31",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-08-03T17:06:05.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Vm7RJYAZ",
+      "account_id": "00116000026WjjWAAS",
+      "opp_name": "Stellar Farms - eSuite Wholesaler",
+      "stage": "Negotiating",
+      "amount": 699,
+      "close_date": "2026-08-17",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-07-29T16:01:16.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000W1fiVYAR",
+      "account_id": "001VL00000nm7W3YAI",
+      "opp_name": "Luna Distributors LLC - Komet Core",
+      "stage": "Closing",
+      "amount": 999,
+      "close_date": "2026-08-21",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-27T13:51:53.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000W1iixYAB",
+      "account_id": "00116000021b8NNAAY",
+      "opp_name": "J.A. Flower Service, Inc - eSuite Virtual Importer",
+      "stage": "Closing",
+      "amount": 1149,
+      "close_date": "2026-08-14",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-21T19:01:18.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000WfpvNYAR",
+      "account_id": "001VL000007lkWTYAY",
+      "opp_name": "Kempers BV - Annual Contract",
+      "stage": "Closing",
+      "amount": 2611.1,
+      "close_date": "2026-06-12",
+      "owner": "Davie van Eekelen",
+      "last_modified_at": "2026-06-25T07:34:54.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000WtripYAB",
+      "account_id": "001VL00000pF6qvYAC",
+      "opp_name": "Highland Crops - eSuite Virtual Importer",
+      "stage": "Selling",
+      "amount": 799,
+      "close_date": "2026-08-21",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-05T21:33:56.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0nH6YAJ",
+      "account_id": "001VL00000YHEixYAH",
+      "opp_name": "Valley Floral Co. - Wichita - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 799,
+      "close_date": "2026-08-31",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-08-03T20:20:30.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0thTYAR",
+      "account_id": "0011L000028TcCRQA0",
+      "opp_name": "WE GOT FLOWERS - WE GOT FLOWERS - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-10-31",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0uvGYAR",
+      "account_id": "0011600001uTSvRAAW",
+      "opp_name": "The Queens Flowers Corp - The Queens Flowers Corp - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-10-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-19T19:39:33.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0vHrYAJ",
+      "account_id": "001VL00000GL9dQYAT",
+      "opp_name": "NY Floral Supply - NY Floral Supply - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-09-30",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0vhiYAB",
+      "account_id": "0011600001zrCXXAA2",
+      "opp_name": "EPIC FARMS USA LLC - EPIC FARMS USA LLC - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-11-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0waUYAR",
+      "account_id": "0014p00001lORHxAAO",
+      "opp_name": "Tropical Blooms Inc. - Tropical Blooms Inc. - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-12-31",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0wgyYAB",
+      "account_id": "0011600001zE3tTAAS",
+      "opp_name": "Agrirose S.A. - Agrirose S.A. - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 450,
+      "close_date": "2026-09-30",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-06-22T20:43:13.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0wp2YAB",
+      "account_id": "0014p000020vycQAAQ",
+      "opp_name": "Natural Flowers, Inc - Natural Flowers, Inc - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-12-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0wvSYAR",
+      "account_id": "0014p00001zy3KeAAI",
+      "opp_name": "FernTrust Inc. - FernTrust Inc. - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-12-31",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0xOVYAZ",
+      "account_id": "001VL000009ueQbYAI",
+      "opp_name": "Frama Flowers - Frama Flowers - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 450,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0xmgYAB",
+      "account_id": "001G000001TsGfBIAV",
+      "opp_name": "Mikes Finest Wholesale Flowers, Inc. - Mikes Finest Wholesale Flowers, Inc. - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 600,
+      "close_date": "2026-11-30",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0yHKYAZ",
+      "account_id": "001VL000001CXvhYAG",
+      "opp_name": "POSIES TRUCK - POSIES TRUCK - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 400,
+      "close_date": "2026-08-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-07-06T17:37:53.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0yu3YAB",
+      "account_id": "00116000020LDINAA4",
+      "opp_name": "Roots Peru - Roots Peru - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 484.07,
+      "close_date": "2026-09-20",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-07-22T20:01:00.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0z0WYAR",
+      "account_id": "0011600001mLv33AAC",
+      "opp_name": "ECOROSES LLC - ECOROSES LLC - eSuite grower",
+      "stage": "Discovery",
+      "amount": 450,
+      "close_date": "2026-09-30",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-20T18:31:29.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X0zRuYAJ",
+      "account_id": "001G000001TsKPSIA3",
+      "opp_name": "Apex Floral Distributors Mississauga - Apex Floral Distributors Mississauga - eShop",
+      "stage": "Discovery",
+      "amount": 348,
+      "close_date": "2026-09-30",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X10z4YAB",
+      "account_id": "00116000025os8pAAA",
+      "opp_name": "FloresVerdes - FloresVerdes - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 450,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X115WYAR",
+      "account_id": "001160000223WK5AAM",
+      "opp_name": "Global Flowers - Global Flowers - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-12-31",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X11IRYAZ",
+      "account_id": "0014p000022HSNzAAO",
+      "opp_name": "VELDKAMP\u00b4S FLOWERS - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 500,
+      "close_date": "2026-08-15",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-08-03T20:05:06.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X11f1YAB",
+      "account_id": "0014p00001v3oKUAAY",
+      "opp_name": "IRIS ROSES LLC - IRIS ROSES LLC - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-11-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X11n4YAB",
+      "account_id": "0011L00002Sbi4xQAB",
+      "opp_name": "Dynamic Farms - Dynamic Farms - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-10-31",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X11rwYAB",
+      "account_id": "001G000001TsJj3IAF",
+      "opp_name": "South Carolina Specialty Cut - South Carolina Specialty Cut - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 431.67,
+      "close_date": "2026-08-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X11v9YAB",
+      "account_id": "0011600001lhbwBAAQ",
+      "opp_name": "JOHNSENS WHOLESALE FLORIST - JOHNSENS WHOLESALE FLORIST - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 584.08,
+      "close_date": "2026-09-30",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X12OAYAZ",
+      "account_id": "001VL0000085zKsYAI",
+      "opp_name": "Ecuamagic S.A - Ecuamagic S.A - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 450,
+      "close_date": "2026-10-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X12ROYAZ",
+      "account_id": "001G000001DW4T1IAL",
+      "opp_name": "Sofi's Flowers - Sofi's Flowers - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-12-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X12kkYAB",
+      "account_id": "00116000020LCvJAAW",
+      "opp_name": "Farm Fresh Exports INC - Farm Fresh Exports INC - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-08-25",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-07-06T17:38:03.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X148FYAR",
+      "account_id": "001G000001DW4ThIAL",
+      "opp_name": "Zion Flowers INC - Zion Flowers INC - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-11-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X14ucYAB",
+      "account_id": "0014p000022GMTCAA4",
+      "opp_name": "Salter's Evergreen Supply - Salter's Evergreen Supply - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-09-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X14wEYAR",
+      "account_id": "001VL00000DlwqkYAB",
+      "opp_name": "Miraflor LLC - Miraflor LLC - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-10-31",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X15YwYAJ",
+      "account_id": "001G000001TsMbNIAV",
+      "opp_name": "BRIEGER WHSLE -TX. - BRIEGER WHSLE -TX. - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 600,
+      "close_date": "2026-09-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-06-22T20:43:13.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X15icYAB",
+      "account_id": "00116000026VeXIAA0",
+      "opp_name": "DP Flowers Corp - DP Flowers Corp - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-12-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X16BfYAJ",
+      "account_id": "0011L00002IGHtEQAX",
+      "opp_name": "MONTEROSAS LLC - MONTEROSAS LLC - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-09-30",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X16WcYAJ",
+      "account_id": "0011L000028VnGrQAK",
+      "opp_name": "LD Trading/ Lawrence Developments Inc. - LD Trading/ Lawrence Developments Inc. - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 584.08,
+      "close_date": "2026-09-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X16mkYAB",
+      "account_id": "001G000001fjeOcIAI",
+      "opp_name": "LA TOSCANA FARMS - LA TOSCANA FARMS - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-12-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X16rbYAB",
+      "account_id": "00116000021Al2pAAC",
+      "opp_name": "Florecal - Florecal - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 450,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X16tCYAR",
+      "account_id": "001G000001DW4R6IAL",
+      "opp_name": "Melody Farms LLC - Melody Farms LLC - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-10-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X16zeYAB",
+      "account_id": "0014p000021zRPfAAM",
+      "opp_name": "Bo's Wholesale Florist - Bo's Wholesale Florist - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 333.61,
+      "close_date": "2026-11-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X172sYAB",
+      "account_id": "0014p00001nd9sQAAQ",
+      "opp_name": "The Flower Co, LLC - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-11-11",
+      "owner": "Juan Diego Toro",
+      "last_modified_at": "2026-07-28T18:19:29.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X179LYAR",
+      "account_id": "0011600001uRpuHAAS",
+      "opp_name": "Agrocoex S.A - Agrocoex S.A - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 450,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-06-22T20:43:13.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X17cMYAR",
+      "account_id": "001G000001DW4OlIAL",
+      "opp_name": "Choice Farms - Choice Farms - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-12-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X17nkYAB",
+      "account_id": "001G000001DW4OEIA1",
+      "opp_name": "Equiflor LLC : Komet Renewal 2026-2027",
+      "stage": "Discovery",
+      "amount": 700,
+      "close_date": "2026-07-31",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-08-03T21:00:19.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X17qsYAB",
+      "account_id": "001G000001TsIltIAF",
+      "opp_name": "R&W WHOLESALE, INC. - R&W WHOLESALE, INC. - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 484,
+      "close_date": "2026-08-31",
+      "owner": "Juan Diego Toro",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X17qtYAB",
+      "account_id": "00116000021BPGhAAO",
+      "opp_name": "Wolfe Wholesale Florist, Inc. Waco - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 500,
+      "close_date": "2026-08-03",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-08-03T20:04:27.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X17vhYAB",
+      "account_id": "001G000001DVt5TIAT",
+      "opp_name": "Bill Doran Company - eShops",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-12-31",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-07-24T16:16:23.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X17xJYAR",
+      "account_id": "00116000021c3HoAAI",
+      "opp_name": "A Florist First - eShop",
+      "stage": "Closing",
+      "amount": 83,
+      "close_date": "2026-08-25",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-07-30T17:35:47.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X17yvYAB",
+      "account_id": "001G000001DW4QJIA1",
+      "opp_name": "-Groflowers - -Groflowers - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-10-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1829YAB",
+      "account_id": "001G000001TsqcLIAR",
+      "opp_name": "Flora Fresh Inc - Flora Fresh Inc - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-10-31",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X183lYAB",
+      "account_id": "0011L000028V2EyQAK",
+      "opp_name": "Charleston Wholesale Florist - Charleston Wholesale Florist - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-10-31",
+      "owner": "Juan Diego Toro",
+      "last_modified_at": "2026-06-22T20:43:13.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X188bYAB",
+      "account_id": "001G000001ZwODhIAN",
+      "opp_name": "Juliet Wholesale Flowers LLC - ! Juliet Wholesale Flowers LLC - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-08-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-23T21:00:17.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18F3YAJ",
+      "account_id": "0014p000022EMZLAA4",
+      "opp_name": "FLORAL1 INC - *FLORAL1 INC - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-11-30",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18IHYAZ",
+      "account_id": "001G000001evx5aIAA",
+      "opp_name": "Pinnacle Flowers, LLC - Pinnacle Flowers, LLC - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-09-30",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18LVYAZ",
+      "account_id": "001VL00000F4yJVYAZ",
+      "opp_name": "Alders Wholesale Florist, Inc. - Alders Wholesale Florist, Inc. - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 584.08,
+      "close_date": "2026-08-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-27T20:25:08.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18LWYAZ",
+      "account_id": "001VL00000OLqk9YAD",
+      "opp_name": "Rose Runners - Rose Runners - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-11-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18N7YAJ",
+      "account_id": "001VL00000Hqn2xYAB",
+      "opp_name": "A1 Floral Xpressions - A1 Floral Xpressions - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-10-31",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18OjYAJ",
+      "account_id": "0011L00002ICyF3QAL",
+      "opp_name": "ALLIANCE FLORAL COMPANY. 6270 - ALLIANCE FLORAL COMPANY. 6270 - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 600,
+      "close_date": "2026-08-18",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-06-30T15:47:08.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18QLYAZ",
+      "account_id": "001G000001DW4O5IAL",
+      "opp_name": "AmeriLink Floratrader - eShops",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-09-30",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-07-20T19:12:08.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18VBYAZ",
+      "account_id": "0014p000020wFxeAAE",
+      "opp_name": "AMORES FLORES INC - AMORES FLORES INC - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-11-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18YPYAZ",
+      "account_id": "00116000022ofJ2AAI",
+      "opp_name": "WHOLESALE NORTON'S FLORIST - WHOLESALE NORTON'S FLORIST - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-09-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18erYAB",
+      "account_id": "0011600001uRq3BAAS",
+      "opp_name": "Bloomistics - Bloomistics - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-10-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18jhYAB",
+      "account_id": "0011600001mNfpDAAS",
+      "opp_name": "Bloomit Corp. - Bloomit Corp. - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-09-30",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18mvYAB",
+      "account_id": "001G000001DW4OTIA1",
+      "opp_name": "BOTANICA WHOLESALE FLORIST DALLAS (IRVING), LLC - eSuite Wholesaler Multilocation",
+      "stage": "Discovery",
+      "amount": 200,
+      "close_date": "2027-01-01",
+      "owner": "Juan Diego Toro",
+      "last_modified_at": "2026-08-03T20:26:02.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18q9YAB",
+      "account_id": "001VL00000HxMM6YAN",
+      "opp_name": "Blossom Express - Blossom Express - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-11-30",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18uzYAB",
+      "account_id": "001G000001DW4OWIA1",
+      "opp_name": "Brightland Farms - Brightland Farms - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-11-30",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18zpYAB",
+      "account_id": "0014p0000220OCmAAM",
+      "opp_name": "CASCADE FLOWERS DBA STADIUM FLOWERS INC - CASCADE FLOWERS DBA STADIUM FLOWERS INC - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 584.08,
+      "close_date": "2026-11-30",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X18zqYAB",
+      "account_id": "001G000001DW4TWIA1",
+      "opp_name": "Valleflor USA - Valleflor USA - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-09-30",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X191RYAR",
+      "account_id": "0014p000021zpeLAAQ",
+      "opp_name": "CONNECTION FLOWERS SAS - CONNECTION FLOWERS SAS - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-12-31",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X196HYAR",
+      "account_id": "001VL00000IFWlxYAH",
+      "opp_name": "Del Tropico/Ameriblooms - Del Tropico/ Ameriblooms - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-09-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-06-22T20:43:13.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X197tYAB",
+      "account_id": "0014p000022EYvBAAW",
+      "opp_name": "CHICAGO\u00b4S WHOLESALE - CHICAGO\u00b4S WHOLESALE - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 600,
+      "close_date": "2026-11-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19CjYAJ",
+      "account_id": "001G000001TskZ7IAJ",
+      "opp_name": "DKAY WHOLESALE INC - DKAY WHOLESALE INC - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 600,
+      "close_date": "2026-09-30",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19FxYAJ",
+      "account_id": "0011L00002WOF1LQAX",
+      "opp_name": "Dreaming Roses Corp - Dreaming Roses Corp - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-10-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19JBYAZ",
+      "account_id": "0014p00001yqo0aAAA",
+      "opp_name": "Ecuador's Origin Product - Ecuador's Origin Product - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-11-30",
+      "owner": "Juan Diego Toro",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19MPYAZ",
+      "account_id": "0011600001uRprIAAS",
+      "opp_name": "Excellence Flowers & Wayuu Flowers S.A.S - Excellence Flowers & Wayuu Flowers S.A.S - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 450,
+      "close_date": "2026-12-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19O1YAJ",
+      "account_id": "0011600001uUyJlAAK",
+      "opp_name": "Fair Trade Floral Inc. - Fair Trade Floral Inc. - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-09-30",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19PeYAJ",
+      "account_id": "0011600001uUw5EAAS",
+      "opp_name": "INTERNATIONAL TRADING AND SERVICES INC - INTERNATIONAL TRADING AND SERVICES INC - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-11-30",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-23T21:00:17.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19RFYAZ",
+      "account_id": "0011L00002rEB34QAG",
+      "opp_name": "Farms Connect - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-08-13",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-07-06T17:32:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19SrYAJ",
+      "account_id": "0011600001uRrbxAAC",
+      "opp_name": "Flores Prisma S.A. - Flores Prisma S.A. - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 450,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19XhYAJ",
+      "account_id": "0011600001lfVtAAAU",
+      "opp_name": "Gassafy Wholesale Florist Inc - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 584.08,
+      "close_date": "2026-09-17",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-08-03T20:27:06.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19ZJYAZ",
+      "account_id": "001VL00000Mxkv0YAB",
+      "opp_name": "Flower Board - The Financial Company - Flower Board - The Financial Company - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-09-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-06-22T20:43:13.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19avYAB",
+      "account_id": "0011600001uScxFAAS",
+      "opp_name": "HALL\u00b4S - BIRMINGHAM - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 584.08,
+      "close_date": "2026-08-15",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-08-03T20:05:30.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19e9YAB",
+      "account_id": "0011L00002jVSxCQAW",
+      "opp_name": "FLOWERMART CORP - FLOWERMART CORP - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-10-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-23T21:00:17.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19flYAB",
+      "account_id": "001G000001bpcuyIAA",
+      "opp_name": "Galleria Farms - Galleria Farms - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-12-31",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19hNYAR",
+      "account_id": "0011600001zVGSVAA4",
+      "opp_name": "Import Flowers Nashville LLC - Import Flowers Nashville LLC - eSuite Wholesaler",
+      "stage": "Selling",
+      "amount": 368,
+      "close_date": "2026-10-19",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-07-15T18:07:34.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19izYAB",
+      "account_id": "001VL00000WkLv3YAF",
+      "opp_name": "Garden Flowers LLC - Garden Flowers LLC - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-11-30",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19kbYAB",
+      "account_id": "0011L00002Y7yX7QAJ",
+      "opp_name": "Jacksonville Flower Market - Jacksonville Flower Market - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 600,
+      "close_date": "2026-08-20",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-07-06T17:38:13.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X19vtYAB",
+      "account_id": "0014p000021zHQjAAM",
+      "opp_name": "GREEN OCEAN LLC - GREEN OCEAN LLC - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-12-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1A3xYAF",
+      "account_id": "001G000001XIVGOIA5",
+      "opp_name": "Herradura Growers - Herradura Growers - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-09-30",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1A8nYAF",
+      "account_id": "0014p00001zAsAQAA0",
+      "opp_name": "J&E Greens - J&E Greens - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-08-20",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-07-06T20:20:36.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1AC1YAN",
+      "account_id": "0011L000029kBhZQAU",
+      "opp_name": "POPPIES DESIGN STUDIO, LLC - POPPIES DESIGN STUDIO, LLC - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 600,
+      "close_date": "2026-08-30",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-08-03T20:00:27.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1AITYA3",
+      "account_id": "0011L00002aTOTFQA4",
+      "opp_name": "MGA Flowers - MGA Flowers - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-08-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-06-22T20:43:13.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1AQXYA3",
+      "account_id": "001G000001as1u1IAA",
+      "opp_name": "MYSTICFLOWERS LLC - MYSTICFLOWERS LLC - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-08-15",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-07-21T19:09:37.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1AWzYAN",
+      "account_id": "0011L00001zzDR9QAM",
+      "opp_name": "Orlando Wholesale Florist - Orlando Wholesale Florist - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-11-30",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1AYbYAN",
+      "account_id": "0011600001tWETgAAO",
+      "opp_name": "Staalduinen Floral-LTF1118 - Staalduinen Floral-LTF1118 - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 600,
+      "close_date": "2026-10-31",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1AdRYAV",
+      "account_id": "0011600001lgY6YAAU",
+      "opp_name": "Premium Greens Australia LLC - Premium Greens Australia LLC - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-12-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1Af3YAF",
+      "account_id": "001VL00000HI21dYAD",
+      "opp_name": "TFS Bristol - TFS Bristol - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 584.08,
+      "close_date": "2026-10-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1AgfYAF",
+      "account_id": "001G000001DW4SbIAL",
+      "opp_name": "Prime Petals LLC - Prime Petals LLC - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-10-31",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1AiHYAV",
+      "account_id": "0011L000029kBirQAE",
+      "opp_name": "Tradewinds / Pristine Wholesale Floral - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 584.08,
+      "close_date": "2026-08-31",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-08-03T20:20:49.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1AlVYAV",
+      "account_id": "001G000001TtTOOIA3",
+      "opp_name": "Tradewinds/ KING FLORAL SUPPLY - Tradewinds/ KING FLORAL SUPPLY - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 600,
+      "close_date": "2026-12-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1An7YAF",
+      "account_id": "001VL000002uhlyYAA",
+      "opp_name": "Sims Flower Distribution - Koronet Procurement + Locations",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-08-15",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-07-29T03:04:56.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1AqLYAV",
+      "account_id": "0011600001uSyl7AAC",
+      "opp_name": "Trebol Roses - Trebol Roses - eSuite Wholesaler",
+      "stage": "Discovery",
+      "amount": 450,
+      "close_date": "2026-09-30",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X1B3FYAV",
+      "account_id": "001G000001JbAIjIAN",
+      "opp_name": "Zoom-Bloom - Zoom-Bloom - eShop",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-10-31",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-05-06T19:33:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000X4gH0YAJ",
+      "account_id": "001G000001DVt5TIAT",
+      "opp_name": "Bill Doran Company - Expansion Proposal",
+      "stage": "Negotiating",
+      "amount": 7490,
+      "close_date": "2026-08-31",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-07-27T18:30:24.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000XHSXzYAP",
+      "account_id": "001VL00000psqZ7YAI",
+      "opp_name": "Sunshine Flowers Wholesale - eSuite Wholesaler",
+      "stage": "Selling",
+      "amount": 499,
+      "close_date": "2026-08-28",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-22T00:00:33.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000XaVOrYAN",
+      "account_id": "001VL000007lTFeYAM",
+      "opp_name": "Divflo - Divflo Algarve",
+      "stage": "Discovery",
+      "amount": 4950,
+      "close_date": "2026-07-15",
+      "owner": "Davie van Eekelen",
+      "last_modified_at": "2026-05-19T13:21:59.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000XcAY1YAN",
+      "account_id": "001VL00000Vp156YAB",
+      "opp_name": "Hana Farms Inc.:  Eshops +Quickbook",
+      "stage": "Negotiating",
+      "amount": 299,
+      "close_date": "2026-08-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-21T23:47:05.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000XlESjYAN",
+      "account_id": "001VL00000r365bYAA",
+      "opp_name": "World Roses Center - Komet Core",
+      "stage": "Selling",
+      "amount": 3499,
+      "close_date": "2026-08-28",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-27T13:48:32.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000XrU4zYAF",
+      "account_id": "001VL000007loruYAA",
+      "opp_name": "DD Flower Export - Annual Contract",
+      "stage": "Discovery",
+      "amount": 737,
+      "close_date": "2026-06-18",
+      "owner": "Davie van Eekelen",
+      "last_modified_at": "2026-06-22T20:43:10.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000YH2EjYAL",
+      "account_id": "0011L00002IGHrNQAX",
+      "opp_name": "Montecarlo Gardens - eSuite Grower",
+      "stage": "Selling",
+      "amount": 549,
+      "close_date": "2026-09-21",
+      "owner": "Juan Pablo Agudelo",
+      "last_modified_at": "2026-08-03T13:54:39.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000YJxGyYAL",
+      "account_id": "001VL00000AggOoYAJ",
+      "opp_name": "Santa Cecilia Farms - Unosof Core",
+      "stage": "Selling",
+      "amount": 5194,
+      "close_date": "2026-10-01",
+      "owner": "Mateo Morales",
+      "last_modified_at": "2026-07-07T21:49:50.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000YYobVYAT",
+      "account_id": "001VL00000tMiCQYA0",
+      "opp_name": "The Bloom Market Wholesale Flowers - eSuite wholesaler",
+      "stage": "Closing",
+      "amount": 998,
+      "close_date": "2026-08-31",
+      "owner": "Mateo Morales",
+      "last_modified_at": "2026-07-14T02:31:25.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000YZfvyYAD",
+      "account_id": "0011L00002IFUFDQA5",
+      "opp_name": "Point West Wholesale Flower Market - Koronet Procurement",
+      "stage": "Negotiating",
+      "amount": 299,
+      "close_date": "2026-08-14",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-08-03T13:30:45.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000YlwBSYAZ",
+      "account_id": "001VL000003KcH9YAK",
+      "opp_name": "Tristate Wholesale Florist - eShops",
+      "stage": "Negotiating",
+      "amount": 349,
+      "close_date": "2026-08-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-28T20:35:18.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000YmeagYAB",
+      "account_id": "0011600001lgrcKAAQ",
+      "opp_name": "EQ Blooms LLC - Koronet Ads",
+      "stage": "Selling",
+      "amount": 0,
+      "close_date": "2026-06-18",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-06-22T20:43:14.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000YmlicYAB",
+      "account_id": "001G000001DW4OkIAL",
+      "opp_name": "Servicios Chilfresh Ltda. - Renewal 2026 - 2027",
+      "stage": "Closing",
+      "amount": 2131.9,
+      "close_date": "2026-08-04",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-08-03T19:21:50.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000YnYZeYAN",
+      "account_id": "001VL00000tyk2ZYAQ",
+      "opp_name": "A Flora Nova LLC - Koronet Procurement",
+      "stage": "Selling",
+      "amount": 299,
+      "close_date": "2026-08-14",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-22T12:22:57.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Yqx6rYAB",
+      "account_id": "001VL00000u89nRYAQ",
+      "opp_name": "Marco Flowers - Marco Flowers-",
+      "stage": "Negotiating",
+      "amount": null,
+      "close_date": "2026-06-30",
+      "owner": "Mark Hollingworth",
+      "last_modified_at": "2026-06-22T20:43:12.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000YqzjlYAB",
+      "account_id": "001VL00000u8HEjYAM",
+      "opp_name": "Uni Flowers - Axerrio ERP",
+      "stage": "Selling",
+      "amount": 7200,
+      "close_date": "2026-08-19",
+      "owner": "Davie van Eekelen",
+      "last_modified_at": "2026-07-20T08:05:29.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Z0kGPYAZ",
+      "account_id": "001G000001DW4SGIA1",
+      "opp_name": "Nazcaflor USA, Inc - eShop",
+      "stage": "Negotiating",
+      "amount": 300,
+      "close_date": "2026-09-09",
+      "owner": "Juan Diego Toro",
+      "last_modified_at": "2026-08-03T20:06:03.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Z0r09YAB",
+      "account_id": "001VL00000ub78jYAA",
+      "opp_name": "Blanca Flowers - Komet Core",
+      "stage": "Selling",
+      "amount": 3499,
+      "close_date": "2026-08-21",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-05T21:34:27.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Z3xqbYAB",
+      "account_id": "001VL00000uiYXCYA2",
+      "opp_name": "Ariba Flowers Cia Ltda. - Komet Core + eShop",
+      "stage": "Negotiating",
+      "amount": 2249,
+      "close_date": "2026-09-21",
+      "owner": "Juan Pablo Agudelo",
+      "last_modified_at": "2026-08-03T13:53:55.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Z69sTYAR",
+      "account_id": "001VL00000mScY9YAK",
+      "opp_name": "Flores de Los Lagos - Additional User",
+      "stage": "Selling",
+      "amount": 225,
+      "close_date": "2026-08-28",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-06-25T04:31:10.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Z7GNHYA3",
+      "account_id": "0011L00002aVkznQAC",
+      "opp_name": "New York Garden Flowers Wholesale - Komet Core",
+      "stage": "Discovery",
+      "amount": 3499,
+      "close_date": "2026-08-31",
+      "owner": "Mateo Morales",
+      "last_modified_at": "2026-07-20T13:28:56.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZBrpdYAD",
+      "account_id": "001VL00000v4aFNYAY",
+      "opp_name": "Petals Flowers & Orchids LLC - eSuite Wholesaler",
+      "stage": "Selling",
+      "amount": 898,
+      "close_date": "2026-09-16",
+      "owner": "Santiago Navarro",
+      "last_modified_at": "2026-07-28T14:00:17.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZBzVRYA1",
+      "account_id": "001VL00000v4rL3YAI",
+      "opp_name": "Cristal Flowers Inc - eSuite Grower",
+      "stage": "Closing",
+      "amount": 399,
+      "close_date": "2026-08-14",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-27T16:32:17.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZHd2PYAT",
+      "account_id": "001VL00000HV2VBYA1",
+      "opp_name": "Flores Acentejo - Flores Acentejo - Axerrio Core",
+      "stage": "Selling",
+      "amount": 6263,
+      "close_date": "2026-09-11",
+      "owner": "Felipe Luna",
+      "last_modified_at": "2026-08-03T07:26:45.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZJQQrYAP",
+      "account_id": "0014p00001zrPfKAAU",
+      "opp_name": "J Van Vliet - Annual Contract ERP",
+      "stage": "Discovery",
+      "amount": 41856.7,
+      "close_date": "2026-07-28",
+      "owner": "Davie van Eekelen",
+      "last_modified_at": "2026-06-30T12:37:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZK5XFYA1",
+      "account_id": "001VL00000GL9dQYAT",
+      "opp_name": "NY Floral Supply - eShops",
+      "stage": "Selling",
+      "amount": 349,
+      "close_date": "2026-08-20",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-07-06T20:13:59.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZNitsYAD",
+      "account_id": "0011L00002IDjZOQA1",
+      "opp_name": "GRUPO DEL PACIFICO - Renewal 2026-2027",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-07-01T20:56:36.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZNstBYAT",
+      "account_id": "0011L000028TahoQAC",
+      "opp_name": "Metro Flower Market LLC - Renewal 2026-2027",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-07-31",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-07-27T20:12:11.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZNu8bYAD",
+      "account_id": "0014p00001zanUFAAY",
+      "opp_name": "GOMEZ B.V. - Renewal 2026-2027",
+      "stage": "Discovery",
+      "amount": 1449,
+      "close_date": "2026-07-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-07-21T14:16:47.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZNuWnYAL",
+      "account_id": "001G000001TsqcLIAR",
+      "opp_name": "Flora Fresh Inc - Renewal 2026-2027",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-07-01T20:50:11.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZNvB7YAL",
+      "account_id": "001G000001a07MXIAY",
+      "opp_name": "ACA Flowers - Renewal 2026-2027",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-07-01T20:53:47.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZNvXhYAL",
+      "account_id": "001VL00000TUGt3YAH",
+      "opp_name": "Nova Packaging Solutions, Inc. - Renewal 2026-2027",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-07-01T21:09:03.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZNvvtYAD",
+      "account_id": "001G000001DW4TWIA1",
+      "opp_name": "Valleflor USA - Renewal 2026-2027",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-07-01T20:58:09.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZNw8nYAD",
+      "account_id": "0011L00002Sbi4xQAB",
+      "opp_name": "Dynamic Farms - Renewl 2026-2027",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-07-01T20:59:36.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZNwK5YAL",
+      "account_id": "0011600001uSjyvAAC",
+      "opp_name": "Shamrock Wholesale Florist Memphis - Renewal 2026-2027",
+      "stage": "Selling",
+      "amount": null,
+      "close_date": "2026-08-31",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-07-21T16:36:35.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZNwS9YAL",
+      "account_id": "0011600001uSjSfAAK",
+      "opp_name": "New England Wholesale Florist - Renewal 2026-2027",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-07-01T21:01:56.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZS5jlYAD",
+      "account_id": "001VL00000TxtpOYAR",
+      "opp_name": "Verdnatura - eSuite Wholesaler",
+      "stage": "Negotiating",
+      "amount": 799,
+      "close_date": "2026-08-15",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-07-09T13:31:32.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZXMqPYAX",
+      "account_id": "001G000001DW4SpIAL",
+      "opp_name": "Royal Flowers Inc., Domestic - Royal Flowers Domestic - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-09-24",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-27T18:25:09.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZXMqQYAX",
+      "account_id": "001G000001as1u1IAA",
+      "opp_name": "MYSTICFLOWERS LLC - MYSTICFLOWERS - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-08-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-23T21:00:18.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZXMqRYAX",
+      "account_id": "0011600001uRvGlAAK",
+      "opp_name": "RUMHORA GREENS LLC - RUMHORA GREENS - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-08-15",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-21T18:35:47.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZXMqTYAX",
+      "account_id": "001G000001DW4QnIAL",
+      "opp_name": "Len Busch Roses - Len Busch Roses - eShop Gold",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-08-15",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-21T19:24:30.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZXMqUYAX",
+      "account_id": "001VL00000ehkNEYAY",
+      "opp_name": "ADEESE FLOWERS LLC - ADEESE FLOWERS - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-08-15",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-21T19:26:44.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZXMqVYAX",
+      "account_id": "00116000023XoIIAA0",
+      "opp_name": "SKY FLOWERS S.A.S - SKY FLOWERS - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-11-30",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-23T21:00:18.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZXMqWYAX",
+      "account_id": "0011L00002IDjZOQA1",
+      "opp_name": "GRUPO DEL PACIFICO - GRUPO DEL PACIFICO - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-11-30",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-23T21:00:18.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZXMqXYAX",
+      "account_id": "0011600001mNfpDAAS",
+      "opp_name": "Bloomit Corp. - Bloomit Corp. - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-11-30",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-23T21:00:18.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZXMqYYAX",
+      "account_id": "00116000025JAqTAAW",
+      "opp_name": "Royal Flowers S.A - Royal Flowers S.A - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-12-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-23T21:00:18.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZXMqZYAX",
+      "account_id": "0011600001uRrj9AAC",
+      "opp_name": "Flores Silvestres - Flores Silvestres - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-12-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-23T21:00:18.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZXMqaYAH",
+      "account_id": "001G000001DW4SlIAL",
+      "opp_name": "Riverdale Farms - Riverdale Farms - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-12-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-23T21:00:18.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZXMqbYAH",
+      "account_id": "001VL000006l9ajYAA",
+      "opp_name": "FOB UIO -  Alma Spray / Agrinag / Natuflor - FOB UIO - Koronet Procurement",
+      "stage": "Discovery",
+      "amount": 299,
+      "close_date": "2026-12-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-23T21:00:18.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZXcyPYAT",
+      "account_id": "001VL00000L1SkaYAF",
+      "opp_name": "Fleurametz Chicago - Fleurametz Chicago - eShops",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-08-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-27T20:25:14.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Zd1zNYAR",
+      "account_id": "001VL00000wFlKCYA0",
+      "opp_name": "Flourish and Grace Floral - Komet Core",
+      "stage": "Selling",
+      "amount": 5149,
+      "close_date": "2026-08-31",
+      "owner": "Mateo Morales",
+      "last_modified_at": "2026-07-27T12:10:53.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZeJ6DYAV",
+      "account_id": "001VL00000wJYZFYA4",
+      "opp_name": "Florafly Exchange - Komet Core",
+      "stage": "Discovery",
+      "amount": 2248.5,
+      "close_date": "2026-09-30",
+      "owner": "Mateo Morales",
+      "last_modified_at": "2026-07-16T06:08:17.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Zgf7TYAR",
+      "account_id": "0014p00001lNPUzAAO",
+      "opp_name": "SUNRITE FARMS COLLECTIONS CORP - Komet Core multi Location",
+      "stage": "Discovery",
+      "amount": 5749,
+      "close_date": "2026-08-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-07-23T20:53:55.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZhrBNYAZ",
+      "account_id": "0011600001tY8lIAAS",
+      "opp_name": "FSH (Internal) - FSH (Internal) \u2014 TEST INTEGRATION",
+      "stage": "Discovery",
+      "amount": 1,
+      "close_date": "2026-07-10",
+      "owner": "Revenue Operations",
+      "last_modified_at": "2026-07-10T19:26:45.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000Zv5JlYAJ",
+      "account_id": "0014p000022HqunAAC",
+      "opp_name": "MACUNDO FLOWERS AND GREENS LLC - Koronet Procurement",
+      "stage": "Negotiating",
+      "amount": 299,
+      "close_date": "2026-08-26",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-07-30T17:36:26.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000ZvVirYAF",
+      "account_id": "0011600001uRrNEAA0",
+      "opp_name": "Flores de la Campi\u00f1a S.A - eSuite Grower",
+      "stage": "Selling",
+      "amount": 849,
+      "close_date": "2026-11-30",
+      "owner": "Juan Pablo Agudelo",
+      "last_modified_at": "2026-07-28T15:02:47.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000a2ycrYAA",
+      "account_id": "001VL00000xEZlZYAW",
+      "opp_name": "FLOWER MASTER - Komet Core",
+      "stage": "Selling",
+      "amount": 2549,
+      "close_date": "2026-10-30",
+      "owner": "Santiago Navarro",
+      "last_modified_at": "2026-07-30T18:00:27.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000a5tlWYAQ",
+      "account_id": "001VL00000xLf6KYAS",
+      "opp_name": "Esmeralda Farms - Komet Core + API 2.0 + eShop",
+      "stage": "Selling",
+      "amount": 1847,
+      "close_date": "2026-09-30",
+      "owner": "Santiago Navarro",
+      "last_modified_at": "2026-07-28T16:01:18.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000a9DJ3YAM",
+      "account_id": "0011L000028TahoQAC",
+      "opp_name": "Metro Flower Market LLC - eShops",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-07-28",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-07-22T20:36:01.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aBQiPYAW",
+      "account_id": "001G000001DW4QCIA1",
+      "opp_name": "Golden Flowers - Golden Flowers - eShops",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-07-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-28T20:35:14.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aBiVdYAK",
+      "account_id": "001VL00000qmfPWYAY",
+      "opp_name": "MAIN WHOLESALE FLORIST LLC / NJ Clifton Location - eSuite Wholesaler",
+      "stage": "Closing",
+      "amount": 599,
+      "close_date": "2026-08-28",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-28T18:00:11.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aBkCTYA0",
+      "account_id": "001VL00000xYROpYAO",
+      "opp_name": "Main Wholesale - Hawthorne, NY - eSuite Wholesaler",
+      "stage": "Closing",
+      "amount": 599,
+      "close_date": "2026-08-31",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-28T18:00:11.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aC21LYAS",
+      "account_id": "001VL00000HI4wDYAT",
+      "opp_name": "Alisroses - Komet Sales Core - Single Location",
+      "stage": "Negotiating",
+      "amount": 1348,
+      "close_date": "2026-08-14",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-07-23T21:46:49.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aDsdlYAC",
+      "account_id": "001G000001H3CrIIAV",
+      "opp_name": "Kennicott Brothers Company: eShops",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-10-31",
+      "owner": "Catalina Rojas",
+      "last_modified_at": "2026-07-24T16:17:40.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aJckoYAC",
+      "account_id": "001VL00000xsHV5YAM",
+      "opp_name": "Super Value Flowers - eSuite Wholesaler",
+      "stage": "Selling",
+      "amount": 1098.5,
+      "close_date": "2026-11-27",
+      "owner": "Santiago Navarro",
+      "last_modified_at": "2026-07-27T20:00:15.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aLRWjYAO",
+      "account_id": "001VL00000QFjUHYA1",
+      "opp_name": "SQ Flora - VMP Seller",
+      "stage": "Closing",
+      "amount": 350,
+      "close_date": "2026-08-19",
+      "owner": "Davie van Eekelen",
+      "last_modified_at": "2026-07-28T14:05:52.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aMBhdYAG",
+      "account_id": "001VL00000xxPQDYA2",
+      "opp_name": "Nuna Flowers - eSuite Wholesaler",
+      "stage": "Selling",
+      "amount": 1098,
+      "close_date": "2026-10-30",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-08-03T18:00:15.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aOk1lYAC",
+      "account_id": "001VL00000y2JP0YAM",
+      "opp_name": "Andina Trade Corp LLC - Komet Core",
+      "stage": "Selling",
+      "amount": 3499,
+      "close_date": "2026-10-30",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-30T16:00:21.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aOmTNYA0",
+      "account_id": "001VL00000y2SiRYAU",
+      "opp_name": "Flowerholic LLC - eSuite Wholesaler",
+      "stage": "Selling",
+      "amount": 1198,
+      "close_date": "2026-10-30",
+      "owner": "Santiago Navarro",
+      "last_modified_at": "2026-07-31T18:00:12.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aP8P5YAK",
+      "account_id": "0011600001uSjyvAAC",
+      "opp_name": "Shamrock Wholesale Florist Memphis - Shamrock Wholesale Florist Memphis: K2K/E-Commerce - 7/29/2026",
+      "stage": "Closing",
+      "amount": 430.92,
+      "close_date": "2027-08-27",
+      "owner": "Denisse Podsiadlo",
+      "last_modified_at": "2026-07-30T14:11:46.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aRSujYAG",
+      "account_id": "001VL000007ltMpYAI",
+      "opp_name": "LexiFlor - Contract renewal",
+      "stage": "Selling",
+      "amount": null,
+      "close_date": "2026-08-19",
+      "owner": "Davie van Eekelen",
+      "last_modified_at": "2026-07-30T14:29:49.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aTPpVYAW",
+      "account_id": "001G000001ZFNa1IAH",
+      "opp_name": "Maple Grove Floral - Maple Grove Floral - eShops",
+      "stage": "Discovery",
+      "amount": null,
+      "close_date": "2026-08-31",
+      "owner": "Sebastian Rodriguez",
+      "last_modified_at": "2026-07-30T20:51:04.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aWcdLYAS",
+      "account_id": "001VL00000GL9dQYAT",
+      "opp_name": "NY Floral Supply - Koronet Procurement",
+      "stage": "Closing",
+      "amount": null,
+      "close_date": "2026-09-01",
+      "owner": "Christian Medina",
+      "last_modified_at": "2026-07-31T18:21:04.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000aX8i1YAC",
+      "account_id": "0011L00002eoFCZQA2",
+      "opp_name": "Bloomology Global - eSuite Wholesaler",
+      "stage": "Negotiating",
+      "amount": 2098,
+      "close_date": "2026-09-30",
+      "owner": "Felipe Mesa",
+      "last_modified_at": "2026-07-31T22:00:26.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000afaveYAA",
+      "account_id": "0011L00002rCC5zQAG",
+      "opp_name": "Floristcentric, LLC: eShops",
+      "stage": "Discovery",
+      "amount": 349,
+      "close_date": "2026-08-10",
+      "owner": "Santiago Bermudez",
+      "last_modified_at": "2026-08-03T16:49:59.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000agq77YAA",
+      "account_id": "001G000001DW4S5IAL",
+      "opp_name": "MRS. BLOOM\u2019S DIRECT, INC. - Sunset Project Komet Core",
+      "stage": "Negotiating",
+      "amount": 5022,
+      "close_date": "2026-08-31",
+      "owner": "Mateo Morales",
+      "last_modified_at": "2026-08-03T23:00:06.000+0000"
+    },
+    {
+      "opportunity_id": "006VL00000agr3BYAQ",
+      "account_id": "001VL000004nLImYAM",
+      "opp_name": "New England Flower Market - Sunset Project Komet Core",
+      "stage": "Selling",
+      "amount": 2354,
+      "close_date": "2026-08-31",
+      "owner": "Mateo Morales",
+      "last_modified_at": "2026-08-03T23:00:06.000+0000"
+    }
+  ]
+}

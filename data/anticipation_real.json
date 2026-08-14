@@ -1,0 +1,6150 @@
+{
+  "_metadata": {
+    "as_of": "2026-08-02",
+    "source": "SALES_SV.created_on_date -> shipping_date",
+    "metric": "DATEDIFF('day', created_on_date, shipping_date)",
+    "table": "PRODUCTION.ANALYTICS.SALES_SV",
+    "period": "YTD 2026 (shipping_date >= 2026-01-01 AND < 2026-08-01)",
+    "filters": {
+      "ks_flag": "TRUE",
+      "sales": "< 100000 (Rule 4: corrupt data exclusion)",
+      "dump_exclusion": "customer_name NOT ILIKE ANY ('%dump%','%inventory adjust%','%shrink%','%waste%','%merma%','%write off%','%sample%','%damage%','%expired%','%loss%','%trash%','%dumpster%') (Rule 12)",
+      "dedup": "SELECT DISTINCT sale_item_id to avoid fan-out (Rule 5/16)"
+    },
+    "channel_definition": {
+      "online": "eCommerce + K2K + API (channels.json, Rule 6/13)",
+      "offline": "all other sales_channel values"
+    },
+    "buckets": {
+      "pct_0_3d": "0-3 days between order creation and shipping",
+      "pct_4_7d": "4-7 days",
+      "pct_8_14d": "8-14 days",
+      "pct_15_30d": "15-30 days",
+      "pct_31_90d": "31-90 days",
+      "pct_over_90d": ">90 days",
+      "pct_negative": "created_on_date AFTER shipping_date (data quality flag)"
+    },
+    "row_count": 493,
+    "total_companies": 342,
+    "replaces": "old proxy from buy_detail.json (arrival_date -> shipping_date gap)",
+    "data_quality_note": "Some companies show significant pct_negative (created_on_date > shipping_date). This may indicate backdated orders, corrections, or system timing issues. Companies with >20% negative: INTERNATIONAL TRADING AND SERVICES INC (98.3%), DC FLOWERS DIRECT (82.8%), Flores San Miguel (78.9%), Continental Floral OR LLC (66.0%), Flores de la Hacienda (62.5%), Ninfa Flowers (60.6%), Royal Flowers S.A (0% neg but 120-day avg from 100% >90d bucket). Flag for investigation.",
+    "rules_applied": [
+      "R1 ks_flag=TRUE",
+      "R4 sales<100K",
+      "R5/R16 DISTINCT sale_item_id dedup",
+      "R6/R13 online=eCom+K2K+API per channels.json",
+      "R8 SALES_SV semantic view",
+      "R9 provenance",
+      "R12 dump exclusion"
+    ]
+  },
+  "companies": {
+    "! Juliet Wholesale Flowers LLC": {
+      "offline": {
+        "avg_days": 1.2,
+        "pct_0_3d": 81.5,
+        "pct_4_7d": 12.3,
+        "pct_8_14d": 3.2,
+        "pct_15_30d": 0.4,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 2.6,
+        "total_orders": 2504
+      },
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 87.4,
+        "pct_4_7d": 12.1,
+        "pct_8_14d": 0.6,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 340
+      }
+    },
+    "(OLD) Avon Valley Floral": {
+      "offline": {
+        "avg_days": 2.3,
+        "pct_0_3d": 78.1,
+        "pct_4_7d": 10.2,
+        "pct_8_14d": 2.0,
+        "pct_15_30d": 5.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 4.6,
+        "total_orders": 196
+      },
+      "online": {
+        "avg_days": -1.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 100.0,
+        "total_orders": 4
+      }
+    },
+    "* AquaRose": {
+      "offline": {
+        "avg_days": 5.4,
+        "pct_0_3d": 26.8,
+        "pct_4_7d": 61.0,
+        "pct_8_14d": 12.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 41
+      },
+      "online": {
+        "avg_days": 3.3,
+        "pct_0_3d": 50.0,
+        "pct_4_7d": 50.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 6
+      }
+    },
+    "* Continental Farms": {
+      "online": {
+        "avg_days": 1.2,
+        "pct_0_3d": 92.8,
+        "pct_4_7d": 7.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 12217
+      }
+    },
+    "* Jet Fresh Flower Distributors Inc.": {
+      "offline": {
+        "avg_days": 1.5,
+        "pct_0_3d": 84.9,
+        "pct_4_7d": 11.7,
+        "pct_8_14d": 2.1,
+        "pct_15_30d": 0.6,
+        "pct_31_90d": 0.6,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 356541
+      },
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 85.1,
+        "pct_4_7d": 14.3,
+        "pct_8_14d": 0.7,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 87764
+      }
+    },
+    "* Welyflor / PROFILE FLOWERS": {
+      "offline": {
+        "avg_days": 0.8,
+        "pct_0_3d": 98.6,
+        "pct_4_7d": 1.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 76863
+      },
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 87.1,
+        "pct_4_7d": 12.5,
+        "pct_8_14d": 0.4,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 28505
+      }
+    },
+    "**Wafex USA": {
+      "offline": {
+        "avg_days": 2.3,
+        "pct_0_3d": 66.3,
+        "pct_4_7d": 26.5,
+        "pct_8_14d": 2.2,
+        "pct_15_30d": 0.5,
+        "pct_31_90d": 0.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 4.2,
+        "total_orders": 11859
+      },
+      "online": {
+        "avg_days": 2.5,
+        "pct_0_3d": 75.3,
+        "pct_4_7d": 22.5,
+        "pct_8_14d": 2.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2695
+      }
+    },
+    "*FLORAL1 INC": {
+      "offline": {
+        "avg_days": 1.6,
+        "pct_0_3d": 82.9,
+        "pct_4_7d": 16.0,
+        "pct_8_14d": 0.6,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.4,
+        "total_orders": 4059
+      },
+      "online": {
+        "avg_days": 1.2,
+        "pct_0_3d": 91.8,
+        "pct_4_7d": 8.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 183
+      }
+    },
+    "-Groflowers": {
+      "offline": {
+        "avg_days": 1.4,
+        "pct_0_3d": 82.0,
+        "pct_4_7d": 15.5,
+        "pct_8_14d": 1.0,
+        "pct_15_30d": 0.6,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.8,
+        "total_orders": 9305
+      },
+      "online": {
+        "avg_days": 1.4,
+        "pct_0_3d": 91.0,
+        "pct_4_7d": 8.8,
+        "pct_8_14d": 0.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3015
+      }
+    },
+    "-Sole Farms": {
+      "offline": {
+        "avg_days": 3.8,
+        "pct_0_3d": 54.6,
+        "pct_4_7d": 39.6,
+        "pct_8_14d": 3.9,
+        "pct_15_30d": 1.1,
+        "pct_31_90d": 0.7,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 177597
+      },
+      "online": {
+        "avg_days": 2.8,
+        "pct_0_3d": 71.2,
+        "pct_4_7d": 17.6,
+        "pct_8_14d": 10.9,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 167607
+      }
+    },
+    "A Florist First": {
+      "online": {
+        "avg_days": 3.3,
+        "pct_0_3d": 77.9,
+        "pct_4_7d": 11.8,
+        "pct_8_14d": 6.4,
+        "pct_15_30d": 3.8,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3447
+      }
+    },
+    "A Trilogy Floral - Zamba Flowers": {
+      "offline": {
+        "avg_days": 2.2,
+        "pct_0_3d": 75.9,
+        "pct_4_7d": 22.4,
+        "pct_8_14d": 1.5,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 28068
+      },
+      "online": {
+        "avg_days": 1.4,
+        "pct_0_3d": 89.3,
+        "pct_4_7d": 10.0,
+        "pct_8_14d": 0.7,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 15633
+      }
+    },
+    "A1 Floral Xpressions": {
+      "offline": {
+        "avg_days": 3.8,
+        "pct_0_3d": 55.9,
+        "pct_4_7d": 35.9,
+        "pct_8_14d": 5.8,
+        "pct_15_30d": 2.1,
+        "pct_31_90d": 0.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 4223
+      },
+      "online": {
+        "avg_days": 2.3,
+        "pct_0_3d": 79.6,
+        "pct_4_7d": 17.4,
+        "pct_8_14d": 2.5,
+        "pct_15_30d": 0.5,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1722
+      }
+    },
+    "ACA Flowers": {
+      "offline": {
+        "avg_days": 2.7,
+        "pct_0_3d": 43.8,
+        "pct_4_7d": 56.3,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 32
+      },
+      "online": {
+        "avg_days": 4.8,
+        "pct_0_3d": 50.0,
+        "pct_4_7d": 50.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 10
+      }
+    },
+    "ACME Testing, Inc.": {
+      "offline": {
+        "avg_days": 0.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 9
+      }
+    },
+    "ADEESE FLOWERS LLC": {
+      "offline": {
+        "avg_days": 1.1,
+        "pct_0_3d": 86.9,
+        "pct_4_7d": 4.9,
+        "pct_8_14d": 0.4,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.4,
+        "pct_over_90d": 0.0,
+        "pct_negative": 7.4,
+        "total_orders": 244
+      },
+      "online": {
+        "avg_days": 1.1,
+        "pct_0_3d": 96.2,
+        "pct_4_7d": 2.7,
+        "pct_8_14d": 1.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 185
+      }
+    },
+    "ALLIANCE FLORAL COMPANY. 6270": {
+      "online": {
+        "avg_days": 1.2,
+        "pct_0_3d": 98.1,
+        "pct_4_7d": 1.9,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 936
+      }
+    },
+    "AMORES FLORES INC": {
+      "offline": {
+        "avg_days": 1.5,
+        "pct_0_3d": 92.7,
+        "pct_4_7d": 1.6,
+        "pct_8_14d": 2.7,
+        "pct_15_30d": 1.9,
+        "pct_31_90d": 0.9,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.2,
+        "total_orders": 40724
+      },
+      "online": {
+        "avg_days": 3.5,
+        "pct_0_3d": 50.0,
+        "pct_4_7d": 50.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 8
+      }
+    },
+    "Akarana Farms - UIO": {
+      "online": {
+        "avg_days": 2.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2
+      }
+    },
+    "Albin Hagstrom & Son, Inc.": {
+      "offline": {
+        "avg_days": 0.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 6
+      },
+      "online": {
+        "avg_days": 5.7,
+        "pct_0_3d": 64.6,
+        "pct_4_7d": 14.3,
+        "pct_8_14d": 8.6,
+        "pct_15_30d": 9.3,
+        "pct_31_90d": 3.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2581
+      }
+    },
+    "Alders Wholesale Florist, Inc.": {
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 86.0,
+        "pct_4_7d": 12.6,
+        "pct_8_14d": 1.2,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1141
+      }
+    },
+    "Alison Flowers - UIO": {
+      "online": {
+        "avg_days": 1.4,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 10
+      }
+    },
+    "Allied Cut Flower": {
+      "online": {
+        "avg_days": 13.6,
+        "pct_0_3d": 12.5,
+        "pct_4_7d": 62.5,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 25.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 16
+      }
+    },
+    "Allure Farms": {
+      "offline": {
+        "avg_days": 3.2,
+        "pct_0_3d": 56.4,
+        "pct_4_7d": 39.0,
+        "pct_8_14d": 4.1,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 61722
+      },
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 85.6,
+        "pct_4_7d": 13.0,
+        "pct_8_14d": 1.4,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 29016
+      }
+    },
+    "AmeriLink Floratrader": {
+      "offline": {
+        "avg_days": 3.5,
+        "pct_0_3d": 51.8,
+        "pct_4_7d": 43.1,
+        "pct_8_14d": 4.8,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.2,
+        "total_orders": 13368
+      },
+      "online": {
+        "avg_days": 3.2,
+        "pct_0_3d": 61.1,
+        "pct_4_7d": 33.3,
+        "pct_8_14d": 5.6,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 808
+      }
+    },
+    "American Agroproducts": {
+      "online": {
+        "avg_days": 5.2,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 100.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 5
+      }
+    },
+    "Andean Fresh LLC": {
+      "offline": {
+        "avg_days": 4.8,
+        "pct_0_3d": 21.9,
+        "pct_4_7d": 72.7,
+        "pct_8_14d": 3.3,
+        "pct_15_30d": 1.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.1,
+        "total_orders": 2187
+      },
+      "online": {
+        "avg_days": 3.2,
+        "pct_0_3d": 63.7,
+        "pct_4_7d": 27.5,
+        "pct_8_14d": 8.8,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 91
+      }
+    },
+    "Anton Spaargaren B.V.": {
+      "offline": {
+        "avg_days": 1.2,
+        "pct_0_3d": 91.9,
+        "pct_4_7d": 5.8,
+        "pct_8_14d": 0.9,
+        "pct_15_30d": 0.5,
+        "pct_31_90d": 0.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.7,
+        "total_orders": 4449
+      },
+      "online": {
+        "avg_days": 1.5,
+        "pct_0_3d": 89.0,
+        "pct_4_7d": 10.0,
+        "pct_8_14d": 0.6,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.4,
+        "total_orders": 1218
+      }
+    },
+    "Apex Floral Distributors Mississauga": {
+      "offline": {
+        "avg_days": 38.5,
+        "pct_0_3d": 11.1,
+        "pct_4_7d": 22.2,
+        "pct_8_14d": 7.3,
+        "pct_15_30d": 1.9,
+        "pct_31_90d": 57.5,
+        "pct_over_90d": 0.1,
+        "pct_negative": 0.0,
+        "total_orders": 20646
+      }
+    },
+    "Arizona Family Florist": {
+      "offline": {
+        "avg_days": 8.9,
+        "pct_0_3d": 19.6,
+        "pct_4_7d": 44.0,
+        "pct_8_14d": 18.7,
+        "pct_15_30d": 15.2,
+        "pct_31_90d": 2.4,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 21610
+      }
+    },
+    "Arizona Floral Exchange": {
+      "online": {
+        "avg_days": 9.8,
+        "pct_0_3d": 0.3,
+        "pct_4_7d": 40.3,
+        "pct_8_14d": 50.2,
+        "pct_15_30d": 8.9,
+        "pct_31_90d": 0.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 325
+      }
+    },
+    "Ashland Addison": {
+      "online": {
+        "avg_days": 5.2,
+        "pct_0_3d": 13.1,
+        "pct_4_7d": 79.3,
+        "pct_8_14d": 7.2,
+        "pct_15_30d": 0.4,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 474
+      }
+    },
+    "Aurum Farms LLC": {
+      "offline": {
+        "avg_days": -0.3,
+        "pct_0_3d": 63.5,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 36.5,
+        "total_orders": 1709
+      },
+      "online": {
+        "avg_days": 1.9,
+        "pct_0_3d": 71.4,
+        "pct_4_7d": 28.6,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 7
+      }
+    },
+    "BOTANICA WHOLESALE FLORIST DALLAS (IRVING), LLC": {
+      "online": {
+        "avg_days": 2.6,
+        "pct_0_3d": 64.2,
+        "pct_4_7d": 10.4,
+        "pct_8_14d": 6.1,
+        "pct_15_30d": 4.1,
+        "pct_31_90d": 0.4,
+        "pct_over_90d": 0.0,
+        "pct_negative": 14.8,
+        "total_orders": 3558
+      }
+    },
+    "BOTANICA WHSLE FLORIST-HOUSTON": {
+      "online": {
+        "avg_days": 4.7,
+        "pct_0_3d": 59.4,
+        "pct_4_7d": 25.7,
+        "pct_8_14d": 6.7,
+        "pct_15_30d": 4.8,
+        "pct_31_90d": 2.6,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.7,
+        "total_orders": 1102
+      }
+    },
+    "BRIEGER WHSLE -TX.": {
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 89.8,
+        "pct_4_7d": 8.1,
+        "pct_8_14d": 1.8,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 383
+      }
+    },
+    "Baisch & Skinner": {
+      "online": {
+        "avg_days": 12.5,
+        "pct_0_3d": 0.3,
+        "pct_4_7d": 38.1,
+        "pct_8_14d": 33.1,
+        "pct_15_30d": 23.5,
+        "pct_31_90d": 5.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 4053
+      }
+    },
+    "Bella Blossom LLC": {
+      "offline": {
+        "avg_days": 1.9,
+        "pct_0_3d": 84.4,
+        "pct_4_7d": 15.6,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 29297
+      },
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 83.7,
+        "pct_4_7d": 16.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 40264
+      }
+    },
+    "Bellaflor Group Inc.": {
+      "offline": {
+        "avg_days": 1.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1
+      },
+      "online": {
+        "avg_days": -0.1,
+        "pct_0_3d": 52.2,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 47.8,
+        "total_orders": 23
+      }
+    },
+    "Best Miami Growers LLC": {
+      "offline": {
+        "avg_days": 3.2,
+        "pct_0_3d": 60.3,
+        "pct_4_7d": 33.6,
+        "pct_8_14d": 5.8,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 12504
+      },
+      "online": {
+        "avg_days": 1.5,
+        "pct_0_3d": 91.6,
+        "pct_4_7d": 8.4,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 740
+      }
+    },
+    "Bill Doran Company": {
+      "offline": {
+        "avg_days": 2.3,
+        "pct_0_3d": 78.8,
+        "pct_4_7d": 13.3,
+        "pct_8_14d": 5.3,
+        "pct_15_30d": 2.1,
+        "pct_31_90d": 0.4,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 1423941
+      },
+      "online": {
+        "avg_days": 1.0,
+        "pct_0_3d": 96.9,
+        "pct_4_7d": 2.8,
+        "pct_8_14d": 0.3,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 72179
+      }
+    },
+    "Bill Doran Company (2)": {
+      "offline": {
+        "avg_days": 0.5,
+        "pct_0_3d": 94.3,
+        "pct_4_7d": 1.6,
+        "pct_8_14d": 2.1,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.6,
+        "total_orders": 85198
+      }
+    },
+    "Bloomistics": {
+      "offline": {
+        "avg_days": 3.5,
+        "pct_0_3d": 60.8,
+        "pct_4_7d": 39.2,
+        "pct_8_14d": 0.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 15488
+      },
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 83.4,
+        "pct_4_7d": 15.5,
+        "pct_8_14d": 1.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1095
+      }
+    },
+    "Blossom Bliss LLC": {
+      "offline": {
+        "avg_days": 2.3,
+        "pct_0_3d": 60.6,
+        "pct_4_7d": 38.4,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.4,
+        "pct_31_90d": 0.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.4,
+        "total_orders": 3234
+      },
+      "online": {
+        "avg_days": 1.3,
+        "pct_0_3d": 99.6,
+        "pct_4_7d": 0.4,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 446
+      }
+    },
+    "BlossomR": {
+      "offline": {
+        "avg_days": 11.5,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 6.8,
+        "pct_8_14d": 93.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 117
+      }
+    },
+    "Bo's Wholesale Florist": {
+      "online": {
+        "avg_days": 5.2,
+        "pct_0_3d": 27.6,
+        "pct_4_7d": 56.9,
+        "pct_8_14d": 14.6,
+        "pct_15_30d": 0.8,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 123
+      }
+    },
+    "Brightland Farms": {
+      "offline": {
+        "avg_days": 15.4,
+        "pct_0_3d": 25.1,
+        "pct_4_7d": 52.8,
+        "pct_8_14d": 9.4,
+        "pct_15_30d": 1.5,
+        "pct_31_90d": 1.0,
+        "pct_over_90d": 8.4,
+        "pct_negative": 1.8,
+        "total_orders": 45790
+      }
+    },
+    "Bunches Direct Blumenimport GmbH": {
+      "offline": {
+        "avg_days": 5.1,
+        "pct_0_3d": 19.8,
+        "pct_4_7d": 76.5,
+        "pct_8_14d": 3.6,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 4493
+      },
+      "online": {
+        "avg_days": 1.3,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 55
+      }
+    },
+    "CANTIZA FLORAL DBA NFD": {
+      "offline": {
+        "avg_days": 1.6,
+        "pct_0_3d": 87.6,
+        "pct_4_7d": 12.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.2,
+        "total_orders": 452
+      },
+      "online": {
+        "avg_days": 0.9,
+        "pct_0_3d": 80.0,
+        "pct_4_7d": 6.7,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 13.3,
+        "total_orders": 15
+      }
+    },
+    "CASCADE FLOWERS DBA STADIUM FLOWERS INC": {
+      "online": {
+        "avg_days": 1.6,
+        "pct_0_3d": 99.9,
+        "pct_4_7d": 0.1,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1373
+      }
+    },
+    "CD Wholesale": {
+      "offline": {
+        "avg_days": -0.4,
+        "pct_0_3d": 85.9,
+        "pct_4_7d": 0.6,
+        "pct_8_14d": 0.5,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 12.8,
+        "total_orders": 31204
+      },
+      "online": {
+        "avg_days": 3.3,
+        "pct_0_3d": 33.3,
+        "pct_4_7d": 66.7,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3
+      }
+    },
+    "CHICAGO´S WHOLESALE": {
+      "online": {
+        "avg_days": 0.5,
+        "pct_0_3d": 99.2,
+        "pct_4_7d": 0.8,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1215
+      }
+    },
+    "CINCINNATI WHSLE FLORIST INC.5643": {
+      "online": {
+        "avg_days": 3.8,
+        "pct_0_3d": 58.8,
+        "pct_4_7d": 33.9,
+        "pct_8_14d": 4.3,
+        "pct_15_30d": 2.9,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 622
+      }
+    },
+    "CONNECTION FLOWERS SAS": {
+      "offline": {
+        "avg_days": -0.9,
+        "pct_0_3d": 89.7,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 10.3,
+        "total_orders": 2137
+      }
+    },
+    "COWARD WHOLESALE": {
+      "online": {
+        "avg_days": 5.8,
+        "pct_0_3d": 36.9,
+        "pct_4_7d": 38.4,
+        "pct_8_14d": 19.6,
+        "pct_15_30d": 5.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1757
+      }
+    },
+    "Cananvalle USA LLC": {
+      "offline": {
+        "avg_days": 4.4,
+        "pct_0_3d": 41.5,
+        "pct_4_7d": 51.8,
+        "pct_8_14d": 4.0,
+        "pct_15_30d": 2.2,
+        "pct_31_90d": 0.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 15562
+      },
+      "online": {
+        "avg_days": 2.0,
+        "pct_0_3d": 85.1,
+        "pct_4_7d": 12.5,
+        "pct_8_14d": 2.1,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2589
+      }
+    },
+    "Charleston Wholesale Florist": {
+      "offline": {
+        "avg_days": 0.0,
+        "pct_0_3d": 85.6,
+        "pct_4_7d": 2.5,
+        "pct_8_14d": 0.6,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 11.0,
+        "total_orders": 31761
+      }
+    },
+    "Choice Farms": {
+      "offline": {
+        "avg_days": 2.1,
+        "pct_0_3d": 80.1,
+        "pct_4_7d": 19.4,
+        "pct_8_14d": 0.4,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 37082
+      },
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 83.2,
+        "pct_4_7d": 16.3,
+        "pct_8_14d": 0.6,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 31895
+      }
+    },
+    "Claymore C. Sieck Wholesale Florist": {
+      "online": {
+        "avg_days": 8.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 100.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 5
+      }
+    },
+    "Cleveland Plant & Flower Co.": {
+      "online": {
+        "avg_days": 9.4,
+        "pct_0_3d": 8.9,
+        "pct_4_7d": 53.9,
+        "pct_8_14d": 20.9,
+        "pct_15_30d": 12.4,
+        "pct_31_90d": 3.9,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3919
+      }
+    },
+    "Coastal Wholesale Flowers, Inc.": {
+      "online": {
+        "avg_days": 2.5,
+        "pct_0_3d": 76.5,
+        "pct_4_7d": 20.3,
+        "pct_8_14d": 1.4,
+        "pct_15_30d": 1.7,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1390
+      }
+    },
+    "Continental Floral CA LLC": {
+      "offline": {
+        "avg_days": -1.2,
+        "pct_0_3d": 52.9,
+        "pct_4_7d": 4.4,
+        "pct_8_14d": 1.9,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 40.7,
+        "total_orders": 5185
+      }
+    },
+    "Continental Floral FL LLC": {
+      "offline": {
+        "avg_days": -2.5,
+        "pct_0_3d": 39.4,
+        "pct_4_7d": 26.4,
+        "pct_8_14d": 0.6,
+        "pct_15_30d": 0.9,
+        "pct_31_90d": 0.9,
+        "pct_over_90d": 0.0,
+        "pct_negative": 31.9,
+        "total_orders": 894
+      }
+    },
+    "Continental Floral LLC": {
+      "offline": {
+        "avg_days": 3.3,
+        "pct_0_3d": 65.2,
+        "pct_4_7d": 23.5,
+        "pct_8_14d": 8.1,
+        "pct_15_30d": 2.4,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.8,
+        "total_orders": 47006
+      },
+      "online": {
+        "avg_days": 4.4,
+        "pct_0_3d": 58.6,
+        "pct_4_7d": 26.3,
+        "pct_8_14d": 10.7,
+        "pct_15_30d": 4.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 6133
+      }
+    },
+    "Continental Floral OR LLC": {
+      "offline": {
+        "avg_days": -1.7,
+        "pct_0_3d": 32.1,
+        "pct_4_7d": 1.9,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 66.0,
+        "total_orders": 1943
+      }
+    },
+    "Continental Floral PNW LLC": {
+      "offline": {
+        "avg_days": 1.3,
+        "pct_0_3d": 85.3,
+        "pct_4_7d": 8.6,
+        "pct_8_14d": 0.7,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 5.4,
+        "total_orders": 3198
+      }
+    },
+    "Continental Flowers": {
+      "offline": {
+        "avg_days": 2.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1
+      },
+      "online": {
+        "avg_days": 2.7,
+        "pct_0_3d": 75.3,
+        "pct_4_7d": 15.5,
+        "pct_8_14d": 6.9,
+        "pct_15_30d": 2.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 50502
+      }
+    },
+    "Coquette Roses": {
+      "offline": {
+        "avg_days": 1.7,
+        "pct_0_3d": 87.4,
+        "pct_4_7d": 12.6,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 428
+      },
+      "online": {
+        "avg_days": 1.3,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 4
+      }
+    },
+    "Coward & Glisson Whsl. Flst.": {
+      "online": {
+        "avg_days": 4.1,
+        "pct_0_3d": 73.7,
+        "pct_4_7d": 5.3,
+        "pct_8_14d": 21.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 19
+      }
+    },
+    "DC FLOWERS DIRECT": {
+      "online": {
+        "avg_days": -10.8,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 13.4,
+        "pct_8_14d": 3.0,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 82.8,
+        "total_orders": 268
+      }
+    },
+    "DP Flowers Corp": {
+      "offline": {
+        "avg_days": 3.2,
+        "pct_0_3d": 55.5,
+        "pct_4_7d": 38.4,
+        "pct_8_14d": 5.7,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.3,
+        "total_orders": 1992
+      },
+      "online": {
+        "avg_days": 2.5,
+        "pct_0_3d": 80.0,
+        "pct_4_7d": 14.7,
+        "pct_8_14d": 4.4,
+        "pct_15_30d": 0.9,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1977
+      }
+    },
+    "DVFLORA SEWELL": {
+      "online": {
+        "avg_days": 3.2,
+        "pct_0_3d": 57.6,
+        "pct_4_7d": 33.9,
+        "pct_8_14d": 7.6,
+        "pct_15_30d": 0.8,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 118
+      }
+    },
+    "Del Tropico/ Ameriblooms": {
+      "offline": {
+        "avg_days": 1.7,
+        "pct_0_3d": 85.7,
+        "pct_4_7d": 0.8,
+        "pct_8_14d": 8.8,
+        "pct_15_30d": 3.4,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.0,
+        "total_orders": 65798
+      }
+    },
+    "Details Direct": {
+      "online": {
+        "avg_days": 4.1,
+        "pct_0_3d": 59.1,
+        "pct_4_7d": 22.7,
+        "pct_8_14d": 18.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 132
+      }
+    },
+    "Details Direct - Core": {
+      "offline": {
+        "avg_days": 0.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2
+      },
+      "online": {
+        "avg_days": 3.4,
+        "pct_0_3d": 60.8,
+        "pct_4_7d": 32.2,
+        "pct_8_14d": 7.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 171
+      }
+    },
+    "Direct Farms, LLC": {
+      "offline": {
+        "avg_days": 0.4,
+        "pct_0_3d": 51.7,
+        "pct_4_7d": 1.6,
+        "pct_8_14d": 0.3,
+        "pct_15_30d": 3.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 43.3,
+        "total_orders": 21472
+      },
+      "online": {
+        "avg_days": 1.9,
+        "pct_0_3d": 89.2,
+        "pct_4_7d": 10.8,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 74
+      }
+    },
+    "Dr Delphinium": {
+      "offline": {
+        "avg_days": 16.1,
+        "pct_0_3d": 0.4,
+        "pct_4_7d": 15.9,
+        "pct_8_14d": 39.8,
+        "pct_15_30d": 37.9,
+        "pct_31_90d": 6.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 7707
+      }
+    },
+    "Dramm & Echter, Inc": {
+      "offline": {
+        "avg_days": 2.7,
+        "pct_0_3d": 63.2,
+        "pct_4_7d": 27.8,
+        "pct_8_14d": 7.7,
+        "pct_15_30d": 0.8,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.5,
+        "total_orders": 110056
+      },
+      "online": {
+        "avg_days": 2.5,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 12
+      }
+    },
+    "Dreaming Roses Corp": {
+      "offline": {
+        "avg_days": 6.9,
+        "pct_0_3d": 3.0,
+        "pct_4_7d": 51.4,
+        "pct_8_14d": 45.0,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2355
+      },
+      "online": {
+        "avg_days": 5.8,
+        "pct_0_3d": 19.1,
+        "pct_4_7d": 58.5,
+        "pct_8_14d": 22.4,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 183
+      }
+    },
+    "Dreisbach Wholesale": {
+      "online": {
+        "avg_days": 9.1,
+        "pct_0_3d": 13.2,
+        "pct_4_7d": 45.3,
+        "pct_8_14d": 14.5,
+        "pct_15_30d": 25.2,
+        "pct_31_90d": 1.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.6,
+        "total_orders": 159
+      }
+    },
+    "Dynamic Farms": {
+      "offline": {
+        "avg_days": 0.6,
+        "pct_0_3d": 99.2,
+        "pct_4_7d": 0.8,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1897
+      },
+      "online": {
+        "avg_days": 1.3,
+        "pct_0_3d": 87.4,
+        "pct_4_7d": 11.7,
+        "pct_8_14d": 0.9,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 230
+      }
+    },
+    "ECOROSES LLC": {
+      "offline": {
+        "avg_days": 2.6,
+        "pct_0_3d": 73.5,
+        "pct_4_7d": 26.2,
+        "pct_8_14d": 0.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 4649
+      },
+      "online": {
+        "avg_days": 2.6,
+        "pct_0_3d": 75.2,
+        "pct_4_7d": 18.5,
+        "pct_8_14d": 6.2,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2476
+      }
+    },
+    "EF FLOWERS": {
+      "offline": {
+        "avg_days": 2.2,
+        "pct_0_3d": 75.7,
+        "pct_4_7d": 18.8,
+        "pct_8_14d": 1.5,
+        "pct_15_30d": 1.3,
+        "pct_31_90d": 0.9,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.8,
+        "total_orders": 7009
+      },
+      "online": {
+        "avg_days": 3.3,
+        "pct_0_3d": 25.0,
+        "pct_4_7d": 75.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 4
+      }
+    },
+    "EPIC FARMS USA LLC": {
+      "offline": {
+        "avg_days": 2.4,
+        "pct_0_3d": 87.0,
+        "pct_4_7d": 5.7,
+        "pct_8_14d": 1.1,
+        "pct_15_30d": 5.9,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.4,
+        "total_orders": 1008
+      }
+    },
+    "EQ Blooms by Flodecol": {
+      "offline": {
+        "avg_days": 2.1,
+        "pct_0_3d": 87.8,
+        "pct_4_7d": 9.6,
+        "pct_8_14d": 2.3,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.3,
+        "total_orders": 343
+      },
+      "online": {
+        "avg_days": 3.2,
+        "pct_0_3d": 63.2,
+        "pct_4_7d": 27.8,
+        "pct_8_14d": 9.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 758
+      }
+    },
+    "EQR USA": {
+      "offline": {
+        "avg_days": 0.7,
+        "pct_0_3d": 56.4,
+        "pct_4_7d": 12.4,
+        "pct_8_14d": 3.6,
+        "pct_15_30d": 0.4,
+        "pct_31_90d": 0.4,
+        "pct_over_90d": 0.0,
+        "pct_negative": 26.8,
+        "total_orders": 154476
+      },
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 84.8,
+        "pct_4_7d": 14.7,
+        "pct_8_14d": 0.4,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 8483
+      }
+    },
+    "Ecoroses - Floropolis": {
+      "online": {
+        "avg_days": 5.0,
+        "pct_0_3d": 80.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 12.5,
+        "pct_15_30d": 2.5,
+        "pct_31_90d": 2.5,
+        "pct_over_90d": 0.0,
+        "pct_negative": 2.5,
+        "total_orders": 40
+      }
+    },
+    "Ecuador's Origin Product": {
+      "offline": {
+        "avg_days": 2.7,
+        "pct_0_3d": 80.8,
+        "pct_4_7d": 1.9,
+        "pct_8_14d": 1.2,
+        "pct_15_30d": 6.8,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 9.3,
+        "total_orders": 9282
+      }
+    },
+    "Ensign Wholesale Flower Market": {
+      "online": {
+        "avg_days": 9.1,
+        "pct_0_3d": 6.5,
+        "pct_4_7d": 53.1,
+        "pct_8_14d": 28.4,
+        "pct_15_30d": 10.7,
+        "pct_31_90d": 1.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 384
+      }
+    },
+    "Equiflor LLC": {
+      "online": {
+        "avg_days": 1.2,
+        "pct_0_3d": 93.8,
+        "pct_4_7d": 6.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 9086
+      }
+    },
+    "Everflorals": {
+      "offline": {
+        "avg_days": 6.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 100.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1
+      }
+    },
+    "Evergreen Plant Company": {
+      "offline": {
+        "avg_days": 1.0,
+        "pct_0_3d": 80.1,
+        "pct_4_7d": 8.8,
+        "pct_8_14d": 2.4,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 8.0,
+        "total_orders": 1822
+      }
+    },
+    "Exclusive Wholesale": {
+      "online": {
+        "avg_days": 1.9,
+        "pct_0_3d": 90.8,
+        "pct_4_7d": 2.7,
+        "pct_8_14d": 4.3,
+        "pct_15_30d": 2.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 601
+      }
+    },
+    "Expo Flora S.A.": {
+      "offline": {
+        "avg_days": 1.3,
+        "pct_0_3d": 95.0,
+        "pct_4_7d": 2.2,
+        "pct_8_14d": 0.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 2.6,
+        "total_orders": 1534
+      }
+    },
+    "Expobloom - BOG": {
+      "online": {
+        "avg_days": 5.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 100.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2
+      }
+    },
+    "FALL RIVER WHOLESALE": {
+      "online": {
+        "avg_days": 1.4,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 9
+      }
+    },
+    "FGS.Flowers.MIA": {
+      "offline": {
+        "avg_days": 1.2,
+        "pct_0_3d": 97.3,
+        "pct_4_7d": 2.3,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.4,
+        "total_orders": 258
+      },
+      "online": {
+        "avg_days": 2.3,
+        "pct_0_3d": 71.4,
+        "pct_4_7d": 28.6,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 7
+      }
+    },
+    "FLEUPHORIA S.A.S": {
+      "offline": {
+        "avg_days": 0.6,
+        "pct_0_3d": 47.2,
+        "pct_4_7d": 1.9,
+        "pct_8_14d": 9.3,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 41.5,
+        "total_orders": 36083
+      }
+    },
+    "FLEURIGROS QUEBEC 1995 INC.": {
+      "online": {
+        "avg_days": 8.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 50.0,
+        "pct_8_14d": 50.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2
+      }
+    },
+    "FLORIAD- MONTREAL CANADA INC.": {
+      "online": {
+        "avg_days": 6.6,
+        "pct_0_3d": 58.5,
+        "pct_4_7d": 7.3,
+        "pct_8_14d": 19.5,
+        "pct_15_30d": 14.6,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 41
+      }
+    },
+    "FLORISOL & COMPANY FLOWER TRADING LLC": {
+      "offline": {
+        "avg_days": 5.0,
+        "pct_0_3d": 17.3,
+        "pct_4_7d": 82.3,
+        "pct_8_14d": 0.4,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1240
+      },
+      "online": {
+        "avg_days": 4.3,
+        "pct_0_3d": 19.2,
+        "pct_4_7d": 76.9,
+        "pct_8_14d": 3.8,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 26
+      }
+    },
+    "FLORISOL& CO FLOWER TRADING LLC DBA MARVEL FLOWERS": {
+      "offline": {
+        "avg_days": 0.0,
+        "pct_0_3d": 99.7,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.3,
+        "total_orders": 16648
+      }
+    },
+    "FLOWERMART CORP": {
+      "offline": {
+        "avg_days": 0.7,
+        "pct_0_3d": 90.6,
+        "pct_4_7d": 6.7,
+        "pct_8_14d": 0.5,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 2.3,
+        "total_orders": 3493
+      },
+      "online": {
+        "avg_days": 1.5,
+        "pct_0_3d": 93.8,
+        "pct_4_7d": 3.1,
+        "pct_8_14d": 3.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 65
+      }
+    },
+    "FMI, LLC.-FL": {
+      "online": {
+        "avg_days": 0.7,
+        "pct_0_3d": 94.6,
+        "pct_4_7d": 5.4,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 74
+      }
+    },
+    "FOB UIO -  Alma Spray / Agrinag / Natuflor": {
+      "online": {
+        "avg_days": 2.2,
+        "pct_0_3d": 79.4,
+        "pct_4_7d": 20.6,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 281
+      }
+    },
+    "Faguaflowers Intl LLC": {
+      "offline": {
+        "avg_days": 13.3,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 66.7,
+        "pct_15_30d": 33.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3
+      },
+      "online": {
+        "avg_days": 6.0,
+        "pct_0_3d": 37.8,
+        "pct_4_7d": 32.9,
+        "pct_8_14d": 22.4,
+        "pct_15_30d": 7.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 143
+      }
+    },
+    "Fair Trade Floral Inc.": {
+      "offline": {
+        "avg_days": 1.8,
+        "pct_0_3d": 85.9,
+        "pct_4_7d": 2.7,
+        "pct_8_14d": 6.1,
+        "pct_15_30d": 1.9,
+        "pct_31_90d": 0.6,
+        "pct_over_90d": 0.2,
+        "pct_negative": 2.5,
+        "total_orders": 31186
+      }
+    },
+    "Farm Fresh Exports INC": {
+      "offline": {
+        "avg_days": 3.3,
+        "pct_0_3d": 33.5,
+        "pct_4_7d": 57.2,
+        "pct_8_14d": 1.0,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 7.7,
+        "total_orders": 9724
+      }
+    },
+    "Farm To Canada": {
+      "offline": {
+        "avg_days": 4.3,
+        "pct_0_3d": 41.0,
+        "pct_4_7d": 44.9,
+        "pct_8_14d": 11.8,
+        "pct_15_30d": 1.1,
+        "pct_31_90d": 0.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.8,
+        "total_orders": 23082
+      },
+      "online": {
+        "avg_days": 2.6,
+        "pct_0_3d": 50.0,
+        "pct_4_7d": 50.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 8
+      }
+    },
+    "Farms Connect": {
+      "offline": {
+        "avg_days": 2.7,
+        "pct_0_3d": 82.5,
+        "pct_4_7d": 15.1,
+        "pct_8_14d": 0.9,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.9,
+        "total_orders": 4391
+      }
+    },
+    "First Choice Floral": {
+      "online": {
+        "avg_days": 7.4,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 69.4,
+        "pct_8_14d": 30.6,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 36
+      }
+    },
+    "Fletch Wholesale llc": {
+      "online": {
+        "avg_days": 4.6,
+        "pct_0_3d": 70.0,
+        "pct_4_7d": 12.7,
+        "pct_8_14d": 12.1,
+        "pct_15_30d": 5.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1302
+      }
+    },
+    "FleuraMetz LA": {
+      "online": {
+        "avg_days": 5.1,
+        "pct_0_3d": 1.9,
+        "pct_4_7d": 98.1,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 54
+      }
+    },
+    "FleuraMetz Montreal Ltd": {
+      "online": {
+        "avg_days": 8.4,
+        "pct_0_3d": 30.0,
+        "pct_4_7d": 41.1,
+        "pct_8_14d": 15.7,
+        "pct_15_30d": 10.5,
+        "pct_31_90d": 2.8,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 287
+      }
+    },
+    "Fleurametz Chicago": {
+      "online": {
+        "avg_days": 10.0,
+        "pct_0_3d": 7.9,
+        "pct_4_7d": 57.2,
+        "pct_8_14d": 16.6,
+        "pct_15_30d": 13.0,
+        "pct_31_90d": 5.4,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 579
+      }
+    },
+    "Fleurametz USA NYC": {
+      "online": {
+        "avg_days": 0.0,
+        "pct_0_3d": 73.1,
+        "pct_4_7d": 1.5,
+        "pct_8_14d": 1.8,
+        "pct_15_30d": 0.5,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 23.2,
+        "total_orders": 609
+      }
+    },
+    "Flodecol - Floropolis": {
+      "online": {
+        "avg_days": 8.4,
+        "pct_0_3d": 53.6,
+        "pct_4_7d": 10.7,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 35.7,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 28
+      }
+    },
+    "Flora Fresh Inc": {
+      "offline": {
+        "avg_days": 1.5,
+        "pct_0_3d": 83.9,
+        "pct_4_7d": 11.8,
+        "pct_8_14d": 3.4,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.2,
+        "total_orders": 176121
+      },
+      "online": {
+        "avg_days": 2.4,
+        "pct_0_3d": 81.0,
+        "pct_4_7d": 12.6,
+        "pct_8_14d": 5.9,
+        "pct_15_30d": 0.6,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 868
+      }
+    },
+    "FloraCo, Inc": {
+      "offline": {
+        "avg_days": 4.7,
+        "pct_0_3d": 29.3,
+        "pct_4_7d": 66.9,
+        "pct_8_14d": 3.8,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2353
+      },
+      "online": {
+        "avg_days": 2.8,
+        "pct_0_3d": 73.6,
+        "pct_4_7d": 20.7,
+        "pct_8_14d": 5.2,
+        "pct_15_30d": 0.6,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 174
+      }
+    },
+    "FloraLink": {
+      "online": {
+        "avg_days": 2.0,
+        "pct_0_3d": 82.2,
+        "pct_4_7d": 12.4,
+        "pct_8_14d": 3.6,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.9,
+        "total_orders": 50133
+      }
+    },
+    "Florabundance.": {
+      "online": {
+        "avg_days": 2.9,
+        "pct_0_3d": 74.4,
+        "pct_4_7d": 20.5,
+        "pct_8_14d": 3.7,
+        "pct_15_30d": 1.4,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2073
+      }
+    },
+    "Floral Chain Direct": {
+      "offline": {
+        "avg_days": 3.1,
+        "pct_0_3d": 73.6,
+        "pct_4_7d": 19.7,
+        "pct_8_14d": 5.5,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.9,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 30403
+      },
+      "online": {
+        "avg_days": 1.9,
+        "pct_0_3d": 81.2,
+        "pct_4_7d": 17.0,
+        "pct_8_14d": 1.7,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 16825
+      }
+    },
+    "Floral Cooperative Purchasing Group LLC": {
+      "offline": {
+        "avg_days": 10.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 100.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 450
+      }
+    },
+    "Floral Importers and Distributors Inc. /Buds": {
+      "online": {
+        "avg_days": 2.3,
+        "pct_0_3d": 60.0,
+        "pct_4_7d": 40.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 10
+      }
+    },
+    "Floramix, Inc.": {
+      "offline": {
+        "avg_days": 15.6,
+        "pct_0_3d": 5.5,
+        "pct_4_7d": 3.2,
+        "pct_8_14d": 0.6,
+        "pct_15_30d": 85.9,
+        "pct_31_90d": 4.8,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 4763
+      }
+    },
+    "Floreco, Inc": {
+      "offline": {
+        "avg_days": 3.4,
+        "pct_0_3d": 51.9,
+        "pct_4_7d": 39.6,
+        "pct_8_14d": 6.1,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 2.0,
+        "total_orders": 14351
+      },
+      "online": {
+        "avg_days": 2.1,
+        "pct_0_3d": 80.9,
+        "pct_4_7d": 15.0,
+        "pct_8_14d": 4.1,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1554
+      }
+    },
+    "Florens Group LLC": {
+      "offline": {
+        "avg_days": 1.1,
+        "pct_0_3d": 90.7,
+        "pct_4_7d": 5.6,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 3.7,
+        "total_orders": 107
+      },
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 80.0,
+        "pct_4_7d": 20.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 30
+      }
+    },
+    "Flores San Miguel": {
+      "offline": {
+        "avg_days": -3.4,
+        "pct_0_3d": 12.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.7,
+        "pct_15_30d": 8.5,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 78.9,
+        "total_orders": 142
+      }
+    },
+    "Flores Silvestres": {
+      "online": {
+        "avg_days": 12.5,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 25.0,
+        "pct_8_14d": 50.0,
+        "pct_15_30d": 25.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 4
+      }
+    },
+    "Flores de la Hacienda": {
+      "offline": {
+        "avg_days": -2.3,
+        "pct_0_3d": 32.5,
+        "pct_4_7d": 5.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 62.5,
+        "total_orders": 40
+      },
+      "online": {
+        "avg_days": 5.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 100.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2
+      }
+    },
+    "Florimex Toronto Corp.": {
+      "offline": {
+        "avg_days": 4.0,
+        "pct_0_3d": 58.5,
+        "pct_4_7d": 32.0,
+        "pct_8_14d": 7.1,
+        "pct_15_30d": 1.9,
+        "pct_31_90d": 0.4,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 39753
+      },
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 85.9,
+        "pct_4_7d": 13.9,
+        "pct_8_14d": 0.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1807
+      }
+    },
+    "Floristcentric, LLC": {
+      "offline": {
+        "avg_days": 3.6,
+        "pct_0_3d": 55.1,
+        "pct_4_7d": 31.1,
+        "pct_8_14d": 13.0,
+        "pct_15_30d": 0.6,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 19551
+      },
+      "online": {
+        "avg_days": 1.5,
+        "pct_0_3d": 92.8,
+        "pct_4_7d": 7.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2935
+      }
+    },
+    "Floropolis": {
+      "offline": {
+        "avg_days": 28.3,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 33.3,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 66.7,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3
+      },
+      "online": {
+        "avg_days": 6.6,
+        "pct_0_3d": 51.2,
+        "pct_4_7d": 7.3,
+        "pct_8_14d": 2.4,
+        "pct_15_30d": 29.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 9.8,
+        "total_orders": 41
+      }
+    },
+    "Flower List": {
+      "offline": {
+        "avg_days": 0.5,
+        "pct_0_3d": 85.2,
+        "pct_4_7d": 4.2,
+        "pct_8_14d": 0.3,
+        "pct_15_30d": 1.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 9.4,
+        "total_orders": 1779
+      },
+      "online": {
+        "avg_days": 1.5,
+        "pct_0_3d": 92.3,
+        "pct_4_7d": 7.7,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 13
+      }
+    },
+    "Flowerist LLC": {
+      "offline": {
+        "avg_days": 2.9,
+        "pct_0_3d": 69.2,
+        "pct_4_7d": 23.2,
+        "pct_8_14d": 7.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.4,
+        "total_orders": 1575
+      },
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 96.0,
+        "pct_4_7d": 4.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 25
+      }
+    },
+    "Flowers Direct Inc": {
+      "online": {
+        "avg_days": 13.4,
+        "pct_0_3d": 3.1,
+        "pct_4_7d": 37.2,
+        "pct_8_14d": 39.7,
+        "pct_15_30d": 6.6,
+        "pct_31_90d": 13.5,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1798
+      }
+    },
+    "Forest Flowers": {
+      "offline": {
+        "avg_days": 10.8,
+        "pct_0_3d": 50.3,
+        "pct_4_7d": 12.7,
+        "pct_8_14d": 2.6,
+        "pct_15_30d": 32.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 2.2,
+        "total_orders": 1695
+      }
+    },
+    "Frank Adams Wholesale Florist": {
+      "online": {
+        "avg_days": 15.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 22.8,
+        "pct_8_14d": 38.2,
+        "pct_15_30d": 28.3,
+        "pct_31_90d": 10.7,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 421
+      }
+    },
+    "Fresca Farms": {
+      "offline": {
+        "avg_days": 4.5,
+        "pct_0_3d": 45.5,
+        "pct_4_7d": 44.5,
+        "pct_8_14d": 5.0,
+        "pct_15_30d": 4.6,
+        "pct_31_90d": 0.4,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 222458
+      },
+      "online": {
+        "avg_days": 1.4,
+        "pct_0_3d": 91.5,
+        "pct_4_7d": 8.3,
+        "pct_8_14d": 0.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 94084
+      }
+    },
+    "GOMEZ B.V.": {
+      "offline": {
+        "avg_days": 3.3,
+        "pct_0_3d": 64.4,
+        "pct_4_7d": 32.8,
+        "pct_8_14d": 2.5,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 25679
+      }
+    },
+    "GREEN OCEAN LLC": {
+      "offline": {
+        "avg_days": 0.9,
+        "pct_0_3d": 97.4,
+        "pct_4_7d": 2.2,
+        "pct_8_14d": 0.1,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2230
+      }
+    },
+    "GRUPO DEL PACIFICO": {
+      "offline": {
+        "avg_days": 30.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 100.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 150
+      }
+    },
+    "Gala Roses": {
+      "offline": {
+        "avg_days": 3.4,
+        "pct_0_3d": 52.2,
+        "pct_4_7d": 45.4,
+        "pct_8_14d": 1.8,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.4,
+        "total_orders": 99197
+      },
+      "online": {
+        "avg_days": 1.6,
+        "pct_0_3d": 87.7,
+        "pct_4_7d": 11.3,
+        "pct_8_14d": 0.7,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.3,
+        "total_orders": 13643
+      }
+    },
+    "Galleria Farms": {
+      "offline": {
+        "avg_days": 6.0,
+        "pct_0_3d": 66.9,
+        "pct_4_7d": 23.6,
+        "pct_8_14d": 4.2,
+        "pct_15_30d": 1.3,
+        "pct_31_90d": 3.2,
+        "pct_over_90d": 0.6,
+        "pct_negative": 0.2,
+        "total_orders": 49446
+      },
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 86.8,
+        "pct_4_7d": 11.1,
+        "pct_8_14d": 2.0,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 9617
+      }
+    },
+    "Gardens America Inc.": {
+      "offline": {
+        "avg_days": 2.6,
+        "pct_0_3d": 77.2,
+        "pct_4_7d": 21.1,
+        "pct_8_14d": 1.5,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 47998
+      },
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 86.1,
+        "pct_4_7d": 13.8,
+        "pct_8_14d": 0.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 9900
+      }
+    },
+    "Gassafy Wholesale Florist Inc": {
+      "online": {
+        "avg_days": 0.9,
+        "pct_0_3d": 95.7,
+        "pct_4_7d": 3.8,
+        "pct_8_14d": 0.5,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 762
+      }
+    },
+    "Georgia State Floral Distributors": {
+      "online": {
+        "avg_days": 12.5,
+        "pct_0_3d": 2.3,
+        "pct_4_7d": 38.3,
+        "pct_8_14d": 31.3,
+        "pct_15_30d": 24.1,
+        "pct_31_90d": 4.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1205
+      }
+    },
+    "Global Bouquet, LLC": {
+      "offline": {
+        "avg_days": 29.7,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 100.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 877
+      }
+    },
+    "Global Flowers": {
+      "offline": {
+        "avg_days": 1.0,
+        "pct_0_3d": 93.7,
+        "pct_4_7d": 5.7,
+        "pct_8_14d": 0.7,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 599
+      },
+      "online": {
+        "avg_days": 1.9,
+        "pct_0_3d": 86.7,
+        "pct_4_7d": 11.5,
+        "pct_8_14d": 1.2,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 427
+      }
+    },
+    "Golden Flowers": {
+      "offline": {
+        "avg_days": 1.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2
+      },
+      "online": {
+        "avg_days": 1.0,
+        "pct_0_3d": 97.4,
+        "pct_4_7d": 2.6,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 9966
+      }
+    },
+    "Green Bouquet LLC": {
+      "offline": {
+        "avg_days": 4.7,
+        "pct_0_3d": 35.1,
+        "pct_4_7d": 49.5,
+        "pct_8_14d": 11.1,
+        "pct_15_30d": 2.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 2.3,
+        "total_orders": 2685
+      },
+      "online": {
+        "avg_days": 7.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 100.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1
+      }
+    },
+    "Greens and Flowers Connection": {
+      "offline": {
+        "avg_days": 6.4,
+        "pct_0_3d": 51.1,
+        "pct_4_7d": 12.9,
+        "pct_8_14d": 4.5,
+        "pct_15_30d": 31.0,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.4,
+        "total_orders": 6504
+      },
+      "online": {
+        "avg_days": 2.2,
+        "pct_0_3d": 80.3,
+        "pct_4_7d": 17.4,
+        "pct_8_14d": 2.1,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 730
+      }
+    },
+    "Grupo Vegaflor - Medellin": {
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 6
+      }
+    },
+    "Gypso S.A. UIO": {
+      "online": {
+        "avg_days": 4.7,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 100.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3
+      }
+    },
+    "H&F Greens Inc (Mariposa Growers)": {
+      "offline": {
+        "avg_days": 1.0,
+        "pct_0_3d": 89.2,
+        "pct_4_7d": 4.6,
+        "pct_8_14d": 1.1,
+        "pct_15_30d": 2.2,
+        "pct_31_90d": 0.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 2.6,
+        "total_orders": 4262
+      }
+    },
+    "H&T Wholesale Flowers": {
+      "offline": {
+        "avg_days": 2.6,
+        "pct_0_3d": 68.8,
+        "pct_4_7d": 23.0,
+        "pct_8_14d": 7.0,
+        "pct_15_30d": 0.8,
+        "pct_31_90d": 0.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 126109
+      },
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 94.4,
+        "pct_4_7d": 3.7,
+        "pct_8_14d": 1.3,
+        "pct_15_30d": 0.6,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 864
+      }
+    },
+    "HALL´S - BIRMINGHAM": {
+      "online": {
+        "avg_days": 3.1,
+        "pct_0_3d": 63.8,
+        "pct_4_7d": 29.0,
+        "pct_8_14d": 7.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1424
+      }
+    },
+    "HANAYA FARMS": {
+      "offline": {
+        "avg_days": 2.4,
+        "pct_0_3d": 76.2,
+        "pct_4_7d": 23.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.8,
+        "total_orders": 261
+      }
+    },
+    "HARDIN´S WHLSE - LIBERTY": {
+      "online": {
+        "avg_days": 1.6,
+        "pct_0_3d": 88.2,
+        "pct_4_7d": 10.0,
+        "pct_8_14d": 1.8,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2553
+      }
+    },
+    "HIRE`S BEST FLOWERS": {
+      "online": {
+        "avg_days": 2.9,
+        "pct_0_3d": 81.9,
+        "pct_4_7d": 6.5,
+        "pct_8_14d": 8.9,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 2.7,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 293
+      }
+    },
+    "Hall´s Wholesale Florist Theodore": {
+      "online": {
+        "avg_days": 0.5,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 4
+      }
+    },
+    "Hana Farms Inc.": {
+      "offline": {
+        "avg_days": 2.5,
+        "pct_0_3d": 72.5,
+        "pct_4_7d": 13.8,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 3.9,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 9.6,
+        "total_orders": 738
+      },
+      "online": {
+        "avg_days": 1.9,
+        "pct_0_3d": 84.6,
+        "pct_4_7d": 13.0,
+        "pct_8_14d": 2.4,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 247
+      }
+    },
+    "Herradura Growers": {
+      "offline": {
+        "avg_days": 14.4,
+        "pct_0_3d": 44.2,
+        "pct_4_7d": 11.0,
+        "pct_8_14d": 11.0,
+        "pct_15_30d": 12.3,
+        "pct_31_90d": 19.7,
+        "pct_over_90d": 0.3,
+        "pct_negative": 1.4,
+        "total_orders": 7891
+      }
+    },
+    "Hoja Verde - Rosen Financial": {
+      "offline": {
+        "avg_days": 3.1,
+        "pct_0_3d": 72.5,
+        "pct_4_7d": 25.8,
+        "pct_8_14d": 1.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.4,
+        "total_orders": 1537
+      }
+    },
+    "Honey Bee Wholesale Florist, LLC": {
+      "online": {
+        "avg_days": 9.9,
+        "pct_0_3d": 40.8,
+        "pct_4_7d": 22.4,
+        "pct_8_14d": 15.9,
+        "pct_15_30d": 14.3,
+        "pct_31_90d": 6.6,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 617
+      }
+    },
+    "Hortensias Cabogana Cia Ltda": {
+      "offline": {
+        "avg_days": 8.5,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 50.0,
+        "pct_8_14d": 50.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2
+      },
+      "online": {
+        "avg_days": 4.1,
+        "pct_0_3d": 33.3,
+        "pct_4_7d": 66.7,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 9
+      }
+    },
+    "Hyperactive Farms Inc.": {
+      "online": {
+        "avg_days": 1.2,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 15
+      }
+    },
+    "IKEBANA CO SAS": {
+      "offline": {
+        "avg_days": 2.4,
+        "pct_0_3d": 90.3,
+        "pct_4_7d": 6.3,
+        "pct_8_14d": 0.5,
+        "pct_15_30d": 2.8,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 13045
+      }
+    },
+    "INTERNATIONAL TRADING AND SERVICES INC": {
+      "offline": {
+        "avg_days": -1.4,
+        "pct_0_3d": 1.5,
+        "pct_4_7d": 0.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 98.3,
+        "total_orders": 6892
+      }
+    },
+    "IRIS ROSES LLC": {
+      "offline": {
+        "avg_days": 1.2,
+        "pct_0_3d": 93.9,
+        "pct_4_7d": 1.6,
+        "pct_8_14d": 2.0,
+        "pct_15_30d": 0.5,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 2.0,
+        "total_orders": 749
+      },
+      "online": {
+        "avg_days": 2.0,
+        "pct_0_3d": 86.3,
+        "pct_4_7d": 10.4,
+        "pct_8_14d": 3.3,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 454
+      }
+    },
+    "Interflor LLC": {
+      "offline": {
+        "avg_days": 7.0,
+        "pct_0_3d": 60.5,
+        "pct_4_7d": 10.9,
+        "pct_8_14d": 2.7,
+        "pct_15_30d": 25.6,
+        "pct_31_90d": 0.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 4546
+      },
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 82.2,
+        "pct_4_7d": 17.8,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 107
+      }
+    },
+    "International Fresh Group LLC": {
+      "offline": {
+        "avg_days": -5.5,
+        "pct_0_3d": 52.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 48.0,
+        "total_orders": 50
+      },
+      "online": {
+        "avg_days": 0.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1
+      }
+    },
+    "Inversiones Napy S.A": {
+      "offline": {
+        "avg_days": 0.0,
+        "pct_0_3d": 99.7,
+        "pct_4_7d": 0.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.2,
+        "total_orders": 1217
+      },
+      "online": {
+        "avg_days": 2.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2
+      }
+    },
+    "J&E Greens": {
+      "offline": {
+        "avg_days": 2.0,
+        "pct_0_3d": 80.6,
+        "pct_4_7d": 15.6,
+        "pct_8_14d": 2.3,
+        "pct_15_30d": 0.8,
+        "pct_31_90d": 0.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.5,
+        "total_orders": 4666
+      },
+      "online": {
+        "avg_days": 1.9,
+        "pct_0_3d": 89.2,
+        "pct_4_7d": 8.9,
+        "pct_8_14d": 1.7,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1280
+      }
+    },
+    "JFS Wholesale Floral": {
+      "offline": {
+        "avg_days": 2.4,
+        "pct_0_3d": 65.2,
+        "pct_4_7d": 28.7,
+        "pct_8_14d": 4.6,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.6,
+        "total_orders": 63165
+      },
+      "online": {
+        "avg_days": 0.2,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 6
+      }
+    },
+    "JOHNSENS WHOLESALE FLORIST": {
+      "online": {
+        "avg_days": 1.1,
+        "pct_0_3d": 95.4,
+        "pct_4_7d": 2.6,
+        "pct_8_14d": 1.2,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1360
+      }
+    },
+    "Jacksonville Flower Market": {
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 83.0,
+        "pct_4_7d": 9.1,
+        "pct_8_14d": 5.9,
+        "pct_15_30d": 2.0,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3874
+      }
+    },
+    "Jetty USA LLC": {
+      "online": {
+        "avg_days": 5.2,
+        "pct_0_3d": 19.6,
+        "pct_4_7d": 60.8,
+        "pct_8_14d": 19.6,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 51
+      }
+    },
+    "KBC Cooler Account": {
+      "offline": {
+        "avg_days": 1.6,
+        "pct_0_3d": 86.1,
+        "pct_4_7d": 13.2,
+        "pct_8_14d": 0.4,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.2,
+        "total_orders": 50951
+      },
+      "online": {
+        "avg_days": 1.9,
+        "pct_0_3d": 81.1,
+        "pct_4_7d": 15.4,
+        "pct_8_14d": 3.2,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 10947
+      }
+    },
+    "KD & Company": {
+      "online": {
+        "avg_days": 10.6,
+        "pct_0_3d": 11.1,
+        "pct_4_7d": 48.1,
+        "pct_8_14d": 3.7,
+        "pct_15_30d": 37.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 27
+      }
+    },
+    "Kennicott Brothers Company": {
+      "offline": {
+        "avg_days": 2.5,
+        "pct_0_3d": 77.7,
+        "pct_4_7d": 13.6,
+        "pct_8_14d": 5.3,
+        "pct_15_30d": 2.0,
+        "pct_31_90d": 1.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.3,
+        "total_orders": 1160491
+      },
+      "online": {
+        "avg_days": 2.1,
+        "pct_0_3d": 85.5,
+        "pct_4_7d": 9.2,
+        "pct_8_14d": 2.3,
+        "pct_15_30d": 1.0,
+        "pct_31_90d": 0.4,
+        "pct_over_90d": 0.1,
+        "pct_negative": 1.4,
+        "total_orders": 85659
+      }
+    },
+    "Kennicott Brothers West": {
+      "offline": {
+        "avg_days": 1.7,
+        "pct_0_3d": 77.8,
+        "pct_4_7d": 22.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 27
+      },
+      "online": {
+        "avg_days": 1.6,
+        "pct_0_3d": 87.0,
+        "pct_4_7d": 11.5,
+        "pct_8_14d": 1.5,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 684
+      }
+    },
+    "Kennicott Kuts": {
+      "offline": {
+        "avg_days": 0.7,
+        "pct_0_3d": 84.5,
+        "pct_4_7d": 7.5,
+        "pct_8_14d": 0.4,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 7.6,
+        "total_orders": 840
+      },
+      "online": {
+        "avg_days": 1.1,
+        "pct_0_3d": 94.6,
+        "pct_4_7d": 5.4,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 74
+      }
+    },
+    "Kontikiflor BV": {
+      "offline": {
+        "avg_days": 4.9,
+        "pct_0_3d": 57.4,
+        "pct_4_7d": 22.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 11.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 9.3,
+        "total_orders": 54
+      }
+    },
+    "LA TOSCANA FARMS": {
+      "offline": {
+        "avg_days": 1.2,
+        "pct_0_3d": 93.0,
+        "pct_4_7d": 6.9,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 4192
+      },
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 86.7,
+        "pct_4_7d": 12.0,
+        "pct_8_14d": 1.3,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1722
+      }
+    },
+    "LD Trading/ Lawrence Developments Inc.": {
+      "online": {
+        "avg_days": 2.3,
+        "pct_0_3d": 80.1,
+        "pct_4_7d": 17.7,
+        "pct_8_14d": 2.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2005
+      }
+    },
+    "LIHML INC Fayetteville - #01235 GF Rep Kareena 19": {
+      "online": {
+        "avg_days": 2.1,
+        "pct_0_3d": 88.5,
+        "pct_4_7d": 11.5,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 26
+      }
+    },
+    "Lartisan Roses LLC": {
+      "offline": {
+        "avg_days": 3.2,
+        "pct_0_3d": 53.3,
+        "pct_4_7d": 42.1,
+        "pct_8_14d": 4.5,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 508
+      },
+      "online": {
+        "avg_days": 2.4,
+        "pct_0_3d": 69.6,
+        "pct_4_7d": 30.4,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 102
+      }
+    },
+    "Legacy Flowers": {
+      "offline": {
+        "avg_days": 4.0,
+        "pct_0_3d": 45.7,
+        "pct_4_7d": 47.8,
+        "pct_8_14d": 4.1,
+        "pct_15_30d": 2.3,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 35131
+      },
+      "online": {
+        "avg_days": 1.6,
+        "pct_0_3d": 87.5,
+        "pct_4_7d": 11.0,
+        "pct_8_14d": 1.4,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 666
+      }
+    },
+    "Len Busch Roses": {
+      "online": {
+        "avg_days": 14.8,
+        "pct_0_3d": 0.6,
+        "pct_4_7d": 20.6,
+        "pct_8_14d": 43.3,
+        "pct_15_30d": 27.6,
+        "pct_31_90d": 7.9,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 642
+      }
+    },
+    "Liberty Blooms": {
+      "online": {
+        "avg_days": 2.9,
+        "pct_0_3d": 70.4,
+        "pct_4_7d": 24.0,
+        "pct_8_14d": 5.1,
+        "pct_15_30d": 0.5,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3678
+      }
+    },
+    "Littlefloyd Investments, LLC": {
+      "online": {
+        "avg_days": 2.6,
+        "pct_0_3d": 60.0,
+        "pct_4_7d": 40.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 5
+      }
+    },
+    "Llanos De Alba LLADEAL - UIO": {
+      "online": {
+        "avg_days": 2.6,
+        "pct_0_3d": 50.0,
+        "pct_4_7d": 50.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 8
+      }
+    },
+    "Louisiana Wholesale Florist": {
+      "online": {
+        "avg_days": 7.6,
+        "pct_0_3d": 16.2,
+        "pct_4_7d": 54.8,
+        "pct_8_14d": 21.6,
+        "pct_15_30d": 7.2,
+        "pct_31_90d": 0.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 458
+      }
+    },
+    "Lubbock Wholesale": {
+      "online": {
+        "avg_days": 13.4,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 27.4,
+        "pct_8_14d": 46.7,
+        "pct_15_30d": 19.9,
+        "pct_31_90d": 6.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 332
+      }
+    },
+    "Lucas and Greer, Inc. dba L & G Wholesale Florist": {
+      "online": {
+        "avg_days": 1.5,
+        "pct_0_3d": 93.9,
+        "pct_4_7d": 5.7,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.4,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1118
+      }
+    },
+    "M&M CUT FLORA": {
+      "online": {
+        "avg_days": 2.5,
+        "pct_0_3d": 83.3,
+        "pct_4_7d": 12.9,
+        "pct_8_14d": 1.5,
+        "pct_15_30d": 2.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3162
+      }
+    },
+    "MACUNDO FLOWERS AND GREENS LLC": {
+      "offline": {
+        "avg_days": 1.2,
+        "pct_0_3d": 90.5,
+        "pct_4_7d": 7.7,
+        "pct_8_14d": 1.2,
+        "pct_15_30d": 0.4,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.1,
+        "pct_negative": 0.0,
+        "total_orders": 10304
+      },
+      "online": {
+        "avg_days": 0.5,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 13
+      }
+    },
+    "MAGNIFICA FLOWERS": {
+      "offline": {
+        "avg_days": 0.5,
+        "pct_0_3d": 98.2,
+        "pct_4_7d": 0.3,
+        "pct_8_14d": 0.3,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.2,
+        "pct_over_90d": 0.2,
+        "pct_negative": 0.7,
+        "total_orders": 9916
+      }
+    },
+    "MAGNOLIA HOLDINGS 301 LLC  ABSOLUTELY BEAUTIFUL FLOWERS": {
+      "online": {
+        "avg_days": 0.8,
+        "pct_0_3d": 98.7,
+        "pct_4_7d": 1.3,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 873
+      }
+    },
+    "MAHONEYS ROCKY LEDGE FARM &": {
+      "online": {
+        "avg_days": 1.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1
+      }
+    },
+    "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN": {
+      "online": {
+        "avg_days": 8.2,
+        "pct_0_3d": 10.0,
+        "pct_4_7d": 45.0,
+        "pct_8_14d": 45.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 20
+      }
+    },
+    "MALIMA USA": {
+      "offline": {
+        "avg_days": 2.7,
+        "pct_0_3d": 82.4,
+        "pct_4_7d": 10.8,
+        "pct_8_14d": 5.4,
+        "pct_15_30d": 0.5,
+        "pct_31_90d": 0.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.7,
+        "total_orders": 1912
+      },
+      "online": {
+        "avg_days": 1.5,
+        "pct_0_3d": 88.5,
+        "pct_4_7d": 11.5,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 174
+      }
+    },
+    "MGA Flowers": {
+      "offline": {
+        "avg_days": 5.1,
+        "pct_0_3d": 69.4,
+        "pct_4_7d": 17.0,
+        "pct_8_14d": 8.2,
+        "pct_15_30d": 2.0,
+        "pct_31_90d": 3.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.2,
+        "total_orders": 1317
+      },
+      "online": {
+        "avg_days": 2.0,
+        "pct_0_3d": 83.6,
+        "pct_4_7d": 12.5,
+        "pct_8_14d": 3.9,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 152
+      }
+    },
+    "MONTEROSAS LLC": {
+      "offline": {
+        "avg_days": 2.3,
+        "pct_0_3d": 73.9,
+        "pct_4_7d": 23.0,
+        "pct_8_14d": 2.9,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.2,
+        "total_orders": 5494
+      },
+      "online": {
+        "avg_days": 2.0,
+        "pct_0_3d": 83.1,
+        "pct_4_7d": 14.3,
+        "pct_8_14d": 2.7,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 603
+      }
+    },
+    "MRS. BLOOM'S DIRECT, INC.": {
+      "online": {
+        "avg_days": 0.9,
+        "pct_0_3d": 98.0,
+        "pct_4_7d": 2.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 300
+      }
+    },
+    "MYSTICFLOWERS LLC": {
+      "offline": {
+        "avg_days": 3.1,
+        "pct_0_3d": 86.7,
+        "pct_4_7d": 9.4,
+        "pct_8_14d": 0.7,
+        "pct_15_30d": 1.9,
+        "pct_31_90d": 1.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2859
+      },
+      "online": {
+        "avg_days": 5.1,
+        "pct_0_3d": 52.0,
+        "pct_4_7d": 29.3,
+        "pct_8_14d": 12.3,
+        "pct_15_30d": 4.7,
+        "pct_31_90d": 1.7,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 358
+      }
+    },
+    "Magic Flowers - Floropolis": {
+      "offline": {
+        "avg_days": 3.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1
+      },
+      "online": {
+        "avg_days": 15.4,
+        "pct_0_3d": 75.6,
+        "pct_4_7d": 2.4,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 2.4,
+        "pct_31_90d": 19.5,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 41
+      }
+    },
+    "Magnolia Wholesale Florist Inc": {
+      "online": {
+        "avg_days": 8.0,
+        "pct_0_3d": 5.5,
+        "pct_4_7d": 59.1,
+        "pct_8_14d": 24.9,
+        "pct_15_30d": 9.9,
+        "pct_31_90d": 0.6,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 687
+      }
+    },
+    "Main Wholesale Florist LLC / Clifton": {
+      "online": {
+        "avg_days": 1.5,
+        "pct_0_3d": 74.2,
+        "pct_4_7d": 25.8,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 31
+      }
+    },
+    "Maple Grove Floral": {
+      "offline": {
+        "avg_days": 1.0,
+        "pct_0_3d": 88.2,
+        "pct_4_7d": 7.5,
+        "pct_8_14d": 3.0,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.1,
+        "total_orders": 14678
+      },
+      "online": {
+        "avg_days": 0.4,
+        "pct_0_3d": 98.8,
+        "pct_4_7d": 1.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 11915
+      }
+    },
+    "Matthioli Flowers Ecuador": {
+      "online": {
+        "avg_days": 2.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2
+      }
+    },
+    "Mayesh Wholesale Florist Inc": {
+      "offline": {
+        "avg_days": 5.2,
+        "pct_0_3d": 73.2,
+        "pct_4_7d": 11.1,
+        "pct_8_14d": 4.4,
+        "pct_15_30d": 2.0,
+        "pct_31_90d": 4.7,
+        "pct_over_90d": 0.4,
+        "pct_negative": 4.2,
+        "total_orders": 906320
+      },
+      "online": {
+        "avg_days": 6.3,
+        "pct_0_3d": 70.1,
+        "pct_4_7d": 17.6,
+        "pct_8_14d": 5.9,
+        "pct_15_30d": 3.1,
+        "pct_31_90d": 1.8,
+        "pct_over_90d": 1.4,
+        "pct_negative": 0.1,
+        "total_orders": 240558
+      }
+    },
+    "Mayta International LLC / Native Blooms": {
+      "offline": {
+        "avg_days": 3.0,
+        "pct_0_3d": 59.6,
+        "pct_4_7d": 38.6,
+        "pct_8_14d": 1.7,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 13701
+      },
+      "online": {
+        "avg_days": 2.3,
+        "pct_0_3d": 77.9,
+        "pct_4_7d": 18.0,
+        "pct_8_14d": 4.0,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3519
+      }
+    },
+    "McCarthy Wholesale": {
+      "online": {
+        "avg_days": 0.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1
+      }
+    },
+    "MegaFlor - UIO": {
+      "online": {
+        "avg_days": 2.2,
+        "pct_0_3d": 79.6,
+        "pct_4_7d": 14.3,
+        "pct_8_14d": 6.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 49
+      }
+    },
+    "Megaflor USA": {
+      "offline": {
+        "avg_days": 6.6,
+        "pct_0_3d": 82.4,
+        "pct_4_7d": 6.0,
+        "pct_8_14d": 3.3,
+        "pct_15_30d": 2.2,
+        "pct_31_90d": 5.8,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.5,
+        "total_orders": 1105
+      },
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 83.2,
+        "pct_4_7d": 14.2,
+        "pct_8_14d": 2.3,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 774
+      }
+    },
+    "Melody Farms LLC": {
+      "offline": {
+        "avg_days": 8.9,
+        "pct_0_3d": 66.0,
+        "pct_4_7d": 13.7,
+        "pct_8_14d": 7.6,
+        "pct_15_30d": 4.1,
+        "pct_31_90d": 7.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.2,
+        "total_orders": 46791
+      },
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 89.9,
+        "pct_4_7d": 7.4,
+        "pct_8_14d": 1.9,
+        "pct_15_30d": 0.8,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 6503
+      }
+    },
+    "Metro Flower Market LLC": {
+      "offline": {
+        "avg_days": 0.9,
+        "pct_0_3d": 89.1,
+        "pct_4_7d": 9.5,
+        "pct_8_14d": 1.1,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.2,
+        "total_orders": 84284
+      },
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 92.3,
+        "pct_4_7d": 7.7,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 220
+      }
+    },
+    "Metropetals": {
+      "offline": {
+        "avg_days": 2.3,
+        "pct_0_3d": 76.7,
+        "pct_4_7d": 20.7,
+        "pct_8_14d": 0.9,
+        "pct_15_30d": 0.4,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.4,
+        "total_orders": 3746
+      },
+      "online": {
+        "avg_days": 1.5,
+        "pct_0_3d": 97.8,
+        "pct_4_7d": 1.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.5,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.7,
+        "total_orders": 408
+      }
+    },
+    "Metropolitan Wholesale/Cityside Flowers": {
+      "online": {
+        "avg_days": 3.4,
+        "pct_0_3d": 51.1,
+        "pct_4_7d": 44.4,
+        "pct_8_14d": 4.0,
+        "pct_15_30d": 0.5,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1328
+      }
+    },
+    "Miaflora Farms": {
+      "online": {
+        "avg_days": 3.2,
+        "pct_0_3d": 64.6,
+        "pct_4_7d": 27.7,
+        "pct_8_14d": 7.7,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 16816
+      }
+    },
+    "Mideast Flowers Distributors, Inc.": {
+      "online": {
+        "avg_days": 3.6,
+        "pct_0_3d": 77.4,
+        "pct_4_7d": 13.1,
+        "pct_8_14d": 2.2,
+        "pct_15_30d": 7.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 137
+      }
+    },
+    "Mikes Finest Wholesale Flowers, Inc.": {
+      "online": {
+        "avg_days": 1.4,
+        "pct_0_3d": 80.0,
+        "pct_4_7d": 20.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 5
+      }
+    },
+    "Miraflor LLC": {
+      "offline": {
+        "avg_days": 10.8,
+        "pct_0_3d": 52.4,
+        "pct_4_7d": 14.4,
+        "pct_8_14d": 8.8,
+        "pct_15_30d": 7.1,
+        "pct_31_90d": 17.2,
+        "pct_over_90d": 0.2,
+        "pct_negative": 0.0,
+        "total_orders": 32140
+      },
+      "online": {
+        "avg_days": 2.8,
+        "pct_0_3d": 70.7,
+        "pct_4_7d": 23.5,
+        "pct_8_14d": 5.8,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2736
+      }
+    },
+    "Moonlight Flowers": {
+      "offline": {
+        "avg_days": 2.9,
+        "pct_0_3d": 66.0,
+        "pct_4_7d": 31.9,
+        "pct_8_14d": 0.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.8,
+        "total_orders": 7004
+      },
+      "online": {
+        "avg_days": 1.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 50
+      }
+    },
+    "Much Flowers - UIO": {
+      "online": {
+        "avg_days": 1.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2
+      }
+    },
+    "Muchflowers Inc.": {
+      "offline": {
+        "avg_days": 3.2,
+        "pct_0_3d": 69.4,
+        "pct_4_7d": 17.8,
+        "pct_8_14d": 12.6,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.2,
+        "total_orders": 11217
+      },
+      "online": {
+        "avg_days": 3.3,
+        "pct_0_3d": 64.9,
+        "pct_4_7d": 27.7,
+        "pct_8_14d": 6.4,
+        "pct_15_30d": 0.9,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 1468
+      }
+    },
+    "Multiflora Corporation": {
+      "offline": {
+        "avg_days": 3.3,
+        "pct_0_3d": 48.0,
+        "pct_4_7d": 50.0,
+        "pct_8_14d": 2.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 50
+      },
+      "online": {
+        "avg_days": 2.7,
+        "pct_0_3d": 82.3,
+        "pct_4_7d": 10.9,
+        "pct_8_14d": 3.4,
+        "pct_15_30d": 2.9,
+        "pct_31_90d": 0.6,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 16846
+      }
+    },
+    "NY Floral Supply": {
+      "offline": {
+        "avg_days": 0.9,
+        "pct_0_3d": 91.6,
+        "pct_4_7d": 5.5,
+        "pct_8_14d": 1.0,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.9,
+        "total_orders": 33850
+      },
+      "online": {
+        "avg_days": 0.6,
+        "pct_0_3d": 99.2,
+        "pct_4_7d": 0.6,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 781
+      }
+    },
+    "NYC FLORAL GREENS": {
+      "offline": {
+        "avg_days": 5.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 100.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 180
+      }
+    },
+    "Naranjo Farms LLC": {
+      "offline": {
+        "avg_days": 3.1,
+        "pct_0_3d": 64.8,
+        "pct_4_7d": 26.3,
+        "pct_8_14d": 7.5,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.2,
+        "total_orders": 16112
+      },
+      "online": {
+        "avg_days": 3.3,
+        "pct_0_3d": 68.1,
+        "pct_4_7d": 20.3,
+        "pct_8_14d": 9.4,
+        "pct_15_30d": 2.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 5877
+      }
+    },
+    "Nathalia Bloemenexport LLC - MIA": {
+      "online": {
+        "avg_days": 5.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 100.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 39
+      }
+    },
+    "National Floral Supply": {
+      "offline": {
+        "avg_days": 1.5,
+        "pct_0_3d": 92.2,
+        "pct_4_7d": 3.6,
+        "pct_8_14d": 0.9,
+        "pct_15_30d": 1.3,
+        "pct_31_90d": 1.7,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.3,
+        "total_orders": 25783
+      }
+    },
+    "Natural Flowers, Inc": {
+      "offline": {
+        "avg_days": 3.0,
+        "pct_0_3d": 64.7,
+        "pct_4_7d": 33.4,
+        "pct_8_14d": 1.7,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 12399
+      },
+      "online": {
+        "avg_days": 1.5,
+        "pct_0_3d": 90.4,
+        "pct_4_7d": 7.4,
+        "pct_8_14d": 2.0,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3332
+      }
+    },
+    "Nazcaflor USA, Inc": {
+      "offline": {
+        "avg_days": 2.3,
+        "pct_0_3d": 78.9,
+        "pct_4_7d": 20.7,
+        "pct_8_14d": 0.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 29186
+      },
+      "online": {
+        "avg_days": 1.6,
+        "pct_0_3d": 93.8,
+        "pct_4_7d": 6.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1055
+      }
+    },
+    "New England Wholesale Florist": {
+      "offline": {
+        "avg_days": 0.4,
+        "pct_0_3d": 85.2,
+        "pct_4_7d": 7.6,
+        "pct_8_14d": 0.3,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 7.0,
+        "total_orders": 6081
+      },
+      "online": {
+        "avg_days": 1.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1
+      }
+    },
+    "Ninfa Flowers": {
+      "offline": {
+        "avg_days": -0.7,
+        "pct_0_3d": 39.0,
+        "pct_4_7d": 0.4,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 60.6,
+        "total_orders": 16852
+      },
+      "online": {
+        "avg_days": 1.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1
+      }
+    },
+    "Northline Wholesale Flowers": {
+      "offline": {
+        "avg_days": 4.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 100.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2
+      },
+      "online": {
+        "avg_days": 4.7,
+        "pct_0_3d": 36.6,
+        "pct_4_7d": 52.9,
+        "pct_8_14d": 10.5,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 153
+      }
+    },
+    "Nova Packaging Solutions, Inc.": {
+      "offline": {
+        "avg_days": 0.7,
+        "pct_0_3d": 99.1,
+        "pct_4_7d": 0.9,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 324
+      },
+      "online": {
+        "avg_days": 6.3,
+        "pct_0_3d": 33.3,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 66.7,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3
+      }
+    },
+    "Olimpo Flowers Finca": {
+      "online": {
+        "avg_days": 0.7,
+        "pct_0_3d": 83.3,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 16.7,
+        "total_orders": 6
+      }
+    },
+    "Ontario Flower Growers Cooperative Ltd.": {
+      "offline": {
+        "avg_days": 30.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 100.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 546
+      }
+    },
+    "Orlando Wholesale Florist": {
+      "offline": {
+        "avg_days": 2.0,
+        "pct_0_3d": 75.5,
+        "pct_4_7d": 20.4,
+        "pct_8_14d": 3.5,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.2,
+        "pct_over_90d": 0.1,
+        "pct_negative": 0.1,
+        "total_orders": 96870
+      },
+      "online": {
+        "avg_days": 1.0,
+        "pct_0_3d": 98.1,
+        "pct_4_7d": 1.8,
+        "pct_8_14d": 0.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1338
+      }
+    },
+    "PAT FLOR SCARL": {
+      "offline": {
+        "avg_days": 4.1,
+        "pct_0_3d": 70.1,
+        "pct_4_7d": 17.2,
+        "pct_8_14d": 2.6,
+        "pct_15_30d": 8.3,
+        "pct_31_90d": 0.3,
+        "pct_over_90d": 0.1,
+        "pct_negative": 1.3,
+        "total_orders": 3705
+      },
+      "online": {
+        "avg_days": 2.3,
+        "pct_0_3d": 80.5,
+        "pct_4_7d": 14.2,
+        "pct_8_14d": 5.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 267
+      }
+    },
+    "PETALS WEST, INC.": {
+      "online": {
+        "avg_days": 1.0,
+        "pct_0_3d": 97.2,
+        "pct_4_7d": 2.2,
+        "pct_8_14d": 0.6,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1031
+      }
+    },
+    "POPPIES DESIGN STUDIO, LLC": {
+      "online": {
+        "avg_days": 3.4,
+        "pct_0_3d": 45.6,
+        "pct_4_7d": 54.4,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 491
+      }
+    },
+    "POSIES TRUCK": {
+      "online": {
+        "avg_days": 2.3,
+        "pct_0_3d": 84.0,
+        "pct_4_7d": 14.9,
+        "pct_8_14d": 0.6,
+        "pct_15_30d": 0.5,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 812
+      }
+    },
+    "POTOMAC WHSLE": {
+      "online": {
+        "avg_days": 2.1,
+        "pct_0_3d": 79.8,
+        "pct_4_7d": 20.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 248
+      }
+    },
+    "Pacifica Farms - CAL": {
+      "online": {
+        "avg_days": 3.4,
+        "pct_0_3d": 67.5,
+        "pct_4_7d": 27.0,
+        "pct_8_14d": 4.9,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 452
+      }
+    },
+    "Palm Beach Whsle Flowers, Inc.": {
+      "online": {
+        "avg_days": 1.9,
+        "pct_0_3d": 81.3,
+        "pct_4_7d": 18.5,
+        "pct_8_14d": 0.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3670
+      }
+    },
+    "Patagonia Sun": {
+      "offline": {
+        "avg_days": 3.1,
+        "pct_0_3d": 59.4,
+        "pct_4_7d": 38.5,
+        "pct_8_14d": 2.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 96
+      },
+      "online": {
+        "avg_days": 2.4,
+        "pct_0_3d": 85.4,
+        "pct_4_7d": 14.6,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 41
+      }
+    },
+    "Penelope's Petals, LLC": {
+      "offline": {
+        "avg_days": 0.5,
+        "pct_0_3d": 98.5,
+        "pct_4_7d": 0.4,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.1,
+        "total_orders": 13429
+      },
+      "online": {
+        "avg_days": 1.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 21
+      }
+    },
+    "Petals Direct": {
+      "offline": {
+        "avg_days": 3.9,
+        "pct_0_3d": 57.8,
+        "pct_4_7d": 10.9,
+        "pct_8_14d": 1.8,
+        "pct_15_30d": 9.5,
+        "pct_31_90d": 1.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 18.8,
+        "total_orders": 2933
+      },
+      "online": {
+        "avg_days": 0.2,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 15
+      }
+    },
+    "Pikes Peak Floral": {
+      "offline": {
+        "avg_days": 2.4,
+        "pct_0_3d": 77.8,
+        "pct_4_7d": 22.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 9
+      },
+      "online": {
+        "avg_days": 10.4,
+        "pct_0_3d": 3.1,
+        "pct_4_7d": 40.5,
+        "pct_8_14d": 37.9,
+        "pct_15_30d": 16.0,
+        "pct_31_90d": 2.5,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1500
+      }
+    },
+    "Pinnacle Flowers, LLC": {
+      "offline": {
+        "avg_days": 1.9,
+        "pct_0_3d": 85.2,
+        "pct_4_7d": 7.6,
+        "pct_8_14d": 1.8,
+        "pct_15_30d": 3.9,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.4,
+        "total_orders": 43798
+      },
+      "online": {
+        "avg_days": 1.1,
+        "pct_0_3d": 95.5,
+        "pct_4_7d": 4.2,
+        "pct_8_14d": 0.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 3018
+      }
+    },
+    "Premium Flowers": {
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 86.7,
+        "pct_4_7d": 9.6,
+        "pct_8_14d": 3.6,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 7800
+      }
+    },
+    "Premium Greens Australia B.V.": {
+      "offline": {
+        "avg_days": 4.4,
+        "pct_0_3d": 13.4,
+        "pct_4_7d": 86.6,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 625
+      },
+      "online": {
+        "avg_days": 2.1,
+        "pct_0_3d": 88.8,
+        "pct_4_7d": 11.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 170
+      }
+    },
+    "Premium Greens Australia LLC": {
+      "offline": {
+        "avg_days": 2.4,
+        "pct_0_3d": 84.2,
+        "pct_4_7d": 13.1,
+        "pct_8_14d": 2.2,
+        "pct_15_30d": 0.4,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 1831
+      },
+      "online": {
+        "avg_days": 2.3,
+        "pct_0_3d": 83.3,
+        "pct_4_7d": 13.1,
+        "pct_8_14d": 3.7,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1714
+      }
+    },
+    "Price's Floral Wholesale, LLC": {
+      "offline": {
+        "avg_days": 0.4,
+        "pct_0_3d": 94.5,
+        "pct_4_7d": 5.2,
+        "pct_8_14d": 0.3,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 4600
+      },
+      "online": {
+        "avg_days": 0.8,
+        "pct_0_3d": 98.6,
+        "pct_4_7d": 1.4,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 139
+      }
+    },
+    "Prime Petals LLC": {
+      "offline": {
+        "avg_days": 0.4,
+        "pct_0_3d": 97.7,
+        "pct_4_7d": 2.1,
+        "pct_8_14d": 0.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 24827
+      }
+    },
+    "Pronto Farms LLC": {
+      "offline": {
+        "avg_days": 1.3,
+        "pct_0_3d": 80.6,
+        "pct_4_7d": 3.4,
+        "pct_8_14d": 0.1,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 15.5,
+        "total_orders": 10762
+      },
+      "online": {
+        "avg_days": 2.0,
+        "pct_0_3d": 87.0,
+        "pct_4_7d": 13.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 138
+      }
+    },
+    "Protean Farms US": {
+      "offline": {
+        "avg_days": 1.1,
+        "pct_0_3d": 92.6,
+        "pct_4_7d": 6.3,
+        "pct_8_14d": 0.2,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.8,
+        "total_orders": 14753
+      },
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 87.4,
+        "pct_4_7d": 12.3,
+        "pct_8_14d": 0.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 8330
+      }
+    },
+    "Quimflowers - UIO": {
+      "online": {
+        "avg_days": 1.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1
+      }
+    },
+    "Quinlan-Wasserman, Inc": {
+      "online": {
+        "avg_days": 6.3,
+        "pct_0_3d": 9.5,
+        "pct_4_7d": 72.2,
+        "pct_8_14d": 13.5,
+        "pct_15_30d": 4.8,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 126
+      }
+    },
+    "R&W WHOLESALE, INC.": {
+      "online": {
+        "avg_days": 3.0,
+        "pct_0_3d": 57.1,
+        "pct_4_7d": 40.5,
+        "pct_8_14d": 2.3,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2993
+      }
+    },
+    "ROYAL BASE (U.S.A) CORPORATION": {
+      "offline": {
+        "avg_days": 0.7,
+        "pct_0_3d": 52.8,
+        "pct_4_7d": 15.2,
+        "pct_8_14d": 1.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 30.8,
+        "total_orders": 1943
+      },
+      "online": {
+        "avg_days": 2.8,
+        "pct_0_3d": 71.2,
+        "pct_4_7d": 21.1,
+        "pct_8_14d": 7.6,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 393
+      }
+    },
+    "RUMHORA GREENS LLC": {
+      "offline": {
+        "avg_days": 1.2,
+        "pct_0_3d": 90.9,
+        "pct_4_7d": 7.8,
+        "pct_8_14d": 0.8,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.2,
+        "total_orders": 5099
+      },
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 86.4,
+        "pct_4_7d": 13.6,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 162
+      }
+    },
+    "Riverdale Farms": {
+      "online": {
+        "avg_days": 1.0,
+        "pct_0_3d": 95.2,
+        "pct_4_7d": 4.8,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3530
+      }
+    },
+    "Riverside Wholesale Florists KY": {
+      "offline": {
+        "avg_days": 0.1,
+        "pct_0_3d": 99.0,
+        "pct_4_7d": 0.2,
+        "pct_8_14d": 0.3,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.3,
+        "total_orders": 35002
+      },
+      "online": {
+        "avg_days": 1.4,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 62
+      }
+    },
+    "Rokay Floral": {
+      "online": {
+        "avg_days": 8.3,
+        "pct_0_3d": 29.8,
+        "pct_4_7d": 41.2,
+        "pct_8_14d": 13.3,
+        "pct_15_30d": 9.7,
+        "pct_31_90d": 6.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 724
+      }
+    },
+    "Roots Peru": {
+      "online": {
+        "avg_days": 13.3,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 33.3,
+        "pct_15_30d": 66.7,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3
+      }
+    },
+    "Rosamina SAS": {
+      "offline": {
+        "avg_days": 1.8,
+        "pct_0_3d": 93.2,
+        "pct_4_7d": 0.5,
+        "pct_8_14d": 0.8,
+        "pct_15_30d": 4.5,
+        "pct_31_90d": 0.8,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.3,
+        "total_orders": 9134
+      }
+    },
+    "Rosaprima International, LLC": {
+      "offline": {
+        "avg_days": 1.6,
+        "pct_0_3d": 80.4,
+        "pct_4_7d": 10.9,
+        "pct_8_14d": 1.4,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.9,
+        "pct_over_90d": 0.0,
+        "pct_negative": 5.6,
+        "total_orders": 206844
+      },
+      "online": {
+        "avg_days": 3.3,
+        "pct_0_3d": 59.8,
+        "pct_4_7d": 34.3,
+        "pct_8_14d": 2.0,
+        "pct_15_30d": 3.8,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 311416
+      }
+    },
+    "Rose Runners": {
+      "offline": {
+        "avg_days": 4.0,
+        "pct_0_3d": 68.8,
+        "pct_4_7d": 2.1,
+        "pct_8_14d": 3.7,
+        "pct_15_30d": 19.1,
+        "pct_31_90d": 1.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 5.0,
+        "total_orders": 1654
+      }
+    },
+    "Royal Flower Import Group Inc.": {
+      "offline": {
+        "avg_days": 0.8,
+        "pct_0_3d": 92.3,
+        "pct_4_7d": 4.6,
+        "pct_8_14d": 0.2,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 2.9,
+        "total_orders": 6025
+      }
+    },
+    "Royal Flowers Inc, International": {
+      "offline": {
+        "avg_days": 120.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 100.0,
+        "pct_negative": 0.0,
+        "total_orders": 90
+      }
+    },
+    "Royal Flowers Inc., Domestic": {
+      "offline": {
+        "avg_days": 4.3,
+        "pct_0_3d": 58.7,
+        "pct_4_7d": 33.0,
+        "pct_8_14d": 6.2,
+        "pct_15_30d": 0.5,
+        "pct_31_90d": 1.5,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 82783
+      },
+      "online": {
+        "avg_days": 2.1,
+        "pct_0_3d": 78.3,
+        "pct_4_7d": 18.8,
+        "pct_8_14d": 2.8,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 43694
+      }
+    },
+    "Royal Flowers S.A": {
+      "offline": {
+        "avg_days": 120.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 100.0,
+        "pct_negative": 0.0,
+        "total_orders": 22430
+      }
+    },
+    "SHAW LAKE FARMS INC.": {
+      "online": {
+        "avg_days": 3.1,
+        "pct_0_3d": 79.8,
+        "pct_4_7d": 9.1,
+        "pct_8_14d": 6.5,
+        "pct_15_30d": 4.3,
+        "pct_31_90d": 0.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 738
+      }
+    },
+    "SKY FLOWERS S.A.S": {
+      "offline": {
+        "avg_days": 1.6,
+        "pct_0_3d": 89.5,
+        "pct_4_7d": 8.4,
+        "pct_8_14d": 1.1,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 9901
+      }
+    },
+    "SOS Floral": {
+      "offline": {
+        "avg_days": 5.1,
+        "pct_0_3d": 55.7,
+        "pct_4_7d": 30.9,
+        "pct_8_14d": 9.1,
+        "pct_15_30d": 1.9,
+        "pct_31_90d": 2.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 21875
+      }
+    },
+    "SPRINGFIELD FLORIST SUPPLY INC": {
+      "offline": {
+        "avg_days": 0.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 6
+      },
+      "online": {
+        "avg_days": 0.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1
+      }
+    },
+    "STRANGE´S FLORIST, INC.": {
+      "online": {
+        "avg_days": 1.5,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 39
+      }
+    },
+    "SUNRITE FARMS COLLECTIONS CORP": {
+      "offline": {
+        "avg_days": 0.8,
+        "pct_0_3d": 92.2,
+        "pct_4_7d": 6.3,
+        "pct_8_14d": 0.3,
+        "pct_15_30d": 1.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 43038
+      },
+      "online": {
+        "avg_days": 2.7,
+        "pct_0_3d": 72.9,
+        "pct_4_7d": 19.4,
+        "pct_8_14d": 7.5,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 16229
+      }
+    },
+    "Salter's Evergreen Supply": {
+      "offline": {
+        "avg_days": 1.1,
+        "pct_0_3d": 87.1,
+        "pct_4_7d": 7.8,
+        "pct_8_14d": 0.4,
+        "pct_15_30d": 0.6,
+        "pct_31_90d": 0.4,
+        "pct_over_90d": 0.0,
+        "pct_negative": 3.8,
+        "total_orders": 528
+      },
+      "online": {
+        "avg_days": 3.2,
+        "pct_0_3d": 66.4,
+        "pct_4_7d": 26.3,
+        "pct_8_14d": 7.3,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 259
+      }
+    },
+    "San Jose Floral": {
+      "offline": {
+        "avg_days": -0.6,
+        "pct_0_3d": 69.5,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 30.5,
+        "total_orders": 2460
+      }
+    },
+    "Servicios Chilfresh Ltda.": {
+      "offline": {
+        "avg_days": 3.6,
+        "pct_0_3d": 49.3,
+        "pct_4_7d": 47.2,
+        "pct_8_14d": 3.1,
+        "pct_15_30d": 0.4,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 5941
+      },
+      "online": {
+        "avg_days": 2.6,
+        "pct_0_3d": 72.4,
+        "pct_4_7d": 25.0,
+        "pct_8_14d": 2.6,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 152
+      }
+    },
+    "Shamrock Wholesale Florist Memphis": {
+      "online": {
+        "avg_days": 4.6,
+        "pct_0_3d": 42.4,
+        "pct_4_7d": 47.6,
+        "pct_8_14d": 8.0,
+        "pct_15_30d": 1.1,
+        "pct_31_90d": 0.9,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 932
+      }
+    },
+    "Sieck Floral Distributing, Inc": {
+      "online": {
+        "avg_days": 8.9,
+        "pct_0_3d": 8.7,
+        "pct_4_7d": 56.8,
+        "pct_8_14d": 17.0,
+        "pct_15_30d": 16.3,
+        "pct_31_90d": 1.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2215
+      }
+    },
+    "Sieck Wright Floral Products": {
+      "online": {
+        "avg_days": 5.4,
+        "pct_0_3d": 26.0,
+        "pct_4_7d": 62.8,
+        "pct_8_14d": 10.1,
+        "pct_15_30d": 1.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 465
+      }
+    },
+    "Sierra Flower Trading": {
+      "online": {
+        "avg_days": 3.9,
+        "pct_0_3d": 64.5,
+        "pct_4_7d": 5.7,
+        "pct_8_14d": 8.1,
+        "pct_15_30d": 7.4,
+        "pct_31_90d": 2.6,
+        "pct_over_90d": 0.0,
+        "pct_negative": 11.7,
+        "total_orders": 891
+      }
+    },
+    "Sims Flower Distribution": {
+      "offline": {
+        "avg_days": 2.0,
+        "pct_0_3d": 76.3,
+        "pct_4_7d": 14.0,
+        "pct_8_14d": 0.7,
+        "pct_15_30d": 3.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 5.7,
+        "total_orders": 6958
+      },
+      "online": {
+        "avg_days": 1.3,
+        "pct_0_3d": 96.2,
+        "pct_4_7d": 1.9,
+        "pct_8_14d": 0.3,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.6,
+        "total_orders": 1599
+      }
+    },
+    "Sofi's Flowers": {
+      "offline": {
+        "avg_days": 1.0,
+        "pct_0_3d": 93.1,
+        "pct_4_7d": 5.8,
+        "pct_8_14d": 0.8,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1854
+      },
+      "online": {
+        "avg_days": 2.3,
+        "pct_0_3d": 75.0,
+        "pct_4_7d": 25.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 8
+      }
+    },
+    "Solo Wholesale Flower LLC": {
+      "online": {
+        "avg_days": 4.7,
+        "pct_0_3d": 64.1,
+        "pct_4_7d": 23.8,
+        "pct_8_14d": 2.9,
+        "pct_15_30d": 7.4,
+        "pct_31_90d": 1.8,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 622
+      }
+    },
+    "South Carolina Specialty Cut": {
+      "online": {
+        "avg_days": 9.5,
+        "pct_0_3d": 45.7,
+        "pct_4_7d": 22.9,
+        "pct_8_14d": 5.7,
+        "pct_15_30d": 17.1,
+        "pct_31_90d": 8.6,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 35
+      }
+    },
+    "South Florals Imports LLC": {
+      "offline": {
+        "avg_days": 4.6,
+        "pct_0_3d": 42.9,
+        "pct_4_7d": 45.3,
+        "pct_8_14d": 11.0,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 10892
+      },
+      "online": {
+        "avg_days": 2.1,
+        "pct_0_3d": 85.6,
+        "pct_4_7d": 13.4,
+        "pct_8_14d": 0.8,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.2,
+        "total_orders": 1009
+      }
+    },
+    "Southern Floral Co": {
+      "online": {
+        "avg_days": 11.4,
+        "pct_0_3d": 5.4,
+        "pct_4_7d": 31.2,
+        "pct_8_14d": 38.7,
+        "pct_15_30d": 24.0,
+        "pct_31_90d": 0.7,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 558
+      }
+    },
+    "Specialty Cut Flowers": {
+      "online": {
+        "avg_days": 4.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 100.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1
+      }
+    },
+    "Staalduinen Floral-LTF1118": {
+      "online": {
+        "avg_days": 2.3,
+        "pct_0_3d": 81.8,
+        "pct_4_7d": 12.1,
+        "pct_8_14d": 4.8,
+        "pct_15_30d": 1.2,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2285
+      }
+    },
+    "Star Roses": {
+      "offline": {
+        "avg_days": 2.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2
+      },
+      "online": {
+        "avg_days": 2.0,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 4
+      }
+    },
+    "Stellar Farms": {
+      "offline": {
+        "avg_days": 2.1,
+        "pct_0_3d": 82.5,
+        "pct_4_7d": 12.5,
+        "pct_8_14d": 1.6,
+        "pct_15_30d": 1.3,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 2.0,
+        "total_orders": 22399
+      },
+      "online": {
+        "avg_days": 2.1,
+        "pct_0_3d": 79.8,
+        "pct_4_7d": 15.1,
+        "pct_8_14d": 5.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 10218
+      }
+    },
+    "Stemline Wholesale": {
+      "offline": {
+        "avg_days": 0.0,
+        "pct_0_3d": 99.7,
+        "pct_4_7d": 0.1,
+        "pct_8_14d": 0.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.2,
+        "total_orders": 26475
+      },
+      "online": {
+        "avg_days": 4.5,
+        "pct_0_3d": 38.4,
+        "pct_4_7d": 54.9,
+        "pct_8_14d": 5.8,
+        "pct_15_30d": 0.9,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 224
+      }
+    },
+    "Sunburst Farms": {
+      "offline": {
+        "avg_days": 3.2,
+        "pct_0_3d": 61.2,
+        "pct_4_7d": 36.0,
+        "pct_8_14d": 1.6,
+        "pct_15_30d": 0.7,
+        "pct_31_90d": 0.6,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 126268
+      },
+      "online": {
+        "avg_days": 1.6,
+        "pct_0_3d": 87.3,
+        "pct_4_7d": 11.6,
+        "pct_8_14d": 1.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 32690
+      }
+    },
+    "TFS Bristol": {
+      "online": {
+        "avg_days": 2.1,
+        "pct_0_3d": 71.5,
+        "pct_4_7d": 20.8,
+        "pct_8_14d": 7.7,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2592
+      }
+    },
+    "TFS- Chattanooga": {
+      "online": {
+        "avg_days": 3.5,
+        "pct_0_3d": 65.7,
+        "pct_4_7d": 25.3,
+        "pct_8_14d": 6.8,
+        "pct_15_30d": 2.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3345
+      }
+    },
+    "Taylor Wholesale Florist": {
+      "online": {
+        "avg_days": 7.3,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 60.8,
+        "pct_8_14d": 36.5,
+        "pct_15_30d": 2.7,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 74
+      }
+    },
+    "The Elite Flower": {
+      "offline": {
+        "avg_days": 0.7,
+        "pct_0_3d": 96.9,
+        "pct_4_7d": 2.5,
+        "pct_8_14d": 0.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.4,
+        "total_orders": 2099
+      },
+      "online": {
+        "avg_days": 1.1,
+        "pct_0_3d": 74.3,
+        "pct_4_7d": 13.2,
+        "pct_8_14d": 1.7,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 10.5,
+        "total_orders": 3406
+      }
+    },
+    "The Flower Co, LLC": {
+      "offline": {
+        "avg_days": 1.2,
+        "pct_0_3d": 83.6,
+        "pct_4_7d": 15.1,
+        "pct_8_14d": 0.1,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.1,
+        "total_orders": 5250
+      },
+      "online": {
+        "avg_days": 1.4,
+        "pct_0_3d": 91.5,
+        "pct_4_7d": 8.5,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 508
+      }
+    },
+    "The Flower Emporium LLC": {
+      "offline": {
+        "avg_days": 1.2,
+        "pct_0_3d": 90.3,
+        "pct_4_7d": 7.8,
+        "pct_8_14d": 0.1,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 1.6,
+        "total_orders": 680
+      },
+      "online": {
+        "avg_days": 1.1,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 52
+      }
+    },
+    "The Flowerman, Inc.": {
+      "online": {
+        "avg_days": 5.6,
+        "pct_0_3d": 58.4,
+        "pct_4_7d": 12.6,
+        "pct_8_14d": 24.7,
+        "pct_15_30d": 4.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 190
+      }
+    },
+    "The Oklahoma Flower Market": {
+      "online": {
+        "avg_days": 8.8,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 52.7,
+        "pct_8_14d": 41.9,
+        "pct_15_30d": 3.4,
+        "pct_31_90d": 2.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 296
+      }
+    },
+    "The Queens Flowers Corp": {
+      "online": {
+        "avg_days": 1.3,
+        "pct_0_3d": 92.4,
+        "pct_4_7d": 7.6,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 16668
+      }
+    },
+    "The Queens Flowers, Corp": {
+      "online": {
+        "avg_days": 1.1,
+        "pct_0_3d": 99.9,
+        "pct_4_7d": 0.1,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 5219
+      }
+    },
+    "Torchio Nursery": {
+      "online": {
+        "avg_days": 0.9,
+        "pct_0_3d": 99.1,
+        "pct_4_7d": 0.9,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 633
+      }
+    },
+    "Tradewinds / Pristine Wholesale Floral": {
+      "online": {
+        "avg_days": 0.8,
+        "pct_0_3d": 98.1,
+        "pct_4_7d": 1.2,
+        "pct_8_14d": 0.4,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2194
+      }
+    },
+    "Tradewinds/ KING FLORAL SUPPLY": {
+      "online": {
+        "avg_days": 2.6,
+        "pct_0_3d": 76.3,
+        "pct_4_7d": 14.8,
+        "pct_8_14d": 8.4,
+        "pct_15_30d": 0.5,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1942
+      }
+    },
+    "Tristate Wholesale Florist": {
+      "online": {
+        "avg_days": -0.1,
+        "pct_0_3d": 65.7,
+        "pct_4_7d": 0.6,
+        "pct_8_14d": 0.8,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 32.7,
+        "total_orders": 793
+      }
+    },
+    "Tropical Blooms Inc.": {
+      "offline": {
+        "avg_days": 0.6,
+        "pct_0_3d": 96.3,
+        "pct_4_7d": 3.3,
+        "pct_8_14d": 0.1,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 24203
+      },
+      "online": {
+        "avg_days": 0.9,
+        "pct_0_3d": 93.8,
+        "pct_4_7d": 6.3,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 48
+      }
+    },
+    "Tutuli Flower Farms": {
+      "offline": {
+        "avg_days": 0.3,
+        "pct_0_3d": 100.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3
+      },
+      "online": {
+        "avg_days": 4.0,
+        "pct_0_3d": 69.0,
+        "pct_4_7d": 14.7,
+        "pct_8_14d": 8.6,
+        "pct_15_30d": 7.7,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 713
+      }
+    },
+    "U.S. Greens Corp": {
+      "offline": {
+        "avg_days": 2.0,
+        "pct_0_3d": 50.0,
+        "pct_4_7d": 50.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2
+      },
+      "online": {
+        "avg_days": 2.5,
+        "pct_0_3d": 81.5,
+        "pct_4_7d": 11.9,
+        "pct_8_14d": 4.5,
+        "pct_15_30d": 1.8,
+        "pct_31_90d": 0.4,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 17863
+      }
+    },
+    "UNITED WHOLESALE- FFL  ENTERPRISES ": {
+      "online": {
+        "avg_days": 1.2,
+        "pct_0_3d": 96.8,
+        "pct_4_7d": 3.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 525
+      }
+    },
+    "UNIVERSAL FLOWER SERVICE CORP": {
+      "offline": {
+        "avg_days": -1.4,
+        "pct_0_3d": 89.5,
+        "pct_4_7d": 4.2,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 6.3,
+        "total_orders": 3236
+      }
+    },
+    "Unifour Wholesale ": {
+      "online": {
+        "avg_days": 4.0,
+        "pct_0_3d": 64.7,
+        "pct_4_7d": 21.0,
+        "pct_8_14d": 12.9,
+        "pct_15_30d": 1.3,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2255
+      }
+    },
+    "Universal Flower Farms Inc.": {
+      "offline": {
+        "avg_days": -0.4,
+        "pct_0_3d": 88.3,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 11.7,
+        "total_orders": 60
+      },
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 90.0,
+        "pct_4_7d": 10.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 20
+      }
+    },
+    "VELDKAMP´S FLOWERS": {
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 93.0,
+        "pct_4_7d": 6.5,
+        "pct_8_14d": 0.5,
+        "pct_15_30d": 0.1,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1447
+      }
+    },
+    "VERA": {
+      "offline": {
+        "avg_days": 4.3,
+        "pct_0_3d": 42.0,
+        "pct_4_7d": 36.1,
+        "pct_8_14d": 21.3,
+        "pct_15_30d": 0.6,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 2844
+      },
+      "online": {
+        "avg_days": 2.3,
+        "pct_0_3d": 78.7,
+        "pct_4_7d": 21.3,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 254
+      }
+    },
+    "Valle Verde LLC": {
+      "offline": {
+        "avg_days": 8.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 2.5,
+        "pct_8_14d": 97.5,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 197
+      }
+    },
+    "Valleflor USA": {
+      "offline": {
+        "avg_days": 1.4,
+        "pct_0_3d": 97.5,
+        "pct_4_7d": 1.5,
+        "pct_8_14d": 0.8,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1773
+      },
+      "online": {
+        "avg_days": 2.8,
+        "pct_0_3d": 66.5,
+        "pct_4_7d": 32.4,
+        "pct_8_14d": 0.4,
+        "pct_15_30d": 0.5,
+        "pct_31_90d": 0.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 857
+      }
+    },
+    "Valley Floral Co. - Wichita": {
+      "online": {
+        "avg_days": 2.5,
+        "pct_0_3d": 83.2,
+        "pct_4_7d": 9.1,
+        "pct_8_14d": 6.0,
+        "pct_15_30d": 1.8,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1931
+      }
+    },
+    "Valley Floral Co. of OKC - Oklahoma": {
+      "online": {
+        "avg_days": 1.1,
+        "pct_0_3d": 97.0,
+        "pct_4_7d": 3.0,
+        "pct_8_14d": 0.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 338
+      }
+    },
+    "Valley Floral Co. of Oklahoma LLC - Tulsa": {
+      "online": {
+        "avg_days": 1.7,
+        "pct_0_3d": 83.5,
+        "pct_4_7d": 9.7,
+        "pct_8_14d": 6.5,
+        "pct_15_30d": 0.4,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1843
+      }
+    },
+    "Valley Springs LLC": {
+      "offline": {
+        "avg_days": 1.7,
+        "pct_0_3d": 69.8,
+        "pct_4_7d": 23.0,
+        "pct_8_14d": 1.4,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 5.6,
+        "total_orders": 27421
+      },
+      "online": {
+        "avg_days": 2.2,
+        "pct_0_3d": 79.0,
+        "pct_4_7d": 18.8,
+        "pct_8_14d": 1.9,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.3,
+        "total_orders": 3062
+      }
+    },
+    "Vosz Floral LLC": {
+      "offline": {
+        "avg_days": 1.8,
+        "pct_0_3d": 87.6,
+        "pct_4_7d": 5.9,
+        "pct_8_14d": 3.4,
+        "pct_15_30d": 2.3,
+        "pct_31_90d": 0.7,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.1,
+        "total_orders": 23587
+      },
+      "online": {
+        "avg_days": 1.4,
+        "pct_0_3d": 88.7,
+        "pct_4_7d": 10.7,
+        "pct_8_14d": 0.6,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 689
+      }
+    },
+    "WE GOT FLOWERS": {
+      "offline": {
+        "avg_days": 0.4,
+        "pct_0_3d": 99.2,
+        "pct_4_7d": 0.3,
+        "pct_8_14d": 0.1,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.3,
+        "total_orders": 83413
+      },
+      "online": {
+        "avg_days": 11.0,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 0.0,
+        "pct_8_14d": 100.0,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3
+      }
+    },
+    "Washington Floral Service, Inc": {
+      "online": {
+        "avg_days": 20.3,
+        "pct_0_3d": 0.0,
+        "pct_4_7d": 6.5,
+        "pct_8_14d": 34.6,
+        "pct_15_30d": 44.5,
+        "pct_31_90d": 14.3,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 566
+      }
+    },
+    "Webb's Wholesale Florist": {
+      "online": {
+        "avg_days": 2.0,
+        "pct_0_3d": 85.5,
+        "pct_4_7d": 13.6,
+        "pct_8_14d": 0.6,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 814
+      }
+    },
+    "White Rose Flowers & Supplies Inc.": {
+      "offline": {
+        "avg_days": 0.5,
+        "pct_0_3d": 86.2,
+        "pct_4_7d": 1.2,
+        "pct_8_14d": 3.7,
+        "pct_15_30d": 1.1,
+        "pct_31_90d": 0.9,
+        "pct_over_90d": 0.0,
+        "pct_negative": 6.9,
+        "total_orders": 35901
+      }
+    },
+    "Wolfe Wholesale Florist, Inc. Waco": {
+      "online": {
+        "avg_days": 1.8,
+        "pct_0_3d": 83.9,
+        "pct_4_7d": 15.3,
+        "pct_8_14d": 0.7,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 1487
+      }
+    },
+    "Younger & Son Inc": {
+      "online": {
+        "avg_days": 2.4,
+        "pct_0_3d": 75.6,
+        "pct_4_7d": 21.4,
+        "pct_8_14d": 2.9,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 238
+      }
+    },
+    "Zeidler Floral": {
+      "offline": {
+        "avg_days": 0.8,
+        "pct_0_3d": 95.4,
+        "pct_4_7d": 3.3,
+        "pct_8_14d": 0.8,
+        "pct_15_30d": 0.3,
+        "pct_31_90d": 0.1,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 29438
+      },
+      "online": {
+        "avg_days": 0.9,
+        "pct_0_3d": 98.4,
+        "pct_4_7d": 1.0,
+        "pct_8_14d": 0.4,
+        "pct_15_30d": 0.2,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 10800
+      }
+    },
+    "Zion Flowers INC": {
+      "offline": {
+        "avg_days": 3.4,
+        "pct_0_3d": 64.8,
+        "pct_4_7d": 22.4,
+        "pct_8_14d": 12.4,
+        "pct_15_30d": 0.4,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 3879
+      },
+      "online": {
+        "avg_days": 1.3,
+        "pct_0_3d": 91.5,
+        "pct_4_7d": 7.6,
+        "pct_8_14d": 0.8,
+        "pct_15_30d": 0.0,
+        "pct_31_90d": 0.0,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 708
+      }
+    },
+    "Zoom-Bloom": {
+      "offline": {
+        "avg_days": 1.3,
+        "pct_0_3d": 94.2,
+        "pct_4_7d": 2.7,
+        "pct_8_14d": 2.0,
+        "pct_15_30d": 0.9,
+        "pct_31_90d": 0.2,
+        "pct_over_90d": 0.0,
+        "pct_negative": 0.0,
+        "total_orders": 4187
+      }
+    }
+  }
+}

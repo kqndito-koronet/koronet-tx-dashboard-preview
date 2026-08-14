@@ -1,0 +1,15 @@
+{
+  "description": "Published account Deep Dives that the TX Dashboard Core may route to. A missing entry means no verified published Deep Dive, not no account knowledge or no opportunity.",
+  "source_repository": "https://github.com/kqndito-koronet/koronet-scorecard",
+  "source_branch": "gtm-builder",
+  "accounts": {
+    "44150": {"path": "accounts/kennicott/black_belt_kennicott.html", "label": "Account Deep Dive", "as_of": "2026-07-21", "format": "html"},
+    "743648": {"path": "accounts/zeidler/html/deep_dive_v5.html", "label": "Account Deep Dive", "as_of": "2026-07-21", "format": "html"},
+    "816515": {"path": "accounts/prices-floral/intelligence/deep_dive_enforced_2026-07-21.html", "label": "Account Deep Dive", "as_of": "2026-07-21", "format": "html"},
+    "735220": {"path": "accounts/we-got-flowers/intelligence/deep_dive_enforced_2026-07-21.html", "label": "Account Deep Dive", "as_of": "2026-07-21", "format": "html"},
+    "498865": {"path": "accounts/ht-wholesale/deep_dive_2026-07-21.md", "label": "Account Deep Dive", "as_of": "2026-07-21", "format": "markdown"},
+    "477128": {"path": "accounts/arizona-floral-exchange/deep_dive_2026-07-21.md", "label": "Account Deep Dive", "as_of": "2026-07-21", "format": "markdown"},
+    "193828": {"path": "accounts/arizona-family-florist/deep_dive_2026-07-21.md", "label": "Account Deep Dive", "as_of": "2026-07-21", "format": "markdown"},
+    "765491": {"path": "accounts/dreisbach/black_belt_dreisbach.html", "label": "Account Deep Dive", "as_of": "2026-07-21", "format": "html"}
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "account_id": "641341",
+  "account_name": "Maple Grove Floral",
+  "status": "EXTERNAL_EVIDENCE_PARTIAL_NO_DEFENSIBLE_RANGE",
+  "researched_at": "2026-08-03",
+  "entity_scope": "Koronet company_location 641341; public company matches Maple Grove Floral Wholesale Inc., 6810 Laur Road, Niagara Falls, NY.",
+  "classification": {"primary": "wholesale floral distributor", "evidence": [{"source": "https://www.maplegrovewholesale.com/", "observed": "Official site identifies Maple Grove Floral Wholesale Inc., selling fresh-cut flowers, supplies and potted plants to wholesale customers."}]},
+  "observations": [
+    {"evidence_key_suffix": "official-identity-catalog", "claim_key": "wholesale_scope", "claim_summary": "Official site confirms legal-name/location match and a broad wholesale catalogue; it provides no revenue or purchase volume.", "evidence_type": "official_website", "source_url": "https://www.maplegrovewholesale.com/", "source_title": "Maple Grove Floral Wholesale", "evidence_state": "observed", "confidence": "high"},
+    {"evidence_key_suffix": "dnb-revenue", "claim_key": "directory_revenue_estimate", "claim_summary": "D&B displays annual revenue of $375,166 and four employees. This is an unverified directory estimate and conflicts with current Koronet activity/legacy model; it cannot alone size company GMV.", "evidence_type": "third_party_company_database", "source_url": "https://www.dandb.com/businessdirectory/maplegrovefloralwholesaleinc.-niagarafalls-ny-23863837.html", "source_title": "D&B — Maple Grove Floral Wholesale Inc.", "evidence_state": "conflicting", "confidence": "low"},
+    {"evidence_key_suffix": "bloomnation-partnership", "claim_key": "market_footprint", "claim_summary": "BloomNation describes a 2025 wholesale partnership and service to florists, but does not state sales, volume or headcount.", "evidence_type": "third_party_partner_announcement", "source_url": "https://www.bloomnation.com/join/newsroom/bloomnation-partnership-with-maple-grove-wholesale-floral-inc/", "source_title": "BloomNation partnership announcement", "evidence_state": "partial", "confidence": "medium"}
+  ],
+  "external_estimates": [
+    {"estimate_type": "company_gmv", "low_value": null, "midpoint_value": null, "high_value": null, "method_key": "two_method_external_sizing_not_met", "method_version": "v1", "estimate_state": "blocked", "confidence": "low", "as_of_date": "2026-08-03", "notes": "Only one numerical external revenue claim ($375,166, unverified directory) was found and it conflicts with internal activity. Catalogue and partner evidence are not independent sizing methods.", "evidence_key_suffixes": ["dnb-revenue", "official-identity-catalog", "bloomnation-partnership"]},
+    {"estimate_type": "total_purchases", "low_value": null, "midpoint_value": null, "high_value": null, "method_key": "two_method_external_sizing_not_met", "method_version": "v1", "estimate_state": "blocked", "confidence": "low", "as_of_date": "2026-08-03", "notes": "No externally supportable purchase-volume method was found.", "evidence_key_suffixes": []}
+  ],
+  "current_internal_estimate": {"gmv_usd": 668475, "source": "KORONET_LEGACY_CORE_MODEL", "confidence": "HIGH_FOR_INTERNAL_ACTIVITY_NOT_EXTERNAL_COMPANY_GMV", "validation_state": "NOT_VALIDATED_BY_EXTERNAL_RESEARCH"},
+  "gmv_estimate": null,
+  "buys_estimate": null,
+  "why_no_external_estimate_yet": "Only one numerical external revenue claim was found, and it conflicts with internal activity. Public catalogue, partnership and import-presence evidence do not provide an independent sizing method.",
+  "next_best_signals": ["Obtain a second independently sourced commercial revenue/credit estimate or company-provided range.", "Use verified import value/volume only if entity aliases and coverage are complete.", "Reconcile an externally sourced range with Koronet observed activity without relabeling Core activity as company GMV."],
+  "tx_strategy_lane": "selective_test"
+}

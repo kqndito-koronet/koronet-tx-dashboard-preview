@@ -1,0 +1,727 @@
+{
+  "generated_at": "2026-08-04T15:07:57.329999+00:00",
+  "source": "ga4_eshop.json + live SFDC Account.Website + company_identity_crosswalk.json",
+  "records": [
+    {
+      "hostname": "app.kometsales.com",
+      "ga4": {
+        "hostname": "app.kometsales.com",
+        "sessions": 40539,
+        "active_users": 20402,
+        "transactions": 22510,
+        "revenue": 4601914.58,
+        "conversion_rate": 0.5553,
+        "days_observed": 21
+      },
+      "attribution_state": "SHARED_HOST_UNATTRIBUTABLE",
+      "matches": [],
+      "fuzzy_candidates": [],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "shop.kennicott.com",
+      "ga4": {
+        "hostname": "shop.kennicott.com",
+        "sessions": 4468,
+        "active_users": 2946,
+        "transactions": 1018,
+        "revenue": 457497.73,
+        "conversion_rate": 0.2278,
+        "days_observed": 21
+      },
+      "attribution_state": "EXACT_SFDC_WEBSITE",
+      "matches": [
+        {
+          "company_id": "44150",
+          "canonical_name": "Kennicott Brothers Company",
+          "sfdc_account_id": "001G000001H3CrIIAV",
+          "matched_field": "Website"
+        }
+      ],
+      "fuzzy_candidates": [],
+      "display_rule": "usable as account CVR"
+    },
+    {
+      "hostname": "eshops.kometsales.com",
+      "ga4": {
+        "hostname": "eshops.kometsales.com",
+        "sessions": 4892,
+        "active_users": 3983,
+        "transactions": 362,
+        "revenue": 120058.7,
+        "conversion_rate": 0.074,
+        "days_observed": 21
+      },
+      "attribution_state": "SHARED_HOST_UNATTRIBUTABLE",
+      "matches": [],
+      "fuzzy_candidates": [],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "komet.billdoran.com",
+      "ga4": {
+        "hostname": "komet.billdoran.com",
+        "sessions": 566,
+        "active_users": 386,
+        "transactions": 187,
+        "revenue": 49001.34,
+        "conversion_rate": 0.3304,
+        "days_observed": 20
+      },
+      "attribution_state": "EXACT_SFDC_WEBSITE",
+      "matches": [
+        {
+          "company_id": "7030",
+          "canonical_name": "Bill Doran Company",
+          "sfdc_account_id": "001G000001DVt5TIAT",
+          "matched_field": "Website"
+        }
+      ],
+      "fuzzy_candidates": [],
+      "display_rule": "usable as account CVR"
+    },
+    {
+      "hostname": "localhost",
+      "ga4": {
+        "hostname": "localhost",
+        "sessions": 25,
+        "active_users": 13,
+        "transactions": 40,
+        "revenue": 44289.36,
+        "conversion_rate": 1.6,
+        "days_observed": 10
+      },
+      "attribution_state": "SHARED_HOST_UNATTRIBUTABLE",
+      "matches": [],
+      "fuzzy_candidates": [],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "shop.pikespeakfloral.com",
+      "ga4": {
+        "hostname": "shop.pikespeakfloral.com",
+        "sessions": 192,
+        "active_users": 130,
+        "transactions": 29,
+        "revenue": 4788.45,
+        "conversion_rate": 0.151,
+        "days_observed": 18
+      },
+      "attribution_state": "EXACT_SFDC_WEBSITE",
+      "matches": [
+        {
+          "company_id": "395357",
+          "canonical_name": "Pikes Peak Floral",
+          "sfdc_account_id": "001G000001TsIbtIAF",
+          "matched_field": "Website"
+        }
+      ],
+      "fuzzy_candidates": [],
+      "display_rule": "usable as account CVR"
+    },
+    {
+      "hostname": "shop.allurefarms.com",
+      "ga4": {
+        "hostname": "shop.allurefarms.com",
+        "sessions": 239,
+        "active_users": 168,
+        "transactions": 12,
+        "revenue": 6831.45,
+        "conversion_rate": 0.0502,
+        "days_observed": 21
+      },
+      "attribution_state": "EXACT_SFDC_WEBSITE",
+      "matches": [
+        {
+          "company_id": "73730",
+          "canonical_name": "Allure Farms",
+          "sfdc_account_id": "001G000001DW4OuIAL",
+          "matched_field": "Website"
+        }
+      ],
+      "fuzzy_candidates": [],
+      "display_rule": "usable as account CVR"
+    },
+    {
+      "hostname": "eshop.solefarms.com",
+      "ga4": {
+        "hostname": "eshop.solefarms.com",
+        "sessions": 44,
+        "active_users": 35,
+        "transactions": 8,
+        "revenue": 1479.1,
+        "conversion_rate": 0.1818,
+        "days_observed": 13
+      },
+      "attribution_state": "EXACT_SFDC_WEBSITE",
+      "matches": [
+        {
+          "company_id": "25489",
+          "canonical_name": "-Sole Farms",
+          "sfdc_account_id": "001G000001DW4T2IAL",
+          "matched_field": "Website"
+        }
+      ],
+      "fuzzy_candidates": [],
+      "display_rule": "usable as account CVR"
+    },
+    {
+      "hostname": "details.direct",
+      "ga4": {
+        "hostname": "details.direct",
+        "sessions": 143,
+        "active_users": 116,
+        "transactions": 7,
+        "revenue": 8275.92,
+        "conversion_rate": 0.049,
+        "days_observed": 19
+      },
+      "attribution_state": "PARENT_ENTITY_CONFIRMED_NEEDS_LOCATION_ALLOCATION",
+      "matches": [
+        {
+          "parent_entity_key": "details-direct-commercial-account",
+          "parent_entity_name": "Details Direct",
+          "company_ids": [
+            "819114",
+            "734128"
+          ],
+          "confirmed_by": "Facu",
+          "confirmed_on": "2026-08-04"
+        }
+      ],
+      "fuzzy_candidates": [
+        {
+          "company_id": "819114",
+          "canonical_name": "Details Direct",
+          "score": 0.7
+        },
+        {
+          "company_id": "734128",
+          "canonical_name": "Details Direct - Core",
+          "score": 0.583
+        },
+        {
+          "company_id": "600558",
+          "canonical_name": "Metropetals",
+          "score": 0.556
+        }
+      ],
+      "display_rule": "display only on the parent commercial entity; do not duplicate the CVR across company locations"
+    },
+    {
+      "hostname": "flowers.sofloco.com",
+      "ga4": {
+        "hostname": "flowers.sofloco.com",
+        "sessions": 9,
+        "active_users": 7,
+        "transactions": 2,
+        "revenue": 1064.72,
+        "conversion_rate": 0.2222,
+        "days_observed": 6
+      },
+      "attribution_state": "FUZZY_CANDIDATE_ONLY",
+      "matches": [],
+      "fuzzy_candidates": [
+        {
+          "company_id": "20749",
+          "canonical_name": "EF FLOWERS",
+          "score": 0.875
+        },
+        {
+          "company_id": "822905",
+          "canonical_name": "GQ FLOWERS",
+          "score": 0.875
+        },
+        {
+          "company_id": "1614",
+          "canonical_name": "-Groflowers",
+          "score": 0.824
+        }
+      ],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "eshop.kometsales.com",
+      "ga4": {
+        "hostname": "eshop.kometsales.com",
+        "sessions": 29,
+        "active_users": 28,
+        "transactions": 1,
+        "revenue": 138.0,
+        "conversion_rate": 0.0345,
+        "days_observed": 10
+      },
+      "attribution_state": "SHARED_HOST_UNATTRIBUTABLE",
+      "matches": [],
+      "fuzzy_candidates": [],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "kabeta.kometsales.com",
+      "ga4": {
+        "hostname": "kabeta.kometsales.com",
+        "sessions": 49,
+        "active_users": 25,
+        "transactions": 1,
+        "revenue": 70.68,
+        "conversion_rate": 0.0204,
+        "days_observed": 10
+      },
+      "attribution_state": "FUZZY_CANDIDATE_ONLY",
+      "matches": [],
+      "fuzzy_candidates": [
+        {
+          "company_id": "700340",
+          "canonical_name": "FleuraMetz LA",
+          "score": 0.444
+        },
+        {
+          "company_id": "54343",
+          "canonical_name": "**Wafex USA",
+          "score": 0.429
+        },
+        {
+          "company_id": "702938",
+          "canonical_name": "J Van Vliet",
+          "score": 0.4
+        }
+      ],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "shop.frescafarms.com",
+      "ga4": {
+        "hostname": "shop.frescafarms.com",
+        "sessions": 91,
+        "active_users": 76,
+        "transactions": 1,
+        "revenue": 169.2,
+        "conversion_rate": 0.011,
+        "days_observed": 20
+      },
+      "attribution_state": "EXACT_SFDC_WEBSITE",
+      "matches": [
+        {
+          "company_id": "103112",
+          "canonical_name": "Fresca Farms",
+          "sfdc_account_id": "001G000001DW4PzIAL",
+          "matched_field": "Website"
+        }
+      ],
+      "fuzzy_candidates": [],
+      "display_rule": "usable as account CVR"
+    },
+    {
+      "hostname": "shop.usgreenscorp.com",
+      "ga4": {
+        "hostname": "shop.usgreenscorp.com",
+        "sessions": 72,
+        "active_users": 67,
+        "transactions": 1,
+        "revenue": 74.25,
+        "conversion_rate": 0.0139,
+        "days_observed": 16
+      },
+      "attribution_state": "FUZZY_CANDIDATE_ONLY",
+      "matches": [],
+      "fuzzy_candidates": [
+        {
+          "company_id": "397789",
+          "canonical_name": "Dreaming Roses Corp",
+          "score": 0.552
+        },
+        {
+          "company_id": "573661",
+          "canonical_name": "J&E Greens",
+          "score": 0.522
+        },
+        {
+          "company_id": "665210",
+          "canonical_name": "PRASHE DECOR",
+          "score": 0.522
+        }
+      ],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "kabeta-2.kometsales.com",
+      "ga4": {
+        "hostname": "kabeta-2.kometsales.com",
+        "sessions": 3,
+        "active_users": 2,
+        "transactions": 1,
+        "revenue": 1245.02,
+        "conversion_rate": 0.3333,
+        "days_observed": 1
+      },
+      "attribution_state": "FUZZY_CANDIDATE_ONLY",
+      "matches": [],
+      "fuzzy_candidates": [
+        {
+          "company_id": "700340",
+          "canonical_name": "FleuraMetz LA",
+          "score": 0.421
+        },
+        {
+          "company_id": "54343",
+          "canonical_name": "**Wafex USA",
+          "score": 0.4
+        },
+        {
+          "company_id": "702938",
+          "canonical_name": "J Van Vliet",
+          "score": 0.375
+        }
+      ],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "open-discovery.koronet.com",
+      "ga4": {
+        "hostname": "open-discovery.koronet.com",
+        "sessions": 2109,
+        "active_users": 1661,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 21
+      },
+      "attribution_state": "SHARED_HOST_UNATTRIBUTABLE",
+      "matches": [],
+      "fuzzy_candidates": [],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "directory.kometsales.com",
+      "ga4": {
+        "hostname": "directory.kometsales.com",
+        "sessions": 188,
+        "active_users": 141,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 18
+      },
+      "attribution_state": "SHARED_HOST_UNATTRIBUTABLE",
+      "matches": [],
+      "fuzzy_candidates": [],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "shop.fiorentinaflowers.com",
+      "ga4": {
+        "hostname": "shop.fiorentinaflowers.com",
+        "sessions": 14,
+        "active_users": 14,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 11
+      },
+      "attribution_state": "EXACT_SFDC_WEBSITE",
+      "matches": [
+        {
+          "company_id": "505063",
+          "canonical_name": "Andean Fresh LLC",
+          "sfdc_account_id": "0011600001zF6GkAAK",
+          "matched_field": "Website"
+        }
+      ],
+      "fuzzy_candidates": [],
+      "display_rule": "usable as account CVR"
+    },
+    {
+      "hostname": "website.koronet.com",
+      "ga4": {
+        "hostname": "website.koronet.com",
+        "sessions": 4,
+        "active_users": 3,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 3
+      },
+      "attribution_state": "SHARED_HOST_UNATTRIBUTABLE",
+      "matches": [],
+      "fuzzy_candidates": [],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "website.koronet.dev",
+      "ga4": {
+        "hostname": "website.koronet.dev",
+        "sessions": 70,
+        "active_users": 33,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 18
+      },
+      "attribution_state": "SHARED_HOST_UNATTRIBUTABLE",
+      "matches": [],
+      "fuzzy_candidates": [],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "www.cfhwholesale.com",
+      "ga4": {
+        "hostname": "www.cfhwholesale.com",
+        "sessions": 10,
+        "active_users": 8,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 5
+      },
+      "attribution_state": "FUZZY_CANDIDATE_ONLY",
+      "matches": [],
+      "fuzzy_candidates": [
+        {
+          "company_id": "624816",
+          "canonical_name": "CD Wholesale",
+          "score": 0.87
+        },
+        {
+          "company_id": "731381",
+          "canonical_name": "CHICAGO\u00b4S WHOLESALE",
+          "score": 0.759
+        },
+        {
+          "company_id": "701220",
+          "canonical_name": "McCarthy Wholesale",
+          "score": 0.759
+        }
+      ],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "www.verisarflowers.com",
+      "ga4": {
+        "hostname": "www.verisarflowers.com",
+        "sessions": 47,
+        "active_users": 41,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 16
+      },
+      "attribution_state": "FUZZY_CANDIDATE_ONLY",
+      "matches": [],
+      "fuzzy_candidates": [
+        {
+          "company_id": "20749",
+          "canonical_name": "EF FLOWERS",
+          "score": 0.696
+        },
+        {
+          "company_id": "6864",
+          "canonical_name": "Sofi's Flowers",
+          "score": 0.692
+        },
+        {
+          "company_id": "640977",
+          "canonical_name": "Ninfa Flowers",
+          "score": 0.692
+        }
+      ],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "shop.faguaflowers.com",
+      "ga4": {
+        "hostname": "shop.faguaflowers.com",
+        "sessions": 27,
+        "active_users": 25,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 8
+      },
+      "attribution_state": "EXACT_SFDC_WEBSITE",
+      "matches": [
+        {
+          "company_id": "612783",
+          "canonical_name": "Faguaflowers Intl LLC",
+          "sfdc_account_id": "0014p000022FEx7AAG",
+          "matched_field": "Website"
+        }
+      ],
+      "fuzzy_candidates": [],
+      "display_rule": "usable as account CVR"
+    },
+    {
+      "hostname": "shop.floreco.com",
+      "ga4": {
+        "hostname": "shop.floreco.com",
+        "sessions": 14,
+        "active_users": 13,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 9
+      },
+      "attribution_state": "EXACT_SFDC_WEBSITE",
+      "matches": [
+        {
+          "company_id": "449683",
+          "canonical_name": "Floreco, Inc",
+          "sfdc_account_id": "001G000001DW4PgIAL",
+          "matched_field": "Website"
+        }
+      ],
+      "fuzzy_candidates": [],
+      "display_rule": "usable as account CVR"
+    },
+    {
+      "hostname": "shop.floropolis.com",
+      "ga4": {
+        "hostname": "shop.floropolis.com",
+        "sessions": 5,
+        "active_users": 5,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 3
+      },
+      "attribution_state": "FUZZY_CANDIDATE_ONLY",
+      "matches": [],
+      "fuzzy_candidates": [
+        {
+          "company_id": "762172",
+          "canonical_name": "Floropolis",
+          "score": 1.0
+        },
+        {
+          "company_id": "769085",
+          "canonical_name": "Ecoroses - Floropolis",
+          "score": 0.714
+        },
+        {
+          "company_id": "769099",
+          "canonical_name": "Flodecol - Floropolis",
+          "score": 0.714
+        }
+      ],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "www.gq-flowers.com",
+      "ga4": {
+        "hostname": "www.gq-flowers.com",
+        "sessions": 22,
+        "active_users": 22,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 11
+      },
+      "attribution_state": "FUZZY_CANDIDATE_ONLY",
+      "matches": [],
+      "fuzzy_candidates": [
+        {
+          "company_id": "822905",
+          "canonical_name": "GQ FLOWERS",
+          "score": 1.0
+        },
+        {
+          "company_id": "1614",
+          "canonical_name": "-Groflowers",
+          "score": 0.842
+        },
+        {
+          "company_id": "796848",
+          "canonical_name": "FGS.Flowers",
+          "score": 0.842
+        }
+      ],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "eshop.naranjoroses.com",
+      "ga4": {
+        "hostname": "eshop.naranjoroses.com",
+        "sessions": 6,
+        "active_users": 6,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 3
+      },
+      "attribution_state": "FUZZY_CANDIDATE_ONLY",
+      "matches": [],
+      "fuzzy_candidates": [
+        {
+          "company_id": "38582",
+          "canonical_name": "Gala Roses",
+          "score": 0.667
+        },
+        {
+          "company_id": "395382",
+          "canonical_name": "Naranjo Farms LLC",
+          "score": 0.667
+        },
+        {
+          "company_id": "814810",
+          "canonical_name": "Lartisan Roses LLC",
+          "score": 0.643
+        }
+      ],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "bops402-demo.example.com",
+      "ga4": {
+        "hostname": "bops402-demo.example.com",
+        "sessions": 1,
+        "active_users": 1,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 1
+      },
+      "attribution_state": "FUZZY_CANDIDATE_ONLY",
+      "matches": [],
+      "fuzzy_candidates": [
+        {
+          "company_id": "665210",
+          "canonical_name": "PRASHE DECOR",
+          "score": 0.455
+        },
+        {
+          "company_id": "734065",
+          "canonical_name": "BlossomR",
+          "score": 0.421
+        },
+        {
+          "company_id": "727131",
+          "canonical_name": "EQ Blooms by Flodecol",
+          "score": 0.414
+        }
+      ],
+      "display_rule": "do not display as account CVR"
+    },
+    {
+      "hostname": "shop.ensignfloral.com",
+      "ga4": {
+        "hostname": "shop.ensignfloral.com",
+        "sessions": 1,
+        "active_users": 1,
+        "transactions": 0,
+        "revenue": 0.0,
+        "conversion_rate": 0.0,
+        "days_observed": 1
+      },
+      "attribution_state": "EXACT_SFDC_WEBSITE",
+      "matches": [
+        {
+          "company_id": "635064",
+          "canonical_name": "Ensign Wholesale Flower Market",
+          "sfdc_account_id": "0014p000022HSvrAAG",
+          "matched_field": "Website"
+        }
+      ],
+      "fuzzy_candidates": [],
+      "display_rule": "usable as account CVR"
+    }
+  ]
+}

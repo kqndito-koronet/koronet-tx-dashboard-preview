@@ -1,0 +1,4331 @@
+{
+  "_metadata": {
+    "generated_at": "2026-07-31",
+    "generated_by": "Rose (Data Agent L1)",
+    "purpose": "Final identity crosswalk: company_id + sfdc_id + sfdc_type + sfdc_confidence + ga4_hostname + login/GA4 CVR flags",
+    "version": "final_v1",
+    "sources": {
+      "identity_crosswalk_verified": "339 original SFDC matches (Type=Customer, normalized name match) from 426 Snowflake accounts",
+      "identity_fuzzy_match_results": "84 new SFDC matches (expanded to all Account types: Prospect, Lead, None, Churned Customer, Inactive Prospect)",
+      "ga4_eshop": "29 hostnames from GA4 E-Commerce Automated Sheet (2026-07-11 to 2026-07-31)",
+      "eshop_cvr_by_company": "320 companies with 10+ eCommerce logins from USER_STATS (2026-01-01 to 2026-07-31)"
+    },
+    "matching_methods": {
+      "sfdc_original_339": "Normalized name match (uppercase, strip LLC/Inc/Corp/Co/Ltd/SA/LP, remove punctuation) against SFDC Type='Customer' (589 records)",
+      "sfdc_expanded_84": "3-pass fuzzy matching against all SFDC Account types (1,700+ records): exact normalized, first_word+overlap, targeted LIKE",
+      "ga4_hostname": "Pattern match from GA4 hostname subdomain to Snowflake company name keywords",
+      "user_stats_login_cvr": "company_id direct join against USER_STATS eCommerce login data (ks_flag=TRUE, login_type=Customer, is_ecommerce_user=Yes, min 10 logins)"
+    },
+    "sfdc_confidence_scale": {
+      "100": "Exact normalized name match or targeted SFDC LIKE match confirmed",
+      "90": "Match with (L1) suffix stripped or minor name variation (6 accounts)",
+      "0": "No SFDC match found"
+    },
+    "data_rules_applied": [
+      "R1 (ks_flag=TRUE)",
+      "R5 (dedup sale_item_id for activity check)",
+      "R8 (semantic views only)",
+      "R9 (provenance)"
+    ],
+    "known_issues": [
+      "2 accounts remain without SFDC match: Flowers Central-LTF1264 (664422), Fuji Wholesale Flowers (815945)",
+      "Flores San Miguel (822938) has $922K 2026 GMV but is SFDC Type=Prospect -- needs correction to Customer",
+      "26 accounts have SFDC Type=None -- SFDC data hygiene issue",
+      "GA4 hostname coverage is low (only company-branded eShops get their own hostname)",
+      "Login CVR from USER_STATS is an upper bound (13-31% overstate vs distinct order count, Codex-certified)"
+    ]
+  },
+  "summary": {
+    "total_accounts": 425,
+    "sfdc_coverage": {
+      "with_sfdc_id": 423,
+      "without_sfdc_id": 2,
+      "pct": 99.5,
+      "breakdown": {
+        "original_matches": 339,
+        "fuzzy_matches_added": 84
+      }
+    },
+    "sfdc_type_breakdown": {
+      "Customer": 345,
+      "Churned Cust": 4,
+      "None": 26,
+      "Prospect": 30,
+      "Lead": 15,
+      "Inactive Prospect": 3,
+      "No Match": 2
+    },
+    "sfdc_confidence_breakdown": {
+      "100": 417,
+      "90": 6,
+      "0": 2
+    },
+    "ga4_coverage": {
+      "with_hostname": 13,
+      "pct": 3.1
+    },
+    "user_stats_coverage": {
+      "with_login_cvr": 285,
+      "pct": 67.1
+    },
+    "ga4_cvr_coverage": {
+      "with_ga4_cvr": 7,
+      "pct": 1.6
+    },
+    "full_identity_coverage": {
+      "with_sfdc_and_hostname_and_login_cvr": 12
+    }
+  },
+  "records": [
+    {
+      "company_id": "1241",
+      "company_name": "Farm To Canada",
+      "sfdc_id": "001G000001DW4PTIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "1614",
+      "company_name": "-Groflowers",
+      "sfdc_id": "001G000001DW4QJIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "2516",
+      "company_name": "Brightland Farms",
+      "sfdc_id": "001G000001DW4OWIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "6864",
+      "company_name": "Sofi's Flowers",
+      "sfdc_id": "001G000001DW4T1IAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "7030",
+      "company_name": "Bill Doran Company",
+      "sfdc_id": "001G000001DVt5TIAT",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": "komet.billdoran.com",
+      "has_login_cvr": true,
+      "has_ga4_cvr": true
+    },
+    {
+      "company_id": "7631",
+      "company_name": "A Trilogy Floral - Zamba Flowers",
+      "sfdc_id": "001G000001DW4TQIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "13989",
+      "company_name": "Pronto Farms LLC",
+      "sfdc_id": "001G000001DW4SeIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "14422",
+      "company_name": "PAT FLOR SCARL",
+      "sfdc_id": "001G000001DW4SSIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "17503",
+      "company_name": "SOS Floral",
+      "sfdc_id": "001G000001DW4T3IAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "17789",
+      "company_name": "Bella Blossom LLC",
+      "sfdc_id": "001G000001DW4OKIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "18322",
+      "company_name": "* Jet Fresh Flower Distributors Inc.",
+      "sfdc_id": "001G000001DW4QWIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "20749",
+      "company_name": "EF FLOWERS",
+      "sfdc_id": "001G000001DW4PPIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "20769",
+      "company_name": "AmeriLink Floratrader",
+      "sfdc_id": "001G000001DW4O5IAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "25120",
+      "company_name": "Kennicott Kuts",
+      "sfdc_id": "001G000001DW4QdIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "25489",
+      "company_name": "-Sole Farms",
+      "sfdc_id": "001G000001DW4T2IAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": "eshop.solefarms.com",
+      "has_login_cvr": true,
+      "has_ga4_cvr": true
+    },
+    {
+      "company_id": "33023",
+      "company_name": "Prime Petals LLC",
+      "sfdc_id": "001G000001DW4SbIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "35266",
+      "company_name": "Liberty Blooms",
+      "sfdc_id": "001G000001K7URpIAN",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "37745",
+      "company_name": "Floral Cooperative Purchasing Group LLC",
+      "sfdc_id": "001G000001Tssa3IAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "38582",
+      "company_name": "Gala Roses",
+      "sfdc_id": "001G000001DW4PFIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "39124",
+      "company_name": "Herradura Growers",
+      "sfdc_id": "001G000001XIVGOIA5",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "41934",
+      "company_name": "Continental Floral LLC",
+      "sfdc_id": "001G000001DW4OtIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "44150",
+      "company_name": "Kennicott Brothers Company",
+      "sfdc_id": "001G000001H3CrIIAV",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": "shop.kennicott.com",
+      "has_login_cvr": true,
+      "has_ga4_cvr": true
+    },
+    {
+      "company_id": "44225",
+      "company_name": "Pinnacle Flowers, LLC",
+      "sfdc_id": "001G000001evx5aIAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "46206",
+      "company_name": "FLORISOL& CO FLOWER TRADING LLC DBA MARVEL FLOWERS",
+      "sfdc_id": "001G000001V8C6jIAF",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "54343",
+      "company_name": "**Wafex USA",
+      "sfdc_id": "001G000001jjTb0IAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "73730",
+      "company_name": "Allure Farms",
+      "sfdc_id": "001G000001DW4OuIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": "shop.allurefarms.com",
+      "has_login_cvr": true,
+      "has_ga4_cvr": true
+    },
+    {
+      "company_id": "77300",
+      "company_name": "Golden Flowers",
+      "sfdc_id": "001G000001DW4QCIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "103078",
+      "company_name": "Mayesh Wholesale Florist Inc",
+      "sfdc_id": "001G000001DW4R3IAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "103112",
+      "company_name": "Fresca Farms",
+      "sfdc_id": "001G000001DW4PzIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": "shop.frescafarms.com",
+      "has_login_cvr": true,
+      "has_ga4_cvr": true
+    },
+    {
+      "company_id": "130337",
+      "company_name": "EQR USA",
+      "sfdc_id": "001G000001DW4PKIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "139851",
+      "company_name": "Floral Chain Direct",
+      "sfdc_id": "0011600001uUbL8AAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "144192",
+      "company_name": "INTERNATIONAL TRADING AND SERVICES INC",
+      "sfdc_id": "0011600001uUw5EAAS",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "144369",
+      "company_name": "Premium Greens Australia LLC",
+      "sfdc_id": "0011600001lgY6YAAU",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "146183",
+      "company_name": "EPIC FARMS USA LLC",
+      "sfdc_id": "0011600001zrCXXAA2",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "146846",
+      "company_name": "Continental Flowers",
+      "sfdc_id": "001G000001UTWVuIAP",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "152602",
+      "company_name": "Lubbock Wholesale",
+      "sfdc_id": "001G000001TsGEcIAN",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "153031",
+      "company_name": "FloraLink",
+      "sfdc_id": "0011600001ncRipAAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "153536",
+      "company_name": "Fair Trade Floral Inc.",
+      "sfdc_id": "0011600001uUyJlAAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "159761",
+      "company_name": "Cleveland Plant & Flower Co.",
+      "sfdc_id": "001G000001TsgdSIAR",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "182870",
+      "company_name": "Cananvalle USA LLC",
+      "sfdc_id": "0011600001lhZANAA2",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "188968",
+      "company_name": "Global Flowers",
+      "sfdc_id": "001160000223WK5AAM",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "189419",
+      "company_name": "Legacy Flowers",
+      "sfdc_id": "001G000001DW4QmIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "189685",
+      "company_name": "Farm Fresh Exports INC",
+      "sfdc_id": "00116000020LCvJAAW",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "193828",
+      "company_name": "Arizona Family Florist",
+      "sfdc_id": "00116000023rB8qAAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "193829",
+      "company_name": "Muchflowers Inc.",
+      "sfdc_id": "0011600001lg8CAAAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "193886",
+      "company_name": "Import Flowers Nashville LLC",
+      "sfdc_id": "0011600001zVGSVAA4",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "194206",
+      "company_name": "H&F Greens Inc (Mariposa Growers)",
+      "sfdc_id": "00116000023rUnKAAU",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "196051",
+      "company_name": "Aussie Direct",
+      "sfdc_id": "001G000001V7QQwIAN",
+      "sfdc_type": "Churned Cust",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "198117",
+      "company_name": "* Continental Farms",
+      "sfdc_id": "001G000001DW4OsIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "199908",
+      "company_name": "Bloomistics",
+      "sfdc_id": "0011600001uRq3BAAS",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "200279",
+      "company_name": "DP Flowers Corp",
+      "sfdc_id": "00116000026VeXIAA0",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "200503",
+      "company_name": "Stellar Farms",
+      "sfdc_id": "00116000026WjjWAAS",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "257477",
+      "company_name": "Mayta International LLC / Native Blooms",
+      "sfdc_id": "0011L000026fmYoQAI",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "296458",
+      "company_name": "Florimex Toronto Corp.",
+      "sfdc_id": "0011L000027XBWKQA4",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "313164",
+      "company_name": "Bunches Direct Blumenimport GmbH",
+      "sfdc_id": "0011L000028F9SYQA0",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "319143",
+      "company_name": "FloraCo, Inc",
+      "sfdc_id": "0011L000029aO9sQAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "321023",
+      "company_name": "Bill Doran Company (2)",
+      "sfdc_id": "001G000001TtEaaIAF",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "321907",
+      "company_name": "Greens and Flowers Connection",
+      "sfdc_id": "0011L00002BInj0QAD",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "322928",
+      "company_name": "Inversiones Napy S.A",
+      "sfdc_id": "0011600001uRssiAAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "327132",
+      "company_name": "Royal Flower Import Group Inc.",
+      "sfdc_id": "001160000276ptzAAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "341499",
+      "company_name": "Choice Farms",
+      "sfdc_id": "001G000001DW4OlIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "343614",
+      "company_name": "Galleria Farms",
+      "sfdc_id": "001G000001bpcuyIAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "375054",
+      "company_name": "Miaflora Farms",
+      "sfdc_id": "001G000001DW4RwIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "377256",
+      "company_name": "Multiflora Corporation",
+      "sfdc_id": "001G000001f8bp1IAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "378242",
+      "company_name": "Premium Flowers",
+      "sfdc_id": "001G000001DW4SZIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "378264",
+      "company_name": "Dynamic Farms",
+      "sfdc_id": "0011L00002Sbi4xQAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "393475",
+      "company_name": "American Agroproducts",
+      "sfdc_id": "001G000001IYgNpIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "394783",
+      "company_name": "Metro Flower Market LLC",
+      "sfdc_id": "0011L000028TahoQAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "395159",
+      "company_name": "Equiflor LLC",
+      "sfdc_id": "001G000001DW4OEIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "395357",
+      "company_name": "Pikes Peak Floral",
+      "sfdc_id": "001G000001TsIbtIAF",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": "shop.pikespeakfloral.com",
+      "has_login_cvr": true,
+      "has_ga4_cvr": true
+    },
+    {
+      "company_id": "395382",
+      "company_name": "Naranjo Farms LLC",
+      "sfdc_id": "0011600001uRt3EAAS",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": "eshop.naranjoroses.com",
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "397194",
+      "company_name": "Charleston Wholesale Florist",
+      "sfdc_id": "0011L000028V2EyQAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "397789",
+      "company_name": "Dreaming Roses Corp",
+      "sfdc_id": "0011L00002WOF1LQAX",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "398856",
+      "company_name": "National Floral Supply",
+      "sfdc_id": "0011L00002WOu1fQAD",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "399890",
+      "company_name": "Patagonia Sun",
+      "sfdc_id": "0011L00002SaN5JQAV",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "400013",
+      "company_name": "Washington Floral Service, Inc",
+      "sfdc_id": "00116000021BDnbAAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "401680",
+      "company_name": "FLORISOL & COMPANY FLOWER TRADING LLC",
+      "sfdc_id": "001G000001f8XFWIA2",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "412951",
+      "company_name": "KBC Cooler Account",
+      "sfdc_id": "001G000001aIv6EIAS",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "449344",
+      "company_name": "Southern Floral Co",
+      "sfdc_id": "0011L00001zzDYPQA2",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "449683",
+      "company_name": "Floreco, Inc",
+      "sfdc_id": "001G000001DW4PgIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": "shop.floreco.com",
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "453081",
+      "company_name": "* Welyflor / PROFILE FLOWERS",
+      "sfdc_id": "001160000221mrNAAQ",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "453769",
+      "company_name": "Continental Floral FL LLC",
+      "sfdc_id": "0011L00002dFBcfQAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "453771",
+      "company_name": "Continental Floral CA LLC",
+      "sfdc_id": "0011L00002dFBf0QAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "454705",
+      "company_name": "South Florals Imports LLC",
+      "sfdc_id": "0011L00002dPqOxQAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "467802",
+      "company_name": "Protean Farms US",
+      "sfdc_id": "001G000001DW4SfIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "469713",
+      "company_name": "KD & Company",
+      "sfdc_id": "00116000027KCBbAAO",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "471458",
+      "company_name": "Continental Floral OR LLC",
+      "sfdc_id": "0011L00002fOqChQAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "473329",
+      "company_name": "CAREX",
+      "sfdc_id": "0011L00002gzWkiQAE",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "474847",
+      "company_name": "Vosz Floral LLC",
+      "sfdc_id": "0011L00002h0CH9QAM",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "475168",
+      "company_name": "South Carolina Specialty Cut",
+      "sfdc_id": "001G000001TsJj3IAF",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "476379",
+      "company_name": "Lone Star Flower Market",
+      "sfdc_id": "00116000025JsB2AAK",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "476679",
+      "company_name": "Taylor Wholesale Florist",
+      "sfdc_id": "001G000001TsJNiIAN",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "477128",
+      "company_name": "Arizona Floral Exchange",
+      "sfdc_id": "0011600001mLcyvAAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "477673",
+      "company_name": "ECOROSES LLC",
+      "sfdc_id": "0011600001mLv33AAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "483642",
+      "company_name": "Premium Greens Australia B.V.",
+      "sfdc_id": "0011L00002h0i8vQAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "484037",
+      "company_name": "Georgia State Floral Distributors",
+      "sfdc_id": "001G000001TtDnBIAV",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "488495",
+      "company_name": "Sierra Flower Trading",
+      "sfdc_id": "0011L000028F0KvQAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "489148",
+      "company_name": "FLOWERMART CORP",
+      "sfdc_id": "0011L00002jVSxCQAW",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "492201",
+      "company_name": "Forest Flowers",
+      "sfdc_id": "00116000026Vdd4AAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "492219",
+      "company_name": "Interflor LLC",
+      "sfdc_id": "0011L00002kvsqiQAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "496600",
+      "company_name": "Floristcentric, LLC",
+      "sfdc_id": "0011L00002rCC5zQAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "498769",
+      "company_name": "Melody Farms LLC",
+      "sfdc_id": "001G000001DW4R6IAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "498865",
+      "company_name": "H&T Wholesale Flowers",
+      "sfdc_id": "0011L00002p55GMQAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "498992",
+      "company_name": "CANTIZA FLORAL DBA NFD",
+      "sfdc_id": "0011L00002rFEJwQAO",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "503075",
+      "company_name": "HANAYA FARMS",
+      "sfdc_id": "00116000025sMRVAA2",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "505063",
+      "company_name": "Andean Fresh LLC",
+      "sfdc_id": "0011600001zF6GkAAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "505603",
+      "company_name": "MGA Flowers",
+      "sfdc_id": "0011L00002aTOTFQA4",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "505896",
+      "company_name": "Continental Floral PNW LLC",
+      "sfdc_id": "0014p00001lOEl6AAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "507479",
+      "company_name": "Ashland Addison",
+      "sfdc_id": "0011L00002WO3HUQA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "507518",
+      "company_name": "Anton Spaargaren B.V.",
+      "sfdc_id": "0011600001zW56mAAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "508421",
+      "company_name": "Gardens America Inc.",
+      "sfdc_id": "001G000001DW4Q6IAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "509751",
+      "company_name": "Best Miami Growers LLC",
+      "sfdc_id": "0011600001zFAH3AAO",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "521854",
+      "company_name": "Albin Hagstrom & Son, Inc.",
+      "sfdc_id": "0011600001xHhmfAAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "529464",
+      "company_name": "Direct Farms, LLC",
+      "sfdc_id": "001G000001DW4P4IAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "536956",
+      "company_name": "MAGNIFICA FLOWERS",
+      "sfdc_id": "0014p00001sHtlXAAS",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "537092",
+      "company_name": "Tropical Blooms Inc.",
+      "sfdc_id": "0014p00001lORHxAAO",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "541415",
+      "company_name": "Len Busch Roses",
+      "sfdc_id": "001G000001DW4QnIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "541854",
+      "company_name": "Fletch Wholesale llc",
+      "sfdc_id": "0014p00001so6ueAAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "543610",
+      "company_name": "Frank Adams Wholesale Florist",
+      "sfdc_id": "0011600001uTH0wAAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "552759",
+      "company_name": "Kings Wholesale",
+      "sfdc_id": "0011600001uSdGFAA0",
+      "sfdc_type": "Churned Cust",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "554187",
+      "company_name": "IRIS ROSES LLC",
+      "sfdc_id": "0014p00001v3oKUAAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "554905",
+      "company_name": "Quinlan-Wasserman, Inc",
+      "sfdc_id": "001G000001TsIedIAF",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "560072",
+      "company_name": "Continental Floral NC LLC",
+      "sfdc_id": "0014p00001wXZDiAAO",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "561230",
+      "company_name": "Bloomit Corp.",
+      "sfdc_id": "0011600001mNfpDAAS",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "561453",
+      "company_name": "A Florist First",
+      "sfdc_id": "00116000021c3HoAAI",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "569309",
+      "company_name": "Castle Hayne Farms",
+      "sfdc_id": "0014p00001t5gUtAAI",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "571220",
+      "company_name": "Dramm & Echter, Inc",
+      "sfdc_id": "001G000001DW4PAIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "572900",
+      "company_name": "IKEBANA CO SAS",
+      "sfdc_id": "0014p00001xzL4bAAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "573661",
+      "company_name": "J&E Greens",
+      "sfdc_id": "0014p00001zAsAQAA0",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "575819",
+      "company_name": "LA TOSCANA FARMS",
+      "sfdc_id": "001G000001fjeOcIAI",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "577566",
+      "company_name": "FLEUPHORIA S.A.S",
+      "sfdc_id": "0014p00001y6Ac0AAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "578194",
+      "company_name": "Flowers Direct Inc",
+      "sfdc_id": "00116000023sYATAA2",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "584972",
+      "company_name": "* Flowers' International Group",
+      "sfdc_id": "001VL000007lWy7YAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 90,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "584973",
+      "company_name": "Flores de la Hacienda",
+      "sfdc_id": "0014p00001zAFqOAAW",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "585613",
+      "company_name": "Sieck Floral Distributing, Inc",
+      "sfdc_id": "001G000001DW4SyIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "586784",
+      "company_name": "Louisiana Wholesale Florist",
+      "sfdc_id": "001G000001TsFyvIAF",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "588171",
+      "company_name": "Magnolia Wholesale Florist Inc",
+      "sfdc_id": "0014p00001z9zUXAAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "590675",
+      "company_name": "FernTrust Inc.",
+      "sfdc_id": "0014p00001zy3KeAAI",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "590728",
+      "company_name": "DC FLOWERS DIRECT",
+      "sfdc_id": "0014p000020wmRFAAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "591665",
+      "company_name": "Natural Flowers, Inc",
+      "sfdc_id": "0014p000020vycQAAQ",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "591877",
+      "company_name": "Claymore C. Sieck Wholesale Florist",
+      "sfdc_id": "00116000021Z8FtAAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "592345",
+      "company_name": "Orlando Wholesale Florist",
+      "sfdc_id": "0011L00001zzDR9QAM",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "592615",
+      "company_name": "NYC FLORAL GREENS",
+      "sfdc_id": "0014p000020wDaDAAU",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "592806",
+      "company_name": "Aurum Farms LLC",
+      "sfdc_id": "0014p00001waeZYAAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "594981",
+      "company_name": "Evergreen Plant Company",
+      "sfdc_id": "0014p000021IdyjAAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "598944",
+      "company_name": "Las Vegas Floral Wholesale",
+      "sfdc_id": "001G000001TsE8iIAF",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "600370",
+      "company_name": "GOMEZ B.V.",
+      "sfdc_id": "0014p00001zanUFAAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "600558",
+      "company_name": "Metropetals",
+      "sfdc_id": "0014p000021fXK6AAM",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "600910",
+      "company_name": "Sieck Wright Floral Products",
+      "sfdc_id": "0014p000020tateAAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "601280",
+      "company_name": "Flores Silvestres",
+      "sfdc_id": "0011600001uRrj9AAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "601933",
+      "company_name": "Flora Fresh Inc",
+      "sfdc_id": "001G000001TsqcLIAR",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "603102",
+      "company_name": "AGM BROTHERS WORLD TRADING LLC",
+      "sfdc_id": "001VL000007lcSPYAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 90,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "603611",
+      "company_name": "GREEN OCEAN LLC",
+      "sfdc_id": "0014p000021zHQjAAM",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "608547",
+      "company_name": "MONTEROSAS LLC",
+      "sfdc_id": "0011L00002IGHtEQAX",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "610504",
+      "company_name": "The Flower Emporium LLC",
+      "sfdc_id": "0014p0000220MfNAAU",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "610510",
+      "company_name": "MYSTICFLOWERS LLC",
+      "sfdc_id": "001G000001as1u1IAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "610818",
+      "company_name": "Farms Connect",
+      "sfdc_id": "0011L00002rEB34QAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "612641",
+      "company_name": "Florasource KC",
+      "sfdc_id": "0011600001uSNXnAAO",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "612783",
+      "company_name": "Faguaflowers Intl LLC",
+      "sfdc_id": "0014p000022FEx7AAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": "shop.faguaflowers.com",
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "613695",
+      "company_name": "*FLORAL1 INC",
+      "sfdc_id": "0014p000022EMZLAA4",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "617226",
+      "company_name": "CONNECTION FLOWERS SAS",
+      "sfdc_id": "0014p000021zpeLAAQ",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "618758",
+      "company_name": "Bo's Wholesale Florist",
+      "sfdc_id": "0014p000021zRPfAAM",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "619847",
+      "company_name": "MACUNDO FLOWERS AND GREENS LLC",
+      "sfdc_id": "0014p000022HqunAAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "620160",
+      "company_name": "Petals Direct",
+      "sfdc_id": "001VL000000ln6xYAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "620453",
+      "company_name": "MALIMA USA",
+      "sfdc_id": "0011L00001zyyyYQAQ",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "620603",
+      "company_name": "El Paso Floral Distributors",
+      "sfdc_id": "001VL000007lcllYAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 90,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "622743",
+      "company_name": "Megaflor USA",
+      "sfdc_id": "001VL000001pKqXYAU",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "623491",
+      "company_name": "Baisch & Skinner",
+      "sfdc_id": "0011600001riCHoAAM",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "624737",
+      "company_name": "AMORES FLORES INC",
+      "sfdc_id": "0014p000020wFxeAAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "624816",
+      "company_name": "CD Wholesale",
+      "sfdc_id": "001VL000003MuLTYA0",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "631459",
+      "company_name": "Honey Bee Wholesale Florist, LLC",
+      "sfdc_id": "0014p000022R9RlAAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "632203",
+      "company_name": "Tristate Wholesale Florist",
+      "sfdc_id": "001VL000003KcH9YAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "632322",
+      "company_name": "Northline Wholesale Flowers",
+      "sfdc_id": "0011600001lgc6sAAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "635064",
+      "company_name": "Ensign Wholesale Flower Market",
+      "sfdc_id": "0014p000022HSvrAAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": "shop.ensignfloral.com",
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "640251",
+      "company_name": "FreshLink",
+      "sfdc_id": "001VL00000A5ntfYAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "640460",
+      "company_name": "Dr Delphinium",
+      "sfdc_id": "0014p0000220O7wAAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "640563",
+      "company_name": "Hoja Verde - Rosen Financial",
+      "sfdc_id": "001VL000007zem5YAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "640762",
+      "company_name": "Wellington Florist",
+      "sfdc_id": "0014p00001ycDwZAAU",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "640977",
+      "company_name": "Ninfa Flowers",
+      "sfdc_id": "001VL000001TMnmYAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "641341",
+      "company_name": "Maple Grove Floral",
+      "sfdc_id": "001G000001ZFNa1IAH",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "642076",
+      "company_name": "Full Pot - Ft. Lauderdale",
+      "sfdc_id": "001G000001V5PivIAF",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "642311",
+      "company_name": "White Rose Flowers & Supplies Inc.",
+      "sfdc_id": "001VL00000AsdReYAJ",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "643672",
+      "company_name": "Allied Cut Flower",
+      "sfdc_id": "00116000020OCgLAAW",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "649585",
+      "company_name": "Penelope’s Petals, LLC",
+      "sfdc_id": "001VL00000DSXzGYAX",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "649745",
+      "company_name": "Miraflor LLC",
+      "sfdc_id": "001VL00000DlwqkYAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "649935",
+      "company_name": "Sims Flower Distribution",
+      "sfdc_id": "001VL000002uhlyYAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "650252",
+      "company_name": "GRUPO DEL PACIFICO",
+      "sfdc_id": "0011L00002IDjZOQA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "650536",
+      "company_name": "R&W WHOLESALE, INC.",
+      "sfdc_id": "001G000001TsIltIAF",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "650721",
+      "company_name": "Alders Wholesale Florist, Inc.",
+      "sfdc_id": "001VL00000F4yJVYAZ",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "650767",
+      "company_name": "Coastal Wholesale Flowers, Inc.",
+      "sfdc_id": "001G000001TsYWjIAN",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "650815",
+      "company_name": "WB FLORAL GROUP, LLC.-MD",
+      "sfdc_id": "0014p0000220Lp4AAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "650927",
+      "company_name": "BONNETT WHSLE. FLORIST, INC",
+      "sfdc_id": "001G000001fjbkmIAA",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "650986",
+      "company_name": "Tennessee Florist Supply - Knox",
+      "sfdc_id": "001G000001TsJPUIA3",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651039",
+      "company_name": "Marvin’s Wholesale Florist",
+      "sfdc_id": "00116000021ALwyAAG",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651200",
+      "company_name": "Jacksonville Flower Market",
+      "sfdc_id": "0011L00002Y7yX7QAJ",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651216",
+      "company_name": "HARDIN´S WHLSE - LIBERTY",
+      "sfdc_id": "001G000001GQ6u4IAD",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651277",
+      "company_name": "BAYSTATE FARM DIRECT FLOWERS - CRANSTON",
+      "sfdc_id": "001G000001V7resIAB",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651327",
+      "company_name": "Lovingly Charlotte LLC",
+      "sfdc_id": "0014p0000220KGUAA2",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651479",
+      "company_name": "FLORIST DISTRIBUTING",
+      "sfdc_id": "0011L00001zzV3UQAU",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651513",
+      "company_name": "PETALS WEST, INC.",
+      "sfdc_id": "001G000001K8yfgIAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651574",
+      "company_name": "M&M CUT FLORA",
+      "sfdc_id": "0014p000022EYw1AAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651632",
+      "company_name": "NORTH AMERICAN WHSLE FLST",
+      "sfdc_id": "001G000001TsIVpIAN",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651671",
+      "company_name": "FIELD OF FLOWERS, INC.",
+      "sfdc_id": "001G000001TsosVIAR",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651680",
+      "company_name": "Flowers by Gil & Curt ",
+      "sfdc_id": "0014p000022HSaFAAW",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651684",
+      "company_name": "GREEN MOUNTAIN- SOUTH BURLINGTON",
+      "sfdc_id": "0011L00001zzDHwQAM",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651721",
+      "company_name": "PHIL HUTCHENS DBA MUM'S THE WORD",
+      "sfdc_id": "001G000001TsITyIAN",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651742",
+      "company_name": "BELVIEW WHOLESALE FLORIST",
+      "sfdc_id": "001G000001TsKQfIAN",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651765",
+      "company_name": "Halls Wholesale Florist - Opelika",
+      "sfdc_id": "0011L000028Vf02QAC",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651922",
+      "company_name": "HALL'S - ATLANTA",
+      "sfdc_id": "001G000001TtHfWIAV",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "651959",
+      "company_name": "CINCINNATI WHSLE FLORIST INC.5643",
+      "sfdc_id": "001G000001Tsg6jIAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "652199",
+      "company_name": "JOHNSENS WHOLESALE FLORIST",
+      "sfdc_id": "0011600001lhbwBAAQ",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "652251",
+      "company_name": "BOTANICA WHOLESALE FLORIST DALLAS (IRVING), LLC",
+      "sfdc_id": "001G000001DW4OTIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "652302",
+      "company_name": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+      "sfdc_id": "0014p0000220OCmAAM",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "652505",
+      "company_name": "LD Trading/ Lawrence Developments Inc.",
+      "sfdc_id": "0011L000028VnGrQAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "652551",
+      "company_name": "LD Trading/ Lawrence Developments Inc.",
+      "sfdc_id": "0011L000028VnGrQAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "652793",
+      "company_name": "FALL RIVER WHOLESALE",
+      "sfdc_id": "001G000001DW4PQIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "653842",
+      "company_name": "TFS- Chattanooga",
+      "sfdc_id": "0011600001uSk8RAAS",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "654052",
+      "company_name": "BELLE FLORAL WHOLESALE RURAL ROUTE #6",
+      "sfdc_id": "001G000001TsKQBIA3",
+      "sfdc_type": "Inactive Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "654131",
+      "company_name": "DVFLORA SEWELL",
+      "sfdc_id": "001G000001TskmvIAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "654374",
+      "company_name": "BOTANICA WHSLE FLORIST-HOUSTON",
+      "sfdc_id": "001VL00000RiggjYAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "654566",
+      "company_name": "Gassafy Wholesale Florist Inc",
+      "sfdc_id": "0011600001lfVtAAAU",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "654661",
+      "company_name": "POTOMAC WHSLE",
+      "sfdc_id": "0011600001uSjmkAAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "654758",
+      "company_name": "LIHML INC Fayetteville - #01235 GF Rep Kareena 19",
+      "sfdc_id": "001G000001DW4QoIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "654862",
+      "company_name": "Maumee Valley Direct",
+      "sfdc_id": "0014p0000220M1hAAE",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "654944",
+      "company_name": "Apex Floral Distributors Mississauga",
+      "sfdc_id": "001G000001TsKPSIA3",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "655098",
+      "company_name": "BRIEGER WHSLE -TX.",
+      "sfdc_id": "001G000001TsMbNIAV",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "655382",
+      "company_name": "Staalduinen Floral-LTF1118",
+      "sfdc_id": "0011600001tWETgAAO",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "655608",
+      "company_name": "BACHMAN´S CO - BQT PRODUCT",
+      "sfdc_id": "0014p0000220Nb4AAE",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "655643",
+      "company_name": "Solo Wholesale Flower LLC",
+      "sfdc_id": "0014p000021zRSBAA2",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "655985",
+      "company_name": "Mellano Sales",
+      "sfdc_id": "001G000001DW4R5IAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664019",
+      "company_name": "FLOWERS OF NASHVILLE",
+      "sfdc_id": "0014p00001ndeAmAAI",
+      "sfdc_type": "Churned Cust",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664054",
+      "company_name": "TFS Bristol",
+      "sfdc_id": "001VL00000HI21dYAD",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664096",
+      "company_name": "Riverside Wholesale Florists KY",
+      "sfdc_id": "001G000001DW4SmIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664103",
+      "company_name": "JANAL WHOLESALE FLORIST",
+      "sfdc_id": "0011L000029kbesQAA",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664133",
+      "company_name": "Littlefloyd Investments, LLC",
+      "sfdc_id": "001VL00000HHz7rYAD",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664201",
+      "company_name": "San Antonio Flower CO",
+      "sfdc_id": "001160000276kVxAAI",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664231",
+      "company_name": "Mears Floral Products, Inc.",
+      "sfdc_id": "001G000001TsGPsIAN",
+      "sfdc_type": "Inactive Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664255",
+      "company_name": "Mikes Finest Wholesale Flowers, Inc.",
+      "sfdc_id": "001G000001TsGfBIAV",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664288",
+      "company_name": "Montgomery Wholesale Montgomery",
+      "sfdc_id": "0011L00001zzTX3QAM",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664314",
+      "company_name": "Florabundance.",
+      "sfdc_id": "001G000001DW4PaIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664341",
+      "company_name": "Hall´s Wholesale Florist Theodore",
+      "sfdc_id": "0011600001lfdddAAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664381",
+      "company_name": "Unifour Wholesale",
+      "sfdc_id": "0011600001uSkCOAA0",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664398",
+      "company_name": "Marissa",
+      "sfdc_id": "0011L000028V89qQAC",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664422",
+      "company_name": "Flowers Central-LTF1264",
+      "sfdc_id": null,
+      "sfdc_type": null,
+      "sfdc_confidence": 0,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664494",
+      "company_name": "MAGNOLIA HOLDINGS 301 LLC  ABSOLUTELY BEAUTIFUL FLOWERS",
+      "sfdc_id": "001VL00000HVuQvYAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664509",
+      "company_name": "Metro Whls Florist Dba Central Ms",
+      "sfdc_id": "001G000001TsGSOIA3",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664540",
+      "company_name": "FMI, LLC.-FL",
+      "sfdc_id": "001G000001bQpeJIAS",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664575",
+      "company_name": "KENNICOTT ATL C/O CARITHERS FLOWERS",
+      "sfdc_id": "0014p0000220L29AAE",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664587",
+      "company_name": "FLORIDA FRESH FLORAL,LLC",
+      "sfdc_id": "001VL00000HW1wxYAD",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664602",
+      "company_name": "GARFILED WHOLESALE FLOWERS",
+      "sfdc_id": "0014p0000220KdUAAU",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664623",
+      "company_name": "Esprit Salt Lake, Inc",
+      "sfdc_id": "0011600001uSZVYAA4",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664648",
+      "company_name": "Tradewinds/ KING FLORAL SUPPLY",
+      "sfdc_id": "001G000001TtTOOIA3",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664670",
+      "company_name": "HORTON WHSLE",
+      "sfdc_id": "001G000001TtIp8IAF",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664719",
+      "company_name": "ALLIANCE FLORAL COMPANY. 6270",
+      "sfdc_id": "0011L00002ICyF3QAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664750",
+      "company_name": "FST WHOLESALE LLC",
+      "sfdc_id": "0014p000021zRSAAA2",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664820",
+      "company_name": "Younger & Son Inc",
+      "sfdc_id": "001VL00000k6ul2YAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664944",
+      "company_name": "POSIES TRUCK",
+      "sfdc_id": "001VL000001CXvhYAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "664988",
+      "company_name": "CALI WHOLESALE.-CA",
+      "sfdc_id": "0011L00002IE8YMQA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665008",
+      "company_name": "FLOWERS BY SHIRLEY, INC",
+      "sfdc_id": "0014p0000220LWHAA2",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665027",
+      "company_name": "Mideast Flowers Distributors, Inc.",
+      "sfdc_id": "001VL00000HW91gYAD",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665080",
+      "company_name": "COWARD WHOLESALE",
+      "sfdc_id": "0011600001uSYzvAAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665136",
+      "company_name": "METRO WHOLESALE FLORIST, INC",
+      "sfdc_id": "0011L000029kf1KQAQ",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665147",
+      "company_name": "Mcnamara, LLC",
+      "sfdc_id": "0011L000028VqupQAC",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665210",
+      "company_name": "PRASHE DECOR",
+      "sfdc_id": "001G000001TsIdpIAF",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665216",
+      "company_name": "CURTIS FLOWER FARMS, INC",
+      "sfdc_id": "0011L000028V59qQAC",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665261",
+      "company_name": "Tradewinds / Pristine Wholesale Floral",
+      "sfdc_id": "0011L000029kBirQAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665296",
+      "company_name": "AD TRADING CORP.DBA AD FLORAL TRADI",
+      "sfdc_id": "001G000001V5Q2WIAV",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665316",
+      "company_name": "Flowers by Fudgie, Inc",
+      "sfdc_id": "001VL00000HW85ZYAT",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665336",
+      "company_name": "Torchio Nursery",
+      "sfdc_id": "0011600001uSU5jAAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665358",
+      "company_name": "HIRE`S BEST FLOWERS",
+      "sfdc_id": "0011600001uSd7yAAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665369",
+      "company_name": "Celebrations LTD",
+      "sfdc_id": "0014p0000220KfFAAU",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665432",
+      "company_name": "BLOOMINGDAYS FLOWER SHOP INC. 5929",
+      "sfdc_id": "001VL00000HW7wjYAD",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665443",
+      "company_name": "POPPIES DESIGN STUDIO, LLC",
+      "sfdc_id": "0011L000029kBhZQAU",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665453",
+      "company_name": "MARKET FLOWERS",
+      "sfdc_id": "0014p0000220NmoAAE",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "665481",
+      "company_name": "BloomTown Flower Market",
+      "sfdc_id": "0014p000022HSulAAG",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "667626",
+      "company_name": "Green Bouquet LLC",
+      "sfdc_id": "001VL00000GL2fAYAT",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "669090",
+      "company_name": "The Oklahoma Flower Market",
+      "sfdc_id": "001G000001TsIX2IAN",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670288",
+      "company_name": "Designs of the Times, Inc. dba: 321 Flower Market",
+      "sfdc_id": "0014p0000220Km2AAE",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670302",
+      "company_name": "AL´S FLORIST",
+      "sfdc_id": "0014p0000220Ks5AAE",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670311",
+      "company_name": "Floral Importers and Distributors Inc. /Buds",
+      "sfdc_id": "0014p0000220SneAAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670366",
+      "company_name": "HALL´S ST.PETERSBURG WHLSE FL",
+      "sfdc_id": "0011600001uScycAAC",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670423",
+      "company_name": "FLEURIGROS QUEBEC 1995 INC.",
+      "sfdc_id": "0014p000022WUhzAAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670437",
+      "company_name": "Florasolusa",
+      "sfdc_id": "001G000001DW4PcIAL",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670450",
+      "company_name": "FLORIAD- MONTREAL CANADA INC.",
+      "sfdc_id": "001G000001DW4PkIAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670473",
+      "company_name": "FLORISTS SUPPLY WINNIPEG",
+      "sfdc_id": "001160000219BLAAA2",
+      "sfdc_type": "Inactive Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670508",
+      "company_name": "Hartford Florist Supply",
+      "sfdc_id": "001G000001TtIBxIAN",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670546",
+      "company_name": "MacArthur’s Quality Flowers & Plants Inc.",
+      "sfdc_id": "001VL00000TWOL3YAP",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670554",
+      "company_name": "MAHONEYS ROCKY LEDGE FARM &",
+      "sfdc_id": "001VL00000YmEOTYA3",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670569",
+      "company_name": "McCallum-Sauber Whlse",
+      "sfdc_id": "00116000021AUuBAAW",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670590",
+      "company_name": "New Zealand Blooms",
+      "sfdc_id": "0014p000022EYs1AAG",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670596",
+      "company_name": "Plaza Flowers American Floral",
+      "sfdc_id": "0014p0000220Ml3AAE",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670675",
+      "company_name": "VELDKAMP´S FLOWERS",
+      "sfdc_id": "0014p000022HSNzAAO",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "670701",
+      "company_name": "Webb’s Wholesale Florist",
+      "sfdc_id": "0011600001uSkF3AAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "671046",
+      "company_name": "Blossom Bliss LLC",
+      "sfdc_id": "001VL00000IAI7mYAH",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "672147",
+      "company_name": "A1 Floral Xpressions",
+      "sfdc_id": "001VL00000Hqn2xYAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "672205",
+      "company_name": "Del Tropico/ Ameriblooms",
+      "sfdc_id": "001VL00000IFWlxYAH",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "672728",
+      "company_name": "Ecuador's Origin Product",
+      "sfdc_id": "0014p00001yqo0aAAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "672781",
+      "company_name": "NY Floral Supply",
+      "sfdc_id": "001VL00000GL9dQYAT",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "672799",
+      "company_name": "Rokay Floral",
+      "sfdc_id": "0011L00001zzDSCQA2",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "673823",
+      "company_name": "Flowerist LLC",
+      "sfdc_id": "001VL00000HrwgpYAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "675361",
+      "company_name": "Fleurametz USA NYC",
+      "sfdc_id": "001VL00000JGRHRYA5",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "675363",
+      "company_name": "Palm Beach Whsle Flowers, Inc.",
+      "sfdc_id": "0014p0000220b01AAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "675451",
+      "company_name": "Blossom Express",
+      "sfdc_id": "001VL00000HxMM6YAN",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "676090",
+      "company_name": "FleuraMetz Montreal Ltd",
+      "sfdc_id": "001VL00000KKWD8YAP",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "676861",
+      "company_name": "Ontario Flower Growers Cooperative Ltd.",
+      "sfdc_id": "0011L000029kgNZQAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "677319",
+      "company_name": "! Juliet Wholesale Flowers LLC",
+      "sfdc_id": "001G000001ZwODhIAN",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "680290",
+      "company_name": "Ecuflower Roses Kft.",
+      "sfdc_id": "001VL00000JomsvYAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "681686",
+      "company_name": "J van Vliet (NL) Group",
+      "sfdc_id": "001VL000007liHtYAI",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "681739",
+      "company_name": "Fleurametz Chicago",
+      "sfdc_id": "001VL00000L1SkaYAF",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "700069",
+      "company_name": "Johnson Wholesale",
+      "sfdc_id": "001G000001TtMY2IAN",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "700340",
+      "company_name": "FleuraMetz LA",
+      "sfdc_id": "001VL00000L1QR0YAN",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "700747",
+      "company_name": "Premium Greens UK Ltd",
+      "sfdc_id": "001VL00000HZFTqYAP",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "701220",
+      "company_name": "McCarthy Wholesale",
+      "sfdc_id": "001VL00000YlWTzYAN",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "702933",
+      "company_name": "EZ flowers BV",
+      "sfdc_id": "001VL000007lmzjYAA",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "702938",
+      "company_name": "J Van Vliet",
+      "sfdc_id": "0014p00001zrPfKAAU",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "704005",
+      "company_name": "Nashville Flower Market",
+      "sfdc_id": "0011L00002eqjoaQAA",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "704636",
+      "company_name": "UNITED WHOLESALE- FFL ENTERPRISES",
+      "sfdc_id": "0011600001mKVtUAAW",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "704680",
+      "company_name": "AVANT GARDENS 5079 / HANA HOLDINGS",
+      "sfdc_id": "0014p0000220Lk7AAE",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "704690",
+      "company_name": "Quality Flowers&Greens-LTF1152",
+      "sfdc_id": "0014p000022HzHdAAK",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "712429",
+      "company_name": "Rose Runners",
+      "sfdc_id": "001VL00000OLqk9YAD",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "713789",
+      "company_name": "HALL´S - BIRMINGHAM",
+      "sfdc_id": "0011600001uScxFAAS",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "713840",
+      "company_name": "WHOLESALE NORTON'S FLORIST",
+      "sfdc_id": "00116000022ofJ2AAI",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "716166",
+      "company_name": "Exclusive Wholesale",
+      "sfdc_id": "0011600001uSZXFAA4",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "716378",
+      "company_name": "Moonlight Flowers",
+      "sfdc_id": "001VL00000Pos6tYAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "726631",
+      "company_name": "Wolfe Wholesale Florist, Inc. Waco",
+      "sfdc_id": "00116000021BPGhAAO",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "727131",
+      "company_name": "EQ Blooms by Flodecol",
+      "sfdc_id": "0011600001lgrcKAAQ",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "727605",
+      "company_name": "Lucas and Greer, Inc. dba L & G Wholesale Florist",
+      "sfdc_id": "0014p000022EYvCAAW",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "729585",
+      "company_name": "Clifton Wholesale Florist, Inc.",
+      "sfdc_id": "0011L000029kZAyQAM",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "729609",
+      "company_name": "OBERER´S",
+      "sfdc_id": "0014p0000220MSlAAM",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "729634",
+      "company_name": "Colgarden Grp-LTF1125",
+      "sfdc_id": "001VL00000BHG22YAH",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "729666",
+      "company_name": "NORTHWEST WHOLESALE FLORIST",
+      "sfdc_id": "0011600001uTOjKAAW",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "729684",
+      "company_name": "Adam Flower Truck",
+      "sfdc_id": "001VL00000SjEOTYA3",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "729692",
+      "company_name": "Fal Flowers Llc-LTF1157",
+      "sfdc_id": "0011600001xGQ6FAAW",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "729696",
+      "company_name": "METCALFE WHOLESALE FLORIST",
+      "sfdc_id": "0011600001uSj1KAAS",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "729712",
+      "company_name": "ABRAFLORA WHOLESALE FLOWERS, LLC",
+      "sfdc_id": "001VL00000Sj16lYAB",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "729719",
+      "company_name": "PERRO'S WHOLESALE",
+      "sfdc_id": "001VL00000Sj9iGYAR",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "730920",
+      "company_name": "Shamrock Wholesale Florist Memphis",
+      "sfdc_id": "0011600001uSjyvAAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "731091",
+      "company_name": "KRUEGER WHOLESALE PROMO",
+      "sfdc_id": "0011600001uSdIzAAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "731381",
+      "company_name": "CHICAGO´S WHOLESALE",
+      "sfdc_id": "0014p000022EYvBAAW",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "731402",
+      "company_name": "HOUSE OF LILAC",
+      "sfdc_id": "001VL00000Yluj7YAB",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "731414",
+      "company_name": "Amazing Floral Wholesaler",
+      "sfdc_id": "001VL00000TqkCZYAZ",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "731453",
+      "company_name": "Casas Adobes Flower Shop",
+      "sfdc_id": "001VL00000TqMN7YAN",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "731480",
+      "company_name": "BELLA ROSA FLORIST",
+      "sfdc_id": "001VL00000Tq6tRYAR",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "731500",
+      "company_name": "DIRECT FLOWERS OF BOSTON.-MA",
+      "sfdc_id": "001VL00000Tq1P7YAJ",
+      "sfdc_type": "Churned Cust",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "731540",
+      "company_name": "Kittelberger Florist & Gifts",
+      "sfdc_id": "0014p0000220MNyAAM",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "731558",
+      "company_name": "MRS. BLOOM’S DIRECT, INC.",
+      "sfdc_id": "001G000001DW4S5IAL",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "732448",
+      "company_name": "Nazcaflor USA, Inc",
+      "sfdc_id": "001G000001DW4SGIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "732518",
+      "company_name": "DKAY WHOLESALE INC",
+      "sfdc_id": "001G000001TskZ7IAJ",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "732830",
+      "company_name": "First Choice Floral",
+      "sfdc_id": "00116000026WSexAAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "733807",
+      "company_name": "Metropolitan Wholesale/Cityside Flowers",
+      "sfdc_id": "001160000222AFqAAM",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "734065",
+      "company_name": "BlossomR",
+      "sfdc_id": "001VL00000Pk117YAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "734128",
+      "company_name": "Details Direct - Core",
+      "sfdc_id": "00116000020OMNhAAO",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "734521",
+      "company_name": "Promoflor SRL",
+      "sfdc_id": "001VL00000LYFbdYAH",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "735220",
+      "company_name": "WE GOT FLOWERS",
+      "sfdc_id": "0011L000028TcCRQA0",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "735300",
+      "company_name": "Cataleya Flowers D&A",
+      "sfdc_id": "001VL00000UN5fFYAT",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "735488",
+      "company_name": "Acassia Wholesale Flowers LLC",
+      "sfdc_id": "001VL00000RkBqXYAV",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "735642",
+      "company_name": "Verdnatura",
+      "sfdc_id": "001VL00000TxtpOYAR",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "738936",
+      "company_name": "ACA Flowers",
+      "sfdc_id": "001G000001a07MXIAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "739329",
+      "company_name": "Penn Valley Flora",
+      "sfdc_id": "001VL00000LmynPYAR",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "740646",
+      "company_name": "Valley Floral Co. - Wichita",
+      "sfdc_id": "001VL00000YHEixYAH",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "740696",
+      "company_name": "Valley Floral Co. of Oklahoma LLC - Tulsa",
+      "sfdc_id": "001VL00000YHLNpYAP",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "740734",
+      "company_name": "Valley Floral Co. of OKC - Oklahoma",
+      "sfdc_id": "0011L00002KVe1mQAD",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "742781",
+      "company_name": "New England Wholesale Florist",
+      "sfdc_id": "0011600001uSjSfAAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "742939",
+      "company_name": "Stemline Wholesale",
+      "sfdc_id": "001VL00000V2gNuYAJ",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "743217",
+      "company_name": "Nova Packaging Solutions, Inc.",
+      "sfdc_id": "001VL00000TUGt3YAH",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "743373",
+      "company_name": "Twins Flower Farm",
+      "sfdc_id": "001VL00000WEFo0YAH",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "743648",
+      "company_name": "Zeidler Floral",
+      "sfdc_id": "0014p0000220KDPAA2",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "743681",
+      "company_name": "Alpha Fern Company, LLC",
+      "sfdc_id": "0011L00002WO7dMQAT",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "746233",
+      "company_name": "MARAFLOR",
+      "sfdc_id": "001VL00000Wy5buYAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "751334",
+      "company_name": "Much Flowers - UIO",
+      "sfdc_id": "001VL000007zWbfYAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "751350",
+      "company_name": "Grupo Vegaflor - Medellin",
+      "sfdc_id": "0011600001rj9yaAAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "751391",
+      "company_name": "MegaFlor - UIO",
+      "sfdc_id": "001VL00000dIwWvYAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "755593",
+      "company_name": "Kontikiflor BV",
+      "sfdc_id": "001VL00000PwohBYAR",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "756108",
+      "company_name": "Schaefer Greenhouses",
+      "sfdc_id": "001VL00000bMO6QYAW",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "756140",
+      "company_name": "Flower List",
+      "sfdc_id": "001VL00000acaTxYAI",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "761636",
+      "company_name": "Panhandle Whosale Florist",
+      "sfdc_id": "001VL00000cRQuzYAG",
+      "sfdc_type": "None",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "762172",
+      "company_name": "Floropolis",
+      "sfdc_id": "001VL00000bryvBYAQ",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": "shop.floropolis.com",
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "762941",
+      "company_name": "FOB UIO -  Alma Spray / Agrinag / Natuflor",
+      "sfdc_id": "001VL000006l9ajYAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "764867",
+      "company_name": "Hana Farms Inc.",
+      "sfdc_id": "001VL00000Vp156YAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "765491",
+      "company_name": "Dreisbach Wholesale",
+      "sfdc_id": "001G000001DW4PBIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "765583",
+      "company_name": "Bellaflor Group Inc.",
+      "sfdc_id": "001G000001DW4OLIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "768931",
+      "company_name": "Medellin Flowers & Greens - BOG",
+      "sfdc_id": "001VL00000f0PV3YAM",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 90,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "769085",
+      "company_name": "Ecoroses - Floropolis",
+      "sfdc_id": "001VL00000gC7ITYA0",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "769099",
+      "company_name": "Flodecol - Floropolis",
+      "sfdc_id": "001VL00000gC6uHYAS",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "770224",
+      "company_name": "Magic Flowers - Floropolis",
+      "sfdc_id": "001VL00000gBuLGYA0",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "770598",
+      "company_name": "Green Dream Foliage SAS - BOG",
+      "sfdc_id": "001VL00000e0nBQYAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 90,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "795517",
+      "company_name": "Nathalia Bloemenexport LLC - MIA",
+      "sfdc_id": "001VL00000WNEfpYAH",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "795674",
+      "company_name": "Akarana Farms - UIO",
+      "sfdc_id": "001VL00000egpjqYAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "796715",
+      "company_name": "ADEESE FLOWERS LLC",
+      "sfdc_id": "001VL00000ehkNEYAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "796779",
+      "company_name": "Kennicott Brothers West",
+      "sfdc_id": "001VL00000at0XJYAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "796848",
+      "company_name": "FGS.Flowers",
+      "sfdc_id": "001VL00000WatzeYAB",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "798243",
+      "company_name": "Alison Flowers - UIO",
+      "sfdc_id": "0014p00001xlhgkAAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "799014",
+      "company_name": "Matthioli Flowers Ecuador",
+      "sfdc_id": "001VL00000fUtUIYA0",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "800562",
+      "company_name": "Jetty USA LLC",
+      "sfdc_id": "0011L00001zyz09QAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "801947",
+      "company_name": "Flora Traders LLC - MIA",
+      "sfdc_id": "001VL00000gNTHFYA4",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 90,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "802590",
+      "company_name": "Pacifica Farms - CAL",
+      "sfdc_id": "0011L00002KYI4OQAX",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "804758",
+      "company_name": "FGS.Flowers.MIA",
+      "sfdc_id": "001VL00000jjhrhYAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "806417",
+      "company_name": "Hyperactive Farms Inc.",
+      "sfdc_id": "0011L00002eqDgTQAU",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "808079",
+      "company_name": "JFS Wholesale Floral",
+      "sfdc_id": "00116000021bflwAAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "808448",
+      "company_name": "Derita Floral Floral Supply Co",
+      "sfdc_id": "001VL00000LVfPRYA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "808527",
+      "company_name": "Hortensias Cabogana Cia Ltda",
+      "sfdc_id": "001VL000005qn9pYAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "809201",
+      "company_name": "San Jose Floral",
+      "sfdc_id": "001VL00000hSd5hYAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "809546",
+      "company_name": "Expobloom - BOG",
+      "sfdc_id": "001VL00000kXPUzYAO",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "811196",
+      "company_name": "Everflorals",
+      "sfdc_id": "001VL00000gB1JzYAK",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "811368",
+      "company_name": "Asiri Blooms LLC",
+      "sfdc_id": "0014p000021zR81AAE",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "812869",
+      "company_name": "Gypso S.A. UIO",
+      "sfdc_id": "0011L000028VL26QAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "813857",
+      "company_name": "Expo Flora S.A.",
+      "sfdc_id": "001VL00000mJQuTYAW",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "813947",
+      "company_name": "Llanos De Alba LLADEAL - UIO",
+      "sfdc_id": "001VL00000lGG96YAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "814810",
+      "company_name": "Lartisan Roses LLC",
+      "sfdc_id": "001VL00000n94eUYAQ",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "815425",
+      "company_name": "Coward & Glisson Whsl. Flst.",
+      "sfdc_id": "001G000001buCmhIAE",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "815558",
+      "company_name": "Florens Group LLC",
+      "sfdc_id": "001VL00000ndtN0YAI",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "815945",
+      "company_name": "Fuji Wholesale Flowers",
+      "sfdc_id": null,
+      "sfdc_type": null,
+      "sfdc_confidence": 0,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "816515",
+      "company_name": "Price's Floral Wholesale, LLC",
+      "sfdc_id": "0014p000022EYtaAAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "817168",
+      "company_name": "International Fresh Group LLC",
+      "sfdc_id": "0014p000022Vab1AAC",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "817285",
+      "company_name": "Flores de los Lagos",
+      "sfdc_id": "001VL00000mScY9YAK",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "819114",
+      "company_name": "Details Direct",
+      "sfdc_id": "00116000020OMNhAAO",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": "details.direct",
+      "has_login_cvr": true,
+      "has_ga4_cvr": true
+    },
+    {
+      "company_id": "821576",
+      "company_name": "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN",
+      "sfdc_id": "0011600001zVU4vAAG",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "821768",
+      "company_name": "Coquette Roses",
+      "sfdc_id": "001VL00000bzq64YAA",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "822374",
+      "company_name": "Avon Valley Floral",
+      "sfdc_id": "001G000001DW4OGIA1",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "822905",
+      "company_name": "GQ FLOWERS",
+      "sfdc_id": "001VL00000raiIYYAY",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": "www.gq-flowers.com",
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "822938",
+      "company_name": "Flores San Miguel",
+      "sfdc_id": "001VL00000k74R0YAI",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "825239",
+      "company_name": "Pampa Products LLC",
+      "sfdc_id": "001VL00000lXjePYAS",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "825773",
+      "company_name": "Creations From Heaven",
+      "sfdc_id": "001VL00000r1tVOYAY",
+      "sfdc_type": "Prospect",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "827180",
+      "company_name": "Main Wholesale Florist LLC / Clifton",
+      "sfdc_id": "001VL00000qmfPWYAY",
+      "sfdc_type": "Customer",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": true,
+      "has_ga4_cvr": false
+    },
+    {
+      "company_id": "828336",
+      "company_name": "Springfield Florist Supply",
+      "sfdc_id": "001G000001L8zkpIAB",
+      "sfdc_type": "Lead",
+      "sfdc_confidence": 100,
+      "ga4_hostname": null,
+      "has_login_cvr": false,
+      "has_ga4_cvr": false
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "contract_version": "1.0.0",
+  "status": "DRAFT_FIXTURES_NOT_PRODUCTION_DATA",
+  "purpose": "Minimal fixtures for pipeline and UI validation. Values illustrate states; they do not replace source exports.",
+  "account_snapshot": {
+    "contract_version": "1.0.0",
+    "snapshot_id": "tx-account-2026-08-04T060000Z-v1",
+    "snapshot_business_date": "2026-08-04",
+    "extracted_at": "2026-08-04T06:00:00Z",
+    "supersedes_snapshot_id": null,
+    "source_manifest": [{"source_key": "metrics_v2_sell_2026-07-30", "source_system": "local_export", "extracted_at": "2026-07-31T00:00:00Z", "coverage_state": "partial", "query_or_export_id": null}],
+    "records": [{
+      "canonical_company_id": "816515",
+      "company_name": "Price's Floral Wholesale, LLC",
+      "entity_boundary": "company",
+      "identity_state": "verified",
+      "portfolio_tags": ["P1", "TA"],
+      "team": "CS",
+      "rep": null,
+      "metrics": [{"metric_key": "koronet_sell_gmv", "value": 1121000, "unit": "usd", "period_start": "2026-01-01", "period_end": "2026-07-30", "channel": "all", "population_key": "sell_company_ytd", "metric_definition_version": "metrics_v2_sell", "evidence": {"state": "observed", "source_keys": ["metrics_v2_sell.json"], "evidence_keys": ["816515|metrics-v2-sell-ytd"], "freshness_state": "historical", "as_of": "2026-07-30", "confidence": "high", "gap_reason": null}}],
+      "outlier_flags": [{"flag_id": "outlier-816515-config-bunches-conflict", "severity": "review", "rule_key": "conflicting_config_sources", "state": "candidate", "metric_keys": ["config_bunches"], "evidence_keys": ["816515|config-snapshot", "816515|company-settings-raw"], "explanation": "Snapshot and raw setting disagree; do not generate a config lead."}],
+      "data_gaps": [{"gap_key": "current_supply_parity", "needed_for": "LIST online/offline parity", "blocking_state": "decision_blocked", "request_key": "AI-DATA-TX-LIST-INVENTORY-PARITY"}]
+    }]
+  },
+  "supply_snapshot": {
+    "contract_version": "1.0.0",
+    "snapshot_id": "tx-supply-2026-08-04T060000Z-v1",
+    "snapshot_business_date": "2026-08-04",
+    "extracted_at": "2026-08-04T06:00:00Z",
+    "supersedes_snapshot_id": null,
+    "records": [{"canonical_company_id": "816515", "supply_side": "listing_offer", "channel": "online", "vendor_key": null, "product_key": null, "product_grain": "variety", "category_key": null, "variety_key": null, "format": "bunch", "horizon_bucket": "unknown", "availability_start": null, "availability_end": null, "available_quantity": null, "available_value_usd": null, "fulfillment_state": "unknown", "observation_kind": "sales_proxy", "evidence": {"state": "proxy", "source_key": "loop2_list_usage_v2.json", "source_system": "local_export", "source_as_of": "2026-06-30", "freshness_state": "historical", "evidence_keys": ["816515|list-sales-proxy-h1"]}, "outlier_flags": []}]
+  },
+  "reporting_event": {"contract_version": "1.0.0", "reporting_event_id": "tx-report-price-list-gap-20260804", "event_type": "action_proposed", "occurred_at": "2026-08-04T12:00:00Z", "canonical_company_id": "816515", "commercial_parent_id": null, "filters": {"team": ["CS"], "rep": [], "account_ids": ["816515"], "lead_types": ["list_parity_investigation"], "portfolio_lanes": ["strategic_enabler"]}, "play_key": null, "action": {"owner": null, "owner_team": "CS", "requested_action": "Request current online/offline supply parity evidence before a LIST claim.", "next_check_at": null, "customer_response": null}, "measurement": {"metric_key": "listing_parity", "baseline_snapshot_id": "tx-supply-2026-08-04T060000Z-v1", "comparison_snapshot_id": null, "comparison_state": "blocked", "observed_delta": null, "attribution_state": "not_claimed", "blocking_reason": "availability snapshot is not yet available"}, "learning": null, "evidence": {"evidence_keys": ["816515|list-sales-proxy-h1"], "source_snapshot_ids": ["tx-supply-2026-08-04T060000Z-v1"]}, "approval_state": "draft"}
+}

@@ -1,0 +1,86 @@
+{
+  "_metadata": {
+    "query": "Q06_vendors_active_churned",
+    "as_of": "2026-07-30",
+    "source": "PRODUCTION.ANALYTICS.PROCUREMENTS_SV",
+    "rules_applied": "R1,R8,R9,R15",
+    "query_id": "01c616d8-000a-8262-0001-83020eced0de",
+    "total_companies": 378,
+    "generated": "2026-07-31"
+  },
+  "companies": {
+    "Mayesh Wholesale Florist Inc": {
+      "vendors_total": 938,
+      "vendors_active_l30d": 609,
+      "vendors_dormant_30_90d": 171,
+      "vendors_churned_90plus": 158,
+      "vendors_active_jul": 608,
+      "vendors_active_jun": 609,
+      "as_of": "2026-07-30"
+    },
+    "Bill Doran Company": {
+      "vendors_total": 562,
+      "vendors_active_l30d": 348,
+      "vendors_dormant_30_90d": 100,
+      "vendors_churned_90plus": 114,
+      "vendors_active_jul": 347,
+      "vendors_active_jun": 350,
+      "as_of": "2026-07-30"
+    },
+    "* Jet Fresh Flower Distributors Inc.": {
+      "vendors_total": 515,
+      "vendors_active_l30d": 242,
+      "vendors_dormant_30_90d": 133,
+      "vendors_churned_90plus": 140,
+      "vendors_active_jul": 241,
+      "vendors_active_jun": 260,
+      "as_of": "2026-07-30"
+    },
+    "Kennicott Brothers Company": {
+      "vendors_total": 283,
+      "vendors_active_l30d": 184,
+      "vendors_dormant_30_90d": 38,
+      "vendors_churned_90plus": 61,
+      "vendors_active_jul": 184,
+      "vendors_active_jun": 180,
+      "as_of": "2026-07-30"
+    },
+    "Allure Farms": {
+      "vendors_total": 261,
+      "vendors_active_l30d": 168,
+      "vendors_dormant_30_90d": 53,
+      "vendors_churned_90plus": 40,
+      "vendors_active_jul": 167,
+      "vendors_active_jun": 169,
+      "as_of": "2026-07-30"
+    },
+    "Sunburst Farms": {
+      "vendors_total": 196,
+      "vendors_active_l30d": 150,
+      "vendors_dormant_30_90d": 19,
+      "vendors_churned_90plus": 27,
+      "vendors_active_jul": 150,
+      "vendors_active_jun": 150,
+      "as_of": "2026-07-30"
+    },
+    "Choice Farms": {
+      "vendors_total": 196,
+      "vendors_active_l30d": 148,
+      "vendors_dormant_30_90d": 22,
+      "vendors_churned_90plus": 26,
+      "vendors_active_jul": 147,
+      "vendors_active_jun": 149,
+      "as_of": "2026-07-30"
+    },
+    "Protean Farms US": {
+      "vendors_total": 181,
+      "vendors_active_l30d": 90,
+      "vendors_dormant_30_90d": 39,
+      "vendors_churned_90plus": 52,
+      "vendors_active_jul": 90,
+      "vendors_active_jun": 103,
+      "as_of": "2026-07-30"
+    }
+  },
+  "_note": "Top 8 companies shown. Full 378-company dataset from Q06."
+}

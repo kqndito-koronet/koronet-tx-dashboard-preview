@@ -1,0 +1,1012 @@
+{
+  "6864": {
+    "est_sell_gmv": 777576,
+    "est_sell_source": "ESTIMATED",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 467859,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "7030": {
+    "est_sell_gmv": 61434324,
+    "est_sell_source": "CORE",
+    "est_sell_confidence": "HIGH",
+    "est_buy_gmv": 45971488,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH",
+    "is_core": true
+  },
+  "7631": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "33023": {
+    "est_sell_gmv": 12381420,
+    "est_sell_source": "ESTIMATED",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 7449771,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "44150": {
+    "est_sell_gmv": 64008313,
+    "est_sell_source": "CORE",
+    "est_sell_confidence": "HIGH",
+    "est_buy_gmv": 31249771,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH",
+    "is_core": true
+  },
+  "44225": {
+    "est_sell_gmv": 14162619,
+    "est_sell_source": "ESTIMATED",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 8521500,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "54343": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "73730": {
+    "est_sell_gmv": 30055446,
+    "est_sell_source": "ESTIMATED",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 18084048,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "103078": {
+    "est_sell_gmv": 94070646,
+    "est_sell_source": "CORE",
+    "est_sell_confidence": "HIGH",
+    "est_buy_gmv": 39192991,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH",
+    "is_core": true
+  },
+  "159761": {
+    "est_sell_gmv": 4000000,
+    "est_sell_source": "Christine ORA",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 890827,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "193828": {
+    "est_sell_gmv": 10000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 2336555,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH"
+  },
+  "200503": {
+    "est_sell_gmv": 14425863,
+    "est_sell_source": "ESTIMATED",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 8679891,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "395357": {
+    "est_sell_gmv": 543123,
+    "est_sell_source": "ESTIMATED",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 326791,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "397194": {
+    "est_sell_gmv": 1179700,
+    "est_sell_source": "CORE",
+    "est_sell_confidence": "HIGH",
+    "est_buy_gmv": 709813,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": true
+  },
+  "449344": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "454705": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "467802": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "477128": {
+    "est_sell_gmv": 3500000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 2105913,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "488495": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "498865": {
+    "est_sell_gmv": 4383545,
+    "est_sell_source": "CORE",
+    "est_sell_confidence": "HIGH",
+    "est_buy_gmv": 2411939,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH",
+    "is_core": true
+  },
+  "507479": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "541415": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "541854": {
+    "est_sell_gmv": 3000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 1805069,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "543610": {
+    "est_sell_gmv": 10000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 6016896,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "554905": {
+    "est_sell_gmv": 30000,
+    "est_sell_source": "Christine ORA",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 10493,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH",
+    "is_core": true
+  },
+  "561453": {
+    "est_sell_gmv": 301000,
+    "est_sell_source": "CORE",
+    "est_sell_confidence": "HIGH",
+    "est_buy_gmv": 219975,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH"
+  },
+  "578194": {
+    "est_sell_gmv": 603708,
+    "est_sell_source": "ESTIMATED",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 363245,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "585613": {
+    "est_sell_gmv": 8100000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 4873685,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "586784": {
+    "est_sell_gmv": 4000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 2406758,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "590728": {
+    "est_sell_gmv": 37517,
+    "est_sell_source": "CORE",
+    "est_sell_confidence": "HIGH",
+    "est_buy_gmv": 24049,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH",
+    "is_core": true
+  },
+  "591877": {
+    "est_sell_gmv": 8000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 4813517,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "600370": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "612783": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "623491": {
+    "est_sell_gmv": 27000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 16245618,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "632203": {
+    "est_sell_gmv": 2000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 1203379,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "632322": {
+    "est_sell_gmv": 2500000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 1504224,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "635064": {
+    "est_sell_gmv": 9000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 5415206,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "640460": {
+    "est_sell_gmv": 4307898,
+    "est_sell_source": "ESTIMATED",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 2592017,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "640762": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "641341": {
+    "est_sell_gmv": 668475,
+    "est_sell_source": "CORE",
+    "est_sell_confidence": "HIGH",
+    "est_buy_gmv": 379125,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH",
+    "is_core": true
+  },
+  "642076": {
+    "est_sell_gmv": 15000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 9025343,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "650536": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "650721": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "650767": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "650815": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "650986": {
+    "est_sell_gmv": 1000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "MISSING",
+    "est_buy_confidence": "LOW"
+  },
+  "651200": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "651216": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "651513": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "651574": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "651959": {
+    "est_sell_gmv": 1600000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 962703,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "652199": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "652251": {
+    "est_sell_gmv": 8000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 4813517,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "652302": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "652551": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "653842": {
+    "est_sell_gmv": 6000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 3610137,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "654131": {
+    "est_sell_gmv": 500000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 300845,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "654566": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "655098": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "655643": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "664054": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "664096": {
+    "est_sell_gmv": 1500000,
+    "est_sell_source": "ESTIMATED",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 412000,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW"
+  },
+  "664201": {
+    "est_sell_gmv": 5000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 3008448,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "664314": {
+    "est_sell_gmv": 5700000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 3429631,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "664381": {
+    "est_sell_gmv": 1500000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 902534,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "664494": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "664648": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "664719": {
+    "est_sell_gmv": 1800000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 1083041,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "664820": {
+    "est_sell_gmv": 4000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 2406758,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "664944": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "665080": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "665261": {
+    "est_sell_gmv": 3000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 1805069,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "665336": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "665443": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "670508": {
+    "est_sell_gmv": 3000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 1805069,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "670675": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "675363": {
+    "est_sell_gmv": 7600000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 4572841,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "681739": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "712429": {
+    "est_sell_gmv": 152668,
+    "est_sell_source": "CORE",
+    "est_sell_confidence": "HIGH",
+    "est_buy_gmv": 91859,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": true
+  },
+  "713789": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "713840": {
+    "est_sell_gmv": 2500000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 1504224,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "716166": {
+    "est_sell_gmv": 2000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 1203379,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "726631": {
+    "est_sell_gmv": 700000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 421183,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "727605": {
+    "est_sell_gmv": 4600000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 2767772,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "730920": {
+    "est_sell_gmv": 2000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 1203379,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "731381": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "732518": {
+    "est_sell_gmv": 4700000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 2827941,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "733807": {
+    "est_sell_gmv": 3400000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 2045745,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "735220": {
+    "est_sell_gmv": 5200000,
+    "est_sell_source": "Christine ORA",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 1364579,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH",
+    "is_core": true
+  },
+  "735642": {
+    "est_sell_gmv": 150000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 90253435,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "739329": {
+    "est_sell_gmv": 1500000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 902534,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "740646": {
+    "est_sell_gmv": 3750000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 2256336,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "740696": {
+    "est_sell_gmv": 2500000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 1504224,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "740734": {
+    "est_sell_gmv": 2500000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 1504224,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "742781": {
+    "est_sell_gmv": 234473,
+    "est_sell_source": "CORE",
+    "est_sell_confidence": "HIGH",
+    "est_buy_gmv": 114758,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH",
+    "is_core": true
+  },
+  "743217": {
+    "est_sell_gmv": 15000,
+    "est_sell_source": "ESTIMATED",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 4839,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH"
+  },
+  "743373": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "743648": {
+    "est_sell_gmv": 950830,
+    "est_sell_source": "CORE",
+    "est_sell_confidence": "HIGH",
+    "est_buy_gmv": 498003,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH",
+    "is_core": true
+  },
+  "746233": {
+    "est_sell_gmv": 1000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 601690,
+    "est_buy_source": "ESTIMATED",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "756108": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "765491": {
+    "est_sell_gmv": 25402,
+    "est_sell_source": "CORE",
+    "est_sell_confidence": "HIGH",
+    "est_buy_gmv": 33017,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH",
+    "is_core": true
+  },
+  "796848": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "804758": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "808448": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "811368": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "815425": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "816515": {
+    "est_sell_gmv": 1800000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 84416,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH",
+    "is_core": true
+  },
+  "821576": {
+    "est_sell_gmv": 100000,
+    "est_sell_source": "Christine ORA",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "822374": {
+    "est_sell_gmv": 5500000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 15945,
+    "est_buy_source": "CORE",
+    "est_buy_confidence": "HIGH"
+  },
+  "825773": {
+    "est_sell_gmv": 100000,
+    "est_sell_source": "Christine ORA",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": true
+  },
+  "827180": {
+    "est_sell_gmv": 5000000,
+    "est_sell_source": "Christine ORA",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  },
+  "828336": {
+    "est_sell_gmv": 1000000,
+    "est_sell_source": "SFDC",
+    "est_sell_confidence": "MEDIUM",
+    "est_buy_gmv": 0,
+    "est_buy_source": "MISSING",
+    "est_buy_confidence": "LOW"
+  },
+  "None": {
+    "est_sell_gmv": 0,
+    "est_sell_source": "NONE",
+    "est_sell_confidence": "LOW",
+    "est_buy_gmv": 0,
+    "est_buy_source": "NONE",
+    "est_buy_confidence": "LOW",
+    "is_core": false
+  }
+}

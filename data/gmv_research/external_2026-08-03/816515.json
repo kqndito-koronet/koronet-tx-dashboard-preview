@@ -1,0 +1,22 @@
+{
+  "account_id": "816515",
+  "account_name": "Price's Floral Wholesale, LLC",
+  "status": "EXTERNAL_EVIDENCE_PARTIAL_NO_DEFENSIBLE_RANGE",
+  "researched_at": "2026-08-03",
+  "entity_scope": "Koronet company_location 816515; official site confirms Price's Floral Wholesale, LLC at Chesapeake, VA. A Charleston address is publicly listed but operating scope remains unverified.",
+  "classification": {"primary": "wholesale floral distributor", "evidence": [{"source": "https://pricesfloralwholesalellc.com/Home/About", "observed": "Official site identifies fresh-cut flowers/greenery, hard goods/supplies, plants/dish gardens and B2B ordering/delivery modes."}]},
+  "observations": [
+    {"evidence_key_suffix": "official-b2b-catalog", "claim_key": "wholesale_scope", "claim_summary": "Official site confirms B2B wholesale scope, catalogue breadth and multiple ordering/delivery modes; it gives no revenue, volume, warehouse size or verified headcount.", "evidence_type": "official_website", "source_url": "https://pricesfloralwholesalellc.com/Home/About", "source_title": "Price's Floral Wholesale — About", "evidence_state": "observed", "confidence": "high"},
+    {"evidence_key_suffix": "official-team-roles", "claim_key": "public_team_roles", "claim_summary": "Official team page names six functional roles. This is not a headcount, payroll or throughput measurement.", "evidence_type": "official_website", "source_url": "https://pricesfloralwholesalellc.com/Home/OurTeam", "source_title": "Price's Floral Wholesale — Our Team", "evidence_state": "partial", "confidence": "medium"}
+  ],
+  "external_estimates": [
+    {"estimate_type": "company_gmv", "low_value": null, "midpoint_value": null, "high_value": null, "method_key": "two_method_external_sizing_not_met", "method_version": "v1", "estimate_state": "blocked", "confidence": "low", "as_of_date": "2026-08-03", "notes": "Business type is clear but no independent revenue, throughput, warehouse-size or verified-headcount sizing method was found. Six named roles are not a headcount.", "evidence_key_suffixes": ["official-b2b-catalog", "official-team-roles"]},
+    {"estimate_type": "total_purchases", "low_value": null, "midpoint_value": null, "high_value": null, "method_key": "two_method_external_sizing_not_met", "method_version": "v1", "estimate_state": "blocked", "confidence": "low", "as_of_date": "2026-08-03", "notes": "No externally supportable purchase-volume method was found.", "evidence_key_suffixes": []}
+  ],
+  "current_internal_estimate": {"gmv_usd": 1800000, "source": "SFDC", "confidence": "MEDIUM", "validation_state": "NOT_YET_VALIDATED_BY_EXTERNAL_RESEARCH"},
+  "gmv_estimate": null,
+  "buys_estimate": null,
+  "why_no_external_estimate_yet": "Public evidence establishes business type, but no independent revenue/throughput method. The six named roles are not a reliable employee count; treating them as one would be fabrication.",
+  "next_best_signals": ["Verify active operating locations, warehouse footprint and full headcount through an independent source.", "Check complete importer/entity aliases and shipment value coverage before using trade data.", "Reconcile a two-method external range with the SFDC $1.8M estimate; preserve both if they diverge."],
+  "tx_strategy_lane": "selective_test"
+}

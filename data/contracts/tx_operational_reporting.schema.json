@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tx_operational_reporting.schema.json",
+  "title": "TX Operational Reporting Event",
+  "description": "TX strategy lane: strategic_enabler. Append-only human-approved action, movement, outcome or learning record; no action execution authority.",
+  "type": "object",
+  "required": ["contract_version", "reporting_event_id", "event_type", "occurred_at", "canonical_company_id", "filters", "evidence", "approval_state"],
+  "properties": {
+    "contract_version": {"const": "1.0.0"},
+    "reporting_event_id": {"type": "string", "pattern": "^tx-report-[a-z0-9-]+$"},
+    "event_type": {"enum": ["priority_selected", "action_proposed", "action_approved", "action_recorded", "metric_movement", "outcome_recorded", "learning_recorded", "blocker_recorded"]},
+    "occurred_at": {"type": "string", "format": "date-time"},
+    "canonical_company_id": {"type": "string", "pattern": "^[0-9]+$"},
+    "commercial_parent_id": {"type": ["string", "null"]},
+    "filters": {"$ref": "#/$defs/filters"},
+    "play_key": {"type": ["string", "null"], "description": "A DRAFT/approved play reference; no new play is promoted by this record."},
+    "action": {"$ref": "#/$defs/action"},
+    "measurement": {"$ref": "#/$defs/measurement"},
+    "learning": {"$ref": "#/$defs/learning"},
+    "evidence": {"$ref": "#/$defs/evidence"},
+    "approval_state": {"enum": ["draft", "human_approved", "recorded", "rejected"]}
+  },
+  "$defs": {
+    "filters": {
+      "type": "object",
+      "required": ["team", "rep", "account_ids", "lead_types"],
+      "properties": {
+        "team": {"type": "array", "items": {"type": "string"}},
+        "rep": {"type": "array", "items": {"type": "string"}},
+        "account_ids": {"type": "array", "items": {"type": "string", "pattern": "^[0-9]+$"}},
+        "lead_types": {"type": "array", "items": {"type": "string"}},
+        "portfolio_lanes": {"type": "array", "items": {"enum": ["mass_operating_focus", "selective_test", "short_term_monetization", "strategic_enabler"]}}
+      },
+      "additionalProperties": false
+    },
+    "action": {
+      "type": ["object", "null"],
+      "properties": {
+        "owner": {"type": ["string", "null"]},
+        "owner_team": {"type": ["string", "null"]},
+        "requested_action": {"type": ["string", "null"]},
+        "next_check_at": {"type": ["string", "null"], "format": "date-time"},
+        "customer_response": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "measurement": {
+      "type": ["object", "null"],
+      "properties": {
+        "metric_key": {"type": ["string", "null"]},
+        "baseline_snapshot_id": {"type": ["string", "null"]},
+        "comparison_snapshot_id": {"type": ["string", "null"]},
+        "comparison_state": {"enum": ["not_attempted", "valid", "blocked"]},
+        "observed_delta": {"type": ["number", "null"]},
+        "attribution_state": {"enum": ["not_claimed", "hypothesis_only", "supported", "blocked"]},
+        "blocking_reason": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "learning": {
+      "type": ["object", "null"],
+      "properties": {
+        "result_state": {"enum": ["success", "failure", "inconclusive", "not_measured"]},
+        "learning_summary": {"type": ["string", "null"]},
+        "playbook_implication": {"type": ["string", "null"]},
+        "review_required": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["evidence_keys", "source_snapshot_ids"],
+      "properties": {
+        "evidence_keys": {"type": "array", "items": {"type": "string"}},
+        "source_snapshot_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

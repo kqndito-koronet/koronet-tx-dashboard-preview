@@ -1,0 +1,10 @@
+{
+  "description": "Canonical review log for System Requests. Slack may carry the discussion or notification, but this file is the only source of truth for a decision. No request is executed merely because it appears here.",
+  "decision_contract": {
+    "allowed_statuses": ["DRAFT", "NEEDS_EVIDENCE", "APPROVED", "REJECTED"],
+    "required_when_not_draft": ["decision_by", "decision_at", "decision_reason"],
+    "approval_effect": "APPROVED permits creation of an intervention or data-work proposal; it does not authorize customer outreach, external data pulls, or product changes by itself.",
+    "slack_rule": "Slack is notification and discussion only. An explicit owner decision must be recorded here before system state changes."
+  },
+  "decisions": {}
+}

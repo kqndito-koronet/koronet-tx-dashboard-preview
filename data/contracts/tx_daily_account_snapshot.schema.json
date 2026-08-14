@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tx_daily_account_snapshot.schema.json",
+  "title": "TX Daily Account Snapshot",
+  "description": "TX strategy lane: strategic_enabler. Immutable account-level snapshot; append only.",
+  "type": "object",
+  "required": ["contract_version", "snapshot_id", "snapshot_business_date", "extracted_at", "records"],
+  "properties": {
+    "contract_version": {"const": "1.0.0"},
+    "snapshot_id": {"type": "string", "pattern": "^tx-account-[0-9T-Z]+-v[0-9]+$"},
+    "snapshot_business_date": {"type": "string", "format": "date"},
+    "extracted_at": {"type": "string", "format": "date-time"},
+    "supersedes_snapshot_id": {"type": ["string", "null"]},
+    "source_manifest": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/source"}},
+    "records": {"type": "array", "items": {"$ref": "#/$defs/accountRecord"}}
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": ["state", "source_keys", "freshness_state"],
+      "properties": {
+        "state": {"enum": ["observed", "modeled", "proxy", "missing", "blocked", "conflict"]},
+        "source_keys": {"type": "array", "items": {"type": "string"}},
+        "evidence_keys": {"type": "array", "items": {"type": "string"}},
+        "freshness_state": {"enum": ["current", "historical", "stale", "unknown"]},
+        "as_of": {"type": ["string", "null"], "format": "date"},
+        "confidence": {"enum": ["high", "medium", "low", "not_applicable"]},
+        "gap_reason": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "metric": {
+      "type": "object",
+      "required": ["metric_key", "value", "unit", "period_start", "period_end", "channel", "evidence"],
+      "properties": {
+        "metric_key": {"type": "string"},
+        "value": {"type": ["number", "integer", "null"]},
+        "unit": {"enum": ["usd", "percent", "count", "days", "boolean", "text"]},
+        "period_start": {"type": ["string", "null"], "format": "date"},
+        "period_end": {"type": ["string", "null"], "format": "date"},
+        "channel": {"enum": ["online", "offline", "all", "not_applicable", "unknown"]},
+        "population_key": {"type": ["string", "null"]},
+        "metric_definition_version": {"type": ["string", "null"]},
+        "evidence": {"$ref": "#/$defs/evidence"}
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": ["source_key", "source_system", "extracted_at", "coverage_state"],
+      "properties": {
+        "source_key": {"type": "string"},
+        "source_system": {"enum": ["snowflake", "sfdc", "ga4", "research", "manual_registry", "local_export"]},
+        "extracted_at": {"type": "string", "format": "date-time"},
+        "coverage_state": {"enum": ["complete", "partial", "unknown"]},
+        "query_or_export_id": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "accountRecord": {
+      "type": "object",
+      "required": ["canonical_company_id", "company_name", "entity_boundary", "identity_state", "metrics", "outlier_flags", "data_gaps"],
+      "properties": {
+        "canonical_company_id": {"type": "string", "pattern": "^[0-9]+$"},
+        "company_name": {"type": "string"},
+        "entity_boundary": {"enum": ["company", "commercial_parent", "location", "unresolved"]},
+        "identity_state": {"enum": ["verified", "fuzzy_candidate", "parent_only", "blocked"]},
+        "portfolio_tags": {"type": "array", "items": {"type": "string"}},
+        "team": {"type": ["string", "null"]},
+        "rep": {"type": ["string", "null"]},
+        "metrics": {"type": "array", "items": {"$ref": "#/$defs/metric"}},
+        "outlier_flags": {"type": "array", "items": {"$ref": "#/$defs/outlier"}},
+        "data_gaps": {"type": "array", "items": {"$ref": "#/$defs/gap"}}
+      },
+      "additionalProperties": false
+    },
+    "outlier": {
+      "type": "object",
+      "required": ["flag_id", "severity", "rule_key", "state", "metric_keys", "evidence_keys"],
+      "properties": {
+        "flag_id": {"type": "string"},
+        "severity": {"enum": ["info", "review", "blocking"]},
+        "rule_key": {"type": "string"},
+        "state": {"enum": ["candidate", "reviewed_valid", "confirmed_error", "resolved"]},
+        "metric_keys": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "evidence_keys": {"type": "array", "items": {"type": "string"}},
+        "explanation": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "gap": {
+      "type": "object",
+      "required": ["gap_key", "needed_for", "blocking_state", "request_key"],
+      "properties": {
+        "gap_key": {"type": "string"},
+        "needed_for": {"type": "string"},
+        "blocking_state": {"enum": ["not_blocking", "comparison_blocked", "decision_blocked"]},
+        "request_key": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

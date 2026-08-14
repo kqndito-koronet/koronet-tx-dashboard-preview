@@ -1,0 +1,57 @@
+{
+  "account_id": "821576",
+  "account_name": "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN",
+  "researched_at": "2026-08-03",
+  "observations": [
+    {
+      "evidence_key_suffix": "official-identity-pennsauken",
+      "claim_key": "business_classification_and_location",
+      "claim_summary": "Main Wholesale Florist publicly identifies Pennsauken, NJ as one of three warehouses and describes the business as a wholesale flower and floral-supply seller.",
+      "evidence_type": "official_website",
+      "source_url": "https://www.mainwholesaleflorist.com/locations-service-areas/",
+      "source_title": "Main Wholesale Florist — Locations & Service Areas",
+      "evidence_state": "verified",
+      "confidence": "high",
+      "source_locator": {"location": "Pennsauken, NJ", "entity_scope": "company-wide three-warehouse operator"}
+    },
+    {
+      "evidence_key_suffix": "third-party-company-revenue",
+      "claim_key": "third_party_company_revenue_estimate",
+      "claim_summary": "Two third-party profiles report approximately $4.1M annual revenue for Main Wholesale Florist, but do not document methodology or allocate revenue to Pennsauken versus the other two warehouses.",
+      "evidence_type": "third_party_directory",
+      "source_url": "https://www.owler.com/company/mainwholesaleflorist",
+      "source_title": "Owler — Main Wholesale Florist profile",
+      "evidence_state": "partial",
+      "confidence": "low",
+      "source_locator": {"reported_company_revenue_usd": 4100000, "corroborating_url": "https://prospeo.io/c/main-wholesale-florist"}
+    }
+  ],
+  "external_estimates": [
+    {
+      "estimate_type": "company_gmv",
+      "low_value": null,
+      "midpoint_value": null,
+      "high_value": null,
+      "method_key": "external_revenue_requires_entity_scope_allocation",
+      "method_version": "v1",
+      "estimate_state": "blocked",
+      "confidence": "low",
+      "as_of_date": "2026-08-03",
+      "notes": "Public revenue is company-wide and cannot be allocated defensibly to the Pennsauken company-location ID. Do not use the $4.1M third-party figure as this location's GMV.",
+      "evidence_key_suffixes": ["official-identity-pennsauken", "third-party-company-revenue"]
+    },
+    {
+      "estimate_type": "total_purchases",
+      "low_value": null,
+      "midpoint_value": null,
+      "high_value": null,
+      "method_key": "purchase_potential_requires_cogs_or_validated_margin_model",
+      "method_version": "v1",
+      "estimate_state": "blocked",
+      "confidence": "low",
+      "as_of_date": "2026-08-03",
+      "notes": "No public COGS, gross-margin, or branch-level purchasing evidence was found. Revenue alone is not a valid BUY-potential denominator.",
+      "evidence_key_suffixes": ["official-identity-pennsauken"]
+    }
+  ]
+}

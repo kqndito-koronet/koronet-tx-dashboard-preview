@@ -1,0 +1,5457 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-31",
+    "generated_by": "Rose (Data Agent)",
+    "purpose": "Verified identity crosswalk: company_id (Snowflake) + SFDC Account Id + GA4 hostname",
+    "sources": {
+      "accounts_json": "426 records (Snowflake COMPANIES_SV)",
+      "sfdc": "589 Customer accounts (SOQL, Type=Customer)",
+      "ga4_eshop": "29 hostnames (GA4 E-Commerce)",
+      "existing_crosswalk": "426 records (company_identity_crosswalk.json, 2026-08-03)"
+    },
+    "matching_methods": {
+      "sfdc": "Normalized name match (uppercase, strip suffixes LLC/Inc/Corp/Co/Ltd/SA/LP, remove punctuation)",
+      "hostname": "Pattern match from GA4 hostname subdomain to company name keywords",
+      "verification": "Cross-checked fresh SFDC query results against existing crosswalk"
+    },
+    "data_rules_applied": [
+      "R1 (ks_flag=TRUE in accounts.json source)",
+      "R9 (provenance on every ID)"
+    ],
+    "confidence": "MEDIUM \u2014 SFDC name matching is imperfect (case, abbreviations, branch names). Hostname mapping is manual pattern-based. Codex should verify.",
+    "resolved_multi_matches": [
+      "shop.kennicott.com -> Kennicott Brothers Company (44150)",
+      "komet.billdoran.com -> Bill Doran Company (7030)",
+      "details.direct -> Details Direct (819114)",
+      "shop.floropolis.com -> Floropolis (762172)"
+    ],
+    "unresolved_hostnames": [
+      "flowers.sofloco.com (SoFLoCo \u2014 no match in accounts.json)",
+      "shop.usgreenscorp.com (US Greens Corp \u2014 no match in accounts.json)",
+      "shop.fiorentinaflowers.com (Fiorentina Flowers \u2014 no match in accounts.json)",
+      "www.cfhwholesale.com (CFH Wholesale \u2014 no match in accounts.json)",
+      "www.verisarflowers.com (Verisar Flowers \u2014 no match in accounts.json)",
+      "app.kometsales.com (PLATFORM hostname, not company-specific)",
+      "eshops.kometsales.com (PLATFORM hostname, not company-specific)",
+      "eshop.kometsales.com (PLATFORM hostname, not company-specific)"
+    ]
+  },
+  "summary": {
+    "total_accounts": 426,
+    "with_sfdc_id": 339,
+    "without_sfdc_id": 87,
+    "with_hostname": 13,
+    "without_hostname": 413,
+    "with_all_3_ids": 12,
+    "coverage_pct": {
+      "sfdc": 79.6,
+      "hostname": 3.1,
+      "all_3": 2.8
+    }
+  },
+  "records": [
+    {
+      "company_id": "159761",
+      "canonical_name": "Cleveland Plant & Flower Co.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsgdSIAR"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "554905",
+      "canonical_name": "Quinlan-Wasserman, Inc",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsIedIAF"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "822374",
+      "canonical_name": "Avon Valley Floral",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001DW4OGIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "825773",
+      "canonical_name": "Creations From Heaven",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "821576",
+      "canonical_name": "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001zVU4vAAG"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "827180",
+      "canonical_name": "Main Wholesale Florist LLC / Clifton",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000qmfPWYAY"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "743217",
+      "canonical_name": "Nova Packaging Solutions, Inc.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000TUGt3YAH"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "739329",
+      "canonical_name": "Penn Valley Flora",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000LmynPYAR"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "816515",
+      "canonical_name": "Price's Floral Wholesale, LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000022EYtaAAG"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "735220",
+      "canonical_name": "WE GOT FLOWERS",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L000028TcCRQA0"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "650986",
+      "canonical_name": "Tennessee Florist Supply - Knox",
+      "industry": "",
+      "sfdc_account_ids": [
+        "001G000001TsJPUIA3"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": null,
+      "canonical_name": "Heirloom Home Decor",
+      "industry": "",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "828336",
+      "canonical_name": "Springfield Florist Supply",
+      "industry": "",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664096",
+      "canonical_name": "Riverside Wholesale Florists KY",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001DW4SmIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "641341",
+      "canonical_name": "Maple Grove Floral",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001ZFNa1IAH"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "743648",
+      "canonical_name": "Zeidler Floral",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p0000220KDPAA2"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "507479",
+      "canonical_name": "Ashland Addison",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L00002WO3HUQA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "498865",
+      "canonical_name": "H&T Wholesale Flowers",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L00002p55GMQAY"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "730920",
+      "canonical_name": "Shamrock Wholesale Florist Memphis",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uSjyvAAC"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "477128",
+      "canonical_name": "Arizona Floral Exchange",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001mLcyvAAC"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "561453",
+      "canonical_name": "A Florist First",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "00116000021c3HoAAI"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "200503",
+      "canonical_name": "Stellar Farms",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "00116000026WjjWAAS"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "467802",
+      "canonical_name": "Protean Farms US",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4SfIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "652251",
+      "canonical_name": "BOTANICA WHOLESALE FLORIST DALLAS (IRVING), LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001DW4OTIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "578194",
+      "canonical_name": "Flowers Direct Inc",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "00116000023sYATAA2"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "585613",
+      "canonical_name": "Sieck Floral Distributing, Inc",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001DW4SyIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "653842",
+      "canonical_name": "TFS- Chattanooga",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uSk8RAAS"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "488495",
+      "canonical_name": "Sierra Flower Trading",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L000028F0KvQAK"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "454705",
+      "canonical_name": "South Florals Imports LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002dPqOxQAK"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "449344",
+      "canonical_name": "Southern Floral Co",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L00001zzDYPQA2"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "655643",
+      "canonical_name": "Solo Wholesale Flower LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000021zRSBAA2"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "591877",
+      "canonical_name": "Claymore C. Sieck Wholesale Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "00116000021Z8FtAAK"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "732518",
+      "canonical_name": "DKAY WHOLESALE INC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TskZ7IAJ"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "642076",
+      "canonical_name": "Full Pot - Ft. Lauderdale",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001V5PivIAF"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "675363",
+      "canonical_name": "Palm Beach Whsle Flowers, Inc.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p0000220b01AAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664054",
+      "canonical_name": "TFS Bristol",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000HI21dYAD"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "740646",
+      "canonical_name": "Valley Floral Co. - Wichita",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000YHEixYAH"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "740734",
+      "canonical_name": "Valley Floral Co. of OKC - Oklahoma",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L00002KVe1mQAD"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "740696",
+      "canonical_name": "Valley Floral Co. of Oklahoma LLC - Tulsa",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000YHLNpYAP"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670675",
+      "canonical_name": "VELDKAMP\u00b4S FLOWERS",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0014p000022HSNzAAO"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "650815",
+      "canonical_name": "WB FLORAL GROUP, LLC.-MD",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [
+        "0014p0000220Lp4AAE"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "713840",
+      "canonical_name": "WHOLESALE NORTON'S FLORIST",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "00116000022ofJ2AAI"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "632203",
+      "canonical_name": "Tristate Wholesale Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL000003KcH9YAK"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "681739",
+      "canonical_name": "Fleurametz Chicago",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000L1SkaYAF"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "650721",
+      "canonical_name": "Alders Wholesale Florist, Inc.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000F4yJVYAZ"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651200",
+      "canonical_name": "Jacksonville Flower Market",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L00002Y7yX7QAJ"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651574",
+      "canonical_name": "M&M CUT FLORA",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000022EYw1AAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "632322",
+      "canonical_name": "Northline Wholesale Flowers",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001lgc6sAAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "44225",
+      "canonical_name": "Pinnacle Flowers, LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001evx5aIAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "395357",
+      "canonical_name": "Pikes Peak Floral",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsIbtIAF"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [
+        "shop.pikespeakfloral.com"
+      ],
+      "hostname_match_method": "GA4_PATTERN_MATCH",
+      "has_all_3_ids": true,
+      "verification_notes": []
+    },
+    {
+      "company_id": "541854",
+      "canonical_name": "Fletch Wholesale llc",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p00001so6ueAAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "586784",
+      "canonical_name": "Louisiana Wholesale Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsFyvIAF"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "543610",
+      "canonical_name": "Frank Adams Wholesale Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uTH0wAAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "635064",
+      "canonical_name": "Ensign Wholesale Flower Market",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000022HSvrAAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [
+        "shop.ensignfloral.com"
+      ],
+      "hostname_match_method": "GA4_PATTERN_MATCH",
+      "has_all_3_ids": true,
+      "verification_notes": []
+    },
+    {
+      "company_id": "612783",
+      "canonical_name": "Faguaflowers Intl LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p000022FEx7AAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [
+        "shop.faguaflowers.com"
+      ],
+      "hostname_match_method": "GA4_PATTERN_MATCH",
+      "has_all_3_ids": true,
+      "verification_notes": []
+    },
+    {
+      "company_id": "640460",
+      "canonical_name": "Dr Delphinium",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [
+        "0014p0000220O7wAAE"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "742781",
+      "canonical_name": "New England Wholesale Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uSjSfAAK"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "6864",
+      "canonical_name": "Sofi's Flowers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4T1IAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "677319",
+      "canonical_name": "! Juliet Wholesale Flowers LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001ZwODhIAN"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "198117",
+      "canonical_name": "* Continental Farms",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4OsIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "584972",
+      "canonical_name": "* Flowers' International Group",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "18322",
+      "canonical_name": "* Jet Fresh Flower Distributors Inc.",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4QWIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "453081",
+      "canonical_name": "* Welyflor / PROFILE FLOWERS",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001160000221mrNAAQ"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "54343",
+      "canonical_name": "**Wafex USA",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001jjTb0IAE"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "613695",
+      "canonical_name": "*FLORAL1 INC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p000022EMZLAA4"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "1614",
+      "canonical_name": "-Groflowers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4QJIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "25489",
+      "canonical_name": "-Sole Farms",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4T2IAL"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [
+        "eshop.solefarms.com"
+      ],
+      "hostname_match_method": "GA4_PATTERN_MATCH",
+      "has_all_3_ids": true,
+      "verification_notes": []
+    },
+    {
+      "company_id": "7631",
+      "canonical_name": "A Trilogy Floral - Zamba Flowers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4TQIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "672147",
+      "canonical_name": "A1 Floral Xpressions",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000Hqn2xYAB"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "729712",
+      "canonical_name": "ABRAFLORA WHOLESALE FLOWERS, LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "738936",
+      "canonical_name": "ACA Flowers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001a07MXIAY"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665296",
+      "canonical_name": "AD TRADING CORP.DBA AD FLORAL TRADI",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001V5Q2WIAV"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "796715",
+      "canonical_name": "ADEESE FLOWERS LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000ehkNEYAY"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "603102",
+      "canonical_name": "AGM BROTHERS WORLD TRADING LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664719",
+      "canonical_name": "ALLIANCE FLORAL COMPANY. 6270",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L00002ICyF3QAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670302",
+      "canonical_name": "AL\u00b4S FLORIST",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "624737",
+      "canonical_name": "AMORES FLORES INC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000020wFxeAAE"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "704680",
+      "canonical_name": "AVANT GARDENS 5079 / HANA HOLDINGS",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "735488",
+      "canonical_name": "Acassia Wholesale Flowers LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000RkBqXYAV"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "729684",
+      "canonical_name": "Adam Flower Truck",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "795674",
+      "canonical_name": "Akarana Farms - UIO",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001VL00000egpjqYAA"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "521854",
+      "canonical_name": "Albin Hagstrom & Son, Inc.",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011600001xHhmfAAC"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "798243",
+      "canonical_name": "Alison Flowers - UIO",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0014p00001xlhgkAAA"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "73730",
+      "canonical_name": "Allure Farms",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4OuIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [
+        "shop.allurefarms.com"
+      ],
+      "hostname_match_method": "GA4_PATTERN_MATCH",
+      "has_all_3_ids": true,
+      "verification_notes": []
+    },
+    {
+      "company_id": "743681",
+      "canonical_name": "Alpha Fern Company, LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L00002WO7dMQAT"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "731414",
+      "canonical_name": "Amazing Floral Wholesaler",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "20769",
+      "canonical_name": "AmeriLink Floratrader",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4O5IAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "393475",
+      "canonical_name": "American Agroproducts",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001IYgNpIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "505063",
+      "canonical_name": "Andean Fresh LLC",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011600001zF6GkAAK"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "507518",
+      "canonical_name": "Anton Spaargaren B.V.",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011600001zW56mAAC"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "654944",
+      "canonical_name": "Apex Floral Distributors Mississauga",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsKPSIA3"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "811368",
+      "canonical_name": "Asiri Blooms LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "592806",
+      "canonical_name": "Aurum Farms LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p00001waeZYAAY"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "196051",
+      "canonical_name": "Aussie Direct",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "655608",
+      "canonical_name": "BACHMAN\u00b4S CO - BQT PRODUCT",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651277",
+      "canonical_name": "BAYSTATE FARM DIRECT FLOWERS - CRANSTON",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "731480",
+      "canonical_name": "BELLA ROSA FLORIST",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "654052",
+      "canonical_name": "BELLE FLORAL WHOLESALE RURAL ROUTE #6",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651742",
+      "canonical_name": "BELVIEW WHOLESALE FLORIST",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665432",
+      "canonical_name": "BLOOMINGDAYS FLOWER SHOP INC. 5929",
+      "industry": "",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "650927",
+      "canonical_name": "BONNETT WHSLE. FLORIST, INC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "654374",
+      "canonical_name": "BOTANICA WHSLE FLORIST-HOUSTON",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000RiggjYAB"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "655098",
+      "canonical_name": "BRIEGER WHSLE -TX.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsMbNIAV"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "17789",
+      "canonical_name": "Bella Blossom LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4OKIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "765583",
+      "canonical_name": "Bellaflor Group Inc.",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001G000001DW4OLIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "509751",
+      "canonical_name": "Best Miami Growers LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011600001zFAH3AAO"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "321023",
+      "canonical_name": "Bill Doran Company (2)",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TtEaaIAF"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665481",
+      "canonical_name": "BloomTown Flower Market",
+      "industry": "",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "199908",
+      "canonical_name": "Bloomistics",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011600001uRq3BAAS"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "561230",
+      "canonical_name": "Bloomit Corp.",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011600001mNfpDAAS"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "671046",
+      "canonical_name": "Blossom Bliss LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000IAI7mYAH",
+        "001VL00000IAI7mYAB"
+      ],
+      "sfdc_match_method": "MERGED_FRESH_AND_EXISTING",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": [
+        "Fresh SFDC IDs ['001VL00000IAI7mYAH'] differ from existing ['001VL00000IAI7mYAB', '001VL00000IAI7mYAH']"
+      ]
+    },
+    {
+      "company_id": "675451",
+      "canonical_name": "Blossom Express",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000HxMM6YAN"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "618758",
+      "canonical_name": "Bo's Wholesale Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000021zRPfAAM"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "2516",
+      "canonical_name": "Brightland Farms",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4OWIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "313164",
+      "canonical_name": "Bunches Direct Blumenimport GmbH",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L000028F9SYQA0"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664988",
+      "canonical_name": "CALI WHOLESALE.-CA",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L00002IE8YMQA1"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "498992",
+      "canonical_name": "CANTIZA FLORAL DBA NFD",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002rFEJwQAO"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "473329",
+      "canonical_name": "CAREX",
+      "industry": "",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "652302",
+      "canonical_name": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [
+        "0014p0000220OCmAAM"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "624816",
+      "canonical_name": "CD Wholesale",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL000003MuLTYA0"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "731381",
+      "canonical_name": "CHICAGO\u00b4S WHOLESALE",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000022EYvBAAW"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651959",
+      "canonical_name": "CINCINNATI WHSLE FLORIST INC.5643",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001Tsg6jIAB"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "617226",
+      "canonical_name": "CONNECTION FLOWERS SAS",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0014p000021zpeLAAQ"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665080",
+      "canonical_name": "COWARD WHOLESALE",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uSYzvAAG"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665216",
+      "canonical_name": "CURTIS FLOWER FARMS, INC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "182870",
+      "canonical_name": "Cananvalle USA LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011600001lhZANAA2"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "731453",
+      "canonical_name": "Casas Adobes Flower Shop",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "569309",
+      "canonical_name": "Castle Hayne Farms",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0014p00001t5gUtAAI"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "735300",
+      "canonical_name": "Cataleya Flowers D&A",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000UN5fFYAT"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665369",
+      "canonical_name": "Celebrations LTD",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "397194",
+      "canonical_name": "Charleston Wholesale Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L000028V2EyQAK"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "341499",
+      "canonical_name": "Choice Farms",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4OlIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "729585",
+      "canonical_name": "Clifton Wholesale Florist, Inc.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "650767",
+      "canonical_name": "Coastal Wholesale Flowers, Inc.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsYWjIAN"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "729634",
+      "canonical_name": "Colgarden Grp-LTF1125",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "453771",
+      "canonical_name": "Continental Floral CA LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002dFBf0QAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "453769",
+      "canonical_name": "Continental Floral FL LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002dFBcfQAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "41934",
+      "canonical_name": "Continental Floral LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4OtIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "560072",
+      "canonical_name": "Continental Floral NC LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p00001wXZDiAAO"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "471458",
+      "canonical_name": "Continental Floral OR LLC",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011L00002fOqChQAK"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "505896",
+      "canonical_name": "Continental Floral PNW LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p00001lOEl6AAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "146846",
+      "canonical_name": "Continental Flowers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001UTWVuIAP"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "821768",
+      "canonical_name": "Coquette Roses",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000bzq64YAA"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "815425",
+      "canonical_name": "Coward & Glisson Whsl. Flst.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001buCmhIAE"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "731500",
+      "canonical_name": "DIRECT FLOWERS OF BOSTON.-MA",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "200279",
+      "canonical_name": "DP Flowers Corp",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "00116000026VeXIAA0"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "672205",
+      "canonical_name": "Del Tropico/ Ameriblooms",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000IFWlxYAH"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "808448",
+      "canonical_name": "Derita Floral Floral Supply Co",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000LVfPRYA1"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670288",
+      "canonical_name": "Designs of the Times, Inc. dba: 321 Flower Market",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "819114",
+      "canonical_name": "Details Direct",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [
+        "00116000020OMNhAAO",
+        "001VL00000q86lRYAQ"
+      ],
+      "sfdc_match_method": "MERGED_FRESH_AND_EXISTING",
+      "hostnames": [
+        "details.direct"
+      ],
+      "hostname_match_method": "MANUAL_RESOLVED_MULTI",
+      "has_all_3_ids": true,
+      "verification_notes": [
+        "Fresh SFDC IDs ['00116000020OMNhAAO'] differ from existing ['001VL00000q86lRYAQ']",
+        "details.direct: resolved from 2 Details Direct entities to primary (819114)"
+      ]
+    },
+    {
+      "company_id": "734128",
+      "canonical_name": "Details Direct - Core",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [
+        "00116000020OMNhAAO"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "529464",
+      "canonical_name": "Direct Farms, LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4P4IAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "571220",
+      "canonical_name": "Dramm & Echter, Inc",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001G000001DW4PAIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "397789",
+      "canonical_name": "Dreaming Roses Corp",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002WOF1LQAX"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "378264",
+      "canonical_name": "Dynamic Farms",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002Sbi4xQAB"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "477673",
+      "canonical_name": "ECOROSES LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011600001mLv33AAC"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "20749",
+      "canonical_name": "EF FLOWERS",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4PPIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "146183",
+      "canonical_name": "EPIC FARMS USA LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001zrCXXAA2"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "727131",
+      "canonical_name": "EQ Blooms by Flodecol",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011600001lgrcKAAQ"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "130337",
+      "canonical_name": "EQR USA",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4PKIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "702933",
+      "canonical_name": "EZ flowers BV",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "769085",
+      "canonical_name": "Ecoroses - Floropolis",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001VL00000gC7ITYA0"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "672728",
+      "canonical_name": "Ecuador's Origin Product",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p00001yqo0aAAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "680290",
+      "canonical_name": "Ecuflower Roses Kft.",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000JomsvYAB"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "620603",
+      "canonical_name": "El Paso Floral Distributors",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "395159",
+      "canonical_name": "Equiflor LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4OEIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664623",
+      "canonical_name": "Esprit Salt Lake, Inc",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uSZVYAA4"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "811196",
+      "canonical_name": "Everflorals",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000gB1JzYAK"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "594981",
+      "canonical_name": "Evergreen Plant Company",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p000021IdyjAAC"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "716166",
+      "canonical_name": "Exclusive Wholesale",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uSZXFAA4"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "813857",
+      "canonical_name": "Expo Flora S.A.",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001VL00000mJQuTYAW"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "809546",
+      "canonical_name": "Expobloom - BOG",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001VL00000kXPUzYAO"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "652793",
+      "canonical_name": "FALL RIVER WHOLESALE",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001DW4PQIA1"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "796848",
+      "canonical_name": "FGS.Flowers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000WatzeYAB"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "804758",
+      "canonical_name": "FGS.Flowers.MIA",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000jjhrhYAA"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651671",
+      "canonical_name": "FIELD OF FLOWERS, INC.",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "577566",
+      "canonical_name": "FLEUPHORIA S.A.S",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p00001y6Ac0AAE"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670423",
+      "canonical_name": "FLEURIGROS QUEBEC 1995 INC.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000022WUhzAAG"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670450",
+      "canonical_name": "FLORIAD- MONTREAL CANADA INC.",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4PkIAL"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664587",
+      "canonical_name": "FLORIDA FRESH FLORAL,LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "401680",
+      "canonical_name": "FLORISOL & COMPANY FLOWER TRADING LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001f8XFWIA2"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "46206",
+      "canonical_name": "FLORISOL& CO FLOWER TRADING LLC DBA MARVEL FLOWERS",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001G000001V8C6jIAF"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651479",
+      "canonical_name": "FLORIST DISTRIBUTING",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670473",
+      "canonical_name": "FLORISTS SUPPLY WINNIPEG",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "489148",
+      "canonical_name": "FLOWERMART CORP",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002jVSxCQAW"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665008",
+      "canonical_name": "FLOWERS BY SHIRLEY, INC",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664019",
+      "canonical_name": "FLOWERS OF NASHVILLE",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664540",
+      "canonical_name": "FMI, LLC.-FL",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001bQpeJIAS"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "762941",
+      "canonical_name": "FOB UIO -  Alma Spray / Agrinag / Natuflor",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001VL000006l9ajYAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664750",
+      "canonical_name": "FST WHOLESALE LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "153536",
+      "canonical_name": "Fair Trade Floral Inc.",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011600001uUyJlAAK"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "729692",
+      "canonical_name": "Fal Flowers Llc-LTF1157",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "189685",
+      "canonical_name": "Farm Fresh Exports INC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "00116000020LCvJAAW"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "1241",
+      "canonical_name": "Farm To Canada",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4PTIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "610818",
+      "canonical_name": "Farms Connect",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002rEB34QAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "590675",
+      "canonical_name": "FernTrust Inc.",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0014p00001zy3KeAAI"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "732830",
+      "canonical_name": "First Choice Floral",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "00116000026WSexAAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "700340",
+      "canonical_name": "FleuraMetz LA",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000L1QR0YAN"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "676090",
+      "canonical_name": "FleuraMetz Montreal Ltd",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000KKWD8YAP"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "675361",
+      "canonical_name": "Fleurametz USA NYC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000JGRHRYA5"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "769099",
+      "canonical_name": "Flodecol - Floropolis",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001VL00000gC6uHYAS"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "601933",
+      "canonical_name": "Flora Fresh Inc",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsqcLIAR"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "801947",
+      "canonical_name": "Flora Traders LLC - MIA",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "319143",
+      "canonical_name": "FloraCo, Inc",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L000029aO9sQAE"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "153031",
+      "canonical_name": "FloraLink",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001ncRipAAE"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664314",
+      "canonical_name": "Florabundance.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001DW4PaIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "139851",
+      "canonical_name": "Floral Chain Direct",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011600001uUbL8AAK"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670311",
+      "canonical_name": "Floral Importers and Distributors Inc. /Buds",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p0000220SneAAE"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670437",
+      "canonical_name": "Florasolusa",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "612641",
+      "canonical_name": "Florasource KC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uSNXnAAO"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "449683",
+      "canonical_name": "Floreco, Inc",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4PgIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [
+        "shop.floreco.com"
+      ],
+      "hostname_match_method": "GA4_PATTERN_MATCH",
+      "has_all_3_ids": true,
+      "verification_notes": []
+    },
+    {
+      "company_id": "815558",
+      "canonical_name": "Florens Group LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000ndtN0YAI"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "822938",
+      "canonical_name": "Flores San Miguel",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "601280",
+      "canonical_name": "Flores Silvestres",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011600001uRrj9AAC"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "584973",
+      "canonical_name": "Flores de la Hacienda",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0014p00001zAFqOAAW"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "817285",
+      "canonical_name": "Flores de los Lagos",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "296458",
+      "canonical_name": "Florimex Toronto Corp.",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L000027XBWKQA4"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "496600",
+      "canonical_name": "Floristcentric, LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L00002rCC5zQAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "762172",
+      "canonical_name": "Floropolis",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000bryvBYAQ"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [
+        "shop.floropolis.com"
+      ],
+      "hostname_match_method": "MANUAL_RESOLVED_MULTI",
+      "has_all_3_ids": true,
+      "verification_notes": [
+        "shop.floropolis.com: resolved from 4 Floropolis entities to wholesaler (762172)"
+      ]
+    },
+    {
+      "company_id": "756140",
+      "canonical_name": "Flower List",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000acaTxYAI"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "673823",
+      "canonical_name": "Flowerist LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000HrwgpYAB"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664422",
+      "canonical_name": "Flowers Central-LTF1264",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665316",
+      "canonical_name": "Flowers by Fudgie, Inc",
+      "industry": "",
+      "sfdc_account_ids": [
+        "001VL00000HW85ZYAT"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651680",
+      "canonical_name": "Flowers by Gil & Curt ",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "492201",
+      "canonical_name": "Forest Flowers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "00116000026Vdd4AAC"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "103112",
+      "canonical_name": "Fresca Farms",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4PzIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [
+        "shop.frescafarms.com"
+      ],
+      "hostname_match_method": "GA4_PATTERN_MATCH",
+      "has_all_3_ids": true,
+      "verification_notes": []
+    },
+    {
+      "company_id": "640251",
+      "canonical_name": "FreshLink",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000A5ntfYAB"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "815945",
+      "canonical_name": "Fuji Wholesale Flowers",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664602",
+      "canonical_name": "GARFILED WHOLESALE FLOWERS",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "600370",
+      "canonical_name": "GOMEZ B.V.",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p00001zanUFAAY"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "822905",
+      "canonical_name": "GQ FLOWERS",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [
+        "www.gq-flowers.com"
+      ],
+      "hostname_match_method": "GA4_PATTERN_MATCH",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651684",
+      "canonical_name": "GREEN MOUNTAIN- SOUTH BURLINGTON",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "603611",
+      "canonical_name": "GREEN OCEAN LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p000021zHQjAAM"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "650252",
+      "canonical_name": "GRUPO DEL PACIFICO",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011L00002IDjZOQA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "38582",
+      "canonical_name": "Gala Roses",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4PFIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "343614",
+      "canonical_name": "Galleria Farms",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001bpcuyIAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "508421",
+      "canonical_name": "Gardens America Inc.",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4Q6IAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "654566",
+      "canonical_name": "Gassafy Wholesale Florist Inc",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001lfVtAAAU"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "484037",
+      "canonical_name": "Georgia State Floral Distributors",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TtDnBIAV"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "188968",
+      "canonical_name": "Global Flowers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001160000223WK5AAM"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "77300",
+      "canonical_name": "Golden Flowers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4QCIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "667626",
+      "canonical_name": "Green Bouquet LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000GL2fAYAT"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "770598",
+      "canonical_name": "Green Dream Foliage SAS - BOG",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "321907",
+      "canonical_name": "Greens and Flowers Connection",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002BInj0QAD"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "751350",
+      "canonical_name": "Grupo Vegaflor - Medellin",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011600001rj9yaAAA"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "812869",
+      "canonical_name": "Gypso S.A. UIO",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011L000028VL26QAG"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "194206",
+      "canonical_name": "H&F Greens Inc (Mariposa Growers)",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "00116000023rUnKAAU"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651922",
+      "canonical_name": "HALL'S - ATLANTA",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "713789",
+      "canonical_name": "HALL\u00b4S - BIRMINGHAM",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uScxFAAS"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670366",
+      "canonical_name": "HALL\u00b4S ST.PETERSBURG WHLSE FL",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "503075",
+      "canonical_name": "HANAYA FARMS",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "00116000025sMRVAA2"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651216",
+      "canonical_name": "HARDIN\u00b4S WHLSE - LIBERTY",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001GQ6u4IAD"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665358",
+      "canonical_name": "HIRE`S BEST FLOWERS",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uSd7yAAC"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664670",
+      "canonical_name": "HORTON WHSLE",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "731402",
+      "canonical_name": "HOUSE OF LILAC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651765",
+      "canonical_name": "Halls Wholesale Florist - Opelika",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664341",
+      "canonical_name": "Hall\u00b4s Wholesale Florist Theodore",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001lfdddAAA"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "764867",
+      "canonical_name": "Hana Farms Inc.",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000Vp156YAB"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670508",
+      "canonical_name": "Hartford Florist Supply",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TtIBxIAN"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "39124",
+      "canonical_name": "Herradura Growers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001XIVGOIA5"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "640563",
+      "canonical_name": "Hoja Verde - Rosen Financial",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL000007zem5YAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "631459",
+      "canonical_name": "Honey Bee Wholesale Florist, LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000022R9RlAAK"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "808527",
+      "canonical_name": "Hortensias Cabogana Cia Ltda",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001VL000005qn9pYAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "806417",
+      "canonical_name": "Hyperactive Farms Inc.",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002eqDgTQAU"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "572900",
+      "canonical_name": "IKEBANA CO SAS",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0014p00001xzL4bAAE"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "144192",
+      "canonical_name": "INTERNATIONAL TRADING AND SERVICES INC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011600001uUw5EAAS"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "554187",
+      "canonical_name": "IRIS ROSES LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p00001v3oKUAAY"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "193886",
+      "canonical_name": "Import Flowers Nashville LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001zVGSVAA4"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "492219",
+      "canonical_name": "Interflor LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002kvsqiQAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "817168",
+      "canonical_name": "International Fresh Group LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p000022Vab1AAC"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "322928",
+      "canonical_name": "Inversiones Napy S.A",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011600001uRssiAAC"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "702938",
+      "canonical_name": "J Van Vliet",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "681686",
+      "canonical_name": "J van Vliet (NL) Group",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "573661",
+      "canonical_name": "J&E Greens",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p00001zAsAQAA0"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664103",
+      "canonical_name": "JANAL WHOLESALE FLORIST",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "808079",
+      "canonical_name": "JFS Wholesale Floral",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "00116000021bflwAAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "652199",
+      "canonical_name": "JOHNSENS WHOLESALE FLORIST",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001lhbwBAAQ"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "800562",
+      "canonical_name": "Jetty USA LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00001zyz09QAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "700069",
+      "canonical_name": "Johnson Wholesale",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "412951",
+      "canonical_name": "KBC Cooler Account",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001aIv6EIAS"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664575",
+      "canonical_name": "KENNICOTT ATL C/O CARITHERS FLOWERS",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "731091",
+      "canonical_name": "KRUEGER WHOLESALE PROMO",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uSdIzAAK"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "796779",
+      "canonical_name": "Kennicott Brothers West",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000at0XJYAY"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "25120",
+      "canonical_name": "Kennicott Kuts",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4QdIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "552759",
+      "canonical_name": "Kings Wholesale",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "731540",
+      "canonical_name": "Kittelberger Florist & Gifts",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "755593",
+      "canonical_name": "Kontikiflor BV",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000PwohBYAR"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "575819",
+      "canonical_name": "LA TOSCANA FARMS",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001fjeOcIAI"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "652551",
+      "canonical_name": "LD Trading/ Lawrence Developments Inc.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L000028VnGrQAK"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "652505",
+      "canonical_name": "LD Trading/ Lawrence Developments Inc.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L000028VnGrQAK"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "654758",
+      "canonical_name": "LIHML INC Fayetteville - #01235 GF Rep Kareena 19",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001DW4QoIAL"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "814810",
+      "canonical_name": "Lartisan Roses LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000n94eUYAQ"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "598944",
+      "canonical_name": "Las Vegas Floral Wholesale",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsE8iIAF"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "189419",
+      "canonical_name": "Legacy Flowers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4QmIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "541415",
+      "canonical_name": "Len Busch Roses",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001DW4QnIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "35266",
+      "canonical_name": "Liberty Blooms",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001K7URpIAN"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664133",
+      "canonical_name": "Littlefloyd Investments, LLC",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [
+        "001VL00000HHz7rYAD"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "813947",
+      "canonical_name": "Llanos De Alba LLADEAL - UIO",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001VL00000lGG96YAG"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "476379",
+      "canonical_name": "Lone Star Flower Market",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651327",
+      "canonical_name": "Lovingly Charlotte LLC",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "152602",
+      "canonical_name": "Lubbock Wholesale",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsGEcIAN"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "727605",
+      "canonical_name": "Lucas and Greer, Inc. dba L & G Wholesale Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000022EYvCAAW"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "619847",
+      "canonical_name": "MACUNDO FLOWERS AND GREENS LLC",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0014p000022HqunAAC"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "536956",
+      "canonical_name": "MAGNIFICA FLOWERS",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0014p00001sHtlXAAS"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664494",
+      "canonical_name": "MAGNOLIA HOLDINGS 301 LLC  ABSOLUTELY BEAUTIFUL FLOWERS",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000HVuQvYAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670554",
+      "canonical_name": "MAHONEYS ROCKY LEDGE FARM &",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000YmEOTYA3"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "620453",
+      "canonical_name": "MALIMA USA",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011L00001zyyyYQAQ"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "746233",
+      "canonical_name": "MARAFLOR",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000Wy5buYAB"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665453",
+      "canonical_name": "MARKET FLOWERS",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "729696",
+      "canonical_name": "METCALFE WHOLESALE FLORIST",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665136",
+      "canonical_name": "METRO WHOLESALE FLORIST, INC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "505603",
+      "canonical_name": "MGA Flowers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002aTOTFQA4"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "608547",
+      "canonical_name": "MONTEROSAS LLC",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011L00002IGHtEQAX"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "731558",
+      "canonical_name": "MRS. BLOOM\u2019S DIRECT, INC.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001DW4S5IAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "610510",
+      "canonical_name": "MYSTICFLOWERS LLC",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001G000001as1u1IAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670546",
+      "canonical_name": "MacArthur\u2019s Quality Flowers & Plants Inc.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "770224",
+      "canonical_name": "Magic Flowers - Floropolis",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001VL00000gBuLGYA0"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "588171",
+      "canonical_name": "Magnolia Wholesale Florist Inc",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p00001z9zUXAAY"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664398",
+      "canonical_name": "Marissa",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651039",
+      "canonical_name": "Marvin\u2019s Wholesale Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "799014",
+      "canonical_name": "Matthioli Flowers Ecuador",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001VL00000fUtUIYA0"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "654862",
+      "canonical_name": "Maumee Valley Direct",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "257477",
+      "canonical_name": "Mayta International LLC / Native Blooms",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L000026fmYoQAI"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670569",
+      "canonical_name": "McCallum-Sauber Whlse",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "701220",
+      "canonical_name": "McCarthy Wholesale",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000YlWTzYAN"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665147",
+      "canonical_name": "Mcnamara, LLC",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664231",
+      "canonical_name": "Mears Floral Products, Inc.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "768931",
+      "canonical_name": "Medellin Flowers & Greens - BOG",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "751391",
+      "canonical_name": "MegaFlor - UIO",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001VL00000dIwWvYAK"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "622743",
+      "canonical_name": "Megaflor USA",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL000001pKqXYAU"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "655985",
+      "canonical_name": "Mellano Sales",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001G000001DW4R5IAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "498769",
+      "canonical_name": "Melody Farms LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4R6IAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "394783",
+      "canonical_name": "Metro Flower Market LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L000028TahoQAC"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664509",
+      "canonical_name": "Metro Whls Florist Dba Central Ms",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "600558",
+      "canonical_name": "Metropetals",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000021fXK6AAM"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "733807",
+      "canonical_name": "Metropolitan Wholesale/Cityside Flowers",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001160000222AFqAAM"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "375054",
+      "canonical_name": "Miaflora Farms",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4RwIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665027",
+      "canonical_name": "Mideast Flowers Distributors, Inc.",
+      "industry": "",
+      "sfdc_account_ids": [
+        "001VL00000HW91gYAD"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "649745",
+      "canonical_name": "Miraflor LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000DlwqkYAB"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664288",
+      "canonical_name": "Montgomery Wholesale Montgomery",
+      "industry": "Floral - Wholesalers",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "716378",
+      "canonical_name": "Moonlight Flowers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000Pos6tYAB"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "751334",
+      "canonical_name": "Much Flowers - UIO",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001VL000007zWbfYAE"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "193829",
+      "canonical_name": "Muchflowers Inc.",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011600001lg8CAAAY"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "377256",
+      "canonical_name": "Multiflora Corporation",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001f8bp1IAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651632",
+      "canonical_name": "NORTH AMERICAN WHSLE FLST",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "729666",
+      "canonical_name": "NORTHWEST WHOLESALE FLORIST",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uTOjKAAW"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "672781",
+      "canonical_name": "NY Floral Supply",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000GL9dQYAT"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "395382",
+      "canonical_name": "Naranjo Farms LLC",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011600001uRt3EAAS"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [
+        "eshop.naranjoroses.com"
+      ],
+      "hostname_match_method": "GA4_PATTERN_MATCH",
+      "has_all_3_ids": true,
+      "verification_notes": []
+    },
+    {
+      "company_id": "704005",
+      "canonical_name": "Nashville Flower Market",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "795517",
+      "canonical_name": "Nathalia Bloemenexport LLC - MIA",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000WNEfpYAH"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "398856",
+      "canonical_name": "National Floral Supply",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L00002WOu1fQAD"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "591665",
+      "canonical_name": "Natural Flowers, Inc",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0014p000020vycQAAQ"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "732448",
+      "canonical_name": "Nazcaflor USA, Inc",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4SGIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670590",
+      "canonical_name": "New Zealand Blooms",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "640977",
+      "canonical_name": "Ninfa Flowers",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL000001TMnmYAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "729609",
+      "canonical_name": "OBERER\u00b4S",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "592345",
+      "canonical_name": "Orlando Wholesale Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L00001zzDR9QAM"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "14422",
+      "canonical_name": "PAT FLOR SCARL",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4SSIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "729719",
+      "canonical_name": "PERRO'S WHOLESALE",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651513",
+      "canonical_name": "PETALS WEST, INC.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001K8yfgIAB"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "651721",
+      "canonical_name": "PHIL HUTCHENS DBA MUM'S THE WORD",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665443",
+      "canonical_name": "POPPIES DESIGN STUDIO, LLC",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [
+        "0011L000029kBhZQAU"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664944",
+      "canonical_name": "POSIES TRUCK",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [
+        "001VL000001CXvhYAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "654661",
+      "canonical_name": "POTOMAC WHSLE",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uSjmkAAC"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665210",
+      "canonical_name": "PRASHE DECOR",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "802590",
+      "canonical_name": "Pacifica Farms - CAL",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "0011L00002KYI4OQAX"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "825239",
+      "canonical_name": "Pampa Products LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "761636",
+      "canonical_name": "Panhandle Whosale Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "399890",
+      "canonical_name": "Patagonia Sun",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002SaN5JQAV"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "649585",
+      "canonical_name": "Penelope\u2019s Petals, LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000DSXzGYAX"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670596",
+      "canonical_name": "Plaza Flowers American Floral",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "378242",
+      "canonical_name": "Premium Flowers",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4SZIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "483642",
+      "canonical_name": "Premium Greens Australia B.V.",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011L00002h0i8vQAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "144369",
+      "canonical_name": "Premium Greens Australia LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "0011600001lgY6YAAU"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "700747",
+      "canonical_name": "Premium Greens UK Ltd",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001VL00000HZFTqYAP"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "33023",
+      "canonical_name": "Prime Petals LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4SbIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "13989",
+      "canonical_name": "Pronto Farms LLC",
+      "industry": "Floral - Importer",
+      "sfdc_account_ids": [
+        "001G000001DW4SeIAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "704690",
+      "canonical_name": "Quality Flowers&Greens-LTF1152",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [],
+      "sfdc_match_method": "NO_SFDC_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "590728",
+      "canonical_name": "DC FLOWERS DIRECT",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000020wmRFAAY"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "650536",
+      "canonical_name": "R&W WHOLESALE, INC.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsIltIAF"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "712429",
+      "canonical_name": "Rose Runners",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000OLqk9YAD"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664201",
+      "canonical_name": "San Antonio Flower CO",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001160000276kVxAAI"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "756108",
+      "canonical_name": "Schaefer Greenhouses",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000bMO6QYAW"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665336",
+      "canonical_name": "Torchio Nursery",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uSU5jAAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "665261",
+      "canonical_name": "Tradewinds / Pristine Wholesale Floral",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L000029kBirQAE"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664648",
+      "canonical_name": "Tradewinds/ KING FLORAL SUPPLY",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TtTOOIA3"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "743373",
+      "canonical_name": "Twins Flower Farm",
+      "industry": "Floral - Grower",
+      "sfdc_account_ids": [
+        "001VL00000WEFo0YAH"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664381",
+      "canonical_name": "Unifour Wholesale",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uSkCOAA0"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "735642",
+      "canonical_name": "Verdnatura",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000TxtpOYAR"
+      ],
+      "sfdc_match_method": "FRESH_SFDC_NAME_MATCH",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "640762",
+      "canonical_name": "Wellington Florist",
+      "industry": "Floral - Retailer",
+      "sfdc_account_ids": [
+        "0014p00001ycDwZAAU"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "726631",
+      "canonical_name": "Wolfe Wholesale Florist, Inc. Waco",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "00116000021BPGhAAO"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664820",
+      "canonical_name": "Younger & Son Inc",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000k6ul2YAA"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "44150",
+      "canonical_name": "Kennicott Brothers Company",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001H3CrIIAV"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [
+        "shop.kennicott.com"
+      ],
+      "hostname_match_method": "MANUAL_RESOLVED_MULTI",
+      "has_all_3_ids": true,
+      "verification_notes": [
+        "shop.kennicott.com: resolved from 4 Kennicott entities to main wholesaler (44150)"
+      ]
+    },
+    {
+      "company_id": "7030",
+      "canonical_name": "Bill Doran Company",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001DVt5TIAT"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [
+        "komet.billdoran.com"
+      ],
+      "hostname_match_method": "MANUAL_RESOLVED_MULTI",
+      "has_all_3_ids": true,
+      "verification_notes": [
+        "komet.billdoran.com: resolved from 2 BDC entities to primary (7030)"
+      ]
+    },
+    {
+      "company_id": "103078",
+      "canonical_name": "Mayesh Wholesale Florist Inc",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001DW4R3IAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "623491",
+      "canonical_name": "Baisch & Skinner",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001riCHoAAM"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "765491",
+      "canonical_name": "Dreisbach Wholesale",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001DW4PBIA1"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "193828",
+      "canonical_name": "Arizona Family Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "00116000023rB8qAAE"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "654131",
+      "canonical_name": "DVFLORA SEWELL",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TskmvIAB"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "742939",
+      "canonical_name": "Stemline Wholesale",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000V2gNuYAJ"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "537092",
+      "canonical_name": "Tropical Blooms Inc.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p00001lORHxAAO"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "734521",
+      "canonical_name": "Promoflor SRL",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000LYFbdYAH"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "17503",
+      "canonical_name": "SOS Floral",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001DW4T3IAL"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "642311",
+      "canonical_name": "White Rose Flowers & Supplies Inc.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000AsdReYAJ"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "649935",
+      "canonical_name": "Sims Flower Distribution",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL000002uhlyYAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "474847",
+      "canonical_name": "Vosz Floral LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L00002h0CH9QAM"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "592615",
+      "canonical_name": "NYC FLORAL GREENS",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000020wDaDAAU"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "327132",
+      "canonical_name": "Royal Flower Import Group Inc.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001160000276ptzAAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "620160",
+      "canonical_name": "Petals Direct",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL000000ln6xYAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "655382",
+      "canonical_name": "Staalduinen Floral-LTF1118",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001tWETgAAO"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "809201",
+      "canonical_name": "San Jose Floral",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000hSd5hYAC"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "672799",
+      "canonical_name": "Rokay Floral",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L00001zzDSCQA2"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "610504",
+      "canonical_name": "The Flower Emporium LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p0000220MfNAAU"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "400013",
+      "canonical_name": "Washington Floral Service, Inc",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "00116000021BDnbAAG"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "704636",
+      "canonical_name": "UNITED WHOLESALE- FFL ENTERPRISES",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001mKVtUAAW"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "676861",
+      "canonical_name": "Ontario Flower Growers Cooperative Ltd.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011L000029kgNZQAY"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "600910",
+      "canonical_name": "Sieck Wright Floral Products",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0014p000020tateAAA"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "670701",
+      "canonical_name": "Webb\u2019s Wholesale Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "0011600001uSkF3AAK"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "669090",
+      "canonical_name": "The Oklahoma Flower Market",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsIX2IAN"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "37745",
+      "canonical_name": "Floral Cooperative Purchasing Group LLC",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001Tssa3IAB"
+      ],
+      "sfdc_match_method": "EXISTING_CROSSWALK_ONLY",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "476679",
+      "canonical_name": "Taylor Wholesale Florist",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsJNiIAN"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "734065",
+      "canonical_name": "BlossomR",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001VL00000Pk117YAB"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "475168",
+      "canonical_name": "South Carolina Specialty Cut",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsJj3IAF"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "643672",
+      "canonical_name": "Allied Cut Flower",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "00116000020OCgLAAW"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "469713",
+      "canonical_name": "KD & Company",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "00116000027KCBbAAO"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    },
+    {
+      "company_id": "664255",
+      "canonical_name": "Mikes Finest Wholesale Flowers, Inc.",
+      "industry": "Floral - Wholesaler",
+      "sfdc_account_ids": [
+        "001G000001TsGfBIAV"
+      ],
+      "sfdc_match_method": "VERIFIED_BOTH_SOURCES",
+      "hostnames": [],
+      "hostname_match_method": "NO_HOSTNAME",
+      "has_all_3_ids": false,
+      "verification_notes": []
+    }
+  ]
+}

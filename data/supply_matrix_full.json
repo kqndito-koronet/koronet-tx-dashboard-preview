@@ -1,0 +1,5793 @@
+{
+  "metadata": {
+    "generated": "2026-07-30",
+    "period": "H1 2026 (2026-01-01 to 2026-07-01)",
+    "source_tables": {
+      "buy": "PRODUCTION.ANALYTICS.PROCUREMENTS_SV",
+      "sell": "PRODUCTION.ANALYTICS.SALES_SV"
+    },
+    "filters": {
+      "ks_flag": true,
+      "sales_cap": 100000,
+      "online_channels_sell": [
+        "eCommerce",
+        "K2K",
+        "API"
+      ],
+      "online_channels_buy": "SALES_CHANNEL != 'Unknown'"
+    },
+    "row_counts": {
+      "buy_coverage": 318,
+      "sell_coverage": 339,
+      "gap_categories": 230
+    },
+    "field_mapping": {
+      "original_COMPANY_ID": "not available in views, used ACCOUNT_ID (SFDC) instead",
+      "original_CATEGORY": "mapped to PRODUCT_CATEGORY_NAME",
+      "buy_gmv_field": "TOTAL_COST (per data_rules.md Rule 17)"
+    },
+    "data_rules_applied": [
+      "Rule 1: ks_flag = TRUE",
+      "Rule 4: SALES < 100000",
+      "Rule 6: Sell-side online = eCommerce + K2K + API",
+      "Rule 8: Semantic views only (*_SV)",
+      "Rule 17: BUY GMV = total_cost"
+    ],
+    "notes": "PROCUREMENTS_SV aggregation uses SUM(total_cost) grouped by COMPANY_NAME/ACCOUNT_ID. No dedup CTE applied (Rule 15 risk exists for buy_cost totals but category COUNTs should be unaffected). SALES_SV grouped by COMPANY_NAME/ACCOUNT_ID — no customer_name/customer_code grouping (Rule 5 safe)."
+  },
+  "buy_coverage": [
+    {
+      "company_name": "Bill Doran Company",
+      "account_id": "001G000001DVt5TIAT",
+      "total_categories_bought": 136,
+      "online_categories_bought": 108,
+      "total_buy_cost": 45971526.03
+    },
+    {
+      "company_name": "Mayesh Wholesale Florist Inc",
+      "account_id": "001G000001DW4R3IAL",
+      "total_categories_bought": 512,
+      "online_categories_bought": 35,
+      "total_buy_cost": 39196038.44
+    },
+    {
+      "company_name": "Kennicott Brothers Company",
+      "account_id": "001G000001H3CrIIAV",
+      "total_categories_bought": 69,
+      "online_categories_bought": 59,
+      "total_buy_cost": 31254818.2
+    },
+    {
+      "company_name": "Rosaprima International, LLC",
+      "account_id": "001G000001DW4SoIAL",
+      "total_categories_bought": 14,
+      "online_categories_bought": 0,
+      "total_buy_cost": 29936144.79
+    },
+    {
+      "company_name": "EQR USA",
+      "account_id": "001G000001DW4PKIA1",
+      "total_categories_bought": 83,
+      "online_categories_bought": 18,
+      "total_buy_cost": 24630811.98
+    },
+    {
+      "company_name": "Fresca Farms",
+      "account_id": "001G000001DW4PzIAL",
+      "total_categories_bought": 108,
+      "online_categories_bought": 12,
+      "total_buy_cost": 22891475.73
+    },
+    {
+      "company_name": "Continental Floral LLC",
+      "account_id": "001G000001DW4OtIAL",
+      "total_categories_bought": 19,
+      "online_categories_bought": 1,
+      "total_buy_cost": 20894712.08
+    },
+    {
+      "company_name": "* Jet Fresh Flower Distributors Inc.",
+      "account_id": "001G000001DW4QWIA1",
+      "total_categories_bought": 455,
+      "online_categories_bought": 48,
+      "total_buy_cost": 16958195.58
+    },
+    {
+      "company_name": "-Sole Farms",
+      "account_id": "001G000001DW4T2IAL",
+      "total_categories_bought": 64,
+      "online_categories_bought": 0,
+      "total_buy_cost": 16133937.27
+    },
+    {
+      "company_name": "Gala Roses",
+      "account_id": "001G000001DW4PFIA1",
+      "total_categories_bought": 23,
+      "online_categories_bought": 1,
+      "total_buy_cost": 9633610.02
+    },
+    {
+      "company_name": "Legacy Flowers",
+      "account_id": "001G000001DW4QmIAL",
+      "total_categories_bought": 88,
+      "online_categories_bought": 20,
+      "total_buy_cost": 8528360.97
+    },
+    {
+      "company_name": "Sunburst Farms",
+      "account_id": "001G000001DW4TAIA1",
+      "total_categories_bought": 148,
+      "online_categories_bought": 0,
+      "total_buy_cost": 7804045.29
+    },
+    {
+      "company_name": "Brightland Farms",
+      "account_id": "001G000001DW4OWIA1",
+      "total_categories_bought": 34,
+      "online_categories_bought": 0,
+      "total_buy_cost": 7669408.51
+    },
+    {
+      "company_name": "Royal Flowers Inc., Domestic",
+      "account_id": "001G000001DW4SpIAL",
+      "total_categories_bought": 79,
+      "online_categories_bought": 0,
+      "total_buy_cost": 6775261.08
+    },
+    {
+      "company_name": "Valley Springs LLC",
+      "account_id": "001G000001DW4QOIA1",
+      "total_categories_bought": 37,
+      "online_categories_bought": 0,
+      "total_buy_cost": 6727982.36
+    },
+    {
+      "company_name": "Continental Floral PNW LLC",
+      "account_id": "0014p00001lOEl6AAG",
+      "total_categories_bought": 8,
+      "online_categories_bought": 0,
+      "total_buy_cost": 5390590.13
+    },
+    {
+      "company_name": "* Welyflor / PROFILE FLOWERS",
+      "account_id": "001160000221mrNAAQ",
+      "total_categories_bought": 2,
+      "online_categories_bought": 0,
+      "total_buy_cost": 5264828.7
+    },
+    {
+      "company_name": "Allure Farms",
+      "account_id": "001G000001DW4OuIAL",
+      "total_categories_bought": 120,
+      "online_categories_bought": 45,
+      "total_buy_cost": 4878206.59
+    },
+    {
+      "company_name": "Nazcaflor USA, Inc",
+      "account_id": "001G000001DW4SGIA1",
+      "total_categories_bought": 17,
+      "online_categories_bought": 0,
+      "total_buy_cost": 4729615.15
+    },
+    {
+      "company_name": "KBC Cooler Account",
+      "account_id": "001G000001aIv6EIAS",
+      "total_categories_bought": 52,
+      "online_categories_bought": 33,
+      "total_buy_cost": 4510318.93
+    },
+    {
+      "company_name": "Florimex Toronto Corp.",
+      "account_id": "0011L000027XBWKQA4",
+      "total_categories_bought": 79,
+      "online_categories_bought": 0,
+      "total_buy_cost": 4441529.99
+    },
+    {
+      "company_name": "Continental Floral CA LLC",
+      "account_id": "0011L00002dFBf0QAG",
+      "total_categories_bought": 11,
+      "online_categories_bought": 0,
+      "total_buy_cost": 4394781.49
+    },
+    {
+      "company_name": "Rosamina SAS",
+      "account_id": "0011600001uSoWFAA0",
+      "total_categories_bought": 31,
+      "online_categories_bought": 0,
+      "total_buy_cost": 4257569.75
+    },
+    {
+      "company_name": "FloraLink",
+      "account_id": "0011600001ncRipAAE",
+      "total_categories_bought": 127,
+      "online_categories_bought": 127,
+      "total_buy_cost": 3952907.86
+    },
+    {
+      "company_name": "Promoflor SRL",
+      "account_id": "001VL00000LYFbdYAH",
+      "total_categories_bought": 5,
+      "online_categories_bought": 0,
+      "total_buy_cost": 3920410.0
+    },
+    {
+      "company_name": "Melody Farms LLC",
+      "account_id": "001G000001DW4R6IAL",
+      "total_categories_bought": 73,
+      "online_categories_bought": 17,
+      "total_buy_cost": 3802282.52
+    },
+    {
+      "company_name": "Dramm & Echter, Inc",
+      "account_id": "001G000001DW4PAIA1",
+      "total_categories_bought": 12,
+      "online_categories_bought": 0,
+      "total_buy_cost": 3684189.92
+    },
+    {
+      "company_name": "Choice Farms",
+      "account_id": "001G000001DW4OlIAL",
+      "total_categories_bought": 56,
+      "online_categories_bought": 0,
+      "total_buy_cost": 3556653.65
+    },
+    {
+      "company_name": "Galleria Farms",
+      "account_id": "001G000001bpcuyIAA",
+      "total_categories_bought": 52,
+      "online_categories_bought": 0,
+      "total_buy_cost": 3426056.58
+    },
+    {
+      "company_name": "Muchflowers Inc.",
+      "account_id": "0011600001lg8CAAAY",
+      "total_categories_bought": 39,
+      "online_categories_bought": 0,
+      "total_buy_cost": 3377134.59
+    },
+    {
+      "company_name": "Direct Farms, LLC",
+      "account_id": "001G000001DW4P4IAL",
+      "total_categories_bought": 21,
+      "online_categories_bought": 0,
+      "total_buy_cost": 3328159.08
+    },
+    {
+      "company_name": "Floral Chain Direct",
+      "account_id": "0011600001uUbL8AAK",
+      "total_categories_bought": 24,
+      "online_categories_bought": 0,
+      "total_buy_cost": 3317940.06
+    },
+    {
+      "company_name": "Ninfa Flowers",
+      "account_id": "001VL000001TMnmYAG",
+      "total_categories_bought": 74,
+      "online_categories_bought": 0,
+      "total_buy_cost": 3165836.12
+    },
+    {
+      "company_name": "FLEUPHORIA S.A.S",
+      "account_id": "0014p00001y6Ac0AAE",
+      "total_categories_bought": 8,
+      "online_categories_bought": 0,
+      "total_buy_cost": 3015796.51
+    },
+    {
+      "company_name": "Continental Floral OR LLC",
+      "account_id": "0011L00002fOqChQAK",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2864460.5
+    },
+    {
+      "company_name": "Pinnacle Flowers, LLC",
+      "account_id": "001G000001evx5aIAA",
+      "total_categories_bought": 166,
+      "online_categories_bought": 61,
+      "total_buy_cost": 2802003.21
+    },
+    {
+      "company_name": "Apex Floral Distributors Mississauga",
+      "account_id": "001G000001TsKPSIA3",
+      "total_categories_bought": 72,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2771904.4
+    },
+    {
+      "company_name": "GOMEZ B.V.",
+      "account_id": "0014p00001zanUFAAY",
+      "total_categories_bought": 12,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2682460.72
+    },
+    {
+      "company_name": "Bella Blossom LLC",
+      "account_id": "001G000001DW4OKIA1",
+      "total_categories_bought": 80,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2614556.1
+    },
+    {
+      "company_name": "Gardens America Inc.",
+      "account_id": "001G000001DW4Q6IAL",
+      "total_categories_bought": 74,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2581093.79
+    },
+    {
+      "company_name": "Flora Fresh Inc",
+      "account_id": "001G000001TsqcLIAR",
+      "total_categories_bought": 174,
+      "online_categories_bought": 59,
+      "total_buy_cost": 2456373.6
+    },
+    {
+      "company_name": "H&T Wholesale Flowers",
+      "account_id": "0011L00002p55GMQAY",
+      "total_categories_bought": 106,
+      "online_categories_bought": 35,
+      "total_buy_cost": 2411939.08
+    },
+    {
+      "company_name": "Stellar Farms",
+      "account_id": "00116000026WjjWAAS",
+      "total_categories_bought": 81,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2361850.47
+    },
+    {
+      "company_name": "Tropical Blooms Inc.",
+      "account_id": "0014p00001lORHxAAO",
+      "total_categories_bought": 93,
+      "online_categories_bought": 2,
+      "total_buy_cost": 2351729.78
+    },
+    {
+      "company_name": "Arizona Family Florist",
+      "account_id": "00116000023rB8qAAE",
+      "total_categories_bought": 77,
+      "online_categories_bought": 2,
+      "total_buy_cost": 2336555.26
+    },
+    {
+      "company_name": "Del Tropico/ Ameriblooms",
+      "account_id": "001VL00000IFWlxYAH",
+      "total_categories_bought": 45,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2169017.39
+    },
+    {
+      "company_name": "H&F Greens Inc (Mariposa Growers)",
+      "account_id": "00116000023rUnKAAU",
+      "total_categories_bought": 20,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2130718.28
+    },
+    {
+      "company_name": "Farm To Canada",
+      "account_id": "001G000001DW4PTIA1",
+      "total_categories_bought": 45,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2123066.79
+    },
+    {
+      "company_name": "A Trilogy Floral - Zamba Flowers",
+      "account_id": "001G000001DW4TQIA1",
+      "total_categories_bought": 108,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2120821.58
+    },
+    {
+      "company_name": "Miraflor LLC",
+      "account_id": "001VL00000DlwqkYAB",
+      "total_categories_bought": 46,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2012952.88
+    },
+    {
+      "company_name": "Green Bouquet LLC",
+      "account_id": "001VL00000GL2fAYAT",
+      "total_categories_bought": 62,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2006801.88
+    },
+    {
+      "company_name": "Anton Spaargaren B.V.",
+      "account_id": "0011600001zW56mAAC",
+      "total_categories_bought": 36,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1942283.19
+    },
+    {
+      "company_name": "Stemline Wholesale",
+      "account_id": "001VL00000V2gNuYAJ",
+      "total_categories_bought": 95,
+      "online_categories_bought": 57,
+      "total_buy_cost": 1838050.62
+    },
+    {
+      "company_name": "Evergreen Plant Company",
+      "account_id": "0014p000021IdyjAAC",
+      "total_categories_bought": 18,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1781174.92
+    },
+    {
+      "company_name": "CONNECTION FLOWERS SAS",
+      "account_id": "0014p000021zpeLAAQ",
+      "total_categories_bought": 6,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1679554.04
+    },
+    {
+      "company_name": "Prime Petals LLC",
+      "account_id": "001G000001DW4SbIAL",
+      "total_categories_bought": 49,
+      "online_categories_bought": 28,
+      "total_buy_cost": 1605418.27
+    },
+    {
+      "company_name": "Continental Floral FL LLC",
+      "account_id": "0011L00002dFBcfQAG",
+      "total_categories_bought": 5,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1577360.75
+    },
+    {
+      "company_name": "Orlando Wholesale Florist",
+      "account_id": "0011L00001zzDR9QAM",
+      "total_categories_bought": 145,
+      "online_categories_bought": 26,
+      "total_buy_cost": 1546208.34
+    },
+    {
+      "company_name": "JFS Wholesale Floral",
+      "account_id": "00116000021bflwAAA",
+      "total_categories_bought": 162,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1444877.79
+    },
+    {
+      "company_name": "DVFLORA SEWELL",
+      "account_id": "001G000001TskmvIAB",
+      "total_categories_bought": 59,
+      "online_categories_bought": 59,
+      "total_buy_cost": 1415499.92
+    },
+    {
+      "company_name": "WE GOT FLOWERS",
+      "account_id": "0011L000028TcCRQA0",
+      "total_categories_bought": 86,
+      "online_categories_bought": 35,
+      "total_buy_cost": 1364578.56
+    },
+    {
+      "company_name": "Flower List",
+      "account_id": "001VL00000acaTxYAI",
+      "total_categories_bought": 46,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1267789.99
+    },
+    {
+      "company_name": "Ecuador's Origin Product",
+      "account_id": "0014p00001yqo0aAAA",
+      "total_categories_bought": 30,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1217155.91
+    },
+    {
+      "company_name": "White Rose Flowers & Supplies Inc.",
+      "account_id": "001VL00000AsdReYAJ",
+      "total_categories_bought": 37,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1186355.5
+    },
+    {
+      "company_name": "Naranjo Farms LLC",
+      "account_id": "0011600001uRt3EAAS",
+      "total_categories_bought": 15,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1169098.87
+    },
+    {
+      "company_name": "Cananvalle USA LLC",
+      "account_id": "0011600001lhZANAA2",
+      "total_categories_bought": 5,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1149479.05
+    },
+    {
+      "company_name": "Bloomistics",
+      "account_id": "0011600001uRq3BAAS",
+      "total_categories_bought": 2,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1146269.99
+    },
+    {
+      "company_name": "Metro Flower Market LLC",
+      "account_id": "0011L000028TahoQAC",
+      "total_categories_bought": 132,
+      "online_categories_bought": 1,
+      "total_buy_cost": 1144025.84
+    },
+    {
+      "company_name": "Bill Doran Company (2)",
+      "account_id": "001G000001TtEaaIAF",
+      "total_categories_bought": 173,
+      "online_categories_bought": 25,
+      "total_buy_cost": 1139738.96
+    },
+    {
+      "company_name": "INTERNATIONAL TRADING AND SERVICES INC",
+      "account_id": "0011600001uUw5EAAS",
+      "total_categories_bought": 15,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1139206.77
+    },
+    {
+      "company_name": "Sims Flower Distribution",
+      "account_id": "001VL000002uhlyYAA",
+      "total_categories_bought": 87,
+      "online_categories_bought": 60,
+      "total_buy_cost": 1132304.51
+    },
+    {
+      "company_name": "FLORISOL& CO FLOWER TRADING LLC DBA MARVEL FLOWERS",
+      "account_id": "001G000001V8C6jIAF",
+      "total_categories_bought": 62,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1111507.05
+    },
+    {
+      "company_name": "**Wafex USA",
+      "account_id": "001G000001jjTb0IAE",
+      "total_categories_bought": 127,
+      "online_categories_bought": 1,
+      "total_buy_cost": 1106627.54
+    },
+    {
+      "company_name": "Mayta International LLC / Native Blooms",
+      "account_id": "0011L000026fmYoQAI",
+      "total_categories_bought": 23,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1089545.38
+    },
+    {
+      "company_name": "Protean Farms US",
+      "account_id": "001G000001DW4SfIAL",
+      "total_categories_bought": 49,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1018013.1
+    },
+    {
+      "company_name": "Farms Connect",
+      "account_id": "0011L00002rEB34QAG",
+      "total_categories_bought": 54,
+      "online_categories_bought": 0,
+      "total_buy_cost": 933242.85
+    },
+    {
+      "company_name": "Natural Flowers, Inc",
+      "account_id": "0014p000020vycQAAQ",
+      "total_categories_bought": 56,
+      "online_categories_bought": 0,
+      "total_buy_cost": 917627.64
+    },
+    {
+      "company_name": "Floreco, Inc",
+      "account_id": "001G000001DW4PgIAL",
+      "total_categories_bought": 75,
+      "online_categories_bought": 1,
+      "total_buy_cost": 865858.38
+    },
+    {
+      "company_name": "RUMHORA GREENS LLC",
+      "account_id": "0011600001uRvGlAAK",
+      "total_categories_bought": 8,
+      "online_categories_bought": 0,
+      "total_buy_cost": 843260.1
+    },
+    {
+      "company_name": "SOS Floral",
+      "account_id": "001G000001DW4T3IAL",
+      "total_categories_bought": 71,
+      "online_categories_bought": 0,
+      "total_buy_cost": 827464.28
+    },
+    {
+      "company_name": "SKY FLOWERS S.A.S",
+      "account_id": "00116000023XoIIAA0",
+      "total_categories_bought": 12,
+      "online_categories_bought": 0,
+      "total_buy_cost": 821550.83
+    },
+    {
+      "company_name": "AMORES FLORES INC",
+      "account_id": "0014p000020wFxeAAE",
+      "total_categories_bought": 56,
+      "online_categories_bought": 5,
+      "total_buy_cost": 780565.76
+    },
+    {
+      "company_name": "Farm Fresh Exports INC",
+      "account_id": "00116000020LCvJAAW",
+      "total_categories_bought": 124,
+      "online_categories_bought": 0,
+      "total_buy_cost": 780036.34
+    },
+    {
+      "company_name": "Royal Flowers S.A",
+      "account_id": "00116000025JAqTAAW",
+      "total_categories_bought": 8,
+      "online_categories_bought": 0,
+      "total_buy_cost": 778921.84
+    },
+    {
+      "company_name": "CD Wholesale",
+      "account_id": "001VL000003MuLTYA0",
+      "total_categories_bought": 101,
+      "online_categories_bought": 2,
+      "total_buy_cost": 768541.78
+    },
+    {
+      "company_name": "Moonlight Flowers",
+      "account_id": "001VL00000Pos6tYAB",
+      "total_categories_bought": 4,
+      "online_categories_bought": 0,
+      "total_buy_cost": 767291.83
+    },
+    {
+      "company_name": "NY Floral Supply",
+      "account_id": "001VL00000GL9dQYAT",
+      "total_categories_bought": 72,
+      "online_categories_bought": 20,
+      "total_buy_cost": 746488.38
+    },
+    {
+      "company_name": "South Florals Imports LLC",
+      "account_id": "0011L00002dPqOxQAK",
+      "total_categories_bought": 68,
+      "online_categories_bought": 0,
+      "total_buy_cost": 736566.06
+    },
+    {
+      "company_name": "Premium Greens Australia LLC",
+      "account_id": "0011600001lgY6YAAU",
+      "total_categories_bought": 3,
+      "online_categories_bought": 0,
+      "total_buy_cost": 729391.88
+    },
+    {
+      "company_name": "-Groflowers",
+      "account_id": "001G000001DW4QJIA1",
+      "total_categories_bought": 6,
+      "online_categories_bought": 0,
+      "total_buy_cost": 722861.73
+    },
+    {
+      "company_name": "IKEBANA CO SAS",
+      "account_id": "0014p00001xzL4bAAE",
+      "total_categories_bought": 4,
+      "online_categories_bought": 0,
+      "total_buy_cost": 719639.94
+    },
+    {
+      "company_name": "Premium Greens Australia B.V.",
+      "account_id": "0011L00002h0i8vQAA",
+      "total_categories_bought": 11,
+      "online_categories_bought": 0,
+      "total_buy_cost": 695684.75
+    },
+    {
+      "company_name": "Southern Floral Co",
+      "account_id": "0011L00001zzDYPQA2",
+      "total_categories_bought": 62,
+      "online_categories_bought": 62,
+      "total_buy_cost": 670113.8
+    },
+    {
+      "company_name": "Dr Delphinium",
+      "account_id": "0014p0000220O7wAAE",
+      "total_categories_bought": 72,
+      "online_categories_bought": 50,
+      "total_buy_cost": 634714.17
+    },
+    {
+      "company_name": "MAGNIFICA FLOWERS",
+      "account_id": "0014p00001sHtlXAAS",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 592562.46
+    },
+    {
+      "company_name": "MACUNDO FLOWERS AND GREENS LLC",
+      "account_id": "0014p000022HqunAAC",
+      "total_categories_bought": 93,
+      "online_categories_bought": 0,
+      "total_buy_cost": 585368.33
+    },
+    {
+      "company_name": "Flowers Direct Inc",
+      "account_id": "00116000023sYATAA2",
+      "total_categories_bought": 69,
+      "online_categories_bought": 69,
+      "total_buy_cost": 568049.3
+    },
+    {
+      "company_name": "Fair Trade Floral Inc.",
+      "account_id": "0011600001uUyJlAAK",
+      "total_categories_bought": 66,
+      "online_categories_bought": 0,
+      "total_buy_cost": 550229.18
+    },
+    {
+      "company_name": "MONTEROSAS LLC",
+      "account_id": "0011L00002IGHtEQAX",
+      "total_categories_bought": 3,
+      "online_categories_bought": 0,
+      "total_buy_cost": 545811.67
+    },
+    {
+      "company_name": "MYSTICFLOWERS LLC",
+      "account_id": "001G000001as1u1IAA",
+      "total_categories_bought": 20,
+      "online_categories_bought": 0,
+      "total_buy_cost": 514204.8
+    },
+    {
+      "company_name": "The Elite Flower",
+      "account_id": "0011600001zsxbOAAQ",
+      "total_categories_bought": 50,
+      "online_categories_bought": 0,
+      "total_buy_cost": 508629.4
+    },
+    {
+      "company_name": "Pronto Farms LLC",
+      "account_id": "001G000001DW4SeIAL",
+      "total_categories_bought": 51,
+      "online_categories_bought": 20,
+      "total_buy_cost": 501452.66
+    },
+    {
+      "company_name": "Zeidler Floral",
+      "account_id": "0014p0000220KDPAA2",
+      "total_categories_bought": 24,
+      "online_categories_bought": 19,
+      "total_buy_cost": 498002.9
+    },
+    {
+      "company_name": "DKAY WHOLESALE INC",
+      "account_id": "001G000001TskZ7IAJ",
+      "total_categories_bought": 62,
+      "online_categories_bought": 61,
+      "total_buy_cost": 468678.3
+    },
+    {
+      "company_name": "J&E Greens",
+      "account_id": "0014p00001zAsAQAA0",
+      "total_categories_bought": 20,
+      "online_categories_bought": 0,
+      "total_buy_cost": 461560.16
+    },
+    {
+      "company_name": "Floristcentric, LLC",
+      "account_id": "0011L00002rCC5zQAG",
+      "total_categories_bought": 196,
+      "online_categories_bought": 25,
+      "total_buy_cost": 440682.6
+    },
+    {
+      "company_name": "Greens and Flowers Connection",
+      "account_id": "0011L00002BInj0QAD",
+      "total_categories_bought": 27,
+      "online_categories_bought": 0,
+      "total_buy_cost": 432190.18
+    },
+    {
+      "company_name": "*FLORAL1 INC",
+      "account_id": "0014p000022EMZLAA4",
+      "total_categories_bought": 98,
+      "online_categories_bought": 0,
+      "total_buy_cost": 427035.87
+    },
+    {
+      "company_name": "Best Miami Growers LLC",
+      "account_id": "0011600001zFAH3AAO",
+      "total_categories_bought": 52,
+      "online_categories_bought": 0,
+      "total_buy_cost": 409872.43
+    },
+    {
+      "company_name": "ROYAL BASE (U.S.A) CORPORATION",
+      "account_id": "001VL00000U1C7VYAV",
+      "total_categories_bought": 4,
+      "online_categories_bought": 0,
+      "total_buy_cost": 400783.2
+    },
+    {
+      "company_name": "Blossom Bliss LLC",
+      "account_id": "001VL00000IAI7mYAH",
+      "total_categories_bought": 59,
+      "online_categories_bought": 43,
+      "total_buy_cost": 380226.69
+    },
+    {
+      "company_name": "Maple Grove Floral",
+      "account_id": "001G000001ZFNa1IAH",
+      "total_categories_bought": 106,
+      "online_categories_bought": 51,
+      "total_buy_cost": 379124.65
+    },
+    {
+      "company_name": "MALIMA USA",
+      "account_id": "0011L00001zyyyYQAQ",
+      "total_categories_bought": 15,
+      "online_categories_bought": 0,
+      "total_buy_cost": 373347.94
+    },
+    {
+      "company_name": "Solo Wholesale Flower LLC",
+      "account_id": "0014p000021zRSBAA2",
+      "total_categories_bought": 69,
+      "online_categories_bought": 69,
+      "total_buy_cost": 368205.82
+    },
+    {
+      "company_name": "Metropetals",
+      "account_id": "0014p000021fXK6AAM",
+      "total_categories_bought": 87,
+      "online_categories_bought": 36,
+      "total_buy_cost": 364364.41
+    },
+    {
+      "company_name": "Riverside Wholesale Florists KY",
+      "account_id": "001G000001DW4SmIAL",
+      "total_categories_bought": 97,
+      "online_categories_bought": 82,
+      "total_buy_cost": 362214.59
+    },
+    {
+      "company_name": "Inversiones Napy S.A",
+      "account_id": "0011600001uRssiAAC",
+      "total_categories_bought": 17,
+      "online_categories_bought": 0,
+      "total_buy_cost": 349857.02
+    },
+    {
+      "company_name": "Full Pot - Ft. Lauderdale",
+      "account_id": "001G000001V5PivIAF",
+      "total_categories_bought": 64,
+      "online_categories_bought": 63,
+      "total_buy_cost": 349240.12
+    },
+    {
+      "company_name": "Palm Beach Whsle Flowers, Inc.",
+      "account_id": "0014p0000220b01AAA",
+      "total_categories_bought": 60,
+      "online_categories_bought": 60,
+      "total_buy_cost": 338791.6
+    },
+    {
+      "company_name": "Vosz Floral LLC",
+      "account_id": "0011L00002h0CH9QAM",
+      "total_categories_bought": 92,
+      "online_categories_bought": 25,
+      "total_buy_cost": 327390.08
+    },
+    {
+      "company_name": "Bo's Wholesale Florist",
+      "account_id": "0014p000021zRPfAAM",
+      "total_categories_bought": 54,
+      "online_categories_bought": 54,
+      "total_buy_cost": 312099.87
+    },
+    {
+      "company_name": "Jacksonville Flower Market",
+      "account_id": "0011L00002Y7yX7QAJ",
+      "total_categories_bought": 56,
+      "online_categories_bought": 56,
+      "total_buy_cost": 301881.79
+    },
+    {
+      "company_name": "Cleveland Plant & Flower Co.",
+      "account_id": "001G000001TsgdSIAR",
+      "total_categories_bought": 71,
+      "online_categories_bought": 71,
+      "total_buy_cost": 297001.19
+    },
+    {
+      "company_name": "The Flower Co, LLC",
+      "account_id": "0014p00001nd9sQAAQ",
+      "total_categories_bought": 13,
+      "online_categories_bought": 0,
+      "total_buy_cost": 294130.55
+    },
+    {
+      "company_name": "Expo Flora S.A.",
+      "account_id": "001VL00000mJQuTYAW",
+      "total_categories_bought": 6,
+      "online_categories_bought": 0,
+      "total_buy_cost": 290525.23
+    },
+    {
+      "company_name": "AmeriLink Floratrader",
+      "account_id": "001G000001DW4O5IAL",
+      "total_categories_bought": 35,
+      "online_categories_bought": 0,
+      "total_buy_cost": 289272.78
+    },
+    {
+      "company_name": "Baisch & Skinner",
+      "account_id": "0011600001riCHoAAM",
+      "total_categories_bought": 95,
+      "online_categories_bought": 95,
+      "total_buy_cost": 285993.86
+    },
+    {
+      "company_name": "TFS- Chattanooga",
+      "account_id": "0011600001uSk8RAAS",
+      "total_categories_bought": 68,
+      "online_categories_bought": 68,
+      "total_buy_cost": 282791.03
+    },
+    {
+      "company_name": "Zoom-Bloom",
+      "account_id": "001G000001JbAIjIAN",
+      "total_categories_bought": 54,
+      "online_categories_bought": 0,
+      "total_buy_cost": 282657.83
+    },
+    {
+      "company_name": "BOTANICA WHOLESALE FLORIST DALLAS (IRVING), LLC",
+      "account_id": "001G000001DW4OTIA1",
+      "total_categories_bought": 62,
+      "online_categories_bought": 62,
+      "total_buy_cost": 278460.33
+    },
+    {
+      "company_name": "M&M CUT FLORA",
+      "account_id": "0014p000022EYw1AAG",
+      "total_categories_bought": 64,
+      "online_categories_bought": 64,
+      "total_buy_cost": 278201.76
+    },
+    {
+      "company_name": "Petals Direct",
+      "account_id": "001VL000000ln6xYAA",
+      "total_categories_bought": 89,
+      "online_categories_bought": 11,
+      "total_buy_cost": 272928.25
+    },
+    {
+      "company_name": "R&W WHOLESALE, INC.",
+      "account_id": "001G000001TsIltIAF",
+      "total_categories_bought": 61,
+      "online_categories_bought": 61,
+      "total_buy_cost": 270221.86
+    },
+    {
+      "company_name": "Ashland Addison",
+      "account_id": "0011L00002WO3HUQA1",
+      "total_categories_bought": 65,
+      "online_categories_bought": 65,
+      "total_buy_cost": 268657.48
+    },
+    {
+      "company_name": "Valleflor USA",
+      "account_id": "001G000001DW4TWIA1",
+      "total_categories_bought": 15,
+      "online_categories_bought": 0,
+      "total_buy_cost": 268485.08
+    },
+    {
+      "company_name": "Forest Flowers",
+      "account_id": "00116000026Vdd4AAC",
+      "total_categories_bought": 4,
+      "online_categories_bought": 0,
+      "total_buy_cost": 268363.7
+    },
+    {
+      "company_name": "HARDIN'S WHLSE - LIBERTY",
+      "account_id": "001G000001GQ6u4IAD",
+      "total_categories_bought": 61,
+      "online_categories_bought": 61,
+      "total_buy_cost": 261219.29
+    },
+    {
+      "company_name": "Interflor LLC",
+      "account_id": "0011L00002kvsqiQAA",
+      "total_categories_bought": 10,
+      "online_categories_bought": 0,
+      "total_buy_cost": 253562.42
+    },
+    {
+      "company_name": "Zion Flowers INC",
+      "account_id": "001G000001DW4ThIAL",
+      "total_categories_bought": 40,
+      "online_categories_bought": 0,
+      "total_buy_cost": 251001.36
+    },
+    {
+      "company_name": "A1 Floral Xpressions",
+      "account_id": "001VL00000Hqn2xYAB",
+      "total_categories_bought": 8,
+      "online_categories_bought": 0,
+      "total_buy_cost": 249365.48
+    },
+    {
+      "company_name": "ECOROSES LLC",
+      "account_id": "0011600001mLv33AAC",
+      "total_categories_bought": 5,
+      "online_categories_bought": 0,
+      "total_buy_cost": 243661.95
+    },
+    {
+      "company_name": "Floramix, Inc.",
+      "account_id": "0014p00001ueJDCAA2",
+      "total_categories_bought": 41,
+      "online_categories_bought": 0,
+      "total_buy_cost": 241716.22
+    },
+    {
+      "company_name": "Andean Fresh LLC",
+      "account_id": "0011600001zF6GkAAK",
+      "total_categories_bought": 7,
+      "online_categories_bought": 0,
+      "total_buy_cost": 229101.83
+    },
+    {
+      "company_name": "A Florist First",
+      "account_id": "00116000021c3HoAAI",
+      "total_categories_bought": 61,
+      "online_categories_bought": 61,
+      "total_buy_cost": 219975.28
+    },
+    {
+      "company_name": "LA TOSCANA FARMS",
+      "account_id": "001G000001fjeOcIAI",
+      "total_categories_bought": 11,
+      "online_categories_bought": 0,
+      "total_buy_cost": 196252.33
+    },
+    {
+      "company_name": "Fleurametz Chicago",
+      "account_id": "001VL00000L1SkaYAF",
+      "total_categories_bought": 56,
+      "online_categories_bought": 56,
+      "total_buy_cost": 195733.4
+    },
+    {
+      "company_name": "PAT FLOR SCARL",
+      "account_id": "001G000001DW4SSIA1",
+      "total_categories_bought": 19,
+      "online_categories_bought": 13,
+      "total_buy_cost": 191850.39
+    },
+    {
+      "company_name": "Bunches Direct Blumenimport GmbH",
+      "account_id": "0011L000028F9SYQA0",
+      "total_categories_bought": 2,
+      "online_categories_bought": 0,
+      "total_buy_cost": 188031.85
+    },
+    {
+      "company_name": "Northline Wholesale Flowers",
+      "account_id": "0011600001lgc6sAAA",
+      "total_categories_bought": 53,
+      "online_categories_bought": 52,
+      "total_buy_cost": 179276.75
+    },
+    {
+      "company_name": "Shamrock Wholesale Florist Memphis",
+      "account_id": "0011600001uSjyvAAC",
+      "total_categories_bought": 59,
+      "online_categories_bought": 59,
+      "total_buy_cost": 175632.47
+    },
+    {
+      "company_name": "Tradewinds/ KING FLORAL SUPPLY",
+      "account_id": "001G000001TtTOOIA3",
+      "total_categories_bought": 54,
+      "online_categories_bought": 54,
+      "total_buy_cost": 175529.79
+    },
+    {
+      "company_name": "Penelope's Petals, LLC",
+      "account_id": "001VL00000DSXzGYAX",
+      "total_categories_bought": 78,
+      "online_categories_bought": 0,
+      "total_buy_cost": 174335.57
+    },
+    {
+      "company_name": "Florabundance.",
+      "account_id": "001G000001DW4PaIAL",
+      "total_categories_bought": 44,
+      "online_categories_bought": 44,
+      "total_buy_cost": 172135.75
+    },
+    {
+      "company_name": "Staalduinen Floral-LTF1118",
+      "account_id": "0011600001tWETgAAO",
+      "total_categories_bought": 48,
+      "online_categories_bought": 47,
+      "total_buy_cost": 170550.66
+    },
+    {
+      "company_name": "! Juliet Wholesale Flowers LLC",
+      "account_id": "001G000001ZwODhIAN",
+      "total_categories_bought": 46,
+      "online_categories_bought": 0,
+      "total_buy_cost": 170312.94
+    },
+    {
+      "company_name": "DP Flowers Corp",
+      "account_id": "00116000026VeXIAA0",
+      "total_categories_bought": 46,
+      "online_categories_bought": 45,
+      "total_buy_cost": 169927.85
+    },
+    {
+      "company_name": "TFS Bristol",
+      "account_id": "001VL00000HI21dYAD",
+      "total_categories_bought": 59,
+      "online_categories_bought": 59,
+      "total_buy_cost": 169336.69
+    },
+    {
+      "company_name": "LD Trading/ Lawrence Developments Inc.",
+      "account_id": "0011L000028VnGrQAK",
+      "total_categories_bought": 45,
+      "online_categories_bought": 45,
+      "total_buy_cost": 168810.41
+    },
+    {
+      "company_name": "VERA",
+      "account_id": "001VL00000fpcExYAI",
+      "total_categories_bought": 9,
+      "online_categories_bought": 0,
+      "total_buy_cost": 167938.47
+    },
+    {
+      "company_name": "Valley Floral Co. - Wichita",
+      "account_id": "001VL00000YHEixYAH",
+      "total_categories_bought": 55,
+      "online_categories_bought": 55,
+      "total_buy_cost": 167123.19
+    },
+    {
+      "company_name": "FLORISOL & COMPANY FLOWER TRADING LLC",
+      "account_id": "001G000001f8XFWIA2",
+      "total_categories_bought": 16,
+      "online_categories_bought": 0,
+      "total_buy_cost": 165648.41
+    },
+    {
+      "company_name": "Aurum Farms LLC",
+      "account_id": "0014p00001waeZYAAY",
+      "total_categories_bought": 46,
+      "online_categories_bought": 0,
+      "total_buy_cost": 158412.58
+    },
+    {
+      "company_name": "Valley Floral Co. of Oklahoma LLC - Tulsa",
+      "account_id": "001VL00000YHLNpYAP",
+      "total_categories_bought": 51,
+      "online_categories_bought": 51,
+      "total_buy_cost": 156029.95
+    },
+    {
+      "company_name": "Claymore C. Sieck Wholesale Florist",
+      "account_id": "00116000021Z8FtAAK",
+      "total_categories_bought": 55,
+      "online_categories_bought": 55,
+      "total_buy_cost": 151100.58
+    },
+    {
+      "company_name": "Kennicott Brothers West",
+      "account_id": "001VL00000at0XJYAY",
+      "total_categories_bought": 3,
+      "online_categories_bought": 0,
+      "total_buy_cost": 150225.45
+    },
+    {
+      "company_name": "Tradewinds / Pristine Wholesale Floral",
+      "account_id": "0011L000029kBirQAE",
+      "total_categories_bought": 46,
+      "online_categories_bought": 46,
+      "total_buy_cost": 150083.18
+    },
+    {
+      "company_name": "HALL'S - BIRMINGHAM",
+      "account_id": "0011600001uScxFAAS",
+      "total_categories_bought": 60,
+      "online_categories_bought": 59,
+      "total_buy_cost": 149708.21
+    },
+    {
+      "company_name": "Ensign Wholesale Flower Market",
+      "account_id": "0014p000022HSvrAAG",
+      "total_categories_bought": 56,
+      "online_categories_bought": 54,
+      "total_buy_cost": 146921.07
+    },
+    {
+      "company_name": "WHOLESALE NORTON'S FLORIST",
+      "account_id": "00116000022ofJ2AAI",
+      "total_categories_bought": 50,
+      "online_categories_bought": 48,
+      "total_buy_cost": 145745.24
+    },
+    {
+      "company_name": "COWARD WHOLESALE",
+      "account_id": "0011600001uSYzvAAG",
+      "total_categories_bought": 46,
+      "online_categories_bought": 46,
+      "total_buy_cost": 144486.45
+    },
+    {
+      "company_name": "JOHNSENS WHOLESALE FLORIST",
+      "account_id": "0011600001lhbwBAAQ",
+      "total_categories_bought": 58,
+      "online_categories_bought": 58,
+      "total_buy_cost": 141081.83
+    },
+    {
+      "company_name": "Unifour Wholesale",
+      "account_id": "0011600001uSkCOAA0",
+      "total_categories_bought": 54,
+      "online_categories_bought": 53,
+      "total_buy_cost": 137616.16
+    },
+    {
+      "company_name": "Metropolitan Wholesale/Cityside Flowers",
+      "account_id": "001160000222AFqAAM",
+      "total_categories_bought": 56,
+      "online_categories_bought": 56,
+      "total_buy_cost": 134552.21
+    },
+    {
+      "company_name": "Dynamic Farms",
+      "account_id": "0011L00002Sbi4xQAB",
+      "total_categories_bought": 6,
+      "online_categories_bought": 0,
+      "total_buy_cost": 132894.39
+    },
+    {
+      "company_name": "Wolfe Wholesale Florist, Inc. Waco",
+      "account_id": "00116000021BPGhAAO",
+      "total_categories_bought": 53,
+      "online_categories_bought": 53,
+      "total_buy_cost": 131189.74
+    },
+    {
+      "company_name": "FLOWERMART CORP",
+      "account_id": "0011L00002jVSxCQAW",
+      "total_categories_bought": 25,
+      "online_categories_bought": 0,
+      "total_buy_cost": 130050.46
+    },
+    {
+      "company_name": "Pikes Peak Floral",
+      "account_id": "001G000001TsIbtIAF",
+      "total_categories_bought": 57,
+      "online_categories_bought": 56,
+      "total_buy_cost": 124519.11
+    },
+    {
+      "company_name": "Sieck Floral Distributing, Inc",
+      "account_id": "001G000001DW4SyIAL",
+      "total_categories_bought": 54,
+      "online_categories_bought": 54,
+      "total_buy_cost": 116615.27
+    },
+    {
+      "company_name": "New England Wholesale Florist",
+      "account_id": "0011600001uSjSfAAK",
+      "total_categories_bought": 39,
+      "online_categories_bought": 27,
+      "total_buy_cost": 114758.01
+    },
+    {
+      "company_name": "GREEN OCEAN LLC",
+      "account_id": "0014p000021zHQjAAM",
+      "total_categories_bought": 40,
+      "online_categories_bought": 0,
+      "total_buy_cost": 114053.6
+    },
+    {
+      "company_name": "Coastal Wholesale Flowers, Inc.",
+      "account_id": "001G000001TsYWjIAN",
+      "total_categories_bought": 60,
+      "online_categories_bought": 59,
+      "total_buy_cost": 110210.4
+    },
+    {
+      "company_name": "Alders Wholesale Florist, Inc.",
+      "account_id": "001VL00000F4yJVYAZ",
+      "total_categories_bought": 52,
+      "online_categories_bought": 52,
+      "total_buy_cost": 108855.72
+    },
+    {
+      "company_name": "CINCINNATI WHSLE FLORIST INC.5643",
+      "account_id": "001G000001Tsg6jIAB",
+      "total_categories_bought": 49,
+      "online_categories_bought": 46,
+      "total_buy_cost": 107658.31
+    },
+    {
+      "company_name": "Lucas and Greer, Inc. dba L & G Wholesale Florist",
+      "account_id": "0014p000022EYvCAAW",
+      "total_categories_bought": 51,
+      "online_categories_bought": 51,
+      "total_buy_cost": 107043.87
+    },
+    {
+      "company_name": "Georgia State Floral Distributors",
+      "account_id": "001G000001TtDnBIAV",
+      "total_categories_bought": 58,
+      "online_categories_bought": 58,
+      "total_buy_cost": 104507.56
+    },
+    {
+      "company_name": "WB FLORAL GROUP, LLC.-MD",
+      "account_id": "0014p0000220Lp4AAE",
+      "total_categories_bought": 57,
+      "online_categories_bought": 57,
+      "total_buy_cost": 103710.6
+    },
+    {
+      "company_name": "Hana Farms Inc.",
+      "account_id": "001VL00000Vp156YAB",
+      "total_categories_bought": 15,
+      "online_categories_bought": 3,
+      "total_buy_cost": 102489.37
+    },
+    {
+      "company_name": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+      "account_id": "0014p0000220OCmAAM",
+      "total_categories_bought": 43,
+      "online_categories_bought": 43,
+      "total_buy_cost": 101582.74
+    },
+    {
+      "company_name": "VELDKAMP'S FLOWERS",
+      "account_id": "0014p000022HSNzAAO",
+      "total_categories_bought": 44,
+      "online_categories_bought": 43,
+      "total_buy_cost": 96521.52
+    },
+    {
+      "company_name": "National Floral Supply",
+      "account_id": "0011L00002WOu1fQAD",
+      "total_categories_bought": 55,
+      "online_categories_bought": 0,
+      "total_buy_cost": 92625.95
+    },
+    {
+      "company_name": "CHICAGO'S WHOLESALE",
+      "account_id": "0014p000022EYvBAAW",
+      "total_categories_bought": 54,
+      "online_categories_bought": 54,
+      "total_buy_cost": 91820.95
+    },
+    {
+      "company_name": "Fletch Wholesale llc",
+      "account_id": "0014p00001so6ueAAA",
+      "total_categories_bought": 58,
+      "online_categories_bought": 58,
+      "total_buy_cost": 89560.1
+    },
+    {
+      "company_name": "Megaflor USA",
+      "account_id": "001VL000001pKqXYAU",
+      "total_categories_bought": 15,
+      "online_categories_bought": 1,
+      "total_buy_cost": 85477.46
+    },
+    {
+      "company_name": "Price's Floral Wholesale, LLC",
+      "account_id": "0014p000022EYtaAAG",
+      "total_categories_bought": 67,
+      "online_categories_bought": 67,
+      "total_buy_cost": 84416.05
+    },
+    {
+      "company_name": "Torchio Nursery",
+      "account_id": "0011600001uSU5jAAG",
+      "total_categories_bought": 36,
+      "online_categories_bought": 35,
+      "total_buy_cost": 84381.86
+    },
+    {
+      "company_name": "IRIS ROSES LLC",
+      "account_id": "0014p00001v3oKUAAY",
+      "total_categories_bought": 3,
+      "online_categories_bought": 0,
+      "total_buy_cost": 80750.6
+    },
+    {
+      "company_name": "PETALS WEST, INC.",
+      "account_id": "001G000001K8yfgIAB",
+      "total_categories_bought": 55,
+      "online_categories_bought": 55,
+      "total_buy_cost": 79112.34
+    },
+    {
+      "company_name": "POPPIES DESIGN STUDIO, LLC",
+      "account_id": "0011L000029kBhZQAU",
+      "total_categories_bought": 42,
+      "online_categories_bought": 42,
+      "total_buy_cost": 78640.68
+    },
+    {
+      "company_name": "BOTANICA WHSLE FLORIST-HOUSTON",
+      "account_id": "001VL00000RiggjYAB",
+      "total_categories_bought": 43,
+      "online_categories_bought": 43,
+      "total_buy_cost": 76996.85
+    },
+    {
+      "company_name": "CANTIZA FLORAL DBA NFD",
+      "account_id": "0011L00002rFEJwQAO",
+      "total_categories_bought": 3,
+      "online_categories_bought": 0,
+      "total_buy_cost": 75278.9
+    },
+    {
+      "company_name": "Tristate Wholesale Florist",
+      "account_id": "001VL000003KcH9YAK",
+      "total_categories_bought": 58,
+      "online_categories_bought": 58,
+      "total_buy_cost": 74952.37
+    },
+    {
+      "company_name": "Ontario Flower Growers Cooperative Ltd.",
+      "account_id": "0011L000029kgNZQAY",
+      "total_categories_bought": 28,
+      "online_categories_bought": 1,
+      "total_buy_cost": 74847.92
+    },
+    {
+      "company_name": "ALLIANCE FLORAL COMPANY. 6270",
+      "account_id": "0011L00002ICyF3QAL",
+      "total_categories_bought": 22,
+      "online_categories_bought": 22,
+      "total_buy_cost": 74828.92
+    },
+    {
+      "company_name": "EQ Blooms by Flodecol",
+      "account_id": "0011600001lgrcKAAQ",
+      "total_categories_bought": 2,
+      "online_categories_bought": 0,
+      "total_buy_cost": 74175.62
+    },
+    {
+      "company_name": "EPIC FARMS USA LLC",
+      "account_id": "0011600001zrCXXAA2",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 71212.08
+    },
+    {
+      "company_name": "UNITED WHOLESALE- FFL ENTERPRISES",
+      "account_id": "0011600001mKVtUAAW",
+      "total_categories_bought": 43,
+      "online_categories_bought": 42,
+      "total_buy_cost": 65686.14
+    },
+    {
+      "company_name": "Honey Bee Wholesale Florist, LLC",
+      "account_id": "0014p000022R9RlAAK",
+      "total_categories_bought": 56,
+      "online_categories_bought": 56,
+      "total_buy_cost": 64231.44
+    },
+    {
+      "company_name": "Exclusive Wholesale",
+      "account_id": "0011600001uSZXFAA4",
+      "total_categories_bought": 59,
+      "online_categories_bought": 58,
+      "total_buy_cost": 64171.14
+    },
+    {
+      "company_name": "Rokay Floral",
+      "account_id": "0011L00001zzDSCQA2",
+      "total_categories_bought": 51,
+      "online_categories_bought": 51,
+      "total_buy_cost": 63756.69
+    },
+    {
+      "company_name": "Wellington Florist",
+      "account_id": "0014p00001ycDwZAAU",
+      "total_categories_bought": 55,
+      "online_categories_bought": 54,
+      "total_buy_cost": 60555.99
+    },
+    {
+      "company_name": "Flowerist LLC",
+      "account_id": "001VL00000HrwgpYAB",
+      "total_categories_bought": 3,
+      "online_categories_bought": 0,
+      "total_buy_cost": 60347.1
+    },
+    {
+      "company_name": "MAGNOLIA HOLDINGS 301 LLC ABSOLUTELY BEAUTIFUL FLOWERS",
+      "account_id": "001VL00000HVuQvYAL",
+      "total_categories_bought": 40,
+      "online_categories_bought": 39,
+      "total_buy_cost": 60097.53
+    },
+    {
+      "company_name": "POSIES TRUCK",
+      "account_id": "001VL000001CXvhYAG",
+      "total_categories_bought": 45,
+      "online_categories_bought": 45,
+      "total_buy_cost": 59991.09
+    },
+    {
+      "company_name": "Hoja Verde - Rosen Financial",
+      "account_id": "001VL000007zem5YAA",
+      "total_categories_bought": 15,
+      "online_categories_bought": 0,
+      "total_buy_cost": 58875.31
+    },
+    {
+      "company_name": "Magnolia Wholesale Florist Inc",
+      "account_id": "0014p00001z9zUXAAY",
+      "total_categories_bought": 53,
+      "online_categories_bought": 53,
+      "total_buy_cost": 58734.56
+    },
+    {
+      "company_name": "Sieck Wright Floral Products",
+      "account_id": "0014p000020tateAAA",
+      "total_categories_bought": 43,
+      "online_categories_bought": 42,
+      "total_buy_cost": 58602.19
+    },
+    {
+      "company_name": "Hartford Florist Supply",
+      "account_id": "001G000001TtIBxIAN",
+      "total_categories_bought": 47,
+      "online_categories_bought": 47,
+      "total_buy_cost": 56980.69
+    },
+    {
+      "company_name": "The Flower Emporium LLC",
+      "account_id": "0014p0000220MfNAAU",
+      "total_categories_bought": 42,
+      "online_categories_bought": 32,
+      "total_buy_cost": 56761.78
+    },
+    {
+      "company_name": "MGA Flowers",
+      "account_id": "0011L00002aTOTFQA4",
+      "total_categories_bought": 3,
+      "online_categories_bought": 0,
+      "total_buy_cost": 54925.13
+    },
+    {
+      "company_name": "Sierra Flower Trading",
+      "account_id": "0011L000028F0KvQAK",
+      "total_categories_bought": 54,
+      "online_categories_bought": 54,
+      "total_buy_cost": 53322.84
+    },
+    {
+      "company_name": "Gassafy Wholesale Florist Inc",
+      "account_id": "0011600001lfVtAAAU",
+      "total_categories_bought": 44,
+      "online_categories_bought": 44,
+      "total_buy_cost": 50168.13
+    },
+    {
+      "company_name": "Global Flowers",
+      "account_id": "001160000223WK5AAM",
+      "total_categories_bought": 15,
+      "online_categories_bought": 0,
+      "total_buy_cost": 50141.78
+    },
+    {
+      "company_name": "Webb's Wholesale Florist",
+      "account_id": "0011600001uSkF3AAK",
+      "total_categories_bought": 41,
+      "online_categories_bought": 41,
+      "total_buy_cost": 49123.41
+    },
+    {
+      "company_name": "Fleurametz USA NYC",
+      "account_id": "001VL00000JGRHRYA5",
+      "total_categories_bought": 43,
+      "online_categories_bought": 43,
+      "total_buy_cost": 48781.79
+    },
+    {
+      "company_name": "San Jose Floral",
+      "account_id": "001VL00000hSd5hYAC",
+      "total_categories_bought": 38,
+      "online_categories_bought": 0,
+      "total_buy_cost": 47441.46
+    },
+    {
+      "company_name": "Arizona Floral Exchange",
+      "account_id": "0011600001mLcyvAAC",
+      "total_categories_bought": 45,
+      "online_categories_bought": 44,
+      "total_buy_cost": 46729.73
+    },
+    {
+      "company_name": "Washington Floral Service, Inc",
+      "account_id": "00116000021BDnbAAG",
+      "total_categories_bought": 47,
+      "online_categories_bought": 47,
+      "total_buy_cost": 45847.23
+    },
+    {
+      "company_name": "Len Busch Roses",
+      "account_id": "001G000001DW4QnIAL",
+      "total_categories_bought": 39,
+      "online_categories_bought": 39,
+      "total_buy_cost": 44431.68
+    },
+    {
+      "company_name": "ADEESE FLOWERS LLC",
+      "account_id": "001VL00000ehkNEYAY",
+      "total_categories_bought": 24,
+      "online_categories_bought": 0,
+      "total_buy_cost": 43164.3
+    },
+    {
+      "company_name": "Star Roses",
+      "account_id": "001VL00000Pl0XeYAJ",
+      "total_categories_bought": 3,
+      "online_categories_bought": 0,
+      "total_buy_cost": 40784.0
+    },
+    {
+      "company_name": "Multiflora Corporation",
+      "account_id": "001G000001f8bp1IAA",
+      "total_categories_bought": 13,
+      "online_categories_bought": 0,
+      "total_buy_cost": 40449.47
+    },
+    {
+      "company_name": "Valle Verde LLC",
+      "account_id": "001VL0000077mLdYAI",
+      "total_categories_bought": 2,
+      "online_categories_bought": 0,
+      "total_buy_cost": 39417.0
+    },
+    {
+      "company_name": "BRIEGER WHSLE -TX.",
+      "account_id": "001G000001TsMbNIAV",
+      "total_categories_bought": 50,
+      "online_categories_bought": 50,
+      "total_buy_cost": 36801.74
+    },
+    {
+      "company_name": "POTOMAC WHSLE",
+      "account_id": "0011600001uSjmkAAC",
+      "total_categories_bought": 24,
+      "online_categories_bought": 24,
+      "total_buy_cost": 35542.9
+    },
+    {
+      "company_name": "GRUPO DEL PACIFICO",
+      "account_id": "0011L00002IDjZOQA1",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 35040.0
+    },
+    {
+      "company_name": "MRS. BLOOM'S DIRECT, INC.",
+      "account_id": "001G000001DW4S5IAL",
+      "total_categories_bought": 27,
+      "online_categories_bought": 27,
+      "total_buy_cost": 33970.65
+    },
+    {
+      "company_name": "Dreisbach Wholesale",
+      "account_id": "001G000001DW4PBIA1",
+      "total_categories_bought": 39,
+      "online_categories_bought": 39,
+      "total_buy_cost": 33017.43
+    },
+    {
+      "company_name": "San Antonio Flower CO",
+      "account_id": "001160000276kVxAAI",
+      "total_categories_bought": 55,
+      "online_categories_bought": 52,
+      "total_buy_cost": 31969.57
+    },
+    {
+      "company_name": "Louisiana Wholesale Florist",
+      "account_id": "001G000001TsFyvIAF",
+      "total_categories_bought": 44,
+      "online_categories_bought": 44,
+      "total_buy_cost": 28314.0
+    },
+    {
+      "company_name": "HANAYA FARMS",
+      "account_id": "00116000025sMRVAA2",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 27503.3
+    },
+    {
+      "company_name": "Frank Adams Wholesale Florist",
+      "account_id": "0011600001uTH0wAAG",
+      "total_categories_bought": 41,
+      "online_categories_bought": 41,
+      "total_buy_cost": 26555.03
+    },
+    {
+      "company_name": "Mellano Sales",
+      "account_id": "001G000001DW4R5IAL",
+      "total_categories_bought": 25,
+      "online_categories_bought": 24,
+      "total_buy_cost": 25877.97
+    },
+    {
+      "company_name": "The Oklahoma Flower Market",
+      "account_id": "001G000001TsIX2IAN",
+      "total_categories_bought": 40,
+      "online_categories_bought": 40,
+      "total_buy_cost": 25549.35
+    },
+    {
+      "company_name": "Valley Floral Co. of OKC - Oklahoma",
+      "account_id": "0011L00002KVe1mQAD",
+      "total_categories_bought": 27,
+      "online_categories_bought": 27,
+      "total_buy_cost": 24996.92
+    },
+    {
+      "company_name": "DC FLOWERS DIRECT",
+      "account_id": "0014p000020wmRFAAY",
+      "total_categories_bought": 37,
+      "online_categories_bought": 37,
+      "total_buy_cost": 24048.65
+    },
+    {
+      "company_name": "Rose Runners",
+      "account_id": "001VL00000OLqk9YAD",
+      "total_categories_bought": 21,
+      "online_categories_bought": 15,
+      "total_buy_cost": 23793.58
+    },
+    {
+      "company_name": "HIRE'S BEST FLOWERS",
+      "account_id": "0011600001uSd7yAAC",
+      "total_categories_bought": 41,
+      "online_categories_bought": 41,
+      "total_buy_cost": 23148.78
+    },
+    {
+      "company_name": "Lubbock Wholesale",
+      "account_id": "001G000001TsGEcIAN",
+      "total_categories_bought": 35,
+      "online_categories_bought": 35,
+      "total_buy_cost": 23030.02
+    },
+    {
+      "company_name": "Younger & Son Inc",
+      "account_id": "001VL00000k6ul2YAA",
+      "total_categories_bought": 33,
+      "online_categories_bought": 33,
+      "total_buy_cost": 22734.76
+    },
+    {
+      "company_name": "First Choice Floral",
+      "account_id": "00116000026WSexAAG",
+      "total_categories_bought": 17,
+      "online_categories_bought": 13,
+      "total_buy_cost": 22435.62
+    },
+    {
+      "company_name": "Details Direct - Core",
+      "account_id": "00116000020OMNhAAO",
+      "total_categories_bought": 35,
+      "online_categories_bought": 35,
+      "total_buy_cost": 21754.19
+    },
+    {
+      "company_name": "FGS.Flowers.MIA",
+      "account_id": "001VL00000jjhrhYAA",
+      "total_categories_bought": 22,
+      "online_categories_bought": 0,
+      "total_buy_cost": 20239.74
+    },
+    {
+      "company_name": "FleuraMetz Montreal Ltd",
+      "account_id": "001VL00000KKWD8YAP",
+      "total_categories_bought": 41,
+      "online_categories_bought": 41,
+      "total_buy_cost": 19220.23
+    },
+    {
+      "company_name": "The Flowerman, Inc.",
+      "account_id": "001G000001TsJVrIAN",
+      "total_categories_bought": 29,
+      "online_categories_bought": 28,
+      "total_buy_cost": 19104.39
+    },
+    {
+      "company_name": "Coquette Roses",
+      "account_id": "001VL00000bzq64YAA",
+      "total_categories_bought": 9,
+      "online_categories_bought": 0,
+      "total_buy_cost": 17214.95
+    },
+    {
+      "company_name": "Flores Silvestres",
+      "account_id": "0011600001uRrj9AAC",
+      "total_categories_bought": 15,
+      "online_categories_bought": 0,
+      "total_buy_cost": 17115.6
+    },
+    {
+      "company_name": "AD TRADING CORP.DBA AD FLORAL TRADI",
+      "account_id": "001G000001V5Q2WIAV",
+      "total_categories_bought": 26,
+      "online_categories_bought": 0,
+      "total_buy_cost": 16505.83
+    },
+    {
+      "company_name": "Sofi's Flowers",
+      "account_id": "001G000001DW4T1IAL",
+      "total_categories_bought": 17,
+      "online_categories_bought": 11,
+      "total_buy_cost": 16446.1
+    },
+    {
+      "company_name": "Kontikiflor BV",
+      "account_id": "001VL00000PwohBYAR",
+      "total_categories_bought": 24,
+      "online_categories_bought": 0,
+      "total_buy_cost": 16431.97
+    },
+    {
+      "company_name": "Avon Valley Floral",
+      "account_id": "001G000001DW4OGIA1",
+      "total_categories_bought": 12,
+      "online_categories_bought": 2,
+      "total_buy_cost": 15944.72
+    },
+    {
+      "company_name": "Lartisan Roses LLC",
+      "account_id": "001VL00000n94eUYAQ",
+      "total_categories_bought": 3,
+      "online_categories_bought": 0,
+      "total_buy_cost": 14861.75
+    },
+    {
+      "company_name": "Mideast Flowers Distributors, Inc.",
+      "account_id": "001VL00000HW91gYAD",
+      "total_categories_bought": 37,
+      "online_categories_bought": 37,
+      "total_buy_cost": 14803.16
+    },
+    {
+      "company_name": "ACME Testing, Inc.",
+      "account_id": "0011L00002fOHhdQAG",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 13876.0
+    },
+    {
+      "company_name": "EF FLOWERS",
+      "account_id": "001G000001DW4PPIA1",
+      "total_categories_bought": 3,
+      "online_categories_bought": 0,
+      "total_buy_cost": 13048.55
+    },
+    {
+      "company_name": "CALI WHOLESALE.-CA",
+      "account_id": "0011L00002IE8YMQA1",
+      "total_categories_bought": 12,
+      "online_categories_bought": 0,
+      "total_buy_cost": 11036.85
+    },
+    {
+      "company_name": "Quinlan-Wasserman, Inc",
+      "account_id": "001G000001TsIedIAF",
+      "total_categories_bought": 30,
+      "online_categories_bought": 30,
+      "total_buy_cost": 10493.27
+    },
+    {
+      "company_name": "Floral Cooperative Purchasing Group LLC",
+      "account_id": "001G000001Tssa3IAB",
+      "total_categories_bought": 6,
+      "online_categories_bought": 0,
+      "total_buy_cost": 10423.4
+    },
+    {
+      "company_name": "Hyperactive Farms Inc.",
+      "account_id": "0011L00002eqDgTQAU",
+      "total_categories_bought": 13,
+      "online_categories_bought": 11,
+      "total_buy_cost": 9872.86
+    },
+    {
+      "company_name": "FleuraMetz LA",
+      "account_id": "001VL00000L1QR0YAN",
+      "total_categories_bought": 26,
+      "online_categories_bought": 26,
+      "total_buy_cost": 9746.2
+    },
+    {
+      "company_name": "Everflorals",
+      "account_id": "001VL00000gB1JzYAK",
+      "total_categories_bought": 2,
+      "online_categories_bought": 0,
+      "total_buy_cost": 8199.5
+    },
+    {
+      "company_name": "Flores de la Hacienda",
+      "account_id": "0014p00001zAFqOAAW",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 7526.03
+    },
+    {
+      "company_name": "Royal Flowers Inc, International",
+      "account_id": "001G000001DXD6JIAX",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 7446.4
+    },
+    {
+      "company_name": "Florens Group LLC",
+      "account_id": "001VL00000ndtN0YAI",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 7158.14
+    },
+    {
+      "company_name": "FloraCo, Inc",
+      "account_id": "0011L000029aO9sQAE",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 7125.6
+    },
+    {
+      "company_name": "Details Direct",
+      "account_id": "001VL00000q86lRYAQ",
+      "total_categories_bought": 19,
+      "online_categories_bought": 19,
+      "total_buy_cost": 6923.43
+    },
+    {
+      "company_name": "Faguaflowers Intl LLC",
+      "account_id": "0014p000022FEx7AAG",
+      "total_categories_bought": 20,
+      "online_categories_bought": 20,
+      "total_buy_cost": 6613.2
+    },
+    {
+      "company_name": "FMI, LLC.-FL",
+      "account_id": "001G000001bQpeJIAS",
+      "total_categories_bought": 28,
+      "online_categories_bought": 28,
+      "total_buy_cost": 5937.7
+    },
+    {
+      "company_name": "Taylor Wholesale Florist",
+      "account_id": "001G000001TsJNiIAN",
+      "total_categories_bought": 24,
+      "online_categories_bought": 24,
+      "total_buy_cost": 5735.11
+    },
+    {
+      "company_name": "FLORIAD- MONTREAL CANADA INC.",
+      "account_id": "001G000001DW4PkIAL",
+      "total_categories_bought": 17,
+      "online_categories_bought": 15,
+      "total_buy_cost": 5664.44
+    },
+    {
+      "company_name": "Floropolis",
+      "account_id": "001VL00000bryvBYAQ",
+      "total_categories_bought": 12,
+      "online_categories_bought": 12,
+      "total_buy_cost": 5206.96
+    },
+    {
+      "company_name": "International Fresh Group LLC",
+      "account_id": "0014p000022Vab1AAC",
+      "total_categories_bought": 14,
+      "online_categories_bought": 0,
+      "total_buy_cost": 5127.31
+    },
+    {
+      "company_name": "Nova Packaging Solutions, Inc.",
+      "account_id": "001VL00000TUGt3YAH",
+      "total_categories_bought": 25,
+      "online_categories_bought": 3,
+      "total_buy_cost": 4839.12
+    },
+    {
+      "company_name": "Universal Flower Farms Inc.",
+      "account_id": "001VL00000jkf6KYAQ",
+      "total_categories_bought": 10,
+      "online_categories_bought": 0,
+      "total_buy_cost": 4745.0
+    },
+    {
+      "company_name": "MAHONEYS ROCKY LEDGE FARM &",
+      "account_id": "001VL00000YmEOTYA3",
+      "total_categories_bought": 12,
+      "online_categories_bought": 1,
+      "total_buy_cost": 4548.6
+    },
+    {
+      "company_name": "Flowers by Fudgie, Inc",
+      "account_id": "001VL00000HW85ZYAT",
+      "total_categories_bought": 15,
+      "online_categories_bought": 0,
+      "total_buy_cost": 4541.06
+    },
+    {
+      "company_name": "STRANGE'S FLORIST, INC.",
+      "account_id": "0014p000022EZ85AAG",
+      "total_categories_bought": 13,
+      "online_categories_bought": 13,
+      "total_buy_cost": 3820.69
+    },
+    {
+      "company_name": "LIHML INC Fayetteville",
+      "account_id": "001G000001DW4QoIAL",
+      "total_categories_bought": 13,
+      "online_categories_bought": 9,
+      "total_buy_cost": 3549.94
+    },
+    {
+      "company_name": "Hortensias Cabogana Cia Ltda",
+      "account_id": "001VL000005qn9pYAA",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 3307.0
+    },
+    {
+      "company_name": "U.S. Greens Corp",
+      "account_id": "0011600001ygzykAAA",
+      "total_categories_bought": 5,
+      "online_categories_bought": 5,
+      "total_buy_cost": 3021.55
+    },
+    {
+      "company_name": "Bellaflor Group Inc.",
+      "account_id": "001G000001DW4OLIA1",
+      "total_categories_bought": 3,
+      "online_categories_bought": 0,
+      "total_buy_cost": 3003.02
+    },
+    {
+      "company_name": "South Carolina Specialty Cut",
+      "account_id": "001G000001TsJj3IAF",
+      "total_categories_bought": 11,
+      "online_categories_bought": 11,
+      "total_buy_cost": 2407.32
+    },
+    {
+      "company_name": "UNIVERSAL FLOWER SERVICE CORP",
+      "account_id": "001VL00000baxM1YAI",
+      "total_categories_bought": 12,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2406.0
+    },
+    {
+      "company_name": "TWI SON HARRISON WHOLESALE FLORAL",
+      "account_id": "0011600001uSczfAAC",
+      "total_categories_bought": 3,
+      "online_categories_bought": 0,
+      "total_buy_cost": 2308.18
+    },
+    {
+      "company_name": "Coward & Glisson Whsl. Flst.",
+      "account_id": "001G000001buCmhIAE",
+      "total_categories_bought": 6,
+      "online_categories_bought": 6,
+      "total_buy_cost": 2085.08
+    },
+    {
+      "company_name": "Allied Cut Flower",
+      "account_id": "00116000020OCgLAAW",
+      "total_categories_bought": 9,
+      "online_categories_bought": 9,
+      "total_buy_cost": 1719.95
+    },
+    {
+      "company_name": "KD & Company",
+      "account_id": "00116000027KCBbAAO",
+      "total_categories_bought": 16,
+      "online_categories_bought": 16,
+      "total_buy_cost": 1604.07
+    },
+    {
+      "company_name": "Servicios Chilfresh Ltda.",
+      "account_id": "001G000001DW4OkIAL",
+      "total_categories_bought": 3,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1412.0
+    },
+    {
+      "company_name": "WESTWOOD FLORIST",
+      "account_id": "0014p0000220KQkAAM",
+      "total_categories_bought": 7,
+      "online_categories_bought": 0,
+      "total_buy_cost": 1296.31
+    },
+    {
+      "company_name": "Las Vegas Floral Wholesale",
+      "account_id": "001G000001TsE8iIAF",
+      "total_categories_bought": 5,
+      "online_categories_bought": 5,
+      "total_buy_cost": 1229.9
+    },
+    {
+      "company_name": "Floral Importers and Distributors Inc. /Buds",
+      "account_id": "0014p0000220SneAAE",
+      "total_categories_bought": 7,
+      "online_categories_bought": 7,
+      "total_buy_cost": 1063.38
+    },
+    {
+      "company_name": "FALL RIVER WHOLESALE",
+      "account_id": "001G000001DW4PQIA1",
+      "total_categories_bought": 4,
+      "online_categories_bought": 4,
+      "total_buy_cost": 665.01
+    },
+    {
+      "company_name": "ACA Flowers",
+      "account_id": "001G000001a07MXIAY",
+      "total_categories_bought": 2,
+      "online_categories_bought": 2,
+      "total_buy_cost": 608.03
+    },
+    {
+      "company_name": "* AquaRose",
+      "account_id": "0011L00002Y8j3vQAB",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 540.0
+    },
+    {
+      "company_name": "Littlefloyd Investments, LLC",
+      "account_id": "001VL00000HHz7rYAD",
+      "total_categories_bought": 4,
+      "online_categories_bought": 4,
+      "total_buy_cost": 480.57
+    },
+    {
+      "company_name": "Mikes Finest Wholesale Flowers, Inc.",
+      "account_id": "001G000001TsGfBIAV",
+      "total_categories_bought": 5,
+      "online_categories_bought": 5,
+      "total_buy_cost": 447.84
+    },
+    {
+      "company_name": "Hall's Wholesale Florist Theodore",
+      "account_id": "0011600001lfdddAAA",
+      "total_categories_bought": 4,
+      "online_categories_bought": 4,
+      "total_buy_cost": 407.5
+    },
+    {
+      "company_name": "Cataleya Flowers D&A",
+      "account_id": "001VL00000UN5fFYAT",
+      "total_categories_bought": 1,
+      "online_categories_bought": 1,
+      "total_buy_cost": 276.0
+    },
+    {
+      "company_name": "FLEURIGROS QUEBEC 1995 INC.",
+      "account_id": "0014p000022WUhzAAG",
+      "total_categories_bought": 1,
+      "online_categories_bought": 1,
+      "total_buy_cost": 204.0
+    },
+    {
+      "company_name": "McCarthy Wholesale",
+      "account_id": "001VL00000YlWTzYAN",
+      "total_categories_bought": 2,
+      "online_categories_bought": 1,
+      "total_buy_cost": 144.4
+    },
+    {
+      "company_name": "FreshLink",
+      "account_id": "001VL00000A5ntfYAB",
+      "total_categories_bought": 2,
+      "online_categories_bought": 0,
+      "total_buy_cost": 135.62
+    },
+    {
+      "company_name": "KRUEGER WHOLESALE PROMO",
+      "account_id": "0011600001uSdIzAAK",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 134.0
+    },
+    {
+      "company_name": "American Agroproducts",
+      "account_id": "001G000001IYgNpIAL",
+      "total_categories_bought": 2,
+      "online_categories_bought": 2,
+      "total_buy_cost": 126.4
+    },
+    {
+      "company_name": "Esprit Salt Lake, Inc",
+      "account_id": "0011600001uSZVYAA4",
+      "total_categories_bought": 2,
+      "online_categories_bought": 2,
+      "total_buy_cost": 105.0
+    },
+    {
+      "company_name": "Specialty Cut Flowers",
+      "account_id": "0014p000022EYjsAAG",
+      "total_categories_bought": 1,
+      "online_categories_bought": 1,
+      "total_buy_cost": 100.0
+    },
+    {
+      "company_name": "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN",
+      "account_id": "0011600001zVU4vAAG",
+      "total_categories_bought": 1,
+      "online_categories_bought": 1,
+      "total_buy_cost": 78.68
+    },
+    {
+      "company_name": "Derita Floral Floral Supply Co",
+      "account_id": "001VL00000LVfPRYA1",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 44.8
+    },
+    {
+      "company_name": "Pacifica Farms - CAL",
+      "account_id": "0011L00002KYI4OQAX",
+      "total_categories_bought": 1,
+      "online_categories_bought": 0,
+      "total_buy_cost": 0.1
+    },
+    {
+      "company_name": "Kennicott Kuts",
+      "account_id": "001G000001DW4QdIAL",
+      "total_categories_bought": 5,
+      "online_categories_bought": 0,
+      "total_buy_cost": 0.0
+    }
+  ],
+  "sell_coverage": [
+    {
+      "company_name": "Mayesh Wholesale Florist Inc",
+      "account_id": "001G000001DW4R3IAL",
+      "total_categories_sold": 568,
+      "online_categories_sold": 412,
+      "total_sell_gmv": 94070260.15
+    },
+    {
+      "company_name": "Kennicott Brothers Company",
+      "account_id": "001G000001H3CrIIAV",
+      "total_categories_sold": 71,
+      "online_categories_sold": 67,
+      "total_sell_gmv": 64056608.75
+    },
+    {
+      "company_name": "Bill Doran Company",
+      "account_id": "001G000001DVt5TIAT",
+      "total_categories_sold": 140,
+      "online_categories_sold": 114,
+      "total_sell_gmv": 61450119.83
+    },
+    {
+      "company_name": "Rosaprima International, LLC",
+      "account_id": "001G000001DW4SoIAL",
+      "total_categories_sold": 14,
+      "online_categories_sold": 9,
+      "total_sell_gmv": 54246054.0
+    },
+    {
+      "company_name": "EQR USA",
+      "account_id": "001G000001DW4PKIA1",
+      "total_categories_sold": 78,
+      "online_categories_sold": 15,
+      "total_sell_gmv": 44626200.15
+    },
+    {
+      "company_name": "Fresca Farms",
+      "account_id": "001G000001DW4PzIAL",
+      "total_categories_sold": 108,
+      "online_categories_sold": 90,
+      "total_sell_gmv": 37543588.44
+    },
+    {
+      "company_name": "-Sole Farms",
+      "account_id": "001G000001DW4T2IAL",
+      "total_categories_sold": 64,
+      "online_categories_sold": 60,
+      "total_sell_gmv": 31103531.46
+    },
+    {
+      "company_name": "* Jet Fresh Flower Distributors Inc.",
+      "account_id": "001G000001DW4QWIA1",
+      "total_categories_sold": 472,
+      "online_categories_sold": 365,
+      "total_sell_gmv": 29365986.87
+    },
+    {
+      "company_name": "Continental Floral LLC",
+      "account_id": "001G000001DW4OtIAL",
+      "total_categories_sold": 20,
+      "online_categories_sold": 9,
+      "total_sell_gmv": 20893513.73
+    },
+    {
+      "company_name": "Brightland Farms",
+      "account_id": "001G000001DW4OWIA1",
+      "total_categories_sold": 42,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 20563079.9
+    },
+    {
+      "company_name": "Gala Roses",
+      "account_id": "001G000001DW4PFIA1",
+      "total_categories_sold": 24,
+      "online_categories_sold": 21,
+      "total_sell_gmv": 20421839.62
+    },
+    {
+      "company_name": "Legacy Flowers",
+      "account_id": "001G000001DW4QmIAL",
+      "total_categories_sold": 89,
+      "online_categories_sold": 39,
+      "total_sell_gmv": 15520656.26
+    },
+    {
+      "company_name": "Sunburst Farms",
+      "account_id": "001G000001DW4TAIA1",
+      "total_categories_sold": 149,
+      "online_categories_sold": 119,
+      "total_sell_gmv": 13509092.01
+    },
+    {
+      "company_name": "Royal Flowers Inc., Domestic",
+      "account_id": "001G000001DW4SpIAL",
+      "total_categories_sold": 79,
+      "online_categories_sold": 67,
+      "total_sell_gmv": 12961107.51
+    },
+    {
+      "company_name": "Valley Springs LLC",
+      "account_id": "001G000001DW4QOIA1",
+      "total_categories_sold": 38,
+      "online_categories_sold": 15,
+      "total_sell_gmv": 12379126.87
+    },
+    {
+      "company_name": "* Welyflor / PROFILE FLOWERS",
+      "account_id": "001160000221mrNAAQ",
+      "total_categories_sold": 2,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 10190049.7
+    },
+    {
+      "company_name": "Allure Farms",
+      "account_id": "001G000001DW4OuIAL",
+      "total_categories_sold": 122,
+      "online_categories_sold": 107,
+      "total_sell_gmv": 10018481.9
+    },
+    {
+      "company_name": "Florimex Toronto Corp.",
+      "account_id": "0011L000027XBWKQA4",
+      "total_categories_sold": 79,
+      "online_categories_sold": 33,
+      "total_sell_gmv": 8099182.84
+    },
+    {
+      "company_name": "Melody Farms LLC",
+      "account_id": "001G000001DW4R6IAL",
+      "total_categories_sold": 72,
+      "online_categories_sold": 63,
+      "total_sell_gmv": 7788639.29
+    },
+    {
+      "company_name": "Choice Farms",
+      "account_id": "001G000001DW4OlIAL",
+      "total_categories_sold": 56,
+      "online_categories_sold": 46,
+      "total_sell_gmv": 7529089.53
+    },
+    {
+      "company_name": "KBC Cooler Account",
+      "account_id": "001G000001aIv6EIAS",
+      "total_categories_sold": 54,
+      "online_categories_sold": 39,
+      "total_sell_gmv": 7344391.64
+    },
+    {
+      "company_name": "Galleria Farms",
+      "account_id": "001G000001bpcuyIAA",
+      "total_categories_sold": 56,
+      "online_categories_sold": 46,
+      "total_sell_gmv": 6388236.1
+    },
+    {
+      "company_name": "Del Tropico/ Ameriblooms",
+      "account_id": "001VL00000IFWlxYAH",
+      "total_categories_sold": 45,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 6322008.71
+    },
+    {
+      "company_name": "Dramm & Echter, Inc",
+      "account_id": "001G000001DW4PAIA1",
+      "total_categories_sold": 12,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 6235563.95
+    },
+    {
+      "company_name": "Floral Chain Direct",
+      "account_id": "0011600001uUbL8AAK",
+      "total_categories_sold": 24,
+      "online_categories_sold": 23,
+      "total_sell_gmv": 5921677.32
+    },
+    {
+      "company_name": "Continental Floral PNW LLC",
+      "account_id": "0014p00001lOEl6AAG",
+      "total_categories_sold": 5,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 5811524.08
+    },
+    {
+      "company_name": "SUNRITE FARMS COLLECTIONS CORP",
+      "account_id": "0014p00001lNPUzAAO",
+      "total_categories_sold": 2,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 5783205.01
+    },
+    {
+      "company_name": "Flora Fresh Inc",
+      "account_id": "001G000001TsqcLIAR",
+      "total_categories_sold": 176,
+      "online_categories_sold": 71,
+      "total_sell_gmv": 5555141.27
+    },
+    {
+      "company_name": "Bella Blossom LLC",
+      "account_id": "001G000001DW4OKIA1",
+      "total_categories_sold": 80,
+      "online_categories_sold": 76,
+      "total_sell_gmv": 5443121.87
+    },
+    {
+      "company_name": "Nazcaflor USA, Inc",
+      "account_id": "001G000001DW4SGIA1",
+      "total_categories_sold": 17,
+      "online_categories_sold": 9,
+      "total_sell_gmv": 5175994.43
+    },
+    {
+      "company_name": "Continental Floral CA LLC",
+      "account_id": "0011L00002dFBf0QAG",
+      "total_categories_sold": 11,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 5141901.29
+    },
+    {
+      "company_name": "Farm To Canada",
+      "account_id": "001G000001DW4PTIA1",
+      "total_categories_sold": 46,
+      "online_categories_sold": 5,
+      "total_sell_gmv": 4965152.45
+    },
+    {
+      "company_name": "Gardens America Inc.",
+      "account_id": "001G000001DW4Q6IAL",
+      "total_categories_sold": 74,
+      "online_categories_sold": 55,
+      "total_sell_gmv": 4915876.77
+    },
+    {
+      "company_name": "Stellar Farms",
+      "account_id": "00116000026WjjWAAS",
+      "total_categories_sold": 84,
+      "online_categories_sold": 65,
+      "total_sell_gmv": 4808621.14
+    },
+    {
+      "company_name": "Pinnacle Flowers, LLC",
+      "account_id": "001G000001evx5aIAA",
+      "total_categories_sold": 166,
+      "online_categories_sold": 97,
+      "total_sell_gmv": 4720873.14
+    },
+    {
+      "company_name": "H&T Wholesale Flowers",
+      "account_id": "0011L00002p55GMQAY",
+      "total_categories_sold": 121,
+      "online_categories_sold": 44,
+      "total_sell_gmv": 4383545.39
+    },
+    {
+      "company_name": "A Trilogy Floral - Zamba Flowers",
+      "account_id": "001G000001DW4TQIA1",
+      "total_categories_sold": 109,
+      "online_categories_sold": 79,
+      "total_sell_gmv": 4330259.09
+    },
+    {
+      "company_name": "Direct Farms, LLC",
+      "account_id": "001G000001DW4P4IAL",
+      "total_categories_sold": 21,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 4260968.38
+    },
+    {
+      "company_name": "Ninfa Flowers",
+      "account_id": "001VL000001TMnmYAG",
+      "total_categories_sold": 74,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 4212349.51
+    },
+    {
+      "company_name": "GOMEZ B.V.",
+      "account_id": "0014p00001zanUFAAY",
+      "total_categories_sold": 12,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 4152592.14
+    },
+    {
+      "company_name": "Prime Petals LLC",
+      "account_id": "001G000001DW4SbIAL",
+      "total_categories_sold": 52,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 4127139.92
+    },
+    {
+      "company_name": "FloraLink",
+      "account_id": "0011600001ncRipAAE",
+      "total_categories_sold": 127,
+      "online_categories_sold": 127,
+      "total_sell_gmv": 3961009.98
+    },
+    {
+      "company_name": "Naranjo Farms LLC",
+      "account_id": "0011600001uRt3EAAS",
+      "total_categories_sold": 16,
+      "online_categories_sold": 7,
+      "total_sell_gmv": 3675918.22
+    },
+    {
+      "company_name": "Continental Flowers",
+      "account_id": "001G000001UTWVuIAP",
+      "total_categories_sold": 84,
+      "online_categories_sold": 84,
+      "total_sell_gmv": 3563249.74
+    },
+    {
+      "company_name": "FLEUPHORIA S.A.S",
+      "account_id": "0014p00001y6Ac0AAE",
+      "total_categories_sold": 8,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 3518939.5
+    },
+    {
+      "company_name": "Tropical Blooms Inc.",
+      "account_id": "0014p00001lORHxAAO",
+      "total_categories_sold": 107,
+      "online_categories_sold": 12,
+      "total_sell_gmv": 3470099.1
+    },
+    {
+      "company_name": "Muchflowers Inc.",
+      "account_id": "0011600001lg8CAAAY",
+      "total_categories_sold": 41,
+      "online_categories_sold": 31,
+      "total_sell_gmv": 3281043.9
+    },
+    {
+      "company_name": "Metro Flower Market LLC",
+      "account_id": "0011L000028TahoQAC",
+      "total_categories_sold": 144,
+      "online_categories_sold": 44,
+      "total_sell_gmv": 3260666.81
+    },
+    {
+      "company_name": "Ecuador's Origin Product",
+      "account_id": "0014p00001yqo0aAAA",
+      "total_categories_sold": 32,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 3170157.09
+    },
+    {
+      "company_name": "H&F Greens Inc (Mariposa Growers)",
+      "account_id": "00116000023rUnKAAU",
+      "total_categories_sold": 25,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 3056599.78
+    },
+    {
+      "company_name": "AmeriLink Floratrader",
+      "account_id": "001G000001DW4O5IAL",
+      "total_categories_sold": 40,
+      "online_categories_sold": 18,
+      "total_sell_gmv": 3045507.7
+    },
+    {
+      "company_name": "Miraflor LLC",
+      "account_id": "001VL00000DlwqkYAB",
+      "total_categories_sold": 46,
+      "online_categories_sold": 20,
+      "total_sell_gmv": 2985840.88
+    },
+    {
+      "company_name": "Green Bouquet LLC",
+      "account_id": "001VL00000GL2fAYAT",
+      "total_categories_sold": 61,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 2949232.45
+    },
+    {
+      "company_name": "WE GOT FLOWERS",
+      "account_id": "0011L000028TcCRQA0",
+      "total_categories_sold": 91,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 2927593.99
+    },
+    {
+      "company_name": "Continental Floral OR LLC",
+      "account_id": "0011L00002fOqChQAK",
+      "total_categories_sold": 1,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 2901756.94
+    },
+    {
+      "company_name": "Royal Flowers S.A",
+      "account_id": "00116000025JAqTAAW",
+      "total_categories_sold": 8,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 2809866.6
+    },
+    {
+      "company_name": "Orlando Wholesale Florist",
+      "account_id": "0011L00001zzDR9QAM",
+      "total_categories_sold": 152,
+      "online_categories_sold": 84,
+      "total_sell_gmv": 2801184.28
+    },
+    {
+      "company_name": "Anton Spaargaren B.V.",
+      "account_id": "0011600001zW56mAAC",
+      "total_categories_sold": 35,
+      "online_categories_sold": 27,
+      "total_sell_gmv": 2606734.01
+    },
+    {
+      "company_name": "Bill Doran Company (2)",
+      "account_id": "001G000001TtEaaIAF",
+      "total_categories_sold": 219,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 2429518.62
+    },
+    {
+      "company_name": "Cananvalle USA LLC",
+      "account_id": "0011600001lhZANAA2",
+      "total_categories_sold": 5,
+      "online_categories_sold": 4,
+      "total_sell_gmv": 2328424.39
+    },
+    {
+      "company_name": "SOS Floral",
+      "account_id": "001G000001DW4T3IAL",
+      "total_categories_sold": 72,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 2315408.49
+    },
+    {
+      "company_name": "Stemline Wholesale",
+      "account_id": "001VL00000V2gNuYAJ",
+      "total_categories_sold": 98,
+      "online_categories_sold": 29,
+      "total_sell_gmv": 2314108.41
+    },
+    {
+      "company_name": "INTERNATIONAL TRADING AND SERVICES INC",
+      "account_id": "0011600001uUw5EAAS",
+      "total_categories_sold": 15,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 2228984.61
+    },
+    {
+      "company_name": "Evergreen Plant Company",
+      "account_id": "0014p000021IdyjAAC",
+      "total_categories_sold": 17,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 2212746.62
+    },
+    {
+      "company_name": "Fair Trade Floral Inc.",
+      "account_id": "0011600001uUyJlAAK",
+      "total_categories_sold": 83,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 2188744.99
+    },
+    {
+      "company_name": "Mayta International LLC / Native Blooms",
+      "account_id": "0011L000026fmYoQAI",
+      "total_categories_sold": 23,
+      "online_categories_sold": 14,
+      "total_sell_gmv": 2114334.54
+    },
+    {
+      "company_name": "Protean Farms US",
+      "account_id": "001G000001DW4SfIAL",
+      "total_categories_sold": 49,
+      "online_categories_sold": 36,
+      "total_sell_gmv": 2018978.88
+    },
+    {
+      "company_name": "Bloomistics",
+      "account_id": "0011600001uRq3BAAS",
+      "total_categories_sold": 2,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 1924550.33
+    },
+    {
+      "company_name": "White Rose Flowers & Supplies Inc.",
+      "account_id": "001VL00000AsdReYAJ",
+      "total_categories_sold": 85,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1907705.84
+    },
+    {
+      "company_name": "JFS Wholesale Floral",
+      "account_id": "00116000021bflwAAA",
+      "total_categories_sold": 194,
+      "online_categories_sold": 5,
+      "total_sell_gmv": 1905074.38
+    },
+    {
+      "company_name": "Continental Floral FL LLC",
+      "account_id": "0011L00002dFBcfQAG",
+      "total_categories_sold": 5,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1904671.23
+    },
+    {
+      "company_name": "Natural Flowers, Inc",
+      "account_id": "0014p000020vycQAAQ",
+      "total_categories_sold": 57,
+      "online_categories_sold": 43,
+      "total_sell_gmv": 1817306.2
+    },
+    {
+      "company_name": "Arizona Family Florist",
+      "account_id": "00116000023rB8qAAE",
+      "total_categories_sold": 83,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1806117.15
+    },
+    {
+      "company_name": "**Wafex USA",
+      "account_id": "001G000001jjTb0IAE",
+      "total_categories_sold": 130,
+      "online_categories_sold": 55,
+      "total_sell_gmv": 1793959.81
+    },
+    {
+      "company_name": "AMORES FLORES INC",
+      "account_id": "0014p000020wFxeAAE",
+      "total_categories_sold": 67,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 1780623.73
+    },
+    {
+      "company_name": "Apex Floral Distributors Mississauga",
+      "account_id": "001G000001TsKPSIA3",
+      "total_categories_sold": 59,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1742429.39
+    },
+    {
+      "company_name": "U.S. Greens Corp",
+      "account_id": "0011600001ygzykAAA",
+      "total_categories_sold": 242,
+      "online_categories_sold": 242,
+      "total_sell_gmv": 1711279.45
+    },
+    {
+      "company_name": "National Floral Supply",
+      "account_id": "0011L00002WOu1fQAD",
+      "total_categories_sold": 93,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1675108.7
+    },
+    {
+      "company_name": "CONNECTION FLOWERS SAS",
+      "account_id": "0014p000021zpeLAAQ",
+      "total_categories_sold": 8,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1644150.62
+    },
+    {
+      "company_name": "Floreco, Inc",
+      "account_id": "001G000001DW4PgIAL",
+      "total_categories_sold": 75,
+      "online_categories_sold": 57,
+      "total_sell_gmv": 1611205.99
+    },
+    {
+      "company_name": "SKY FLOWERS S.A.S",
+      "account_id": "00116000023XoIIAA0",
+      "total_categories_sold": 12,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1596881.56
+    },
+    {
+      "company_name": "-Groflowers",
+      "account_id": "001G000001DW4QJIA1",
+      "total_categories_sold": 6,
+      "online_categories_sold": 4,
+      "total_sell_gmv": 1561470.34
+    },
+    {
+      "company_name": "Best Miami Growers LLC",
+      "account_id": "0011600001zFAH3AAO",
+      "total_categories_sold": 138,
+      "online_categories_sold": 54,
+      "total_sell_gmv": 1498433.67
+    },
+    {
+      "company_name": "Dr Delphinium",
+      "account_id": "0014p0000220O7wAAE",
+      "total_categories_sold": 60,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1435965.77
+    },
+    {
+      "company_name": "FLORISOL& CO FLOWER TRADING LLC DBA MARVEL FLOWERS",
+      "account_id": "001G000001V8C6jIAF",
+      "total_categories_sold": 62,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1426006.32
+    },
+    {
+      "company_name": "Sims Flower Distribution",
+      "account_id": "001VL000002uhlyYAA",
+      "total_categories_sold": 89,
+      "online_categories_sold": 62,
+      "total_sell_gmv": 1425574.28
+    },
+    {
+      "company_name": "Farms Connect",
+      "account_id": "0011L00002rEB34QAG",
+      "total_categories_sold": 55,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1422078.46
+    },
+    {
+      "company_name": "Farm Fresh Exports INC",
+      "account_id": "00116000020LCvJAAW",
+      "total_categories_sold": 124,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1353854.96
+    },
+    {
+      "company_name": "Servicios Chilfresh Ltda.",
+      "account_id": "001G000001DW4OkIAL",
+      "total_categories_sold": 18,
+      "online_categories_sold": 13,
+      "total_sell_gmv": 1349581.03
+    },
+    {
+      "company_name": "Multiflora Corporation",
+      "account_id": "001G000001f8bp1IAA",
+      "total_categories_sold": 81,
+      "online_categories_sold": 81,
+      "total_sell_gmv": 1345042.48
+    },
+    {
+      "company_name": "Moonlight Flowers",
+      "account_id": "001VL00000Pos6tYAB",
+      "total_categories_sold": 4,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 1325241.53
+    },
+    {
+      "company_name": "NY Floral Supply",
+      "account_id": "001VL00000GL9dQYAT",
+      "total_categories_sold": 81,
+      "online_categories_sold": 46,
+      "total_sell_gmv": 1300887.85
+    },
+    {
+      "company_name": "Greens and Flowers Connection",
+      "account_id": "0011L00002BInj0QAD",
+      "total_categories_sold": 27,
+      "online_categories_sold": 10,
+      "total_sell_gmv": 1288400.49
+    },
+    {
+      "company_name": "IKEBANA CO SAS",
+      "account_id": "0014p00001xzL4bAAE",
+      "total_categories_sold": 3,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1256587.41
+    },
+    {
+      "company_name": "RUMHORA GREENS LLC",
+      "account_id": "0011600001uRvGlAAK",
+      "total_categories_sold": 8,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 1243663.55
+    },
+    {
+      "company_name": "Charleston Wholesale Florist",
+      "account_id": "0011L000028V2EyQAK",
+      "total_categories_sold": 20,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1179749.87
+    },
+    {
+      "company_name": "MACUNDO FLOWERS AND GREENS LLC",
+      "account_id": "0014p000022HqunAAC",
+      "total_categories_sold": 93,
+      "online_categories_sold": 4,
+      "total_sell_gmv": 1158720.1
+    },
+    {
+      "company_name": "Miaflora Farms",
+      "account_id": "001G000001DW4RwIAL",
+      "total_categories_sold": 63,
+      "online_categories_sold": 63,
+      "total_sell_gmv": 1137302.29
+    },
+    {
+      "company_name": "ROYAL BASE (U.S.A) CORPORATION",
+      "account_id": "001VL00000U1C7VYAV",
+      "total_categories_sold": 4,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 1131206.4
+    },
+    {
+      "company_name": "South Florals Imports LLC",
+      "account_id": "0011L00002dPqOxQAK",
+      "total_categories_sold": 69,
+      "online_categories_sold": 44,
+      "total_sell_gmv": 1120752.75
+    },
+    {
+      "company_name": "* Continental Farms",
+      "account_id": "001G000001DW4OsIAL",
+      "total_categories_sold": 48,
+      "online_categories_sold": 48,
+      "total_sell_gmv": 1097477.45
+    },
+    {
+      "company_name": "The Queens Flowers Corp",
+      "account_id": "0011600001uTSvRAAW",
+      "total_categories_sold": 42,
+      "online_categories_sold": 42,
+      "total_sell_gmv": 1077803.45
+    },
+    {
+      "company_name": "PAT FLOR SCARL",
+      "account_id": "001G000001DW4SSIA1",
+      "total_categories_sold": 70,
+      "online_categories_sold": 25,
+      "total_sell_gmv": 1036031.42
+    },
+    {
+      "company_name": "Herradura Growers",
+      "account_id": "001G000001XIVGOIA5",
+      "total_categories_sold": 51,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 1034258.61
+    },
+    {
+      "company_name": "Pronto Farms LLC",
+      "account_id": "001G000001DW4SeIAL",
+      "total_categories_sold": 51,
+      "online_categories_sold": 21,
+      "total_sell_gmv": 1015333.69
+    },
+    {
+      "company_name": "Vosz Floral LLC",
+      "account_id": "0011L00002h0CH9QAM",
+      "total_categories_sold": 100,
+      "online_categories_sold": 49,
+      "total_sell_gmv": 1003253.55
+    },
+    {
+      "company_name": "NYC FLORAL GREENS",
+      "account_id": "0014p000020wDaDAAU",
+      "total_categories_sold": 7,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 981765.0
+    },
+    {
+      "company_name": "DP Flowers Corp",
+      "account_id": "00116000026VeXIAA0",
+      "total_categories_sold": 55,
+      "online_categories_sold": 53,
+      "total_sell_gmv": 970656.0
+    },
+    {
+      "company_name": "Zeidler Floral",
+      "account_id": "0014p0000220KDPAA2",
+      "total_categories_sold": 22,
+      "online_categories_sold": 14,
+      "total_sell_gmv": 950830.17
+    },
+    {
+      "company_name": "EF FLOWERS",
+      "account_id": "001G000001DW4PPIA1",
+      "total_categories_sold": 48,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 916613.28
+    },
+    {
+      "company_name": "CD Wholesale",
+      "account_id": "001VL000003MuLTYA0",
+      "total_categories_sold": 129,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 903233.31
+    },
+    {
+      "company_name": "Rosamina SAS",
+      "account_id": "0011600001uSoWFAA0",
+      "total_categories_sold": 31,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 870610.44
+    },
+    {
+      "company_name": "Floristcentric, LLC",
+      "account_id": "0011L00002rCC5zQAG",
+      "total_categories_sold": 194,
+      "online_categories_sold": 124,
+      "total_sell_gmv": 863894.58
+    },
+    {
+      "company_name": "J&E Greens",
+      "account_id": "0014p00001zAsAQAA0",
+      "total_categories_sold": 21,
+      "online_categories_sold": 12,
+      "total_sell_gmv": 839890.33
+    },
+    {
+      "company_name": "Forest Flowers",
+      "account_id": "00116000026Vdd4AAC",
+      "total_categories_sold": 4,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 792231.11
+    },
+    {
+      "company_name": "Premium Greens Australia LLC",
+      "account_id": "0011600001lgY6YAAU",
+      "total_categories_sold": 2,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 762639.74
+    },
+    {
+      "company_name": "Equiflor LLC",
+      "account_id": "001G000001DW4OEIA1",
+      "total_categories_sold": 37,
+      "online_categories_sold": 37,
+      "total_sell_gmv": 732680.27
+    },
+    {
+      "company_name": "Premium Flowers",
+      "account_id": "001G000001DW4SZIA1",
+      "total_categories_sold": 94,
+      "online_categories_sold": 94,
+      "total_sell_gmv": 724668.76
+    },
+    {
+      "company_name": "Premium Greens Australia B.V.",
+      "account_id": "0011L00002h0i8vQAA",
+      "total_categories_sold": 11,
+      "online_categories_sold": 5,
+      "total_sell_gmv": 715976.9
+    },
+    {
+      "company_name": "Riverside Wholesale Florists KY",
+      "account_id": "001G000001DW4SmIAL",
+      "total_categories_sold": 125,
+      "online_categories_sold": 19,
+      "total_sell_gmv": 713035.2
+    },
+    {
+      "company_name": "ECOROSES LLC",
+      "account_id": "0011600001mLv33AAC",
+      "total_categories_sold": 5,
+      "online_categories_sold": 5,
+      "total_sell_gmv": 682438.61
+    },
+    {
+      "company_name": "Maple Grove Floral",
+      "account_id": "001G000001ZFNa1IAH",
+      "total_categories_sold": 136,
+      "online_categories_sold": 112,
+      "total_sell_gmv": 668474.84
+    },
+    {
+      "company_name": "Royal Flower Import Group Inc.",
+      "account_id": "001160000276ptzAAA",
+      "total_categories_sold": 94,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 629760.1
+    },
+    {
+      "company_name": "Golden Flowers",
+      "account_id": "001G000001DW4QCIA1",
+      "total_categories_sold": 44,
+      "online_categories_sold": 44,
+      "total_sell_gmv": 617370.83
+    },
+    {
+      "company_name": "A1 Floral Xpressions",
+      "account_id": "001VL00000Hqn2xYAB",
+      "total_categories_sold": 8,
+      "online_categories_sold": 8,
+      "total_sell_gmv": 615104.15
+    },
+    {
+      "company_name": "UNIVERSAL FLOWER SERVICE CORP",
+      "account_id": "001VL00000baxM1YAI",
+      "total_categories_sold": 68,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 601425.24
+    },
+    {
+      "company_name": "MALIMA USA",
+      "account_id": "0011L00001zyyyYQAQ",
+      "total_categories_sold": 15,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 598921.86
+    },
+    {
+      "company_name": "MONTEROSAS LLC",
+      "account_id": "0011L00002IGHtEQAX",
+      "total_categories_sold": 3,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 598373.16
+    },
+    {
+      "company_name": "*FLORAL1 INC",
+      "account_id": "0014p000022EMZLAA4",
+      "total_categories_sold": 99,
+      "online_categories_sold": 42,
+      "total_sell_gmv": 594821.28
+    },
+    {
+      "company_name": "MAGNIFICA FLOWERS",
+      "account_id": "0014p00001sHtlXAAS",
+      "total_categories_sold": 1,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 594275.73
+    },
+    {
+      "company_name": "Blossom Bliss LLC",
+      "account_id": "001VL00000IAI7mYAH",
+      "total_categories_sold": 59,
+      "online_categories_sold": 44,
+      "total_sell_gmv": 530474.04
+    },
+    {
+      "company_name": "Metropetals",
+      "account_id": "0014p000021fXK6AAM",
+      "total_categories_sold": 88,
+      "online_categories_sold": 36,
+      "total_sell_gmv": 530305.79
+    },
+    {
+      "company_name": "Zion Flowers INC",
+      "account_id": "001G000001DW4ThIAL",
+      "total_categories_sold": 40,
+      "online_categories_sold": 24,
+      "total_sell_gmv": 525708.3
+    },
+    {
+      "company_name": "LA TOSCANA FARMS",
+      "account_id": "001G000001fjeOcIAI",
+      "total_categories_sold": 11,
+      "online_categories_sold": 9,
+      "total_sell_gmv": 503728.89
+    },
+    {
+      "company_name": "Cleveland Plant & Flower Co.",
+      "account_id": "001G000001TsgdSIAR",
+      "total_categories_sold": 71,
+      "online_categories_sold": 71,
+      "total_sell_gmv": 493514.08
+    },
+    {
+      "company_name": "MYSTICFLOWERS LLC",
+      "account_id": "001G000001as1u1IAA",
+      "total_categories_sold": 20,
+      "online_categories_sold": 11,
+      "total_sell_gmv": 490312.04
+    },
+    {
+      "company_name": "The Flower Co, LLC",
+      "account_id": "0014p00001nd9sQAAQ",
+      "total_categories_sold": 13,
+      "online_categories_sold": 6,
+      "total_sell_gmv": 486971.16
+    },
+    {
+      "company_name": "Interflor LLC",
+      "account_id": "0011L00002kvsqiQAA",
+      "total_categories_sold": 10,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 485258.19
+    },
+    {
+      "company_name": "Andean Fresh LLC",
+      "account_id": "0011600001zF6GkAAK",
+      "total_categories_sold": 7,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 473163.48
+    },
+    {
+      "company_name": "Flower List",
+      "account_id": "001VL00000acaTxYAI",
+      "total_categories_sold": 46,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 472874.21
+    },
+    {
+      "company_name": "Floramix, Inc.",
+      "account_id": "0014p00001ueJDCAA2",
+      "total_categories_sold": 40,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 468525.77
+    },
+    {
+      "company_name": "Baisch & Skinner",
+      "account_id": "0011600001riCHoAAM",
+      "total_categories_sold": 93,
+      "online_categories_sold": 93,
+      "total_sell_gmv": 437482.94
+    },
+    {
+      "company_name": "Petals Direct",
+      "account_id": "001VL000000ln6xYAA",
+      "total_categories_sold": 95,
+      "online_categories_sold": 11,
+      "total_sell_gmv": 433420.02
+    },
+    {
+      "company_name": "The Elite Flower",
+      "account_id": "0011600001zsxbOAAQ",
+      "total_categories_sold": 54,
+      "online_categories_sold": 50,
+      "total_sell_gmv": 420685.83
+    },
+    {
+      "company_name": "Penelope's Petals, LLC",
+      "account_id": "001VL00000DSXzGYAX",
+      "total_categories_sold": 84,
+      "online_categories_sold": 9,
+      "total_sell_gmv": 391394.44
+    },
+    {
+      "company_name": "Valleflor USA",
+      "account_id": "001G000001DW4TWIA1",
+      "total_categories_sold": 14,
+      "online_categories_sold": 6,
+      "total_sell_gmv": 387313.85
+    },
+    {
+      "company_name": "Salter's Evergreen Supply",
+      "account_id": "0014p000022GMTCAA4",
+      "total_categories_sold": 2,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 378743.03
+    },
+    {
+      "company_name": "BOTANICA WHOLESALE FLORIST DALLAS (IRVING), LLC",
+      "account_id": "001G000001DW4OTIA1",
+      "total_categories_sold": 62,
+      "online_categories_sold": 62,
+      "total_sell_gmv": 362784.3
+    },
+    {
+      "company_name": "FLOWERMART CORP",
+      "account_id": "0011L00002jVSxCQAW",
+      "total_categories_sold": 32,
+      "online_categories_sold": 14,
+      "total_sell_gmv": 353242.19
+    },
+    {
+      "company_name": "Dreaming Roses Corp",
+      "account_id": "0011L00002WOF1LQAX",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 347393.1
+    },
+    {
+      "company_name": "Palm Beach Whsle Flowers, Inc.",
+      "account_id": "0014p0000220b01AAA",
+      "total_categories_sold": 60,
+      "online_categories_sold": 60,
+      "total_sell_gmv": 338873.09
+    },
+    {
+      "company_name": "TFS- Chattanooga",
+      "account_id": "0011600001uSk8RAAS",
+      "total_categories_sold": 68,
+      "online_categories_sold": 68,
+      "total_sell_gmv": 325668.16
+    },
+    {
+      "company_name": "Zoom-Bloom",
+      "account_id": "001G000001JbAIjIAN",
+      "total_categories_sold": 54,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 319678.15
+    },
+    {
+      "company_name": "The Queens Flowers, Corp",
+      "account_id": "0014p000022Gz8DAAS",
+      "total_categories_sold": 36,
+      "online_categories_sold": 36,
+      "total_sell_gmv": 316759.95
+    },
+    {
+      "company_name": "Aurum Farms LLC",
+      "account_id": "0014p00001waeZYAAY",
+      "total_categories_sold": 47,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 315438.93
+    },
+    {
+      "company_name": "Jacksonville Flower Market",
+      "account_id": "0011L00002Y7yX7QAJ",
+      "total_categories_sold": 56,
+      "online_categories_sold": 56,
+      "total_sell_gmv": 301942.45
+    },
+    {
+      "company_name": "A Florist First",
+      "account_id": "00116000021c3HoAAI",
+      "total_categories_sold": 61,
+      "online_categories_sold": 61,
+      "total_sell_gmv": 300501.1
+    },
+    {
+      "company_name": "VERA",
+      "account_id": "001VL00000fpcExYAI",
+      "total_categories_sold": 10,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 296357.19
+    },
+    {
+      "company_name": "Inversiones Napy S.A",
+      "account_id": "0011600001uRssiAAC",
+      "total_categories_sold": 15,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 278609.57
+    },
+    {
+      "company_name": "M&M CUT FLORA",
+      "account_id": "0014p000022EYw1AAG",
+      "total_categories_sold": 64,
+      "online_categories_sold": 64,
+      "total_sell_gmv": 278325.58
+    },
+    {
+      "company_name": "Riverdale Farms",
+      "account_id": "001G000001DW4SlIAL",
+      "total_categories_sold": 52,
+      "online_categories_sold": 52,
+      "total_sell_gmv": 274875.51
+    },
+    {
+      "company_name": "GREEN OCEAN LLC",
+      "account_id": "0014p000021zHQjAAM",
+      "total_categories_sold": 40,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 273103.71
+    },
+    {
+      "company_name": "R&W WHOLESALE, INC.",
+      "account_id": "001G000001TsIltIAF",
+      "total_categories_sold": 61,
+      "online_categories_sold": 61,
+      "total_sell_gmv": 270144.45
+    },
+    {
+      "company_name": "Dynamic Farms",
+      "account_id": "0011L00002Sbi4xQAB",
+      "total_categories_sold": 7,
+      "online_categories_sold": 5,
+      "total_sell_gmv": 270042.55
+    },
+    {
+      "company_name": "FloraCo, Inc",
+      "account_id": "0011L000029aO9sQAE",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 268685.74
+    },
+    {
+      "company_name": "Expo Flora S.A.",
+      "account_id": "001VL00000mJQuTYAW",
+      "total_categories_sold": 6,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 268074.17
+    },
+    {
+      "company_name": "HARDIN´S WHLSE - LIBERTY",
+      "account_id": "001G000001GQ6u4IAD",
+      "total_categories_sold": 61,
+      "online_categories_sold": 61,
+      "total_sell_gmv": 261284.75
+    },
+    {
+      "company_name": "Sofi's Flowers",
+      "account_id": "001G000001DW4T1IAL",
+      "total_categories_sold": 119,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 259192.12
+    },
+    {
+      "company_name": "! Juliet Wholesale Flowers LLC",
+      "account_id": "001G000001ZwODhIAN",
+      "total_categories_sold": 46,
+      "online_categories_sold": 19,
+      "total_sell_gmv": 256746.79
+    },
+    {
+      "company_name": "Bunches Direct Blumenimport GmbH",
+      "account_id": "0011L000028F9SYQA0",
+      "total_categories_sold": 2,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 252146.43
+    },
+    {
+      "company_name": "New England Wholesale Florist",
+      "account_id": "0011600001uSjSfAAK",
+      "total_categories_sold": 39,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 234473.2
+    },
+    {
+      "company_name": "Liberty Blooms",
+      "account_id": "001G000001K7URpIAN",
+      "total_categories_sold": 9,
+      "online_categories_sold": 9,
+      "total_sell_gmv": 214482.69
+    },
+    {
+      "company_name": "Hoja Verde - Rosen Financial",
+      "account_id": "001VL000007zem5YAA",
+      "total_categories_sold": 16,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 202069.25
+    },
+    {
+      "company_name": "Flowers Direct Inc",
+      "account_id": "00116000023sYATAA2",
+      "total_categories_sold": 60,
+      "online_categories_sold": 60,
+      "total_sell_gmv": 201236.48
+    },
+    {
+      "company_name": "Pikes Peak Floral",
+      "account_id": "001G000001TsIbtIAF",
+      "total_categories_sold": 56,
+      "online_categories_sold": 56,
+      "total_sell_gmv": 181040.82
+    },
+    {
+      "company_name": "IRIS ROSES LLC",
+      "account_id": "0014p00001v3oKUAAY",
+      "total_categories_sold": 3,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 180253.87
+    },
+    {
+      "company_name": "Georgia State Floral Distributors",
+      "account_id": "001G000001TtDnBIAV",
+      "total_categories_sold": 58,
+      "online_categories_sold": 58,
+      "total_sell_gmv": 178509.29
+    },
+    {
+      "company_name": "Sieck Floral Distributing, Inc",
+      "account_id": "001G000001DW4SyIAL",
+      "total_categories_sold": 54,
+      "online_categories_sold": 54,
+      "total_sell_gmv": 178470.06
+    },
+    {
+      "company_name": "Kennicott Kuts",
+      "account_id": "001G000001DW4QdIAL",
+      "total_categories_sold": 6,
+      "online_categories_sold": 5,
+      "total_sell_gmv": 177214.85
+    },
+    {
+      "company_name": "Tradewinds/ KING FLORAL SUPPLY",
+      "account_id": "001G000001TtTOOIA3",
+      "total_categories_sold": 54,
+      "online_categories_sold": 54,
+      "total_sell_gmv": 175514.68
+    },
+    {
+      "company_name": "Florabundance.",
+      "account_id": "001G000001DW4PaIAL",
+      "total_categories_sold": 44,
+      "online_categories_sold": 44,
+      "total_sell_gmv": 172141.36
+    },
+    {
+      "company_name": "Albin Hagstrom & Son, Inc.",
+      "account_id": "0011600001xHhmfAAC",
+      "total_categories_sold": 25,
+      "online_categories_sold": 25,
+      "total_sell_gmv": 169643.42
+    },
+    {
+      "company_name": "TFS Bristol",
+      "account_id": "001VL00000HI21dYAD",
+      "total_categories_sold": 59,
+      "online_categories_sold": 59,
+      "total_sell_gmv": 169374.25
+    },
+    {
+      "company_name": "LD Trading/ Lawrence Developments Inc.",
+      "account_id": "0011L000028VnGrQAK",
+      "total_categories_sold": 45,
+      "online_categories_sold": 45,
+      "total_sell_gmv": 168843.1
+    },
+    {
+      "company_name": "Staalduinen Floral-LTF1118",
+      "account_id": "0011600001tWETgAAO",
+      "total_categories_sold": 47,
+      "online_categories_sold": 47,
+      "total_sell_gmv": 168592.47
+    },
+    {
+      "company_name": "Valley Floral Co. - Wichita",
+      "account_id": "001VL00000YHEixYAH",
+      "total_categories_sold": 55,
+      "online_categories_sold": 55,
+      "total_sell_gmv": 167198.05
+    },
+    {
+      "company_name": "Flowerist LLC",
+      "account_id": "001VL00000HrwgpYAB",
+      "total_categories_sold": 3,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 165725.78
+    },
+    {
+      "company_name": "Valley Floral Co. of Oklahoma LLC - Tulsa",
+      "account_id": "001VL00000YHLNpYAP",
+      "total_categories_sold": 51,
+      "online_categories_sold": 51,
+      "total_sell_gmv": 156053.79
+    },
+    {
+      "company_name": "Global Bouquet, LLC",
+      "account_id": "0011L00002DO9nVQAT",
+      "total_categories_sold": 6,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 153956.48
+    },
+    {
+      "company_name": "Rose Runners",
+      "account_id": "001VL00000OLqk9YAD",
+      "total_categories_sold": 60,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 152667.64
+    },
+    {
+      "company_name": "EPIC FARMS USA LLC",
+      "account_id": "0011600001zrCXXAA2",
+      "total_categories_sold": 1,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 152596.33
+    },
+    {
+      "company_name": "Megaflor USA",
+      "account_id": "001VL000001pKqXYAU",
+      "total_categories_sold": 15,
+      "online_categories_sold": 13,
+      "total_sell_gmv": 151413.77
+    },
+    {
+      "company_name": "Tradewinds / Pristine Wholesale Floral",
+      "account_id": "0011L000029kBirQAE",
+      "total_categories_sold": 46,
+      "online_categories_sold": 46,
+      "total_sell_gmv": 150087.61
+    },
+    {
+      "company_name": "Kennicott Brothers West",
+      "account_id": "001VL00000at0XJYAY",
+      "total_categories_sold": 3,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 145702.06
+    },
+    {
+      "company_name": "COWARD WHOLESALE",
+      "account_id": "0011600001uSYzvAAG",
+      "total_categories_sold": 46,
+      "online_categories_sold": 46,
+      "total_sell_gmv": 144511.23
+    },
+    {
+      "company_name": "FLORISOL & COMPANY FLOWER TRADING LLC",
+      "account_id": "001G000001f8XFWIA2",
+      "total_categories_sold": 15,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 141179.29
+    },
+    {
+      "company_name": "JOHNSENS WHOLESALE FLORIST",
+      "account_id": "0011600001lhbwBAAQ",
+      "total_categories_sold": 58,
+      "online_categories_sold": 58,
+      "total_sell_gmv": 141114.58
+    },
+    {
+      "company_name": "HALL´S - BIRMINGHAM",
+      "account_id": "0011600001uScxFAAS",
+      "total_categories_sold": 59,
+      "online_categories_sold": 59,
+      "total_sell_gmv": 138392.33
+    },
+    {
+      "company_name": "Unifour Wholesale ",
+      "account_id": "0011600001uSkCOAA0",
+      "total_categories_sold": 53,
+      "online_categories_sold": 53,
+      "total_sell_gmv": 135978.76
+    },
+    {
+      "company_name": "Metropolitan Wholesale/Cityside Flowers",
+      "account_id": "001160000222AFqAAM",
+      "total_categories_sold": 56,
+      "online_categories_sold": 56,
+      "total_sell_gmv": 134544.99
+    },
+    {
+      "company_name": "Wolfe Wholesale Florist, Inc. Waco",
+      "account_id": "00116000021BPGhAAO",
+      "total_categories_sold": 53,
+      "online_categories_sold": 53,
+      "total_sell_gmv": 131239.17
+    },
+    {
+      "company_name": "Tristate Wholesale Florist",
+      "account_id": "001VL000003KcH9YAK",
+      "total_categories_sold": 58,
+      "online_categories_sold": 58,
+      "total_sell_gmv": 131003.76
+    },
+    {
+      "company_name": "Hana Farms Inc.",
+      "account_id": "001VL00000Vp156YAB",
+      "total_categories_sold": 13,
+      "online_categories_sold": 10,
+      "total_sell_gmv": 124452.45
+    },
+    {
+      "company_name": "San Jose Floral",
+      "account_id": "001VL00000hSd5hYAC",
+      "total_categories_sold": 38,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 123381.26
+    },
+    {
+      "company_name": "EQ Blooms by Flodecol",
+      "account_id": "0011600001lgrcKAAQ",
+      "total_categories_sold": 2,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 120853.77
+    },
+    {
+      "company_name": "Global Flowers",
+      "account_id": "001160000223WK5AAM",
+      "total_categories_sold": 17,
+      "online_categories_sold": 14,
+      "total_sell_gmv": 119503.31
+    },
+    {
+      "company_name": "Shamrock Wholesale Florist Memphis",
+      "account_id": "0011600001uSjyvAAC",
+      "total_categories_sold": 53,
+      "online_categories_sold": 53,
+      "total_sell_gmv": 118375.99
+    },
+    {
+      "company_name": "Fletch Wholesale llc",
+      "account_id": "0014p00001so6ueAAA",
+      "total_categories_sold": 58,
+      "online_categories_sold": 58,
+      "total_sell_gmv": 112868.38
+    },
+    {
+      "company_name": "Alders Wholesale Florist, Inc.",
+      "account_id": "001VL00000F4yJVYAZ",
+      "total_categories_sold": 52,
+      "online_categories_sold": 52,
+      "total_sell_gmv": 108907.4
+    },
+    {
+      "company_name": "Lucas and Greer, Inc. dba L & G Wholesale Florist",
+      "account_id": "0014p000022EYvCAAW",
+      "total_categories_sold": 51,
+      "online_categories_sold": 51,
+      "total_sell_gmv": 107599.5
+    },
+    {
+      "company_name": "Coastal Wholesale Flowers, Inc.",
+      "account_id": "001G000001TsYWjIAN",
+      "total_categories_sold": 59,
+      "online_categories_sold": 59,
+      "total_sell_gmv": 105894.73
+    },
+    {
+      "company_name": "Magnolia Wholesale Florist Inc",
+      "account_id": "0014p00001z9zUXAAY",
+      "total_categories_sold": 53,
+      "online_categories_sold": 53,
+      "total_sell_gmv": 104346.68
+    },
+    {
+      "company_name": "BOTANICA WHSLE FLORIST-HOUSTON",
+      "account_id": "001VL00000RiggjYAB",
+      "total_categories_sold": 43,
+      "online_categories_sold": 43,
+      "total_sell_gmv": 103922.74
+    },
+    {
+      "company_name": "CANTIZA FLORAL DBA NFD",
+      "account_id": "0011L00002rFEJwQAO",
+      "total_categories_sold": 3,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 102768.35
+    },
+    {
+      "company_name": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+      "account_id": "0014p0000220OCmAAM",
+      "total_categories_sold": 43,
+      "online_categories_sold": 43,
+      "total_sell_gmv": 101611.99
+    },
+    {
+      "company_name": "Rokay Floral",
+      "account_id": "0011L00001zzDSCQA2",
+      "total_categories_sold": 51,
+      "online_categories_sold": 51,
+      "total_sell_gmv": 101371.13
+    },
+    {
+      "company_name": "Honey Bee Wholesale Florist, LLC",
+      "account_id": "0014p000022R9RlAAK",
+      "total_categories_sold": 54,
+      "online_categories_sold": 54,
+      "total_sell_gmv": 97605.18
+    },
+    {
+      "company_name": "MGA Flowers",
+      "account_id": "0011L00002aTOTFQA4",
+      "total_categories_sold": 3,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 92841.4
+    },
+    {
+      "company_name": "CHICAGO´S WHOLESALE",
+      "account_id": "0014p000022EYvBAAW",
+      "total_categories_sold": 54,
+      "online_categories_sold": 54,
+      "total_sell_gmv": 91894.95
+    },
+    {
+      "company_name": "Sierra Flower Trading",
+      "account_id": "0011L000028F0KvQAK",
+      "total_categories_sold": 60,
+      "online_categories_sold": 60,
+      "total_sell_gmv": 91276.01
+    },
+    {
+      "company_name": "The Flower Emporium LLC",
+      "account_id": "0014p0000220MfNAAU",
+      "total_categories_sold": 42,
+      "online_categories_sold": 13,
+      "total_sell_gmv": 90455.05
+    },
+    {
+      "company_name": "VELDKAMP´S FLOWERS",
+      "account_id": "0014p000022HSNzAAO",
+      "total_categories_sold": 43,
+      "online_categories_sold": 43,
+      "total_sell_gmv": 82460.41
+    },
+    {
+      "company_name": "PETALS WEST, INC.",
+      "account_id": "001G000001K8yfgIAB",
+      "total_categories_sold": 55,
+      "online_categories_sold": 55,
+      "total_sell_gmv": 79112.42
+    },
+    {
+      "company_name": "POPPIES DESIGN STUDIO, LLC",
+      "account_id": "0011L000029kBhZQAU",
+      "total_categories_sold": 42,
+      "online_categories_sold": 42,
+      "total_sell_gmv": 78639.72
+    },
+    {
+      "company_name": "Torchio Nursery",
+      "account_id": "0011600001uSU5jAAG",
+      "total_categories_sold": 35,
+      "online_categories_sold": 35,
+      "total_sell_gmv": 78164.04
+    },
+    {
+      "company_name": "Southern Floral Co",
+      "account_id": "0011L00001zzDYPQA2",
+      "total_categories_sold": 43,
+      "online_categories_sold": 43,
+      "total_sell_gmv": 74984.51
+    },
+    {
+      "company_name": "ALLIANCE FLORAL COMPANY. 6270",
+      "account_id": "0011L00002ICyF3QAL",
+      "total_categories_sold": 22,
+      "online_categories_sold": 22,
+      "total_sell_gmv": 74913.47
+    },
+    {
+      "company_name": "Len Busch Roses",
+      "account_id": "001G000001DW4QnIAL",
+      "total_categories_sold": 38,
+      "online_categories_sold": 38,
+      "total_sell_gmv": 74479.98
+    },
+    {
+      "company_name": "Fleurametz USA NYC",
+      "account_id": "001VL00000JGRHRYA5",
+      "total_categories_sold": 43,
+      "online_categories_sold": 43,
+      "total_sell_gmv": 73855.05
+    },
+    {
+      "company_name": "Washington Floral Service, Inc",
+      "account_id": "00116000021BDnbAAG",
+      "total_categories_sold": 46,
+      "online_categories_sold": 46,
+      "total_sell_gmv": 70467.35
+    },
+    {
+      "company_name": "Fleurametz Chicago",
+      "account_id": "001VL00000L1SkaYAF",
+      "total_categories_sold": 40,
+      "online_categories_sold": 40,
+      "total_sell_gmv": 70279.19
+    },
+    {
+      "company_name": "Solo Wholesale Flower LLC",
+      "account_id": "0014p000021zRSBAA2",
+      "total_categories_sold": 45,
+      "online_categories_sold": 45,
+      "total_sell_gmv": 69266.48
+    },
+    {
+      "company_name": "SHAW LAKE FARMS INC.",
+      "account_id": "0014p00001zwoT5AAI",
+      "total_categories_sold": 11,
+      "online_categories_sold": 11,
+      "total_sell_gmv": 68560.38
+    },
+    {
+      "company_name": "Exclusive Wholesale",
+      "account_id": "0011600001uSZXFAA4",
+      "total_categories_sold": 58,
+      "online_categories_sold": 58,
+      "total_sell_gmv": 61712.92
+    },
+    {
+      "company_name": "UNITED WHOLESALE- FFL  ENTERPRISES ",
+      "account_id": "0011600001mKVtUAAW",
+      "total_categories_sold": 42,
+      "online_categories_sold": 42,
+      "total_sell_gmv": 60627.44
+    },
+    {
+      "company_name": "POSIES TRUCK",
+      "account_id": "001VL000001CXvhYAG",
+      "total_categories_sold": 46,
+      "online_categories_sold": 46,
+      "total_sell_gmv": 60367.04
+    },
+    {
+      "company_name": "MAGNOLIA HOLDINGS 301 LLC  ABSOLUTELY BEAUTIFUL FLOWERS",
+      "account_id": "001VL00000HVuQvYAL",
+      "total_categories_sold": 39,
+      "online_categories_sold": 39,
+      "total_sell_gmv": 58972.66
+    },
+    {
+      "company_name": "Ashland Addison",
+      "account_id": "0011L00002WO3HUQA1",
+      "total_categories_sold": 42,
+      "online_categories_sold": 42,
+      "total_sell_gmv": 53731.44
+    },
+    {
+      "company_name": "CINCINNATI WHSLE FLORIST INC.5643",
+      "account_id": "001G000001Tsg6jIAB",
+      "total_categories_sold": 46,
+      "online_categories_sold": 46,
+      "total_sell_gmv": 53145.51
+    },
+    {
+      "company_name": "Gassafy Wholesale Florist Inc",
+      "account_id": "0011600001lfVtAAAU",
+      "total_categories_sold": 44,
+      "online_categories_sold": 44,
+      "total_sell_gmv": 50208.99
+    },
+    {
+      "company_name": "Webb's Wholesale Florist",
+      "account_id": "0011600001uSkF3AAK",
+      "total_categories_sold": 41,
+      "online_categories_sold": 41,
+      "total_sell_gmv": 49001.12
+    },
+    {
+      "company_name": "Sieck Wright Floral Products",
+      "account_id": "0014p000020tateAAA",
+      "total_categories_sold": 40,
+      "online_categories_sold": 40,
+      "total_sell_gmv": 48640.07
+    },
+    {
+      "company_name": "ADEESE FLOWERS LLC",
+      "account_id": "001VL00000ehkNEYAY",
+      "total_categories_sold": 19,
+      "online_categories_sold": 11,
+      "total_sell_gmv": 48070.9
+    },
+    {
+      "company_name": "Louisiana Wholesale Florist",
+      "account_id": "001G000001TsFyvIAF",
+      "total_categories_sold": 44,
+      "online_categories_sold": 44,
+      "total_sell_gmv": 47494.08
+    },
+    {
+      "company_name": "HANAYA FARMS",
+      "account_id": "00116000025sMRVAA2",
+      "total_categories_sold": 1,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 46827.35
+    },
+    {
+      "company_name": "Valle Verde LLC",
+      "account_id": "001VL0000077mLdYAI",
+      "total_categories_sold": 2,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 46584.0
+    },
+    {
+      "company_name": "Frank Adams Wholesale Florist",
+      "account_id": "0011600001uTH0wAAG",
+      "total_categories_sold": 42,
+      "online_categories_sold": 42,
+      "total_sell_gmv": 41906.58
+    },
+    {
+      "company_name": "Patagonia Sun",
+      "account_id": "0011L00002SaN5JQAV",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 41796.4
+    },
+    {
+      "company_name": "Ontario Flower Growers Cooperative Ltd.",
+      "account_id": "0011L000029kgNZQAY",
+      "total_categories_sold": 25,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 41542.2
+    },
+    {
+      "company_name": "Ensign Wholesale Flower Market",
+      "account_id": "0014p000022HSvrAAG",
+      "total_categories_sold": 40,
+      "online_categories_sold": 40,
+      "total_sell_gmv": 38415.05
+    },
+    {
+      "company_name": "Arizona Floral Exchange",
+      "account_id": "0011600001mLcyvAAC",
+      "total_categories_sold": 30,
+      "online_categories_sold": 30,
+      "total_sell_gmv": 38352.99
+    },
+    {
+      "company_name": "Pacifica Farms - CAL",
+      "account_id": "0011L00002KYI4OQAX",
+      "total_categories_sold": 27,
+      "online_categories_sold": 27,
+      "total_sell_gmv": 37884.15
+    },
+    {
+      "company_name": "DC FLOWERS DIRECT",
+      "account_id": "0014p000020wmRFAAY",
+      "total_categories_sold": 37,
+      "online_categories_sold": 37,
+      "total_sell_gmv": 37516.76
+    },
+    {
+      "company_name": "BRIEGER WHSLE -TX.",
+      "account_id": "001G000001TsMbNIAV",
+      "total_categories_sold": 50,
+      "online_categories_sold": 50,
+      "total_sell_gmv": 36803.99
+    },
+    {
+      "company_name": "Tutuli Flower Farms",
+      "account_id": "0011600001uSI8QAAW",
+      "total_categories_sold": 44,
+      "online_categories_sold": 44,
+      "total_sell_gmv": 36643.83
+    },
+    {
+      "company_name": "POTOMAC WHSLE",
+      "account_id": "0011600001uSjmkAAC",
+      "total_categories_sold": 24,
+      "online_categories_sold": 24,
+      "total_sell_gmv": 35572.79
+    },
+    {
+      "company_name": "MRS. BLOOM'S DIRECT, INC.",
+      "account_id": "001G000001DW4S5IAL",
+      "total_categories_sold": 27,
+      "online_categories_sold": 27,
+      "total_sell_gmv": 33976.91
+    },
+    {
+      "company_name": "The Oklahoma Flower Market",
+      "account_id": "001G000001TsIX2IAN",
+      "total_categories_sold": 34,
+      "online_categories_sold": 34,
+      "total_sell_gmv": 33590.67
+    },
+    {
+      "company_name": "Lubbock Wholesale",
+      "account_id": "001G000001TsGEcIAN",
+      "total_categories_sold": 35,
+      "online_categories_sold": 35,
+      "total_sell_gmv": 33567.12
+    },
+    {
+      "company_name": "FleuraMetz Montreal Ltd",
+      "account_id": "001VL00000KKWD8YAP",
+      "total_categories_sold": 41,
+      "online_categories_sold": 41,
+      "total_sell_gmv": 33533.8
+    },
+    {
+      "company_name": "FGS.Flowers.MIA",
+      "account_id": "001VL00000jjhrhYAA",
+      "total_categories_sold": 21,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 31615.33
+    },
+    {
+      "company_name": "Dreisbach Wholesale",
+      "account_id": "001G000001DW4PBIA1",
+      "total_categories_sold": 26,
+      "online_categories_sold": 26,
+      "total_sell_gmv": 25401.53
+    },
+    {
+      "company_name": "Lartisan Roses LLC",
+      "account_id": "001VL00000n94eUYAQ",
+      "total_categories_sold": 3,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 25393.51
+    },
+    {
+      "company_name": "Valley Floral Co. of OKC - Oklahoma",
+      "account_id": "0011L00002KVe1mQAD",
+      "total_categories_sold": 27,
+      "online_categories_sold": 27,
+      "total_sell_gmv": 24999.83
+    },
+    {
+      "company_name": "Details Direct - Core",
+      "account_id": "00116000020OMNhAAO",
+      "total_categories_sold": 35,
+      "online_categories_sold": 35,
+      "total_sell_gmv": 24205.91
+    },
+    {
+      "company_name": "Quinlan-Wasserman, Inc",
+      "account_id": "001G000001TsIedIAF",
+      "total_categories_sold": 30,
+      "online_categories_sold": 30,
+      "total_sell_gmv": 23734.45
+    },
+    {
+      "company_name": "Faguaflowers Intl LLC",
+      "account_id": "0014p000022FEx7AAG",
+      "total_categories_sold": 32,
+      "online_categories_sold": 32,
+      "total_sell_gmv": 23561.14
+    },
+    {
+      "company_name": "HIRE´S BEST FLOWERS",
+      "account_id": "0011600001uSd7yAAC",
+      "total_categories_sold": 41,
+      "online_categories_sold": 41,
+      "total_sell_gmv": 23160.48
+    },
+    {
+      "company_name": "Younger & Son Inc",
+      "account_id": "001VL00000k6ul2YAA",
+      "total_categories_sold": 33,
+      "online_categories_sold": 33,
+      "total_sell_gmv": 22735.37
+    },
+    {
+      "company_name": "Coquette Roses",
+      "account_id": "001VL00000bzq64YAA",
+      "total_categories_sold": 5,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 19039.66
+    },
+    {
+      "company_name": "The Flowerman, Inc.",
+      "account_id": "001G000001TsJVrIAN",
+      "total_categories_sold": 28,
+      "online_categories_sold": 28,
+      "total_sell_gmv": 18261.36
+    },
+    {
+      "company_name": "Northline Wholesale Flowers",
+      "account_id": "0011600001lgc6sAAA",
+      "total_categories_sold": 26,
+      "online_categories_sold": 24,
+      "total_sell_gmv": 17042.19
+    },
+    {
+      "company_name": "FOB UIO -  Alma Spray / Agrinag / Natuflor",
+      "account_id": "001VL000006l9ajYAA",
+      "total_categories_sold": 3,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 16475.52
+    },
+    {
+      "company_name": "DVFLORA SEWELL",
+      "account_id": "001G000001TskmvIAB",
+      "total_categories_sold": 38,
+      "online_categories_sold": 38,
+      "total_sell_gmv": 16176.65
+    },
+    {
+      "company_name": "Mideast Flowers Distributors, Inc.",
+      "account_id": "001VL00000HW91gYAD",
+      "total_categories_sold": 37,
+      "online_categories_sold": 37,
+      "total_sell_gmv": 14804.93
+    },
+    {
+      "company_name": "Bo's Wholesale Florist",
+      "account_id": "0014p000021zRPfAAM",
+      "total_categories_sold": 12,
+      "online_categories_sold": 12,
+      "total_sell_gmv": 14325.46
+    },
+    {
+      "company_name": "BlossomR",
+      "account_id": "001VL00000Pk117YAB",
+      "total_categories_sold": 9,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 14100.25
+    },
+    {
+      "company_name": "Florens Group LLC",
+      "account_id": "001VL00000ndtN0YAI",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 13256.12
+    },
+    {
+      "company_name": "GRUPO DEL PACIFICO",
+      "account_id": "0011L00002IDjZOQA1",
+      "total_categories_sold": 1,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 12870.0
+    },
+    {
+      "company_name": "Kontikiflor BV",
+      "account_id": "001VL00000PwohBYAR",
+      "total_categories_sold": 17,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 12759.53
+    },
+    {
+      "company_name": "Magic Flowers - Floropolis",
+      "account_id": "001VL00000gBuLGYA0",
+      "total_categories_sold": 6,
+      "online_categories_sold": 6,
+      "total_sell_gmv": 12328.18
+    },
+    {
+      "company_name": "Details Direct",
+      "account_id": "001VL00000q86lRYAQ",
+      "total_categories_sold": 19,
+      "online_categories_sold": 19,
+      "total_sell_gmv": 12177.73
+    },
+    {
+      "company_name": "Floral Cooperative Purchasing Group LLC",
+      "account_id": "001G000001Tssa3IAB",
+      "total_categories_sold": 6,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 11007.36
+    },
+    {
+      "company_name": "Universal Flower Farms Inc.",
+      "account_id": "001VL00000jkf6KYAQ",
+      "total_categories_sold": 10,
+      "online_categories_sold": 7,
+      "total_sell_gmv": 9486.04
+    },
+    {
+      "company_name": "Floropolis",
+      "account_id": "001VL00000bryvBYAQ",
+      "total_categories_sold": 10,
+      "online_categories_sold": 10,
+      "total_sell_gmv": 9346.16
+    },
+    {
+      "company_name": "Taylor Wholesale Florist",
+      "account_id": "001G000001TsJNiIAN",
+      "total_categories_sold": 24,
+      "online_categories_sold": 24,
+      "total_sell_gmv": 9207.84
+    },
+    {
+      "company_name": "Royal Flowers Inc, International",
+      "account_id": "001G000001DXD6JIAX",
+      "total_categories_sold": 1,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 8975.2
+    },
+    {
+      "company_name": "Nova Packaging Solutions, Inc.",
+      "account_id": "001VL00000TUGt3YAH",
+      "total_categories_sold": 24,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 8929.91
+    },
+    {
+      "company_name": "International Fresh Group LLC",
+      "account_id": "0014p000022Vab1AAC",
+      "total_categories_sold": 14,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 8569.93
+    },
+    {
+      "company_name": "Flores de la Hacienda",
+      "account_id": "0014p00001zAFqOAAW",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 7627.45
+    },
+    {
+      "company_name": "FleuraMetz LA",
+      "account_id": "001VL00000L1QR0YAN",
+      "total_categories_sold": 20,
+      "online_categories_sold": 20,
+      "total_sell_gmv": 6157.71
+    },
+    {
+      "company_name": "FMI, LLC.-FL",
+      "account_id": "001G000001bQpeJIAS",
+      "total_categories_sold": 28,
+      "online_categories_sold": 28,
+      "total_sell_gmv": 6070.66
+    },
+    {
+      "company_name": "ACA Flowers",
+      "account_id": "001G000001a07MXIAY",
+      "total_categories_sold": 16,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 5650.95
+    },
+    {
+      "company_name": "Avon Valley Floral",
+      "account_id": "001G000001DW4OGIA1",
+      "total_categories_sold": 11,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 5409.29
+    },
+    {
+      "company_name": "First Choice Floral",
+      "account_id": "00116000026WSexAAG",
+      "total_categories_sold": 13,
+      "online_categories_sold": 13,
+      "total_sell_gmv": 4984.3
+    },
+    {
+      "company_name": "Jetty USA LLC",
+      "account_id": "0011L00001zyz09QAA",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 4392.05
+    },
+    {
+      "company_name": "FLORIAD- MONTREAL CANADA INC.",
+      "account_id": "001G000001DW4PkIAL",
+      "total_categories_sold": 15,
+      "online_categories_sold": 15,
+      "total_sell_gmv": 4355.15
+    },
+    {
+      "company_name": "South Carolina Specialty Cut",
+      "account_id": "001G000001TsJj3IAF",
+      "total_categories_sold": 11,
+      "online_categories_sold": 11,
+      "total_sell_gmv": 4289.06
+    },
+    {
+      "company_name": "STRANGE´S FLORIST, INC.",
+      "account_id": "0014p000022EZ85AAG",
+      "total_categories_sold": 13,
+      "online_categories_sold": 13,
+      "total_sell_gmv": 3823.96
+    },
+    {
+      "company_name": "MegaFlor - UIO",
+      "account_id": "001VL00000dIwWvYAK",
+      "total_categories_sold": 7,
+      "online_categories_sold": 7,
+      "total_sell_gmv": 3456.2
+    },
+    {
+      "company_name": "Allied Cut Flower",
+      "account_id": "00116000020OCgLAAW",
+      "total_categories_sold": 9,
+      "online_categories_sold": 9,
+      "total_sell_gmv": 3047.14
+    },
+    {
+      "company_name": "Nathalia Bloemenexport LLC - MIA",
+      "account_id": "001VL00000WNEfpYAH",
+      "total_categories_sold": 2,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 2806.0
+    },
+    {
+      "company_name": "Ecoroses - Floropolis",
+      "account_id": "001VL00000gC7ITYA0",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 2691.9
+    },
+    {
+      "company_name": "Flodecol - Floropolis",
+      "account_id": "001VL00000gC6uHYAS",
+      "total_categories_sold": 5,
+      "online_categories_sold": 5,
+      "total_sell_gmv": 2669.05
+    },
+    {
+      "company_name": "KD & Company",
+      "account_id": "00116000027KCBbAAO",
+      "total_categories_sold": 16,
+      "online_categories_sold": 16,
+      "total_sell_gmv": 2655.97
+    },
+    {
+      "company_name": "LIHML INC Fayetteville - #01235 GF Rep Kareena 19",
+      "account_id": "001G000001DW4QoIAL",
+      "total_categories_sold": 9,
+      "online_categories_sold": 9,
+      "total_sell_gmv": 2369.83
+    },
+    {
+      "company_name": "* AquaRose",
+      "account_id": "0011L00002Y8j3vQAB",
+      "total_categories_sold": 2,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 2355.5
+    },
+    {
+      "company_name": "Coward & Glisson Whsl. Flst.",
+      "account_id": "001G000001buCmhIAE",
+      "total_categories_sold": 6,
+      "online_categories_sold": 6,
+      "total_sell_gmv": 2087.7
+    },
+    {
+      "company_name": "Bellaflor Group Inc.",
+      "account_id": "001G000001DW4OLIA1",
+      "total_categories_sold": 2,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 2000.06
+    },
+    {
+      "company_name": "Hyperactive Farms Inc.",
+      "account_id": "0011L00002eqDgTQAU",
+      "total_categories_sold": 11,
+      "online_categories_sold": 11,
+      "total_sell_gmv": 1887.4
+    },
+    {
+      "company_name": "Floral Importers and Distributors Inc. /Buds",
+      "account_id": "0014p0000220SneAAE",
+      "total_categories_sold": 7,
+      "online_categories_sold": 7,
+      "total_sell_gmv": 1062.5
+    },
+    {
+      "company_name": "Claymore C. Sieck Wholesale Florist",
+      "account_id": "00116000021Z8FtAAK",
+      "total_categories_sold": 2,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 969.2
+    },
+    {
+      "company_name": "Hortensias Cabogana Cia Ltda",
+      "account_id": "001VL000005qn9pYAA",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 890.92
+    },
+    {
+      "company_name": "Olimpo Flowers Finca",
+      "account_id": "0011L00002SYckRQAT",
+      "total_categories_sold": 3,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 752.16
+    },
+    {
+      "company_name": "FALL RIVER WHOLESALE",
+      "account_id": "001G000001DW4PQIA1",
+      "total_categories_sold": 4,
+      "online_categories_sold": 4,
+      "total_sell_gmv": 665.8
+    },
+    {
+      "company_name": "Star Roses",
+      "account_id": "001VL00000Pl0XeYAJ",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 646.0
+    },
+    {
+      "company_name": "Llanos De Alba LLADEAL - UIO",
+      "account_id": "001VL00000lGG96YAG",
+      "total_categories_sold": 2,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 545.0
+    },
+    {
+      "company_name": "Littlefloyd Investments, LLC",
+      "account_id": "001VL00000HHz7rYAD",
+      "total_categories_sold": 4,
+      "online_categories_sold": 4,
+      "total_sell_gmv": 480.66
+    },
+    {
+      "company_name": "ACME Testing, Inc.",
+      "account_id": "0011L00002fOHhdQAG",
+      "total_categories_sold": 1,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 451.3
+    },
+    {
+      "company_name": "Mikes Finest Wholesale Flowers, Inc.",
+      "account_id": "001G000001TsGfBIAV",
+      "total_categories_sold": 5,
+      "online_categories_sold": 5,
+      "total_sell_gmv": 448.05
+    },
+    {
+      "company_name": "Hall´s Wholesale Florist Theodore",
+      "account_id": "0011600001lfdddAAA",
+      "total_categories_sold": 4,
+      "online_categories_sold": 4,
+      "total_sell_gmv": 408.15
+    },
+    {
+      "company_name": "Alison Flowers - UIO",
+      "account_id": "0014p00001xlhgkAAA",
+      "total_categories_sold": 4,
+      "online_categories_sold": 4,
+      "total_sell_gmv": 351.8
+    },
+    {
+      "company_name": "Roots Peru",
+      "account_id": "00116000020LDINAA4",
+      "total_categories_sold": 3,
+      "online_categories_sold": 3,
+      "total_sell_gmv": 235.89
+    },
+    {
+      "company_name": "FLEURIGROS QUEBEC 1995 INC.",
+      "account_id": "0014p000022WUhzAAG",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 204.0
+    },
+    {
+      "company_name": "Grupo Vegaflor - Medellin",
+      "account_id": "0011600001rj9yaAAA",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 204.0
+    },
+    {
+      "company_name": "Much Flowers - UIO",
+      "account_id": "001VL000007zWbfYAE",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 195.0
+    },
+    {
+      "company_name": "American Agroproducts",
+      "account_id": "001G000001IYgNpIAL",
+      "total_categories_sold": 2,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 192.0
+    },
+    {
+      "company_name": "Gypso S.A. UIO",
+      "account_id": "0011L000028VL26QAG",
+      "total_categories_sold": 2,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 141.6
+    },
+    {
+      "company_name": "Expobloom - BOG",
+      "account_id": "001VL00000kXPUzYAO",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 110.0
+    },
+    {
+      "company_name": "MAHONEYS ROCKY LEDGE FARM &",
+      "account_id": "001VL00000YmEOTYA3",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 104.25
+    },
+    {
+      "company_name": "Specialty Cut Flowers",
+      "account_id": "0014p000022EYjsAAG",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 100.0
+    },
+    {
+      "company_name": "Flores Silvestres",
+      "account_id": "0011600001uRrj9AAC",
+      "total_categories_sold": 2,
+      "online_categories_sold": 2,
+      "total_sell_gmv": 98.4
+    },
+    {
+      "company_name": "McCarthy Wholesale",
+      "account_id": "001VL00000YlWTzYAN",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 90.4
+    },
+    {
+      "company_name": "Akarana Farms - UIO",
+      "account_id": "001VL00000egpjqYAA",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 90.0
+    },
+    {
+      "company_name": "Everflorals",
+      "account_id": "001VL00000gB1JzYAK",
+      "total_categories_sold": 1,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 79.8
+    },
+    {
+      "company_name": "Matthioli Flowers Ecuador",
+      "account_id": "001VL00000fUtUIYA0",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 72.0
+    },
+    {
+      "company_name": "Quimflowers - UIO",
+      "account_id": "001VL00000lLmD4YAK",
+      "total_categories_sold": 1,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 60.0
+    },
+    {
+      "company_name": "WHOLESALE NORTON'S FLORIST",
+      "account_id": "00116000022ofJ2AAI",
+      "total_categories_sold": 1,
+      "online_categories_sold": 0,
+      "total_sell_gmv": 0.0
+    },
+    {
+      "company_name": "Price's Floral Wholesale, LLC",
+      "account_id": "0014p000022EYtaAAG",
+      "total_categories_sold": 8,
+      "online_categories_sold": 1,
+      "total_sell_gmv": 0.0
+    }
+  ],
+  "gap_categories": [
+    {
+      "company_name": "Bill Doran Company (2)",
+      "account_id": "001G000001TtEaaIAF",
+      "gap_categories": 173
+    },
+    {
+      "company_name": "JFS Wholesale Floral",
+      "account_id": "00116000021bflwAAA",
+      "gap_categories": 157
+    },
+    {
+      "company_name": "Farm Fresh Exports INC",
+      "account_id": "00116000020LCvJAAW",
+      "gap_categories": 124
+    },
+    {
+      "company_name": "Mayesh Wholesale Florist Inc",
+      "account_id": "001G000001DW4R3IAL",
+      "gap_categories": 113
+    },
+    {
+      "company_name": "Flora Fresh Inc",
+      "account_id": "001G000001TsqcLIAR",
+      "gap_categories": 103
+    },
+    {
+      "company_name": "CD Wholesale",
+      "account_id": "001VL000003MuLTYA0",
+      "gap_categories": 99
+    },
+    {
+      "company_name": "* Jet Fresh Flower Distributors Inc.",
+      "account_id": "001G000001DW4QWIA1",
+      "gap_categories": 93
+    },
+    {
+      "company_name": "MACUNDO FLOWERS AND GREENS LLC",
+      "account_id": "0014p000022HqunAAC",
+      "gap_categories": 89
+    },
+    {
+      "company_name": "Metro Flower Market LLC",
+      "account_id": "0011L000028TahoQAC",
+      "gap_categories": 88
+    },
+    {
+      "company_name": "WE GOT FLOWERS",
+      "account_id": "0011L000028TcCRQA0",
+      "gap_categories": 83
+    },
+    {
+      "company_name": "Tropical Blooms Inc.",
+      "account_id": "0014p00001lORHxAAO",
+      "gap_categories": 81
+    },
+    {
+      "company_name": "Riverside Wholesale Florists KY",
+      "account_id": "001G000001DW4SmIAL",
+      "gap_categories": 78
+    },
+    {
+      "company_name": "Petals Direct",
+      "account_id": "001VL000000ln6xYAA",
+      "gap_categories": 78
+    },
+    {
+      "company_name": "Arizona Family Florist",
+      "account_id": "00116000023rB8qAAE",
+      "gap_categories": 77
+    },
+    {
+      "company_name": "Ninfa Flowers",
+      "account_id": "001VL000001TMnmYAG",
+      "gap_categories": 73
+    },
+    {
+      "company_name": "**Wafex USA",
+      "account_id": "001G000001jjTb0IAE",
+      "gap_categories": 73
+    },
+    {
+      "company_name": "Floristcentric, LLC",
+      "account_id": "0011L00002rCC5zQAG",
+      "gap_categories": 72
+    },
+    {
+      "company_name": "Dr Delphinium",
+      "account_id": "0014p0000220O7wAAE",
+      "gap_categories": 72
+    },
+    {
+      "company_name": "Apex Floral Distributors Mississauga",
+      "account_id": "001G000001TsKPSIA3",
+      "gap_categories": 72
+    },
+    {
+      "company_name": "SOS Floral",
+      "account_id": "001G000001DW4T3IAL",
+      "gap_categories": 71
+    },
+    {
+      "company_name": "Penelope's Petals, LLC",
+      "account_id": "001VL00000DSXzGYAX",
+      "gap_categories": 69
+    },
+    {
+      "company_name": "Pinnacle Flowers, LLC",
+      "account_id": "001G000001evx5aIAA",
+      "gap_categories": 69
+    },
+    {
+      "company_name": "EQR USA",
+      "account_id": "001G000001DW4PKIA1",
+      "gap_categories": 68
+    },
+    {
+      "company_name": "Price's Floral Wholesale, LLC",
+      "account_id": "0014p000022EYtaAAG",
+      "gap_categories": 66
+    },
+    {
+      "company_name": "Stemline Wholesale",
+      "account_id": "001VL00000V2gNuYAJ",
+      "gap_categories": 66
+    },
+    {
+      "company_name": "Fair Trade Floral Inc.",
+      "account_id": "0011600001uUyJlAAK",
+      "gap_categories": 66
+    },
+    {
+      "company_name": "Orlando Wholesale Florist",
+      "account_id": "0011L00001zzDR9QAM",
+      "gap_categories": 64
+    },
+    {
+      "company_name": "Full Pot - Ft. Lauderdale",
+      "account_id": "001G000001V5PivIAF",
+      "gap_categories": 64
+    },
+    {
+      "company_name": "H&T Wholesale Flowers",
+      "account_id": "0011L00002p55GMQAY",
+      "gap_categories": 63
+    },
+    {
+      "company_name": "DKAY WHOLESALE INC",
+      "account_id": "001G000001TskZ7IAJ",
+      "gap_categories": 62
+    },
+    {
+      "company_name": "FLORISOL& CO FLOWER TRADING LLC DBA MARVEL FLOWERS",
+      "account_id": "001G000001V8C6jIAF",
+      "gap_categories": 62
+    },
+    {
+      "company_name": "Green Bouquet LLC",
+      "account_id": "001VL00000GL2fAYAT",
+      "gap_categories": 61
+    },
+    {
+      "company_name": "WB FLORAL GROUP, LLC.-MD",
+      "account_id": "0014p0000220Lp4AAE",
+      "gap_categories": 57
+    },
+    {
+      "company_name": "*FLORAL1 INC",
+      "account_id": "0014p000022EMZLAA4",
+      "gap_categories": 56
+    },
+    {
+      "company_name": "Wellington Florist",
+      "account_id": "0014p00001ycDwZAAU",
+      "gap_categories": 55
+    },
+    {
+      "company_name": "National Floral Supply",
+      "account_id": "0011L00002WOu1fQAD",
+      "gap_categories": 55
+    },
+    {
+      "company_name": "San Antonio Flower CO",
+      "account_id": "001160000276kVxAAI",
+      "gap_categories": 55
+    },
+    {
+      "company_name": "Farms Connect",
+      "account_id": "0011L00002rEB34QAG",
+      "gap_categories": 54
+    },
+    {
+      "company_name": "Zoom-Bloom",
+      "account_id": "001G000001JbAIjIAN",
+      "gap_categories": 54
+    },
+    {
+      "company_name": "Claymore C. Sieck Wholesale Florist",
+      "account_id": "00116000021Z8FtAAK",
+      "gap_categories": 53
+    },
+    {
+      "company_name": "AMORES FLORES INC",
+      "account_id": "0014p000020wFxeAAE",
+      "gap_categories": 53
+    },
+    {
+      "company_name": "Metropetals",
+      "account_id": "0014p000021fXK6AAM",
+      "gap_categories": 51
+    },
+    {
+      "company_name": "WHOLESALE NORTON'S FLORIST",
+      "account_id": "00116000022ofJ2AAI",
+      "gap_categories": 50
+    },
+    {
+      "company_name": "Prime Petals LLC",
+      "account_id": "001G000001DW4SbIAL",
+      "gap_categories": 49
+    },
+    {
+      "company_name": "Legacy Flowers",
+      "account_id": "001G000001DW4QmIAL",
+      "gap_categories": 49
+    },
+    {
+      "company_name": "Hartford Florist Supply",
+      "account_id": "001G000001TtIBxIAN",
+      "gap_categories": 47
+    },
+    {
+      "company_name": "Flower List",
+      "account_id": "001VL00000acaTxYAI",
+      "gap_categories": 46
+    },
+    {
+      "company_name": "Florimex Toronto Corp.",
+      "account_id": "0011L000027XBWKQA4",
+      "gap_categories": 46
+    },
+    {
+      "company_name": "Vosz Floral LLC",
+      "account_id": "0011L00002h0CH9QAM",
+      "gap_categories": 45
+    },
+    {
+      "company_name": "Del Tropico/ Ameriblooms",
+      "account_id": "001VL00000IFWlxYAH",
+      "gap_categories": 45
+    },
+    {
+      "company_name": "Aurum Farms LLC",
+      "account_id": "0014p00001waeZYAAY",
+      "gap_categories": 45
+    },
+    {
+      "company_name": "Bo's Wholesale Florist",
+      "account_id": "0014p000021zRPfAAM",
+      "gap_categories": 42
+    },
+    {
+      "company_name": "Floramix, Inc.",
+      "account_id": "0014p00001ueJDCAA2",
+      "gap_categories": 41
+    },
+    {
+      "company_name": "GREEN OCEAN LLC",
+      "account_id": "0014p000021zHQjAAM",
+      "gap_categories": 40
+    },
+    {
+      "company_name": "Farm To Canada",
+      "account_id": "001G000001DW4PTIA1",
+      "gap_categories": 40
+    },
+    {
+      "company_name": "New England Wholesale Florist",
+      "account_id": "0011600001uSjSfAAK",
+      "gap_categories": 38
+    },
+    {
+      "company_name": "San Jose Floral",
+      "account_id": "001VL00000hSd5hYAC",
+      "gap_categories": 38
+    },
+    {
+      "company_name": "White Rose Flowers & Supplies Inc.",
+      "account_id": "001VL00000AsdReYAJ",
+      "gap_categories": 37
+    },
+    {
+      "company_name": "Brightland Farms",
+      "account_id": "001G000001DW4OWIA1",
+      "gap_categories": 34
+    },
+    {
+      "company_name": "Rosamina SAS",
+      "account_id": "0011600001uSoWFAA0",
+      "gap_categories": 31
+    },
+    {
+      "company_name": "Ecuador's Origin Product",
+      "account_id": "0014p00001yqo0aAAA",
+      "gap_categories": 30
+    },
+    {
+      "company_name": "Sunburst Farms",
+      "account_id": "001G000001DW4TAIA1",
+      "gap_categories": 30
+    },
+    {
+      "company_name": "Pronto Farms LLC",
+      "account_id": "001G000001DW4SeIAL",
+      "gap_categories": 30
+    },
+    {
+      "company_name": "The Flower Emporium LLC",
+      "account_id": "0014p0000220MfNAAU",
+      "gap_categories": 29
+    },
+    {
+      "company_name": "Northline Wholesale Flowers",
+      "account_id": "0011600001lgc6sAAA",
+      "gap_categories": 29
+    },
+    {
+      "company_name": "A Trilogy Floral - Zamba Flowers",
+      "account_id": "001G000001DW4TQIA1",
+      "gap_categories": 29
+    },
+    {
+      "company_name": "Ontario Flower Growers Cooperative Ltd.",
+      "account_id": "0011L000029kgNZQAY",
+      "gap_categories": 28
+    },
+    {
+      "company_name": "NY Floral Supply",
+      "account_id": "001VL00000GL9dQYAT",
+      "gap_categories": 28
+    },
+    {
+      "company_name": "Sims Flower Distribution",
+      "account_id": "001VL000002uhlyYAA",
+      "gap_categories": 27
+    },
+    {
+      "company_name": "! Juliet Wholesale Flowers LLC",
+      "account_id": "001G000001ZwODhIAN",
+      "gap_categories": 27
+    },
+    {
+      "company_name": "Miraflor LLC",
+      "account_id": "001VL00000DlwqkYAB",
+      "gap_categories": 26
+    },
+    {
+      "company_name": "Best Miami Growers LLC",
+      "account_id": "0011600001zFAH3AAO",
+      "gap_categories": 26
+    },
+    {
+      "company_name": "AD TRADING CORP.DBA AD FLORAL TRADI",
+      "account_id": "001G000001V5Q2WIAV",
+      "gap_categories": 26
+    },
+    {
+      "company_name": "Mellano Sales",
+      "account_id": "001G000001DW4R5IAL",
+      "gap_categories": 25
+    },
+    {
+      "company_name": "Kontikiflor BV",
+      "account_id": "001VL00000PwohBYAR",
+      "gap_categories": 24
+    },
+    {
+      "company_name": "South Florals Imports LLC",
+      "account_id": "0011L00002dPqOxQAK",
+      "gap_categories": 24
+    },
+    {
+      "company_name": "Solo Wholesale Flower LLC",
+      "account_id": "0014p000021zRSBAA2",
+      "gap_categories": 24
+    },
+    {
+      "company_name": "Ashland Addison",
+      "account_id": "0011L00002WO3HUQA1",
+      "gap_categories": 23
+    },
+    {
+      "company_name": "Nova Packaging Solutions, Inc.",
+      "account_id": "001VL00000TUGt3YAH",
+      "gap_categories": 22
+    },
+    {
+      "company_name": "Bill Doran Company",
+      "account_id": "001G000001DVt5TIAT",
+      "gap_categories": 22
+    },
+    {
+      "company_name": "Valley Springs LLC",
+      "account_id": "001G000001DW4QOIA1",
+      "gap_categories": 22
+    },
+    {
+      "company_name": "DVFLORA SEWELL",
+      "account_id": "001G000001TskmvIAB",
+      "gap_categories": 21
+    },
+    {
+      "company_name": "Rose Runners",
+      "account_id": "001VL00000OLqk9YAD",
+      "gap_categories": 21
+    },
+    {
+      "company_name": "H&F Greens Inc (Mariposa Growers)",
+      "account_id": "00116000023rUnKAAU",
+      "gap_categories": 20
+    },
+    {
+      "company_name": "Direct Farms, LLC",
+      "account_id": "001G000001DW4P4IAL",
+      "gap_categories": 19
+    },
+    {
+      "company_name": "FGS.Flowers.MIA",
+      "account_id": "001VL00000jjhrhYAA",
+      "gap_categories": 19
+    },
+    {
+      "company_name": "Southern Floral Co",
+      "account_id": "0011L00001zzDYPQA2",
+      "gap_categories": 19
+    },
+    {
+      "company_name": "Gardens America Inc.",
+      "account_id": "001G000001DW4Q6IAL",
+      "gap_categories": 19
+    },
+    {
+      "company_name": "Evergreen Plant Company",
+      "account_id": "0014p000021IdyjAAC",
+      "gap_categories": 18
+    },
+    {
+      "company_name": "Floreco, Inc",
+      "account_id": "001G000001DW4PgIAL",
+      "gap_categories": 18
+    },
+    {
+      "company_name": "Fresca Farms",
+      "account_id": "001G000001DW4PzIAL",
+      "gap_categories": 18
+    },
+    {
+      "company_name": "AmeriLink Floratrader",
+      "account_id": "001G000001DW4O5IAL",
+      "gap_categories": 18
+    },
+    {
+      "company_name": "Greens and Flowers Connection",
+      "account_id": "0011L00002BInj0QAD",
+      "gap_categories": 17
+    },
+    {
+      "company_name": "Inversiones Napy S.A",
+      "account_id": "0011600001uRssiAAC",
+      "gap_categories": 16
+    },
+    {
+      "company_name": "Fleurametz Chicago",
+      "account_id": "001VL00000L1SkaYAF",
+      "gap_categories": 16
+    },
+    {
+      "company_name": "Ensign Wholesale Flower Market",
+      "account_id": "0014p000022HSvrAAG",
+      "gap_categories": 16
+    },
+    {
+      "company_name": "Zion Flowers INC",
+      "account_id": "001G000001DW4ThIAL",
+      "gap_categories": 16
+    },
+    {
+      "company_name": "Stellar Farms",
+      "account_id": "00116000026WjjWAAS",
+      "gap_categories": 16
+    },
+    {
+      "company_name": "INTERNATIONAL TRADING AND SERVICES INC",
+      "account_id": "0011600001uUw5EAAS",
+      "gap_categories": 15
+    },
+    {
+      "company_name": "Maple Grove Floral",
+      "account_id": "001G000001ZFNa1IAH",
+      "gap_categories": 15
+    },
+    {
+      "company_name": "Flowers by Fudgie, Inc",
+      "account_id": "001VL00000HW85ZYAT",
+      "gap_categories": 15
+    },
+    {
+      "company_name": "Blossom Bliss LLC",
+      "account_id": "001VL00000IAI7mYAH",
+      "gap_categories": 15
+    },
+    {
+      "company_name": "Hoja Verde - Rosen Financial",
+      "account_id": "001VL000007zem5YAA",
+      "gap_categories": 15
+    },
+    {
+      "company_name": "Arizona Floral Exchange",
+      "account_id": "0011600001mLcyvAAC",
+      "gap_categories": 15
+    },
+    {
+      "company_name": "Sofi's Flowers",
+      "account_id": "001G000001DW4T1IAL",
+      "gap_categories": 14
+    },
+    {
+      "company_name": "FLORISOL & COMPANY FLOWER TRADING LLC",
+      "account_id": "001G000001f8XFWIA2",
+      "gap_categories": 14
+    },
+    {
+      "company_name": "Dreisbach Wholesale",
+      "account_id": "001G000001DW4PBIA1",
+      "gap_categories": 13
+    },
+    {
+      "company_name": "ADEESE FLOWERS LLC",
+      "account_id": "001VL00000ehkNEYAY",
+      "gap_categories": 13
+    },
+    {
+      "company_name": "Protean Farms US",
+      "account_id": "001G000001DW4SfIAL",
+      "gap_categories": 13
+    },
+    {
+      "company_name": "Natural Flowers, Inc",
+      "account_id": "0014p000020vycQAAQ",
+      "gap_categories": 13
+    },
+    {
+      "company_name": "International Fresh Group LLC",
+      "account_id": "0014p000022Vab1AAC",
+      "gap_categories": 13
+    },
+    {
+      "company_name": "Allure Farms",
+      "account_id": "001G000001DW4OuIAL",
+      "gap_categories": 13
+    },
+    {
+      "company_name": "Flores Silvestres",
+      "account_id": "0011600001uRrj9AAC",
+      "gap_categories": 13
+    },
+    {
+      "company_name": "KBC Cooler Account",
+      "account_id": "001G000001aIv6EIAS",
+      "gap_categories": 13
+    },
+    {
+      "company_name": "SKY FLOWERS S.A.S",
+      "account_id": "00116000023XoIIAA0",
+      "gap_categories": 12
+    },
+    {
+      "company_name": "GOMEZ B.V.",
+      "account_id": "0014p00001zanUFAAY",
+      "gap_categories": 12
+    },
+    {
+      "company_name": "Royal Flowers Inc., Domestic",
+      "account_id": "001G000001DW4SpIAL",
+      "gap_categories": 12
+    },
+    {
+      "company_name": "MALIMA USA",
+      "account_id": "0011L00001zyyyYQAQ",
+      "gap_categories": 12
+    },
+    {
+      "company_name": "Avon Valley Floral",
+      "account_id": "001G000001DW4OGIA1",
+      "gap_categories": 12
+    },
+    {
+      "company_name": "UNIVERSAL FLOWER SERVICE CORP",
+      "account_id": "001VL00000baxM1YAI",
+      "gap_categories": 12
+    },
+    {
+      "company_name": "CALI WHOLESALE.-CA",
+      "account_id": "0011L00002IE8YMQA1",
+      "gap_categories": 12
+    },
+    {
+      "company_name": "Continental Floral CA LLC",
+      "account_id": "0011L00002dFBf0QAG",
+      "gap_categories": 11
+    },
+    {
+      "company_name": "MAHONEYS ROCKY LEDGE FARM &",
+      "account_id": "001VL00000YmEOTYA3",
+      "gap_categories": 11
+    },
+    {
+      "company_name": "FLOWERMART CORP",
+      "account_id": "0011L00002jVSxCQAW",
+      "gap_categories": 11
+    },
+    {
+      "company_name": "Melody Farms LLC",
+      "account_id": "001G000001DW4R6IAL",
+      "gap_categories": 10
+    },
+    {
+      "company_name": "Continental Floral LLC",
+      "account_id": "001G000001DW4OtIAL",
+      "gap_categories": 10
+    },
+    {
+      "company_name": "Choice Farms",
+      "account_id": "001G000001DW4OlIAL",
+      "gap_categories": 10
+    },
+    {
+      "company_name": "Zeidler Floral",
+      "account_id": "0014p0000220KDPAA2",
+      "gap_categories": 10
+    },
+    {
+      "company_name": "Coquette Roses",
+      "account_id": "001VL00000bzq64YAA",
+      "gap_categories": 9
+    },
+    {
+      "company_name": "MYSTICFLOWERS LLC",
+      "account_id": "001G000001as1u1IAA",
+      "gap_categories": 9
+    },
+    {
+      "company_name": "Valleflor USA",
+      "account_id": "001G000001DW4TWIA1",
+      "gap_categories": 9
+    },
+    {
+      "company_name": "Dramm & Echter, Inc",
+      "account_id": "001G000001DW4PAIA1",
+      "gap_categories": 9
+    },
+    {
+      "company_name": "Flowers Direct Inc",
+      "account_id": "00116000023sYATAA2",
+      "gap_categories": 9
+    },
+    {
+      "company_name": "Mayta International LLC / Native Blooms",
+      "account_id": "0011L000026fmYoQAI",
+      "gap_categories": 9
+    },
+    {
+      "company_name": "Anton Spaargaren B.V.",
+      "account_id": "0011600001zW56mAAC",
+      "gap_categories": 9
+    },
+    {
+      "company_name": "Royal Flowers S.A",
+      "account_id": "00116000025JAqTAAW",
+      "gap_categories": 8
+    },
+    {
+      "company_name": "Nazcaflor USA, Inc",
+      "account_id": "001G000001DW4SGIA1",
+      "gap_categories": 8
+    },
+    {
+      "company_name": "J&E Greens",
+      "account_id": "0014p00001zAsAQAA0",
+      "gap_categories": 8
+    },
+    {
+      "company_name": "Muchflowers Inc.",
+      "account_id": "0011600001lg8CAAAY",
+      "gap_categories": 8
+    },
+    {
+      "company_name": "FLEUPHORIA S.A.S",
+      "account_id": "0014p00001y6Ac0AAE",
+      "gap_categories": 8
+    },
+    {
+      "company_name": "Continental Floral PNW LLC",
+      "account_id": "0014p00001lOEl6AAG",
+      "gap_categories": 8
+    },
+    {
+      "company_name": "Interflor LLC",
+      "account_id": "0011L00002kvsqiQAA",
+      "gap_categories": 8
+    },
+    {
+      "company_name": "Naranjo Farms LLC",
+      "account_id": "0011600001uRt3EAAS",
+      "gap_categories": 8
+    },
+    {
+      "company_name": "The Flower Co, LLC",
+      "account_id": "0014p00001nd9sQAAQ",
+      "gap_categories": 7
+    },
+    {
+      "company_name": "WESTWOOD FLORIST",
+      "account_id": "0014p0000220KQkAAM",
+      "gap_categories": 7
+    },
+    {
+      "company_name": "Premium Greens Australia B.V.",
+      "account_id": "0011L00002h0i8vQAA",
+      "gap_categories": 6
+    },
+    {
+      "company_name": "FleuraMetz LA",
+      "account_id": "001VL00000L1QR0YAN",
+      "gap_categories": 6
+    },
+    {
+      "company_name": "CONNECTION FLOWERS SAS",
+      "account_id": "0014p000021zpeLAAQ",
+      "gap_categories": 6
+    },
+    {
+      "company_name": "The Oklahoma Flower Market",
+      "account_id": "001G000001TsIX2IAN",
+      "gap_categories": 6
+    },
+    {
+      "company_name": "Shamrock Wholesale Florist Memphis",
+      "account_id": "0011600001uSjyvAAC",
+      "gap_categories": 6
+    },
+    {
+      "company_name": "VERA",
+      "account_id": "001VL00000fpcExYAI",
+      "gap_categories": 6
+    },
+    {
+      "company_name": "Floral Cooperative Purchasing Group LLC",
+      "account_id": "001G000001Tssa3IAB",
+      "gap_categories": 6
+    },
+    {
+      "company_name": "Galleria Farms",
+      "account_id": "001G000001bpcuyIAA",
+      "gap_categories": 6
+    },
+    {
+      "company_name": "Expo Flora S.A.",
+      "account_id": "001VL00000mJQuTYAW",
+      "gap_categories": 6
+    },
+    {
+      "company_name": "Hana Farms Inc.",
+      "account_id": "001VL00000Vp156YAB",
+      "gap_categories": 5
+    },
+    {
+      "company_name": "Rosaprima International, LLC",
+      "account_id": "001G000001DW4SoIAL",
+      "gap_categories": 5
+    },
+    {
+      "company_name": "Las Vegas Floral Wholesale",
+      "account_id": "001G000001TsE8iIAF",
+      "gap_categories": 5
+    },
+    {
+      "company_name": "Continental Floral FL LLC",
+      "account_id": "0011L00002dFBcfQAG",
+      "gap_categories": 5
+    },
+    {
+      "company_name": "Andean Fresh LLC",
+      "account_id": "0011600001zF6GkAAK",
+      "gap_categories": 5
+    },
+    {
+      "company_name": "Promoflor SRL",
+      "account_id": "001VL00000LYFbdYAH",
+      "gap_categories": 5
+    },
+    {
+      "company_name": "RUMHORA GREENS LLC",
+      "account_id": "0011600001uRvGlAAK",
+      "gap_categories": 5
+    },
+    {
+      "company_name": "First Choice Floral",
+      "account_id": "00116000026WSexAAG",
+      "gap_categories": 4
+    },
+    {
+      "company_name": "LIHML INC Fayetteville",
+      "account_id": "001G000001DW4QoIAL",
+      "gap_categories": 4
+    },
+    {
+      "company_name": "Universal Flower Farms Inc.",
+      "account_id": "001VL00000jkf6KYAQ",
+      "gap_categories": 4
+    },
+    {
+      "company_name": "Forest Flowers",
+      "account_id": "00116000026Vdd4AAC",
+      "gap_categories": 4
+    },
+    {
+      "company_name": "IKEBANA CO SAS",
+      "account_id": "0014p00001xzL4bAAE",
+      "gap_categories": 4
+    },
+    {
+      "company_name": "-Sole Farms",
+      "account_id": "001G000001DW4T2IAL",
+      "gap_categories": 4
+    },
+    {
+      "company_name": "Bella Blossom LLC",
+      "account_id": "001G000001DW4OKIA1",
+      "gap_categories": 4
+    },
+    {
+      "company_name": "ROYAL BASE (U.S.A) CORPORATION",
+      "account_id": "001VL00000U1C7VYAV",
+      "gap_categories": 3
+    },
+    {
+      "company_name": "CINCINNATI WHSLE FLORIST INC.5643",
+      "account_id": "001G000001Tsg6jIAB",
+      "gap_categories": 3
+    },
+    {
+      "company_name": "Sieck Wright Floral Products",
+      "account_id": "0014p000020tateAAA",
+      "gap_categories": 3
+    },
+    {
+      "company_name": "TWI SON HARRISON WHOLESALE FLORAL",
+      "account_id": "0011600001uSczfAAC",
+      "gap_categories": 3
+    },
+    {
+      "company_name": "PAT FLOR SCARL",
+      "account_id": "001G000001DW4SSIA1",
+      "gap_categories": 3
+    },
+    {
+      "company_name": "Esprit Salt Lake, Inc",
+      "account_id": "0011600001uSZVYAA4",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "Star Roses",
+      "account_id": "001VL00000Pl0XeYAJ",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "Gala Roses",
+      "account_id": "001G000001DW4PFIA1",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "-Groflowers",
+      "account_id": "001G000001DW4QJIA1",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "Kennicott Brothers Company",
+      "account_id": "001G000001H3CrIIAV",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "Baisch & Skinner",
+      "account_id": "0011600001riCHoAAM",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "Everflorals",
+      "account_id": "001VL00000gB1JzYAK",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "FreshLink",
+      "account_id": "001VL00000A5ntfYAB",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "Floropolis",
+      "account_id": "001VL00000bryvBYAQ",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "Megaflor USA",
+      "account_id": "001VL000001pKqXYAU",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "EF FLOWERS",
+      "account_id": "001G000001DW4PPIA1",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "MGA Flowers",
+      "account_id": "0011L00002aTOTFQA4",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "IRIS ROSES LLC",
+      "account_id": "0014p00001v3oKUAAY",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "Valle Verde LLC",
+      "account_id": "001VL0000077mLdYAI",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "FLORIAD- MONTREAL CANADA INC.",
+      "account_id": "001G000001DW4PkIAL",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "CANTIZA FLORAL DBA NFD",
+      "account_id": "0011L00002rFEJwQAO",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "Honey Bee Wholesale Florist, LLC",
+      "account_id": "0014p000022R9RlAAK",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "LA TOSCANA FARMS",
+      "account_id": "001G000001fjeOcIAI",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "Pikes Peak Floral",
+      "account_id": "001G000001TsIbtIAF",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "Hyperactive Farms Inc.",
+      "account_id": "0011L00002eqDgTQAU",
+      "gap_categories": 2
+    },
+    {
+      "company_name": "Staalduinen Floral-LTF1118",
+      "account_id": "0011600001tWETgAAO",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Pacifica Farms - CAL",
+      "account_id": "0011L00002KYI4OQAX",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "KRUEGER WHOLESALE PROMO",
+      "account_id": "0011600001uSdIzAAK",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "MAGNOLIA HOLDINGS 301 LLC ABSOLUTELY BEAUTIFUL FLOWERS",
+      "account_id": "001VL00000HVuQvYAL",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Global Flowers",
+      "account_id": "001160000223WK5AAM",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Washington Floral Service, Inc",
+      "account_id": "00116000021BDnbAAG",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Unifour Wholesale",
+      "account_id": "0011600001uSkCOAA0",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "The Elite Flower",
+      "account_id": "0011600001zsxbOAAQ",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Coastal Wholesale Flowers, Inc.",
+      "account_id": "001G000001TsYWjIAN",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Premium Greens Australia LLC",
+      "account_id": "0011600001lgY6YAAU",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Bloomistics",
+      "account_id": "0011600001uRq3BAAS",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Exclusive Wholesale",
+      "account_id": "0011600001uSZXFAA4",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "GRUPO DEL PACIFICO",
+      "account_id": "0011L00002IDjZOQA1",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Continental Floral OR LLC",
+      "account_id": "0011L00002fOqChQAK",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "VELDKAMP'S FLOWERS",
+      "account_id": "0014p000022HSNzAAO",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Moonlight Flowers",
+      "account_id": "001VL00000Pos6tYAB",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN",
+      "account_id": "0011600001zVU4vAAG",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Cananvalle USA LLC",
+      "account_id": "0011600001lhZANAA2",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Bellaflor Group Inc.",
+      "account_id": "001G000001DW4OLIA1",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Derita Floral Floral Supply Co",
+      "account_id": "001VL00000LVfPRYA1",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Floral Chain Direct",
+      "account_id": "0011600001uUbL8AAK",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Flowerist LLC",
+      "account_id": "001VL00000HrwgpYAB",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "HANAYA FARMS",
+      "account_id": "00116000025sMRVAA2",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "ACME Testing, Inc.",
+      "account_id": "0011L00002fOHhdQAG",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "MAGNIFICA FLOWERS",
+      "account_id": "0014p00001sHtlXAAS",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "McCarthy Wholesale",
+      "account_id": "001VL00000YlWTzYAN",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "EPIC FARMS USA LLC",
+      "account_id": "0011600001zrCXXAA2",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Torchio Nursery",
+      "account_id": "0011600001uSU5jAAG",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "MONTEROSAS LLC",
+      "account_id": "0011L00002IGHtEQAX",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Dynamic Farms",
+      "account_id": "0011L00002Sbi4xQAB",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Royal Flowers Inc, International",
+      "account_id": "001G000001DXD6JIAX",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "HALL'S - BIRMINGHAM",
+      "account_id": "0011600001uScxFAAS",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "UNITED WHOLESALE- FFL ENTERPRISES",
+      "account_id": "0011600001mKVtUAAW",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "The Flowerman, Inc.",
+      "account_id": "001G000001TsJVrIAN",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Cataleya Flowers D&A",
+      "account_id": "001VL00000UN5fFYAT",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Bunches Direct Blumenimport GmbH",
+      "account_id": "0011L000028F9SYQA0",
+      "gap_categories": 1
+    },
+    {
+      "company_name": "Len Busch Roses",
+      "account_id": "001G000001DW4QnIAL",
+      "gap_categories": 1
+    }
+  ]
+}

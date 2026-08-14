@@ -1,0 +1,1466 @@
+[
+  {
+    "COMPANY_NAME": "Kennicott Brothers Company",
+    "COMPANY_ID": "44150",
+    "TOTAL_BUYERS": 7187,
+    "ACTIVE_BUYERS_L30D": 3807,
+    "ONLINE_BUYERS_TOTAL": 1812,
+    "ONLINE_BUYERS_L30D": 830
+  },
+  {
+    "COMPANY_NAME": "Bill Doran Company",
+    "COMPANY_ID": "7030",
+    "TOTAL_BUYERS": 6014,
+    "ACTIVE_BUYERS_L30D": 3555,
+    "ONLINE_BUYERS_TOTAL": 298,
+    "ONLINE_BUYERS_L30D": 197
+  },
+  {
+    "COMPANY_NAME": "Mayesh Wholesale Florist Inc",
+    "COMPANY_ID": "103078",
+    "TOTAL_BUYERS": 10590,
+    "ACTIVE_BUYERS_L30D": 1332,
+    "ONLINE_BUYERS_TOTAL": 4461,
+    "ONLINE_BUYERS_L30D": 936
+  },
+  {
+    "COMPANY_NAME": "Bill Doran Company (2)",
+    "COMPANY_ID": "321023",
+    "TOTAL_BUYERS": 370,
+    "ACTIVE_BUYERS_L30D": 207,
+    "ONLINE_BUYERS_TOTAL": 0,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "Charleston Wholesale Florist",
+    "COMPANY_ID": "397194",
+    "TOTAL_BUYERS": 355,
+    "ACTIVE_BUYERS_L30D": 158,
+    "ONLINE_BUYERS_TOTAL": 0,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "WE GOT FLOWERS",
+    "COMPANY_ID": "735220",
+    "TOTAL_BUYERS": 318,
+    "ACTIVE_BUYERS_L30D": 154,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "H&T Wholesale Flowers",
+    "COMPANY_ID": "498865",
+    "TOTAL_BUYERS": 706,
+    "ACTIVE_BUYERS_L30D": 383,
+    "ONLINE_BUYERS_TOTAL": 17,
+    "ONLINE_BUYERS_L30D": 9
+  },
+  {
+    "COMPANY_NAME": "Zeidler Floral",
+    "COMPANY_ID": "743648",
+    "TOTAL_BUYERS": 162,
+    "ACTIVE_BUYERS_L30D": 91,
+    "ONLINE_BUYERS_TOTAL": 35,
+    "ONLINE_BUYERS_L30D": 28
+  },
+  {
+    "COMPANY_NAME": "Baisch & Skinner",
+    "COMPANY_ID": "623491",
+    "TOTAL_BUYERS": 97,
+    "ACTIVE_BUYERS_L30D": 50,
+    "ONLINE_BUYERS_TOTAL": 97,
+    "ONLINE_BUYERS_L30D": 50
+  },
+  {
+    "COMPANY_NAME": "Cleveland Plant & Flower Co.",
+    "COMPANY_ID": "159761",
+    "TOTAL_BUYERS": 61,
+    "ACTIVE_BUYERS_L30D": 30,
+    "ONLINE_BUYERS_TOTAL": 61,
+    "ONLINE_BUYERS_L30D": 30
+  },
+  {
+    "COMPANY_NAME": "Pikes Peak Floral",
+    "COMPANY_ID": "395357",
+    "TOTAL_BUYERS": 47,
+    "ACTIVE_BUYERS_L30D": 18,
+    "ONLINE_BUYERS_TOTAL": 47,
+    "ONLINE_BUYERS_L30D": 18
+  },
+  {
+    "COMPANY_NAME": "BOTANICA WHOLESALE FLORIST DALLAS (IRVING), LLC",
+    "COMPANY_ID": "652251",
+    "TOTAL_BUYERS": 76,
+    "ACTIVE_BUYERS_L30D": 31,
+    "ONLINE_BUYERS_TOTAL": 76,
+    "ONLINE_BUYERS_L30D": 31
+  },
+  {
+    "COMPANY_NAME": "Maple Grove Floral",
+    "COMPANY_ID": "641341",
+    "TOTAL_BUYERS": 92,
+    "ACTIVE_BUYERS_L30D": 59,
+    "ONLINE_BUYERS_TOTAL": 56,
+    "ONLINE_BUYERS_L30D": 37
+  },
+  {
+    "COMPANY_NAME": "Ashland Addison",
+    "COMPANY_ID": "507479",
+    "TOTAL_BUYERS": 4,
+    "ACTIVE_BUYERS_L30D": 3,
+    "ONLINE_BUYERS_TOTAL": 4,
+    "ONLINE_BUYERS_L30D": 3
+  },
+  {
+    "COMPANY_NAME": "Southern Floral Co",
+    "COMPANY_ID": "449344",
+    "TOTAL_BUYERS": 11,
+    "ACTIVE_BUYERS_L30D": 3,
+    "ONLINE_BUYERS_TOTAL": 11,
+    "ONLINE_BUYERS_L30D": 3
+  },
+  {
+    "COMPANY_NAME": "Fletch Wholesale llc",
+    "COMPANY_ID": "541854",
+    "TOTAL_BUYERS": 5,
+    "ACTIVE_BUYERS_L30D": 4,
+    "ONLINE_BUYERS_TOTAL": 5,
+    "ONLINE_BUYERS_L30D": 4
+  },
+  {
+    "COMPANY_NAME": "Dreisbach Wholesale",
+    "COMPANY_ID": "765491",
+    "TOTAL_BUYERS": 6,
+    "ACTIVE_BUYERS_L30D": 5,
+    "ONLINE_BUYERS_TOTAL": 6,
+    "ONLINE_BUYERS_L30D": 5
+  },
+  {
+    "COMPANY_NAME": "Price's Floral Wholesale, LLC",
+    "COMPANY_ID": "816515",
+    "TOTAL_BUYERS": 4,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 4,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Arizona Floral Exchange",
+    "COMPANY_ID": "477128",
+    "TOTAL_BUYERS": 8,
+    "ACTIVE_BUYERS_L30D": 4,
+    "ONLINE_BUYERS_TOTAL": 8,
+    "ONLINE_BUYERS_L30D": 4
+  },
+  {
+    "COMPANY_NAME": "Flowers Direct Inc",
+    "COMPANY_ID": "578194",
+    "TOTAL_BUYERS": 16,
+    "ACTIVE_BUYERS_L30D": 12,
+    "ONLINE_BUYERS_TOTAL": 16,
+    "ONLINE_BUYERS_L30D": 12
+  },
+  {
+    "COMPANY_NAME": "Washington Floral Service, Inc",
+    "COMPANY_ID": "400013",
+    "TOTAL_BUYERS": 10,
+    "ACTIVE_BUYERS_L30D": 6,
+    "ONLINE_BUYERS_TOTAL": 10,
+    "ONLINE_BUYERS_L30D": 6
+  },
+  {
+    "COMPANY_NAME": "Universal Flower Farms Inc.",
+    "COMPANY_ID": "808064",
+    "TOTAL_BUYERS": 4,
+    "ACTIVE_BUYERS_L30D": 4,
+    "ONLINE_BUYERS_TOTAL": 2,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Quinlan-Wasserman, Inc",
+    "COMPANY_ID": "554905",
+    "TOTAL_BUYERS": 4,
+    "ACTIVE_BUYERS_L30D": 2,
+    "ONLINE_BUYERS_TOTAL": 4,
+    "ONLINE_BUYERS_L30D": 2
+  },
+  {
+    "COMPANY_NAME": "Honey Bee Wholesale Florist, LLC",
+    "COMPANY_ID": "631459",
+    "TOTAL_BUYERS": 19,
+    "ACTIVE_BUYERS_L30D": 7,
+    "ONLINE_BUYERS_TOTAL": 19,
+    "ONLINE_BUYERS_L30D": 7
+  },
+  {
+    "COMPANY_NAME": "Shamrock Wholesale Florist Memphis",
+    "COMPANY_ID": "730920",
+    "TOTAL_BUYERS": 24,
+    "ACTIVE_BUYERS_L30D": 12,
+    "ONLINE_BUYERS_TOTAL": 24,
+    "ONLINE_BUYERS_L30D": 12
+  },
+  {
+    "COMPANY_NAME": "BOTANICA WHSLE FLORIST-HOUSTON",
+    "COMPANY_ID": "654374",
+    "TOTAL_BUYERS": 26,
+    "ACTIVE_BUYERS_L30D": 6,
+    "ONLINE_BUYERS_TOTAL": 26,
+    "ONLINE_BUYERS_L30D": 6
+  },
+  {
+    "COMPANY_NAME": "TFS- Chattanooga",
+    "COMPANY_ID": "653842",
+    "TOTAL_BUYERS": 12,
+    "ACTIVE_BUYERS_L30D": 7,
+    "ONLINE_BUYERS_TOTAL": 12,
+    "ONLINE_BUYERS_L30D": 7
+  },
+  {
+    "COMPANY_NAME": "Taylor Wholesale Florist",
+    "COMPANY_ID": "476679",
+    "TOTAL_BUYERS": 3,
+    "ACTIVE_BUYERS_L30D": 2,
+    "ONLINE_BUYERS_TOTAL": 3,
+    "ONLINE_BUYERS_L30D": 2
+  },
+  {
+    "COMPANY_NAME": "Solo Wholesale Flower LLC",
+    "COMPANY_ID": "655643",
+    "TOTAL_BUYERS": 9,
+    "ACTIVE_BUYERS_L30D": 4,
+    "ONLINE_BUYERS_TOTAL": 9,
+    "ONLINE_BUYERS_L30D": 4
+  },
+  {
+    "COMPANY_NAME": "Len Busch Roses",
+    "COMPANY_ID": "541415",
+    "TOTAL_BUYERS": 20,
+    "ACTIVE_BUYERS_L30D": 13,
+    "ONLINE_BUYERS_TOTAL": 20,
+    "ONLINE_BUYERS_L30D": 13
+  },
+  {
+    "COMPANY_NAME": "Details Direct",
+    "COMPANY_ID": "819114",
+    "TOTAL_BUYERS": 6,
+    "ACTIVE_BUYERS_L30D": 6,
+    "ONLINE_BUYERS_TOTAL": 6,
+    "ONLINE_BUYERS_L30D": 6
+  },
+  {
+    "COMPANY_NAME": "Frank Adams Wholesale Florist",
+    "COMPANY_ID": "543610",
+    "TOTAL_BUYERS": 24,
+    "ACTIVE_BUYERS_L30D": 7,
+    "ONLINE_BUYERS_TOTAL": 24,
+    "ONLINE_BUYERS_L30D": 7
+  },
+  {
+    "COMPANY_NAME": "Fleurametz Chicago",
+    "COMPANY_ID": "681739",
+    "TOTAL_BUYERS": 15,
+    "ACTIVE_BUYERS_L30D": 7,
+    "ONLINE_BUYERS_TOTAL": 15,
+    "ONLINE_BUYERS_L30D": 7
+  },
+  {
+    "COMPANY_NAME": "Sieck Floral Distributing, Inc",
+    "COMPANY_ID": "585613",
+    "TOTAL_BUYERS": 26,
+    "ACTIVE_BUYERS_L30D": 18,
+    "ONLINE_BUYERS_TOTAL": 26,
+    "ONLINE_BUYERS_L30D": 18
+  },
+  {
+    "COMPANY_NAME": "The Oklahoma Flower Market",
+    "COMPANY_ID": "669090",
+    "TOTAL_BUYERS": 7,
+    "ACTIVE_BUYERS_L30D": 3,
+    "ONLINE_BUYERS_TOTAL": 7,
+    "ONLINE_BUYERS_L30D": 3
+  },
+  {
+    "COMPANY_NAME": "Tristate Wholesale Florist",
+    "COMPANY_ID": "632203",
+    "TOTAL_BUYERS": 10,
+    "ACTIVE_BUYERS_L30D": 5,
+    "ONLINE_BUYERS_TOTAL": 10,
+    "ONLINE_BUYERS_L30D": 5
+  },
+  {
+    "COMPANY_NAME": "Louisiana Wholesale Florist",
+    "COMPANY_ID": "586784",
+    "TOTAL_BUYERS": 6,
+    "ACTIVE_BUYERS_L30D": 3,
+    "ONLINE_BUYERS_TOTAL": 6,
+    "ONLINE_BUYERS_L30D": 3
+  },
+  {
+    "COMPANY_NAME": "Rose Runners",
+    "COMPANY_ID": "712429",
+    "TOTAL_BUYERS": 21,
+    "ACTIVE_BUYERS_L30D": 2,
+    "ONLINE_BUYERS_TOTAL": 0,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "Northline Wholesale Flowers",
+    "COMPANY_ID": "632322",
+    "TOTAL_BUYERS": 9,
+    "ACTIVE_BUYERS_L30D": 7,
+    "ONLINE_BUYERS_TOTAL": 8,
+    "ONLINE_BUYERS_L30D": 7
+  },
+  {
+    "COMPANY_NAME": "Magnolia Wholesale Florist Inc",
+    "COMPANY_ID": "588171",
+    "TOTAL_BUYERS": 10,
+    "ACTIVE_BUYERS_L30D": 10,
+    "ONLINE_BUYERS_TOTAL": 10,
+    "ONLINE_BUYERS_L30D": 10
+  },
+  {
+    "COMPANY_NAME": "Fleurametz USA NYC",
+    "COMPANY_ID": "675361",
+    "TOTAL_BUYERS": 22,
+    "ACTIVE_BUYERS_L30D": 5,
+    "ONLINE_BUYERS_TOTAL": 22,
+    "ONLINE_BUYERS_L30D": 5
+  },
+  {
+    "COMPANY_NAME": "Ensign Wholesale Flower Market",
+    "COMPANY_ID": "635064",
+    "TOTAL_BUYERS": 4,
+    "ACTIVE_BUYERS_L30D": 4,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "DVFLORA SEWELL",
+    "COMPANY_ID": "654131",
+    "TOTAL_BUYERS": 12,
+    "ACTIVE_BUYERS_L30D": 7,
+    "ONLINE_BUYERS_TOTAL": 12,
+    "ONLINE_BUYERS_L30D": 7
+  },
+  {
+    "COMPANY_NAME": "A Florist First",
+    "COMPANY_ID": "561453",
+    "TOTAL_BUYERS": 29,
+    "ACTIVE_BUYERS_L30D": 17,
+    "ONLINE_BUYERS_TOTAL": 29,
+    "ONLINE_BUYERS_L30D": 17
+  },
+  {
+    "COMPANY_NAME": "New England Wholesale Florist",
+    "COMPANY_ID": "742781",
+    "TOTAL_BUYERS": 60,
+    "ACTIVE_BUYERS_L30D": 0,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "* AquaRose",
+    "COMPANY_ID": "470794",
+    "TOTAL_BUYERS": 10,
+    "ACTIVE_BUYERS_L30D": 0,
+    "ONLINE_BUYERS_TOTAL": 5,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "NY Floral Supply",
+    "COMPANY_ID": "672781",
+    "TOTAL_BUYERS": 543,
+    "ACTIVE_BUYERS_L30D": 276,
+    "ONLINE_BUYERS_TOTAL": 21,
+    "ONLINE_BUYERS_L30D": 9
+  },
+  {
+    "COMPANY_NAME": "Metropetals",
+    "COMPANY_ID": "600558",
+    "TOTAL_BUYERS": 50,
+    "ACTIVE_BUYERS_L30D": 31,
+    "ONLINE_BUYERS_TOTAL": 15,
+    "ONLINE_BUYERS_L30D": 8
+  },
+  {
+    "COMPANY_NAME": "Orlando Wholesale Florist",
+    "COMPANY_ID": "592345",
+    "TOTAL_BUYERS": 425,
+    "ACTIVE_BUYERS_L30D": 208,
+    "ONLINE_BUYERS_TOTAL": 22,
+    "ONLINE_BUYERS_L30D": 9
+  },
+  {
+    "COMPANY_NAME": "Metro Flower Market LLC",
+    "COMPANY_ID": "394783",
+    "TOTAL_BUYERS": 3711,
+    "ACTIVE_BUYERS_L30D": 996,
+    "ONLINE_BUYERS_TOTAL": 20,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "KBC Cooler Account",
+    "COMPANY_ID": "412951",
+    "TOTAL_BUYERS": 52,
+    "ACTIVE_BUYERS_L30D": 38,
+    "ONLINE_BUYERS_TOTAL": 26,
+    "ONLINE_BUYERS_L30D": 21
+  },
+  {
+    "COMPANY_NAME": "Riverside Wholesale Florists KY",
+    "COMPANY_ID": "664096",
+    "TOTAL_BUYERS": 127,
+    "ACTIVE_BUYERS_L30D": 102,
+    "ONLINE_BUYERS_TOTAL": 3,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "National Floral Supply",
+    "COMPANY_ID": "398856",
+    "TOTAL_BUYERS": 202,
+    "ACTIVE_BUYERS_L30D": 0,
+    "ONLINE_BUYERS_TOTAL": 0,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "Stemline Wholesale",
+    "COMPANY_ID": "742939",
+    "TOTAL_BUYERS": 253,
+    "ACTIVE_BUYERS_L30D": 152,
+    "ONLINE_BUYERS_TOTAL": 7,
+    "ONLINE_BUYERS_L30D": 3
+  },
+  {
+    "COMPANY_NAME": "Tradewinds/ KING FLORAL SUPPLY",
+    "COMPANY_ID": "664648",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Lucas and Greer, Inc. dba L & G Wholesale Florist",
+    "COMPANY_ID": "727605",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "JOHNSENS WHOLESALE FLORIST",
+    "COMPANY_ID": "652199",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Palm Beach Whsle Flowers, Inc.",
+    "COMPANY_ID": "675363",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "TFS Bristol",
+    "COMPANY_ID": "664054",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "M&M CUT FLORA",
+    "COMPANY_ID": "651574",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "LD Trading/ Lawrence Developments Inc.",
+    "COMPANY_ID": "652551",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Gassafy Wholesale Florist Inc",
+    "COMPANY_ID": "654566",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "CINCINNATI WHSLE FLORIST INC.5643",
+    "COMPANY_ID": "651959",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Webb's Wholesale Florist",
+    "COMPANY_ID": "670701",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Younger & Son Inc",
+    "COMPANY_ID": "664820",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "COWARD WHOLESALE",
+    "COMPANY_ID": "665080",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Coward & Glisson Whsl. Flst.",
+    "COMPANY_ID": "815425",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 0,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "Claymore C. Sieck Wholesale Florist",
+    "COMPANY_ID": "591877",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 0,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "ALLIANCE FLORAL COMPANY. 6270",
+    "COMPANY_ID": "664719",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Coastal Wholesale Flowers, Inc.",
+    "COMPANY_ID": "650767",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Wolfe Wholesale Florist, Inc. Waco",
+    "COMPANY_ID": "726631",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Alders Wholesale Florist, Inc.",
+    "COMPANY_ID": "650721",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Unifour Wholesale ",
+    "COMPANY_ID": "664381",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "UNITED WHOLESALE- FFL  ENTERPRISES ",
+    "COMPANY_ID": "704636",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "R&W WHOLESALE, INC.",
+    "COMPANY_ID": "650536",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Valley Floral Co. - Wichita",
+    "COMPANY_ID": "740646",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "BRIEGER WHSLE -TX.",
+    "COMPANY_ID": "655098",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Exclusive Wholesale",
+    "COMPANY_ID": "716166",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "HALL\u00b4S - BIRMINGHAM",
+    "COMPANY_ID": "713789",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Metropolitan Wholesale/Cityside Flowers",
+    "COMPANY_ID": "733807",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Torchio Nursery",
+    "COMPANY_ID": "665336",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Tradewinds / Pristine Wholesale Floral",
+    "COMPANY_ID": "665261",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Jacksonville Flower Market",
+    "COMPANY_ID": "651200",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Florabundance.",
+    "COMPANY_ID": "664314",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "HARDIN\u00b4S WHLSE - LIBERTY",
+    "COMPANY_ID": "651216",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+    "COMPANY_ID": "652302",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "Valley Floral Co. of Oklahoma LLC - Tulsa",
+    "COMPANY_ID": "740696",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "MAGNOLIA HOLDINGS 301 LLC  ABSOLUTELY BEAUTIFUL FLOWERS",
+    "COMPANY_ID": "664494",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "VELDKAMP\u00b4S FLOWERS",
+    "COMPANY_ID": "670675",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "MRS. BLOOM'S DIRECT, INC.",
+    "COMPANY_ID": "731558",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "CHICAGO\u00b4S WHOLESALE",
+    "COMPANY_ID": "731381",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "POSIES TRUCK",
+    "COMPANY_ID": "664944",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "PETALS WEST, INC.",
+    "COMPANY_ID": "651513",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 1,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 1
+  },
+  {
+    "COMPANY_NAME": "WHOLESALE NORTON'S FLORIST",
+    "COMPANY_ID": "713840",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 0,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "Everflorals",
+    "COMPANY_ID": "811196",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 0,
+    "ONLINE_BUYERS_TOTAL": 0,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "! Juliet Wholesale Flowers LLC",
+    "COMPANY_ID": "677319",
+    "TOTAL_BUYERS": 35,
+    "ACTIVE_BUYERS_L30D": 21,
+    "ONLINE_BUYERS_TOTAL": 19,
+    "ONLINE_BUYERS_L30D": 8
+  },
+  {
+    "COMPANY_NAME": "White Rose Flowers & Supplies Inc.",
+    "COMPANY_ID": "642311",
+    "TOTAL_BUYERS": 322,
+    "ACTIVE_BUYERS_L30D": 202,
+    "ONLINE_BUYERS_TOTAL": 0,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "McCarthy Wholesale",
+    "COMPANY_ID": "701220",
+    "TOTAL_BUYERS": 1,
+    "ACTIVE_BUYERS_L30D": 0,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "Stellar Farms",
+    "COMPANY_ID": "200503",
+    "TOTAL_BUYERS": 215,
+    "ACTIVE_BUYERS_L30D": 163,
+    "ONLINE_BUYERS_TOTAL": 125,
+    "ONLINE_BUYERS_L30D": 91
+  },
+  {
+    "COMPANY_NAME": "Protean Farms US",
+    "COMPANY_ID": "467802",
+    "TOTAL_BUYERS": 212,
+    "ACTIVE_BUYERS_L30D": 156,
+    "ONLINE_BUYERS_TOTAL": 138,
+    "ONLINE_BUYERS_L30D": 108
+  },
+  {
+    "COMPANY_NAME": "Allure Farms",
+    "COMPANY_ID": "73730",
+    "TOTAL_BUYERS": 935,
+    "ACTIVE_BUYERS_L30D": 566,
+    "ONLINE_BUYERS_TOTAL": 424,
+    "ONLINE_BUYERS_L30D": 299
+  },
+  {
+    "COMPANY_NAME": "* Jet Fresh Flower Distributors Inc.",
+    "COMPANY_ID": "18322",
+    "TOTAL_BUYERS": 2400,
+    "ACTIVE_BUYERS_L30D": 1373,
+    "ONLINE_BUYERS_TOTAL": 708,
+    "ONLINE_BUYERS_L30D": 467
+  },
+  {
+    "COMPANY_NAME": "-Sole Farms",
+    "COMPANY_ID": "25489",
+    "TOTAL_BUYERS": 689,
+    "ACTIVE_BUYERS_L30D": 585,
+    "ONLINE_BUYERS_TOTAL": 440,
+    "ONLINE_BUYERS_L30D": 387
+  },
+  {
+    "COMPANY_NAME": "Fresca Farms",
+    "COMPANY_ID": "103112",
+    "TOTAL_BUYERS": 719,
+    "ACTIVE_BUYERS_L30D": 637,
+    "ONLINE_BUYERS_TOTAL": 433,
+    "ONLINE_BUYERS_L30D": 380
+  },
+  {
+    "COMPANY_NAME": "Royal Flowers Inc., Domestic",
+    "COMPANY_ID": "22143",
+    "TOTAL_BUYERS": 503,
+    "ACTIVE_BUYERS_L30D": 401,
+    "ONLINE_BUYERS_TOTAL": 348,
+    "ONLINE_BUYERS_L30D": 289
+  },
+  {
+    "COMPANY_NAME": "* Welyflor / PROFILE FLOWERS",
+    "COMPANY_ID": "453081",
+    "TOTAL_BUYERS": 412,
+    "ACTIVE_BUYERS_L30D": 333,
+    "ONLINE_BUYERS_TOTAL": 310,
+    "ONLINE_BUYERS_L30D": 238
+  },
+  {
+    "COMPANY_NAME": "Choice Farms",
+    "COMPANY_ID": "341499",
+    "TOTAL_BUYERS": 338,
+    "ACTIVE_BUYERS_L30D": 286,
+    "ONLINE_BUYERS_TOTAL": 271,
+    "ONLINE_BUYERS_L30D": 218
+  },
+  {
+    "COMPANY_NAME": "Gala Roses",
+    "COMPANY_ID": "38582",
+    "TOTAL_BUYERS": 312,
+    "ACTIVE_BUYERS_L30D": 278,
+    "ONLINE_BUYERS_TOTAL": 175,
+    "ONLINE_BUYERS_L30D": 148
+  },
+  {
+    "COMPANY_NAME": "Bella Blossom LLC",
+    "COMPANY_ID": "17789",
+    "TOTAL_BUYERS": 264,
+    "ACTIVE_BUYERS_L30D": 231,
+    "ONLINE_BUYERS_TOTAL": 217,
+    "ONLINE_BUYERS_L30D": 191
+  },
+  {
+    "COMPANY_NAME": "Gardens America Inc.",
+    "COMPANY_ID": "508421",
+    "TOTAL_BUYERS": 463,
+    "ACTIVE_BUYERS_L30D": 353,
+    "ONLINE_BUYERS_TOTAL": 266,
+    "ONLINE_BUYERS_L30D": 181
+  },
+  {
+    "COMPANY_NAME": "Sunburst Farms",
+    "COMPANY_ID": "22218",
+    "TOTAL_BUYERS": 679,
+    "ACTIVE_BUYERS_L30D": 467,
+    "ONLINE_BUYERS_TOTAL": 357,
+    "ONLINE_BUYERS_L30D": 232
+  },
+  {
+    "COMPANY_NAME": "EQR USA",
+    "COMPANY_ID": "130337",
+    "TOTAL_BUYERS": 785,
+    "ACTIVE_BUYERS_L30D": 515,
+    "ONLINE_BUYERS_TOTAL": 221,
+    "ONLINE_BUYERS_L30D": 131
+  },
+  {
+    "COMPANY_NAME": "Melody Farms LLC",
+    "COMPANY_ID": "498769",
+    "TOTAL_BUYERS": 461,
+    "ACTIVE_BUYERS_L30D": 296,
+    "ONLINE_BUYERS_TOTAL": 177,
+    "ONLINE_BUYERS_L30D": 115
+  },
+  {
+    "COMPANY_NAME": "Rosaprima International, LLC",
+    "COMPANY_ID": "12941",
+    "TOTAL_BUYERS": 844,
+    "ACTIVE_BUYERS_L30D": 714,
+    "ONLINE_BUYERS_TOTAL": 635,
+    "ONLINE_BUYERS_L30D": 570
+  },
+  {
+    "COMPANY_NAME": "Continental Flowers",
+    "COMPANY_ID": "146846",
+    "TOTAL_BUYERS": 369,
+    "ACTIVE_BUYERS_L30D": 309,
+    "ONLINE_BUYERS_TOTAL": 369,
+    "ONLINE_BUYERS_L30D": 309
+  },
+  {
+    "COMPANY_NAME": "Multiflora Corporation",
+    "COMPANY_ID": "377256",
+    "TOTAL_BUYERS": 180,
+    "ACTIVE_BUYERS_L30D": 137,
+    "ONLINE_BUYERS_TOTAL": 180,
+    "ONLINE_BUYERS_L30D": 137
+  },
+  {
+    "COMPANY_NAME": "U.S. Greens Corp",
+    "COMPANY_ID": "468041",
+    "TOTAL_BUYERS": 313,
+    "ACTIVE_BUYERS_L30D": 222,
+    "ONLINE_BUYERS_TOTAL": 313,
+    "ONLINE_BUYERS_L30D": 222
+  },
+  {
+    "COMPANY_NAME": "FloraLink",
+    "COMPANY_ID": "153031",
+    "TOTAL_BUYERS": 101,
+    "ACTIVE_BUYERS_L30D": 87,
+    "ONLINE_BUYERS_TOTAL": 101,
+    "ONLINE_BUYERS_L30D": 87
+  },
+  {
+    "COMPANY_NAME": "Equiflor LLC",
+    "COMPANY_ID": "395159",
+    "TOTAL_BUYERS": 153,
+    "ACTIVE_BUYERS_L30D": 113,
+    "ONLINE_BUYERS_TOTAL": 153,
+    "ONLINE_BUYERS_L30D": 113
+  },
+  {
+    "COMPANY_NAME": "Miaflora Farms",
+    "COMPANY_ID": "375054",
+    "TOTAL_BUYERS": 210,
+    "ACTIVE_BUYERS_L30D": 155,
+    "ONLINE_BUYERS_TOTAL": 210,
+    "ONLINE_BUYERS_L30D": 155
+  },
+  {
+    "COMPANY_NAME": "Golden Flowers",
+    "COMPANY_ID": "77300",
+    "TOTAL_BUYERS": 198,
+    "ACTIVE_BUYERS_L30D": 130,
+    "ONLINE_BUYERS_TOTAL": 198,
+    "ONLINE_BUYERS_L30D": 130
+  },
+  {
+    "COMPANY_NAME": "Premium Flowers",
+    "COMPANY_ID": "378242",
+    "TOTAL_BUYERS": 178,
+    "ACTIVE_BUYERS_L30D": 113,
+    "ONLINE_BUYERS_TOTAL": 178,
+    "ONLINE_BUYERS_L30D": 113
+  },
+  {
+    "COMPANY_NAME": "SUNRITE FARMS COLLECTIONS CORP",
+    "COMPANY_ID": "498842",
+    "TOTAL_BUYERS": 368,
+    "ACTIVE_BUYERS_L30D": 252,
+    "ONLINE_BUYERS_TOTAL": 251,
+    "ONLINE_BUYERS_L30D": 176
+  },
+  {
+    "COMPANY_NAME": "A Trilogy Floral - Zamba Flowers",
+    "COMPANY_ID": "7631",
+    "TOTAL_BUYERS": 406,
+    "ACTIVE_BUYERS_L30D": 296,
+    "ONLINE_BUYERS_TOTAL": 288,
+    "ONLINE_BUYERS_L30D": 209
+  },
+  {
+    "COMPANY_NAME": "Continental Floral LLC",
+    "COMPANY_ID": "41934",
+    "TOTAL_BUYERS": 435,
+    "ACTIVE_BUYERS_L30D": 322,
+    "ONLINE_BUYERS_TOTAL": 144,
+    "ONLINE_BUYERS_L30D": 86
+  },
+  {
+    "COMPANY_NAME": "Floral Chain Direct",
+    "COMPANY_ID": "139851",
+    "TOTAL_BUYERS": 337,
+    "ACTIVE_BUYERS_L30D": 304,
+    "ONLINE_BUYERS_TOTAL": 250,
+    "ONLINE_BUYERS_L30D": 209
+  },
+  {
+    "COMPANY_NAME": "Riverdale Farms",
+    "COMPANY_ID": "701292",
+    "TOTAL_BUYERS": 123,
+    "ACTIVE_BUYERS_L30D": 69,
+    "ONLINE_BUYERS_TOTAL": 123,
+    "ONLINE_BUYERS_L30D": 69
+  },
+  {
+    "COMPANY_NAME": "Albin Hagstrom & Son, Inc.",
+    "COMPANY_ID": "521854",
+    "TOTAL_BUYERS": 43,
+    "ACTIVE_BUYERS_L30D": 31,
+    "ONLINE_BUYERS_TOTAL": 43,
+    "ONLINE_BUYERS_L30D": 31
+  },
+  {
+    "COMPANY_NAME": "Sierra Flower Trading",
+    "COMPANY_ID": "488495",
+    "TOTAL_BUYERS": 56,
+    "ACTIVE_BUYERS_L30D": 28,
+    "ONLINE_BUYERS_TOTAL": 56,
+    "ONLINE_BUYERS_L30D": 28
+  },
+  {
+    "COMPANY_NAME": "Dramm & Echter, Inc",
+    "COMPANY_ID": "571220",
+    "TOTAL_BUYERS": 338,
+    "ACTIVE_BUYERS_L30D": 246,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "Liberty Blooms",
+    "COMPANY_ID": "35266",
+    "TOTAL_BUYERS": 156,
+    "ACTIVE_BUYERS_L30D": 0,
+    "ONLINE_BUYERS_TOTAL": 156,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "Kennicott Brothers West",
+    "COMPANY_ID": "796779",
+    "TOTAL_BUYERS": 12,
+    "ACTIVE_BUYERS_L30D": 12,
+    "ONLINE_BUYERS_TOTAL": 11,
+    "ONLINE_BUYERS_L30D": 11
+  },
+  {
+    "COMPANY_NAME": "Flora Fresh Inc",
+    "COMPANY_ID": "601933",
+    "TOTAL_BUYERS": 2443,
+    "ACTIVE_BUYERS_L30D": 982,
+    "ONLINE_BUYERS_TOTAL": 71,
+    "ONLINE_BUYERS_L30D": 20
+  },
+  {
+    "COMPANY_NAME": "FloraCo, Inc",
+    "COMPANY_ID": "319143",
+    "TOTAL_BUYERS": 64,
+    "ACTIVE_BUYERS_L30D": 53,
+    "ONLINE_BUYERS_TOTAL": 25,
+    "ONLINE_BUYERS_L30D": 16
+  },
+  {
+    "COMPANY_NAME": "The Queens Flowers Corp",
+    "COMPANY_ID": "315007",
+    "TOTAL_BUYERS": 69,
+    "ACTIVE_BUYERS_L30D": 55,
+    "ONLINE_BUYERS_TOTAL": 69,
+    "ONLINE_BUYERS_L30D": 55
+  },
+  {
+    "COMPANY_NAME": "The Queens Flowers, Corp",
+    "COMPANY_ID": "614448",
+    "TOTAL_BUYERS": 105,
+    "ACTIVE_BUYERS_L30D": 69,
+    "ONLINE_BUYERS_TOTAL": 105,
+    "ONLINE_BUYERS_L30D": 69
+  },
+  {
+    "COMPANY_NAME": "Galleria Farms",
+    "COMPANY_ID": "343614",
+    "TOTAL_BUYERS": 450,
+    "ACTIVE_BUYERS_L30D": 285,
+    "ONLINE_BUYERS_TOTAL": 233,
+    "ONLINE_BUYERS_L30D": 145
+  },
+  {
+    "COMPANY_NAME": "**Wafex USA",
+    "COMPANY_ID": "54343",
+    "TOTAL_BUYERS": 233,
+    "ACTIVE_BUYERS_L30D": 169,
+    "ONLINE_BUYERS_TOTAL": 165,
+    "ONLINE_BUYERS_L30D": 106
+  },
+  {
+    "COMPANY_NAME": "CD Wholesale",
+    "COMPANY_ID": "624816",
+    "TOTAL_BUYERS": 232,
+    "ACTIVE_BUYERS_L30D": 114,
+    "ONLINE_BUYERS_TOTAL": 2,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "Cananvalle USA LLC",
+    "COMPANY_ID": "182870",
+    "TOTAL_BUYERS": 161,
+    "ACTIVE_BUYERS_L30D": 104,
+    "ONLINE_BUYERS_TOTAL": 95,
+    "ONLINE_BUYERS_L30D": 54
+  },
+  {
+    "COMPANY_NAME": "Nazcaflor USA, Inc",
+    "COMPANY_ID": "732448",
+    "TOTAL_BUYERS": 254,
+    "ACTIVE_BUYERS_L30D": 190,
+    "ONLINE_BUYERS_TOTAL": 81,
+    "ONLINE_BUYERS_L30D": 46
+  },
+  {
+    "COMPANY_NAME": "Muchflowers Inc.",
+    "COMPANY_ID": "193829",
+    "TOTAL_BUYERS": 312,
+    "ACTIVE_BUYERS_L30D": 169,
+    "ONLINE_BUYERS_TOTAL": 137,
+    "ONLINE_BUYERS_L30D": 51
+  },
+  {
+    "COMPANY_NAME": "Legacy Flowers",
+    "COMPANY_ID": "189419",
+    "TOTAL_BUYERS": 168,
+    "ACTIVE_BUYERS_L30D": 131,
+    "ONLINE_BUYERS_TOTAL": 33,
+    "ONLINE_BUYERS_L30D": 18
+  },
+  {
+    "COMPANY_NAME": "Naranjo Farms LLC",
+    "COMPANY_ID": "395382",
+    "TOTAL_BUYERS": 221,
+    "ACTIVE_BUYERS_L30D": 149,
+    "ONLINE_BUYERS_TOTAL": 156,
+    "ONLINE_BUYERS_L30D": 105
+  },
+  {
+    "COMPANY_NAME": "Vosz Floral LLC",
+    "COMPANY_ID": "474847",
+    "TOTAL_BUYERS": 166,
+    "ACTIVE_BUYERS_L30D": 85,
+    "ONLINE_BUYERS_TOTAL": 20,
+    "ONLINE_BUYERS_L30D": 13
+  },
+  {
+    "COMPANY_NAME": "Floreco, Inc",
+    "COMPANY_ID": "449683",
+    "TOTAL_BUYERS": 191,
+    "ACTIVE_BUYERS_L30D": 123,
+    "ONLINE_BUYERS_TOTAL": 116,
+    "ONLINE_BUYERS_L30D": 63
+  },
+  {
+    "COMPANY_NAME": "The Elite Flower",
+    "COMPANY_ID": "182872",
+    "TOTAL_BUYERS": 205,
+    "ACTIVE_BUYERS_L30D": 101,
+    "ONLINE_BUYERS_TOTAL": 134,
+    "ONLINE_BUYERS_L30D": 76
+  },
+  {
+    "COMPANY_NAME": "Pinnacle Flowers, LLC",
+    "COMPANY_ID": "44225",
+    "TOTAL_BUYERS": 379,
+    "ACTIVE_BUYERS_L30D": 247,
+    "ONLINE_BUYERS_TOTAL": 116,
+    "ONLINE_BUYERS_L30D": 64
+  },
+  {
+    "COMPANY_NAME": "J&E Greens",
+    "COMPANY_ID": "573661",
+    "TOTAL_BUYERS": 215,
+    "ACTIVE_BUYERS_L30D": 115,
+    "ONLINE_BUYERS_TOTAL": 88,
+    "ONLINE_BUYERS_L30D": 34
+  },
+  {
+    "COMPANY_NAME": "Best Miami Growers LLC",
+    "COMPANY_ID": "509751",
+    "TOTAL_BUYERS": 207,
+    "ACTIVE_BUYERS_L30D": 129,
+    "ONLINE_BUYERS_TOTAL": 82,
+    "ONLINE_BUYERS_L30D": 39
+  },
+  {
+    "COMPANY_NAME": "Bloomistics",
+    "COMPANY_ID": "199908",
+    "TOTAL_BUYERS": 146,
+    "ACTIVE_BUYERS_L30D": 88,
+    "ONLINE_BUYERS_TOTAL": 106,
+    "ONLINE_BUYERS_L30D": 52
+  },
+  {
+    "COMPANY_NAME": "* Continental Farms",
+    "COMPANY_ID": "198117",
+    "TOTAL_BUYERS": 216,
+    "ACTIVE_BUYERS_L30D": 165,
+    "ONLINE_BUYERS_TOTAL": 214,
+    "ONLINE_BUYERS_L30D": 165
+  },
+  {
+    "COMPANY_NAME": "Green Bouquet LLC",
+    "COMPANY_ID": "667626",
+    "TOTAL_BUYERS": 36,
+    "ACTIVE_BUYERS_L30D": 24,
+    "ONLINE_BUYERS_TOTAL": 1,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "MONTEROSAS LLC",
+    "COMPANY_ID": "608547",
+    "TOTAL_BUYERS": 118,
+    "ACTIVE_BUYERS_L30D": 68,
+    "ONLINE_BUYERS_TOTAL": 66,
+    "ONLINE_BUYERS_L30D": 36
+  },
+  {
+    "COMPANY_NAME": "Zion Flowers INC",
+    "COMPANY_ID": "533116",
+    "TOTAL_BUYERS": 111,
+    "ACTIVE_BUYERS_L30D": 56,
+    "ONLINE_BUYERS_TOTAL": 61,
+    "ONLINE_BUYERS_L30D": 31
+  },
+  {
+    "COMPANY_NAME": "A1 Floral Xpressions",
+    "COMPANY_ID": "672147",
+    "TOTAL_BUYERS": 138,
+    "ACTIVE_BUYERS_L30D": 78,
+    "ONLINE_BUYERS_TOTAL": 113,
+    "ONLINE_BUYERS_L30D": 57
+  },
+  {
+    "COMPANY_NAME": "*FLORAL1 INC",
+    "COMPANY_ID": "613695",
+    "TOTAL_BUYERS": 96,
+    "ACTIVE_BUYERS_L30D": 48,
+    "ONLINE_BUYERS_TOTAL": 21,
+    "ONLINE_BUYERS_L30D": 12
+  },
+  {
+    "COMPANY_NAME": "The Flower Co, LLC",
+    "COMPANY_ID": "530493",
+    "TOTAL_BUYERS": 86,
+    "ACTIVE_BUYERS_L30D": 54,
+    "ONLINE_BUYERS_TOTAL": 44,
+    "ONLINE_BUYERS_L30D": 21
+  },
+  {
+    "COMPANY_NAME": "Tropical Blooms Inc.",
+    "COMPANY_ID": "537092",
+    "TOTAL_BUYERS": 119,
+    "ACTIVE_BUYERS_L30D": 49,
+    "ONLINE_BUYERS_TOTAL": 4,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "The Flower Emporium LLC",
+    "COMPANY_ID": "610504",
+    "TOTAL_BUYERS": 38,
+    "ACTIVE_BUYERS_L30D": 23,
+    "ONLINE_BUYERS_TOTAL": 12,
+    "ONLINE_BUYERS_L30D": 4
+  },
+  {
+    "COMPANY_NAME": "Direct Farms, LLC",
+    "COMPANY_ID": "529464",
+    "TOTAL_BUYERS": 103,
+    "ACTIVE_BUYERS_L30D": 79,
+    "ONLINE_BUYERS_TOTAL": 6,
+    "ONLINE_BUYERS_L30D": 2
+  },
+  {
+    "COMPANY_NAME": "AmeriLink Floratrader",
+    "COMPANY_ID": "20769",
+    "TOTAL_BUYERS": 188,
+    "ACTIVE_BUYERS_L30D": 143,
+    "ONLINE_BUYERS_TOTAL": 36,
+    "ONLINE_BUYERS_L30D": 16
+  },
+  {
+    "COMPANY_NAME": "Valley Springs LLC",
+    "COMPANY_ID": "6554",
+    "TOTAL_BUYERS": 299,
+    "ACTIVE_BUYERS_L30D": 53,
+    "ONLINE_BUYERS_TOTAL": 145,
+    "ONLINE_BUYERS_L30D": 17
+  },
+  {
+    "COMPANY_NAME": "GOMEZ B.V.",
+    "COMPANY_ID": "600370",
+    "TOTAL_BUYERS": 108,
+    "ACTIVE_BUYERS_L30D": 59,
+    "ONLINE_BUYERS_TOTAL": 0,
+    "ONLINE_BUYERS_L30D": 0
+  },
+  {
+    "COMPANY_NAME": "-Groflowers",
+    "COMPANY_ID": "1614",
+    "TOTAL_BUYERS": 237,
+    "ACTIVE_BUYERS_L30D": 145,
+    "ONLINE_BUYERS_TOTAL": 168,
+    "ONLINE_BUYERS_L30D": 91
+  },
+  {
+    "COMPANY_NAME": "Miraflor LLC",
+    "COMPANY_ID": "649745",
+    "TOTAL_BUYERS": 148,
+    "ACTIVE_BUYERS_L30D": 116,
+    "ONLINE_BUYERS_TOTAL": 82,
+    "ONLINE_BUYERS_L30D": 43
+  },
+  {
+    "COMPANY_NAME": "Natural Flowers, Inc",
+    "COMPANY_ID": "591665",
+    "TOTAL_BUYERS": 179,
+    "ACTIVE_BUYERS_L30D": 123,
+    "ONLINE_BUYERS_TOTAL": 105,
+    "ONLINE_BUYERS_L30D": 65
+  },
+  {
+    "COMPANY_NAME": "ECOROSES LLC",
+    "COMPANY_ID": "477673",
+    "TOTAL_BUYERS": 178,
+    "ACTIVE_BUYERS_L30D": 121,
+    "ONLINE_BUYERS_TOTAL": 126,
+    "ONLINE_BUYERS_L30D": 81
+  },
+  {
+    "COMPANY_NAME": "Floristcentric, LLC",
+    "COMPANY_ID": "496600",
+    "TOTAL_BUYERS": 167,
+    "ACTIVE_BUYERS_L30D": 81,
+    "ONLINE_BUYERS_TOTAL": 38,
+    "ONLINE_BUYERS_L30D": 15
+  },
+  {
+    "COMPANY_NAME": "Tutuli Flower Farms",
+    "COMPANY_ID": "579932",
+    "TOTAL_BUYERS": 36,
+    "ACTIVE_BUYERS_L30D": 19,
+    "ONLINE_BUYERS_TOTAL": 36,
+    "ONLINE_BUYERS_L30D": 19
+  },
+  {
+    "COMPANY_NAME": "Kennicott Kuts",
+    "COMPANY_ID": "25120",
+    "TOTAL_BUYERS": 54,
+    "ACTIVE_BUYERS_L30D": 31,
+    "ONLINE_BUYERS_TOTAL": 12,
+    "ONLINE_BUYERS_L30D": 5
+  },
+  {
+    "COMPANY_NAME": "Blossom Bliss LLC",
+    "COMPANY_ID": "671046",
+    "TOTAL_BUYERS": 75,
+    "ACTIVE_BUYERS_L30D": 43,
+    "ONLINE_BUYERS_TOTAL": 33,
+    "ONLINE_BUYERS_L30D": 20
+  },
+  {
+    "COMPANY_NAME": "Greens and Flowers Connection",
+    "COMPANY_ID": "321907",
+    "TOTAL_BUYERS": 208,
+    "ACTIVE_BUYERS_L30D": 147,
+    "ONLINE_BUYERS_TOTAL": 77,
+    "ONLINE_BUYERS_L30D": 38
+  },
+  {
+    "COMPANY_NAME": "Pacifica Farms - CAL",
+    "COMPANY_ID": "802590",
+    "TOTAL_BUYERS": 34,
+    "ACTIVE_BUYERS_L30D": 14,
+    "ONLINE_BUYERS_TOTAL": 34,
+    "ONLINE_BUYERS_L30D": 14
+  },
+  {
+    "COMPANY_NAME": "Premium Greens Australia LLC",
+    "COMPANY_ID": "144369",
+    "TOTAL_BUYERS": 118,
+    "ACTIVE_BUYERS_L30D": 91,
+    "ONLINE_BUYERS_TOTAL": 89,
+    "ONLINE_BUYERS_L30D": 56
+  },
+  {
+    "COMPANY_NAME": "Valleflor USA",
+    "COMPANY_ID": "475084",
+    "TOTAL_BUYERS": 64,
+    "ACTIVE_BUYERS_L30D": 38,
+    "ONLINE_BUYERS_TOTAL": 50,
+    "ONLINE_BUYERS_L30D": 24
+  },
+  {
+    "COMPANY_NAME": "FGS.Flowers.MIA",
+    "COMPANY_ID": "804758",
+    "TOTAL_BUYERS": 14,
+    "ACTIVE_BUYERS_L30D": 9,
+    "ONLINE_BUYERS_TOTAL": 3,
+    "ONLINE_BUYERS_L30D": 2
+  },
+  {
+    "COMPANY_NAME": "SHAW LAKE FARMS INC.",
+    "COMPANY_ID": "588417",
+    "TOTAL_BUYERS": 25,
+    "ACTIVE_BUYERS_L30D": 11,
+    "ONLINE_BUYERS_TOTAL": 25,
+    "ONLINE_BUYERS_L30D": 11
+  },
+  {
+    "COMPANY_NAME": "ADEESE FLOWERS LLC",
+    "COMPANY_ID": "796715",
+    "TOTAL_BUYERS": 37,
+    "ACTIVE_BUYERS_L30D": 18,
+    "ONLINE_BUYERS_TOTAL": 15,
+    "ONLINE_BUYERS_L30D": 10
+  },
+  {
+    "COMPANY_NAME": "Megaflor USA",
+    "COMPANY_ID": "622743",
+    "TOTAL_BUYERS": 153,
+    "ACTIVE_BUYERS_L30D": 62,
+    "ONLINE_BUYERS_TOTAL": 95,
+    "ONLINE_BUYERS_L30D": 40
+  },
+  {
+    "COMPANY_NAME": "Pronto Farms LLC",
+    "COMPANY_ID": "13989",
+    "TOTAL_BUYERS": 59,
+    "ACTIVE_BUYERS_L30D": 35,
+    "ONLINE_BUYERS_TOTAL": 21,
+    "ONLINE_BUYERS_L30D": 12
+  },
+  {
+    "COMPANY_NAME": "Lartisan Roses LLC",
+    "COMPANY_ID": "814810",
+    "TOTAL_BUYERS": 34,
+    "ACTIVE_BUYERS_L30D": 29,
+    "ONLINE_BUYERS_TOTAL": 10,
+    "ONLINE_BUYERS_L30D": 9
+  },
+  {
+    "COMPANY_NAME": "FLOWERMART CORP",
+    "COMPANY_ID": "489148",
+    "TOTAL_BUYERS": 43,
+    "ACTIVE_BUYERS_L30D": 22,
+    "ONLINE_BUYERS_TOTAL": 10,
+    "ONLINE_BUYERS_L30D": 4
+  }
+]

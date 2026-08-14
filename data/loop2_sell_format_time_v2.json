@@ -1,0 +1,1383 @@
+{
+  "_metadata": {
+    "query": "Sell format (boxes/bunches) and time (<8D/>8D) per wholesaler -- ONLINE ONLY, H1 2026",
+    "date_run": "2026-07-27",
+    "agent": "Rose",
+    "period": "2026-01-01 to 2026-06-30",
+    "sources": [
+      "SALES_SV (deduped via DISTINCT sale_item_id)"
+    ],
+    "rules_applied": [
+      "R1: ks_flag=TRUE",
+      "R4: sales < 100000 (corrupt row filter)",
+      "R5: dedup via DISTINCT sale_item_id to avoid 34x fan-out",
+      "R6: sell online = eCommerce + API + K2K",
+      "R9: provenance attached"
+    ],
+    "format_logic": "inventory_division = 'Boxes' vs 'Units' (bunches). Hard Goods excluded from pct calc.",
+    "time_logic": "DATEDIFF(day, created_on_date, shipping_date): <8 days = short-term/reactive, >=8 days = planned/forward.",
+    "total_accounts_with_format": 108,
+    "total_accounts_with_time": 95
+  },
+  "sell_format_time": [
+    {
+      "company_name": "! Juliet Wholesale Flowers LLC",
+      "online_gmv": 27911.7,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "A Florist First",
+      "online_gmv": 300501.1,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 84.8,
+      "online_pct_forward": 15.2
+    },
+    {
+      "company_name": "A Trilogy Floral - Zamba Flowers",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "ALLIANCE FLORAL COMPANY. 6270",
+      "online_gmv": 74913.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 100.0,
+      "online_pct_forward": 0.0
+    },
+    {
+      "company_name": "AMORES FLORES INC",
+      "online_gmv": 951.4,
+      "offline_gmv": 0,
+      "online_pct_boxes": 96.7,
+      "online_pct_bunches": 3.3,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Alders Wholesale Florist, Inc.",
+      "online_gmv": 108907.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 97.9,
+      "online_pct_forward": 2.1
+    },
+    {
+      "company_name": "Allied Cut Flower",
+      "online_gmv": 3047.14,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Allure Farms",
+      "online_gmv": 2864081.0,
+      "offline_gmv": 7154401.0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 98.4,
+      "online_pct_forward": 1.6
+    },
+    {
+      "company_name": "Arizona Floral Exchange",
+      "online_gmv": 38353.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 35.7,
+      "online_pct_forward": 64.3
+    },
+    {
+      "company_name": "Ashland Addison",
+      "online_gmv": 53731.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 91.7,
+      "online_pct_forward": 8.3
+    },
+    {
+      "company_name": "Asiri Blooms LLC",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "BOTANICA WHOLESALE FLORIST DALLAS (IRVING), LLC",
+      "online_gmv": 362784.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 85.5,
+      "online_pct_forward": 14.5
+    },
+    {
+      "company_name": "BOTANICA WHSLE FLORIST-HOUSTON",
+      "online_gmv": 103922.74,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 77.7,
+      "online_pct_forward": 22.3
+    },
+    {
+      "company_name": "BRIEGER WHSLE -TX.",
+      "online_gmv": 36804.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 97.0,
+      "online_pct_forward": 3.0
+    },
+    {
+      "company_name": "Baisch & Skinner",
+      "online_gmv": 437483.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 36.1,
+      "online_pct_forward": 63.9
+    },
+    {
+      "company_name": "Bill Doran Company",
+      "online_gmv": 2144942.0,
+      "offline_gmv": 59305178.0,
+      "online_pct_boxes": 49.9,
+      "online_pct_bunches": 49.7,
+      "online_pct_short": 99.2,
+      "online_pct_forward": 0.8
+    },
+    {
+      "company_name": "Bo's Wholesale Florist",
+      "online_gmv": 14325.46,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 78.8,
+      "online_pct_forward": 21.2
+    },
+    {
+      "company_name": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+      "online_gmv": 101612.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 100.0,
+      "online_pct_forward": 0.0
+    },
+    {
+      "company_name": "CD Wholesale",
+      "online_gmv": 180.72,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 100.0,
+      "online_pct_forward": 0.0
+    },
+    {
+      "company_name": "CHICAGO\u00b4S WHOLESALE",
+      "online_gmv": 91895.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 100.0,
+      "online_pct_forward": 0.0
+    },
+    {
+      "company_name": "CINCINNATI WHSLE FLORIST INC.5643",
+      "online_gmv": 53146.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 91.1,
+      "online_pct_forward": 8.9
+    },
+    {
+      "company_name": "COWARD WHOLESALE",
+      "online_gmv": 144511.23,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 69.4,
+      "online_pct_forward": 30.6
+    },
+    {
+      "company_name": "Charleston Wholesale Florist",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Claymore C. Sieck Wholesale Florist",
+      "online_gmv": 969.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Cleveland Plant & Flower Co.",
+      "online_gmv": 493514.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 60.2,
+      "online_pct_forward": 39.8
+    },
+    {
+      "company_name": "Coastal Wholesale Flowers, Inc.",
+      "online_gmv": 105895.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 94.9,
+      "online_pct_forward": 5.1
+    },
+    {
+      "company_name": "Coward & Glisson Whsl. Flst.",
+      "online_gmv": 2088.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Coward Wholesale",
+      "online_gmv": 144511.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Creations from Heaven",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "DC FLOWERS DIRECT",
+      "online_gmv": 37517.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 95.1,
+      "online_pct_forward": 4.9
+    },
+    {
+      "company_name": "DKAY WHOLESALE INC",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "DVFLORA SEWELL",
+      "online_gmv": 16176.65,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Delaware Valley Floral Group",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Derita Floral Floral Supply Co",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Dr Delphinium",
+      "online_gmv": 0,
+      "offline_gmv": 1435966.0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Dreisbach Wholesale",
+      "online_gmv": 25402.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 57.3,
+      "online_pct_forward": 42.7
+    },
+    {
+      "company_name": "Ensign Wholesale Flower Market",
+      "online_gmv": 38415.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 51.4,
+      "online_pct_forward": 48.6
+    },
+    {
+      "company_name": "Exclusive Wholesale",
+      "online_gmv": 61713.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 90.8,
+      "online_pct_forward": 9.2
+    },
+    {
+      "company_name": "FALL RIVER WHOLESALE",
+      "online_gmv": 665.8,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "FGS.Flowers",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "FGS.Flowers.MIA",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Faguaflowers Intl LLC",
+      "online_gmv": 23063.0,
+      "offline_gmv": 498.0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Fletch Wholesale LLC",
+      "online_gmv": 112868.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Fletch Wholesale llc",
+      "online_gmv": 112868.38,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 80.0,
+      "online_pct_forward": 20.0
+    },
+    {
+      "company_name": "FleuraMetz Montreal Ltd",
+      "online_gmv": 33533.8,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 61.4,
+      "online_pct_forward": 38.6
+    },
+    {
+      "company_name": "Fleurametz Chicago",
+      "online_gmv": 70279.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 57.4,
+      "online_pct_forward": 42.6
+    },
+    {
+      "company_name": "Fleurametz USA NYC",
+      "online_gmv": 73855.05,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Flora Fresh Inc",
+      "online_gmv": 31078.35,
+      "offline_gmv": 0,
+      "online_pct_boxes": 32.5,
+      "online_pct_bunches": 67.5,
+      "online_pct_short": 87.5,
+      "online_pct_forward": 12.5
+    },
+    {
+      "company_name": "FloraLink",
+      "online_gmv": 3961009.98,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 94.7,
+      "online_pct_forward": 5.3
+    },
+    {
+      "company_name": "Florabundance.",
+      "online_gmv": 172141.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 94.4,
+      "online_pct_forward": 5.6
+    },
+    {
+      "company_name": "Floristcentric, LLC",
+      "online_gmv": 62181.65,
+      "offline_gmv": 0,
+      "online_pct_boxes": 11.5,
+      "online_pct_bunches": 88.5,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Flowers Direct Inc",
+      "online_gmv": 201236.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 33.8,
+      "online_pct_forward": 66.2
+    },
+    {
+      "company_name": "Frank Adams Wholesale Florist",
+      "online_gmv": 41907.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 23.4,
+      "online_pct_forward": 76.6
+    },
+    {
+      "company_name": "Full Pot - Ft. Lauderdale",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "GOMEZ B.V.",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Gassafy Wholesale Florist Inc",
+      "online_gmv": 50209.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 99.5,
+      "online_pct_forward": 0.5
+    },
+    {
+      "company_name": "Georgia State Floral Distributors",
+      "online_gmv": 178509.29,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 40.0,
+      "online_pct_forward": 60.0
+    },
+    {
+      "company_name": "H&T Wholesale Flowers",
+      "online_gmv": 25552.0,
+      "offline_gmv": 4357993.0,
+      "online_pct_boxes": 63.3,
+      "online_pct_bunches": 35.0,
+      "online_pct_short": 89.5,
+      "online_pct_forward": 10.5
+    },
+    {
+      "company_name": "HALL\u00b4S - BIRMINGHAM",
+      "online_gmv": 138392.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 90.9,
+      "online_pct_forward": 9.1
+    },
+    {
+      "company_name": "HARDIN\u00b4S WHLSE - LIBERTY",
+      "online_gmv": 261285.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 97.8,
+      "online_pct_forward": 2.2
+    },
+    {
+      "company_name": "Hartford Florist Supply",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Honey Bee Wholesale Florist, LLC",
+      "online_gmv": 97605.18,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 60.5,
+      "online_pct_forward": 39.5
+    },
+    {
+      "company_name": "JFS Wholesale Floral",
+      "online_gmv": 144.08,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0.0,
+      "online_pct_bunches": 100.0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "JOHNSENS WHOLESALE FLORIST",
+      "online_gmv": 141115.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 97.9,
+      "online_pct_forward": 2.1
+    },
+    {
+      "company_name": "Jacksonville Flower Market",
+      "online_gmv": 301942.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 90.6,
+      "online_pct_forward": 9.4
+    },
+    {
+      "company_name": "KBC Cooler Account",
+      "online_gmv": 1001563.35,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "KD & Company",
+      "online_gmv": 2655.97,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 58.2,
+      "online_pct_forward": 41.8
+    },
+    {
+      "company_name": "Kennicott Brothers Company",
+      "online_gmv": 8738430.0,
+      "offline_gmv": 55319294.0,
+      "online_pct_boxes": 65.3,
+      "online_pct_bunches": 34.7,
+      "online_pct_short": 94.6,
+      "online_pct_forward": 5.4
+    },
+    {
+      "company_name": "LD Trading/ Lawrence Developments Inc.",
+      "online_gmv": 168843.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 96.0,
+      "online_pct_forward": 4.0
+    },
+    {
+      "company_name": "Len Busch Roses",
+      "online_gmv": 74480.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 15.8,
+      "online_pct_forward": 84.2
+    },
+    {
+      "company_name": "Louisiana Wholesale Florist",
+      "online_gmv": 47494.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 70.5,
+      "online_pct_forward": 29.5
+    },
+    {
+      "company_name": "Lubbock Wholesale",
+      "online_gmv": 33567.12,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 27.4,
+      "online_pct_forward": 72.6
+    },
+    {
+      "company_name": "Lucas and Greer, Inc. dba L & G Wholesale Florist",
+      "online_gmv": 107600.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 99.1,
+      "online_pct_forward": 0.9
+    },
+    {
+      "company_name": "M&M CUT FLORA",
+      "online_gmv": 278326.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 95.8,
+      "online_pct_forward": 4.2
+    },
+    {
+      "company_name": "MAGNOLIA HOLDINGS 301 LLC  ABSOLUTELY BEAUTIFUL FLOWERS",
+      "online_gmv": 58973.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 100.0,
+      "online_pct_forward": 0.0
+    },
+    {
+      "company_name": "MAIN WHOLESALE FLORIST LLC / NJ Clifton Location",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "MAIN WHOLESALE FLORIST LLC / Philadephia Location",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "MARAFLOR",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "MRS. BLOOM'S DIRECT, INC.",
+      "online_gmv": 33976.91,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 100.0,
+      "online_pct_forward": 0.0
+    },
+    {
+      "company_name": "MRS. BLOOM\u2019S DIRECT, INC.",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Magnolia Wholesale Florist Inc",
+      "online_gmv": 104346.68,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 62.1,
+      "online_pct_forward": 37.9
+    },
+    {
+      "company_name": "Maple Grove Floral",
+      "online_gmv": 201830.0,
+      "offline_gmv": 466645.0,
+      "online_pct_boxes": 5.8,
+      "online_pct_bunches": 94.2,
+      "online_pct_short": 100.0,
+      "online_pct_forward": 0.0
+    },
+    {
+      "company_name": "Mayesh Wholesale Florist Inc",
+      "online_gmv": 22703679.0,
+      "offline_gmv": 71366967.0,
+      "online_pct_boxes": 70.7,
+      "online_pct_bunches": 29.3,
+      "online_pct_short": 88.9,
+      "online_pct_forward": 11.1
+    },
+    {
+      "company_name": "McCarthy Wholesale",
+      "online_gmv": 90.4,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Metropolitan Wholesale/Cityside Flowers",
+      "online_gmv": 134545.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 94.9,
+      "online_pct_forward": 5.1
+    },
+    {
+      "company_name": "NY Floral Supply",
+      "online_gmv": 17066.43,
+      "offline_gmv": 0,
+      "online_pct_boxes": 1.6,
+      "online_pct_bunches": 93.5,
+      "online_pct_short": 100.0,
+      "online_pct_forward": 0.0
+    },
+    {
+      "company_name": "New England Wholesale Florist",
+      "online_gmv": 75.0,
+      "offline_gmv": 234398.0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 100.0,
+      "online_pct_forward": 0.0
+    },
+    {
+      "company_name": "Ninfa Flowers",
+      "online_gmv": 109.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Northline Wholesale Flowers",
+      "online_gmv": 16904.0,
+      "offline_gmv": 138.0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 78.8,
+      "online_pct_forward": 21.2
+    },
+    {
+      "company_name": "Orlando Wholesale Florist",
+      "online_gmv": 25674.29,
+      "offline_gmv": 0,
+      "online_pct_boxes": 18.7,
+      "online_pct_bunches": 81.3,
+      "online_pct_short": 99.3,
+      "online_pct_forward": 0.7
+    },
+    {
+      "company_name": "PETALS WEST, INC.",
+      "online_gmv": 79112.42,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 99.3,
+      "online_pct_forward": 0.7
+    },
+    {
+      "company_name": "POPPIES DESIGN STUDIO, LLC",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "POSIES TRUCK",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Palm Beach Whsle Flowers, Inc.",
+      "online_gmv": 338873.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 99.4,
+      "online_pct_forward": 0.6
+    },
+    {
+      "company_name": "Penn Valley Flora LLC",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Pikes Peak Floral",
+      "online_gmv": 179409.0,
+      "offline_gmv": 1632.0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 40.3,
+      "online_pct_forward": 59.7
+    },
+    {
+      "company_name": "Pinnacle Flowers, LLC",
+      "online_gmv": 229773.0,
+      "offline_gmv": 4491100.0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 99.9,
+      "online_pct_forward": 0.1
+    },
+    {
+      "company_name": "Price's Floral Wholesale, LLC",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Prime Petals LLC",
+      "online_gmv": 0,
+      "offline_gmv": 4127140.0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Protean Farms US",
+      "online_gmv": 655370.0,
+      "offline_gmv": 1363610.0,
+      "online_pct_boxes": 0.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 99.8,
+      "online_pct_forward": 0.2
+    },
+    {
+      "company_name": "Quinlan-Wasserman, Inc",
+      "online_gmv": 23734.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 81.7,
+      "online_pct_forward": 18.3
+    },
+    {
+      "company_name": "R&W WHOLESALE, INC.",
+      "online_gmv": 270144.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 97.3,
+      "online_pct_forward": 2.7
+    },
+    {
+      "company_name": "Riverside Wholesale Florists KY",
+      "online_gmv": 626.72,
+      "offline_gmv": 0,
+      "online_pct_boxes": 38.5,
+      "online_pct_bunches": 61.5,
+      "online_pct_short": 100.0,
+      "online_pct_forward": 0.0
+    },
+    {
+      "company_name": "Rokay Floral",
+      "online_gmv": 101371.13,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 65.7,
+      "online_pct_forward": 34.3
+    },
+    {
+      "company_name": "Rose Runners",
+      "online_gmv": 0,
+      "offline_gmv": 152668.0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "San Antonio Flower CO",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Schaefer Greenhouses",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Shamrock Wholesale Florist Memphis",
+      "online_gmv": 118376.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 86.8,
+      "online_pct_forward": 13.2
+    },
+    {
+      "company_name": "Sieck Floral Distributing, Inc",
+      "online_gmv": 178470.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 58.8,
+      "online_pct_forward": 41.2
+    },
+    {
+      "company_name": "Sieck Wright Floral Products",
+      "online_gmv": 48640.07,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 85.4,
+      "online_pct_forward": 14.6
+    },
+    {
+      "company_name": "Sierra Flower Trading",
+      "online_gmv": 91276.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 80.6,
+      "online_pct_forward": 19.4
+    },
+    {
+      "company_name": "Sims Flower Distribution",
+      "online_gmv": 176265.23,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 99.5,
+      "online_pct_forward": 0.5
+    },
+    {
+      "company_name": "Sofi's Flowers",
+      "online_gmv": 514.0,
+      "offline_gmv": 258678.0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Solo Wholesale Flower LLC",
+      "online_gmv": 69266.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 83.1,
+      "online_pct_forward": 16.9
+    },
+    {
+      "company_name": "South Florals Imports LLC",
+      "online_gmv": 70069.0,
+      "offline_gmv": 1050684.0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Southern Floral Co",
+      "online_gmv": 74985.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 33.2,
+      "online_pct_forward": 66.8
+    },
+    {
+      "company_name": "Staalduinen Floral-LTF1118",
+      "online_gmv": 168592.47,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 93.4,
+      "online_pct_forward": 6.6
+    },
+    {
+      "company_name": "Stellar Farms",
+      "online_gmv": 908773.0,
+      "offline_gmv": 3899848.0,
+      "online_pct_boxes": 0.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 94.5,
+      "online_pct_forward": 5.5
+    },
+    {
+      "company_name": "Stemline Wholesale",
+      "online_gmv": 27715.19,
+      "offline_gmv": 0,
+      "online_pct_boxes": 99.7,
+      "online_pct_bunches": 0.3,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "TFS Bristol",
+      "online_gmv": 169374.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 91.6,
+      "online_pct_forward": 8.4
+    },
+    {
+      "company_name": "TFS- Chattanooga",
+      "online_gmv": 325668.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 87.7,
+      "online_pct_forward": 12.3
+    },
+    {
+      "company_name": "Taylor Wholesale Florist",
+      "online_gmv": 9207.84,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 54.9,
+      "online_pct_forward": 45.1
+    },
+    {
+      "company_name": "Tennessee Florist Supply - Knox",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "The Flower Emporium LLC",
+      "online_gmv": 3563.79,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "The Oklahoma Flower Market",
+      "online_gmv": 33590.67,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 51.5,
+      "online_pct_forward": 48.5
+    },
+    {
+      "company_name": "Torchio Nursery",
+      "online_gmv": 78164.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 100.0,
+      "online_pct_forward": 0.0
+    },
+    {
+      "company_name": "Tradewinds / Pristine Wholesale Floral",
+      "online_gmv": 150088.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 98.6,
+      "online_pct_forward": 1.4
+    },
+    {
+      "company_name": "Tradewinds/ KING FLORAL SUPPLY",
+      "online_gmv": 175515.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 90.8,
+      "online_pct_forward": 9.2
+    },
+    {
+      "company_name": "Tristate Wholesale Florist",
+      "online_gmv": 131004.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 98.4,
+      "online_pct_forward": 1.6
+    },
+    {
+      "company_name": "Twins Flower Farm",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "UNITED WHOLESALE- FFL  ENTERPRISES",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "UNITED WHOLESALE- FFL  ENTERPRISES ",
+      "online_gmv": 60627.44,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 100.0,
+      "online_pct_forward": 0.0
+    },
+    {
+      "company_name": "Unifour Wholesale",
+      "online_gmv": 135979.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Unifour Wholesale ",
+      "online_gmv": 135978.76,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 85.5,
+      "online_pct_forward": 14.5
+    },
+    {
+      "company_name": "VELDKAMP\u00b4S FLOWERS",
+      "online_gmv": 82460.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 99.1,
+      "online_pct_forward": 0.9
+    },
+    {
+      "company_name": "Valley Floral Co. - Wichita",
+      "online_gmv": 167198.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 90.5,
+      "online_pct_forward": 9.5
+    },
+    {
+      "company_name": "Valley Floral Co. of OKC - Oklahoma",
+      "online_gmv": 25000.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 100.0,
+      "online_pct_forward": 0.0
+    },
+    {
+      "company_name": "Valley Floral Co. of Oklahoma LLC - Tulsa",
+      "online_gmv": 156054.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 88.7,
+      "online_pct_forward": 11.3
+    },
+    {
+      "company_name": "Verdnatura",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Vosz Floral LLC",
+      "online_gmv": 12278.95,
+      "offline_gmv": 0,
+      "online_pct_boxes": 17.9,
+      "online_pct_bunches": 81.8,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "WB FLORAL GROUP, LLC.-MD",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "WE GOT FLOWERS",
+      "online_gmv": 491.0,
+      "offline_gmv": 2927103.0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 0.0,
+      "online_pct_forward": 100.0
+    },
+    {
+      "company_name": "WHOLESALE NORTON'S FLORIST",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Wafex USA",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Washington Floral Service, Inc",
+      "online_gmv": 70467.35,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 8.2,
+      "online_pct_forward": 91.8
+    },
+    {
+      "company_name": "Webb's Wholesale Florist",
+      "online_gmv": 49001.12,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 98.8,
+      "online_pct_forward": 1.2
+    },
+    {
+      "company_name": "Webb\u2019s Wholesale Florist",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Wellington Florist",
+      "online_gmv": 0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 0,
+      "online_pct_bunches": 0,
+      "online_pct_short": 0,
+      "online_pct_forward": 0
+    },
+    {
+      "company_name": "Wolfe Wholesale Florist, Inc. Waco",
+      "online_gmv": 131239.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 98.2,
+      "online_pct_forward": 1.8
+    },
+    {
+      "company_name": "Younger & Son Inc",
+      "online_gmv": 22735.0,
+      "offline_gmv": 0,
+      "online_pct_boxes": 100.0,
+      "online_pct_bunches": 0.0,
+      "online_pct_short": 95.3,
+      "online_pct_forward": 4.7
+    },
+    {
+      "company_name": "Zeidler Floral",
+      "online_gmv": 163709.0,
+      "offline_gmv": 787121.0,
+      "online_pct_boxes": 0.0,
+      "online_pct_bunches": 100.0,
+      "online_pct_short": 98.3,
+      "online_pct_forward": 1.7
+    }
+  ]
+}

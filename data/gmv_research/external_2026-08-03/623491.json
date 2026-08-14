@@ -1,0 +1,57 @@
+{
+  "account_id": "623491",
+  "account_name": "Baisch & Skinner",
+  "researched_at": "2026-08-03",
+  "observations": [
+    {
+      "evidence_key_suffix": "official-company-scope",
+      "claim_key": "business_classification_and_branch_scope",
+      "claim_summary": "Baisch & Skinner is a family-owned B2B wholesale floral distributor. Its official site identifies seven locations, a 160,000-square-foot St. Louis complex, and service across the Midwest.",
+      "evidence_type": "official_website",
+      "source_url": "https://baischandskinner.com/pages/contact-us",
+      "source_title": "Baisch & Skinner — Contact Info",
+      "evidence_state": "verified",
+      "confidence": "high",
+      "source_locator": {"headquarters": "St. Louis, MO", "branch_count": 7, "st_louis_complex_sq_ft": 160000}
+    },
+    {
+      "evidence_key_suffix": "third-party-revenue-conflict",
+      "claim_key": "conflicting_third_party_company_revenue_estimates",
+      "claim_summary": "Public third-party profiles conflict materially: $3.5M (Growjo), approximately $8M / $50M–$100M range (LeadIQ), $10M–$50M / approximately $27.8M (SignalHire), and $25M–$50M (Salary.com). These are not a calibrated evidence set.",
+      "evidence_type": "third_party_directory",
+      "source_url": "https://www.signalhire.com/companies/baisch-and-skinner-inc",
+      "source_title": "SignalHire — Baisch and Skinner, Inc profile",
+      "evidence_state": "conflicting",
+      "confidence": "low",
+      "source_locator": {"conflicting_sources":["https://growjo.com/company/BAISCH_AND_SKINNER","https://leadiq.com/c/baisch-and-skinner-inc/5a1d996523000054008822c4","https://www.salary.com/research/company/baisch-skinner-inc-overview"],"reported_ranges_usd":[[3500000,3500000],[8000000,100000000],[10000000,50000000],[25000000,50000000]]}
+    }
+  ],
+  "external_estimates": [
+    {
+      "estimate_type": "company_gmv",
+      "low_value": null,
+      "midpoint_value": null,
+      "high_value": null,
+      "method_key": "conflicting_external_revenue_sources_require_calibration",
+      "method_version": "v1",
+      "estimate_state": "blocked",
+      "confidence": "low",
+      "as_of_date": "2026-08-03",
+      "notes": "The public range is too contradictory ($3.5M to $100M) to publish an annual GMV range. The official seven-location footprint confirms scale but does not size revenue.",
+      "evidence_key_suffixes": ["official-company-scope", "third-party-revenue-conflict"]
+    },
+    {
+      "estimate_type": "total_purchases",
+      "low_value": null,
+      "midpoint_value": null,
+      "high_value": null,
+      "method_key": "purchase_potential_requires_cogs_or_validated_margin_model",
+      "method_version": "v1",
+      "estimate_state": "blocked",
+      "confidence": "low",
+      "as_of_date": "2026-08-03",
+      "notes": "No external COGS or gross-margin source was found. Do not turn the legacy 54% benchmark into an external fact; it needs a separately versioned internal model.",
+      "evidence_key_suffixes": ["official-company-scope"]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "account_id": "743648",
+  "account_name": "Zeidler Floral",
+  "status": "EXTERNAL_EVIDENCE_PARTIAL_NO_DEFENSIBLE_RANGE",
+  "researched_at": "2026-08-03",
+  "entity_scope": "Koronet company_location 743648; public evidence matches Zeidler Wholesale Floral Co. / Zeidler's in Evansville. It describes a diversified enterprise, so public scope may exceed the Koronet company-location boundary.",
+  "classification": {"primary": "wholesale floral division within diversified retail/greenhouse enterprise", "evidence": [{"source": "https://www.zeidlerwholesale.com/home/about", "observed": "Official wholesale site says the business has a wholesale division, retail location, 100,000+ sq ft greenhouse space and 13+ acres."}]},
+  "observations": [
+    {"evidence_key_suffix": "official-wholesale-footprint", "claim_key": "operating_footprint", "claim_summary": "Official site describes a wholesale division, retail operations, 100,000+ sq ft greenhouse space and 13+ acres; this proves diversified scale but not revenue or the company_location boundary.", "evidence_type": "official_website", "source_url": "https://www.zeidlerwholesale.com/home/about", "source_title": "Zeidler's Wholesale — About", "evidence_state": "observed", "confidence": "medium"},
+    {"evidence_key_suffix": "official-history-employees", "claim_key": "public_headcount_signal", "claim_summary": "Official history says the broader enterprise has over 100 employees and five retail locations. It does not split wholesale revenue or employees.", "evidence_type": "official_website", "source_url": "https://www.zeidlers.com/pages/history.htm", "source_title": "Zeidler's — Company History", "evidence_state": "partial", "confidence": "medium"}
+  ],
+  "external_estimates": [
+    {"estimate_type": "company_gmv", "low_value": null, "midpoint_value": null, "high_value": null, "method_key": "scope_and_two_method_external_sizing_not_met", "method_version": "v1", "estimate_state": "blocked", "confidence": "low", "as_of_date": "2026-08-03", "notes": "The public evidence covers a diversified enterprise, not a proven Koronet company-location boundary. No revenue, throughput or wholesale-only headcount exists for a second sizing method.", "evidence_key_suffixes": ["official-wholesale-footprint", "official-history-employees"]},
+    {"estimate_type": "total_purchases", "low_value": null, "midpoint_value": null, "high_value": null, "method_key": "scope_and_two_method_external_sizing_not_met", "method_version": "v1", "estimate_state": "blocked", "confidence": "low", "as_of_date": "2026-08-03", "notes": "No externally supportable purchase-volume method was found.", "evidence_key_suffixes": []}
+  ],
+  "current_internal_estimate": {"gmv_usd": 950830, "source": "KORONET_LEGACY_CORE_MODEL", "confidence": "HIGH_FOR_INTERNAL_ACTIVITY_NOT_EXTERNAL_COMPANY_GMV", "validation_state": "NOT_VALIDATED_BY_EXTERNAL_RESEARCH"},
+  "gmv_estimate": null,
+  "buys_estimate": null,
+  "why_no_external_estimate_yet": "No public revenue, purchase volume, facility throughput or wholesale-only headcount was found. The enterprise is multi-division; applying a generic revenue-per-employee multiplier would create a false company-location GMV.",
+  "next_best_signals": ["Verify whether 743648 represents wholesale only or the entire Zeidler legal enterprise.", "Find a second source with wholesale-only revenue, verified credit range, sales-tax/public procurement evidence, or entity-specific import value.", "Do not use the 100+ total enterprise headcount as a standalone estimator."],
+  "tx_strategy_lane": "selective_test"
+}

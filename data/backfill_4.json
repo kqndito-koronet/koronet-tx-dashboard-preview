@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "generated": "2026-07-30",
+    "period": "H1 2026 (2026-01-01 to 2026-07-01)",
+    "sell_source": "PRODUCTION.ANALYTICS.SALES_SV",
+    "buy_source": "PRODUCTION.ANALYTICS.PROCUREMENTS_SV",
+    "filters": "KS_FLAG=TRUE, SALES<100000 (sell-side), shipping_date H1 2026",
+    "rules_applied": ["Rule 1: ks_flag=TRUE", "Rule 4: SALES<100000", "Rule 8: semantic views only", "Rule 17: total_cost for BUY GMV"]
+  },
+  "accounts": [
+    {
+      "company_name": "Arizona Family Florist",
+      "company_id": 193828,
+      "account_id": "00116000023rB8qAAE",
+      "sell_offline": 1806117.15,
+      "sell_online": 0.00,
+      "sell_total": 1806117.15,
+      "sell_tx_count": 19990,
+      "proc_total": 2336555.26,
+      "online_pct": 0.0
+    },
+    {
+      "company_name": "A Florist First",
+      "company_id": 561453,
+      "account_id": "00116000021c3HoAAI",
+      "sell_offline": 0.00,
+      "sell_online": 300501.10,
+      "sell_total": 300501.10,
+      "sell_tx_count": 3017,
+      "proc_total": 219975.28,
+      "online_pct": 100.0
+    },
+    {
+      "company_name": "Nova Packaging Solutions, Inc.",
+      "company_id": 743217,
+      "account_id": "001VL00000TUGt3YAH",
+      "sell_offline": 8645.52,
+      "sell_online": 284.39,
+      "sell_total": 8929.91,
+      "sell_tx_count": 192,
+      "proc_total": 4839.12,
+      "online_pct": 3.2
+    },
+    {
+      "company_name": "Avon Valley Floral",
+      "company_id": 822374,
+      "account_id": "001G000001DW4OGIA1",
+      "sell_offline": 5409.29,
+      "sell_online": 0.00,
+      "sell_total": 5409.29,
+      "sell_tx_count": 72,
+      "proc_total": 15944.72,
+      "online_pct": 0.0
+    }
+  ]
+}

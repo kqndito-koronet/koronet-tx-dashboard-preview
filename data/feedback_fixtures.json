@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "purpose": "Machine-readable, blocking acceptance fixtures derived from reviewed operating feedback. A fixture prevents VERIFIED promotion; it never changes business data or chooses an intervention.",
+  "cases": [
+    {
+      "case_key": "TX-PRICE-20260801-METRIC-INTEGRITY",
+      "title": "TX Dashboard metric integrity — Price's validation fixture",
+      "status": "blocking",
+      "subject": {"type": "account", "id": "816515", "name": "Price's Floral Wholesale, LLC"},
+      "feedback_record": "docs/transactions/TX_PRICES_ACCEPTANCE_FEEDBACK_2026-08-01.md",
+      "targets": [
+        "transactions/accounts/816515",
+        "transactions/buy",
+        "transactions/list",
+        "transactions/sell",
+        "transactions/metric-definitions"
+      ],
+      "promotion_rule": "No dashboard card, lead or account diagnosis touching a listed target may be marked VERIFIED while a blocking finding fails.",
+      "findings": [
+        {
+          "finding_key": "PRICE-POT-001",
+          "kind": "metric_semantics",
+          "requirement": "Observed Koronet BUY must not be labelled estimated BUY potential.",
+          "acceptance_test": "Potential has method, inputs, date and confidence; otherwise observed BUY is separately named and windowed."
+        },
+        {
+          "finding_key": "PRICE-BUY-002",
+          "kind": "time_window",
+          "requirement": "Online BUY percentage must expose its period, denominator and as-of date.",
+          "acceptance_test": "A reviewer can distinguish current-month, prior-quarter and YTD values without calculating or guessing."
+        },
+        {
+          "finding_key": "PRICE-LIST-003",
+          "kind": "metric_definition",
+          "requirement": "LIST must not conflate listing, inventory, sales-recency or coverage; online/offline comparison needs one definition.",
+          "acceptance_test": "The rendered metric carries a definition and compatible online/offline coverage, or is explicitly unavailable/proxy."
+        },
+        {
+          "finding_key": "PRICE-SELL-004",
+          "kind": "spine_reconciliation",
+          "requirement": "Online/offline buyer counts and sell GMV must use the same source population and window.",
+          "acceptance_test": "Counts reconcile to total and no online-buyer claim is shown beside $0 online sell GMV without an explicit compatible explanation."
+        },
+        {
+          "finding_key": "PRICE-CONTEXT-005",
+          "kind": "commercial_context",
+          "requirement": "Reimplementation and pre-existing individual-ecommerce purchasing are source-backed context, not automatic Procurement attribution.",
+          "acceptance_test": "The account narrative cites dated evidence or says context is not yet verified."
+        },
+        {
+          "finding_key": "PRICE-LEAKAGE-006",
+          "kind": "decision_readiness",
+          "requirement": "BUY coverage can identify vendor/category/variety/SKU gaps and recurring online-to-offline leakage, or explicitly asks for the missing investigation.",
+          "acceptance_test": "No coverage card implies that a small offline vendor count explains offline GMV without compatible volume and transition evidence."
+        }
+      ]
+    },
+    {
+      "case_key": "TX-CARDS-20260804-UI-DATA-REGRESSION",
+      "title": "Account cards regressed from the reviewed visual/data baseline",
+      "status": "blocking",
+      "subject": {"type": "dashboard_surface", "id": "transactions/accounts/cards", "name": "POTENTIAL → OPPORTUNITIES → BUY → LIST → SELL cards"},
+      "feedback_record": "docs/transactions/TX_CARD_UI_REGRESSION_2026-08-04.md",
+      "targets": ["transactions/accounts", "transactions/accounts/cards"],
+      "promotion_rule": "No release may be called MVP-ready or published as a card improvement until it passes the visual/data regression acceptance tests below against the approved card baseline.",
+      "findings": [
+        {
+          "finding_key": "CARDS-UI-001",
+          "kind": "visual_regression",
+          "requirement": "The expanded account view preserves the reviewed card hierarchy, concise scanability and section/table design; it must not collapse into generic prose or a materially weaker layout.",
+          "acceptance_test": "A visual QA capture for Price, Kennicott, Zeidler and Arizona Family is compared to the approved baseline before publish; all five sections retain their intended hierarchy and readable tables."
+        },
+        {
+          "finding_key": "CARDS-DATA-002",
+          "kind": "data_regression",
+          "requirement": "A migration to the validated spine must not silently remove previously available, source-labeled evidence from a card.",
+          "acceptance_test": "For each card, a before/after field inventory records preserved, corrected, newly unavailable and intentionally withheld evidence; no field is removed merely because it was inconvenient to reconcile."
+        },
+        {
+          "finding_key": "CARDS-UI-003",
+          "kind": "release_gate",
+          "requirement": "No card UI/data change is published before local visual QA and the blocking feedback fixture pass.",
+          "acceptance_test": "Release receipt links the source commit, the field inventory and the four-account visual QA captures."
+        }
+      ]
+    }
+  ]
+}

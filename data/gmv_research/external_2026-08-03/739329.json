@@ -1,0 +1,10 @@
+{
+  "account_id":"739329","account_name":"Penn Valley Flora","researched_at":"2026-08-03",
+  "observations":[
+    {"evidence_key_suffix":"identity-search-no-match","claim_key":"public_identity_resolution","claim_summary":"Targeted public-web research did not identify an official website, legal entity, location, or authoritative company profile unambiguously matching the Koronet name Penn Valley Flora.","evidence_type":"research_negative_result","source_url":null,"source_title":"Targeted public-web identity search","evidence_state":"missing","confidence":"high","source_locator":{"queries":["Penn Valley Flora wholesale annual revenue","Penn Valley Flora official wholesale florist Pennsylvania"]}}
+  ],
+  "external_estimates":[
+    {"estimate_type":"company_gmv","low_value":null,"midpoint_value":null,"high_value":null,"method_key":"identity_unresolved","method_version":"v1","estimate_state":"blocked","confidence":"low","as_of_date":"2026-08-03","notes":"Need legal name, city/state or official domain before external research can identify the right company.","evidence_key_suffixes":["identity-search-no-match"]},
+    {"estimate_type":"total_purchases","low_value":null,"midpoint_value":null,"high_value":null,"method_key":"identity_unresolved","method_version":"v1","estimate_state":"blocked","confidence":"low","as_of_date":"2026-08-03","notes":"Company identity must be resolved before sizing purchases.","evidence_key_suffixes":["identity-search-no-match"]}
+  ]
+}

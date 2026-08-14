@@ -1,0 +1,83 @@
+{
+  "103078": {
+    "stage": "Pre-Go-Live",
+    "type": "Core Multi-Loc"
+  },
+  "159761": {
+    "sales_pct": 0,
+    "status": "YELLOW",
+    "stage": "Go-Live",
+    "type": "eShop add-on"
+  },
+  "554905": {
+    "stage": "Pre-Go-Live",
+    "type": "eSuite"
+  },
+  "650986": {
+    "stage": "Go-Live",
+    "type": "eSuite",
+    "note": "Payment blocker: eShop mandates CC but TFS needs direct billing"
+  },
+  "664096": {
+    "stage": "PARKED",
+    "type": "Core+Shop",
+    "note": "Hard goods + payout consolidation delayed Aug. 90 days, 0% digital."
+  },
+  "735220": {
+    "stage": "Go-Live",
+    "type": "Core"
+  },
+  "739329": {
+    "stage": "Kickoff",
+    "type": "eSuite"
+  },
+  "743217": {
+    "days_live": 93,
+    "sales_pct": 2,
+    "pay_pct": 20,
+    "status": "GREEN",
+    "stage": "Training",
+    "type": "Procurement"
+  },
+  "765491": {
+    "stage": "Pre-Go-Live",
+    "type": "Core+eShops"
+  },
+  "816515": {
+    "days_live": 9,
+    "proc_pct": 42,
+    "sales_pct": 2,
+    "pay_pct": 55,
+    "ora": 178,
+    "status": "GREEN",
+    "stage": "Go-Live",
+    "type": "Core+Proc+eShops"
+  },
+  "821576": {
+    "days_live": 31,
+    "proc_pct": 92,
+    "sales_pct": 100,
+    "pay_pct": 103,
+    "status": "GREEN",
+    "stage": "Training",
+    "type": "eSuite"
+  },
+  "822374": {
+    "stage": "Go-Live",
+    "type": "Core",
+    "note": "Canada"
+  },
+  "825773": {
+    "stage": "Not Started",
+    "type": "K2K Only"
+  },
+  "827180": {
+    "stage": "Not Started",
+    "type": "K2K Only"
+  },
+  "828336": {
+    "stage": "Go-Live",
+    "type": "eSuite",
+    "note": "BUY: kickoff activation. FCS data migration."
+  }
+}

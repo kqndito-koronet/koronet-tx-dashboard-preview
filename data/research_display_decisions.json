@@ -1,0 +1,28 @@
+{
+  "as_of": "2026-08-03",
+  "policy": "Explicit Facu display decisions. They select a usable source for the dashboard; they do not relabel estimates as observed facts.",
+  "accounts": {
+    "44150": {
+      "company_gmv_source": "internal_company_estimate",
+      "selected_value": 127000000,
+      "currency_code": "USD",
+      "label": "Internal company estimate selected for display",
+      "scope": "company_id 44150 only; excludes Kuts, West, Carithers and Pittsburgh as a separate company"
+    },
+    "816515": {
+      "company_gmv_source": "internal_sfdc_estimate",
+      "selected_value": 1800000,
+      "currency_code": "USD",
+      "label": "Internal SFDC estimate selected for display",
+      "scope": "Price's Floral Wholesale, LLC company_id 816515"
+    },
+    "193828": {
+      "company_gmv_source": "external_candidate_range",
+      "selected_range": {"low": 8000000, "mid": 11000000, "high": 15000000},
+      "buy_potential_range": {"low": 3200000, "mid": 6050000, "high": 9750000},
+      "currency_code": "USD",
+      "label": "External candidate range selected for display; low confidence",
+      "scope": "Arizona Family Florist company_id 193828; mixed retail/event/wholesale scope"
+    }
+  }
+}

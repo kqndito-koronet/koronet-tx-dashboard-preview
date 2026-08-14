@@ -1,0 +1,22 @@
+{
+  "account_id": "825773",
+  "account_name": "Creations From Heaven",
+  "status": "IDENTITY_CORRECTION_AND_EXTERNAL_EVIDENCE_PARTIAL",
+  "researched_at": "2026-08-03",
+  "entity_scope": "Koronet company_location 825773 is labeled Floral - Wholesaler, but public evidence identifies Creations From Heaven Floral Boutique as a retail florist in Montclair, NJ. This classification mismatch must be resolved before any GMV method is chosen.",
+  "classification": {"primary": "retail floral boutique (public evidence)", "evidence": [{"source": "https://montclaircenter.com/directory-bid/listing/floral-boutique/", "observed": "Public local-business directory describes same-day delivery and event/wedding/funeral work from Montclair."}]},
+  "observations": [
+    {"evidence_key_suffix": "official-retailer-terms", "claim_key": "ecommerce_retailer_scope", "claim_summary": "Site terms identify Creations from Heaven Floral Boutique as a retailer operating a consumer-facing e-commerce site through Lovingly.", "evidence_type": "official_website", "source_url": "https://www.creationsfromheaven.com/legal/terms-of-service", "source_title": "Creations from Heaven — Terms of Service", "evidence_state": "observed", "confidence": "high"},
+    {"evidence_key_suffix": "montclair-retail-context", "claim_key": "local_business_scope", "claim_summary": "Montclair Center describes same-day local delivery and event, wedding and funeral work. It states no revenue or volume.", "evidence_type": "third_party_local_business_directory", "source_url": "https://montclaircenter.com/directory-bid/listing/floral-boutique/", "source_title": "Montclair Center — Creations from Heaven Floral Boutique", "evidence_state": "observed", "confidence": "medium"}
+  ],
+  "external_estimates": [
+    {"estimate_type": "company_gmv", "low_value": null, "midpoint_value": null, "high_value": null, "method_key": "account_classification_and_two_method_sizing_not_met", "method_version": "v1", "estimate_state": "blocked", "confidence": "low", "as_of_date": "2026-08-03", "notes": "Public evidence identifies a retail florist while Koronet labels the account wholesaler. There is no public revenue/throughput metric; resolve classification/entity first.", "evidence_key_suffixes": ["official-retailer-terms", "montclair-retail-context"]},
+    {"estimate_type": "total_purchases", "low_value": null, "midpoint_value": null, "high_value": null, "method_key": "account_classification_and_two_method_sizing_not_met", "method_version": "v1", "estimate_state": "blocked", "confidence": "low", "as_of_date": "2026-08-03", "notes": "Retailer COGS/purchase data is not public and account role is inconsistent.", "evidence_key_suffixes": []}
+  ],
+  "current_internal_estimate": {"gmv_usd": 100000, "source": "Christine ORA", "confidence": "MEDIUM", "validation_state": "ENTITY_CLASSIFICATION_REVIEW_REQUIRED"},
+  "gmv_estimate": null,
+  "buys_estimate": null,
+  "why_no_external_estimate_yet": "The entity/type mismatch is a prerequisite: it changes the correct company-GMV and purchase-potential method.",
+  "next_best_signals": ["Verify why company_location 825773 is classified as a wholesaler and whether it maps to the Montclair boutique legal entity.", "Once scope is resolved, obtain company-provided range or two independent appropriate commercial sizing methods.", "Do not apply wholesale purchase-ratio logic to a retail boutique."],
+  "tx_strategy_lane": "selective_test"
+}

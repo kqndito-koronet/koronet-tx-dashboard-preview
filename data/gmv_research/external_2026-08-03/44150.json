@@ -1,0 +1,28 @@
+{
+  "account_id": "44150",
+  "account_name": "Kennicott Brothers Company",
+  "status": "EXTERNAL_EVIDENCE_COLLECTED_NO_DEFENSIBLE_EXTERNAL_RANGE",
+  "researched_at": "2026-08-03",
+  "classification": {
+    "primary": "floral importer and distributor",
+    "evidence": [
+      {"source": "https://www.kennicott.com/aboutus/", "observed": "Official site identifies Kennicott as an importer and distributor of fresh flowers, plants and design materials serving customers through 14 wholesale distribution centers."}
+    ]
+  },
+  "observations": [
+    {"evidence_key_suffix": "official-14-distribution-centers", "claim_key": "operating_footprint", "claim_summary": "Kennicott's official site states it operates 14 wholesale floral distribution centers across the Midwest and Southeast and is an importer/distributor.", "evidence_type": "official_website", "source_url": "https://www.kennicott.com/aboutus/", "source_title": "Kennicott — About Us", "evidence_state": "observed", "confidence": "high"},
+    {"evidence_key_suffix": "third-party-revenue-conflict-growjo", "claim_key": "third_party_revenue_estimate", "claim_summary": "Growjo estimates $35M revenue and 233 employees. This is incompatible with other third-party figures and is not used as an estimate anchor.", "evidence_type": "directory_listing", "source_url": "https://growjo.com/company/Kennicott_Brothers_Company", "source_title": "Growjo — Kennicott Brothers Company", "evidence_state": "conflicting", "confidence": "low"},
+    {"evidence_key_suffix": "third-party-revenue-conflict-visualvisitor", "claim_key": "third_party_revenue_estimate", "claim_summary": "Visual Visitor gives a $50M–$100M revenue band and 125 employees. This conflicts with other aggregators and is not used as an estimate anchor.", "evidence_type": "directory_listing", "source_url": "https://www.visualvisitor.com/companies/5533688/kennicott_brothers_company", "source_title": "Visual Visitor — Kennicott Brothers Company", "evidence_state": "conflicting", "confidence": "low"},
+    {"evidence_key_suffix": "third-party-revenue-conflict-privco", "claim_key": "third_party_revenue_estimate", "claim_summary": "PrivCo search result shows $123M in a financial section without enough disclosed methodology to use it as independent validation.", "evidence_type": "directory_listing", "source_url": "https://www.privco.com/company/kennicott-brothers-company", "source_title": "PrivCo — Kennicott Brothers Company", "evidence_state": "conflicting", "confidence": "low"}
+  ],
+  "gmv_estimate": null,
+  "buys_estimate": null,
+  "external_estimates": [
+    {"estimate_type": "company_gmv", "low_value": null, "midpoint_value": null, "high_value": null, "method_key": "conflicting_public_aggregators", "method_version": "v1", "estimate_state": "blocked", "confidence": "low", "as_of_date": "2026-08-03", "notes": "Public figures span $35M, $50–100M and $123M, while the official 14-center footprint cannot choose among them. No external GMV range is defensible for company_id 44150.", "evidence_key_suffixes": ["official-14-distribution-centers", "third-party-revenue-conflict-growjo", "third-party-revenue-conflict-visualvisitor", "third-party-revenue-conflict-privco"]},
+    {"estimate_type": "total_purchases", "low_value": null, "midpoint_value": null, "high_value": null, "method_key": "blocked_without_external_gmv", "method_version": "v1", "estimate_state": "blocked", "confidence": "low", "as_of_date": "2026-08-03", "notes": "Cannot calculate a defensible BUY range until an external company-GMV range is validated. Scope remains company_id 44150 only.", "evidence_key_suffixes": ["official-14-distribution-centers", "third-party-revenue-conflict-growjo", "third-party-revenue-conflict-visualvisitor", "third-party-revenue-conflict-privco"]}
+  ],
+  "current_internal_estimate": {"gmv_usd": 127000000, "source": "COMPANIES_SV annual_total_sales for company_id 44150", "confidence": "medium", "validation_state": "INTERNAL_MODEL; scope is company_id 44150 only, not Kennicott Kuts, Kennicott Brothers West, Carithers/Atlanta, or Pittsburgh as a separate company"},
+  "why_no_external_estimate_yet": "Public third-party revenue figures span $35M, $50–100M and $123M with incompatible methods. The official 14-center footprint establishes scale but cannot choose a defensible revenue range. Do not replace or validate the internal $127M model with these sources.",
+  "next_best_signals": ["Find audited/primary financial evidence or reliable company-wide headcount and per-location capacity.", "Maintain company_id 44150 scope; do not aggregate Kennicott Kuts (25120), Kennicott Brothers West (796779), Carithers/Atlanta (664575), or Pittsburgh (a location within 44150)."],
+  "estimator_framework": "ops/frameworks/floral_gmv_estimator_prompt.md"
+}

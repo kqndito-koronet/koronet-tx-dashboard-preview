@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-04T00:00:00-07:00",
+  "status": "DRAFT_AUDIT_INPUT",
+  "purpose": "Account and portfolio data-quality flags derived from existing local TX identity, GA4 and research assets. Flags describe an evidence limitation or plausibility condition; they are not account diagnoses, plays or customer tasks.",
+  "source_contract": [
+    "company_identity_crosswalk.json",
+    "ga4_company_attribution_v1.json",
+    "account_spine_research_staging.json",
+    "research_display_decisions.json",
+    "sfdc_open_opportunities_v1.json",
+    "k2k_connection_leads_2026-08-04.json"
+  ],
+  "rendering_rules": {
+    "model_conflict": "Read account_spine_research_staging.accounts[company_id].quality_flags dynamically; never hard-code the affected-account list.",
+    "exact_identity_only": "SFDC opportunities/features and K2K customer relationships render as account facts only when the crosswalk/match state is exact.",
+    "ga4": "Session metrics render for EXACT_SFDC_WEBSITE only. Parent traffic renders once at parent scope. Fuzzy/shared records render an attribution state, not account CVR."
+  },
+  "portfolio_flags": [
+    {
+      "flag_key": "SFDC_OPPORTUNITIES_NOT_JOINABLE_TO_CURRENT_CROSSWALK",
+      "severity": "medium",
+      "affected_opportunity_rows": 85,
+      "affected_sfdc_account_ids": 80,
+      "message": "85 current SFDC opportunity rows cannot join to the company-location crosswalk. They may be outside this universe; do not display them on an account card."
+    },
+    {
+      "flag_key": "K2K_FUZZY_RELATIONSHIPS_REVIEW_ONLY",
+      "severity": "medium",
+      "exact_rows_safe_for_account_rendering": 138,
+      "fuzzy_high_confidence_rows": 31,
+      "fuzzy_candidate_only_rows": 733,
+      "message": "Only exact K2K identity rows may be displayed as account relationship evidence."
+    }
+  ],
+  "account_flags": [
+    {
+      "company_id": "671046",
+      "account_name": "Blossom Bliss LLC",
+      "flag_key": "AMBIGUOUS_SFDC_ID",
+      "severity": "high",
+      "blocks": ["sfdc_features", "sfdc_opportunities"],
+      "ui_message": "SFDC relationship needs review; do not attach either candidate account."
+    },
+    {
+      "company_id": "825773",
+      "account_name": "Creations From Heaven",
+      "flag_key": "ENTITY_CLASSIFICATION_CONFLICT",
+      "severity": "high",
+      "blocks": ["wholesale_purchase_ratio", "wholesale_role_claim"],
+      "ui_message": "Public evidence identifies a retail floral boutique while the Koronet record says wholesaler; review entity/type before using wholesale potential logic."
+    },
+    {
+      "company_id": "44150",
+      "account_name": "Kennicott Brothers Company",
+      "flag_key": "EXTERNAL_RESEARCH_CONFLICT_INTERNAL_MODEL_SELECTED",
+      "severity": "medium",
+      "blocks": ["external_research_denominator"],
+      "ui_message": "Public research is contradictory. Use the explicit internal model label and company-ID scope; do not replace it with public figures."
+    },
+    {
+      "company_id": "816515",
+      "account_name": "Price's Floral Wholesale, LLC",
+      "flag_key": "EXTERNAL_RESEARCH_INSUFFICIENT_TO_VALIDATE_INTERNAL_MODEL",
+      "severity": "medium",
+      "blocks": ["external_research_denominator"],
+      "ui_message": "Public research establishes business type, not GMV scale. Keep the SFDC value labeled internal/model."
+    },
+    {
+      "company_id": "193828",
+      "account_name": "Arizona Family Florist",
+      "flag_key": "EXTERNAL_RANGE_LOW_CONFIDENCE",
+      "severity": "medium",
+      "blocks": [],
+      "ui_message": "Show the Facu-selected USD external range as low confidence; raw research lacks a currency declaration."
+    },
+    {
+      "company_id": "819114",
+      "account_name": "Details Direct",
+      "flag_key": "PARENT_GA4_NEEDS_LOCATION_ALLOCATION",
+      "severity": "medium",
+      "blocks": ["location_session_cvr"],
+      "ui_message": "Display details.direct traffic at the Details Direct commercial parent only; do not duplicate it across locations."
+    },
+    {
+      "company_id": "734128",
+      "account_name": "Details Direct - Core",
+      "flag_key": "PARENT_GA4_NEEDS_LOCATION_ALLOCATION",
+      "severity": "medium",
+      "blocks": ["location_session_cvr"],
+      "ui_message": "Display details.direct traffic at the Details Direct commercial parent only; do not duplicate it across locations."
+    }
+  ]
+}

@@ -1,0 +1,2653 @@
+{
+  "1241": {
+    "company_name": "Farm To Canada",
+    "online_vendors": 2,
+    "offline_vendors": 97,
+    "total_vendors": 99,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 9,
+    "gap_cost": 1119698
+  },
+  "1614": {
+    "company_name": "-Groflowers",
+    "online_vendors": 0,
+    "offline_vendors": 19,
+    "total_vendors": 19,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 6,
+    "gap_cost": 588589
+  },
+  "2516": {
+    "company_name": "Brightland Farms",
+    "online_vendors": 1,
+    "offline_vendors": 109,
+    "total_vendors": 110,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 25,
+    "gap_cost": 6718086
+  },
+  "6554": {
+    "company_name": "Valley Springs LLC",
+    "online_vendors": 1,
+    "offline_vendors": 41,
+    "total_vendors": 42,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 18,
+    "gap_cost": 6552154
+  },
+  "6864": {
+    "company_name": "Sofi's Flowers",
+    "online_vendors": 9,
+    "offline_vendors": 6,
+    "total_vendors": 15,
+    "churned_vendors": 1
+  },
+  "7030": {
+    "company_name": "Bill Doran Company",
+    "online_vendors": 59,
+    "offline_vendors": 410,
+    "total_vendors": 469,
+    "leakage_vendors": 25,
+    "leakage_cost": 6931373,
+    "gap_vendors": 77,
+    "gap_cost": 33354692
+  },
+  "7631": {
+    "company_name": "A Trilogy Floral - Zamba Flowers",
+    "online_vendors": 4,
+    "offline_vendors": 107,
+    "total_vendors": 111,
+    "dormant_vendors": 6,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 10,
+    "gap_cost": 696835
+  },
+  "12941": {
+    "company_name": "Rosaprima International, LLC",
+    "online_vendors": 0,
+    "offline_vendors": 25,
+    "total_vendors": 25,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 6,
+    "gap_cost": 29655894
+  },
+  "13982": {
+    "company_name": "Servicios Chilfresh Ltda.",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2
+  },
+  "13989": {
+    "company_name": "Pronto Farms LLC",
+    "online_vendors": 14,
+    "offline_vendors": 47,
+    "total_vendors": 61,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 54329
+  },
+  "14422": {
+    "company_name": "PAT FLOR SCARL",
+    "online_vendors": 7,
+    "offline_vendors": 3,
+    "total_vendors": 10,
+    "dormant_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 188241
+  },
+  "17503": {
+    "company_name": "SOS Floral",
+    "online_vendors": 1,
+    "offline_vendors": 98,
+    "total_vendors": 99,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 143423
+  },
+  "17789": {
+    "company_name": "Bella Blossom LLC",
+    "online_vendors": 0,
+    "offline_vendors": 72,
+    "total_vendors": 72,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 20,
+    "gap_cost": 1864567
+  },
+  "18322": {
+    "company_name": "* Jet Fresh Flower Distributors Inc.",
+    "online_vendors": 25,
+    "offline_vendors": 412,
+    "total_vendors": 437,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 57,
+    "gap_cost": 14098924
+  },
+  "20749": {
+    "company_name": "EF FLOWERS",
+    "online_vendors": 0,
+    "offline_vendors": 3,
+    "total_vendors": 3
+  },
+  "20769": {
+    "company_name": "AmeriLink Floratrader",
+    "online_vendors": 0,
+    "offline_vendors": 12,
+    "total_vendors": 12,
+    "dormant_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 207655
+  },
+  "22143": {
+    "company_name": "Royal Flowers Inc., Domestic",
+    "online_vendors": 2,
+    "offline_vendors": 94,
+    "total_vendors": 96,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 20,
+    "gap_cost": 5672751
+  },
+  "22218": {
+    "company_name": "Sunburst Farms",
+    "online_vendors": 0,
+    "offline_vendors": 172,
+    "total_vendors": 172,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 45,
+    "gap_cost": 6212031
+  },
+  "25120": {
+    "company_name": "Kennicott Kuts",
+    "online_vendors": 0,
+    "offline_vendors": 5,
+    "total_vendors": 5
+  },
+  "25489": {
+    "company_name": "-Sole Farms",
+    "online_vendors": 1,
+    "offline_vendors": 85,
+    "total_vendors": 86,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 57,
+    "gap_cost": 15442665
+  },
+  "33023": {
+    "company_name": "Prime Petals LLC",
+    "online_vendors": 32,
+    "offline_vendors": 70,
+    "total_vendors": 102,
+    "churned_vendors": 6,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 6,
+    "gap_cost": 762239
+  },
+  "33986": {
+    "company_name": "Royal Flowers Inc, International",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2
+  },
+  "37745": {
+    "company_name": "Floral Cooperative Purchasing Group LLC",
+    "online_vendors": 0,
+    "offline_vendors": 4,
+    "total_vendors": 4
+  },
+  "38582": {
+    "company_name": "Gala Roses",
+    "online_vendors": 0,
+    "offline_vendors": 47,
+    "total_vendors": 47,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 18,
+    "gap_cost": 9308570
+  },
+  "41934": {
+    "company_name": "Continental Floral LLC",
+    "online_vendors": 2,
+    "offline_vendors": 46,
+    "total_vendors": 48,
+    "dormant_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 22,
+    "gap_cost": 20647585
+  },
+  "44150": {
+    "company_name": "Kennicott Brothers Company",
+    "online_vendors": 34,
+    "offline_vendors": 200,
+    "total_vendors": 234,
+    "churned_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 61,
+    "gap_cost": 21709816
+  },
+  "44225": {
+    "company_name": "Pinnacle Flowers, LLC",
+    "online_vendors": 6,
+    "offline_vendors": 122,
+    "total_vendors": 128,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 16,
+    "gap_cost": 1862280
+  },
+  "46206": {
+    "company_name": "FLORISOL& CO FLOWER TRADING LLC DBA MARVEL FLOWERS",
+    "online_vendors": 1,
+    "offline_vendors": 114,
+    "total_vendors": 115,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 4,
+    "gap_cost": 521630
+  },
+  "54343": {
+    "company_name": "**Wafex USA",
+    "online_vendors": 9,
+    "offline_vendors": 102,
+    "total_vendors": 111,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 3,
+    "gap_cost": 180966
+  },
+  "73730": {
+    "company_name": "Allure Farms",
+    "online_vendors": 24,
+    "offline_vendors": 214,
+    "total_vendors": 238,
+    "dormant_vendors": 53,
+    "churned_vendors": 3,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 15,
+    "gap_cost": 2354115
+  },
+  "77787": {
+    "company_name": "Zoom-Bloom",
+    "online_vendors": 2,
+    "offline_vendors": 61,
+    "total_vendors": 63
+  },
+  "103078": {
+    "company_name": "Mayesh Wholesale Florist Inc",
+    "online_vendors": 4,
+    "offline_vendors": 801,
+    "total_vendors": 805,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 167,
+    "gap_cost": 31964198
+  },
+  "103112": {
+    "company_name": "Fresca Farms",
+    "online_vendors": 0,
+    "offline_vendors": 95,
+    "total_vendors": 95,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 57,
+    "gap_cost": 22245709
+  },
+  "130337": {
+    "company_name": "EQR USA",
+    "online_vendors": 0,
+    "offline_vendors": 20,
+    "total_vendors": 20,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 5,
+    "gap_cost": 24494681
+  },
+  "139851": {
+    "company_name": "Floral Chain Direct",
+    "online_vendors": 0,
+    "offline_vendors": 13,
+    "total_vendors": 13,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 9,
+    "gap_cost": 3179517
+  },
+  "144192": {
+    "company_name": "INTERNATIONAL TRADING AND SERVICES INC",
+    "online_vendors": 0,
+    "offline_vendors": 20,
+    "total_vendors": 20,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 996333
+  },
+  "144369": {
+    "company_name": "Premium Greens Australia LLC",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 729392
+  },
+  "146183": {
+    "company_name": "EPIC FARMS USA LLC",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 70751
+  },
+  "152602": {
+    "company_name": "Lubbock Wholesale",
+    "online_vendors": 5,
+    "offline_vendors": 0,
+    "total_vendors": 5
+  },
+  "153031": {
+    "company_name": "FloraLink",
+    "online_vendors": 36,
+    "offline_vendors": 0,
+    "total_vendors": 36
+  },
+  "153536": {
+    "company_name": "Fair Trade Floral Inc.",
+    "online_vendors": 0,
+    "offline_vendors": 72,
+    "total_vendors": 72,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 192742
+  },
+  "159761": {
+    "company_name": "Cleveland Plant & Flower Co.",
+    "online_vendors": 46,
+    "offline_vendors": 0,
+    "total_vendors": 46
+  },
+  "182870": {
+    "company_name": "Cananvalle USA LLC",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 1149479
+  },
+  "182872": {
+    "company_name": "The Elite Flower",
+    "online_vendors": 0,
+    "offline_vendors": 9,
+    "total_vendors": 9,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 464627
+  },
+  "188968": {
+    "company_name": "Global Flowers",
+    "online_vendors": 0,
+    "offline_vendors": 3,
+    "total_vendors": 3
+  },
+  "189002": {
+    "company_name": "Royal Flowers S.A",
+    "online_vendors": 0,
+    "offline_vendors": 10,
+    "total_vendors": 10,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 741537
+  },
+  "189419": {
+    "company_name": "Legacy Flowers",
+    "online_vendors": 12,
+    "offline_vendors": 346,
+    "total_vendors": 358,
+    "churned_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 47,
+    "gap_cost": 5634162
+  },
+  "189685": {
+    "company_name": "Farm Fresh Exports INC",
+    "online_vendors": 1,
+    "offline_vendors": 175,
+    "total_vendors": 176,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 138997
+  },
+  "193828": {
+    "company_name": "Arizona Family Florist",
+    "online_vendors": 53,
+    "offline_vendors": 113,
+    "total_vendors": 166,
+    "dormant_vendors": 213,
+    "leakage_vendors": 1,
+    "leakage_cost": 89100,
+    "gap_vendors": 6,
+    "gap_cost": 933478
+  },
+  "193829": {
+    "company_name": "Muchflowers Inc.",
+    "online_vendors": 0,
+    "offline_vendors": 6,
+    "total_vendors": 6,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 3,
+    "gap_cost": 3376741
+  },
+  "194206": {
+    "company_name": "H&F Greens Inc (Mariposa Growers)",
+    "online_vendors": 0,
+    "offline_vendors": 10,
+    "total_vendors": 10,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 5,
+    "gap_cost": 2072440
+  },
+  "199908": {
+    "company_name": "Bloomistics",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 1146270
+  },
+  "200279": {
+    "company_name": "DP Flowers Corp",
+    "online_vendors": 1,
+    "offline_vendors": 2,
+    "total_vendors": 3,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 147392
+  },
+  "200503": {
+    "company_name": "Stellar Farms",
+    "online_vendors": 0,
+    "offline_vendors": 66,
+    "total_vendors": 66,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 16,
+    "gap_cost": 1727055
+  },
+  "257477": {
+    "company_name": "Mayta International LLC / Native Blooms",
+    "online_vendors": 0,
+    "offline_vendors": 4,
+    "total_vendors": 4,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 1029714
+  },
+  "295294": {
+    "company_name": "Rosamina SAS",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 4257570
+  },
+  "296458": {
+    "company_name": "Florimex Toronto Corp.",
+    "online_vendors": 0,
+    "offline_vendors": 130,
+    "total_vendors": 130,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 24,
+    "gap_cost": 3353770
+  },
+  "313164": {
+    "company_name": "Bunches Direct Blumenimport GmbH",
+    "online_vendors": 0,
+    "offline_vendors": 13,
+    "total_vendors": 13,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 155896
+  },
+  "319143": {
+    "company_name": "FloraCo, Inc",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2
+  },
+  "321023": {
+    "company_name": "Bill Doran Company (2)",
+    "online_vendors": 0,
+    "offline_vendors": 191,
+    "total_vendors": 191,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 5,
+    "gap_cost": 390635
+  },
+  "321907": {
+    "company_name": "Greens and Flowers Connection",
+    "online_vendors": 0,
+    "offline_vendors": 30,
+    "total_vendors": 30,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 292450
+  },
+  "322928": {
+    "company_name": "Inversiones Napy S.A",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 349857
+  },
+  "341499": {
+    "company_name": "Choice Farms",
+    "online_vendors": 0,
+    "offline_vendors": 176,
+    "total_vendors": 176,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 14,
+    "gap_cost": 2042774
+  },
+  "343614": {
+    "company_name": "Galleria Farms",
+    "online_vendors": 1,
+    "offline_vendors": 109,
+    "total_vendors": 110,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 16,
+    "gap_cost": 2159295
+  },
+  "377256": {
+    "company_name": "Multiflora Corporation",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  },
+  "378264": {
+    "company_name": "Dynamic Farms",
+    "online_vendors": 0,
+    "offline_vendors": 4,
+    "total_vendors": 4,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 82493
+  },
+  "393475": {
+    "company_name": "American Agroproducts",
+    "online_vendors": 2,
+    "offline_vendors": 0,
+    "total_vendors": 2,
+    "dormant_vendors": 24
+  },
+  "394783": {
+    "company_name": "Metro Flower Market LLC",
+    "online_vendors": 17,
+    "offline_vendors": 124,
+    "total_vendors": 141,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 4,
+    "gap_cost": 308452
+  },
+  "395357": {
+    "company_name": "Pikes Peak Floral",
+    "online_vendors": 16,
+    "offline_vendors": 1,
+    "total_vendors": 17
+  },
+  "395382": {
+    "company_name": "Naranjo Farms LLC",
+    "online_vendors": 0,
+    "offline_vendors": 16,
+    "total_vendors": 16,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 3,
+    "gap_cost": 1147124
+  },
+  "398856": {
+    "company_name": "National Floral Supply",
+    "online_vendors": 6,
+    "offline_vendors": 26,
+    "total_vendors": 32
+  },
+  "400013": {
+    "company_name": "Washington Floral Service, Inc",
+    "online_vendors": 28,
+    "offline_vendors": 0,
+    "total_vendors": 28
+  },
+  "400914": {
+    "company_name": "SKY FLOWERS S.A.S",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 821551
+  },
+  "401680": {
+    "company_name": "FLORISOL & COMPANY FLOWER TRADING LLC",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 165648
+  },
+  "412951": {
+    "company_name": "KBC Cooler Account",
+    "online_vendors": 24,
+    "offline_vendors": 105,
+    "total_vendors": 129,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 23,
+    "gap_cost": 3332093
+  },
+  "449344": {
+    "company_name": "Southern Floral Co",
+    "online_vendors": 41,
+    "offline_vendors": 1,
+    "total_vendors": 42,
+    "churned_vendors": 3
+  },
+  "449683": {
+    "company_name": "Floreco, Inc",
+    "online_vendors": 0,
+    "offline_vendors": 61,
+    "total_vendors": 61,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 4,
+    "gap_cost": 414086
+  },
+  "453081": {
+    "company_name": "* Welyflor / PROFILE FLOWERS",
+    "online_vendors": 0,
+    "offline_vendors": 5,
+    "total_vendors": 5,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 5258146
+  },
+  "453769": {
+    "company_name": "Continental Floral FL LLC",
+    "online_vendors": 0,
+    "offline_vendors": 5,
+    "total_vendors": 5,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 3,
+    "gap_cost": 1541190
+  },
+  "453771": {
+    "company_name": "Continental Floral CA LLC",
+    "online_vendors": 0,
+    "offline_vendors": 22,
+    "total_vendors": 22,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 10,
+    "gap_cost": 4241789
+  },
+  "454705": {
+    "company_name": "South Florals Imports LLC",
+    "online_vendors": 3,
+    "offline_vendors": 100,
+    "total_vendors": 103,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 3,
+    "gap_cost": 218021
+  },
+  "467802": {
+    "company_name": "Protean Farms US",
+    "online_vendors": 2,
+    "offline_vendors": 147,
+    "total_vendors": 149,
+    "dormant_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 5,
+    "gap_cost": 323042
+  },
+  "468041": {
+    "company_name": "U.S. Greens Corp",
+    "online_vendors": 2,
+    "offline_vendors": 0,
+    "total_vendors": 2
+  },
+  "469713": {
+    "company_name": "KD & Company",
+    "online_vendors": 9,
+    "offline_vendors": 0,
+    "total_vendors": 9
+  },
+  "470249": {
+    "company_name": "ACME Testing, Inc.",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  },
+  "470794": {
+    "company_name": "* AquaRose",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  },
+  "471458": {
+    "company_name": "Continental Floral OR LLC",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 2864366
+  },
+  "474847": {
+    "company_name": "Vosz Floral LLC",
+    "online_vendors": 25,
+    "offline_vendors": 49,
+    "total_vendors": 74,
+    "churned_vendors": 5
+  },
+  "475084": {
+    "company_name": "Valleflor USA",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 268485
+  },
+  "475168": {
+    "company_name": "South Carolina Specialty Cut",
+    "online_vendors": 3,
+    "offline_vendors": 0,
+    "total_vendors": 3
+  },
+  "476679": {
+    "company_name": "Taylor Wholesale Florist",
+    "online_vendors": 14,
+    "offline_vendors": 0,
+    "total_vendors": 14
+  },
+  "477128": {
+    "company_name": "Arizona Floral Exchange",
+    "online_vendors": 29,
+    "offline_vendors": 1,
+    "total_vendors": 30,
+    "dormant_vendors": 76,
+    "churned_vendors": 3
+  },
+  "477673": {
+    "company_name": "ECOROSES LLC",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 243662
+  },
+  "483642": {
+    "company_name": "Premium Greens Australia B.V.",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 695685
+  },
+  "484037": {
+    "company_name": "Georgia State Floral Distributors",
+    "online_vendors": 13,
+    "offline_vendors": 4,
+    "total_vendors": 17
+  },
+  "488495": {
+    "company_name": "Sierra Flower Trading",
+    "online_vendors": 4,
+    "offline_vendors": 0,
+    "total_vendors": 4
+  },
+  "489148": {
+    "company_name": "FLOWERMART CORP",
+    "online_vendors": 0,
+    "offline_vendors": 24,
+    "total_vendors": 24
+  },
+  "492201": {
+    "company_name": "Forest Flowers",
+    "online_vendors": 0,
+    "offline_vendors": 17,
+    "total_vendors": 17,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 68636
+  },
+  "492219": {
+    "company_name": "Interflor LLC",
+    "online_vendors": 0,
+    "offline_vendors": 7,
+    "total_vendors": 7,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 181480
+  },
+  "496600": {
+    "company_name": "Floristcentric, LLC",
+    "online_vendors": 21,
+    "offline_vendors": 63,
+    "total_vendors": 84,
+    "churned_vendors": 1
+  },
+  "498769": {
+    "company_name": "Melody Farms LLC",
+    "online_vendors": 3,
+    "offline_vendors": 73,
+    "total_vendors": 76,
+    "dormant_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 8,
+    "gap_cost": 2938790
+  },
+  "498865": {
+    "company_name": "H&T Wholesale Flowers",
+    "online_vendors": 34,
+    "offline_vendors": 64,
+    "total_vendors": 98,
+    "churned_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 9,
+    "gap_cost": 1728628
+  },
+  "498992": {
+    "company_name": "CANTIZA FLORAL DBA NFD",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 75279
+  },
+  "503075": {
+    "company_name": "HANAYA FARMS",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2
+  },
+  "505063": {
+    "company_name": "Andean Fresh LLC",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 225704
+  },
+  "505603": {
+    "company_name": "MGA Flowers",
+    "online_vendors": 0,
+    "offline_vendors": 8,
+    "total_vendors": 8
+  },
+  "505896": {
+    "company_name": "Continental Floral PNW LLC",
+    "online_vendors": 0,
+    "offline_vendors": 6,
+    "total_vendors": 6,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 5376775
+  },
+  "507479": {
+    "company_name": "Ashland Addison",
+    "online_vendors": 49,
+    "offline_vendors": 0,
+    "total_vendors": 49,
+    "dormant_vendors": 125,
+    "churned_vendors": 1
+  },
+  "507518": {
+    "company_name": "Anton Spaargaren B.V.",
+    "online_vendors": 0,
+    "offline_vendors": 20,
+    "total_vendors": 20,
+    "dormant_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 7,
+    "gap_cost": 1726340
+  },
+  "508421": {
+    "company_name": "Gardens America Inc.",
+    "online_vendors": 0,
+    "offline_vendors": 57,
+    "total_vendors": 57,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 14,
+    "gap_cost": 1964246
+  },
+  "509751": {
+    "company_name": "Best Miami Growers LLC",
+    "online_vendors": 0,
+    "offline_vendors": 51,
+    "total_vendors": 51
+  },
+  "529464": {
+    "company_name": "Direct Farms, LLC",
+    "online_vendors": 0,
+    "offline_vendors": 11,
+    "total_vendors": 11,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 3,
+    "gap_cost": 3309163
+  },
+  "530493": {
+    "company_name": "The Flower Co, LLC",
+    "online_vendors": 0,
+    "offline_vendors": 55,
+    "total_vendors": 55,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 64505
+  },
+  "533116": {
+    "company_name": "Zion Flowers INC",
+    "online_vendors": 1,
+    "offline_vendors": 34,
+    "total_vendors": 35,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 108122
+  },
+  "536956": {
+    "company_name": "MAGNIFICA FLOWERS",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 592562
+  },
+  "537092": {
+    "company_name": "Tropical Blooms Inc.",
+    "online_vendors": 8,
+    "offline_vendors": 47,
+    "total_vendors": 55,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 8,
+    "gap_cost": 1574456
+  },
+  "541415": {
+    "company_name": "Len Busch Roses",
+    "online_vendors": 25,
+    "offline_vendors": 2,
+    "total_vendors": 27
+  },
+  "541854": {
+    "company_name": "Fletch Wholesale llc",
+    "online_vendors": 23,
+    "offline_vendors": 1,
+    "total_vendors": 24
+  },
+  "543610": {
+    "company_name": "Frank Adams Wholesale Florist",
+    "online_vendors": 22,
+    "offline_vendors": 1,
+    "total_vendors": 23
+  },
+  "554187": {
+    "company_name": "IRIS ROSES LLC",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 80751
+  },
+  "554905": {
+    "company_name": "Quinlan-Wasserman, Inc",
+    "online_vendors": 13,
+    "offline_vendors": 0,
+    "total_vendors": 13
+  },
+  "561453": {
+    "company_name": "A Florist First",
+    "online_vendors": 23,
+    "offline_vendors": 0,
+    "total_vendors": 23,
+    "dormant_vendors": 36
+  },
+  "561518": {
+    "company_name": "Floramix, Inc.",
+    "online_vendors": 0,
+    "offline_vendors": 70,
+    "total_vendors": 70
+  },
+  "571220": {
+    "company_name": "Dramm & Echter, Inc",
+    "online_vendors": 0,
+    "offline_vendors": 58,
+    "total_vendors": 58,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 11,
+    "gap_cost": 2997098
+  },
+  "572900": {
+    "company_name": "IKEBANA CO SAS",
+    "online_vendors": 0,
+    "offline_vendors": 3,
+    "total_vendors": 3,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 719262
+  },
+  "573661": {
+    "company_name": "J&E Greens",
+    "online_vendors": 2,
+    "offline_vendors": 44,
+    "total_vendors": 46,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 150701
+  },
+  "575819": {
+    "company_name": "LA TOSCANA FARMS",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 196252
+  },
+  "577566": {
+    "company_name": "FLEUPHORIA S.A.S",
+    "online_vendors": 0,
+    "offline_vendors": 27,
+    "total_vendors": 27,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 16,
+    "gap_cost": 2824456
+  },
+  "578194": {
+    "company_name": "Flowers Direct Inc",
+    "online_vendors": 55,
+    "offline_vendors": 1,
+    "total_vendors": 56,
+    "churned_vendors": 7
+  },
+  "584973": {
+    "company_name": "Flores de la Hacienda",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  },
+  "585613": {
+    "company_name": "Sieck Floral Distributing, Inc",
+    "online_vendors": 19,
+    "offline_vendors": 0,
+    "total_vendors": 19
+  },
+  "586784": {
+    "company_name": "Louisiana Wholesale Florist",
+    "online_vendors": 18,
+    "offline_vendors": 0,
+    "total_vendors": 18
+  },
+  "588171": {
+    "company_name": "Magnolia Wholesale Florist Inc",
+    "online_vendors": 15,
+    "offline_vendors": 0,
+    "total_vendors": 15
+  },
+  "590728": {
+    "company_name": "DC FLOWERS DIRECT",
+    "online_vendors": 17,
+    "offline_vendors": 4,
+    "total_vendors": 21,
+    "dormant_vendors": 2,
+    "churned_vendors": 4
+  },
+  "591665": {
+    "company_name": "Natural Flowers, Inc",
+    "online_vendors": 0,
+    "offline_vendors": 47,
+    "total_vendors": 47,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 476611
+  },
+  "591877": {
+    "company_name": "Claymore C. Sieck Wholesale Florist",
+    "online_vendors": 28,
+    "offline_vendors": 0,
+    "total_vendors": 28,
+    "churned_vendors": 5
+  },
+  "592345": {
+    "company_name": "Orlando Wholesale Florist",
+    "online_vendors": 29,
+    "offline_vendors": 74,
+    "total_vendors": 103,
+    "churned_vendors": 3,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 7,
+    "gap_cost": 591146
+  },
+  "592615": {
+    "dormant_vendors": 12
+  },
+  "592806": {
+    "company_name": "Aurum Farms LLC",
+    "online_vendors": 0,
+    "offline_vendors": 28,
+    "total_vendors": 28,
+    "dormant_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 115548
+  },
+  "594981": {
+    "company_name": "Evergreen Plant Company",
+    "online_vendors": 0,
+    "offline_vendors": 22,
+    "total_vendors": 22,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 5,
+    "gap_cost": 1629856
+  },
+  "598944": {
+    "company_name": "Las Vegas Floral Wholesale",
+    "online_vendors": 4,
+    "offline_vendors": 0,
+    "total_vendors": 4
+  },
+  "600370": {
+    "company_name": "GOMEZ B.V.",
+    "online_vendors": 0,
+    "offline_vendors": 18,
+    "total_vendors": 18,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 6,
+    "gap_cost": 2571863
+  },
+  "600558": {
+    "company_name": "Metropetals",
+    "online_vendors": 27,
+    "offline_vendors": 48,
+    "total_vendors": 75,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 120179
+  },
+  "600910": {
+    "company_name": "Sieck Wright Floral Products",
+    "online_vendors": 19,
+    "offline_vendors": 0,
+    "total_vendors": 19,
+    "churned_vendors": 1
+  },
+  "601280": {
+    "company_name": "Flores Silvestres",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  },
+  "601933": {
+    "company_name": "Flora Fresh Inc",
+    "online_vendors": 19,
+    "offline_vendors": 110,
+    "total_vendors": 129,
+    "churned_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 14,
+    "gap_cost": 1354804
+  },
+  "603611": {
+    "company_name": "GREEN OCEAN LLC",
+    "online_vendors": 1,
+    "offline_vendors": 37,
+    "total_vendors": 38
+  },
+  "608547": {
+    "company_name": "MONTEROSAS LLC",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 545812
+  },
+  "610504": {
+    "company_name": "The Flower Emporium LLC",
+    "online_vendors": 14,
+    "offline_vendors": 23,
+    "total_vendors": 37
+  },
+  "610510": {
+    "company_name": "MYSTICFLOWERS LLC",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 514049
+  },
+  "610818": {
+    "company_name": "Farms Connect",
+    "online_vendors": 3,
+    "offline_vendors": 87,
+    "total_vendors": 90,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 3,
+    "gap_cost": 525708
+  },
+  "612783": {
+    "company_name": "Faguaflowers Intl LLC",
+    "online_vendors": 2,
+    "offline_vendors": 0,
+    "total_vendors": 2
+  },
+  "613695": {
+    "company_name": "*FLORAL1 INC",
+    "online_vendors": 2,
+    "offline_vendors": 99,
+    "total_vendors": 101,
+    "dormant_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 108628
+  },
+  "617226": {
+    "company_name": "CONNECTION FLOWERS SAS",
+    "online_vendors": 1,
+    "offline_vendors": 5,
+    "total_vendors": 6,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 1675118
+  },
+  "618758": {
+    "company_name": "Bo's Wholesale Florist",
+    "online_vendors": 14,
+    "offline_vendors": 0,
+    "total_vendors": 14
+  },
+  "619847": {
+    "company_name": "MACUNDO FLOWERS AND GREENS LLC",
+    "online_vendors": 1,
+    "offline_vendors": 66,
+    "total_vendors": 67,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 126826
+  },
+  "620160": {
+    "company_name": "Petals Direct",
+    "online_vendors": 0,
+    "offline_vendors": 33,
+    "total_vendors": 33,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 121175
+  },
+  "620453": {
+    "company_name": "MALIMA USA",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 373348
+  },
+  "622743": {
+    "company_name": "Megaflor USA",
+    "online_vendors": 1,
+    "offline_vendors": 1,
+    "total_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 85348
+  },
+  "623491": {
+    "company_name": "Baisch & Skinner",
+    "online_vendors": 42,
+    "offline_vendors": 0,
+    "total_vendors": 42,
+    "dormant_vendors": 11,
+    "churned_vendors": 4
+  },
+  "624737": {
+    "company_name": "AMORES FLORES INC",
+    "online_vendors": 10,
+    "offline_vendors": 34,
+    "total_vendors": 44,
+    "dormant_vendors": 20,
+    "leakage_vendors": 3,
+    "leakage_cost": 250327,
+    "gap_vendors": 1,
+    "gap_cost": 229037
+  },
+  "624816": {
+    "company_name": "CD Wholesale",
+    "online_vendors": 21,
+    "offline_vendors": 68,
+    "total_vendors": 89,
+    "dormant_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 4,
+    "gap_cost": 278088
+  },
+  "631459": {
+    "company_name": "Honey Bee Wholesale Florist, LLC",
+    "online_vendors": 23,
+    "offline_vendors": 0,
+    "total_vendors": 23,
+    "churned_vendors": 6
+  },
+  "632203": {
+    "company_name": "Tristate Wholesale Florist",
+    "online_vendors": 13,
+    "offline_vendors": 0,
+    "total_vendors": 13
+  },
+  "632322": {
+    "company_name": "Northline Wholesale Flowers",
+    "online_vendors": 25,
+    "offline_vendors": 2,
+    "total_vendors": 27,
+    "churned_vendors": 2
+  },
+  "635064": {
+    "company_name": "Ensign Wholesale Flower Market",
+    "online_vendors": 57,
+    "offline_vendors": 0,
+    "total_vendors": 57,
+    "churned_vendors": 1
+  },
+  "635167": {
+    "company_name": "Valle Verde LLC",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2
+  },
+  "640251": {
+    "company_name": "FreshLink",
+    "online_vendors": 1,
+    "offline_vendors": 0,
+    "total_vendors": 1
+  },
+  "640460": {
+    "company_name": "Dr Delphinium",
+    "online_vendors": 32,
+    "offline_vendors": 29,
+    "total_vendors": 61,
+    "dormant_vendors": 2,
+    "churned_vendors": 4,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 147888
+  },
+  "640563": {
+    "company_name": "Hoja Verde - Rosen Financial",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 58875
+  },
+  "640762": {
+    "company_name": "Wellington Florist",
+    "online_vendors": 16,
+    "offline_vendors": 0,
+    "total_vendors": 16,
+    "dormant_vendors": 2,
+    "churned_vendors": 2
+  },
+  "640977": {
+    "company_name": "Ninfa Flowers",
+    "online_vendors": 0,
+    "offline_vendors": 23,
+    "total_vendors": 23,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 3,
+    "gap_cost": 2973149
+  },
+  "641341": {
+    "company_name": "Maple Grove Floral",
+    "online_vendors": 58,
+    "offline_vendors": 77,
+    "total_vendors": 135,
+    "dormant_vendors": 2,
+    "churned_vendors": 8
+  },
+  "642076": {
+    "company_name": "Full Pot - Ft. Lauderdale",
+    "online_vendors": 33,
+    "offline_vendors": 0,
+    "total_vendors": 33,
+    "churned_vendors": 3
+  },
+  "642311": {
+    "company_name": "White Rose Flowers & Supplies Inc.",
+    "online_vendors": 0,
+    "offline_vendors": 41,
+    "total_vendors": 41,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 5,
+    "gap_cost": 961565
+  },
+  "643672": {
+    "company_name": "Allied Cut Flower",
+    "online_vendors": 5,
+    "offline_vendors": 0,
+    "total_vendors": 5,
+    "dormant_vendors": 18
+  },
+  "649585": {
+    "company_name": "Penelope’s Petals, LLC",
+    "online_vendors": 1,
+    "offline_vendors": 19,
+    "total_vendors": 20,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 67149
+  },
+  "649745": {
+    "company_name": "Miraflor LLC",
+    "online_vendors": 1,
+    "offline_vendors": 11,
+    "total_vendors": 12,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 1911800
+  },
+  "649935": {
+    "company_name": "Sims Flower Distribution",
+    "online_vendors": 36,
+    "offline_vendors": 44,
+    "total_vendors": 80,
+    "dormant_vendors": 4,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 3,
+    "gap_cost": 390713
+  },
+  "650252": {
+    "company_name": "GRUPO DEL PACIFICO",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  },
+  "650536": {
+    "company_name": "R&W WHOLESALE, INC.",
+    "online_vendors": 13,
+    "offline_vendors": 0,
+    "total_vendors": 13
+  },
+  "650721": {
+    "company_name": "Alders Wholesale Florist, Inc.",
+    "online_vendors": 29,
+    "offline_vendors": 0,
+    "total_vendors": 29,
+    "dormant_vendors": 75,
+    "churned_vendors": 1
+  },
+  "650767": {
+    "company_name": "Coastal Wholesale Flowers, Inc.",
+    "online_vendors": 44,
+    "offline_vendors": 2,
+    "total_vendors": 46,
+    "churned_vendors": 9
+  },
+  "650815": {
+    "company_name": "WB FLORAL GROUP, LLC.-MD",
+    "online_vendors": 31,
+    "offline_vendors": 1,
+    "total_vendors": 32
+  },
+  "650927": {
+    "dormant_vendors": 2
+  },
+  "651039": {
+    "dormant_vendors": 4
+  },
+  "651200": {
+    "company_name": "Jacksonville Flower Market",
+    "online_vendors": 13,
+    "offline_vendors": 0,
+    "total_vendors": 13
+  },
+  "651216": {
+    "company_name": "HARDIN´S WHLSE - LIBERTY",
+    "online_vendors": 49,
+    "offline_vendors": 0,
+    "total_vendors": 49,
+    "churned_vendors": 1
+  },
+  "651277": {
+    "dormant_vendors": 10
+  },
+  "651344": {
+    "company_name": "WESTWOOD FLORIST",
+    "online_vendors": 3,
+    "offline_vendors": 0,
+    "total_vendors": 3,
+    "dormant_vendors": 6
+  },
+  "651513": {
+    "company_name": "PETALS WEST, INC.",
+    "online_vendors": 31,
+    "offline_vendors": 0,
+    "total_vendors": 31
+  },
+  "651574": {
+    "company_name": "M&M CUT FLORA",
+    "online_vendors": 42,
+    "offline_vendors": 1,
+    "total_vendors": 43,
+    "churned_vendors": 3
+  },
+  "651959": {
+    "company_name": "CINCINNATI WHSLE FLORIST INC.5643",
+    "online_vendors": 23,
+    "offline_vendors": 0,
+    "total_vendors": 23,
+    "churned_vendors": 3,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 53648
+  },
+  "652199": {
+    "company_name": "JOHNSENS WHOLESALE FLORIST",
+    "online_vendors": 48,
+    "offline_vendors": 4,
+    "total_vendors": 52,
+    "dormant_vendors": 2,
+    "churned_vendors": 5
+  },
+  "652251": {
+    "company_name": "BOTANICA WHOLESALE FLORIST DALLAS (IRVING), LLC",
+    "online_vendors": 37,
+    "offline_vendors": 1,
+    "total_vendors": 38,
+    "churned_vendors": 3
+  },
+  "652302": {
+    "company_name": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+    "online_vendors": 22,
+    "offline_vendors": 0,
+    "total_vendors": 22,
+    "churned_vendors": 1
+  },
+  "652551": {
+    "company_name": "LD Trading/ Lawrence Developments Inc.",
+    "online_vendors": 30,
+    "offline_vendors": 0,
+    "total_vendors": 30,
+    "dormant_vendors": 2,
+    "churned_vendors": 2
+  },
+  "652793": {
+    "company_name": "FALL RIVER WHOLESALE",
+    "online_vendors": 7,
+    "offline_vendors": 0,
+    "total_vendors": 7,
+    "churned_vendors": 5
+  },
+  "653842": {
+    "company_name": "TFS- Chattanooga",
+    "online_vendors": 30,
+    "offline_vendors": 0,
+    "total_vendors": 30,
+    "churned_vendors": 1
+  },
+  "654131": {
+    "company_name": "DVFLORA SEWELL",
+    "online_vendors": 39,
+    "offline_vendors": 0,
+    "total_vendors": 39,
+    "churned_vendors": 1
+  },
+  "654374": {
+    "company_name": "BOTANICA WHSLE FLORIST-HOUSTON",
+    "online_vendors": 16,
+    "offline_vendors": 1,
+    "total_vendors": 17,
+    "churned_vendors": 3
+  },
+  "654566": {
+    "company_name": "Gassafy Wholesale Florist Inc",
+    "online_vendors": 35,
+    "offline_vendors": 0,
+    "total_vendors": 35,
+    "dormant_vendors": 2,
+    "churned_vendors": 5
+  },
+  "654661": {
+    "company_name": "POTOMAC WHSLE",
+    "online_vendors": 27,
+    "offline_vendors": 0,
+    "total_vendors": 27,
+    "churned_vendors": 6
+  },
+  "654758": {
+    "company_name": "LIHML INC Fayetteville - #01235 GF Rep Kareena 19",
+    "online_vendors": 6,
+    "offline_vendors": 0,
+    "total_vendors": 6,
+    "churned_vendors": 1
+  },
+  "654944": {
+    "company_name": "Apex Floral Distributors Mississauga",
+    "online_vendors": 1,
+    "offline_vendors": 134,
+    "total_vendors": 135,
+    "dormant_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 9,
+    "gap_cost": 1164454
+  },
+  "655098": {
+    "company_name": "BRIEGER WHSLE -TX.",
+    "online_vendors": 36,
+    "offline_vendors": 1,
+    "total_vendors": 37,
+    "churned_vendors": 6
+  },
+  "655382": {
+    "company_name": "Staalduinen Floral-LTF1118",
+    "online_vendors": 28,
+    "offline_vendors": 0,
+    "total_vendors": 28,
+    "churned_vendors": 3
+  },
+  "655608": {
+    "dormant_vendors": 16
+  },
+  "655643": {
+    "company_name": "Solo Wholesale Flower LLC",
+    "online_vendors": 38,
+    "offline_vendors": 1,
+    "total_vendors": 39,
+    "churned_vendors": 1
+  },
+  "655985": {
+    "company_name": "Mellano Sales",
+    "online_vendors": 28,
+    "offline_vendors": 0,
+    "total_vendors": 28,
+    "dormant_vendors": 6,
+    "churned_vendors": 7
+  },
+  "664054": {
+    "company_name": "TFS Bristol",
+    "online_vendors": 22,
+    "offline_vendors": 1,
+    "total_vendors": 23,
+    "dormant_vendors": 2,
+    "churned_vendors": 2
+  },
+  "664096": {
+    "company_name": "Riverside Wholesale Florists KY",
+    "online_vendors": 13,
+    "offline_vendors": 23,
+    "total_vendors": 36,
+    "churned_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 60219
+  },
+  "664133": {
+    "company_name": "Littlefloyd Investments, LLC",
+    "online_vendors": 3,
+    "offline_vendors": 0,
+    "total_vendors": 3,
+    "churned_vendors": 3
+  },
+  "664201": {
+    "company_name": "San Antonio Flower CO",
+    "online_vendors": 20,
+    "offline_vendors": 0,
+    "total_vendors": 20,
+    "churned_vendors": 1
+  },
+  "664255": {
+    "company_name": "Mikes Finest Wholesale Flowers, Inc.",
+    "online_vendors": 0,
+    "offline_vendors": 4,
+    "total_vendors": 4,
+    "churned_vendors": 2
+  },
+  "664314": {
+    "company_name": "Florabundance.",
+    "online_vendors": 19,
+    "offline_vendors": 0,
+    "total_vendors": 19
+  },
+  "664341": {
+    "company_name": "Hall´s Wholesale Florist Theodore",
+    "online_vendors": 3,
+    "offline_vendors": 0,
+    "total_vendors": 3,
+    "dormant_vendors": 2,
+    "churned_vendors": 2
+  },
+  "664381": {
+    "company_name": "Unifour Wholesale ",
+    "online_vendors": 12,
+    "offline_vendors": 0,
+    "total_vendors": 12
+  },
+  "664494": {
+    "company_name": "MAGNOLIA HOLDINGS 301 LLC  ABSOLUTELY BEAUTIFUL FLOWERS",
+    "online_vendors": 10,
+    "offline_vendors": 0,
+    "total_vendors": 10,
+    "dormant_vendors": 18
+  },
+  "664540": {
+    "company_name": "FMI, LLC.-FL",
+    "online_vendors": 7,
+    "offline_vendors": 0,
+    "total_vendors": 7,
+    "churned_vendors": 6
+  },
+  "664623": {
+    "company_name": "Esprit Salt Lake, Inc",
+    "online_vendors": 1,
+    "offline_vendors": 0,
+    "total_vendors": 1,
+    "churned_vendors": 1
+  },
+  "664648": {
+    "company_name": "Tradewinds/ KING FLORAL SUPPLY",
+    "online_vendors": 14,
+    "offline_vendors": 0,
+    "total_vendors": 14,
+    "churned_vendors": 2
+  },
+  "664719": {
+    "company_name": "ALLIANCE FLORAL COMPANY. 6270",
+    "online_vendors": 22,
+    "offline_vendors": 1,
+    "total_vendors": 23,
+    "dormant_vendors": 79,
+    "churned_vendors": 4
+  },
+  "664820": {
+    "company_name": "Younger & Son Inc",
+    "online_vendors": 30,
+    "offline_vendors": 0,
+    "total_vendors": 30,
+    "churned_vendors": 5
+  },
+  "664944": {
+    "company_name": "POSIES TRUCK",
+    "online_vendors": 5,
+    "offline_vendors": 0,
+    "total_vendors": 5
+  },
+  "664988": {
+    "company_name": "CALI WHOLESALE.-CA",
+    "online_vendors": 4,
+    "offline_vendors": 0,
+    "total_vendors": 4
+  },
+  "665027": {
+    "company_name": "Mideast Flowers Distributors, Inc.",
+    "online_vendors": 13,
+    "offline_vendors": 0,
+    "total_vendors": 13,
+    "churned_vendors": 13
+  },
+  "665080": {
+    "company_name": "COWARD WHOLESALE",
+    "online_vendors": 19,
+    "offline_vendors": 0,
+    "total_vendors": 19
+  },
+  "665232": {
+    "company_name": "The Flowerman, Inc.",
+    "online_vendors": 17,
+    "offline_vendors": 0,
+    "total_vendors": 17,
+    "churned_vendors": 17
+  },
+  "665261": {
+    "company_name": "Tradewinds / Pristine Wholesale Floral",
+    "online_vendors": 18,
+    "offline_vendors": 0,
+    "total_vendors": 18,
+    "churned_vendors": 2
+  },
+  "665296": {
+    "company_name": "AD TRADING CORP.DBA AD FLORAL TRADI",
+    "online_vendors": 9,
+    "offline_vendors": 1,
+    "total_vendors": 10,
+    "dormant_vendors": 38
+  },
+  "665316": {
+    "company_name": "Flowers by Fudgie, Inc",
+    "online_vendors": 5,
+    "offline_vendors": 0,
+    "total_vendors": 5
+  },
+  "665336": {
+    "company_name": "Torchio Nursery",
+    "online_vendors": 13,
+    "offline_vendors": 0,
+    "total_vendors": 13,
+    "churned_vendors": 1
+  },
+  "665358": {
+    "company_name": "HIRE`S BEST FLOWERS",
+    "online_vendors": 7,
+    "offline_vendors": 0,
+    "total_vendors": 7,
+    "churned_vendors": 7
+  },
+  "665425": {
+    "company_name": "Specialty Cut Flowers",
+    "online_vendors": 1,
+    "offline_vendors": 0,
+    "total_vendors": 1
+  },
+  "665443": {
+    "company_name": "POPPIES DESIGN STUDIO, LLC",
+    "online_vendors": 5,
+    "offline_vendors": 0,
+    "total_vendors": 5
+  },
+  "667626": {
+    "company_name": "Green Bouquet LLC",
+    "online_vendors": 0,
+    "offline_vendors": 6,
+    "total_vendors": 6,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 4,
+    "gap_cost": 1935229
+  },
+  "669090": {
+    "company_name": "The Oklahoma Flower Market",
+    "online_vendors": 13,
+    "offline_vendors": 0,
+    "total_vendors": 13,
+    "churned_vendors": 1
+  },
+  "670288": {
+    "dormant_vendors": 20
+  },
+  "670302": {
+    "dormant_vendors": 14
+  },
+  "670311": {
+    "company_name": "Floral Importers and Distributors Inc. /Buds",
+    "online_vendors": 6,
+    "offline_vendors": 0,
+    "total_vendors": 6,
+    "churned_vendors": 4
+  },
+  "670423": {
+    "company_name": "FLEURIGROS QUEBEC 1995 INC.",
+    "online_vendors": 1,
+    "offline_vendors": 0,
+    "total_vendors": 1,
+    "churned_vendors": 1
+  },
+  "670450": {
+    "company_name": "FLORIAD- MONTREAL CANADA INC.",
+    "online_vendors": 10,
+    "offline_vendors": 1,
+    "total_vendors": 11,
+    "churned_vendors": 5
+  },
+  "670508": {
+    "company_name": "Hartford Florist Supply",
+    "online_vendors": 28,
+    "offline_vendors": 1,
+    "total_vendors": 29
+  },
+  "670554": {
+    "company_name": "MAHONEYS ROCKY LEDGE FARM &",
+    "online_vendors": 2,
+    "offline_vendors": 0,
+    "total_vendors": 2
+  },
+  "670596": {
+    "dormant_vendors": 6
+  },
+  "670668": {
+    "company_name": "STRANGE`S FLORIST, INC.",
+    "online_vendors": 4,
+    "offline_vendors": 0,
+    "total_vendors": 4,
+    "churned_vendors": 4
+  },
+  "670675": {
+    "company_name": "VELDKAMP´S FLOWERS",
+    "online_vendors": 21,
+    "offline_vendors": 1,
+    "total_vendors": 22,
+    "churned_vendors": 1
+  },
+  "670701": {
+    "company_name": "Webb’s Wholesale Florist",
+    "online_vendors": 24,
+    "offline_vendors": 0,
+    "total_vendors": 24,
+    "churned_vendors": 3
+  },
+  "671046": {
+    "company_name": "Blossom Bliss LLC",
+    "online_vendors": 11,
+    "offline_vendors": 60,
+    "total_vendors": 71,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 125692
+  },
+  "672046": {
+    "dormant_vendors": 8
+  },
+  "672147": {
+    "company_name": "A1 Floral Xpressions",
+    "online_vendors": 0,
+    "offline_vendors": 38,
+    "total_vendors": 38
+  },
+  "672205": {
+    "company_name": "Del Tropico/ Ameriblooms",
+    "online_vendors": 1,
+    "offline_vendors": 189,
+    "total_vendors": 190,
+    "dormant_vendors": 4,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 7,
+    "gap_cost": 1136053
+  },
+  "672728": {
+    "company_name": "Ecuador's Origin Product",
+    "online_vendors": 0,
+    "offline_vendors": 40,
+    "total_vendors": 40,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 8,
+    "gap_cost": 754078
+  },
+  "672781": {
+    "company_name": "NY Floral Supply",
+    "online_vendors": 18,
+    "offline_vendors": 28,
+    "total_vendors": 46,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 211116
+  },
+  "672799": {
+    "company_name": "Rokay Floral",
+    "online_vendors": 17,
+    "offline_vendors": 0,
+    "total_vendors": 17
+  },
+  "673823": {
+    "company_name": "Flowerist LLC",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 60347
+  },
+  "675361": {
+    "company_name": "Fleurametz USA NYC",
+    "online_vendors": 18,
+    "offline_vendors": 0,
+    "total_vendors": 18
+  },
+  "675363": {
+    "company_name": "Palm Beach Whsle Flowers, Inc.",
+    "online_vendors": 33,
+    "offline_vendors": 0,
+    "total_vendors": 33,
+    "churned_vendors": 2
+  },
+  "676090": {
+    "company_name": "FleuraMetz Montreal Ltd",
+    "online_vendors": 26,
+    "offline_vendors": 3,
+    "total_vendors": 29,
+    "churned_vendors": 5
+  },
+  "676861": {
+    "company_name": "Ontario Flower Growers Cooperative Ltd.",
+    "online_vendors": 0,
+    "offline_vendors": 8,
+    "total_vendors": 8,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 59350
+  },
+  "677319": {
+    "company_name": "! Juliet Wholesale Flowers LLC",
+    "online_vendors": 0,
+    "offline_vendors": 54,
+    "total_vendors": 54
+  },
+  "680251": {
+    "company_name": "RUMHORA GREENS LLC",
+    "online_vendors": 4,
+    "offline_vendors": 45,
+    "total_vendors": 49,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 5,
+    "gap_cost": 498905
+  },
+  "681739": {
+    "company_name": "Fleurametz Chicago",
+    "online_vendors": 37,
+    "offline_vendors": 0,
+    "total_vendors": 37,
+    "churned_vendors": 1
+  },
+  "681879": {
+    "dormant_vendors": 1
+  },
+  "700340": {
+    "company_name": "FleuraMetz LA",
+    "online_vendors": 13,
+    "offline_vendors": 0,
+    "total_vendors": 13,
+    "churned_vendors": 4
+  },
+  "701220": {
+    "company_name": "McCarthy Wholesale",
+    "online_vendors": 1,
+    "offline_vendors": 0,
+    "total_vendors": 1,
+    "dormant_vendors": 4
+  },
+  "704636": {
+    "company_name": "UNITED WHOLESALE- FFL  ENTERPRISES ",
+    "online_vendors": 31,
+    "offline_vendors": 0,
+    "total_vendors": 31,
+    "churned_vendors": 1
+  },
+  "704680": {
+    "dormant_vendors": 14
+  },
+  "712429": {
+    "company_name": "Rose Runners",
+    "online_vendors": 6,
+    "offline_vendors": 1,
+    "total_vendors": 7,
+    "dormant_vendors": 10,
+    "churned_vendors": 3
+  },
+  "713789": {
+    "company_name": "HALL´S - BIRMINGHAM",
+    "online_vendors": 34,
+    "offline_vendors": 0,
+    "total_vendors": 34,
+    "churned_vendors": 1
+  },
+  "713840": {
+    "company_name": "WHOLESALE NORTON'S FLORIST",
+    "online_vendors": 30,
+    "offline_vendors": 4,
+    "total_vendors": 34,
+    "churned_vendors": 5
+  },
+  "716166": {
+    "company_name": "Exclusive Wholesale",
+    "online_vendors": 9,
+    "offline_vendors": 1,
+    "total_vendors": 10,
+    "churned_vendors": 1
+  },
+  "716378": {
+    "company_name": "Moonlight Flowers",
+    "online_vendors": 0,
+    "offline_vendors": 56,
+    "total_vendors": 56,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 684056
+  },
+  "726631": {
+    "company_name": "Wolfe Wholesale Florist, Inc. Waco",
+    "online_vendors": 11,
+    "offline_vendors": 0,
+    "total_vendors": 11,
+    "churned_vendors": 1
+  },
+  "727131": {
+    "company_name": "EQ Blooms by Flodecol",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 73276
+  },
+  "727605": {
+    "company_name": "Lucas and Greer, Inc. dba L & G Wholesale Florist",
+    "online_vendors": 45,
+    "offline_vendors": 0,
+    "total_vendors": 45,
+    "churned_vendors": 3
+  },
+  "729658": {
+    "dormant_vendors": 1
+  },
+  "729712": {
+    "dormant_vendors": 12
+  },
+  "730920": {
+    "company_name": "Shamrock Wholesale Florist Memphis",
+    "online_vendors": 33,
+    "offline_vendors": 1,
+    "total_vendors": 34,
+    "churned_vendors": 3
+  },
+  "731091": {
+    "company_name": "KRUEGER WHOLESALE PROMO",
+    "online_vendors": 1,
+    "offline_vendors": 0,
+    "total_vendors": 1
+  },
+  "731381": {
+    "company_name": "CHICAGO´S WHOLESALE",
+    "online_vendors": 21,
+    "offline_vendors": 0,
+    "total_vendors": 21
+  },
+  "731414": {
+    "dormant_vendors": 32
+  },
+  "731457": {
+    "company_name": "TWI SON HARRISON WHOLESALE FLORAL",
+    "online_vendors": 1,
+    "offline_vendors": 0,
+    "total_vendors": 1
+  },
+  "731558": {
+    "company_name": "MRS. BLOOM’S DIRECT, INC.",
+    "online_vendors": 32,
+    "offline_vendors": 0,
+    "total_vendors": 32,
+    "dormant_vendors": 2,
+    "churned_vendors": 4
+  },
+  "732448": {
+    "company_name": "Nazcaflor USA, Inc",
+    "online_vendors": 0,
+    "offline_vendors": 3,
+    "total_vendors": 3,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 4727404
+  },
+  "732518": {
+    "company_name": "DKAY WHOLESALE INC",
+    "online_vendors": 47,
+    "offline_vendors": 2,
+    "total_vendors": 49,
+    "churned_vendors": 3
+  },
+  "732830": {
+    "company_name": "First Choice Floral",
+    "online_vendors": 16,
+    "offline_vendors": 0,
+    "total_vendors": 16
+  },
+  "733250": {
+    "company_name": "ROYAL BASE (U.S.A) CORPORATION",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 400783
+  },
+  "733807": {
+    "company_name": "Metropolitan Wholesale/Cityside Flowers",
+    "online_vendors": 14,
+    "offline_vendors": 0,
+    "total_vendors": 14,
+    "churned_vendors": 1
+  },
+  "734128": {
+    "company_name": "Details Direct - Core",
+    "online_vendors": 0,
+    "offline_vendors": 6,
+    "total_vendors": 6
+  },
+  "734327": {
+    "company_name": "Star Roses",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  },
+  "734521": {
+    "company_name": "Promoflor SRL",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 3920410
+  },
+  "735220": {
+    "company_name": "WE GOT FLOWERS",
+    "online_vendors": 30,
+    "offline_vendors": 64,
+    "total_vendors": 94,
+    "churned_vendors": 8,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 6,
+    "gap_cost": 574272
+  },
+  "735300": {
+    "company_name": "Cataleya Flowers D&A",
+    "online_vendors": 1,
+    "offline_vendors": 0,
+    "total_vendors": 1,
+    "churned_vendors": 1
+  },
+  "735488": {
+    "dormant_vendors": 12
+  },
+  "735631": {
+    "dormant_vendors": 2
+  },
+  "738936": {
+    "company_name": "ACA Flowers",
+    "online_vendors": 2,
+    "offline_vendors": 0,
+    "total_vendors": 2,
+    "dormant_vendors": 38
+  },
+  "740646": {
+    "company_name": "Valley Floral Co. - Wichita",
+    "online_vendors": 28,
+    "offline_vendors": 0,
+    "total_vendors": 28,
+    "churned_vendors": 1
+  },
+  "740696": {
+    "company_name": "Valley Floral Co. of Oklahoma LLC - Tulsa",
+    "online_vendors": 31,
+    "offline_vendors": 0,
+    "total_vendors": 31,
+    "churned_vendors": 4
+  },
+  "740734": {
+    "company_name": "Valley Floral Co. of OKC - Oklahoma",
+    "online_vendors": 11,
+    "offline_vendors": 0,
+    "total_vendors": 11,
+    "churned_vendors": 6
+  },
+  "742781": {
+    "company_name": "New England Wholesale Florist",
+    "online_vendors": 8,
+    "offline_vendors": 7,
+    "total_vendors": 15,
+    "churned_vendors": 8
+  },
+  "742939": {
+    "company_name": "Stemline Wholesale",
+    "online_vendors": 25,
+    "offline_vendors": 55,
+    "total_vendors": 80,
+    "churned_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 5,
+    "gap_cost": 993401
+  },
+  "743217": {
+    "company_name": "Nova Packaging Solutions, Inc.",
+    "online_vendors": 5,
+    "offline_vendors": 1,
+    "total_vendors": 6
+  },
+  "743648": {
+    "company_name": "Zeidler Floral",
+    "online_vendors": 11,
+    "offline_vendors": 33,
+    "total_vendors": 44,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 2,
+    "gap_cost": 151229
+  },
+  "755593": {
+    "company_name": "Kontikiflor BV",
+    "online_vendors": 0,
+    "offline_vendors": 8,
+    "total_vendors": 8
+  },
+  "756140": {
+    "company_name": "Flower List",
+    "online_vendors": 1,
+    "offline_vendors": 37,
+    "total_vendors": 38,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 1052379
+  },
+  "762172": {
+    "company_name": "Floropolis",
+    "online_vendors": 4,
+    "offline_vendors": 4,
+    "total_vendors": 8
+  },
+  "764867": {
+    "company_name": "Hana Farms Inc.",
+    "online_vendors": 1,
+    "offline_vendors": 16,
+    "total_vendors": 17,
+    "dormant_vendors": 2
+  },
+  "765491": {
+    "company_name": "Dreisbach Wholesale",
+    "online_vendors": 39,
+    "offline_vendors": 0,
+    "total_vendors": 39,
+    "dormant_vendors": 2,
+    "churned_vendors": 3
+  },
+  "765583": {
+    "company_name": "Bellaflor Group Inc.",
+    "online_vendors": 0,
+    "offline_vendors": 2,
+    "total_vendors": 2
+  },
+  "767361": {
+    "company_name": "UNIVERSAL FLOWER SERVICE CORP",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  },
+  "770796": {
+    "company_name": "VERA",
+    "online_vendors": 0,
+    "offline_vendors": 11,
+    "total_vendors": 11,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 62194
+  },
+  "796715": {
+    "company_name": "ADEESE FLOWERS LLC",
+    "online_vendors": 0,
+    "offline_vendors": 30,
+    "total_vendors": 30,
+    "dormant_vendors": 4
+  },
+  "796779": {
+    "company_name": "Kennicott Brothers West",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 150225
+  },
+  "802590": {
+    "company_name": "Pacifica Farms - CAL",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  },
+  "804758": {
+    "company_name": "FGS.Flowers.MIA",
+    "online_vendors": 1,
+    "offline_vendors": 36,
+    "total_vendors": 37
+  },
+  "806417": {
+    "company_name": "Hyperactive Farms Inc.",
+    "online_vendors": 7,
+    "offline_vendors": 1,
+    "total_vendors": 8,
+    "churned_vendors": 6
+  },
+  "808064": {
+    "company_name": "Universal Flower Farms Inc.",
+    "online_vendors": 0,
+    "offline_vendors": 9,
+    "total_vendors": 9
+  },
+  "808079": {
+    "company_name": "JFS Wholesale Floral",
+    "online_vendors": 32,
+    "offline_vendors": 72,
+    "total_vendors": 104,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 4,
+    "gap_cost": 759748
+  },
+  "808448": {
+    "company_name": "Derita Floral Floral Supply Co",
+    "online_vendors": 1,
+    "offline_vendors": 0,
+    "total_vendors": 1,
+    "dormant_vendors": 2
+  },
+  "808527": {
+    "company_name": "Hortensias Cabogana Cia Ltda",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  },
+  "809201": {
+    "company_name": "San Jose Floral",
+    "online_vendors": 2,
+    "offline_vendors": 19,
+    "total_vendors": 21
+  },
+  "811196": {
+    "company_name": "Everflorals",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  },
+  "811368": {
+    "dormant_vendors": 8
+  },
+  "813857": {
+    "company_name": "Expo Flora S.A.",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1,
+    "leakage_vendors": 0,
+    "leakage_cost": 0,
+    "gap_vendors": 1,
+    "gap_cost": 290525
+  },
+  "814810": {
+    "company_name": "Lartisan Roses LLC",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  },
+  "815425": {
+    "company_name": "Coward & Glisson Whsl. Flst.",
+    "online_vendors": 13,
+    "offline_vendors": 0,
+    "total_vendors": 13,
+    "churned_vendors": 4
+  },
+  "815558": {
+    "company_name": "Florens Group LLC",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  },
+  "816515": {
+    "company_name": "Price's Floral Wholesale, LLC",
+    "online_vendors": 26,
+    "offline_vendors": 3,
+    "total_vendors": 29
+  },
+  "817168": {
+    "company_name": "International Fresh Group LLC",
+    "online_vendors": 5,
+    "offline_vendors": 5,
+    "total_vendors": 10
+  },
+  "819114": {
+    "company_name": "Details Direct",
+    "online_vendors": 5,
+    "offline_vendors": 0,
+    "total_vendors": 5
+  },
+  "821576": {
+    "company_name": "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN",
+    "online_vendors": 1,
+    "offline_vendors": 0,
+    "total_vendors": 1
+  },
+  "821768": {
+    "company_name": "Coquette Roses",
+    "online_vendors": 1,
+    "offline_vendors": 9,
+    "total_vendors": 10
+  },
+  "822374": {
+    "company_name": "Avon Valley Floral",
+    "online_vendors": 0,
+    "offline_vendors": 6,
+    "total_vendors": 6
+  },
+  "822938": {
+    "company_name": "Flores San Miguel",
+    "online_vendors": 0,
+    "offline_vendors": 1,
+    "total_vendors": 1
+  }
+}

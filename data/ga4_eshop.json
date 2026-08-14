@@ -1,0 +1,271 @@
+{
+  "source": "GA4 E-Commerce Automated Sheet (1f0GqXQ8lzb9MZ0zWjDKnIhpLfaOEKB8sJr3JHBkyWgQ)",
+  "tab": "E-Commerce (hostname breakdown)",
+  "date_range": "2026-07-11 to 2026-07-31",
+  "days": 21,
+  "extracted": "2026-07-30",
+  "note": "Aggregated across all dates. conversion_rate = transactions/sessions. Revenue in USD.",
+  "eshops": [
+    {
+      "hostname": "app.kometsales.com",
+      "sessions": 40539,
+      "active_users": 20402,
+      "transactions": 22510,
+      "revenue": 4601914.58,
+      "conversion_rate": 0.5553,
+      "days_observed": 21
+    },
+    {
+      "hostname": "shop.kennicott.com",
+      "sessions": 4468,
+      "active_users": 2946,
+      "transactions": 1018,
+      "revenue": 457497.73,
+      "conversion_rate": 0.2278,
+      "days_observed": 21
+    },
+    {
+      "hostname": "eshops.kometsales.com",
+      "sessions": 4892,
+      "active_users": 3983,
+      "transactions": 362,
+      "revenue": 120058.7,
+      "conversion_rate": 0.074,
+      "days_observed": 21
+    },
+    {
+      "hostname": "komet.billdoran.com",
+      "sessions": 566,
+      "active_users": 386,
+      "transactions": 187,
+      "revenue": 49001.34,
+      "conversion_rate": 0.3304,
+      "days_observed": 20
+    },
+    {
+      "hostname": "localhost",
+      "sessions": 25,
+      "active_users": 13,
+      "transactions": 40,
+      "revenue": 44289.36,
+      "conversion_rate": 1.6,
+      "days_observed": 10
+    },
+    {
+      "hostname": "shop.pikespeakfloral.com",
+      "sessions": 192,
+      "active_users": 130,
+      "transactions": 29,
+      "revenue": 4788.45,
+      "conversion_rate": 0.151,
+      "days_observed": 18
+    },
+    {
+      "hostname": "shop.allurefarms.com",
+      "sessions": 239,
+      "active_users": 168,
+      "transactions": 12,
+      "revenue": 6831.45,
+      "conversion_rate": 0.0502,
+      "days_observed": 21
+    },
+    {
+      "hostname": "eshop.solefarms.com",
+      "sessions": 44,
+      "active_users": 35,
+      "transactions": 8,
+      "revenue": 1479.1,
+      "conversion_rate": 0.1818,
+      "days_observed": 13
+    },
+    {
+      "hostname": "details.direct",
+      "sessions": 143,
+      "active_users": 116,
+      "transactions": 7,
+      "revenue": 8275.92,
+      "conversion_rate": 0.049,
+      "days_observed": 19
+    },
+    {
+      "hostname": "flowers.sofloco.com",
+      "sessions": 9,
+      "active_users": 7,
+      "transactions": 2,
+      "revenue": 1064.72,
+      "conversion_rate": 0.2222,
+      "days_observed": 6
+    },
+    {
+      "hostname": "eshop.kometsales.com",
+      "sessions": 29,
+      "active_users": 28,
+      "transactions": 1,
+      "revenue": 138.0,
+      "conversion_rate": 0.0345,
+      "days_observed": 10
+    },
+    {
+      "hostname": "kabeta.kometsales.com",
+      "sessions": 49,
+      "active_users": 25,
+      "transactions": 1,
+      "revenue": 70.68,
+      "conversion_rate": 0.0204,
+      "days_observed": 10
+    },
+    {
+      "hostname": "shop.frescafarms.com",
+      "sessions": 91,
+      "active_users": 76,
+      "transactions": 1,
+      "revenue": 169.2,
+      "conversion_rate": 0.011,
+      "days_observed": 20
+    },
+    {
+      "hostname": "shop.usgreenscorp.com",
+      "sessions": 72,
+      "active_users": 67,
+      "transactions": 1,
+      "revenue": 74.25,
+      "conversion_rate": 0.0139,
+      "days_observed": 16
+    },
+    {
+      "hostname": "kabeta-2.kometsales.com",
+      "sessions": 3,
+      "active_users": 2,
+      "transactions": 1,
+      "revenue": 1245.02,
+      "conversion_rate": 0.3333,
+      "days_observed": 1
+    },
+    {
+      "hostname": "open-discovery.koronet.com",
+      "sessions": 2109,
+      "active_users": 1661,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 21
+    },
+    {
+      "hostname": "directory.kometsales.com",
+      "sessions": 188,
+      "active_users": 141,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 18
+    },
+    {
+      "hostname": "shop.fiorentinaflowers.com",
+      "sessions": 14,
+      "active_users": 14,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 11
+    },
+    {
+      "hostname": "website.koronet.com",
+      "sessions": 4,
+      "active_users": 3,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 3
+    },
+    {
+      "hostname": "website.koronet.dev",
+      "sessions": 70,
+      "active_users": 33,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 18
+    },
+    {
+      "hostname": "www.cfhwholesale.com",
+      "sessions": 10,
+      "active_users": 8,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 5
+    },
+    {
+      "hostname": "www.verisarflowers.com",
+      "sessions": 47,
+      "active_users": 41,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 16
+    },
+    {
+      "hostname": "shop.faguaflowers.com",
+      "sessions": 27,
+      "active_users": 25,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 8
+    },
+    {
+      "hostname": "shop.floreco.com",
+      "sessions": 14,
+      "active_users": 13,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 9
+    },
+    {
+      "hostname": "shop.floropolis.com",
+      "sessions": 5,
+      "active_users": 5,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 3
+    },
+    {
+      "hostname": "www.gq-flowers.com",
+      "sessions": 22,
+      "active_users": 22,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 11
+    },
+    {
+      "hostname": "eshop.naranjoroses.com",
+      "sessions": 6,
+      "active_users": 6,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 3
+    },
+    {
+      "hostname": "bops402-demo.example.com",
+      "sessions": 1,
+      "active_users": 1,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 1
+    },
+    {
+      "hostname": "shop.ensignfloral.com",
+      "sessions": 1,
+      "active_users": 1,
+      "transactions": 0,
+      "revenue": 0.0,
+      "conversion_rate": 0.0,
+      "days_observed": 1
+    }
+  ]
+}

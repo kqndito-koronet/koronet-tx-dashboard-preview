@@ -1,0 +1,169 @@
+{
+  "description": "System-generated proposals for owner review. They are not tasks, tickets, customer outreach, data pulls, or approved work until an owner explicitly promotes one.",
+  "global_requests": [
+    {
+      "request_id": "AI-DATA-TX-DAILY-ACCOUNT-SPINE-SNAPSHOT",
+      "type": "DATA_REQUEST",
+      "status": "DRAFT",
+      "title": "Produce one compatible daily BUY/SELL account snapshot for the TX spine",
+      "why_now": "The Accounts MVP has one accepted 2026-07-30 baseline and a tested fail-closed reporter. It cannot show client movement until a second snapshot has canonical identity, one shared cutoff and compatible observed envelopes.",
+      "opportunity": "Unlocks daily reporting of observed account movement and weekly rigor without pretending that period-comparison fields or stale static JSON are daily change.",
+      "decision_needed": "Confirm the owner and run mechanism for a scheduled raw extract (prefer a non-LLM cron) and the authoritative canonical company_id join for SALES_SV and PROCUREMENTS_SV.",
+      "requested": "At the agreed daily cutoff, write V2 BUY and SELL records keyed by canonical company_id with identical _metadata.as_of; include total/online/offline GMV, channel definition, query id, source/coverage, period_start/end and explicit identity exceptions. Then run materialize_tx_account_spine.py and validate_tx_account_spine.py. Archive only the validated staged snapshot; never overwrite a different snapshot for the same cutoff.",
+      "acceptance_test": "A second snapshot validates with every observed metric period_end/as_of equal to the snapshot cutoff; report_tx_account_spine_daily.py returns MOVEMENT_READY only for metrics whose source and coverage match the prior snapshot. A source/cutoff mismatch returns COMPARISON_BLOCKED and no movement claim.",
+      "source": "scripts/materialize_tx_account_spine.py · scripts/validate_tx_account_spine.py · scripts/report_tx_account_spine_daily.py"
+    },
+    {
+      "request_id": "AI-DATA-TX-PRIORITY-COMPANY-GMV-COVERAGE",
+      "type": "DATA_REQUEST",
+      "status": "DRAFT",
+      "title": "Backfill company-GMV estimate coverage for priority accounts",
+      "why_now": "The staged spine has a modeled company-GMV estimate for 96 of 398 keyed accounts; 272 are explicitly missing and 30 are blocked by plausibility checks. Missing priority examples include Zeidler, Ashland Addison, Dreisbach and Shamrock; Arizona Family Florist now has a source-backed model and must not be re-requested as missing. Portfolio cannot rank potential honestly where the model is missing or blocked.",
+      "opportunity": "A source-backed GMV estimate makes potential, capture and modeled total-purchases comparable without treating missing as zero.",
+      "decision_needed": "Confirm the authoritative CRM field/definition for annual company sales and when external research should supplement rather than overwrite it.",
+      "requested": "Return canonical company_id, annual company-GMV estimate/range, currency, as_of, source system/field, method/version, confidence, and explicit missing reason for all TA, IMPL, P1 and CS_P2 accounts. For CRM-missing accounts, create research requests with identity evidence rather than guessed values.",
+      "acceptance_test": "All priority accounts are either source-backed modeled estimates with provenance or explicitly `missing` with a scoped research request; Price's 816515 retains its current $1.8M SFDC estimate pending external validation.",
+      "source": "docs/transactions/data/account_spine_2026-07-30_staged.json"
+    },
+    {
+      "request_id": "AI-DATA-TX-COMPATIBLE-SELL-BUYER-FEE-SPINE",
+      "type": "DATA_REQUEST",
+      "status": "DRAFT",
+      "title": "Produce compatible SELL GMV, buyer/order and fee records",
+      "why_now": "The staged spine has observed SELL GMV for 322 accounts but buyer counts and direct fees are blocked for all 398 because current files do not share one accepted population, cutoff and channel mapping.",
+      "opportunity": "Lets SELL decide shop readiness versus buyer activation versus traffic, and lets fees be reported as observed rather than inferred.",
+      "decision_needed": "Confirm the canonical sale population, buyer identity grain and direct-fee source for one shared daily cutoff.",
+      "requested": "For each canonical company_id and calendar day/month/YTD: SELL GMV online/offline, distinct buyers online/offline, orders, AOV, new/repeat/churn definitions, direct fees by channel, source query ids, filters, cutoff and coverage. Buyer counts and fees must resolve to the exact GMV population/window.",
+      "acceptance_test": "For Price's, the same record supports online/offline SELL GMV, buyers and fees for one stated period; no card needs buyers.json, sell_detail.json or sell_by_channel.json as a fallback.",
+      "source": "TX_PRICES_ACCOUNT_SPINE_AUDIT_2026-08-01.md · staged spine metric_state_counts"
+    },
+    {
+      "request_id": "AI-DATA-TX-LIST-INVENTORY-PARITY-SPINE",
+      "type": "DATA_REQUEST",
+      "status": "DRAFT",
+      "title": "Produce actual online/offline inventory and listing parity by account",
+      "why_now": "LIST parity is blocked for all 398 keyed accounts: current files measure historical sales breadth, not what a customer can see and buy in the shop now or at future horizons.",
+      "opportunity": "Lets CS/Implementation distinguish inventory visibility, future supply, bunches, fulfillment and real supply gaps before pushing shop traffic.",
+      "decision_needed": "Confirm the inventory/listing grain and the definitions of online visibility, offline availability, active vendor, available-online and fulfillment horizon.",
+      "requested": "For each canonical company_id/as_of: online and offline catalogue/inventory counts for vendors, categories, varieties and SKUs; bunches; short/medium/long future availability; vendor lifecycle and availability-online; fulfillment readiness. Include source, cutoff, coverage and explicit unavailable states.",
+      "acceptance_test": "For Price's, LIST can compare what is online versus offline without treating sold items as catalogue, and can distinguish an offline vendor available online from a true Koronet supply gap.",
+      "source": "TX_DASHBOARD_REVIEW_DECISIONS.md · TX_PRICES_ACCOUNT_SPINE_AUDIT_2026-08-01.md"
+    },
+    {
+      "request_id": "AI-DATA-TX-CANONICAL-COMPANY-ID-IN-V2",
+      "type": "DATA_REQUEST",
+      "status": "DRAFT",
+      "title": "Emit canonical company_id in every V2 BUY and SELL record",
+      "why_now": "The staged account spine matches V2 sources by exact normalized company name because the V2 files omit the canonical Koronet company_id. It found an LD Trading duplicate account, a The Queen's Flowers source-name collision, and 87/76 accounts without a BUY/SELL match respectively.",
+      "opportunity": "A canonical join lets the dashboard refresh daily without silently attaching, dropping or guessing account transactions; it is required before Portfolio/POTENTIAL can consume the staged spine.",
+      "decision_needed": "Confirm the authoritative company-id field and join path in SALES_SV and PROCUREMENTS_SV, including treatment of deactivated, merged and unprovisioned companies.",
+      "requested": "Re-run the V2 BUY and SELL extracts with canonical Koronet company_id on every row, source query id, exact cutoff, channel definition, and a separate identity-exception table for rows that cannot map one-to-one. Do not resolve by name heuristics. Include Price's as account_id 816515 acceptance fixture.",
+      "acceptance_test": "Every V2 account record has canonical company_id or an explicit exception reason; Price's 816515, the LD Trading duplicate and The Queen's Flowers collision are test cases. The materializer produces zero name-based identity matches.",
+      "source": "docs/transactions/data/account_spine_2026-07-30_staged.json · scripts/materialize_tx_account_spine.py"
+    },
+    {
+      "request_id": "AI-DATA-OUTCOME-SPINE-CUTOFF",
+      "type": "DATA_QUALITY",
+      "status": "DRAFT",
+      "title": "Confirm the July outcome-spine data cutoff",
+      "why_now": "The first outcome-spine baseline is labeled as_of 2026-08-02. Reconcile that source cutoff with its query execution time and source MAX dates before it is used for daily reporting or compared to the 2026-07-30 staged account spine.",
+      "opportunity": "A valid baseline enables daily movement reporting without invented deltas.",
+      "decision_needed": "Confirm the true query cutoff date or regenerate the snapshot with its actual as_of.",
+      "requested": "Query execution time, MAX transaction/shipping dates by source, and the corrected snapshot metadata.",
+      "source": "tx_claude_loop_evaluator · outcome_spine_2026-08-02.json"
+    },
+    {
+      "request_id": "AI-DATA-ESHOP-COMPANY-MAP",
+      "type": "DATA_REQUEST",
+      "status": "DRAFT",
+      "title": "Map GA4 eShop activity to company_id",
+      "why_now": "The current CVR field is available only for a small own-domain subset; shared app hostnames cannot be attributed confidently.",
+      "opportunity": "Lets SELL diagnosis distinguish traffic/conversion friction from missing attribution.",
+      "decision_needed": "Decide whether CVR is fit for account prioritization and which implementation path owns the mapping.",
+      "requested": "GA4 session and transaction records keyed to company_id, with date range, hostname and coverage.",
+      "source": "Accounts eShop CVR field · TX_FACU_FEEDBACK_AUG1.md"
+    },
+    {
+      "request_id": "AI-DATA-PRICES-ACCOUNT-SPINE",
+      "type": "DATA_REQUEST",
+      "status": "DRAFT",
+      "title": "Reconcile Price's BUY, LIST and SELL account spine before selecting a play",
+      "why_now": "Price's (816515) is an MVP acceptance account. Its card labels observed CORE procurement ($84,416) as BUY potential and combines incompatible BUY windows and SELL buyer counts/GMV.",
+      "opportunity": "Makes the next Price's conversation about a verified growth constraint — coverage/leakage, listing parity or shop conversion — rather than a misleading dashboard number.",
+      "decision_needed": "Confirm the canonical sources, grain and windows for Price's before the system recommends an intervention.",
+      "requested": "One account-level extract with: (1) annual company sell estimate plus method/inputs; (2) Koronet BUY total/online/offline by calendar month and YTD; (3) vendor/category/variety/SKU BUY online/offline, vendor connectivity and first/last channel event; (4) listing/inventory breadth and future-availability by online/offline definition; (5) SELL GMV and distinct buyers online/offline from the same transaction population/window; (6) reimplementation/e-commerce-before-Koronet context with source. Include as_of, source table/query id, metric definition and coverage for every field.",
+      "source": "TX_PRICES_ACCEPTANCE_FEEDBACK_2026-08-01.md · Facu dashboard review"
+    },
+    {
+      "request_id": "AI-RESEARCH-PRICES-EXTERNAL-SIZE-VALIDATION",
+      "type": "EXTERNAL_RESEARCH_REQUEST",
+      "status": "DRAFT",
+      "title": "Validate Price's external operating scale before replacing its GMV estimate",
+      "why_now": "The $1.8M SFDC annual-sales estimate is currently useful only as a medium-confidence internal estimate. Public research confirms the business type and possible Chesapeake/Charleston footprint, but does not yet size the company.",
+      "opportunity": "A source-backed company-GMV range makes the total-purchases model and every BUY-fee scenario decision-useful instead of a guess.",
+      "decision_needed": "Determine whether external evidence corroborates, narrows or contradicts the SFDC estimate; do not replace it without two independent, type-appropriate sizing signals.",
+      "requested": "For account_id 816515, verify active operating locations and obtain at least two independent sizing signals appropriate to a floral wholesaler (for example facility/warehouse footprint, verified headcount, route/capacity evidence, or entity-resolved import records). Store every claim with source URL, observed/retrieved timestamp, confidence and identity evidence. Return a low/mid/high company-GMV range, method/version and contradictions; then derive total-purchases range separately.",
+      "acceptance_test": "The result has a clear account_id/entity match, two independent sizing methods, source-backed low/mid/high GMV, method inputs, evidence links and an explicit decision on the SFDC $1.8M estimate.",
+      "source": "docs/transactions/data/gmv_research/816515.json · ops/frameworks/floral_gmv_estimator_prompt.md"
+    },
+    {
+      "request_id": "AI-DATA-TX-CONFIGURATION-AUDIT-FEED",
+      "type": "DATA_REQUEST",
+      "status": "DRAFT",
+      "title": "Publish a dated, raw configuration audit feed for eShop settings",
+      "why_now": "The compact config snapshot covers 397 accounts but often has no extraction date and can conflict with a raw COMPANY_SETTINGS extract. The MVP can show a verified snapshot, but it must not turn a stale or contradictory value into a blocker or play.",
+      "opportunity": "Lets LIST distinguish a product entitlement from the setting that actually controls visibility, bunches, future availability, on-hand and checkout.",
+      "decision_needed": "Confirm which source is canonical per setting and whether company or company-location scope wins when values conflict.",
+      "requested": "At each daily cutoff, return company_id, company_location_id where relevant, setting_key, raw_value, normalized_value, source view, source_updated_at or extraction timestamp, audit version, and conflict state for ecommerceEnabled, ecommerceMaxAge, ecommerceDaysInAdvance, ecommerceEnableSalesProductBunches, ecommerceAllowFutureSales, ecommerceAllowFutureSalesUnits, futureSalesEnabled, ecommerceEnableSalesOnHandInventory, vendorAvailabilityEcommerceEnabled and checkout/payment controls.",
+      "acceptance_test": "Price 816515 can show every listed setting with one source/date, or explicitly show a raw-source conflict; a conflicting or undated field cannot generate a LIST blocker.",
+      "source": "agents/rose/memory/tx_review_queries_jul29.md · scripts/sql/loop2_settings.sql · PHASE1_LIST_DATA_AUDIT.md"
+    },
+    {
+      "request_id": "AI-DATA-TX-BUY-PROCUREMENT-EVENT-SPINE",
+      "type": "DATA_REQUEST",
+      "status": "DRAFT",
+      "title": "Materialize procurement events, availability match and true purchase-ahead horizons",
+      "why_now": "Current BUY GMV and vendor recency are valid Koronet procurement evidence, but they cannot establish vendor/product availability, leakage, distribution, or how far ahead a buyer purchases.",
+      "opportunity": "Turns BUY from a channel-adoption summary into a diagnostic that separates migration candidates, supply gaps, no material gap and needs evidence.",
+      "decision_needed": "Confirm canonical vendor/product IDs, normalized channel taxonomy, and the date fields that define a purchase horizon.",
+      "requested": "Create a versioned company/location × vendor × product × channel event spine with canonical vendor/product IDs and aliases, PO/line IDs, order_created_at, required/arrival/ship dates, category/variety/SKU, total_cost/currency, connection history, and available_online_at_purchase. Derive daily channel, vendor concentration/lifecycle, product-horizon and offline-need availability-match tables.",
+      "acceptance_test": "The dashboard can label an offline purchase as migration candidate, supply gap, unmatched or no material gap only from a timestamped availability match; BUY horizon bars use order-created to required/ship dates, not shipping-to-arrival proxies.",
+      "source": "TX_BUY_DATA_AUDIT_2026-08-04.md"
+    },
+    {
+      "request_id": "AI-DATA-TX-LIST-SALES-PROXY-NORMALIZATION",
+      "type": "DATA_QUALITY",
+      "status": "DRAFT",
+      "title": "Normalize the historical LIST sales proxies while catalog parity is being built",
+      "why_now": "The MVP can use sales breadth and last-sale recency now, but the current extracts use incompatible product grains and periods; Zeidler demonstrates that their values must not be combined into a parity claim.",
+      "opportunity": "Makes the interim LIST matrix useful and clear instead of hiding available history or presenting it as current inventory.",
+      "decision_needed": "Choose the canonical historical grain for categories, varieties and SKUs and the comparable channel/window definitions.",
+      "requested": "Emit company_id/date/channel/dimension records for categories, varieties and SKUs with an explicit dedup key and grain; separately emit online/offline last-sale-recency buckets using the same cutoff and named benchmark cohort. Preserve the current catalog/listing request as the source for parity/current availability.",
+      "acceptance_test": "A LIST card can display online/offline/best-in-class sales proxies on one stated grain/window, while current catalog, uploads and future availability remain separately marked not measured.",
+      "source": "PHASE1_LIST_DATA_AUDIT.md"
+    },
+    {
+      "request_id": "AI-WORKFLOW-INTERVENTION-SPINE",
+      "type": "SYSTEM_IDEA",
+      "status": "DRAFT",
+      "title": "Add one intervention record across Cata and Christine",
+      "why_now": "The Core detects leads but cannot yet record the action, owner, customer response and outcome needed to learn whether a play works.",
+      "opportunity": "Turns approved account work into weekly accountability and reusable play/case evidence.",
+      "decision_needed": "Approve the minimum fields and handoff semantics before exposing an execution view.",
+      "requested": "Account, objective, reason/evidence, approved lead/play, owner, next action/check, blocker, response/outcome and source.",
+      "source": "TX_NO_LOSS_AUDIT_2026-08-01.md"
+    },
+    {
+      "request_id": "AI-WORKFLOW-UTM-CAMPAIGN-REPORTING",
+      "type": "SYSTEM_TODO",
+      "status": "CONFIRMED_BY_FACU_NOT_STARTED",
+      "title": "UTM campaign reporting for eShop-link campaigns",
+      "why_now": "The UTM-instrumented eShop-link play cannot be evaluated or reused without attributed shop volume and conversion reporting.",
+      "opportunity": "Lets the team learn which eShop campaigns to repeat, adjust or stop, as with any marketing campaign.",
+      "decision_needed": "Review the available GA4/eShop sources and agree the measurement contract before build.",
+      "requested": "UTM naming/link registry, account/campaign attribution, attributed traffic volume, conversion rate and a review loop. Codex ensures proposed campaign links are instrumented and surfaces results.",
+      "owner": "Codex / TX system",
+      "source": "Facu feedback in current conversation · Price's eShop activation evidence"
+    }
+  ]
+}

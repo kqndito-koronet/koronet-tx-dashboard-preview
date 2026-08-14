@@ -1,0 +1,74 @@
+{
+  "account_id": "816515",
+  "account_name": "Price's Floral Wholesale, LLC",
+  "status": "PARTIAL_RESEARCH_NOT_READY_TO_REPLACE_SFDC_ESTIMATE",
+  "researched_at": "2026-08-01",
+  "classification": {
+    "primary": "wholesaler / distributor",
+    "evidence": [
+      {
+        "source": "https://pricesfloralwholesalellc.com/",
+        "observed": "Official site describes fresh cut flowers, hard goods and supplies, Ecuadorian roses and fresh cut Canada; it identifies itself as Price's Floral Wholesale."
+      },
+      {
+        "source": "https://www.oasisfloralproducts.com/apps/wholesaler-store-locator",
+        "observed": "Public wholesaler locator lists Price's Floral Wholesale at Chesapeake, Virginia."
+      }
+    ]
+  },
+  "operating_signals": {
+    "addresses_to_verify": [
+      "911 Live Oak Drive, Suite 105, Chesapeake, VA 23320",
+      "844 Bent Hickory Rd, Charleston, SC 29414"
+    ],
+    "notes": "The official site lists both addresses, but this record does not yet establish whether both are active operating locations, their size, headcount, routes or revenue."
+  },
+  "observations": [
+    {
+      "evidence_key_suffix": "public-team-roles",
+      "claim_key": "publicly_listed_team_roles",
+      "claim_summary": "The official team page publicly lists six named roles: CEO, COO, director of operations, production manager, accounting officer and driver. This is not a verified employee count or payroll record.",
+      "evidence_type": "official_website",
+      "source_url": "https://pricesfloralwholesalellc.com/Home/OurTeam",
+      "source_title": "Price's Floral Wholesale — Our Team",
+      "evidence_state": "partial",
+      "confidence": "medium"
+    },
+    {
+      "evidence_key_suffix": "b2b-fulfillment-modes",
+      "claim_key": "b2b_fulfillment_modes",
+      "claim_summary": "The official site describes a wholesale distributor serving retail trade and offers sales-rep ordering, online pickup, online delivery and in-person warehouse shopping for qualified customers.",
+      "evidence_type": "official_website",
+      "source_url": "https://pricesfloralwholesalellc.com/Home/About",
+      "source_title": "Price's Floral Wholesale — About",
+      "evidence_state": "partial",
+      "confidence": "medium"
+    },
+    {
+      "evidence_key_suffix": "public-catalog-breadth",
+      "claim_key": "public_catalog_breadth",
+      "claim_summary": "The public shopping area exposes fresh-cut, greens, hard-goods and supply categories across 19 pagination pages. It demonstrates visible catalogue breadth, not inventory availability, sales or GMV.",
+      "evidence_type": "official_website",
+      "source_url": "https://www.pricesfloralwholesalellc.com/Shopping",
+      "source_title": "Price's Floral Wholesale — Shopping",
+      "evidence_state": "partial",
+      "confidence": "medium"
+    }
+  ],
+  "current_internal_estimate": {
+    "gmv_usd": 1800000,
+    "source": "SFDC",
+    "confidence": "MEDIUM",
+    "validation_state": "NOT_YET_VALIDATED_BY_EXTERNAL_RESEARCH"
+  },
+  "gmv_estimate": null,
+  "buys_estimate": null,
+  "why_no_external_estimate_yet": "The estimator requires at least two independent, type-appropriate sizing methods. Current research establishes role/product and possible footprint but not a second sizing signal.",
+  "next_best_signals": [
+    "Verify active locations and facility/warehouse footprint via maps/street imagery and official contact pages.",
+    "Find verified headcount or route-truck/capacity evidence.",
+    "Check import-record/entity aliases before using import volume as a sizing method.",
+    "Reconcile the resulting range with the SFDC $1.8M estimate; retain both if they diverge."
+  ],
+  "estimator_framework": "ops/frameworks/floral_gmv_estimator_prompt.md"
+}

@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "query_date": "2026-07-30",
+    "period": "2026-01-01 to 2026-06-30",
+    "note": "COMPANY_ID not available in _SV views. Springfield actual name = 'TWI - SPRINGFIELD FLORIST SUPPLY INC'. Tennessee ks_flag=FALSE, queried without ks_flag filter."
+  },
+  "accounts": [
+    {
+      "company_name": "Tennessee Florist Supply - Knox",
+      "requested_company_id": "650986",
+      "sell_offline": 0.00,
+      "sell_online": 1925.15,
+      "sell_total": 1925.15,
+      "proc_total": 43285.88,
+      "pct_online_sell": 100.0
+    },
+    {
+      "company_name": "TWI - SPRINGFIELD FLORIST SUPPLY INC",
+      "requested_company_id": "828336",
+      "sell_offline": 0.00,
+      "sell_online": 6921.21,
+      "sell_total": 6921.21,
+      "proc_total": 8067.38,
+      "pct_online_sell": 100.0
+    }
+  ]
+}

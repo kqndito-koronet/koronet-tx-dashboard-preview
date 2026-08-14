@@ -1,0 +1,260 @@
+{
+  "1241": {
+    "total_bunch_gmv": 9350.38,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "7030": {
+    "total_bunch_gmv": 31859061.58,
+    "bunches_flag": true,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "13989": {
+    "total_bunch_gmv": 34313.89,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "18322": {
+    "total_bunch_gmv": 2849437.26,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "39124": {
+    "total_bunch_gmv": 25284.1,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "41934": {
+    "total_bunch_gmv": 24.5,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "44150": {
+    "total_bunch_gmv": 52362344.76,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "103078": {
+    "total_bunch_gmv": 32237520.01,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "130337": {
+    "total_bunch_gmv": 1158767.64,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "153536": {
+    "total_bunch_gmv": 993656.42,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "193828": {
+    "total_bunch_gmv": 1181815.52,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "194206": {
+    "total_bunch_gmv": 432.5,
+    "bunches_flag": true,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "296458": {
+    "total_bunch_gmv": 629.5,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "313164": {
+    "total_bunch_gmv": 110,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "321023": {
+    "total_bunch_gmv": 2197964.53,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "394783": {
+    "total_bunch_gmv": 3249030.92,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "397194": {
+    "total_bunch_gmv": 1102034.57,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "398856": {
+    "total_bunch_gmv": 1675108.7,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "412951": {
+    "total_bunch_gmv": 102973.32,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "454705": {
+    "total_bunch_gmv": 31933.04,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "489148": {
+    "total_bunch_gmv": 1136.61,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "496600": {
+    "total_bunch_gmv": 847450.24,
+    "bunches_flag": true,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "498865": {
+    "total_bunch_gmv": 3740462.03,
+    "bunches_flag": true,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "571220": {
+    "total_bunch_gmv": 6117715.11,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "592345": {
+    "total_bunch_gmv": 2530312.43,
+    "bunches_flag": true,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "601933": {
+    "total_bunch_gmv": 4936103.36,
+    "bunches_flag": true,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "624737": {
+    "total_bunch_gmv": 840308.5,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "624816": {
+    "total_bunch_gmv": 853657.62,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "640460": {
+    "total_bunch_gmv": 171536.84,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "641341": {
+    "total_bunch_gmv": 536820.12,
+    "bunches_flag": true,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "649585": {
+    "total_bunch_gmv": 340266.78,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "654944": {
+    "total_bunch_gmv": 398827.54,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "672205": {
+    "total_bunch_gmv": 2036579.95,
+    "bunches_flag": true,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "672781": {
+    "total_bunch_gmv": 788888.99,
+    "bunches_flag": true,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "712429": {
+    "total_bunch_gmv": 40333.05,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "713840": {
+    "total_bunch_gmv": 0,
+    "bunches_flag": false,
+    "sells_bunches": false,
+    "discrepancy": false
+  },
+  "735220": {
+    "total_bunch_gmv": 2869768.61,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "742781": {
+    "total_bunch_gmv": 206460.15,
+    "bunches_flag": true,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "743217": {
+    "total_bunch_gmv": 5757.09,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "743648": {
+    "total_bunch_gmv": 950577.87,
+    "bunches_flag": false,
+    "sells_bunches": true,
+    "discrepancy": true
+  },
+  "808079": {
+    "total_bunch_gmv": 1735780.81,
+    "bunches_flag": true,
+    "sells_bunches": true,
+    "discrepancy": false
+  },
+  "816515": {
+    "total_bunch_gmv": 0,
+    "bunches_flag": true,
+    "sells_bunches": false,
+    "discrepancy": false
+  },
+  "822374": {
+    "total_bunch_gmv": 398.24,
+    "bunches_flag": true,
+    "sells_bunches": true,
+    "discrepancy": false
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "account_id": "765491",
+  "account_name": "Dreisbach Wholesale",
+  "researched_at": "2026-08-03",
+  "observations": [
+    {
+      "evidence_key_suffix": "official-company-scope",
+      "claim_key": "business_classification_and_branch_scope",
+      "claim_summary": "Dreisbach Wholesale Florists describes itself as serving professional florists and businesses with wholesale flowers, greenery and supplies across six branch locations; Louisville is the corporate office.",
+      "evidence_type": "official_website",
+      "source_url": "https://dreisbachs.com/pages/employment",
+      "source_title": "Dreisbach Wholesale Florists — Employment / branch list",
+      "evidence_state": "verified",
+      "confidence": "high",
+      "source_locator": {"corporate_office": "Louisville, KY", "branch_count": 6}
+    },
+    {
+      "evidence_key_suffix": "third-party-company-revenue",
+      "claim_key": "third_party_company_revenue_estimate",
+      "claim_summary": "Growjo estimates $7.5M annual revenue and 46 employees for Dreisbach Wholesale Florist. The profile does not expose source methodology or establish whether its revenue covers all six branches.",
+      "evidence_type": "third_party_directory",
+      "source_url": "https://growjo.com/company/Dreisbach_Wholesale_Florist",
+      "source_title": "Growjo — Dreisbach Wholesale Florist profile",
+      "evidence_state": "partial",
+      "confidence": "low",
+      "source_locator": {"reported_company_revenue_usd": 7500000, "reported_employee_count": 46}
+    }
+  ],
+  "external_estimates": [
+    {
+      "estimate_type": "company_gmv",
+      "low_value": null,
+      "midpoint_value": null,
+      "high_value": null,
+      "method_key": "single_unvalidated_external_revenue_source",
+      "method_version": "v1",
+      "estimate_state": "blocked",
+      "confidence": "low",
+      "as_of_date": "2026-08-03",
+      "notes": "Only one non-methodological public revenue estimate was found. Its scope conflicts with the official six-branch footprint. It is evidence to validate, not a defensible GMV range.",
+      "evidence_key_suffixes": ["official-company-scope", "third-party-company-revenue"]
+    },
+    {
+      "estimate_type": "total_purchases",
+      "low_value": null,
+      "midpoint_value": null,
+      "high_value": null,
+      "method_key": "purchase_potential_requires_cogs_or_validated_margin_model",
+      "method_version": "v1",
+      "estimate_state": "blocked",
+      "confidence": "low",
+      "as_of_date": "2026-08-03",
+      "notes": "No external COGS or gross-margin source was found. A generic wholesale ratio would be an internal model and must be labeled and calibrated separately.",
+      "evidence_key_suffixes": ["official-company-scope"]
+    }
+  ]
+}

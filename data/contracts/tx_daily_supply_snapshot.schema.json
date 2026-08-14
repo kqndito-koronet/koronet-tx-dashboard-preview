@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tx_daily_supply_snapshot.schema.json",
+  "title": "TX Daily Supply History Snapshot",
+  "description": "TX strategy lane: strategic_enabler. Immutable supply/offer history; append only. Sales are not availability unless explicitly marked proxy.",
+  "type": "object",
+  "required": ["contract_version", "snapshot_id", "snapshot_business_date", "extracted_at", "records"],
+  "properties": {
+    "contract_version": {"const": "1.1.0"},
+    "snapshot_id": {"type": "string", "pattern": "^tx-supply-[0-9T-Z]+-v[0-9]+$"},
+    "snapshot_business_date": {"type": "string", "format": "date"},
+    "extracted_at": {"type": "string", "format": "date-time"},
+    "supersedes_snapshot_id": {"type": ["string", "null"]},
+    "records": {"type": "array", "items": {"$ref": "#/$defs/supplyRecord"}}
+  },
+  "$defs": {
+    "supplyRecord": {
+      "type": "object",
+      "required": ["canonical_company_id", "supply_side", "channel", "vendor_key", "product_key", "horizon_bucket", "observation_kind", "evidence"],
+      "properties": {
+        "canonical_company_id": {"type": "string", "pattern": "^[0-9]+$"},
+        "supply_side": {"enum": ["procurement", "listing_offer"]},
+        "channel": {"enum": ["online", "offline", "all", "unknown"]},
+        "vendor_key": {"type": ["string", "null"], "description": "Canonical vendor/company key; null only for aggregate source rows."},
+        "product_key": {"type": ["string", "null"], "description": "Canonical SKU preferred; category/variety aggregate permitted only when product_grain declares it."},
+        "product_grain": {"enum": ["sku", "variety", "category", "aggregate", "unknown"]},
+        "category_key": {"type": ["string", "null"]},
+        "variety_key": {"type": ["string", "null"]},
+        "format": {"enum": ["bunch", "box", "stem", "other", "unknown"]},
+        "horizon_bucket": {"enum": ["0_7d", "8_14d", "15_30d", "31_90d", "91d_plus", "unknown"]},
+        "availability_start": {"type": ["string", "null"], "format": "date"},
+        "availability_end": {"type": ["string", "null"], "format": "date"},
+        "available_quantity": {"type": ["number", "null"]},
+        "available_value_usd": {"type": ["number", "null"]},
+        "fulfillment_state": {"enum": ["available", "limited", "unavailable", "unknown"]},
+        "observation_kind": {"enum": ["availability_snapshot", "sales_proxy", "procurement_order_proxy"]},
+        "candidate_pool_role": {"enum": ["not_applicable", "all_channel_sold_proxy", "online_sold_proxy", "unallocated_purchase_proxy", "current_supply", "buyer_visible_listing", "unknown"], "description": "Role in the LIST coverage denominator/numerator. A proxy role never proves current listing or availability."},
+        "allocation_state": {"enum": ["allocated", "unallocated", "unknown", "not_applicable"], "description": "Required as unknown unless the source can establish allocation at the stated cutoff."},
+        "buyer_visibility_state": {"enum": ["visible", "not_visible", "unknown", "not_applicable"], "description": "Buyer-visible eShop/catalog state at the stated cutoff; sales/config must not be used to infer it."},
+        "evidence": {"$ref": "#/$defs/evidence"},
+        "outlier_flags": {"type": "array", "items": {"$ref": "#/$defs/outlier"}}
+      },
+      "allOf": [
+        {"if": {"properties": {"observation_kind": {"const": "availability_snapshot"}}}, "then": {"properties": {"evidence": {"properties": {"state": {"enum": ["observed", "conflict"]}}}}}}
+      ],
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["state", "source_key", "source_system", "source_as_of", "freshness_state"],
+      "properties": {
+        "state": {"enum": ["observed", "proxy", "missing", "blocked", "conflict"]},
+        "source_key": {"type": "string"},
+        "source_system": {"enum": ["snowflake", "sfdc", "local_export", "manual_registry"]},
+        "source_as_of": {"type": ["string", "null"], "format": "date"},
+        "freshness_state": {"enum": ["current", "historical", "stale", "unknown"]},
+        "evidence_keys": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "outlier": {
+      "type": "object",
+      "required": ["flag_id", "severity", "rule_key", "state"],
+      "properties": {
+        "flag_id": {"type": "string"},
+        "severity": {"enum": ["info", "review", "blocking"]},
+        "rule_key": {"type": "string"},
+        "state": {"enum": ["candidate", "reviewed_valid", "confirmed_error", "resolved"]},
+        "explanation": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

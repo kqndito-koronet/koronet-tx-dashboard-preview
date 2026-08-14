@@ -1,0 +1,60 @@
+{
+  "_description": "Outcome spine: the minimum daily snapshot per account. When two snapshots exist with different as_of dates, delta = current - prior. Until then, show coverage/freshness only — do NOT simulate trends.",
+  "_version": "0.2.0",
+  "_status": "DRAFT — first baseline snapshot exists; not yet eligible for trend reporting until a second compatible snapshot is validated",
+  "snapshot_contract": {
+    "frequency": "daily (minimum weekly)",
+    "trigger": "Rose query after TX fee process completes (Tuesdays) or on demand",
+    "as_of": "ISO date of the data cutoff (e.g., 2026-07-30)",
+    "source_authority": "Each displayed metric maps to exactly one source definition and period. No fallback blending."
+  },
+  "per_account_fields": {
+    "identity": {
+      "company_id": {"type": "string", "source": "accounts.json", "required": true},
+      "company_name": {"type": "string", "source": "accounts.json", "required": true},
+      "ct_id": {"type": "string", "source": "accounts.json", "required": true},
+      "source_aliases": {"type": "object", "source": "identity map", "required": false, "note": "Source-system IDs are aliases; company_id remains the canonical join key."}
+    },
+    "sell": {
+      "estimated_sell_gmv": {"type": "number", "source": "accounts.json.annual_sales_est OR est_gmv.json", "required": false, "note": "annual estimate, not periodic"},
+      "koronet_sell_gmv": {"type": "number", "source": "SALES_SV", "period": "as_of month", "required": true},
+      "sell_online_gmv": {"type": "number", "source": "SALES_SV (eCommerce+K2K+API)", "period": "as_of month", "required": true},
+      "sell_offline_gmv": {"type": "number", "source": "SALES_SV (Offline)", "period": "as_of month", "required": true},
+      "sell_online_pct": {"type": "number", "source": "computed: sell_online / koronet_sell * 100", "required": true}
+    },
+    "buy": {
+      "estimated_buy_gmv": {"type": "number", "source": "est_gmv.json OR computed (54% of est_sell)", "required": false},
+      "koronet_buy_gmv": {"type": "number", "source": "PROCUREMENTS_SV.total_cost", "period": "as_of month", "required": true},
+      "buy_online_gmv": {"type": "number", "source": "PROCUREMENTS_SV (online channels)", "period": "as_of month", "required": true},
+      "buy_online_pct": {"type": "number", "source": "computed: buy_online / koronet_buy * 100", "required": true}
+    },
+    "fees": {
+      "fees_direct": {"type": "number", "source": "TRANSACTION_FEES (billed) + EXPECTED (current month)", "period": "as_of month", "required": true},
+      "fees_indirect_est": {"type": "number", "source": "computed: buy_online * 0.015", "note": "estimate, not invoiced", "required": true},
+      "fees_total": {"type": "number", "source": "computed: direct + indirect", "required": true},
+      "take_rate": {"type": "number", "unit": "percentage points (0-100)", "source": "computed: fees_total / (koronet_sell + koronet_buy) * 100", "required": true}
+    },
+    "denominators": {
+      "sell_penetration_denominator": {"type": "number", "source": "estimated_sell_gmv (annualized if period < 12 months)", "note": "numerator is annualized koronet_sell for short periods"},
+      "buy_penetration_denominator": {"type": "number", "source": "estimated_buy_gmv"}
+    }
+  },
+  "freshness_fields": {
+    "as_of": {"type": "date", "source": "query execution date or MAX(transaction_date)"},
+    "data_sources_used": {"type": "array", "source": "list of Snowflake views queried"},
+    "coverage_pct": {"type": "number", "source": "computed: accounts_with_data / total_accounts * 100"}
+  },
+  "field_evidence_contract": {
+    "required_for_each_displayed_metric": ["value", "period_start", "period_end", "as_of", "source", "coverage", "evidence_state"],
+    "evidence_state_values": ["observed", "modeled", "proxy", "blocked", "missing"],
+    "missing_value_rule": "A missing or blocked field is null with a reason. It is never rendered as zero.",
+    "period_rule": "Numerator, denominator, channel split and associated buyer/order counts must share the same population and period. If they do not, the downstream interpretation is blocked.",
+    "identity_rule": "All source values resolve through company_id plus an explicit source alias map; normalized name matching may identify a candidate but cannot silently establish identity."
+  },
+  "delta_rules": {
+    "rule": "Delta = (current_snapshot.value - prior_snapshot.value) / prior_snapshot.value * 100",
+    "requirement": "Two snapshots with different as_of dates required. Until then, delta = null.",
+    "display": "Show coverage + freshness. Do NOT simulate delta from period comparisons baked into one snapshot.",
+    "honest_label": "When showing pre-computed MoM/QoQ/YoY from a single Snowflake query (current state), label as 'period comparison' not 'daily change'."
+  }
+}

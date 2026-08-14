@@ -1,0 +1,587 @@
+{
+  "_metadata": {
+    "generated": "2026-08-05 21:11",
+    "generated_by": "Rose (Data Agent)",
+    "source": "product_division_gmv.json (from SALES_SV, ks_flag=TRUE, shipping_date >= 2026-01-01, sales < 100000, DISTINCT sale_item_id dedup)",
+    "segmentation": "account_universe_v1.json ct_id",
+    "period": "YTD 2026",
+    "rules_applied": "R1, R4, R5, R8, R16"
+  },
+  "network_totals": {
+    "hardgoods_online": 12482.85,
+    "hardgoods_offline": 8650011.46,
+    "hardgoods_total": 8662494.31,
+    "hardgoods_online_pct": 0.14,
+    "plants_online": 9293.16,
+    "plants_offline": 4350436.43,
+    "plants_total": 4359729.59,
+    "plants_online_pct": 0.21,
+    "freshcut_online": 177208601.6,
+    "freshcut_offline": 822663366.21,
+    "freshcut_total": 999871967.81,
+    "freshcut_online_pct": 17.72,
+    "uncategorized": 2513.0,
+    "total_network_gmv_deduped": 1012896704.71,
+    "row_count_total": 10158124
+  },
+  "hardgoods_online_pct_benchmark": {
+    "description": "% of Hard Goods GMV via online channels, per company, YTD 2026",
+    "network": {
+      "n": 25,
+      "median": 0.0,
+      "p75": 0.0,
+      "p90": 0.17,
+      "best_account": "Vosz Floral LLC",
+      "best_value": 1.25
+    },
+    "by_segment": {
+      "": {
+        "n": 1,
+        "median": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "best_account": "Valley Springs LLC",
+        "best_value": 0.0
+      },
+      "IMP_CORE": {
+        "n": 3,
+        "median": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "best_account": "Fresca Farms",
+        "best_value": 0.0
+      },
+      "UNMATCHED": {
+        "n": 1,
+        "median": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "best_account": "(OLD) Avon Valley Floral",
+        "best_value": 0.0
+      },
+      "WH_CORE": {
+        "n": 15,
+        "median": 0.0,
+        "p75": 0.0,
+        "p90": 0.17,
+        "best_account": "H&T Wholesale Flowers",
+        "best_value": 0.32
+      },
+      "WH_K2K": {
+        "n": 1,
+        "median": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "best_account": "Riverside Wholesale Florists KY",
+        "best_value": 0.0
+      },
+      "WH_UNCLASSIFIED": {
+        "n": 4,
+        "median": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "best_account": "Vosz Floral LLC",
+        "best_value": 1.25
+      }
+    }
+  },
+  "plants_online_pct_benchmark": {
+    "description": "% of Plants GMV via online channels, per company, YTD 2026",
+    "network": {
+      "n": 19,
+      "median": 0.0,
+      "p75": 0.17,
+      "p90": 1.67,
+      "best_account": "Mayta International LLC / Native Blooms",
+      "best_value": 100.0
+    },
+    "by_segment": {
+      "": {
+        "n": 2,
+        "median": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "best_account": "Sunburst Farms",
+        "best_value": 0.0
+      },
+      "GRW": {
+        "n": 2,
+        "median": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "best_account": "Dramm & Echter, Inc",
+        "best_value": 0.0
+      },
+      "IMP_CORE": {
+        "n": 5,
+        "median": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "best_account": "Mayta International LLC / Native Blooms",
+        "best_value": 100.0
+      },
+      "WH_CORE": {
+        "n": 9,
+        "median": 0.17,
+        "p75": 1.67,
+        "p90": 1.67,
+        "best_account": "Zeidler Floral",
+        "best_value": 4.58
+      },
+      "WH_UNCLASSIFIED": {
+        "n": 1,
+        "median": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "best_account": "White Rose Flowers & Supplies Inc.",
+        "best_value": 0.0
+      }
+    }
+  },
+  "companies": [
+    {
+      "company_name": "Bill Doran Company",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 6413219.07,
+      "hardgoods_online": 11032.31,
+      "hardgoods_offline": 6402186.76,
+      "hardgoods_online_pct": 0.17,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "Kennicott Brothers Company",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 0.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 0.0,
+      "hardgoods_online_pct": 0,
+      "plants_total": 3135825.15,
+      "plants_online": 5391.73,
+      "plants_offline": 3130433.42,
+      "plants_online_pct": 0.17
+    },
+    {
+      "company_name": "Flora Fresh Inc",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 644979.9,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 644979.9,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 200959.35,
+      "plants_online": 50.0,
+      "plants_offline": 200909.35,
+      "plants_online_pct": 0.02
+    },
+    {
+      "company_name": "Evergreen Plant Company",
+      "ct_id": "IMP_CORE",
+      "hardgoods_total": 0.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 0.0,
+      "hardgoods_online_pct": 0,
+      "plants_total": 557286.2,
+      "plants_online": 0.0,
+      "plants_offline": 557286.2,
+      "plants_online_pct": 0.0
+    },
+    {
+      "company_name": "NY Floral Supply",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 352316.41,
+      "hardgoods_online": 953.91,
+      "hardgoods_offline": 351362.5,
+      "hardgoods_online_pct": 0.27,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "Bill Doran Company (2)",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 254286.23,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 254286.23,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "Fresca Farms",
+      "ct_id": "IMP_CORE",
+      "hardgoods_total": 199856.63,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 199856.63,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "JFS Wholesale Floral",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 178890.44,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 178890.44,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "WE GOT FLOWERS",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 61093.07,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 61093.07,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 94913.0,
+      "plants_online": 0.0,
+      "plants_offline": 94913.0,
+      "plants_online_pct": 0.0
+    },
+    {
+      "company_name": "H&T Wholesale Flowers",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 130693.13,
+      "hardgoods_online": 424.63,
+      "hardgoods_offline": 130268.5,
+      "hardgoods_online_pct": 0.32,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "Dramm & Echter, Inc",
+      "ct_id": "GRW",
+      "hardgoods_total": 0.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 0.0,
+      "hardgoods_online_pct": 0,
+      "plants_total": 126915.72,
+      "plants_online": 0.0,
+      "plants_offline": 126915.72,
+      "plants_online_pct": 0.0
+    },
+    {
+      "company_name": "Orlando Wholesale Florist",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 63435.01,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 63435.01,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 43720.66,
+      "plants_online": 189.6,
+      "plants_offline": 43531.06,
+      "plants_online_pct": 0.43
+    },
+    {
+      "company_name": "Charleston Wholesale Florist",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 85761.95,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 85761.95,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "Riverside Wholesale Florists KY",
+      "ct_id": "WH_K2K",
+      "hardgoods_total": 65287.34,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 65287.34,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "AMORES FLORES INC",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 64112.62,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 64112.62,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "Zeidler Floral",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 0.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 0.0,
+      "hardgoods_online_pct": 0,
+      "plants_total": 58203.99,
+      "plants_online": 2665.52,
+      "plants_offline": 55538.47,
+      "plants_online_pct": 4.58
+    },
+    {
+      "company_name": "Maple Grove Floral",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 760.09,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 760.09,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 48690.28,
+      "plants_online": 813.51,
+      "plants_offline": 47876.77,
+      "plants_online_pct": 1.67
+    },
+    {
+      "company_name": "Fair Trade Floral Inc.",
+      "ct_id": "IMP_CORE",
+      "hardgoods_total": 0.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 0.0,
+      "hardgoods_online_pct": 0,
+      "plants_total": 44526.65,
+      "plants_online": 0.0,
+      "plants_offline": 44526.65,
+      "plants_online_pct": 0.0
+    },
+    {
+      "company_name": "Stemline Wholesale",
+      "ct_id": "WH_UNCLASSIFIED",
+      "hardgoods_total": 41567.71,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 41567.71,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "CD Wholesale",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 35270.32,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 35270.32,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "Metro Flower Market LLC",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 4561.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 4561.0,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 14870.17,
+      "plants_online": 0.0,
+      "plants_offline": 14870.17,
+      "plants_online_pct": 0.0
+    },
+    {
+      "company_name": "Price's Floral Wholesale, LLC",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 12837.07,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 12837.07,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 4546.79,
+      "plants_online": 76.0,
+      "plants_offline": 4470.79,
+      "plants_online_pct": 1.67
+    },
+    {
+      "company_name": "Valley Springs LLC",
+      "ct_id": "",
+      "hardgoods_total": 14425.95,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 14425.95,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "Galleria Farms",
+      "ct_id": "IMP_CORE",
+      "hardgoods_total": 12778.5,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 12778.5,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "Sunburst Farms",
+      "ct_id": "",
+      "hardgoods_total": 0.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 0.0,
+      "hardgoods_online_pct": 0,
+      "plants_total": 9559.75,
+      "plants_online": 0.0,
+      "plants_offline": 9559.75,
+      "plants_online_pct": 0.0
+    },
+    {
+      "company_name": "Rose Runners",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 0.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 0.0,
+      "hardgoods_online_pct": 0,
+      "plants_total": 9037.29,
+      "plants_online": 0.0,
+      "plants_offline": 9037.29,
+      "plants_online_pct": 0.0
+    },
+    {
+      "company_name": "Brightland Farms",
+      "ct_id": "IMP_CORE",
+      "hardgoods_total": 0.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 0.0,
+      "hardgoods_online_pct": 0,
+      "plants_total": 7870.6,
+      "plants_online": 0.0,
+      "plants_offline": 7870.6,
+      "plants_online_pct": 0.0
+    },
+    {
+      "company_name": "White Rose Flowers & Supplies Inc.",
+      "ct_id": "WH_UNCLASSIFIED",
+      "hardgoods_total": 7625.15,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 7625.15,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 142.73,
+      "plants_online": 0.0,
+      "plants_offline": 142.73,
+      "plants_online_pct": 0.0
+    },
+    {
+      "company_name": "Vosz Floral LLC",
+      "ct_id": "WH_UNCLASSIFIED",
+      "hardgoods_total": 5782.1,
+      "hardgoods_online": 72.0,
+      "hardgoods_offline": 5710.1,
+      "hardgoods_online_pct": 1.25,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "Floristcentric, LLC",
+      "ct_id": "WH_CORE",
+      "hardgoods_total": 5663.71,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 5663.71,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "Gala Roses",
+      "ct_id": "IMP_CORE",
+      "hardgoods_total": 5586.01,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 5586.01,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "(OLD) Avon Valley Floral",
+      "ct_id": "UNMATCHED",
+      "hardgoods_total": 1578.9,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 1578.9,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "Zoom-Bloom",
+      "ct_id": "",
+      "hardgoods_total": 0.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 0.0,
+      "hardgoods_online_pct": 0,
+      "plants_total": 1400.25,
+      "plants_online": 0.0,
+      "plants_offline": 1400.25,
+      "plants_online_pct": 0.0
+    },
+    {
+      "company_name": "Inversiones Napy S.A",
+      "ct_id": "GRW",
+      "hardgoods_total": 0.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 0.0,
+      "hardgoods_online_pct": 0,
+      "plants_total": 814.2,
+      "plants_online": 0.0,
+      "plants_offline": 814.2,
+      "plants_online_pct": 0.0
+    },
+    {
+      "company_name": "Kennicott Kuts",
+      "ct_id": "IMP_CORE",
+      "hardgoods_total": 0.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 0.0,
+      "hardgoods_online_pct": 0,
+      "plants_total": 340.0,
+      "plants_online": 0.0,
+      "plants_offline": 340.0,
+      "plants_online_pct": 0.0
+    },
+    {
+      "company_name": "Tropical Blooms Inc.",
+      "ct_id": "WH_UNCLASSIFIED",
+      "hardgoods_total": 126.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 126.0,
+      "hardgoods_online_pct": 0.0,
+      "plants_total": 0.0,
+      "plants_online": 0.0,
+      "plants_offline": 0.0,
+      "plants_online_pct": 0
+    },
+    {
+      "company_name": "Mayta International LLC / Native Blooms",
+      "ct_id": "IMP_CORE",
+      "hardgoods_total": 0.0,
+      "hardgoods_online": 0.0,
+      "hardgoods_offline": 0.0,
+      "hardgoods_online_pct": 0,
+      "plants_total": 106.8,
+      "plants_online": 106.8,
+      "plants_offline": 0.0,
+      "plants_online_pct": 100.0
+    }
+  ]
+}

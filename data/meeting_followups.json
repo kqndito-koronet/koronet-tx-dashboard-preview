@@ -1,0 +1,27 @@
+{
+  "description": "Read-only signals extracted from meeting recaps. They are not System Requests, active tasks or interventions. A human must confirm current status before any promotion.",
+  "followups": [
+    {
+      "followup_id": "MF-BAISCH-20260730",
+      "status": "UNVERIFIED",
+      "account_id": "623491",
+      "account_name": "Baisch & Skinner",
+      "recorded_owner": "Facu",
+      "plain_language": "The recap says you planned to send tailored follow-up ideas and schedule the next Baisch conversation.",
+      "what_to_confirm_later": "Is this still current? If yes, what customer problem is the follow-up meant to solve, and what response/outcome should the system record?",
+      "source": "Fathom recap: Baisch & Skinner follow-up · 2026-07-30",
+      "trust": "RECAP_ONLY — not evidence that the follow-up happened or remains current"
+    },
+    {
+      "followup_id": "MF-PRICES-20260731",
+      "status": "UNVERIFIED",
+      "account_id": "816515",
+      "account_name": "Price's Floral",
+      "recorded_owner": "Christine",
+      "plain_language": "The recap says Christine planned an on-site activation visit for Price's the following week.",
+      "what_to_confirm_later": "Did the visit happen? If yes, what readiness/adoption blocker was found, who owns the next step, and what metric will show whether it helped?",
+      "source": "Fathom recap: Chapter TX - Initiatives Follow-Up · 2026-07-31",
+      "trust": "RECAP_ONLY — not evidence that the visit happened or remains current"
+    }
+  ]
+}

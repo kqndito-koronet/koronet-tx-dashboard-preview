@@ -1,0 +1,33 @@
+{
+  "generated": "2026-07-30",
+  "purpose": "Resolve null company_id for 3 accounts",
+  "results": [
+    {
+      "account_name": "Tennessee Florist Supply - Knox",
+      "company_id": 650986,
+      "company_name_snowflake": "Tennessee Florist Supply - Knox",
+      "account_id_sfdc": "001G000001TsJPUIA3",
+      "ks_flag": false,
+      "status": "FOUND",
+      "notes": "Exists in COMPANIES_SV but ks_flag=false, so filtered out by standard KS queries. Found by searching on SFDC account_id."
+    },
+    {
+      "account_name": "Heirloom Home Decor",
+      "company_id": null,
+      "company_name_snowflake": null,
+      "account_id_sfdc": null,
+      "ks_flag": null,
+      "status": "NOT_FOUND",
+      "notes": "Does not exist in Snowflake COMPANIES table at all. Searched: '%Heirloom%', '%Heir%', '%Home Decor%'. Zero rows in COMPANIES, SALES, PROCUREMENTS. Likely a SFDC-only account with no Komet platform presence."
+    },
+    {
+      "account_name": "Springfield Florist Supply",
+      "company_id": 828336,
+      "company_name_snowflake": "SPRINGFIELD FLORIST SUPPLY INC",
+      "account_id_sfdc": "001G000001L8zkpIAB",
+      "ks_flag": true,
+      "status": "FOUND",
+      "notes": "Main KS account. Also has a TWI variant: company_id=681953 (TWI - SPRINGFIELD FLORIST SUPPLY INC) with ks_flag=false and no SFDC account_id."
+    }
+  ]
+}

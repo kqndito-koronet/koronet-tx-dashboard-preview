@@ -1,0 +1,797 @@
+{
+  "! Juliet Wholesale Flowers LLC": {
+    "buy": {
+      "categories": 46,
+      "online_categories": 0,
+      "total": 170313,
+      "online": 0,
+      "coverage_pct": 0,
+      "avg_lead_time": -112
+    },
+    "sell": {
+      "categories": 46,
+      "online_categories": 19,
+      "total": 256747,
+      "online": 27912,
+      "by_channel": {
+        "Offline": 228835,
+        "eCommerce": 21136,
+        "K2K": 6776
+      },
+      "coverage_pct": 41
+    },
+    "gap": {
+      "count": 27,
+      "categories": [
+        "Anemone",
+        "CDN",
+        "Calla Mini",
+        "Craspedia",
+        "Dianthus",
+        "Disbud",
+        "Eryngium/Thistle",
+        "Eucalyptus",
+        "Exotic Blooms/Tropical",
+        "Fever Few",
+        "Flowers",
+        "Flowers & Fillers",
+        "Football Mum",
+        "Hypericum",
+        "Lily",
+        "Lisianthus",
+        "Ornithogalum",
+        "Peonies",
+        "Pompon",
+        "Protea",
+        "Ranunculus",
+        "Roses Tinted",
+        "Snapdragon",
+        "Spider",
+        "Spray Roses",
+        "Statice",
+        "Wax"
+      ]
+    }
+  },
+  "A Florist First": {
+    "buy": {
+      "categories": 61,
+      "online_categories": 61,
+      "total": 219975,
+      "online": 219929,
+      "coverage_pct": 100,
+      "avg_lead_time": -116
+    },
+    "sell": {
+      "categories": 61,
+      "online_categories": 61,
+      "total": 300501,
+      "online": 300501,
+      "by_channel": {
+        "eCommerce": 300501
+      },
+      "coverage_pct": 100
+    },
+    "gap": {
+      "count": 0,
+      "categories": []
+    }
+  },
+  "AD TRADING CORP.DBA AD FLORAL TRADI": {
+    "buy": {
+      "categories": 26,
+      "online_categories": 0,
+      "total": 16506,
+      "online": 0,
+      "coverage_pct": 0,
+      "avg_lead_time": -186
+    },
+    "sell": {
+      "categories": 0,
+      "online_categories": 0,
+      "total": 0,
+      "online": 0,
+      "by_channel": {},
+      "coverage_pct": 0
+    },
+    "gap": {
+      "count": 26,
+      "categories": [
+        "Alstroemeria",
+        "Ammi Majus",
+        "Aster",
+        "Calla Mini",
+        "Carnation",
+        "Carnation Mini",
+        "Delphinium",
+        "Dianthus",
+        "Gerbera",
+        "Hydrangea",
+        "Hypericum",
+        "Larkspur",
+        "Liatris",
+        "Lily",
+        "Limonium",
+        "Misc Flowers",
+        "Mums",
+        "Poms",
+        "Rose",
+        "Rose Spray",
+        "Snapdragon",
+        "Statice",
+        "Stock",
+        "Sunflower",
+        "Tropical",
+        "UNKNOWN"
+      ]
+    }
+  },
+  "ALLIANCE FLORAL COMPANY. 6270": {
+    "buy": {
+      "categories": 22,
+      "online_categories": 22,
+      "total": 74829,
+      "online": 74829,
+      "coverage_pct": 100,
+      "avg_lead_time": -107
+    },
+    "sell": {
+      "categories": 22,
+      "online_categories": 22,
+      "total": 74913,
+      "online": 74913,
+      "by_channel": {
+        "K2K": 74913
+      },
+      "coverage_pct": 100
+    },
+    "gap": {
+      "count": 0,
+      "categories": []
+    }
+  },
+  "AMORES FLORES INC": {
+    "buy": {
+      "categories": 56,
+      "online_categories": 5,
+      "total": 780566,
+      "online": 20815,
+      "coverage_pct": 9,
+      "avg_lead_time": -113
+    },
+    "sell": {
+      "categories": 67,
+      "online_categories": 3,
+      "total": 1780624,
+      "online": 951,
+      "by_channel": {
+        "Offline": 1779672,
+        "eCommerce": 951
+      },
+      "coverage_pct": 4
+    },
+    "gap": {
+      "count": 53,
+      "categories": [
+        "ALSTRO",
+        "AMARANTHUS",
+        "ANEMONIES",
+        "ANTHURIUM",
+        "ASTER",
+        "ASTILBE",
+        "BELLS OF IRELAND",
+        "BIRDS OF PARADISE",
+        "BOUQUETES",
+        "BUPLERUM",
+        "CALLA",
+        "CARNS",
+        "COMBO BOX",
+        "CRASPEDIA",
+        "DAHLIA",
+        "DIANTHUS",
+        "DUSTY MILLER",
+        "EUCALYPTUS",
+        "FEVER FEW DAISY",
+        "GERBERS",
+        "GLADIOLA",
+        "GLASS",
+        "GREENS",
+        "GYP",
+        "HELLEBORUS",
+        "HYDRANGEA",
+        "HYPERICUM",
+        "IRIS",
+        "LARKSPUR",
+        "LIATRIS",
+        "LIMONIUM",
+        "LISIANTHUS",
+        "MINICALLA",
+        "MINICARNS",
+        "MUMS",
+        "OASIS",
+        "ORCHIDS",
+        "ORIENTAL LILIE",
+        "PEONIES",
+        "POMS",
+        "QUEEN ANNE LACE",
+        "RENUNCULOS",
+        "ROSE GARDEN",
+        "SNAPS",
+        "SPECIALTY",
+        "SPRAY ROSES",
+        "STATICE",
+        "STOCK",
+        "SUNFLOWER",
+        "SYNDICATE",
+        "TROPICAL",
+        "TULIPS",
+        "WAX"
+      ]
+    }
+  },
+  "Alders Wholesale Florist, Inc.": {
+    "buy": {
+      "categories": 52,
+      "online_categories": 52,
+      "total": 108856,
+      "online": 108856,
+      "coverage_pct": 100,
+      "avg_lead_time": -101
+    },
+    "sell": {
+      "categories": 52,
+      "online_categories": 52,
+      "total": 108907,
+      "online": 108907,
+      "by_channel": {
+        "K2K": 108907
+      },
+      "coverage_pct": 100
+    },
+    "gap": {
+      "count": 0,
+      "categories": []
+    }
+  },
+  "Allied Cut Flower": {
+    "buy": {
+      "categories": 9,
+      "online_categories": 9,
+      "total": 1720,
+      "online": 1720,
+      "coverage_pct": 100,
+      "avg_lead_time": -137
+    },
+    "sell": {
+      "categories": 9,
+      "online_categories": 9,
+      "total": 3047,
+      "online": 3047,
+      "by_channel": {
+        "eCommerce": 3047
+      },
+      "coverage_pct": 100
+    },
+    "gap": {
+      "count": 0,
+      "categories": []
+    }
+  },
+  "American Agroproducts": {
+    "buy": {
+      "categories": 2,
+      "online_categories": 2,
+      "total": 126,
+      "online": 126,
+      "coverage_pct": 100,
+      "avg_lead_time": -35
+    },
+    "sell": {
+      "categories": 2,
+      "online_categories": 2,
+      "total": 192,
+      "online": 192,
+      "by_channel": {
+        "eCommerce": 192
+      },
+      "coverage_pct": 100
+    },
+    "gap": {
+      "count": 0,
+      "categories": []
+    }
+  },
+  "Apex Floral Distributors Mississauga": {
+    "buy": {
+      "categories": 72,
+      "online_categories": 0,
+      "total": 2771904,
+      "online": 0,
+      "coverage_pct": 0,
+      "avg_lead_time": -107
+    },
+    "sell": {
+      "categories": 59,
+      "online_categories": 0,
+      "total": 1742429,
+      "online": 0,
+      "by_channel": {
+        "Offline": 1742429
+      },
+      "coverage_pct": 0
+    },
+    "gap": {
+      "count": 72,
+      "categories": [
+        "Agapanthus",
+        "Alstroemeria",
+        "Amaranthus",
+        "Ammi Majus",
+        "Anemones",
+        "Aster",
+        "Bells of Ireland",
+        "Bouquet",
+        "Bupleurum",
+        "Calla Lily",
+        "Calla Mini",
+        "Campanula",
+        "Carnation",
+        "Chrysanthemum",
+        "Commercial Mum",
+        "Craspedia",
+        "Delphinium",
+        "Dendrobium",
+        "Dianthus",
+        "Didiscus",
+        "Dusty Miller",
+        "Eryngium",
+        "Garden Rose",
+        "Gerbera",
+        "Gladiolus",
+        "Greenery",
+        "Gypsophilia",
+        "Hellebores",
+        "Hyacinth",
+        "Hydrangea",
+        "Hydrangea Mini",
+        "Hypericum",
+        "Kangaroo Paw",
+        "Larkspur",
+        "Leucodendron",
+        "Liatrus",
+        "Lily",
+        "Limonium",
+        "Lisianthus",
+        "Lysimachia",
+        "Marigold",
+        "Matricaria",
+        "Mini Carnation",
+        "Mixed Box",
+        "Nerine",
+        "Nigella",
+        "Orlaya",
+        "Pennycress",
+        "Pincushion",
+        "Poppy Flower",
+        "Preserved Rose",
+        "Protea",
+        "Ranunculus",
+        "Rice Flower",
+        "Rose",
+        "Scabiosa",
+        "Snap Dragon",
+        "Spray Rose",
+        "Star of Bethlehem",
+        "Statice",
+        "Stock",
+        "Strawflower",
+        "Sunflower",
+        "Sweet Pea",
+        "Thlaspi",
+        "Trachelium",
+        "Tropicals",
+        "Tulip",
+        "Veronica",
+        "Viburnum",
+        "Waxflower",
+        "Yarrow"
+      ]
+    }
+  },
+  "Arizona Family Florist": {
+    "buy": {
+      "categories": 77,
+      "online_categories": 2,
+      "total": 2336555,
+      "online": 87,
+      "coverage_pct": 3,
+      "avg_lead_time": -124
+    },
+    "sell": {
+      "categories": 84,
+      "online_categories": 0,
+      "total": 1806117,
+      "online": 0,
+      "by_channel": {
+        "Offline": 1806117
+      },
+      "coverage_pct": 0
+    },
+    "gap": {
+      "count": 77,
+      "categories": [
+        "Alstromeria",
+        "Amaranthus",
+        "Anemone",
+        "Assorted Box",
+        "Aster",
+        "Bells Of Ireland",
+        "Bouquet",
+        "Box",
+        "Branches",
+        "Calla",
+        "Carnation",
+        "Christmas Greens",
+        "Chrysanthemums",
+        "Cremon",
+        "Cremones",
+        "Dahlia",
+        "Delph",
+        "Delphinium",
+        "Dianthus",
+        "Disbud",
+        "Eucalyptus",
+        "Foliage",
+        "Freesia",
+        "Garden Rose",
+        "Garden Spray Rose",
+        "Garland",
+        "Gerbera",
+        "Gladiolus",
+        "Greens",
+        "Gyp",
+        "Gypsophila",
+        "Hydrangea",
+        "Hypericum",
+        "Iris",
+        "Kangaroo Paws",
+        "Larkspur",
+        "Leucadendron",
+        "Liatris",
+        "Lily",
+        "Limonium",
+        "Lisianthus",
+        "MM",
+        "Mini Calla",
+        "Mini Carnation",
+        "Misc Filler",
+        "Mixed Box",
+        "Mums",
+        "Orchid",
+        "Orchid Cymbidium",
+        "Orchid Dendrobium",
+        "Orchid Lei",
+        "Orchid Misc.",
+        "Peony",
+        "Plants Blooming",
+        "Produce",
+        "Protea",
+        "ROS",
+        "Ranunculus",
+        "Rose",
+        "Rose Tinted",
+        "Roses",
+        "Scabiosa",
+        "Snapdragon",
+        "Specialties",
+        "Specialty",
+        "Spider",
+        "Spray Rose",
+        "Statice",
+        "Stock",
+        "Strawflower",
+        "Sunflower",
+        "Tropical",
+        "Tropicals",
+        "Tulip",
+        "UNKNOWN",
+        "Wax",
+        "Waxflower"
+      ]
+    }
+  },
+  "Arizona Floral Exchange": {
+    "buy": {
+      "categories": 45,
+      "online_categories": 44,
+      "total": 46730,
+      "online": 45547,
+      "coverage_pct": 98,
+      "avg_lead_time": -123
+    },
+    "sell": {
+      "categories": 30,
+      "online_categories": 30,
+      "total": 38353,
+      "online": 38353,
+      "by_channel": {
+        "eCommerce": 38353
+      },
+      "coverage_pct": 100
+    },
+    "gap": {
+      "count": 15,
+      "categories": [
+        "Calla Mini",
+        "Carnation Mini",
+        "Chrysanthemum (Poms)",
+        "Filler Flowers",
+        "Freesia",
+        "Hypericum",
+        "Larkspur",
+        "Lily",
+        "Limonium",
+        "Ornithogalum",
+        "Protea",
+        "Scabiosa",
+        "Sunflower",
+        "Sweet Pea",
+        "UNKNOWN"
+      ]
+    }
+  },
+  "Ashland Addison": {
+    "buy": {
+      "categories": 65,
+      "online_categories": 65,
+      "total": 268657,
+      "online": 268657,
+      "coverage_pct": 100,
+      "avg_lead_time": -111
+    },
+    "sell": {
+      "categories": 42,
+      "online_categories": 42,
+      "total": 53731,
+      "online": 53731,
+      "by_channel": {
+        "eCommerce": 53731
+      },
+      "coverage_pct": 100
+    },
+    "gap": {
+      "count": 23,
+      "categories": [
+        "Agapanthus",
+        "Amaranthus",
+        "Ammi Majus",
+        "Astilbe",
+        "Bouquet Mixed",
+        "Branches",
+        "Branches Flowering",
+        "Bulb Flowers",
+        "Campanula",
+        "Carthamus",
+        "Dahlia",
+        "Gladiolus",
+        "Hypericum",
+        "Kale",
+        "Limonium",
+        "Orchid",
+        "Orchid Dendrobium",
+        "Protea",
+        "Scabiosa",
+        "Snapdragon",
+        "Succulent (Cut)",
+        "Trachelium",
+        "Tropical"
+      ]
+    }
+  },
+  "Avon Valley Floral": {
+    "buy": {
+      "categories": 12,
+      "online_categories": 2,
+      "total": 15945,
+      "online": 421,
+      "coverage_pct": 17,
+      "avg_lead_time": -36
+    },
+    "sell": {
+      "categories": 11,
+      "online_categories": 0,
+      "total": 5409,
+      "online": 0,
+      "by_channel": {
+        "Offline": 5409
+      },
+      "coverage_pct": 0
+    },
+    "gap": {
+      "count": 12,
+      "categories": [
+        "Alstro",
+        "Bouquet",
+        "Bouquets",
+        "Carns",
+        "Containers",
+        "Essentials",
+        "Filler",
+        "Focal",
+        "Greens",
+        "Line",
+        "Mini Carn",
+        "Roses HT"
+      ]
+    }
+  },
+  "BOTANICA WHOLESALE FLORIST DALLAS (IRVING), LLC": {
+    "buy": {
+      "categories": 62,
+      "online_categories": 62,
+      "total": 278460,
+      "online": 278460,
+      "coverage_pct": 100,
+      "avg_lead_time": -108
+    },
+    "sell": {
+      "categories": 62,
+      "online_categories": 62,
+      "total": 362784,
+      "online": 362784,
+      "by_channel": {
+        "eCommerce": 220109,
+        "K2K": 142675
+      },
+      "coverage_pct": 100
+    },
+    "gap": {
+      "count": 0,
+      "categories": []
+    }
+  },
+  "BOTANICA WHSLE FLORIST-HOUSTON": {
+    "buy": {
+      "categories": 43,
+      "online_categories": 43,
+      "total": 76997,
+      "online": 76997,
+      "coverage_pct": 100,
+      "avg_lead_time": -120
+    },
+    "sell": {
+      "categories": 43,
+      "online_categories": 43,
+      "total": 103923,
+      "online": 103923,
+      "by_channel": {
+        "eCommerce": 65680,
+        "K2K": 38243
+      },
+      "coverage_pct": 100
+    },
+    "gap": {
+      "count": 0,
+      "categories": []
+    }
+  },
+  "BRIEGER WHSLE -TX.": {
+    "buy": {
+      "categories": 50,
+      "online_categories": 50,
+      "total": 36802,
+      "online": 36802,
+      "coverage_pct": 100,
+      "avg_lead_time": -114
+    },
+    "sell": {
+      "categories": 50,
+      "online_categories": 50,
+      "total": 36804,
+      "online": 36804,
+      "by_channel": {
+        "K2K": 36804
+      },
+      "coverage_pct": 100
+    },
+    "gap": {
+      "count": 0,
+      "categories": []
+    }
+  },
+  "Baisch & Skinner": {
+    "buy": {
+      "categories": 95,
+      "online_categories": 95,
+      "total": 285994,
+      "online": 285514,
+      "coverage_pct": 100,
+      "avg_lead_time": -102
+    },
+    "sell": {
+      "categories": 93,
+      "online_categories": 93,
+      "total": 437483,
+      "online": 437483,
+      "by_channel": {
+        "eCommerce": 437483
+      },
+      "coverage_pct": 100
+    },
+    "gap": {
+      "count": 2,
+      "categories": [
+        "Astronova",
+        "UNKNOWN"
+      ]
+    }
+  },
+  "Bill Doran Company": {
+    "buy": {
+      "categories": 132,
+      "online_categories": 95,
+      "total": 45965515,
+      "online": 4642506,
+      "coverage_pct": 72,
+      "avg_lead_time": -113
+    },
+    "sell": {
+      "categories": 140,
+      "online_categories": 114,
+      "total": 61535769,
+      "online": 2144942,
+      "by_channel": {
+        "Offline": 59390827,
+        "eCommerce": 2144942
+      },
+      "coverage_pct": 81
+    },
+    "gap": {
+      "count": 18,
+      "categories": [
+        "Amaryllis",
+        "Arrangement",
+        "BQ Rose 1st",
+        "BQ Rose 3st",
+        "BQ Rose 6st",
+        "Candles",
+        "Cement Container",
+        "Cemetery Vases",
+        "Dutch",
+        "Flower Globe",
+        "Metal Container",
+        "Misc Basic",
+        "Phlox",
+        "Rose Sweetheart",
+        "Silk",
+        "Special Order",
+        "UNKNOWN",
+        "Xmas Grn,Novelty"
+      ]
+    }
+  },
+  "Bill Doran Company (2)": {
+    "buy": {
+      "categories": 0,
+      "online_categories": 0,
+      "total": 0,
+      "online": 0,
+      "coverage_pct": 0,
+      "avg_lead_time": null
+    },
+    "sell": {
+      "categories": 119,
+      "online_categories": 0,
+      "total": 2405300,
+      "online": 0,
+      "by_channel": {
+        "Offline": 2405300
+      },
+      "coverage_pct": 0
+    },
+    "gap": {
+      "count": 0,
+      "categories": []
+    }
+  }
+}

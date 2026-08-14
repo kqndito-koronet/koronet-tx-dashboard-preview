@@ -1,0 +1,160 @@
+{
+  "_metadata": {
+    "snapshot_type": "account_spine_acceptance_fixture",
+    "schema_version": "0.2.0",
+    "as_of": "2026-07-30",
+    "generated_at": "2026-08-02T00:00:00-07:00",
+    "scope": "Price's Floral Wholesale, LLC only; not a portfolio refresh and not yet consumed by the dashboard UI.",
+    "purpose": "Acceptance fixture for the Accounts MVP: demonstrate one account record with no silent fallback, false zero or unlabeled estimate.",
+    "rules": ["every metric declares source, period, coverage and evidence state", "null means unavailable or blocked; it never means zero"]
+  },
+  "accounts": {
+    "816515": {
+      "identity": {
+        "company_id": "816515",
+        "company_name": "Price's Floral Wholesale, LLC",
+        "ct_id": "WH_CORE",
+        "source_aliases": {
+          "salesforce_account_id": "0014p000022EYtaAAG"
+        }
+      },
+      "metrics": {
+        "company_gmv_estimate": {
+          "value": 1800000,
+          "currency": "USD",
+          "period_start": null,
+          "period_end": null,
+          "as_of": "2026-07-30",
+          "source": "COMPANIES_SV.annual_total_sales (SFDC estimate)",
+          "coverage": "CRM estimate of company annual sales",
+          "evidence_state": "modeled",
+          "confidence": "medium",
+          "note": "Not an observed company GMV actual; external validation remains open."
+        },
+        "total_purchases_estimate": {
+          "value": 972000,
+          "currency": "USD",
+          "period_start": null,
+          "period_end": null,
+          "as_of": "2026-07-30",
+          "source": "company_gmv_estimate × 0.54 baseline",
+          "coverage": "modeled company purchases, not Koronet transactions",
+          "evidence_state": "modeled",
+          "confidence": "low",
+          "note": "Facu baseline pending account-specific calibration or external research."
+        },
+        "koronet_buy_gmv_ytd": {
+          "value": 165666.67,
+          "currency": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-07-30",
+          "as_of": "2026-07-30",
+          "source": "PRODUCTION.ANALYTICS.PROCUREMENTS_SV; query 01c616d4-000a-8262-0001-83020eced0b2",
+          "coverage": "Koronet procurement transactions, ks_flag=TRUE",
+          "evidence_state": "observed"
+        },
+        "koronet_buy_online_gmv_ytd": {
+          "value": 100275.17,
+          "currency": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-07-30",
+          "as_of": "2026-07-30",
+          "source": "PRODUCTION.ANALYTICS.PROCUREMENTS_SV; same V2 query/window as koronet_buy_gmv_ytd",
+          "coverage": "Koronet procurement online-channel transactions",
+          "evidence_state": "observed"
+        },
+        "koronet_buy_online_share_ytd": {
+          "value": 60.53,
+          "unit": "percent",
+          "period_start": "2026-01-01",
+          "period_end": "2026-07-30",
+          "as_of": "2026-07-30",
+          "source": "computed: koronet_buy_online_gmv_ytd / koronet_buy_gmv_ytd",
+          "coverage": "same observed Koronet procurement population",
+          "evidence_state": "observed"
+        },
+        "koronet_sell_gmv_ytd": {
+          "value": 140053.99,
+          "currency": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-07-30",
+          "as_of": "2026-07-30",
+          "source": "PRODUCTION.ANALYTICS.SALES_SV; query 01c616d3-000a-7a52-0001-83020eceb3aa",
+          "coverage": "Koronet sales transactions, ks_flag=TRUE, sales<100000, dump excluded",
+          "evidence_state": "observed"
+        },
+        "koronet_sell_online_gmv_ytd": {
+          "value": 3278,
+          "currency": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-07-30",
+          "as_of": "2026-07-30",
+          "source": "PRODUCTION.ANALYTICS.SALES_SV; same V2 query/window as koronet_sell_gmv_ytd",
+          "coverage": "Koronet sales in eCommerce/K2K/API channels",
+          "evidence_state": "observed"
+        },
+        "koronet_sell_offline_gmv_ytd": {
+          "value": 136775.99,
+          "currency": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-07-30",
+          "as_of": "2026-07-30",
+          "source": "PRODUCTION.ANALYTICS.SALES_SV; same V2 query/window as koronet_sell_gmv_ytd",
+          "coverage": "Koronet sales outside eCommerce/K2K/API channels",
+          "evidence_state": "observed"
+        },
+        "koronet_sell_online_share_ytd": {
+          "value": 2.34,
+          "unit": "percent",
+          "period_start": "2026-01-01",
+          "period_end": "2026-07-30",
+          "as_of": "2026-07-30",
+          "source": "computed: koronet_sell_online_gmv_ytd / koronet_sell_gmv_ytd",
+          "coverage": "same observed Koronet sales population",
+          "evidence_state": "observed"
+        },
+        "sell_buyer_counts_ytd": {
+          "value": null,
+          "period_start": null,
+          "period_end": null,
+          "as_of": "2026-07-30",
+          "source": "metrics_v2_buyers_full.json",
+          "coverage": "unconfirmed relative to SELL GMV population",
+          "evidence_state": "blocked",
+          "missing_reason": "Available buyer count extract runs through 2026-07-31, while SELL GMV ends 2026-07-30; align population/window before display."
+        },
+        "listing_inventory_parity": {
+          "value": null,
+          "period_start": null,
+          "period_end": null,
+          "as_of": "2026-07-30",
+          "source": "loop2_list_usage_v2.json and listing_detail.json",
+          "coverage": "past sales breadth only; not active catalogue/inventory",
+          "evidence_state": "blocked",
+          "missing_reason": "Need online/offline catalogue, availability horizon, bunches and fulfillment data at product grain."
+        },
+        "direct_transaction_fees_ytd": {
+          "value": null,
+          "currency": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-07-30",
+          "as_of": "2026-07-30",
+          "source": "not reconciled to this SELL/BUY window",
+          "coverage": "unknown",
+          "evidence_state": "blocked",
+          "missing_reason": "No fee extract with compatible cutoff/channel mapping has been accepted."
+        },
+        "indirect_fee_scenario_ytd": {
+          "value": 1504.13,
+          "currency": "USD",
+          "period_start": "2026-01-01",
+          "period_end": "2026-07-30",
+          "as_of": "2026-07-30",
+          "source": "koronet_buy_online_gmv_ytd × 1.5% scenario",
+          "coverage": "modeled indirect-fee scenario, not invoiced fee",
+          "evidence_state": "modeled"
+        }
+      }
+    }
+  }
+}

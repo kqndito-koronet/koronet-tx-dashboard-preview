@@ -1,0 +1,43 @@
+{
+  "_metadata": {
+    "query": "Q00_pacing_cutoff",
+    "generated": "2026-07-31"
+  },
+  "pacing_cutoff": {
+    "as_of": "2026-07-30",
+    "max_fee_date": "2026-07-31",
+    "max_gmv_date": "2026-07-31",
+    "cutoff_reason": "Jul 31 may be partial (today). Using Jul 30 as safe cutoff.",
+    "max_transaction_date_billed": "2026-06-30",
+    "fee_source_note": "Jul 2026 from EXPECTED_TRANSACTION_FEES; Jan-Jun 2026 from TRANSACTION_FEES"
+  },
+  "network_sell_gmv": {
+    "ytd": 945168020,
+    "prior_ytd": 919110226,
+    "yoy_pct": 2.8,
+    "online_ytd": 171278632,
+    "online_pct": 18.1,
+    "total_companies": 435,
+    "source": "SALES_SV"
+  },
+  "network_buy_gmv": {
+    "ytd": 541871372,
+    "prior_ytd": 1040492289,
+    "yoy_pct": -47.9,
+    "online_ytd": 30897197,
+    "online_pct": 5.7,
+    "total_companies": 417,
+    "source": "PROCUREMENTS_SV",
+    "note": "BUY GMV uses total_cost per Rule 17. YoY decline may reflect data coverage change."
+  },
+  "network_fees_organic": {
+    "ytd": 1476352.56,
+    "prior_ytd": 1101253.26,
+    "yoy_pct": 34.1,
+    "current_month": 148961.56,
+    "prior_month": 189864.51,
+    "total_companies": 244,
+    "source": "TRANSACTION_FEES + EXPECTED_TRANSACTION_FEES",
+    "axerrio_note": "Add ~$54K H1 Axerrio from Sofia Control Sheet for total fees"
+  }
+}

@@ -1,0 +1,4497 @@
+{
+  "metadata": {
+    "query": "SELECT COMPANY_NAME, ACCOUNT_ID, SALES_CHANNEL, SUM(SALES) as channel_gmv, COUNT(DISTINCT SALE_ITEM_ID) as tx_count FROM PRODUCTION.ANALYTICS.SALES_SV WHERE KS_FLAG = TRUE AND SHIPPING_DATE >= '2026-01-01' AND SHIPPING_DATE < '2026-07-01' AND SALES < 100000 GROUP BY COMPANY_NAME, ACCOUNT_ID, SALES_CHANNEL ORDER BY COMPANY_NAME, channel_gmv DESC",
+    "source_table": "PRODUCTION.ANALYTICS.SALES_SV",
+    "date_range": "2026-01-01 to 2026-06-30 (H1 2026)",
+    "filters": {
+      "ks_flag": true,
+      "sales_cap": 100000,
+      "note": "SALES < 100K per Rule 4 (corrupt lines filter)"
+    },
+    "extracted_at": "2026-07-30",
+    "row_count": 639,
+    "data_rules_applied": [
+      "Rule 1: ks_flag = TRUE",
+      "Rule 4: SALES < 100K",
+      "Rule 5: channel-level aggregation (no fan-out risk)",
+      "Rule 8: semantic view SALES_SV used",
+      "Rule 9: provenance included in metadata"
+    ],
+    "note": "COMPANY_ID does not exist in SALES_SV; ACCOUNT_ID (SFDC) used instead"
+  },
+  "data": [
+    {
+      "company_name": "! Juliet Wholesale Flowers LLC",
+      "account_id": "001G000001ZwODhIAN",
+      "sales_channel": "Offline",
+      "channel_gmv": 228835.09,
+      "tx_count": 2234
+    },
+    {
+      "company_name": "! Juliet Wholesale Flowers LLC",
+      "account_id": "001G000001ZwODhIAN",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 21135.7,
+      "tx_count": 218
+    },
+    {
+      "company_name": "! Juliet Wholesale Flowers LLC",
+      "account_id": "001G000001ZwODhIAN",
+      "sales_channel": "K2K",
+      "channel_gmv": 6776.0,
+      "tx_count": 69
+    },
+    {
+      "company_name": "* AquaRose",
+      "account_id": "0011L00002Y8j3vQAB",
+      "sales_channel": "Offline",
+      "channel_gmv": 2097.0,
+      "tx_count": 41
+    },
+    {
+      "company_name": "* AquaRose",
+      "account_id": "0011L00002Y8j3vQAB",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 180.5,
+      "tx_count": 4
+    },
+    {
+      "company_name": "* AquaRose",
+      "account_id": "0011L00002Y8j3vQAB",
+      "sales_channel": "K2K",
+      "channel_gmv": 78.0,
+      "tx_count": 2
+    },
+    {
+      "company_name": "* Continental Farms",
+      "account_id": "001G000001DW4OsIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 747856.5,
+      "tx_count": 7469
+    },
+    {
+      "company_name": "* Continental Farms",
+      "account_id": "001G000001DW4OsIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 349620.95,
+      "tx_count": 3667
+    },
+    {
+      "company_name": "* Jet Fresh Flower Distributors Inc.",
+      "account_id": "001G000001DW4QWIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 20693555.28,
+      "tx_count": 340882
+    },
+    {
+      "company_name": "* Jet Fresh Flower Distributors Inc.",
+      "account_id": "001G000001DW4QWIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 5550300.39,
+      "tx_count": 51949
+    },
+    {
+      "company_name": "* Jet Fresh Flower Distributors Inc.",
+      "account_id": "001G000001DW4QWIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 2215997.53,
+      "tx_count": 20580
+    },
+    {
+      "company_name": "* Jet Fresh Flower Distributors Inc.",
+      "account_id": "001G000001DW4QWIA1",
+      "sales_channel": "API",
+      "channel_gmv": 906133.67,
+      "tx_count": 5381
+    },
+    {
+      "company_name": "* Welyflor / PROFILE FLOWERS",
+      "account_id": "001160000221mrNAAQ",
+      "sales_channel": "Offline",
+      "channel_gmv": 7700285.93,
+      "tx_count": 67600
+    },
+    {
+      "company_name": "* Welyflor / PROFILE FLOWERS",
+      "account_id": "001160000221mrNAAQ",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 1418645.15,
+      "tx_count": 14464
+    },
+    {
+      "company_name": "* Welyflor / PROFILE FLOWERS",
+      "account_id": "001160000221mrNAAQ",
+      "sales_channel": "K2K",
+      "channel_gmv": 1040277.62,
+      "tx_count": 10719
+    },
+    {
+      "company_name": "* Welyflor / PROFILE FLOWERS",
+      "account_id": "001160000221mrNAAQ",
+      "sales_channel": "API",
+      "channel_gmv": 30841.0,
+      "tx_count": 454
+    },
+    {
+      "company_name": "**Wafex USA",
+      "account_id": "001G000001jjTb0IAE",
+      "sales_channel": "Offline",
+      "channel_gmv": 1526071.99,
+      "tx_count": 10592
+    },
+    {
+      "company_name": "**Wafex USA",
+      "account_id": "001G000001jjTb0IAE",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 166714.27,
+      "tx_count": 1344
+    },
+    {
+      "company_name": "**Wafex USA",
+      "account_id": "001G000001jjTb0IAE",
+      "sales_channel": "K2K",
+      "channel_gmv": 89230.16,
+      "tx_count": 790
+    },
+    {
+      "company_name": "**Wafex USA",
+      "account_id": "001G000001jjTb0IAE",
+      "sales_channel": "API",
+      "channel_gmv": 11943.39,
+      "tx_count": 130
+    },
+    {
+      "company_name": "*FLORAL1 INC",
+      "account_id": "0014p000022EMZLAA4",
+      "sales_channel": "Offline",
+      "channel_gmv": 572445.16,
+      "tx_count": 3740
+    },
+    {
+      "company_name": "*FLORAL1 INC",
+      "account_id": "0014p000022EMZLAA4",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 13868.85,
+      "tx_count": 95
+    },
+    {
+      "company_name": "*FLORAL1 INC",
+      "account_id": "0014p000022EMZLAA4",
+      "sales_channel": "K2K",
+      "channel_gmv": 8507.27,
+      "tx_count": 79
+    },
+    {
+      "company_name": "-Groflowers",
+      "account_id": "001G000001DW4QJIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 1243929.24,
+      "tx_count": 8038
+    },
+    {
+      "company_name": "-Groflowers",
+      "account_id": "001G000001DW4QJIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 251543.53,
+      "tx_count": 2108
+    },
+    {
+      "company_name": "-Groflowers",
+      "account_id": "001G000001DW4QJIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 65997.57,
+      "tx_count": 573
+    },
+    {
+      "company_name": "-Sole Farms",
+      "account_id": "001G000001DW4T2IAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 19906335.83,
+      "tx_count": 158068
+    },
+    {
+      "company_name": "-Sole Farms",
+      "account_id": "001G000001DW4T2IAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 7016287.84,
+      "tx_count": 91523
+    },
+    {
+      "company_name": "-Sole Farms",
+      "account_id": "001G000001DW4T2IAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 3365499.83,
+      "tx_count": 44527
+    },
+    {
+      "company_name": "-Sole Farms",
+      "account_id": "001G000001DW4T2IAL",
+      "sales_channel": "API",
+      "channel_gmv": 815407.96,
+      "tx_count": 13087
+    },
+    {
+      "company_name": "A Florist First",
+      "account_id": "00116000021c3HoAAI",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 300501.1,
+      "tx_count": 3017
+    },
+    {
+      "company_name": "A Trilogy Floral - Zamba Flowers",
+      "account_id": "001G000001DW4TQIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 2997211.28,
+      "tx_count": 25223
+    },
+    {
+      "company_name": "A Trilogy Floral - Zamba Flowers",
+      "account_id": "001G000001DW4TQIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 732920.11,
+      "tx_count": 7762
+    },
+    {
+      "company_name": "A Trilogy Floral - Zamba Flowers",
+      "account_id": "001G000001DW4TQIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 576494.53,
+      "tx_count": 6095
+    },
+    {
+      "company_name": "A Trilogy Floral - Zamba Flowers",
+      "account_id": "001G000001DW4TQIA1",
+      "sales_channel": "API",
+      "channel_gmv": 23633.17,
+      "tx_count": 299
+    },
+    {
+      "company_name": "A1 Floral Xpressions",
+      "account_id": "001VL00000Hqn2xYAB",
+      "sales_channel": "Offline",
+      "channel_gmv": 448379.6,
+      "tx_count": 4034
+    },
+    {
+      "company_name": "A1 Floral Xpressions",
+      "account_id": "001VL00000Hqn2xYAB",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 95683.75,
+      "tx_count": 863
+    },
+    {
+      "company_name": "A1 Floral Xpressions",
+      "account_id": "001VL00000Hqn2xYAB",
+      "sales_channel": "K2K",
+      "channel_gmv": 71040.8,
+      "tx_count": 685
+    },
+    {
+      "company_name": "ACA Flowers",
+      "account_id": "001G000001a07MXIAY",
+      "sales_channel": "Offline",
+      "channel_gmv": 4845.3,
+      "tx_count": 32
+    },
+    {
+      "company_name": "ACA Flowers",
+      "account_id": "001G000001a07MXIAY",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 805.65,
+      "tx_count": 7
+    },
+    {
+      "company_name": "ACME Testing, Inc.",
+      "account_id": "0011L00002fOHhdQAG",
+      "sales_channel": "Offline",
+      "channel_gmv": 451.3,
+      "tx_count": 8
+    },
+    {
+      "company_name": "ADEESE FLOWERS LLC",
+      "account_id": "001VL00000ehkNEYAY",
+      "sales_channel": "Offline",
+      "channel_gmv": 31569.25,
+      "tx_count": 213
+    },
+    {
+      "company_name": "ADEESE FLOWERS LLC",
+      "account_id": "001VL00000ehkNEYAY",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 12476.9,
+      "tx_count": 127
+    },
+    {
+      "company_name": "ADEESE FLOWERS LLC",
+      "account_id": "001VL00000ehkNEYAY",
+      "sales_channel": "K2K",
+      "channel_gmv": 4024.75,
+      "tx_count": 37
+    },
+    {
+      "company_name": "ALLIANCE FLORAL COMPANY. 6270",
+      "account_id": "0011L00002ICyF3QAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 74913.47,
+      "tx_count": 857
+    },
+    {
+      "company_name": "AMORES FLORES INC",
+      "account_id": "0014p000020wFxeAAE",
+      "sales_channel": "Offline",
+      "channel_gmv": 1779672.33,
+      "tx_count": 39361
+    },
+    {
+      "company_name": "AMORES FLORES INC",
+      "account_id": "0014p000020wFxeAAE",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 951.4,
+      "tx_count": 8
+    },
+    {
+      "company_name": "Akarana Farms - UIO",
+      "account_id": "001VL00000egpjqYAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 90.0,
+      "tx_count": 2
+    },
+    {
+      "company_name": "Albin Hagstrom & Son, Inc.",
+      "account_id": "0011600001xHhmfAAC",
+      "sales_channel": "K2K",
+      "channel_gmv": 79602.44,
+      "tx_count": 1015
+    },
+    {
+      "company_name": "Albin Hagstrom & Son, Inc.",
+      "account_id": "0011600001xHhmfAAC",
+      "sales_channel": "API",
+      "channel_gmv": 76576.49,
+      "tx_count": 1172
+    },
+    {
+      "company_name": "Albin Hagstrom & Son, Inc.",
+      "account_id": "0011600001xHhmfAAC",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 13100.7,
+      "tx_count": 87
+    },
+    {
+      "company_name": "Albin Hagstrom & Son, Inc.",
+      "account_id": "0011600001xHhmfAAC",
+      "sales_channel": "Offline",
+      "channel_gmv": 363.79,
+      "tx_count": 6
+    },
+    {
+      "company_name": "Alders Wholesale Florist, Inc.",
+      "account_id": "001VL00000F4yJVYAZ",
+      "sales_channel": "K2K",
+      "channel_gmv": 108907.4,
+      "tx_count": 1035
+    },
+    {
+      "company_name": "Alison Flowers - UIO",
+      "account_id": "0014p00001xlhgkAAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 351.8,
+      "tx_count": 10
+    },
+    {
+      "company_name": "Allied Cut Flower",
+      "account_id": "00116000020OCgLAAW",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 3047.14,
+      "tx_count": 16
+    },
+    {
+      "company_name": "Allure Farms",
+      "account_id": "001G000001DW4OuIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 7154400.53,
+      "tx_count": 56614
+    },
+    {
+      "company_name": "Allure Farms",
+      "account_id": "001G000001DW4OuIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 2076588.08,
+      "tx_count": 19307
+    },
+    {
+      "company_name": "Allure Farms",
+      "account_id": "001G000001DW4OuIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 639032.49,
+      "tx_count": 5614
+    },
+    {
+      "company_name": "Allure Farms",
+      "account_id": "001G000001DW4OuIAL",
+      "sales_channel": "API",
+      "channel_gmv": 148460.8,
+      "tx_count": 1753
+    },
+    {
+      "company_name": "AmeriLink Floratrader",
+      "account_id": "001G000001DW4O5IAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 2973846.8,
+      "tx_count": 11521
+    },
+    {
+      "company_name": "AmeriLink Floratrader",
+      "account_id": "001G000001DW4O5IAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 46160.61,
+      "tx_count": 535
+    },
+    {
+      "company_name": "AmeriLink Floratrader",
+      "account_id": "001G000001DW4O5IAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 25500.29,
+      "tx_count": 171
+    },
+    {
+      "company_name": "American Agroproducts",
+      "account_id": "001G000001IYgNpIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 192.0,
+      "tx_count": 5
+    },
+    {
+      "company_name": "Andean Fresh LLC",
+      "account_id": "0011600001zF6GkAAK",
+      "sales_channel": "Offline",
+      "channel_gmv": 467683.98,
+      "tx_count": 1948
+    },
+    {
+      "company_name": "Andean Fresh LLC",
+      "account_id": "0011600001zF6GkAAK",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 5389.5,
+      "tx_count": 72
+    },
+    {
+      "company_name": "Andean Fresh LLC",
+      "account_id": "0011600001zF6GkAAK",
+      "sales_channel": "K2K",
+      "channel_gmv": 90.0,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Anton Spaargaren B.V.",
+      "account_id": "0011600001zW56mAAC",
+      "sales_channel": "Offline",
+      "channel_gmv": 2361928.08,
+      "tx_count": 3884
+    },
+    {
+      "company_name": "Anton Spaargaren B.V.",
+      "account_id": "0011600001zW56mAAC",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 242474.25,
+      "tx_count": 1006
+    },
+    {
+      "company_name": "Anton Spaargaren B.V.",
+      "account_id": "0011600001zW56mAAC",
+      "sales_channel": "K2K",
+      "channel_gmv": 2331.68,
+      "tx_count": 11
+    },
+    {
+      "company_name": "Apex Floral Distributors Mississauga",
+      "account_id": "001G000001TsKPSIA3",
+      "sales_channel": "Offline",
+      "channel_gmv": 1742429.39,
+      "tx_count": 18132
+    },
+    {
+      "company_name": "Arizona Family Florist",
+      "account_id": "00116000023rB8qAAE",
+      "sales_channel": "Offline",
+      "channel_gmv": 1806117.15,
+      "tx_count": 19990
+    },
+    {
+      "company_name": "Arizona Floral Exchange",
+      "account_id": "0011600001mLcyvAAC",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 38352.99,
+      "tx_count": 311
+    },
+    {
+      "company_name": "Ashland Addison",
+      "account_id": "0011L00002WO3HUQA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 53731.44,
+      "tx_count": 425
+    },
+    {
+      "company_name": "Aurum Farms LLC",
+      "account_id": "0014p00001waeZYAAY",
+      "sales_channel": "Offline",
+      "channel_gmv": 315138.23,
+      "tx_count": 1525
+    },
+    {
+      "company_name": "Aurum Farms LLC",
+      "account_id": "0014p00001waeZYAAY",
+      "sales_channel": "K2K",
+      "channel_gmv": 300.7,
+      "tx_count": 2
+    },
+    {
+      "company_name": "Avon Valley Floral",
+      "account_id": "001G000001DW4OGIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 5409.29,
+      "tx_count": 72
+    },
+    {
+      "company_name": "BOTANICA WHOLESALE FLORIST DALLAS (IRVING), LLC",
+      "account_id": "001G000001DW4OTIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 220109.43,
+      "tx_count": 1535
+    },
+    {
+      "company_name": "BOTANICA WHOLESALE FLORIST DALLAS (IRVING), LLC",
+      "account_id": "001G000001DW4OTIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 142674.87,
+      "tx_count": 1604
+    },
+    {
+      "company_name": "BOTANICA WHSLE FLORIST-HOUSTON",
+      "account_id": "001VL00000RiggjYAB",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 65680.02,
+      "tx_count": 448
+    },
+    {
+      "company_name": "BOTANICA WHSLE FLORIST-HOUSTON",
+      "account_id": "001VL00000RiggjYAB",
+      "sales_channel": "K2K",
+      "channel_gmv": 38242.72,
+      "tx_count": 500
+    },
+    {
+      "company_name": "BRIEGER WHSLE -TX.",
+      "account_id": "001G000001TsMbNIAV",
+      "sales_channel": "K2K",
+      "channel_gmv": 36803.99,
+      "tx_count": 363
+    },
+    {
+      "company_name": "Baisch & Skinner",
+      "account_id": "0011600001riCHoAAM",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 437482.94,
+      "tx_count": 3556
+    },
+    {
+      "company_name": "Bella Blossom LLC",
+      "account_id": "001G000001DW4OKIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 2359277.41,
+      "tx_count": 25827
+    },
+    {
+      "company_name": "Bella Blossom LLC",
+      "account_id": "001G000001DW4OKIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 2104435.48,
+      "tx_count": 24558
+    },
+    {
+      "company_name": "Bella Blossom LLC",
+      "account_id": "001G000001DW4OKIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 979408.98,
+      "tx_count": 11566
+    },
+    {
+      "company_name": "Bellaflor Group Inc.",
+      "account_id": "001G000001DW4OLIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 1095.77,
+      "tx_count": 12
+    },
+    {
+      "company_name": "Bellaflor Group Inc.",
+      "account_id": "001G000001DW4OLIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 816.09,
+      "tx_count": 11
+    },
+    {
+      "company_name": "Bellaflor Group Inc.",
+      "account_id": "001G000001DW4OLIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 88.2,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Best Miami Growers LLC",
+      "account_id": "0011600001zFAH3AAO",
+      "sales_channel": "Offline",
+      "channel_gmv": 1419921.11,
+      "tx_count": 11122
+    },
+    {
+      "company_name": "Best Miami Growers LLC",
+      "account_id": "0011600001zFAH3AAO",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 50936.38,
+      "tx_count": 434
+    },
+    {
+      "company_name": "Best Miami Growers LLC",
+      "account_id": "0011600001zFAH3AAO",
+      "sales_channel": "K2K",
+      "channel_gmv": 27576.18,
+      "tx_count": 246
+    },
+    {
+      "company_name": "Bill Doran Company",
+      "account_id": "001G000001DVt5TIAT",
+      "sales_channel": "Offline",
+      "channel_gmv": 59305178.16,
+      "tx_count": 1299940
+    },
+    {
+      "company_name": "Bill Doran Company",
+      "account_id": "001G000001DVt5TIAT",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 2144941.67,
+      "tx_count": 62872
+    },
+    {
+      "company_name": "Bill Doran Company (2)",
+      "account_id": "001G000001TtEaaIAF",
+      "sales_channel": "Offline",
+      "channel_gmv": 2429518.62,
+      "tx_count": 76465
+    },
+    {
+      "company_name": "Bloomistics",
+      "account_id": "0011600001uRq3BAAS",
+      "sales_channel": "Offline",
+      "channel_gmv": 1815623.33,
+      "tx_count": 13384
+    },
+    {
+      "company_name": "Bloomistics",
+      "account_id": "0011600001uRq3BAAS",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 70498.0,
+      "tx_count": 600
+    },
+    {
+      "company_name": "Bloomistics",
+      "account_id": "0011600001uRq3BAAS",
+      "sales_channel": "K2K",
+      "channel_gmv": 38429.0,
+      "tx_count": 368
+    },
+    {
+      "company_name": "Blossom Bliss LLC",
+      "account_id": "001VL00000IAI7mYAH",
+      "sales_channel": "Offline",
+      "channel_gmv": 484398.72,
+      "tx_count": 2853
+    },
+    {
+      "company_name": "Blossom Bliss LLC",
+      "account_id": "001VL00000IAI7mYAH",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 44848.97,
+      "tx_count": 380
+    },
+    {
+      "company_name": "Blossom Bliss LLC",
+      "account_id": "001VL00000IAI7mYAH",
+      "sales_channel": "K2K",
+      "channel_gmv": 1226.35,
+      "tx_count": 14
+    },
+    {
+      "company_name": "BlossomR",
+      "account_id": "001VL00000Pk117YAB",
+      "sales_channel": "Offline",
+      "channel_gmv": 14100.25,
+      "tx_count": 117
+    },
+    {
+      "company_name": "Bo's Wholesale Florist",
+      "account_id": "0014p000021zRPfAAM",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 14325.46,
+      "tx_count": 104
+    },
+    {
+      "company_name": "Brightland Farms",
+      "account_id": "001G000001DW4OWIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 20563079.9,
+      "tx_count": 40234
+    },
+    {
+      "company_name": "Bunches Direct Blumenimport GmbH",
+      "account_id": "0011L000028F9SYQA0",
+      "sales_channel": "Offline",
+      "channel_gmv": 245143.93,
+      "tx_count": 3893
+    },
+    {
+      "company_name": "Bunches Direct Blumenimport GmbH",
+      "account_id": "0011L000028F9SYQA0",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 7002.5,
+      "tx_count": 55
+    },
+    {
+      "company_name": "CANTIZA FLORAL DBA NFD",
+      "account_id": "0011L00002rFEJwQAO",
+      "sales_channel": "Offline",
+      "channel_gmv": 102435.1,
+      "tx_count": 411
+    },
+    {
+      "company_name": "CANTIZA FLORAL DBA NFD",
+      "account_id": "0011L00002rFEJwQAO",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 333.25,
+      "tx_count": 3
+    },
+    {
+      "company_name": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+      "account_id": "0014p0000220OCmAAM",
+      "sales_channel": "K2K",
+      "channel_gmv": 101611.99,
+      "tx_count": 1208
+    },
+    {
+      "company_name": "CD Wholesale",
+      "account_id": "001VL000003MuLTYA0",
+      "sales_channel": "Offline",
+      "channel_gmv": 903052.59,
+      "tx_count": 27465
+    },
+    {
+      "company_name": "CD Wholesale",
+      "account_id": "001VL000003MuLTYA0",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 180.72,
+      "tx_count": 3
+    },
+    {
+      "company_name": "CHICAGO´S WHOLESALE",
+      "account_id": "0014p000022EYvBAAW",
+      "sales_channel": "K2K",
+      "channel_gmv": 91894.95,
+      "tx_count": 952
+    },
+    {
+      "company_name": "CINCINNATI WHSLE FLORIST INC.5643",
+      "account_id": "001G000001Tsg6jIAB",
+      "sales_channel": "K2K",
+      "channel_gmv": 53145.51,
+      "tx_count": 542
+    },
+    {
+      "company_name": "CONNECTION FLOWERS SAS",
+      "account_id": "0014p000021zpeLAAQ",
+      "sales_channel": "Offline",
+      "channel_gmv": 1644150.62,
+      "tx_count": 1943
+    },
+    {
+      "company_name": "COWARD WHOLESALE",
+      "account_id": "0011600001uSYzvAAG",
+      "sales_channel": "K2K",
+      "channel_gmv": 144511.23,
+      "tx_count": 1589
+    },
+    {
+      "company_name": "Cananvalle USA LLC",
+      "account_id": "0011600001lhZANAA2",
+      "sales_channel": "Offline",
+      "channel_gmv": 2084296.39,
+      "tx_count": 13654
+    },
+    {
+      "company_name": "Cananvalle USA LLC",
+      "account_id": "0011600001lhZANAA2",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 183397.25,
+      "tx_count": 1698
+    },
+    {
+      "company_name": "Cananvalle USA LLC",
+      "account_id": "0011600001lhZANAA2",
+      "sales_channel": "K2K",
+      "channel_gmv": 60730.75,
+      "tx_count": 512
+    },
+    {
+      "company_name": "Charleston Wholesale Florist",
+      "account_id": "0011L000028V2EyQAK",
+      "sales_channel": "Offline",
+      "channel_gmv": 1179749.87,
+      "tx_count": 31069
+    },
+    {
+      "company_name": "Choice Farms",
+      "account_id": "001G000001DW4OlIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 4032751.94,
+      "tx_count": 32589
+    },
+    {
+      "company_name": "Choice Farms",
+      "account_id": "001G000001DW4OlIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 2060163.1,
+      "tx_count": 16668
+    },
+    {
+      "company_name": "Choice Farms",
+      "account_id": "001G000001DW4OlIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 1361149.78,
+      "tx_count": 10572
+    },
+    {
+      "company_name": "Choice Farms",
+      "account_id": "001G000001DW4OlIAL",
+      "sales_channel": "API",
+      "channel_gmv": 75024.71,
+      "tx_count": 657
+    },
+    {
+      "company_name": "Claymore C. Sieck Wholesale Florist",
+      "account_id": "00116000021Z8FtAAK",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 969.2,
+      "tx_count": 5
+    },
+    {
+      "company_name": "Cleveland Plant & Flower Co.",
+      "account_id": "001G000001TsgdSIAR",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 493514.08,
+      "tx_count": 3586
+    },
+    {
+      "company_name": "Coastal Wholesale Flowers, Inc.",
+      "account_id": "001G000001TsYWjIAN",
+      "sales_channel": "K2K",
+      "channel_gmv": 105894.73,
+      "tx_count": 1320
+    },
+    {
+      "company_name": "Continental Floral CA LLC",
+      "account_id": "0011L00002dFBf0QAG",
+      "sales_channel": "Offline",
+      "channel_gmv": 5141901.29,
+      "tx_count": 5154
+    },
+    {
+      "company_name": "Continental Floral FL LLC",
+      "account_id": "0011L00002dFBcfQAG",
+      "sales_channel": "Offline",
+      "channel_gmv": 1904671.23,
+      "tx_count": 894
+    },
+    {
+      "company_name": "Continental Floral LLC",
+      "account_id": "001G000001DW4OtIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 20289755.52,
+      "tx_count": 42328
+    },
+    {
+      "company_name": "Continental Floral LLC",
+      "account_id": "001G000001DW4OtIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 386429.32,
+      "tx_count": 2873
+    },
+    {
+      "company_name": "Continental Floral LLC",
+      "account_id": "001G000001DW4OtIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 191411.45,
+      "tx_count": 2288
+    },
+    {
+      "company_name": "Continental Floral LLC",
+      "account_id": "001G000001DW4OtIAL",
+      "sales_channel": "API",
+      "channel_gmv": 25917.44,
+      "tx_count": 389
+    },
+    {
+      "company_name": "Continental Floral OR LLC",
+      "account_id": "0011L00002fOqChQAK",
+      "sales_channel": "Offline",
+      "channel_gmv": 2901756.94,
+      "tx_count": 1943
+    },
+    {
+      "company_name": "Continental Floral PNW LLC",
+      "account_id": "0014p00001lOEl6AAG",
+      "sales_channel": "Offline",
+      "channel_gmv": 5811524.08,
+      "tx_count": 2754
+    },
+    {
+      "company_name": "Continental Flowers",
+      "account_id": "001G000001UTWVuIAP",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 2190850.47,
+      "tx_count": 26210
+    },
+    {
+      "company_name": "Continental Flowers",
+      "account_id": "001G000001UTWVuIAP",
+      "sales_channel": "K2K",
+      "channel_gmv": 1309077.96,
+      "tx_count": 15717
+    },
+    {
+      "company_name": "Continental Flowers",
+      "account_id": "001G000001UTWVuIAP",
+      "sales_channel": "API",
+      "channel_gmv": 63099.31,
+      "tx_count": 998
+    },
+    {
+      "company_name": "Continental Flowers",
+      "account_id": "001G000001UTWVuIAP",
+      "sales_channel": "Offline",
+      "channel_gmv": 222.0,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Coquette Roses",
+      "account_id": "001VL00000bzq64YAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 19039.66,
+      "tx_count": 94
+    },
+    {
+      "company_name": "Coward & Glisson Whsl. Flst.",
+      "account_id": "001G000001buCmhIAE",
+      "sales_channel": "K2K",
+      "channel_gmv": 2087.7,
+      "tx_count": 19
+    },
+    {
+      "company_name": "DC FLOWERS DIRECT",
+      "account_id": "0014p000020wmRFAAY",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 37516.76,
+      "tx_count": 268
+    },
+    {
+      "company_name": "DP Flowers Corp",
+      "account_id": "00116000026VeXIAA0",
+      "sales_channel": "Offline",
+      "channel_gmv": 555418.22,
+      "tx_count": 1732
+    },
+    {
+      "company_name": "DP Flowers Corp",
+      "account_id": "00116000026VeXIAA0",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 353907.03,
+      "tx_count": 1407
+    },
+    {
+      "company_name": "DP Flowers Corp",
+      "account_id": "00116000026VeXIAA0",
+      "sales_channel": "K2K",
+      "channel_gmv": 61330.75,
+      "tx_count": 280
+    },
+    {
+      "company_name": "DVFLORA SEWELL",
+      "account_id": "001G000001TskmvIAB",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 16176.65,
+      "tx_count": 126
+    },
+    {
+      "company_name": "Del Tropico/ Ameriblooms",
+      "account_id": "001VL00000IFWlxYAH",
+      "sales_channel": "Offline",
+      "channel_gmv": 6322008.71,
+      "tx_count": 59127
+    },
+    {
+      "company_name": "Details Direct",
+      "account_id": "001VL00000q86lRYAQ",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 12177.73,
+      "tx_count": 58
+    },
+    {
+      "company_name": "Details Direct - Core",
+      "account_id": "00116000020OMNhAAO",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 23964.89,
+      "tx_count": 171
+    },
+    {
+      "company_name": "Details Direct - Core",
+      "account_id": "00116000020OMNhAAO",
+      "sales_channel": "Offline",
+      "channel_gmv": 241.02,
+      "tx_count": 2
+    },
+    {
+      "company_name": "Direct Farms, LLC",
+      "account_id": "001G000001DW4P4IAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 4258043.03,
+      "tx_count": 18668
+    },
+    {
+      "company_name": "Direct Farms, LLC",
+      "account_id": "001G000001DW4P4IAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 2371.35,
+      "tx_count": 57
+    },
+    {
+      "company_name": "Direct Farms, LLC",
+      "account_id": "001G000001DW4P4IAL",
+      "sales_channel": "API",
+      "channel_gmv": 326.5,
+      "tx_count": 6
+    },
+    {
+      "company_name": "Direct Farms, LLC",
+      "account_id": "001G000001DW4P4IAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 227.5,
+      "tx_count": 5
+    },
+    {
+      "company_name": "Dr Delphinium",
+      "account_id": "0014p0000220O7wAAE",
+      "sales_channel": "Offline",
+      "channel_gmv": 1435965.77,
+      "tx_count": 6679
+    },
+    {
+      "company_name": "Dramm & Echter, Inc",
+      "account_id": "001G000001DW4PAIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 6234765.95,
+      "tx_count": 97158
+    },
+    {
+      "company_name": "Dramm & Echter, Inc",
+      "account_id": "001G000001DW4PAIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 798.0,
+      "tx_count": 12
+    },
+    {
+      "company_name": "Dreaming Roses Corp",
+      "account_id": "0011L00002WOF1LQAX",
+      "sales_channel": "Offline",
+      "channel_gmv": 318719.1,
+      "tx_count": 2068
+    },
+    {
+      "company_name": "Dreaming Roses Corp",
+      "account_id": "0011L00002WOF1LQAX",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 23060.0,
+      "tx_count": 145
+    },
+    {
+      "company_name": "Dreaming Roses Corp",
+      "account_id": "0011L00002WOF1LQAX",
+      "sales_channel": "K2K",
+      "channel_gmv": 5614.0,
+      "tx_count": 38
+    },
+    {
+      "company_name": "Dreisbach Wholesale",
+      "account_id": "001G000001DW4PBIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 25401.53,
+      "tx_count": 146
+    },
+    {
+      "company_name": "Dynamic Farms",
+      "account_id": "0011L00002Sbi4xQAB",
+      "sales_channel": "Offline",
+      "channel_gmv": 252214.16,
+      "tx_count": 1657
+    },
+    {
+      "company_name": "Dynamic Farms",
+      "account_id": "0011L00002Sbi4xQAB",
+      "sales_channel": "API",
+      "channel_gmv": 15021.14,
+      "tx_count": 180
+    },
+    {
+      "company_name": "Dynamic Farms",
+      "account_id": "0011L00002Sbi4xQAB",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 2807.25,
+      "tx_count": 30
+    },
+    {
+      "company_name": "ECOROSES LLC",
+      "account_id": "0011600001mLv33AAC",
+      "sales_channel": "Offline",
+      "channel_gmv": 455853.17,
+      "tx_count": 3948
+    },
+    {
+      "company_name": "ECOROSES LLC",
+      "account_id": "0011600001mLv33AAC",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 139054.9,
+      "tx_count": 1264
+    },
+    {
+      "company_name": "ECOROSES LLC",
+      "account_id": "0011600001mLv33AAC",
+      "sales_channel": "K2K",
+      "channel_gmv": 75140.94,
+      "tx_count": 712
+    },
+    {
+      "company_name": "ECOROSES LLC",
+      "account_id": "0011600001mLv33AAC",
+      "sales_channel": "API",
+      "channel_gmv": 12389.6,
+      "tx_count": 139
+    },
+    {
+      "company_name": "EF FLOWERS",
+      "account_id": "001G000001DW4PPIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 915888.78,
+      "tx_count": 6112
+    },
+    {
+      "company_name": "EF FLOWERS",
+      "account_id": "001G000001DW4PPIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 724.5,
+      "tx_count": 4
+    },
+    {
+      "company_name": "EPIC FARMS USA LLC",
+      "account_id": "0011600001zrCXXAA2",
+      "sales_channel": "Offline",
+      "channel_gmv": 152596.33,
+      "tx_count": 891
+    },
+    {
+      "company_name": "EQ Blooms by Flodecol",
+      "account_id": "0011600001lgrcKAAQ",
+      "sales_channel": "Offline",
+      "channel_gmv": 49639.55,
+      "tx_count": 295
+    },
+    {
+      "company_name": "EQ Blooms by Flodecol",
+      "account_id": "0011600001lgrcKAAQ",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 46519.0,
+      "tx_count": 320
+    },
+    {
+      "company_name": "EQ Blooms by Flodecol",
+      "account_id": "0011600001lgrcKAAQ",
+      "sales_channel": "K2K",
+      "channel_gmv": 24695.22,
+      "tx_count": 251
+    },
+    {
+      "company_name": "EQR USA",
+      "account_id": "001G000001DW4PKIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 43821354.59,
+      "tx_count": 131845
+    },
+    {
+      "company_name": "EQR USA",
+      "account_id": "001G000001DW4PKIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 365072.05,
+      "tx_count": 3488
+    },
+    {
+      "company_name": "EQR USA",
+      "account_id": "001G000001DW4PKIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 227175.57,
+      "tx_count": 1990
+    },
+    {
+      "company_name": "EQR USA",
+      "account_id": "001G000001DW4PKIA1",
+      "sales_channel": "API",
+      "channel_gmv": 212597.94,
+      "tx_count": 2182
+    },
+    {
+      "company_name": "Ecoroses - Floropolis",
+      "account_id": "001VL00000gC7ITYA0",
+      "sales_channel": "K2K",
+      "channel_gmv": 2691.9,
+      "tx_count": 40
+    },
+    {
+      "company_name": "Ecuador's Origin Product",
+      "account_id": "0014p00001yqo0aAAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 3170157.09,
+      "tx_count": 8405
+    },
+    {
+      "company_name": "Ensign Wholesale Flower Market",
+      "account_id": "0014p000022HSvrAAG",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 38415.05,
+      "tx_count": 298
+    },
+    {
+      "company_name": "Equiflor LLC",
+      "account_id": "001G000001DW4OEIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 412082.01,
+      "tx_count": 4445
+    },
+    {
+      "company_name": "Equiflor LLC",
+      "account_id": "001G000001DW4OEIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 320598.26,
+      "tx_count": 3459
+    },
+    {
+      "company_name": "Everflorals",
+      "account_id": "001VL00000gB1JzYAK",
+      "sales_channel": "Offline",
+      "channel_gmv": 79.8,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Evergreen Plant Company",
+      "account_id": "0014p000021IdyjAAC",
+      "sales_channel": "Offline",
+      "channel_gmv": 2212746.62,
+      "tx_count": 1675
+    },
+    {
+      "company_name": "Exclusive Wholesale",
+      "account_id": "0011600001uSZXFAA4",
+      "sales_channel": "K2K",
+      "channel_gmv": 61712.92,
+      "tx_count": 577
+    },
+    {
+      "company_name": "Expo Flora S.A.",
+      "account_id": "001VL00000mJQuTYAW",
+      "sales_channel": "Offline",
+      "channel_gmv": 268074.17,
+      "tx_count": 881
+    },
+    {
+      "company_name": "Expobloom - BOG",
+      "account_id": "001VL00000kXPUzYAO",
+      "sales_channel": "K2K",
+      "channel_gmv": 110.0,
+      "tx_count": 2
+    },
+    {
+      "company_name": "FALL RIVER WHOLESALE",
+      "account_id": "001G000001DW4PQIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 665.8,
+      "tx_count": 8
+    },
+    {
+      "company_name": "FGS.Flowers.MIA",
+      "account_id": "001VL00000jjhrhYAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 31219.73,
+      "tx_count": 145
+    },
+    {
+      "company_name": "FGS.Flowers.MIA",
+      "account_id": "001VL00000jjhrhYAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 331.6,
+      "tx_count": 2
+    },
+    {
+      "company_name": "FGS.Flowers.MIA",
+      "account_id": "001VL00000jjhrhYAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 64.0,
+      "tx_count": 1
+    },
+    {
+      "company_name": "FLEUPHORIA S.A.S",
+      "account_id": "0014p00001y6Ac0AAE",
+      "sales_channel": "Offline",
+      "channel_gmv": 3518939.5,
+      "tx_count": 30688
+    },
+    {
+      "company_name": "FLEURIGROS QUEBEC 1995 INC.",
+      "account_id": "0014p000022WUhzAAG",
+      "sales_channel": "K2K",
+      "channel_gmv": 204.0,
+      "tx_count": 2
+    },
+    {
+      "company_name": "FLORIAD- MONTREAL CANADA INC.",
+      "account_id": "001G000001DW4PkIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 4355.15,
+      "tx_count": 41
+    },
+    {
+      "company_name": "FLORISOL & COMPANY FLOWER TRADING LLC",
+      "account_id": "001G000001f8XFWIA2",
+      "sales_channel": "Offline",
+      "channel_gmv": 141009.69,
+      "tx_count": 1078
+    },
+    {
+      "company_name": "FLORISOL & COMPANY FLOWER TRADING LLC",
+      "account_id": "001G000001f8XFWIA2",
+      "sales_channel": "K2K",
+      "channel_gmv": 169.6,
+      "tx_count": 2
+    },
+    {
+      "company_name": "FLORISOL & COMPANY FLOWER TRADING LLC",
+      "account_id": "001G000001f8XFWIA2",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 0.0,
+      "tx_count": 1
+    },
+    {
+      "company_name": "FLORISOL& CO FLOWER TRADING LLC DBA MARVEL FLOWERS",
+      "account_id": "001G000001V8C6jIAF",
+      "sales_channel": "Offline",
+      "channel_gmv": 1426006.32,
+      "tx_count": 14430
+    },
+    {
+      "company_name": "FLOWERMART CORP",
+      "account_id": "0011L00002jVSxCQAW",
+      "sales_channel": "Offline",
+      "channel_gmv": 347816.38,
+      "tx_count": 3094
+    },
+    {
+      "company_name": "FLOWERMART CORP",
+      "account_id": "0011L00002jVSxCQAW",
+      "sales_channel": "K2K",
+      "channel_gmv": 3554.4,
+      "tx_count": 33
+    },
+    {
+      "company_name": "FLOWERMART CORP",
+      "account_id": "0011L00002jVSxCQAW",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 1871.41,
+      "tx_count": 24
+    },
+    {
+      "company_name": "FMI, LLC.-FL",
+      "account_id": "001G000001bQpeJIAS",
+      "sales_channel": "K2K",
+      "channel_gmv": 6070.66,
+      "tx_count": 74
+    },
+    {
+      "company_name": "FOB UIO -  Alma Spray / Agrinag / Natuflor",
+      "account_id": "001VL000006l9ajYAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 15815.92,
+      "tx_count": 251
+    },
+    {
+      "company_name": "FOB UIO -  Alma Spray / Agrinag / Natuflor",
+      "account_id": "001VL000006l9ajYAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 659.6,
+      "tx_count": 9
+    },
+    {
+      "company_name": "Faguaflowers Intl LLC",
+      "account_id": "0014p000022FEx7AAG",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 15999.41,
+      "tx_count": 100
+    },
+    {
+      "company_name": "Faguaflowers Intl LLC",
+      "account_id": "0014p000022FEx7AAG",
+      "sales_channel": "K2K",
+      "channel_gmv": 7063.56,
+      "tx_count": 34
+    },
+    {
+      "company_name": "Faguaflowers Intl LLC",
+      "account_id": "0014p000022FEx7AAG",
+      "sales_channel": "Offline",
+      "channel_gmv": 498.17,
+      "tx_count": 3
+    },
+    {
+      "company_name": "Fair Trade Floral Inc.",
+      "account_id": "0011600001uUyJlAAK",
+      "sales_channel": "Offline",
+      "channel_gmv": 2188744.99,
+      "tx_count": 28674
+    },
+    {
+      "company_name": "Farm Fresh Exports INC",
+      "account_id": "00116000020LCvJAAW",
+      "sales_channel": "Offline",
+      "channel_gmv": 1353854.96,
+      "tx_count": 8284
+    },
+    {
+      "company_name": "Farm To Canada",
+      "account_id": "001G000001DW4PTIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 4964163.15,
+      "tx_count": 20539
+    },
+    {
+      "company_name": "Farm To Canada",
+      "account_id": "001G000001DW4PTIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 989.3,
+      "tx_count": 8
+    },
+    {
+      "company_name": "Farms Connect",
+      "account_id": "0011L00002rEB34QAG",
+      "sales_channel": "Offline",
+      "channel_gmv": 1422078.46,
+      "tx_count": 4035
+    },
+    {
+      "company_name": "First Choice Floral",
+      "account_id": "00116000026WSexAAG",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 4984.3,
+      "tx_count": 36
+    },
+    {
+      "company_name": "Fletch Wholesale llc",
+      "account_id": "0014p00001so6ueAAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 112868.38,
+      "tx_count": 1201
+    },
+    {
+      "company_name": "FleuraMetz LA",
+      "account_id": "001VL00000L1QR0YAN",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 6157.71,
+      "tx_count": 54
+    },
+    {
+      "company_name": "FleuraMetz Montreal Ltd",
+      "account_id": "001VL00000KKWD8YAP",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 26605.6,
+      "tx_count": 188
+    },
+    {
+      "company_name": "FleuraMetz Montreal Ltd",
+      "account_id": "001VL00000KKWD8YAP",
+      "sales_channel": "K2K",
+      "channel_gmv": 6928.2,
+      "tx_count": 62
+    },
+    {
+      "company_name": "Fleurametz Chicago",
+      "account_id": "001VL00000L1SkaYAF",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 70279.19,
+      "tx_count": 480
+    },
+    {
+      "company_name": "Fleurametz USA NYC",
+      "account_id": "001VL00000JGRHRYA5",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 73855.05,
+      "tx_count": 566
+    },
+    {
+      "company_name": "Flodecol - Floropolis",
+      "account_id": "001VL00000gC6uHYAS",
+      "sales_channel": "K2K",
+      "channel_gmv": 2669.05,
+      "tx_count": 28
+    },
+    {
+      "company_name": "Flora Fresh Inc",
+      "account_id": "001G000001TsqcLIAR",
+      "sales_channel": "Offline",
+      "channel_gmv": 5524062.92,
+      "tx_count": 175360
+    },
+    {
+      "company_name": "Flora Fresh Inc",
+      "account_id": "001G000001TsqcLIAR",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 31078.35,
+      "tx_count": 809
+    },
+    {
+      "company_name": "FloraCo, Inc",
+      "account_id": "0011L000029aO9sQAE",
+      "sales_channel": "Offline",
+      "channel_gmv": 259763.0,
+      "tx_count": 1459
+    },
+    {
+      "company_name": "FloraCo, Inc",
+      "account_id": "0011L000029aO9sQAE",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 5224.24,
+      "tx_count": 53
+    },
+    {
+      "company_name": "FloraCo, Inc",
+      "account_id": "0011L000029aO9sQAE",
+      "sales_channel": "K2K",
+      "channel_gmv": 3698.5,
+      "tx_count": 26
+    },
+    {
+      "company_name": "FloraLink",
+      "account_id": "0011600001ncRipAAE",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 3961009.98,
+      "tx_count": 44921
+    },
+    {
+      "company_name": "Florabundance.",
+      "account_id": "001G000001DW4PaIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 172141.36,
+      "tx_count": 1786
+    },
+    {
+      "company_name": "Floral Chain Direct",
+      "account_id": "0011600001uUbL8AAK",
+      "sales_channel": "Offline",
+      "channel_gmv": 4889776.86,
+      "tx_count": 26989
+    },
+    {
+      "company_name": "Floral Chain Direct",
+      "account_id": "0011600001uUbL8AAK",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 669944.82,
+      "tx_count": 9273
+    },
+    {
+      "company_name": "Floral Chain Direct",
+      "account_id": "0011600001uUbL8AAK",
+      "sales_channel": "K2K",
+      "channel_gmv": 361955.64,
+      "tx_count": 5140
+    },
+    {
+      "company_name": "Floral Cooperative Purchasing Group LLC",
+      "account_id": "001G000001Tssa3IAB",
+      "sales_channel": "Offline",
+      "channel_gmv": 11007.36,
+      "tx_count": 390
+    },
+    {
+      "company_name": "Floral Importers and Distributors Inc. /Buds",
+      "account_id": "0014p0000220SneAAE",
+      "sales_channel": "K2K",
+      "channel_gmv": 1062.5,
+      "tx_count": 10
+    },
+    {
+      "company_name": "Floramix, Inc.",
+      "account_id": "0014p00001ueJDCAA2",
+      "sales_channel": "Offline",
+      "channel_gmv": 468525.77,
+      "tx_count": 4763
+    },
+    {
+      "company_name": "Floreco, Inc",
+      "account_id": "001G000001DW4PgIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 1466604.94,
+      "tx_count": 12779
+    },
+    {
+      "company_name": "Floreco, Inc",
+      "account_id": "001G000001DW4PgIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 92497.72,
+      "tx_count": 903
+    },
+    {
+      "company_name": "Floreco, Inc",
+      "account_id": "001G000001DW4PgIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 31012.7,
+      "tx_count": 314
+    },
+    {
+      "company_name": "Floreco, Inc",
+      "account_id": "001G000001DW4PgIAL",
+      "sales_channel": "API",
+      "channel_gmv": 21090.63,
+      "tx_count": 236
+    },
+    {
+      "company_name": "Florens Group LLC",
+      "account_id": "001VL00000ndtN0YAI",
+      "sales_channel": "Offline",
+      "channel_gmv": 10464.88,
+      "tx_count": 89
+    },
+    {
+      "company_name": "Florens Group LLC",
+      "account_id": "001VL00000ndtN0YAI",
+      "sales_channel": "K2K",
+      "channel_gmv": 2332.04,
+      "tx_count": 19
+    },
+    {
+      "company_name": "Florens Group LLC",
+      "account_id": "001VL00000ndtN0YAI",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 459.2,
+      "tx_count": 4
+    },
+    {
+      "company_name": "Flores Silvestres",
+      "account_id": "0011600001uRrj9AAC",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 98.4,
+      "tx_count": 4
+    },
+    {
+      "company_name": "Flores de la Hacienda",
+      "account_id": "0014p00001zAFqOAAW",
+      "sales_channel": "Offline",
+      "channel_gmv": 7627.45,
+      "tx_count": 36
+    },
+    {
+      "company_name": "Flores de la Hacienda",
+      "account_id": "0014p00001zAFqOAAW",
+      "sales_channel": "K2K",
+      "channel_gmv": 0.0,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Flores de la Hacienda",
+      "account_id": "0014p00001zAFqOAAW",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 0.0,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Florimex Toronto Corp.",
+      "account_id": "0011L000027XBWKQA4",
+      "sales_channel": "Offline",
+      "channel_gmv": 7880413.87,
+      "tx_count": 35108
+    },
+    {
+      "company_name": "Florimex Toronto Corp.",
+      "account_id": "0011L000027XBWKQA4",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 218768.97,
+      "tx_count": 1514
+    },
+    {
+      "company_name": "Floristcentric, LLC",
+      "account_id": "0011L00002rCC5zQAG",
+      "sales_channel": "Offline",
+      "channel_gmv": 801712.93,
+      "tx_count": 19221
+    },
+    {
+      "company_name": "Floristcentric, LLC",
+      "account_id": "0011L00002rCC5zQAG",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 62181.65,
+      "tx_count": 2716
+    },
+    {
+      "company_name": "Floropolis",
+      "account_id": "001VL00000bryvBYAQ",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 8546.16,
+      "tx_count": 40
+    },
+    {
+      "company_name": "Floropolis",
+      "account_id": "001VL00000bryvBYAQ",
+      "sales_channel": "Offline",
+      "channel_gmv": 800.0,
+      "tx_count": 3
+    },
+    {
+      "company_name": "Flower List",
+      "account_id": "001VL00000acaTxYAI",
+      "sales_channel": "Offline",
+      "channel_gmv": 472874.21,
+      "tx_count": 1702
+    },
+    {
+      "company_name": "Flowerist LLC",
+      "account_id": "001VL00000HrwgpYAB",
+      "sales_channel": "Offline",
+      "channel_gmv": 164015.78,
+      "tx_count": 1272
+    },
+    {
+      "company_name": "Flowerist LLC",
+      "account_id": "001VL00000HrwgpYAB",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 1556.25,
+      "tx_count": 18
+    },
+    {
+      "company_name": "Flowerist LLC",
+      "account_id": "001VL00000HrwgpYAB",
+      "sales_channel": "K2K",
+      "channel_gmv": 153.75,
+      "tx_count": 2
+    },
+    {
+      "company_name": "Flowers Direct Inc",
+      "account_id": "00116000023sYATAA2",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 201236.48,
+      "tx_count": 1555
+    },
+    {
+      "company_name": "Forest Flowers",
+      "account_id": "00116000026Vdd4AAC",
+      "sales_channel": "Offline",
+      "channel_gmv": 792231.11,
+      "tx_count": 1662
+    },
+    {
+      "company_name": "Frank Adams Wholesale Florist",
+      "account_id": "0011600001uTH0wAAG",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 41906.58,
+      "tx_count": 345
+    },
+    {
+      "company_name": "Fresca Farms",
+      "account_id": "001G000001DW4PzIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 30574000.76,
+      "tx_count": 196726
+    },
+    {
+      "company_name": "Fresca Farms",
+      "account_id": "001G000001DW4PzIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 4732293.34,
+      "tx_count": 56885
+    },
+    {
+      "company_name": "Fresca Farms",
+      "account_id": "001G000001DW4PzIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 1970423.14,
+      "tx_count": 22790
+    },
+    {
+      "company_name": "Fresca Farms",
+      "account_id": "001G000001DW4PzIAL",
+      "sales_channel": "API",
+      "channel_gmv": 266871.2,
+      "tx_count": 3752
+    },
+    {
+      "company_name": "GOMEZ B.V.",
+      "account_id": "0014p00001zanUFAAY",
+      "sales_channel": "Offline",
+      "channel_gmv": 4152592.14,
+      "tx_count": 22410
+    },
+    {
+      "company_name": "GREEN OCEAN LLC",
+      "account_id": "0014p000021zHQjAAM",
+      "sales_channel": "Offline",
+      "channel_gmv": 273103.71,
+      "tx_count": 2250
+    },
+    {
+      "company_name": "GRUPO DEL PACIFICO",
+      "account_id": "0011L00002IDjZOQA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 12870.0,
+      "tx_count": 130
+    },
+    {
+      "company_name": "Gala Roses",
+      "account_id": "001G000001DW4PFIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 19269673.81,
+      "tx_count": 87272
+    },
+    {
+      "company_name": "Gala Roses",
+      "account_id": "001G000001DW4PFIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 669011.75,
+      "tx_count": 6314
+    },
+    {
+      "company_name": "Gala Roses",
+      "account_id": "001G000001DW4PFIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 451357.06,
+      "tx_count": 4809
+    },
+    {
+      "company_name": "Gala Roses",
+      "account_id": "001G000001DW4PFIA1",
+      "sales_channel": "API",
+      "channel_gmv": 31797.0,
+      "tx_count": 163
+    },
+    {
+      "company_name": "Galleria Farms",
+      "account_id": "001G000001bpcuyIAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 5698776.29,
+      "tx_count": 44485
+    },
+    {
+      "company_name": "Galleria Farms",
+      "account_id": "001G000001bpcuyIAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 363689.9,
+      "tx_count": 4467
+    },
+    {
+      "company_name": "Galleria Farms",
+      "account_id": "001G000001bpcuyIAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 173207.68,
+      "tx_count": 2102
+    },
+    {
+      "company_name": "Galleria Farms",
+      "account_id": "001G000001bpcuyIAA",
+      "sales_channel": "API",
+      "channel_gmv": 152562.23,
+      "tx_count": 2026
+    },
+    {
+      "company_name": "Gardens America Inc.",
+      "account_id": "001G000001DW4Q6IAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 4251000.62,
+      "tx_count": 42039
+    },
+    {
+      "company_name": "Gardens America Inc.",
+      "account_id": "001G000001DW4Q6IAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 464168.69,
+      "tx_count": 6193
+    },
+    {
+      "company_name": "Gardens America Inc.",
+      "account_id": "001G000001DW4Q6IAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 200097.57,
+      "tx_count": 2572
+    },
+    {
+      "company_name": "Gardens America Inc.",
+      "account_id": "001G000001DW4Q6IAL",
+      "sales_channel": "API",
+      "channel_gmv": 609.89,
+      "tx_count": 10
+    },
+    {
+      "company_name": "Gassafy Wholesale Florist Inc",
+      "account_id": "0011600001lfVtAAAU",
+      "sales_channel": "K2K",
+      "channel_gmv": 50208.99,
+      "tx_count": 638
+    },
+    {
+      "company_name": "Georgia State Floral Distributors",
+      "account_id": "001G000001TtDnBIAV",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 178509.29,
+      "tx_count": 1235
+    },
+    {
+      "company_name": "Global Bouquet, LLC",
+      "account_id": "0011L00002DO9nVQAT",
+      "sales_channel": "Offline",
+      "channel_gmv": 153956.48,
+      "tx_count": 877
+    },
+    {
+      "company_name": "Global Flowers",
+      "account_id": "001160000223WK5AAM",
+      "sales_channel": "Offline",
+      "channel_gmv": 75955.0,
+      "tx_count": 491
+    },
+    {
+      "company_name": "Global Flowers",
+      "account_id": "001160000223WK5AAM",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 34411.48,
+      "tx_count": 240
+    },
+    {
+      "company_name": "Global Flowers",
+      "account_id": "001160000223WK5AAM",
+      "sales_channel": "K2K",
+      "channel_gmv": 9136.83,
+      "tx_count": 79
+    },
+    {
+      "company_name": "Golden Flowers",
+      "account_id": "001G000001DW4QCIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 400549.51,
+      "tx_count": 5607
+    },
+    {
+      "company_name": "Golden Flowers",
+      "account_id": "001G000001DW4QCIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 182200.77,
+      "tx_count": 2873
+    },
+    {
+      "company_name": "Golden Flowers",
+      "account_id": "001G000001DW4QCIA1",
+      "sales_channel": "API",
+      "channel_gmv": 34367.85,
+      "tx_count": 561
+    },
+    {
+      "company_name": "Golden Flowers",
+      "account_id": "001G000001DW4QCIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 252.7,
+      "tx_count": 2
+    },
+    {
+      "company_name": "Green Bouquet LLC",
+      "account_id": "001VL00000GL2fAYAT",
+      "sales_channel": "Offline",
+      "channel_gmv": 2949181.45,
+      "tx_count": 2318
+    },
+    {
+      "company_name": "Green Bouquet LLC",
+      "account_id": "001VL00000GL2fAYAT",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 51.0,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Greens and Flowers Connection",
+      "account_id": "0011L00002BInj0QAD",
+      "sales_channel": "Offline",
+      "channel_gmv": 1212566.61,
+      "tx_count": 5698
+    },
+    {
+      "company_name": "Greens and Flowers Connection",
+      "account_id": "0011L00002BInj0QAD",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 65092.97,
+      "tx_count": 504
+    },
+    {
+      "company_name": "Greens and Flowers Connection",
+      "account_id": "0011L00002BInj0QAD",
+      "sales_channel": "K2K",
+      "channel_gmv": 10740.91,
+      "tx_count": 83
+    },
+    {
+      "company_name": "Grupo Vegaflor - Medellin",
+      "account_id": "0011600001rj9yaAAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 204.0,
+      "tx_count": 6
+    },
+    {
+      "company_name": "Gypso S.A. UIO",
+      "account_id": "0011L000028VL26QAG",
+      "sales_channel": "K2K",
+      "channel_gmv": 96.0,
+      "tx_count": 2
+    },
+    {
+      "company_name": "Gypso S.A. UIO",
+      "account_id": "0011L000028VL26QAG",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 45.6,
+      "tx_count": 1
+    },
+    {
+      "company_name": "H&F Greens Inc (Mariposa Growers)",
+      "account_id": "00116000023rUnKAAU",
+      "sales_channel": "Offline",
+      "channel_gmv": 3056599.78,
+      "tx_count": 4205
+    },
+    {
+      "company_name": "H&T Wholesale Flowers",
+      "account_id": "0011L00002p55GMQAY",
+      "sales_channel": "Offline",
+      "channel_gmv": 4357993.44,
+      "tx_count": 119073
+    },
+    {
+      "company_name": "H&T Wholesale Flowers",
+      "account_id": "0011L00002p55GMQAY",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 25551.95,
+      "tx_count": 448
+    },
+    {
+      "company_name": "HALL´S - BIRMINGHAM",
+      "account_id": "0011600001uScxFAAS",
+      "sales_channel": "K2K",
+      "channel_gmv": 138392.33,
+      "tx_count": 1325
+    },
+    {
+      "company_name": "HANAYA FARMS",
+      "account_id": "00116000025sMRVAA2",
+      "sales_channel": "Offline",
+      "channel_gmv": 46827.35,
+      "tx_count": 245
+    },
+    {
+      "company_name": "HARDIN´S WHLSE - LIBERTY",
+      "account_id": "001G000001GQ6u4IAD",
+      "sales_channel": "K2K",
+      "channel_gmv": 261284.75,
+      "tx_count": 2245
+    },
+    {
+      "company_name": "HIRE`S BEST FLOWERS",
+      "account_id": "0011600001uSd7yAAC",
+      "sales_channel": "K2K",
+      "channel_gmv": 23160.48,
+      "tx_count": 293
+    },
+    {
+      "company_name": "Hall´s Wholesale Florist Theodore",
+      "account_id": "0011600001lfdddAAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 408.15,
+      "tx_count": 4
+    },
+    {
+      "company_name": "Hana Farms Inc.",
+      "account_id": "001VL00000Vp156YAB",
+      "sales_channel": "Offline",
+      "channel_gmv": 106196.6,
+      "tx_count": 540
+    },
+    {
+      "company_name": "Hana Farms Inc.",
+      "account_id": "001VL00000Vp156YAB",
+      "sales_channel": "K2K",
+      "channel_gmv": 14653.25,
+      "tx_count": 162
+    },
+    {
+      "company_name": "Hana Farms Inc.",
+      "account_id": "001VL00000Vp156YAB",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 3602.6,
+      "tx_count": 37
+    },
+    {
+      "company_name": "Herradura Growers",
+      "account_id": "001G000001XIVGOIA5",
+      "sales_channel": "Offline",
+      "channel_gmv": 1034258.61,
+      "tx_count": 7003
+    },
+    {
+      "company_name": "Hoja Verde - Rosen Financial",
+      "account_id": "001VL000007zem5YAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 202069.25,
+      "tx_count": 1524
+    },
+    {
+      "company_name": "Honey Bee Wholesale Florist, LLC",
+      "account_id": "0014p000022R9RlAAK",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 97605.18,
+      "tx_count": 796
+    },
+    {
+      "company_name": "Hortensias Cabogana Cia Ltda",
+      "account_id": "001VL000005qn9pYAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 362.15,
+      "tx_count": 4
+    },
+    {
+      "company_name": "Hortensias Cabogana Cia Ltda",
+      "account_id": "001VL000005qn9pYAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 316.27,
+      "tx_count": 5
+    },
+    {
+      "company_name": "Hortensias Cabogana Cia Ltda",
+      "account_id": "001VL000005qn9pYAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 212.5,
+      "tx_count": 2
+    },
+    {
+      "company_name": "Hyperactive Farms Inc.",
+      "account_id": "0011L00002eqDgTQAU",
+      "sales_channel": "K2K",
+      "channel_gmv": 1887.4,
+      "tx_count": 15
+    },
+    {
+      "company_name": "IKEBANA CO SAS",
+      "account_id": "0014p00001xzL4bAAE",
+      "sales_channel": "Offline",
+      "channel_gmv": 1256587.41,
+      "tx_count": 12078
+    },
+    {
+      "company_name": "INTERNATIONAL TRADING AND SERVICES INC",
+      "account_id": "0011600001uUw5EAAS",
+      "sales_channel": "Offline",
+      "channel_gmv": 2228984.61,
+      "tx_count": 6094
+    },
+    {
+      "company_name": "IRIS ROSES LLC",
+      "account_id": "0014p00001v3oKUAAY",
+      "sales_channel": "Offline",
+      "channel_gmv": 128349.83,
+      "tx_count": 634
+    },
+    {
+      "company_name": "IRIS ROSES LLC",
+      "account_id": "0014p00001v3oKUAAY",
+      "sales_channel": "K2K",
+      "channel_gmv": 26462.79,
+      "tx_count": 199
+    },
+    {
+      "company_name": "IRIS ROSES LLC",
+      "account_id": "0014p00001v3oKUAAY",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 25441.25,
+      "tx_count": 221
+    },
+    {
+      "company_name": "Interflor LLC",
+      "account_id": "0011L00002kvsqiQAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 480406.88,
+      "tx_count": 3738
+    },
+    {
+      "company_name": "Interflor LLC",
+      "account_id": "0011L00002kvsqiQAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 3520.47,
+      "tx_count": 57
+    },
+    {
+      "company_name": "Interflor LLC",
+      "account_id": "0011L00002kvsqiQAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 1330.84,
+      "tx_count": 28
+    },
+    {
+      "company_name": "International Fresh Group LLC",
+      "account_id": "0014p000022Vab1AAC",
+      "sales_channel": "Offline",
+      "channel_gmv": 8364.13,
+      "tx_count": 47
+    },
+    {
+      "company_name": "International Fresh Group LLC",
+      "account_id": "0014p000022Vab1AAC",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 205.8,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Inversiones Napy S.A",
+      "account_id": "0011600001uRssiAAC",
+      "sales_channel": "Offline",
+      "channel_gmv": 278312.57,
+      "tx_count": 1069
+    },
+    {
+      "company_name": "Inversiones Napy S.A",
+      "account_id": "0011600001uRssiAAC",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 297.0,
+      "tx_count": 2
+    },
+    {
+      "company_name": "J&E Greens",
+      "account_id": "0014p00001zAsAQAA0",
+      "sales_channel": "Offline",
+      "channel_gmv": 685502.28,
+      "tx_count": 4389
+    },
+    {
+      "company_name": "J&E Greens",
+      "account_id": "0014p00001zAsAQAA0",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 137314.54,
+      "tx_count": 1028
+    },
+    {
+      "company_name": "J&E Greens",
+      "account_id": "0014p00001zAsAQAA0",
+      "sales_channel": "K2K",
+      "channel_gmv": 17073.51,
+      "tx_count": 171
+    },
+    {
+      "company_name": "JFS Wholesale Floral",
+      "account_id": "00116000021bflwAAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 1904930.3,
+      "tx_count": 47452
+    },
+    {
+      "company_name": "JFS Wholesale Floral",
+      "account_id": "00116000021bflwAAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 144.08,
+      "tx_count": 6
+    },
+    {
+      "company_name": "JOHNSENS WHOLESALE FLORIST",
+      "account_id": "0011600001lhbwBAAQ",
+      "sales_channel": "K2K",
+      "channel_gmv": 141114.58,
+      "tx_count": 1280
+    },
+    {
+      "company_name": "Jacksonville Flower Market",
+      "account_id": "0011L00002Y7yX7QAJ",
+      "sales_channel": "K2K",
+      "channel_gmv": 301942.45,
+      "tx_count": 3526
+    },
+    {
+      "company_name": "Jetty USA LLC",
+      "account_id": "0011L00001zyz09QAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 3324.25,
+      "tx_count": 28
+    },
+    {
+      "company_name": "Jetty USA LLC",
+      "account_id": "0011L00001zyz09QAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 1067.8,
+      "tx_count": 6
+    },
+    {
+      "company_name": "KBC Cooler Account",
+      "account_id": "001G000001aIv6EIAS",
+      "sales_channel": "Offline",
+      "channel_gmv": 6342828.29,
+      "tx_count": 44251
+    },
+    {
+      "company_name": "KBC Cooler Account",
+      "account_id": "001G000001aIv6EIAS",
+      "sales_channel": "K2K",
+      "channel_gmv": 972050.89,
+      "tx_count": 8855
+    },
+    {
+      "company_name": "KBC Cooler Account",
+      "account_id": "001G000001aIv6EIAS",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 29512.46,
+      "tx_count": 295
+    },
+    {
+      "company_name": "KD & Company",
+      "account_id": "00116000027KCBbAAO",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 2655.97,
+      "tx_count": 27
+    },
+    {
+      "company_name": "Kennicott Brothers Company",
+      "account_id": "001G000001H3CrIIAV",
+      "sales_channel": "Offline",
+      "channel_gmv": 55318179.56,
+      "tx_count": 1032002
+    },
+    {
+      "company_name": "Kennicott Brothers Company",
+      "account_id": "001G000001H3CrIIAV",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 6320900.57,
+      "tx_count": 52854
+    },
+    {
+      "company_name": "Kennicott Brothers Company",
+      "account_id": "001G000001H3CrIIAV",
+      "sales_channel": "API",
+      "channel_gmv": 2417528.62,
+      "tx_count": 22327
+    },
+    {
+      "company_name": "Kennicott Brothers West",
+      "account_id": "001VL00000at0XJYAY",
+      "sales_channel": "K2K",
+      "channel_gmv": 130484.51,
+      "tx_count": 511
+    },
+    {
+      "company_name": "Kennicott Brothers West",
+      "account_id": "001VL00000at0XJYAY",
+      "sales_channel": "Offline",
+      "channel_gmv": 15217.55,
+      "tx_count": 41
+    },
+    {
+      "company_name": "Kennicott Kuts",
+      "account_id": "001G000001DW4QdIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 169111.35,
+      "tx_count": 826
+    },
+    {
+      "company_name": "Kennicott Kuts",
+      "account_id": "001G000001DW4QdIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 7347.5,
+      "tx_count": 66
+    },
+    {
+      "company_name": "Kennicott Kuts",
+      "account_id": "001G000001DW4QdIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 756.0,
+      "tx_count": 5
+    },
+    {
+      "company_name": "Kontikiflor BV",
+      "account_id": "001VL00000PwohBYAR",
+      "sales_channel": "Offline",
+      "channel_gmv": 12759.53,
+      "tx_count": 54
+    },
+    {
+      "company_name": "LA TOSCANA FARMS",
+      "account_id": "001G000001fjeOcIAI",
+      "sales_channel": "Offline",
+      "channel_gmv": 365265.47,
+      "tx_count": 3737
+    },
+    {
+      "company_name": "LA TOSCANA FARMS",
+      "account_id": "001G000001fjeOcIAI",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 99462.2,
+      "tx_count": 1079
+    },
+    {
+      "company_name": "LA TOSCANA FARMS",
+      "account_id": "001G000001fjeOcIAI",
+      "sales_channel": "K2K",
+      "channel_gmv": 39001.22,
+      "tx_count": 440
+    },
+    {
+      "company_name": "LD Trading/ Lawrence Developments Inc.",
+      "account_id": "0011L000028VnGrQAK",
+      "sales_channel": "K2K",
+      "channel_gmv": 168843.1,
+      "tx_count": 1730
+    },
+    {
+      "company_name": "LIHML INC Fayetteville - #01235 GF Rep Kareena 19",
+      "account_id": "001G000001DW4QoIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 2369.83,
+      "tx_count": 26
+    },
+    {
+      "company_name": "Lartisan Roses LLC",
+      "account_id": "001VL00000n94eUYAQ",
+      "sales_channel": "Offline",
+      "channel_gmv": 21292.01,
+      "tx_count": 254
+    },
+    {
+      "company_name": "Lartisan Roses LLC",
+      "account_id": "001VL00000n94eUYAQ",
+      "sales_channel": "K2K",
+      "channel_gmv": 3257.75,
+      "tx_count": 37
+    },
+    {
+      "company_name": "Lartisan Roses LLC",
+      "account_id": "001VL00000n94eUYAQ",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 843.75,
+      "tx_count": 15
+    },
+    {
+      "company_name": "Legacy Flowers",
+      "account_id": "001G000001DW4QmIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 15464979.1,
+      "tx_count": 31882
+    },
+    {
+      "company_name": "Legacy Flowers",
+      "account_id": "001G000001DW4QmIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 52474.36,
+      "tx_count": 576
+    },
+    {
+      "company_name": "Legacy Flowers",
+      "account_id": "001G000001DW4QmIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 3202.8,
+      "tx_count": 37
+    },
+    {
+      "company_name": "Len Busch Roses",
+      "account_id": "001G000001DW4QnIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 74479.98,
+      "tx_count": 589
+    },
+    {
+      "company_name": "Liberty Blooms",
+      "account_id": "001G000001K7URpIAN",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 136163.11,
+      "tx_count": 2278
+    },
+    {
+      "company_name": "Liberty Blooms",
+      "account_id": "001G000001K7URpIAN",
+      "sales_channel": "K2K",
+      "channel_gmv": 78319.58,
+      "tx_count": 1417
+    },
+    {
+      "company_name": "Littlefloyd Investments, LLC",
+      "account_id": "001VL00000HHz7rYAD",
+      "sales_channel": "K2K",
+      "channel_gmv": 480.66,
+      "tx_count": 5
+    },
+    {
+      "company_name": "Llanos De Alba LLADEAL - UIO",
+      "account_id": "001VL00000lGG96YAG",
+      "sales_channel": "K2K",
+      "channel_gmv": 545.0,
+      "tx_count": 8
+    },
+    {
+      "company_name": "Louisiana Wholesale Florist",
+      "account_id": "001G000001TsFyvIAF",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 47494.08,
+      "tx_count": 416
+    },
+    {
+      "company_name": "Lubbock Wholesale",
+      "account_id": "001G000001TsGEcIAN",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 33567.12,
+      "tx_count": 293
+    },
+    {
+      "company_name": "Lucas and Greer, Inc. dba L & G Wholesale Florist",
+      "account_id": "0014p000022EYvCAAW",
+      "sales_channel": "K2K",
+      "channel_gmv": 107599.5,
+      "tx_count": 978
+    },
+    {
+      "company_name": "M&M CUT FLORA",
+      "account_id": "0014p000022EYw1AAG",
+      "sales_channel": "K2K",
+      "channel_gmv": 278325.58,
+      "tx_count": 3135
+    },
+    {
+      "company_name": "MACUNDO FLOWERS AND GREENS LLC",
+      "account_id": "0014p000022HqunAAC",
+      "sales_channel": "Offline",
+      "channel_gmv": 1157785.42,
+      "tx_count": 9464
+    },
+    {
+      "company_name": "MACUNDO FLOWERS AND GREENS LLC",
+      "account_id": "0014p000022HqunAAC",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 934.68,
+      "tx_count": 12
+    },
+    {
+      "company_name": "MAGNIFICA FLOWERS",
+      "account_id": "0014p00001sHtlXAAS",
+      "sales_channel": "Offline",
+      "channel_gmv": 594275.73,
+      "tx_count": 8510
+    },
+    {
+      "company_name": "MAGNOLIA HOLDINGS 301 LLC  ABSOLUTELY BEAUTIFUL FLOWERS",
+      "account_id": "001VL00000HVuQvYAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 58972.66,
+      "tx_count": 811
+    },
+    {
+      "company_name": "MAHONEYS ROCKY LEDGE FARM &",
+      "account_id": "001VL00000YmEOTYA3",
+      "sales_channel": "K2K",
+      "channel_gmv": 104.25,
+      "tx_count": 1
+    },
+    {
+      "company_name": "MALIMA USA",
+      "account_id": "0011L00001zyyyYQAQ",
+      "sales_channel": "Offline",
+      "channel_gmv": 572303.14,
+      "tx_count": 1697
+    },
+    {
+      "company_name": "MALIMA USA",
+      "account_id": "0011L00001zyyyYQAQ",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 24396.28,
+      "tx_count": 143
+    },
+    {
+      "company_name": "MALIMA USA",
+      "account_id": "0011L00001zyyyYQAQ",
+      "sales_channel": "K2K",
+      "channel_gmv": 2222.44,
+      "tx_count": 18
+    },
+    {
+      "company_name": "MGA Flowers",
+      "account_id": "0011L00002aTOTFQA4",
+      "sales_channel": "Offline",
+      "channel_gmv": 83786.5,
+      "tx_count": 1173
+    },
+    {
+      "company_name": "MGA Flowers",
+      "account_id": "0011L00002aTOTFQA4",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 8752.1,
+      "tx_count": 111
+    },
+    {
+      "company_name": "MGA Flowers",
+      "account_id": "0011L00002aTOTFQA4",
+      "sales_channel": "K2K",
+      "channel_gmv": 302.8,
+      "tx_count": 5
+    },
+    {
+      "company_name": "MONTEROSAS LLC",
+      "account_id": "0011L00002IGHtEQAX",
+      "sales_channel": "Offline",
+      "channel_gmv": 549126.76,
+      "tx_count": 4829
+    },
+    {
+      "company_name": "MONTEROSAS LLC",
+      "account_id": "0011L00002IGHtEQAX",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 31075.4,
+      "tx_count": 309
+    },
+    {
+      "company_name": "MONTEROSAS LLC",
+      "account_id": "0011L00002IGHtEQAX",
+      "sales_channel": "K2K",
+      "channel_gmv": 18171.0,
+      "tx_count": 199
+    },
+    {
+      "company_name": "MRS. BLOOM'S DIRECT, INC.",
+      "account_id": "001G000001DW4S5IAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 33976.91,
+      "tx_count": 267
+    },
+    {
+      "company_name": "MYSTICFLOWERS LLC",
+      "account_id": "001G000001as1u1IAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 425236.1,
+      "tx_count": 2490
+    },
+    {
+      "company_name": "MYSTICFLOWERS LLC",
+      "account_id": "001G000001as1u1IAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 61858.34,
+      "tx_count": 287
+    },
+    {
+      "company_name": "MYSTICFLOWERS LLC",
+      "account_id": "001G000001as1u1IAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 3217.6,
+      "tx_count": 13
+    },
+    {
+      "company_name": "Magic Flowers - Floropolis",
+      "account_id": "001VL00000gBuLGYA0",
+      "sales_channel": "K2K",
+      "channel_gmv": 12272.98,
+      "tx_count": 41
+    },
+    {
+      "company_name": "Magic Flowers - Floropolis",
+      "account_id": "001VL00000gBuLGYA0",
+      "sales_channel": "Offline",
+      "channel_gmv": 55.2,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Magnolia Wholesale Florist Inc",
+      "account_id": "0014p00001z9zUXAAY",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 104346.68,
+      "tx_count": 744
+    },
+    {
+      "company_name": "Maple Grove Floral",
+      "account_id": "001G000001ZFNa1IAH",
+      "sales_channel": "Offline",
+      "channel_gmv": 466644.79,
+      "tx_count": 15788
+    },
+    {
+      "company_name": "Maple Grove Floral",
+      "account_id": "001G000001ZFNa1IAH",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 201830.05,
+      "tx_count": 10204
+    },
+    {
+      "company_name": "Matthioli Flowers Ecuador",
+      "account_id": "001VL00000fUtUIYA0",
+      "sales_channel": "K2K",
+      "channel_gmv": 72.0,
+      "tx_count": 2
+    },
+    {
+      "company_name": "Mayesh Wholesale Florist Inc",
+      "account_id": "001G000001DW4R3IAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 71366967.02,
+      "tx_count": 852363
+    },
+    {
+      "company_name": "Mayesh Wholesale Florist Inc",
+      "account_id": "001G000001DW4R3IAL",
+      "sales_channel": "API",
+      "channel_gmv": 22689710.96,
+      "tx_count": 231242
+    },
+    {
+      "company_name": "Mayesh Wholesale Florist Inc",
+      "account_id": "001G000001DW4R3IAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 13582.17,
+      "tx_count": 82
+    },
+    {
+      "company_name": "Mayta International LLC / Native Blooms",
+      "account_id": "0011L000026fmYoQAI",
+      "sales_channel": "Offline",
+      "channel_gmv": 1796080.54,
+      "tx_count": 12139
+    },
+    {
+      "company_name": "Mayta International LLC / Native Blooms",
+      "account_id": "0011L000026fmYoQAI",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 216577.6,
+      "tx_count": 2125
+    },
+    {
+      "company_name": "Mayta International LLC / Native Blooms",
+      "account_id": "0011L000026fmYoQAI",
+      "sales_channel": "K2K",
+      "channel_gmv": 101676.4,
+      "tx_count": 965
+    },
+    {
+      "company_name": "McCarthy Wholesale",
+      "account_id": "001VL00000YlWTzYAN",
+      "sales_channel": "K2K",
+      "channel_gmv": 90.4,
+      "tx_count": 1
+    },
+    {
+      "company_name": "MegaFlor - UIO",
+      "account_id": "001VL00000dIwWvYAK",
+      "sales_channel": "K2K",
+      "channel_gmv": 3456.2,
+      "tx_count": 49
+    },
+    {
+      "company_name": "Megaflor USA",
+      "account_id": "001VL000001pKqXYAU",
+      "sales_channel": "Offline",
+      "channel_gmv": 80174.67,
+      "tx_count": 962
+    },
+    {
+      "company_name": "Megaflor USA",
+      "account_id": "001VL000001pKqXYAU",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 41370.94,
+      "tx_count": 405
+    },
+    {
+      "company_name": "Megaflor USA",
+      "account_id": "001VL000001pKqXYAU",
+      "sales_channel": "K2K",
+      "channel_gmv": 29868.16,
+      "tx_count": 302
+    },
+    {
+      "company_name": "Melody Farms LLC",
+      "account_id": "001G000001DW4R6IAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 7222781.85,
+      "tx_count": 41581
+    },
+    {
+      "company_name": "Melody Farms LLC",
+      "account_id": "001G000001DW4R6IAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 352219.94,
+      "tx_count": 3911
+    },
+    {
+      "company_name": "Melody Farms LLC",
+      "account_id": "001G000001DW4R6IAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 213637.5,
+      "tx_count": 2163
+    },
+    {
+      "company_name": "Metro Flower Market LLC",
+      "account_id": "0011L000028TahoQAC",
+      "sales_channel": "Offline",
+      "channel_gmv": 3255049.7,
+      "tx_count": 76300
+    },
+    {
+      "company_name": "Metro Flower Market LLC",
+      "account_id": "0011L000028TahoQAC",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 5617.1,
+      "tx_count": 212
+    },
+    {
+      "company_name": "Metropetals",
+      "account_id": "0014p000021fXK6AAM",
+      "sales_channel": "Offline",
+      "channel_gmv": 483977.41,
+      "tx_count": 3053
+    },
+    {
+      "company_name": "Metropetals",
+      "account_id": "0014p000021fXK6AAM",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 46328.38,
+      "tx_count": 378
+    },
+    {
+      "company_name": "Metropolitan Wholesale/Cityside Flowers",
+      "account_id": "001160000222AFqAAM",
+      "sales_channel": "K2K",
+      "channel_gmv": 134544.99,
+      "tx_count": 1138
+    },
+    {
+      "company_name": "Miaflora Farms",
+      "account_id": "001G000001DW4RwIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 608041.68,
+      "tx_count": 7762
+    },
+    {
+      "company_name": "Miaflora Farms",
+      "account_id": "001G000001DW4RwIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 529260.61,
+      "tx_count": 7224
+    },
+    {
+      "company_name": "Mideast Flowers Distributors, Inc.",
+      "account_id": "001VL00000HW91gYAD",
+      "sales_channel": "K2K",
+      "channel_gmv": 14804.93,
+      "tx_count": 137
+    },
+    {
+      "company_name": "Mikes Finest Wholesale Flowers, Inc.",
+      "account_id": "001G000001TsGfBIAV",
+      "sales_channel": "K2K",
+      "channel_gmv": 448.05,
+      "tx_count": 5
+    },
+    {
+      "company_name": "Miraflor LLC",
+      "account_id": "001VL00000DlwqkYAB",
+      "sales_channel": "Offline",
+      "channel_gmv": 2858294.29,
+      "tx_count": 27851
+    },
+    {
+      "company_name": "Miraflor LLC",
+      "account_id": "001VL00000DlwqkYAB",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 67942.04,
+      "tx_count": 1314
+    },
+    {
+      "company_name": "Miraflor LLC",
+      "account_id": "001VL00000DlwqkYAB",
+      "sales_channel": "K2K",
+      "channel_gmv": 34448.56,
+      "tx_count": 644
+    },
+    {
+      "company_name": "Miraflor LLC",
+      "account_id": "001VL00000DlwqkYAB",
+      "sales_channel": "API",
+      "channel_gmv": 25155.99,
+      "tx_count": 560
+    },
+    {
+      "company_name": "Moonlight Flowers",
+      "account_id": "001VL00000Pos6tYAB",
+      "sales_channel": "Offline",
+      "channel_gmv": 1322043.98,
+      "tx_count": 5923
+    },
+    {
+      "company_name": "Moonlight Flowers",
+      "account_id": "001VL00000Pos6tYAB",
+      "sales_channel": "K2K",
+      "channel_gmv": 1772.05,
+      "tx_count": 27
+    },
+    {
+      "company_name": "Moonlight Flowers",
+      "account_id": "001VL00000Pos6tYAB",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 1425.5,
+      "tx_count": 19
+    },
+    {
+      "company_name": "Much Flowers - UIO",
+      "account_id": "001VL000007zWbfYAE",
+      "sales_channel": "K2K",
+      "channel_gmv": 195.0,
+      "tx_count": 2
+    },
+    {
+      "company_name": "Muchflowers Inc.",
+      "account_id": "0011600001lg8CAAAY",
+      "sales_channel": "Offline",
+      "channel_gmv": 3195871.19,
+      "tx_count": 10720
+    },
+    {
+      "company_name": "Muchflowers Inc.",
+      "account_id": "0011600001lg8CAAAY",
+      "sales_channel": "K2K",
+      "channel_gmv": 43494.32,
+      "tx_count": 502
+    },
+    {
+      "company_name": "Muchflowers Inc.",
+      "account_id": "0011600001lg8CAAAY",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 29962.38,
+      "tx_count": 667
+    },
+    {
+      "company_name": "Muchflowers Inc.",
+      "account_id": "0011600001lg8CAAAY",
+      "sales_channel": "API",
+      "channel_gmv": 11716.01,
+      "tx_count": 146
+    },
+    {
+      "company_name": "Multiflora Corporation",
+      "account_id": "001G000001f8bp1IAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 706965.37,
+      "tx_count": 7551
+    },
+    {
+      "company_name": "Multiflora Corporation",
+      "account_id": "001G000001f8bp1IAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 419800.56,
+      "tx_count": 4951
+    },
+    {
+      "company_name": "Multiflora Corporation",
+      "account_id": "001G000001f8bp1IAA",
+      "sales_channel": "API",
+      "channel_gmv": 213827.82,
+      "tx_count": 2818
+    },
+    {
+      "company_name": "Multiflora Corporation",
+      "account_id": "001G000001f8bp1IAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 4448.73,
+      "tx_count": 50
+    },
+    {
+      "company_name": "NY Floral Supply",
+      "account_id": "001VL00000GL9dQYAT",
+      "sales_channel": "Offline",
+      "channel_gmv": 1283821.41,
+      "tx_count": 28767
+    },
+    {
+      "company_name": "NY Floral Supply",
+      "account_id": "001VL00000GL9dQYAT",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 17066.43,
+      "tx_count": 644
+    },
+    {
+      "company_name": "NYC FLORAL GREENS",
+      "account_id": "0014p000020wDaDAAU",
+      "sales_channel": "Offline",
+      "channel_gmv": 981765.0,
+      "tx_count": 180
+    },
+    {
+      "company_name": "Naranjo Farms LLC",
+      "account_id": "0011600001uRt3EAAS",
+      "sales_channel": "Offline",
+      "channel_gmv": 3112441.08,
+      "tx_count": 14944
+    },
+    {
+      "company_name": "Naranjo Farms LLC",
+      "account_id": "0011600001uRt3EAAS",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 323973.25,
+      "tx_count": 2915
+    },
+    {
+      "company_name": "Naranjo Farms LLC",
+      "account_id": "0011600001uRt3EAAS",
+      "sales_channel": "K2K",
+      "channel_gmv": 221670.06,
+      "tx_count": 2278
+    },
+    {
+      "company_name": "Naranjo Farms LLC",
+      "account_id": "0011600001uRt3EAAS",
+      "sales_channel": "API",
+      "channel_gmv": 17833.83,
+      "tx_count": 299
+    },
+    {
+      "company_name": "Nathalia Bloemenexport LLC - MIA",
+      "account_id": "001VL00000WNEfpYAH",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 2806.0,
+      "tx_count": 39
+    },
+    {
+      "company_name": "National Floral Supply",
+      "account_id": "0011L00002WOu1fQAD",
+      "sales_channel": "Offline",
+      "channel_gmv": 1675108.7,
+      "tx_count": 27155
+    },
+    {
+      "company_name": "Natural Flowers, Inc",
+      "account_id": "0014p000020vycQAAQ",
+      "sales_channel": "Offline",
+      "channel_gmv": 1510095.81,
+      "tx_count": 11912
+    },
+    {
+      "company_name": "Natural Flowers, Inc",
+      "account_id": "0014p000020vycQAAQ",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 158168.54,
+      "tx_count": 1472
+    },
+    {
+      "company_name": "Natural Flowers, Inc",
+      "account_id": "0014p000020vycQAAQ",
+      "sales_channel": "K2K",
+      "channel_gmv": 126683.71,
+      "tx_count": 1251
+    },
+    {
+      "company_name": "Natural Flowers, Inc",
+      "account_id": "0014p000020vycQAAQ",
+      "sales_channel": "API",
+      "channel_gmv": 22358.14,
+      "tx_count": 270
+    },
+    {
+      "company_name": "Nazcaflor USA, Inc",
+      "account_id": "001G000001DW4SGIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 5098904.33,
+      "tx_count": 25484
+    },
+    {
+      "company_name": "Nazcaflor USA, Inc",
+      "account_id": "001G000001DW4SGIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 75348.1,
+      "tx_count": 950
+    },
+    {
+      "company_name": "Nazcaflor USA, Inc",
+      "account_id": "001G000001DW4SGIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 1742.0,
+      "tx_count": 21
+    },
+    {
+      "company_name": "New England Wholesale Florist",
+      "account_id": "0011600001uSjSfAAK",
+      "sales_channel": "Offline",
+      "channel_gmv": 234398.2,
+      "tx_count": 6534
+    },
+    {
+      "company_name": "New England Wholesale Florist",
+      "account_id": "0011600001uSjSfAAK",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 75.0,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Ninfa Flowers",
+      "account_id": "001VL000001TMnmYAG",
+      "sales_channel": "Offline",
+      "channel_gmv": 4212240.51,
+      "tx_count": 16356
+    },
+    {
+      "company_name": "Ninfa Flowers",
+      "account_id": "001VL000001TMnmYAG",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 109.0,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Northline Wholesale Flowers",
+      "account_id": "0011600001lgc6sAAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 16903.87,
+      "tx_count": 111
+    },
+    {
+      "company_name": "Northline Wholesale Flowers",
+      "account_id": "0011600001lgc6sAAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 138.32,
+      "tx_count": 2
+    },
+    {
+      "company_name": "Nova Packaging Solutions, Inc.",
+      "account_id": "001VL00000TUGt3YAH",
+      "sales_channel": "Offline",
+      "channel_gmv": 8645.52,
+      "tx_count": 189
+    },
+    {
+      "company_name": "Nova Packaging Solutions, Inc.",
+      "account_id": "001VL00000TUGt3YAH",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 284.39,
+      "tx_count": 3
+    },
+    {
+      "company_name": "Olimpo Flowers Finca",
+      "account_id": "0011L00002SYckRQAT",
+      "sales_channel": "K2K",
+      "channel_gmv": 752.16,
+      "tx_count": 5
+    },
+    {
+      "company_name": "Ontario Flower Growers Cooperative Ltd.",
+      "account_id": "0011L000029kgNZQAY",
+      "sales_channel": "Offline",
+      "channel_gmv": 41542.2,
+      "tx_count": 546
+    },
+    {
+      "company_name": "Orlando Wholesale Florist",
+      "account_id": "0011L00001zzDR9QAM",
+      "sales_channel": "Offline",
+      "channel_gmv": 2775509.98,
+      "tx_count": 94160
+    },
+    {
+      "company_name": "Orlando Wholesale Florist",
+      "account_id": "0011L00001zzDR9QAM",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 25674.29,
+      "tx_count": 1151
+    },
+    {
+      "company_name": "PAT FLOR SCARL",
+      "account_id": "001G000001DW4SSIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 985098.63,
+      "tx_count": 3280
+    },
+    {
+      "company_name": "PAT FLOR SCARL",
+      "account_id": "001G000001DW4SSIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 30287.04,
+      "tx_count": 124
+    },
+    {
+      "company_name": "PAT FLOR SCARL",
+      "account_id": "001G000001DW4SSIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 20645.75,
+      "tx_count": 93
+    },
+    {
+      "company_name": "PETALS WEST, INC.",
+      "account_id": "001G000001K8yfgIAB",
+      "sales_channel": "K2K",
+      "channel_gmv": 79112.42,
+      "tx_count": 750
+    },
+    {
+      "company_name": "POPPIES DESIGN STUDIO, LLC",
+      "account_id": "0011L000029kBhZQAU",
+      "sales_channel": "K2K",
+      "channel_gmv": 78639.72,
+      "tx_count": 478
+    },
+    {
+      "company_name": "POSIES TRUCK",
+      "account_id": "001VL000001CXvhYAG",
+      "sales_channel": "K2K",
+      "channel_gmv": 60367.04,
+      "tx_count": 746
+    },
+    {
+      "company_name": "POTOMAC WHSLE",
+      "account_id": "0011600001uSjmkAAC",
+      "sales_channel": "K2K",
+      "channel_gmv": 35572.79,
+      "tx_count": 237
+    },
+    {
+      "company_name": "Pacifica Farms - CAL",
+      "account_id": "0011L00002KYI4OQAX",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 36133.3,
+      "tx_count": 361
+    },
+    {
+      "company_name": "Pacifica Farms - CAL",
+      "account_id": "0011L00002KYI4OQAX",
+      "sales_channel": "K2K",
+      "channel_gmv": 1750.85,
+      "tx_count": 26
+    },
+    {
+      "company_name": "Palm Beach Whsle Flowers, Inc.",
+      "account_id": "0014p0000220b01AAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 338873.09,
+      "tx_count": 3468
+    },
+    {
+      "company_name": "Patagonia Sun",
+      "account_id": "0011L00002SaN5JQAV",
+      "sales_channel": "Offline",
+      "channel_gmv": 33833.0,
+      "tx_count": 96
+    },
+    {
+      "company_name": "Patagonia Sun",
+      "account_id": "0011L00002SaN5JQAV",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 4405.0,
+      "tx_count": 23
+    },
+    {
+      "company_name": "Patagonia Sun",
+      "account_id": "0011L00002SaN5JQAV",
+      "sales_channel": "K2K",
+      "channel_gmv": 3558.4,
+      "tx_count": 18
+    },
+    {
+      "company_name": "Penelope's Petals, LLC",
+      "account_id": "001VL00000DSXzGYAX",
+      "sales_channel": "Offline",
+      "channel_gmv": 390579.23,
+      "tx_count": 14940
+    },
+    {
+      "company_name": "Penelope's Petals, LLC",
+      "account_id": "001VL00000DSXzGYAX",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 815.21,
+      "tx_count": 21
+    },
+    {
+      "company_name": "Petals Direct",
+      "account_id": "001VL000000ln6xYAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 431537.1,
+      "tx_count": 2933
+    },
+    {
+      "company_name": "Petals Direct",
+      "account_id": "001VL000000ln6xYAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 1882.92,
+      "tx_count": 15
+    },
+    {
+      "company_name": "Pikes Peak Floral",
+      "account_id": "001G000001TsIbtIAF",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 176893.09,
+      "tx_count": 1350
+    },
+    {
+      "company_name": "Pikes Peak Floral",
+      "account_id": "001G000001TsIbtIAF",
+      "sales_channel": "API",
+      "channel_gmv": 2516.05,
+      "tx_count": 22
+    },
+    {
+      "company_name": "Pikes Peak Floral",
+      "account_id": "001G000001TsIbtIAF",
+      "sales_channel": "Offline",
+      "channel_gmv": 1631.68,
+      "tx_count": 9
+    },
+    {
+      "company_name": "Pinnacle Flowers, LLC",
+      "account_id": "001G000001evx5aIAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 4491099.7,
+      "tx_count": 38832
+    },
+    {
+      "company_name": "Pinnacle Flowers, LLC",
+      "account_id": "001G000001evx5aIAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 138241.3,
+      "tx_count": 1601
+    },
+    {
+      "company_name": "Pinnacle Flowers, LLC",
+      "account_id": "001G000001evx5aIAA",
+      "sales_channel": "API",
+      "channel_gmv": 52331.9,
+      "tx_count": 713
+    },
+    {
+      "company_name": "Pinnacle Flowers, LLC",
+      "account_id": "001G000001evx5aIAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 39200.24,
+      "tx_count": 416
+    },
+    {
+      "company_name": "Premium Flowers",
+      "account_id": "001G000001DW4SZIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 336045.95,
+      "tx_count": 3096
+    },
+    {
+      "company_name": "Premium Flowers",
+      "account_id": "001G000001DW4SZIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 279030.9,
+      "tx_count": 2738
+    },
+    {
+      "company_name": "Premium Flowers",
+      "account_id": "001G000001DW4SZIA1",
+      "sales_channel": "API",
+      "channel_gmv": 109591.91,
+      "tx_count": 1231
+    },
+    {
+      "company_name": "Premium Greens Australia B.V.",
+      "account_id": "0011L00002h0i8vQAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 622937.9,
+      "tx_count": 555
+    },
+    {
+      "company_name": "Premium Greens Australia B.V.",
+      "account_id": "0011L00002h0i8vQAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 93039.0,
+      "tx_count": 150
+    },
+    {
+      "company_name": "Premium Greens Australia LLC",
+      "account_id": "0011600001lgY6YAAU",
+      "sales_channel": "Offline",
+      "channel_gmv": 512202.94,
+      "tx_count": 1514
+    },
+    {
+      "company_name": "Premium Greens Australia LLC",
+      "account_id": "0011600001lgY6YAAU",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 238818.95,
+      "tx_count": 1372
+    },
+    {
+      "company_name": "Premium Greens Australia LLC",
+      "account_id": "0011600001lgY6YAAU",
+      "sales_channel": "K2K",
+      "channel_gmv": 11617.85,
+      "tx_count": 91
+    },
+    {
+      "company_name": "Price's Floral Wholesale, LLC",
+      "account_id": "0014p000022EYtaAAG",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 0.0,
+      "tx_count": 2
+    },
+    {
+      "company_name": "Price's Floral Wholesale, LLC",
+      "account_id": "0014p000022EYtaAAG",
+      "sales_channel": "Offline",
+      "channel_gmv": 0.0,
+      "tx_count": 13
+    },
+    {
+      "company_name": "Prime Petals LLC",
+      "account_id": "001G000001DW4SbIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 4127139.92,
+      "tx_count": 21626
+    },
+    {
+      "company_name": "Pronto Farms LLC",
+      "account_id": "001G000001DW4SeIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 1004240.4,
+      "tx_count": 9474
+    },
+    {
+      "company_name": "Pronto Farms LLC",
+      "account_id": "001G000001DW4SeIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 7343.16,
+      "tx_count": 92
+    },
+    {
+      "company_name": "Pronto Farms LLC",
+      "account_id": "001G000001DW4SeIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 3750.13,
+      "tx_count": 46
+    },
+    {
+      "company_name": "Protean Farms US",
+      "account_id": "001G000001DW4SfIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 1363609.7,
+      "tx_count": 13108
+    },
+    {
+      "company_name": "Protean Farms US",
+      "account_id": "001G000001DW4SfIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 407503.55,
+      "tx_count": 4458
+    },
+    {
+      "company_name": "Protean Farms US",
+      "account_id": "001G000001DW4SfIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 247865.63,
+      "tx_count": 2817
+    },
+    {
+      "company_name": "Quimflowers - UIO",
+      "account_id": "001VL00000lLmD4YAK",
+      "sales_channel": "K2K",
+      "channel_gmv": 60.0,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Quinlan-Wasserman, Inc",
+      "account_id": "001G000001TsIedIAF",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 23734.45,
+      "tx_count": 111
+    },
+    {
+      "company_name": "R&W WHOLESALE, INC.",
+      "account_id": "001G000001TsIltIAF",
+      "sales_channel": "K2K",
+      "channel_gmv": 270144.45,
+      "tx_count": 2680
+    },
+    {
+      "company_name": "ROYAL BASE (U.S.A) CORPORATION",
+      "account_id": "001VL00000U1C7VYAV",
+      "sales_channel": "Offline",
+      "channel_gmv": 1058829.4,
+      "tx_count": 1729
+    },
+    {
+      "company_name": "ROYAL BASE (U.S.A) CORPORATION",
+      "account_id": "001VL00000U1C7VYAV",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 71285.0,
+      "tx_count": 336
+    },
+    {
+      "company_name": "ROYAL BASE (U.S.A) CORPORATION",
+      "account_id": "001VL00000U1C7VYAV",
+      "sales_channel": "K2K",
+      "channel_gmv": 1092.0,
+      "tx_count": 7
+    },
+    {
+      "company_name": "RUMHORA GREENS LLC",
+      "account_id": "0011600001uRvGlAAK",
+      "sales_channel": "Offline",
+      "channel_gmv": 1230150.85,
+      "tx_count": 4498
+    },
+    {
+      "company_name": "RUMHORA GREENS LLC",
+      "account_id": "0011600001uRvGlAAK",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 10401.45,
+      "tx_count": 112
+    },
+    {
+      "company_name": "RUMHORA GREENS LLC",
+      "account_id": "0011600001uRvGlAAK",
+      "sales_channel": "K2K",
+      "channel_gmv": 3111.25,
+      "tx_count": 38
+    },
+    {
+      "company_name": "Riverdale Farms",
+      "account_id": "001G000001DW4SlIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 160514.15,
+      "tx_count": 1910
+    },
+    {
+      "company_name": "Riverdale Farms",
+      "account_id": "001G000001DW4SlIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 114361.36,
+      "tx_count": 1381
+    },
+    {
+      "company_name": "Riverside Wholesale Florists KY",
+      "account_id": "001G000001DW4SmIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 712408.48,
+      "tx_count": 29148
+    },
+    {
+      "company_name": "Riverside Wholesale Florists KY",
+      "account_id": "001G000001DW4SmIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 626.72,
+      "tx_count": 32
+    },
+    {
+      "company_name": "Rokay Floral",
+      "account_id": "0011L00001zzDSCQA2",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 101371.13,
+      "tx_count": 705
+    },
+    {
+      "company_name": "Roots Peru",
+      "account_id": "00116000020LDINAA4",
+      "sales_channel": "K2K",
+      "channel_gmv": 235.89,
+      "tx_count": 3
+    },
+    {
+      "company_name": "Rosamina SAS",
+      "account_id": "0011600001uSoWFAA0",
+      "sales_channel": "Offline",
+      "channel_gmv": 870610.44,
+      "tx_count": 8006
+    },
+    {
+      "company_name": "Rosaprima International, LLC",
+      "account_id": "001G000001DW4SoIAL",
+      "sales_channel": "API",
+      "channel_gmv": 25837815.04,
+      "tx_count": 214887
+    },
+    {
+      "company_name": "Rosaprima International, LLC",
+      "account_id": "001G000001DW4SoIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 24225510.98,
+      "tx_count": 180211
+    },
+    {
+      "company_name": "Rosaprima International, LLC",
+      "account_id": "001G000001DW4SoIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 3295827.42,
+      "tx_count": 39596
+    },
+    {
+      "company_name": "Rosaprima International, LLC",
+      "account_id": "001G000001DW4SoIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 886900.56,
+      "tx_count": 10809
+    },
+    {
+      "company_name": "Rose Runners",
+      "account_id": "001VL00000OLqk9YAD",
+      "sales_channel": "Offline",
+      "channel_gmv": 152667.64,
+      "tx_count": 1614
+    },
+    {
+      "company_name": "Royal Flower Import Group Inc.",
+      "account_id": "001160000276ptzAAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 629760.1,
+      "tx_count": 5268
+    },
+    {
+      "company_name": "Royal Flowers Inc, International",
+      "account_id": "001G000001DXD6JIAX",
+      "sales_channel": "Offline",
+      "channel_gmv": 8975.2,
+      "tx_count": 78
+    },
+    {
+      "company_name": "Royal Flowers Inc., Domestic",
+      "account_id": "001G000001DW4SpIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 9213888.34,
+      "tx_count": 74239
+    },
+    {
+      "company_name": "Royal Flowers Inc., Domestic",
+      "account_id": "001G000001DW4SpIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 2191489.98,
+      "tx_count": 23019
+    },
+    {
+      "company_name": "Royal Flowers Inc., Domestic",
+      "account_id": "001G000001DW4SpIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 1385447.83,
+      "tx_count": 14102
+    },
+    {
+      "company_name": "Royal Flowers Inc., Domestic",
+      "account_id": "001G000001DW4SpIAL",
+      "sales_channel": "API",
+      "channel_gmv": 170281.36,
+      "tx_count": 2170
+    },
+    {
+      "company_name": "Royal Flowers S.A",
+      "account_id": "00116000025JAqTAAW",
+      "sales_channel": "Offline",
+      "channel_gmv": 2809866.6,
+      "tx_count": 19151
+    },
+    {
+      "company_name": "SHAW LAKE FARMS INC.",
+      "account_id": "0014p00001zwoT5AAI",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 56629.7,
+      "tx_count": 427
+    },
+    {
+      "company_name": "SHAW LAKE FARMS INC.",
+      "account_id": "0014p00001zwoT5AAI",
+      "sales_channel": "K2K",
+      "channel_gmv": 11930.68,
+      "tx_count": 187
+    },
+    {
+      "company_name": "SKY FLOWERS S.A.S",
+      "account_id": "00116000023XoIIAA0",
+      "sales_channel": "Offline",
+      "channel_gmv": 1596881.56,
+      "tx_count": 9975
+    },
+    {
+      "company_name": "SOS Floral",
+      "account_id": "001G000001DW4T3IAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 2315408.49,
+      "tx_count": 20465
+    },
+    {
+      "company_name": "STRANGE`S FLORIST, INC.",
+      "account_id": "0014p000022EZ85AAG",
+      "sales_channel": "K2K",
+      "channel_gmv": 3823.96,
+      "tx_count": 39
+    },
+    {
+      "company_name": "SUNRITE FARMS COLLECTIONS CORP",
+      "account_id": "0014p00001lNPUzAAO",
+      "sales_channel": "Offline",
+      "channel_gmv": 4309858.49,
+      "tx_count": 38943
+    },
+    {
+      "company_name": "SUNRITE FARMS COLLECTIONS CORP",
+      "account_id": "0014p00001lNPUzAAO",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 922408.6,
+      "tx_count": 8823
+    },
+    {
+      "company_name": "SUNRITE FARMS COLLECTIONS CORP",
+      "account_id": "0014p00001lNPUzAAO",
+      "sales_channel": "K2K",
+      "channel_gmv": 533557.32,
+      "tx_count": 5675
+    },
+    {
+      "company_name": "SUNRITE FARMS COLLECTIONS CORP",
+      "account_id": "0014p00001lNPUzAAO",
+      "sales_channel": "API",
+      "channel_gmv": 17380.6,
+      "tx_count": 200
+    },
+    {
+      "company_name": "Salter's Evergreen Supply",
+      "account_id": "0014p000022GMTCAA4",
+      "sales_channel": "Offline",
+      "channel_gmv": 323226.5,
+      "tx_count": 432
+    },
+    {
+      "company_name": "Salter's Evergreen Supply",
+      "account_id": "0014p000022GMTCAA4",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 55031.53,
+      "tx_count": 228
+    },
+    {
+      "company_name": "Salter's Evergreen Supply",
+      "account_id": "0014p000022GMTCAA4",
+      "sales_channel": "K2K",
+      "channel_gmv": 485.0,
+      "tx_count": 2
+    },
+    {
+      "company_name": "San Jose Floral",
+      "account_id": "001VL00000hSd5hYAC",
+      "sales_channel": "Offline",
+      "channel_gmv": 123381.26,
+      "tx_count": 2088
+    },
+    {
+      "company_name": "Servicios Chilfresh Ltda.",
+      "account_id": "001G000001DW4OkIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 1329081.89,
+      "tx_count": 4720
+    },
+    {
+      "company_name": "Servicios Chilfresh Ltda.",
+      "account_id": "001G000001DW4OkIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 16744.58,
+      "tx_count": 68
+    },
+    {
+      "company_name": "Servicios Chilfresh Ltda.",
+      "account_id": "001G000001DW4OkIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 3754.56,
+      "tx_count": 18
+    },
+    {
+      "company_name": "Shamrock Wholesale Florist Memphis",
+      "account_id": "0011600001uSjyvAAC",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 118375.99,
+      "tx_count": 864
+    },
+    {
+      "company_name": "Sieck Floral Distributing, Inc",
+      "account_id": "001G000001DW4SyIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 178470.06,
+      "tx_count": 1833
+    },
+    {
+      "company_name": "Sieck Wright Floral Products",
+      "account_id": "0014p000020tateAAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 48640.07,
+      "tx_count": 439
+    },
+    {
+      "company_name": "Sierra Flower Trading",
+      "account_id": "0011L000028F0KvQAK",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 71339.96,
+      "tx_count": 607
+    },
+    {
+      "company_name": "Sierra Flower Trading",
+      "account_id": "0011L000028F0KvQAK",
+      "sales_channel": "K2K",
+      "channel_gmv": 19936.05,
+      "tx_count": 217
+    },
+    {
+      "company_name": "Sims Flower Distribution",
+      "account_id": "001VL000002uhlyYAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 1249309.05,
+      "tx_count": 6051
+    },
+    {
+      "company_name": "Sims Flower Distribution",
+      "account_id": "001VL000002uhlyYAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 176265.23,
+      "tx_count": 1517
+    },
+    {
+      "company_name": "Sofi's Flowers",
+      "account_id": "001G000001DW4T1IAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 258677.98,
+      "tx_count": 1742
+    },
+    {
+      "company_name": "Sofi's Flowers",
+      "account_id": "001G000001DW4T1IAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 514.14,
+      "tx_count": 8
+    },
+    {
+      "company_name": "Solo Wholesale Flower LLC",
+      "account_id": "0014p000021zRSBAA2",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 69266.48,
+      "tx_count": 560
+    },
+    {
+      "company_name": "South Carolina Specialty Cut",
+      "account_id": "001G000001TsJj3IAF",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 4289.06,
+      "tx_count": 35
+    },
+    {
+      "company_name": "South Florals Imports LLC",
+      "account_id": "0011L00002dPqOxQAK",
+      "sales_channel": "Offline",
+      "channel_gmv": 1050683.53,
+      "tx_count": 9710
+    },
+    {
+      "company_name": "South Florals Imports LLC",
+      "account_id": "0011L00002dPqOxQAK",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 52825.09,
+      "tx_count": 702
+    },
+    {
+      "company_name": "South Florals Imports LLC",
+      "account_id": "0011L00002dPqOxQAK",
+      "sales_channel": "K2K",
+      "channel_gmv": 17244.13,
+      "tx_count": 214
+    },
+    {
+      "company_name": "Southern Floral Co",
+      "account_id": "0011L00001zzDYPQA2",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 74984.51,
+      "tx_count": 541
+    },
+    {
+      "company_name": "Specialty Cut Flowers",
+      "account_id": "0014p000022EYjsAAG",
+      "sales_channel": "K2K",
+      "channel_gmv": 100.0,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Staalduinen Floral-LTF1118",
+      "account_id": "0011600001tWETgAAO",
+      "sales_channel": "K2K",
+      "channel_gmv": 168592.47,
+      "tx_count": 1971
+    },
+    {
+      "company_name": "Star Roses",
+      "account_id": "001VL00000Pl0XeYAJ",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 431.0,
+      "tx_count": 4
+    },
+    {
+      "company_name": "Star Roses",
+      "account_id": "001VL00000Pl0XeYAJ",
+      "sales_channel": "Offline",
+      "channel_gmv": 215.0,
+      "tx_count": 2
+    },
+    {
+      "company_name": "Stellar Farms",
+      "account_id": "00116000026WjjWAAS",
+      "sales_channel": "Offline",
+      "channel_gmv": 3899847.8,
+      "tx_count": 19821
+    },
+    {
+      "company_name": "Stellar Farms",
+      "account_id": "00116000026WjjWAAS",
+      "sales_channel": "K2K",
+      "channel_gmv": 495298.99,
+      "tx_count": 4945
+    },
+    {
+      "company_name": "Stellar Farms",
+      "account_id": "00116000026WjjWAAS",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 266840.2,
+      "tx_count": 2523
+    },
+    {
+      "company_name": "Stellar Farms",
+      "account_id": "00116000026WjjWAAS",
+      "sales_channel": "API",
+      "channel_gmv": 146634.15,
+      "tx_count": 1845
+    },
+    {
+      "company_name": "Stemline Wholesale",
+      "account_id": "001VL00000V2gNuYAJ",
+      "sales_channel": "Offline",
+      "channel_gmv": 2286393.22,
+      "tx_count": 24335
+    },
+    {
+      "company_name": "Stemline Wholesale",
+      "account_id": "001VL00000V2gNuYAJ",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 27715.19,
+      "tx_count": 211
+    },
+    {
+      "company_name": "Sunburst Farms",
+      "account_id": "001G000001DW4TAIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 10987164.04,
+      "tx_count": 114281
+    },
+    {
+      "company_name": "Sunburst Farms",
+      "account_id": "001G000001DW4TAIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 1649913.74,
+      "tx_count": 19823
+    },
+    {
+      "company_name": "Sunburst Farms",
+      "account_id": "001G000001DW4TAIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 594932.12,
+      "tx_count": 6500
+    },
+    {
+      "company_name": "Sunburst Farms",
+      "account_id": "001G000001DW4TAIA1",
+      "sales_channel": "API",
+      "channel_gmv": 277082.11,
+      "tx_count": 3749
+    },
+    {
+      "company_name": "TFS Bristol",
+      "account_id": "001VL00000HI21dYAD",
+      "sales_channel": "K2K",
+      "channel_gmv": 169374.25,
+      "tx_count": 2216
+    },
+    {
+      "company_name": "TFS- Chattanooga",
+      "account_id": "0011600001uSk8RAAS",
+      "sales_channel": "K2K",
+      "channel_gmv": 220691.93,
+      "tx_count": 2281
+    },
+    {
+      "company_name": "TFS- Chattanooga",
+      "account_id": "0011600001uSk8RAAS",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 104976.23,
+      "tx_count": 715
+    },
+    {
+      "company_name": "Taylor Wholesale Florist",
+      "account_id": "001G000001TsJNiIAN",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 9207.84,
+      "tx_count": 70
+    },
+    {
+      "company_name": "The Elite Flower",
+      "account_id": "0011600001zsxbOAAQ",
+      "sales_channel": "Offline",
+      "channel_gmv": 218760.28,
+      "tx_count": 2346
+    },
+    {
+      "company_name": "The Elite Flower",
+      "account_id": "0011600001zsxbOAAQ",
+      "sales_channel": "K2K",
+      "channel_gmv": 125409.16,
+      "tx_count": 1939
+    },
+    {
+      "company_name": "The Elite Flower",
+      "account_id": "0011600001zsxbOAAQ",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 76074.69,
+      "tx_count": 1181
+    },
+    {
+      "company_name": "The Elite Flower",
+      "account_id": "0011600001zsxbOAAQ",
+      "sales_channel": "API",
+      "channel_gmv": 441.7,
+      "tx_count": 7
+    },
+    {
+      "company_name": "The Flower Co, LLC",
+      "account_id": "0014p00001nd9sQAAQ",
+      "sales_channel": "Offline",
+      "channel_gmv": 449434.56,
+      "tx_count": 4735
+    },
+    {
+      "company_name": "The Flower Co, LLC",
+      "account_id": "0014p00001nd9sQAAQ",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 25676.4,
+      "tx_count": 305
+    },
+    {
+      "company_name": "The Flower Co, LLC",
+      "account_id": "0014p00001nd9sQAAQ",
+      "sales_channel": "K2K",
+      "channel_gmv": 10487.0,
+      "tx_count": 122
+    },
+    {
+      "company_name": "The Flower Co, LLC",
+      "account_id": "0014p00001nd9sQAAQ",
+      "sales_channel": "API",
+      "channel_gmv": 1373.2,
+      "tx_count": 16
+    },
+    {
+      "company_name": "The Flower Emporium LLC",
+      "account_id": "0014p0000220MfNAAU",
+      "sales_channel": "Offline",
+      "channel_gmv": 86891.26,
+      "tx_count": 600
+    },
+    {
+      "company_name": "The Flower Emporium LLC",
+      "account_id": "0014p0000220MfNAAU",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 3563.79,
+      "tx_count": 29
+    },
+    {
+      "company_name": "The Flowerman, Inc.",
+      "account_id": "001G000001TsJVrIAN",
+      "sales_channel": "K2K",
+      "channel_gmv": 18261.36,
+      "tx_count": 190
+    },
+    {
+      "company_name": "The Oklahoma Flower Market",
+      "account_id": "001G000001TsIX2IAN",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 33590.67,
+      "tx_count": 273
+    },
+    {
+      "company_name": "The Queens Flowers Corp",
+      "account_id": "0011600001uTSvRAAW",
+      "sales_channel": "K2K",
+      "channel_gmv": 717019.35,
+      "tx_count": 9842
+    },
+    {
+      "company_name": "The Queens Flowers Corp",
+      "account_id": "0011600001uTSvRAAW",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 360784.1,
+      "tx_count": 4110
+    },
+    {
+      "company_name": "The Queens Flowers, Corp",
+      "account_id": "0014p000022Gz8DAAS",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 239848.68,
+      "tx_count": 3079
+    },
+    {
+      "company_name": "The Queens Flowers, Corp",
+      "account_id": "0014p000022Gz8DAAS",
+      "sales_channel": "K2K",
+      "channel_gmv": 76911.27,
+      "tx_count": 1101
+    },
+    {
+      "company_name": "Torchio Nursery",
+      "account_id": "0011600001uSU5jAAG",
+      "sales_channel": "K2K",
+      "channel_gmv": 78164.04,
+      "tx_count": 537
+    },
+    {
+      "company_name": "Tradewinds / Pristine Wholesale Floral",
+      "account_id": "0011L000029kBirQAE",
+      "sales_channel": "K2K",
+      "channel_gmv": 150087.61,
+      "tx_count": 1823
+    },
+    {
+      "company_name": "Tradewinds/ KING FLORAL SUPPLY",
+      "account_id": "001G000001TtTOOIA3",
+      "sales_channel": "K2K",
+      "channel_gmv": 175514.68,
+      "tx_count": 1678
+    },
+    {
+      "company_name": "Tristate Wholesale Florist",
+      "account_id": "001VL000003KcH9YAK",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 131003.76,
+      "tx_count": 936
+    },
+    {
+      "company_name": "Tropical Blooms Inc.",
+      "account_id": "0014p00001lORHxAAO",
+      "sales_channel": "Offline",
+      "channel_gmv": 3460902.8,
+      "tx_count": 21502
+    },
+    {
+      "company_name": "Tropical Blooms Inc.",
+      "account_id": "0014p00001lORHxAAO",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 9196.3,
+      "tx_count": 48
+    },
+    {
+      "company_name": "Tutuli Flower Farms",
+      "account_id": "0011600001uSI8QAAW",
+      "sales_channel": "K2K",
+      "channel_gmv": 27748.58,
+      "tx_count": 477
+    },
+    {
+      "company_name": "Tutuli Flower Farms",
+      "account_id": "0011600001uSI8QAAW",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 8780.53,
+      "tx_count": 125
+    },
+    {
+      "company_name": "Tutuli Flower Farms",
+      "account_id": "0011600001uSI8QAAW",
+      "sales_channel": "Offline",
+      "channel_gmv": 114.72,
+      "tx_count": 2
+    },
+    {
+      "company_name": "U.S. Greens Corp",
+      "account_id": "0011600001ygzykAAA",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 1159303.83,
+      "tx_count": 10571
+    },
+    {
+      "company_name": "U.S. Greens Corp",
+      "account_id": "0011600001ygzykAAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 512145.2,
+      "tx_count": 4922
+    },
+    {
+      "company_name": "U.S. Greens Corp",
+      "account_id": "0011600001ygzykAAA",
+      "sales_channel": "API",
+      "channel_gmv": 39480.92,
+      "tx_count": 422
+    },
+    {
+      "company_name": "U.S. Greens Corp",
+      "account_id": "0011600001ygzykAAA",
+      "sales_channel": "Offline",
+      "channel_gmv": 349.5,
+      "tx_count": 2
+    },
+    {
+      "company_name": "UNITED WHOLESALE- FFL  ENTERPRISES ",
+      "account_id": "0011600001mKVtUAAW",
+      "sales_channel": "K2K",
+      "channel_gmv": 60627.44,
+      "tx_count": 428
+    },
+    {
+      "company_name": "UNIVERSAL FLOWER SERVICE CORP",
+      "account_id": "001VL00000baxM1YAI",
+      "sales_channel": "Offline",
+      "channel_gmv": 601425.24,
+      "tx_count": 3236
+    },
+    {
+      "company_name": "Unifour Wholesale ",
+      "account_id": "0011600001uSkCOAA0",
+      "sales_channel": "K2K",
+      "channel_gmv": 135978.76,
+      "tx_count": 1895
+    },
+    {
+      "company_name": "Universal Flower Farms Inc.",
+      "account_id": "001VL00000jkf6KYAQ",
+      "sales_channel": "Offline",
+      "channel_gmv": 7384.29,
+      "tx_count": 69
+    },
+    {
+      "company_name": "Universal Flower Farms Inc.",
+      "account_id": "001VL00000jkf6KYAQ",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 2101.75,
+      "tx_count": 20
+    },
+    {
+      "company_name": "VELDKAMP´S FLOWERS",
+      "account_id": "0014p000022HSNzAAO",
+      "sales_channel": "K2K",
+      "channel_gmv": 82460.41,
+      "tx_count": 1251
+    },
+    {
+      "company_name": "VERA",
+      "account_id": "001VL00000fpcExYAI",
+      "sales_channel": "Offline",
+      "channel_gmv": 269514.19,
+      "tx_count": 2489
+    },
+    {
+      "company_name": "VERA",
+      "account_id": "001VL00000fpcExYAI",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 17939.0,
+      "tx_count": 159
+    },
+    {
+      "company_name": "VERA",
+      "account_id": "001VL00000fpcExYAI",
+      "sales_channel": "K2K",
+      "channel_gmv": 8904.0,
+      "tx_count": 84
+    },
+    {
+      "company_name": "Valle Verde LLC",
+      "account_id": "001VL0000077mLdYAI",
+      "sales_channel": "Offline",
+      "channel_gmv": 46584.0,
+      "tx_count": 197
+    },
+    {
+      "company_name": "Valleflor USA",
+      "account_id": "001G000001DW4TWIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 247160.55,
+      "tx_count": 1501
+    },
+    {
+      "company_name": "Valleflor USA",
+      "account_id": "001G000001DW4TWIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 127431.52,
+      "tx_count": 666
+    },
+    {
+      "company_name": "Valleflor USA",
+      "account_id": "001G000001DW4TWIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 12721.78,
+      "tx_count": 89
+    },
+    {
+      "company_name": "Valley Floral Co. - Wichita",
+      "account_id": "001VL00000YHEixYAH",
+      "sales_channel": "K2K",
+      "channel_gmv": 167198.05,
+      "tx_count": 1727
+    },
+    {
+      "company_name": "Valley Floral Co. of OKC - Oklahoma",
+      "account_id": "0011L00002KVe1mQAD",
+      "sales_channel": "K2K",
+      "channel_gmv": 24999.83,
+      "tx_count": 261
+    },
+    {
+      "company_name": "Valley Floral Co. of Oklahoma LLC - Tulsa",
+      "account_id": "001VL00000YHLNpYAP",
+      "sales_channel": "K2K",
+      "channel_gmv": 156053.79,
+      "tx_count": 1702
+    },
+    {
+      "company_name": "Valley Springs LLC",
+      "account_id": "001G000001DW4QOIA1",
+      "sales_channel": "Offline",
+      "channel_gmv": 12053000.24,
+      "tx_count": 27377
+    },
+    {
+      "company_name": "Valley Springs LLC",
+      "account_id": "001G000001DW4QOIA1",
+      "sales_channel": "K2K",
+      "channel_gmv": 183429.42,
+      "tx_count": 1784
+    },
+    {
+      "company_name": "Valley Springs LLC",
+      "account_id": "001G000001DW4QOIA1",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 140105.31,
+      "tx_count": 1239
+    },
+    {
+      "company_name": "Valley Springs LLC",
+      "account_id": "001G000001DW4QOIA1",
+      "sales_channel": "API",
+      "channel_gmv": 2591.9,
+      "tx_count": 40
+    },
+    {
+      "company_name": "Vosz Floral LLC",
+      "account_id": "0011L00002h0CH9QAM",
+      "sales_channel": "Offline",
+      "channel_gmv": 990974.6,
+      "tx_count": 21885
+    },
+    {
+      "company_name": "Vosz Floral LLC",
+      "account_id": "0011L00002h0CH9QAM",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 12278.95,
+      "tx_count": 518
+    },
+    {
+      "company_name": "WE GOT FLOWERS",
+      "account_id": "0011L000028TcCRQA0",
+      "sales_channel": "Offline",
+      "channel_gmv": 2927103.02,
+      "tx_count": 79805
+    },
+    {
+      "company_name": "WE GOT FLOWERS",
+      "account_id": "0011L000028TcCRQA0",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 490.97,
+      "tx_count": 3
+    },
+    {
+      "company_name": "WHOLESALE NORTON'S FLORIST",
+      "account_id": "00116000022ofJ2AAI",
+      "sales_channel": "Offline",
+      "channel_gmv": 0.0,
+      "tx_count": 1
+    },
+    {
+      "company_name": "Washington Floral Service, Inc",
+      "account_id": "00116000021BDnbAAG",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 70467.35,
+      "tx_count": 547
+    },
+    {
+      "company_name": "Webb's Wholesale Florist",
+      "account_id": "0011600001uSkF3AAK",
+      "sales_channel": "K2K",
+      "channel_gmv": 49001.12,
+      "tx_count": 713
+    },
+    {
+      "company_name": "White Rose Flowers & Supplies Inc.",
+      "account_id": "001VL00000AsdReYAJ",
+      "sales_channel": "Offline",
+      "channel_gmv": 1907705.84,
+      "tx_count": 34684
+    },
+    {
+      "company_name": "Wolfe Wholesale Florist, Inc. Waco",
+      "account_id": "00116000021BPGhAAO",
+      "sales_channel": "K2K",
+      "channel_gmv": 131239.17,
+      "tx_count": 1309
+    },
+    {
+      "company_name": "Younger & Son Inc",
+      "account_id": "001VL00000k6ul2YAA",
+      "sales_channel": "K2K",
+      "channel_gmv": 22735.37,
+      "tx_count": 221
+    },
+    {
+      "company_name": "Zeidler Floral",
+      "account_id": "0014p0000220KDPAA2",
+      "sales_channel": "Offline",
+      "channel_gmv": 787120.85,
+      "tx_count": 26504
+    },
+    {
+      "company_name": "Zeidler Floral",
+      "account_id": "0014p0000220KDPAA2",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 163709.32,
+      "tx_count": 8424
+    },
+    {
+      "company_name": "Zion Flowers INC",
+      "account_id": "001G000001DW4ThIAL",
+      "sales_channel": "Offline",
+      "channel_gmv": 462464.6,
+      "tx_count": 3540
+    },
+    {
+      "company_name": "Zion Flowers INC",
+      "account_id": "001G000001DW4ThIAL",
+      "sales_channel": "eCommerce",
+      "channel_gmv": 35096.55,
+      "tx_count": 350
+    },
+    {
+      "company_name": "Zion Flowers INC",
+      "account_id": "001G000001DW4ThIAL",
+      "sales_channel": "K2K",
+      "channel_gmv": 28147.15,
+      "tx_count": 269
+    },
+    {
+      "company_name": "Zoom-Bloom",
+      "account_id": "001G000001JbAIjIAN",
+      "sales_channel": "Offline",
+      "channel_gmv": 319678.15,
+      "tx_count": 3655
+    }
+  ]
+}

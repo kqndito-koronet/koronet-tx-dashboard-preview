@@ -1,0 +1,12 @@
+{
+  "description": "Canonical intervention registry for the TX Dashboard Core. It records approved, human-owned follow-through and learning; it does not execute customer outreach, configuration changes, data pulls or product work.",
+  "record_contract": {
+    "entry_gate": "A linked System Request must be explicitly APPROVED in system_request_review.json. For a play/lead intervention, the lead/play must also be approved for operational use.",
+    "allowed_statuses": ["PROPOSED", "READY_FOR_REVIEW", "APPROVED_TO_START", "ACTIVE", "BLOCKED", "COMPLETED", "CLOSED_NO_ACTION"],
+    "required_fields": ["intervention_id", "request_id", "account_id", "objective", "reason_evidence", "owner", "next_action", "next_check_at", "status", "source"],
+    "required_before_active": ["approval_by", "approval_at", "action_owner_confirmation"],
+    "required_before_completed": ["customer_response_or_result", "outcome_measurement", "learning", "closed_at"],
+    "authority_rule": "A record is accountability and learning state only. Every external action retains its own authorization gate."
+  },
+  "records": []
+}

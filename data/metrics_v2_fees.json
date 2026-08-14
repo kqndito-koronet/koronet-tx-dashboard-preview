@@ -1,0 +1,295 @@
+{
+  "_metadata": {
+    "query": "Q03_fees_combined",
+    "as_of": "2026-07-30",
+    "source_billed": "PRODUCTION.ANALYTICS.TRANSACTION_FEES (through Jun 2026)",
+    "source_expected": "PRODUCTION.ANALYTICS.EXPECTED_TRANSACTION_FEES (Jul 2026)",
+    "max_transaction_date_billed": "2026-06-30",
+    "rules_applied": "R1,R2,R3,R8_exception,R9,R10,R11",
+    "r8_exception": "TRANSACTION_FEES_SV broken (cast error). Using base TRANSACTION_FEES.",
+    "axerrio_note": "Totals are ORGANIC (Snowflake only). Add Axerrio ~$9K/month from Sofia Control Sheet.",
+    "query_ids": [
+      "01c616d8-000a-7826-0001-83020ece9f16",
+      "01c616d9-000a-8262-0001-83020eced0ea"
+    ],
+    "generated": "2026-07-31"
+  },
+  "network_totals": {
+    "fees_total": {
+      "current_month": 148961.56,
+      "prior_month": 189864.51,
+      "current_quarter": 148961.56,
+      "prior_quarter": 784736.18,
+      "ytd": 1476352.56,
+      "prior_ytd": 1101253.26,
+      "as_of": "2026-07-30",
+      "deltas": {
+        "mom": -21.54,
+        "qoq": -81.02,
+        "yoy": 34.06
+      },
+      "note": "Organic fees only. Axerrio (~$54K H1 2026, ~$9K/month) not included.",
+      "total_rows": 3064904
+    }
+  },
+  "total_fee_paying_companies": 244,
+  "companies_with_ytd_fees": "See company-level detail below",
+  "companies": {
+    "-Sole Farms": {
+      "company_id": "25489",
+      "fees_total": {
+        "current_month": 12330.06,
+        "prior_month": 15506.69,
+        "current_quarter": 12330.06,
+        "prior_quarter": 67908.19,
+        "ytd": 138547.97,
+        "prior_ytd": 71589.36,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -20.49,
+          "qoq": -81.84,
+          "yoy": 93.53
+        }
+      }
+    },
+    "* Jet Fresh Flower Distributors Inc.": {
+      "company_id": "18322",
+      "fees_total": {
+        "current_month": 10761.62,
+        "prior_month": 15021.1,
+        "current_quarter": 10761.62,
+        "prior_quarter": 54898.1,
+        "ytd": 103414.3,
+        "prior_ytd": 66730.48,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -28.36,
+          "qoq": -80.4,
+          "yoy": 54.97
+        }
+      }
+    },
+    "Fresca Farms": {
+      "company_id": "103112",
+      "fees_total": {
+        "current_month": 8264.55,
+        "prior_month": 11255.22,
+        "current_quarter": 8264.55,
+        "prior_quarter": 43393.08,
+        "ytd": 84243.76,
+        "prior_ytd": 24196.35,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -26.57,
+          "qoq": -80.95,
+          "yoy": 248.17
+        }
+      }
+    },
+    "Kennicott Brothers Company": {
+      "company_id": "44150",
+      "fees_total": {
+        "current_month": 10852.13,
+        "prior_month": 14241.06,
+        "current_quarter": 10852.13,
+        "prior_quarter": 46962.06,
+        "ytd": 83137.12,
+        "prior_ytd": 59051.94,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -23.8,
+          "qoq": -76.89,
+          "yoy": 40.79
+        }
+      }
+    },
+    "FloraLink": {
+      "company_id": "153031",
+      "fees_total": {
+        "current_month": 5606.27,
+        "prior_month": 6863.92,
+        "current_quarter": 5606.27,
+        "prior_quarter": 31366.17,
+        "ytd": 60903.82,
+        "prior_ytd": 53260.46,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -18.32,
+          "qoq": -82.13,
+          "yoy": 14.35
+        }
+      }
+    },
+    "Continental Flowers": {
+      "company_id": "146846",
+      "fees_total": {
+        "current_month": 7089.38,
+        "prior_month": 7096.36,
+        "current_quarter": 7089.38,
+        "prior_quarter": 31943.77,
+        "ytd": 60542.04,
+        "prior_ytd": 53883.16,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -0.1,
+          "qoq": -77.81,
+          "yoy": 12.36
+        }
+      }
+    },
+    "Royal Flowers Inc., Domestic": {
+      "company_id": "22143",
+      "fees_total": {
+        "current_month": 4839.32,
+        "prior_month": 7067.5,
+        "current_quarter": 4839.32,
+        "prior_quarter": 30684.89,
+        "ytd": 60388.46,
+        "prior_ytd": 61894.88,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -31.53,
+          "qoq": -84.23,
+          "yoy": -2.43
+        }
+      }
+    },
+    "Choice Farms": {
+      "company_id": "341499",
+      "fees_total": {
+        "current_month": 6622.05,
+        "prior_month": 8744.48,
+        "current_quarter": 6622.05,
+        "prior_quarter": 36008.89,
+        "ytd": 59295.0,
+        "prior_ytd": 42863.5,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -24.27,
+          "qoq": -81.61,
+          "yoy": 38.33
+        }
+      }
+    },
+    "Rosaprima International, LLC": {
+      "company_id": "12941",
+      "fees_total": {
+        "current_month": 7549.14,
+        "prior_month": 9122.34,
+        "current_quarter": 7549.14,
+        "prior_quarter": 32129.93,
+        "ytd": 53466.12,
+        "prior_ytd": 19669.03,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -17.25,
+          "qoq": -76.5,
+          "yoy": 171.83
+        }
+      }
+    },
+    "Allure Farms": {
+      "company_id": "73730",
+      "fees_total": {
+        "current_month": 3081.37,
+        "prior_month": 5182.81,
+        "current_quarter": 3081.37,
+        "prior_quarter": 26003.34,
+        "ytd": 45047.54,
+        "prior_ytd": 29934.64,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -40.55,
+          "qoq": -88.15,
+          "yoy": 50.49
+        }
+      }
+    },
+    "Bella Blossom LLC": {
+      "company_id": "17789",
+      "fees_total": {
+        "current_month": 4151.62,
+        "prior_month": 5919.11,
+        "current_quarter": 4151.62,
+        "prior_quarter": 24568.09,
+        "ytd": 44832.58,
+        "prior_ytd": 33365.18,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -29.86,
+          "qoq": -83.1,
+          "yoy": 34.37
+        }
+      }
+    },
+    "Bill Doran Company": {
+      "company_id": "7030",
+      "fees_total": {
+        "current_month": 5993.61,
+        "prior_month": 5766.17,
+        "current_quarter": 5993.61,
+        "prior_quarter": 21537.73,
+        "ytd": 42759.76,
+        "prior_ytd": 10783.71,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": 3.94,
+          "qoq": -72.17,
+          "yoy": 296.52
+        }
+      }
+    },
+    "* Welyflor / PROFILE FLOWERS": {
+      "company_id": "453081",
+      "fees_total": {
+        "current_month": 3321.87,
+        "prior_month": 5326.53,
+        "current_quarter": 3321.87,
+        "prior_quarter": 23141.42,
+        "ytd": 40637.37,
+        "prior_ytd": 25197.1,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -37.64,
+          "qoq": -85.65,
+          "yoy": 61.28
+        }
+      }
+    },
+    "Sunburst Farms": {
+      "company_id": "22218",
+      "fees_total": {
+        "current_month": 2823.21,
+        "prior_month": 3488.01,
+        "current_quarter": 2823.21,
+        "prior_quarter": 21756.97,
+        "ytd": 39174.74,
+        "prior_ytd": 33817.07,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -19.06,
+          "qoq": -87.02,
+          "yoy": 15.84
+        }
+      }
+    },
+    "U.S. Greens Corp": {
+      "company_id": "468041",
+      "fees_total": {
+        "current_month": 2784.95,
+        "prior_month": 3428.35,
+        "current_quarter": 2784.95,
+        "prior_quarter": 13768.2,
+        "ytd": 28465.36,
+        "prior_ytd": 21523.55,
+        "as_of": "2026-07-30",
+        "deltas": {
+          "mom": -18.77,
+          "qoq": -79.77,
+          "yoy": 32.25
+        }
+      }
+    }
+  },
+  "_note": "Top 15 companies shown. Full 244-company dataset available via Q03 query re-run."
+}

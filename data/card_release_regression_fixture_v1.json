@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "status": "blocking",
+  "purpose": "Release gate for the account-card UI/data baseline. The active staged renderer must preserve the five-card investigation structure and must not silently fall back to legacy raw metrics.",
+  "baseline": {
+    "commit": "72960d1",
+    "reference": "docs/transactions/TX_CARD_FIELD_INVENTORY_2026-08-04.md"
+  },
+  "fixtures": [
+    {"company_id": "743648", "name": "Zeidler Floral", "priority": "top-account"},
+    {"company_id": "816515", "name": "Price's Floral Wholesale, LLC", "priority": "metric-integrity"},
+    {"company_id": "44150", "name": "Kennicott Brothers Company", "priority": "identity-and-core"},
+    {"company_id": "193828", "name": "Arizona Family Florist", "priority": "estimate-range"}
+  ],
+  "cards": {
+    "potential": {
+      "heading": "POTENTIAL — ¿Cuán grande es?",
+      "required_markers": ["SELL SIDE", "BUY SIDE", "Est. company GMV", "Est. Sell (calc)", "Koronet Sell", "Online Sell", "Est. total purchases", "Est. Buy", "Koronet Buy", "Online Buy", "Direct TX fees", "TOTAL", "NEEDS 2 SNAPSHOTS"]
+    },
+    "opportunities": {
+      "heading": "OPPORTUNITIES — ¿Qué investigar primero?",
+      "required_markers": ["PRODUCT PROFILE", "REVENUE OPPORTUNITIES", "CONFIG OPPORTUNITIES", "Bottleneck", "Next Action", "DRAFT · prerequisite"]
+    },
+    "buy": {
+      "heading": "BUY — ¿Compra por la plataforma?",
+      "required_markers": ["UNIT ECONOMICS", "COVERAGE & GAP", "CONNECTIONS & LIFECYCLE", "BEST-IN-CLASS CONTEXT", "SOURCING COVERAGE — ONLINE VS NON-ONLINE", "Procurement GMV", "Connected → activated → active", "Categories", "SKUs", "Varieties / purchase-ahead horizon", "Connection / lifecycle signals", "Do not call non-online volume leakage"]
+    },
+    "list": {
+      "heading": "LIST — ¿Pueden encontrar la oferta online?",
+      "required_markers": ["Capacity to publish — product features and shop settings", "SFDC feature (observed)", "Shop-setting snapshot", "Categories", "Varieties", "SKUs", "Offer horizon / fulfillment", "Bunches", "historical sales-assortment proxies, not current catalog/inventory"]
+    },
+    "sell": {
+      "heading": "SELL — ¿Vende online?",
+      "required_markers": ["Observed SELL YTD", "Best-in-class context", "Customer evidence", "Online/offline customer cohort", "Observed online sale format", "Shop/readiness parity", "GA4 account CVR", "Repeat rate", "Top 5 concentration", "Traffic is blocked until LIST parity"]
+    }
+  },
+  "forbidden_active_legacy_tokens": [
+    "METRICS[",
+    "window.EST_GMV",
+    "getV2Sell(",
+    "getV2Buy(",
+    "findSupplySell(",
+    "findRepeatRate(",
+    "findBuyerData(",
+    "getV2Fees("
+  ],
+  "release_receipt_required": [
+    "source_commit",
+    "field_inventory",
+    "visual_capture_zeidler",
+    "visual_capture_prices",
+    "visual_capture_kennicott",
+    "visual_capture_arizona_family"
+  ]
+}

@@ -1,0 +1,2074 @@
+{
+  "_meta": {
+    "description": "Online vs offline SKU counts (distinct product_description) per company, YTD 2026",
+    "source": "PRODUCTION.ANALYTICS.SALES_SV",
+    "period": "2026-01-01 to 2026-07-31",
+    "filters": "ks_flag=TRUE, sales < 100000, dump accounts excluded, product_description IS NOT NULL",
+    "online_definition": "sales_channel IN ('eCommerce','K2K','API') per channels.json",
+    "offline_definition": "sales_channel NOT IN ('eCommerce','K2K','API')",
+    "sku_field": "product_description (e.g. 'ROS WHT Tibet 60' = category+color+variety+grade)",
+    "dedup": "DISTINCT sale_item_id before aggregation (Rule 5/16 fan-out prevention)",
+    "deduped_rows": 9626140,
+    "companies": 342,
+    "gap_formula": "offline_skus - online_skus (positive = more offline than online = LIST opportunity)",
+    "note": "Some SKUs appear in BOTH online and offline channels, so online_skus + offline_skus >= total_skus in some cases. Gap shows net offline-only breadth.",
+    "generated": "2026-07-31",
+    "rules_applied": [
+      "R1 ks_flag",
+      "R4 sales<100k",
+      "R5/R16 dedup sale_item_id",
+      "R6/R13 channels.json online def",
+      "R8 semantic view only",
+      "R9 provenance",
+      "R12 dump exclusion"
+    ]
+  },
+  "companies": {
+    "Bill Doran Company": {
+      "online_skus": 3894,
+      "offline_skus": 23211,
+      "total_skus": 23277,
+      "gap": 19317
+    },
+    "* Jet Fresh Flower Distributors Inc.": {
+      "online_skus": 8613,
+      "offline_skus": 13746,
+      "total_skus": 15394,
+      "gap": 5133
+    },
+    "Mayesh Wholesale Florist Inc": {
+      "online_skus": 7616,
+      "offline_skus": 10760,
+      "total_skus": 12042,
+      "gap": 3144
+    },
+    "Kennicott Brothers Company": {
+      "online_skus": 5837,
+      "offline_skus": 9643,
+      "total_skus": 10477,
+      "gap": 3806
+    },
+    "Sunburst Farms": {
+      "online_skus": 2921,
+      "offline_skus": 7009,
+      "total_skus": 7395,
+      "gap": 4088
+    },
+    "Fresca Farms": {
+      "online_skus": 3099,
+      "offline_skus": 6339,
+      "total_skus": 6735,
+      "gap": 3240
+    },
+    "FloraLink": {
+      "online_skus": 5738,
+      "offline_skus": 0,
+      "total_skus": 5738,
+      "gap": -5738
+    },
+    "Flora Fresh Inc": {
+      "online_skus": 367,
+      "offline_skus": 5489,
+      "total_skus": 5535,
+      "gap": 5122
+    },
+    "Allure Farms": {
+      "online_skus": 3375,
+      "offline_skus": 4998,
+      "total_skus": 5455,
+      "gap": 1623
+    },
+    "Pinnacle Flowers, LLC": {
+      "online_skus": 672,
+      "offline_skus": 4560,
+      "total_skus": 4661,
+      "gap": 3888
+    },
+    "Bill Doran Company (2)": {
+      "online_skus": 0,
+      "offline_skus": 4037,
+      "total_skus": 4037,
+      "gap": 4037
+    },
+    "-Sole Farms": {
+      "online_skus": 2523,
+      "offline_skus": 3552,
+      "total_skus": 3820,
+      "gap": 1029
+    },
+    "Metro Flower Market LLC": {
+      "online_skus": 154,
+      "offline_skus": 3546,
+      "total_skus": 3547,
+      "gap": 3392
+    },
+    "H&T Wholesale Flowers": {
+      "online_skus": 313,
+      "offline_skus": 2762,
+      "total_skus": 2773,
+      "gap": 2449
+    },
+    "Gala Roses": {
+      "online_skus": 1240,
+      "offline_skus": 2608,
+      "total_skus": 2687,
+      "gap": 1368
+    },
+    "KBC Cooler Account": {
+      "online_skus": 933,
+      "offline_skus": 2438,
+      "total_skus": 2685,
+      "gap": 1505
+    },
+    "A Trilogy Floral - Zamba Flowers": {
+      "online_skus": 1785,
+      "offline_skus": 2310,
+      "total_skus": 2638,
+      "gap": 525
+    },
+    "Choice Farms": {
+      "online_skus": 1963,
+      "offline_skus": 2196,
+      "total_skus": 2633,
+      "gap": 233
+    },
+    "Cleveland Plant & Flower Co.": {
+      "online_skus": 2511,
+      "offline_skus": 0,
+      "total_skus": 2511,
+      "gap": -2511
+    },
+    "NY Floral Supply": {
+      "online_skus": 307,
+      "offline_skus": 2448,
+      "total_skus": 2457,
+      "gap": 2141
+    },
+    "Gardens America Inc.": {
+      "online_skus": 669,
+      "offline_skus": 2207,
+      "total_skus": 2255,
+      "gap": 1538
+    },
+    "Royal Flowers Inc., Domestic": {
+      "online_skus": 1466,
+      "offline_skus": 2090,
+      "total_skus": 2242,
+      "gap": 624
+    },
+    "Rosaprima International, LLC": {
+      "online_skus": 1715,
+      "offline_skus": 2141,
+      "total_skus": 2207,
+      "gap": 426
+    },
+    "Sims Flower Distribution": {
+      "online_skus": 1127,
+      "offline_skus": 1162,
+      "total_skus": 2183,
+      "gap": 35
+    },
+    "Stemline Wholesale": {
+      "online_skus": 180,
+      "offline_skus": 2148,
+      "total_skus": 2161,
+      "gap": 1968
+    },
+    "Riverside Wholesale Florists KY": {
+      "online_skus": 50,
+      "offline_skus": 2155,
+      "total_skus": 2158,
+      "gap": 2105
+    },
+    "BOTANICA WHOLESALE FLORIST DALLAS (IRVING), LLC": {
+      "online_skus": 2101,
+      "offline_skus": 0,
+      "total_skus": 2101,
+      "gap": -2101
+    },
+    "EQR USA": {
+      "online_skus": 574,
+      "offline_skus": 2049,
+      "total_skus": 2058,
+      "gap": 1475
+    },
+    "M&M CUT FLORA": {
+      "online_skus": 2039,
+      "offline_skus": 0,
+      "total_skus": 2039,
+      "gap": -2039
+    },
+    "TFS- Chattanooga": {
+      "online_skus": 2022,
+      "offline_skus": 0,
+      "total_skus": 2022,
+      "gap": -2022
+    },
+    "Ninfa Flowers": {
+      "online_skus": 1,
+      "offline_skus": 2012,
+      "total_skus": 2012,
+      "gap": 2011
+    },
+    "Palm Beach Whsle Flowers, Inc.": {
+      "online_skus": 2000,
+      "offline_skus": 0,
+      "total_skus": 2000,
+      "gap": -2000
+    },
+    "Legacy Flowers": {
+      "online_skus": 269,
+      "offline_skus": 1919,
+      "total_skus": 1966,
+      "gap": 1650
+    },
+    "Prime Petals LLC": {
+      "online_skus": 0,
+      "offline_skus": 1944,
+      "total_skus": 1944,
+      "gap": 1944
+    },
+    "Brightland Farms": {
+      "online_skus": 0,
+      "offline_skus": 1795,
+      "total_skus": 1795,
+      "gap": 1795
+    },
+    "Tropical Blooms Inc.": {
+      "online_skus": 30,
+      "offline_skus": 1785,
+      "total_skus": 1786,
+      "gap": 1755
+    },
+    "A Florist First": {
+      "online_skus": 1764,
+      "offline_skus": 0,
+      "total_skus": 1764,
+      "gap": -1764
+    },
+    "Florimex Toronto Corp.": {
+      "online_skus": 298,
+      "offline_skus": 1742,
+      "total_skus": 1760,
+      "gap": 1444
+    },
+    "JFS Wholesale Floral": {
+      "online_skus": 6,
+      "offline_skus": 1733,
+      "total_skus": 1733,
+      "gap": 1727
+    },
+    "Maple Grove Floral": {
+      "online_skus": 1108,
+      "offline_skus": 1511,
+      "total_skus": 1712,
+      "gap": 403
+    },
+    "Arizona Family Florist": {
+      "online_skus": 0,
+      "offline_skus": 1680,
+      "total_skus": 1680,
+      "gap": 1680
+    },
+    "Melody Farms LLC": {
+      "online_skus": 813,
+      "offline_skus": 1526,
+      "total_skus": 1652,
+      "gap": 713
+    },
+    "HARDIN´S WHLSE - LIBERTY": {
+      "online_skus": 1576,
+      "offline_skus": 0,
+      "total_skus": 1576,
+      "gap": -1576
+    },
+    "Jacksonville Flower Market": {
+      "online_skus": 1555,
+      "offline_skus": 0,
+      "total_skus": 1555,
+      "gap": -1555
+    },
+    "Fair Trade Floral Inc.": {
+      "online_skus": 0,
+      "offline_skus": 1531,
+      "total_skus": 1531,
+      "gap": 1531
+    },
+    "R&W WHOLESALE, INC.": {
+      "online_skus": 1511,
+      "offline_skus": 0,
+      "total_skus": 1511,
+      "gap": -1511
+    },
+    "Charleston Wholesale Florist": {
+      "online_skus": 0,
+      "offline_skus": 1499,
+      "total_skus": 1499,
+      "gap": 1499
+    },
+    "FLORISOL& CO FLOWER TRADING LLC DBA MARVEL FLOWERS": {
+      "online_skus": 0,
+      "offline_skus": 1479,
+      "total_skus": 1479,
+      "gap": 1479
+    },
+    "Metropetals": {
+      "online_skus": 318,
+      "offline_skus": 1184,
+      "total_skus": 1464,
+      "gap": 866
+    },
+    "**Wafex USA": {
+      "online_skus": 509,
+      "offline_skus": 1331,
+      "total_skus": 1454,
+      "gap": 822
+    },
+    "CD Wholesale": {
+      "online_skus": 2,
+      "offline_skus": 1446,
+      "total_skus": 1446,
+      "gap": 1444
+    },
+    "Orlando Wholesale Florist": {
+      "online_skus": 335,
+      "offline_skus": 1437,
+      "total_skus": 1441,
+      "gap": 1102
+    },
+    "Protean Farms US": {
+      "online_skus": 783,
+      "offline_skus": 1298,
+      "total_skus": 1439,
+      "gap": 515
+    },
+    "WE GOT FLOWERS": {
+      "online_skus": 3,
+      "offline_skus": 1434,
+      "total_skus": 1434,
+      "gap": 1431
+    },
+    "Staalduinen Floral-LTF1118": {
+      "online_skus": 1413,
+      "offline_skus": 0,
+      "total_skus": 1413,
+      "gap": -1413
+    },
+    "TFS Bristol": {
+      "online_skus": 1387,
+      "offline_skus": 0,
+      "total_skus": 1387,
+      "gap": -1387
+    },
+    "Floreco, Inc": {
+      "online_skus": 410,
+      "offline_skus": 1258,
+      "total_skus": 1329,
+      "gap": 848
+    },
+    "National Floral Supply": {
+      "online_skus": 0,
+      "offline_skus": 1321,
+      "total_skus": 1321,
+      "gap": 1321
+    },
+    "Miaflora Farms": {
+      "online_skus": 1320,
+      "offline_skus": 0,
+      "total_skus": 1320,
+      "gap": -1320
+    },
+    "Continental Flowers": {
+      "online_skus": 1315,
+      "offline_skus": 1,
+      "total_skus": 1315,
+      "gap": -1314
+    },
+    "Farm To Canada": {
+      "online_skus": 6,
+      "offline_skus": 1283,
+      "total_skus": 1284,
+      "gap": 1277
+    },
+    "Flowers Direct Inc": {
+      "online_skus": 1272,
+      "offline_skus": 0,
+      "total_skus": 1272,
+      "gap": -1272
+    },
+    "Galleria Farms": {
+      "online_skus": 644,
+      "offline_skus": 1244,
+      "total_skus": 1270,
+      "gap": 600
+    },
+    "* Continental Farms": {
+      "online_skus": 1257,
+      "offline_skus": 0,
+      "total_skus": 1257,
+      "gap": -1257
+    },
+    "Valley Floral Co. of Oklahoma LLC - Tulsa": {
+      "online_skus": 1242,
+      "offline_skus": 0,
+      "total_skus": 1242,
+      "gap": -1242
+    },
+    "Best Miami Growers LLC": {
+      "online_skus": 232,
+      "offline_skus": 1196,
+      "total_skus": 1210,
+      "gap": 964
+    },
+    "Miraflor LLC": {
+      "online_skus": 100,
+      "offline_skus": 1200,
+      "total_skus": 1201,
+      "gap": 1100
+    },
+    "Floristcentric, LLC": {
+      "online_skus": 582,
+      "offline_skus": 1148,
+      "total_skus": 1198,
+      "gap": 566
+    },
+    "SOS Floral": {
+      "online_skus": 0,
+      "offline_skus": 1192,
+      "total_skus": 1192,
+      "gap": 1192
+    },
+    "Farm Fresh Exports INC": {
+      "online_skus": 0,
+      "offline_skus": 1184,
+      "total_skus": 1184,
+      "gap": 1184
+    },
+    "Multiflora Corporation": {
+      "online_skus": 1168,
+      "offline_skus": 15,
+      "total_skus": 1168,
+      "gap": -1153
+    },
+    "GOMEZ B.V.": {
+      "online_skus": 0,
+      "offline_skus": 1164,
+      "total_skus": 1164,
+      "gap": 1164
+    },
+    "Stellar Farms": {
+      "online_skus": 607,
+      "offline_skus": 1037,
+      "total_skus": 1160,
+      "gap": 430
+    },
+    "EF FLOWERS": {
+      "online_skus": 4,
+      "offline_skus": 1151,
+      "total_skus": 1151,
+      "gap": 1147
+    },
+    "Baisch & Skinner": {
+      "online_skus": 1145,
+      "offline_skus": 0,
+      "total_skus": 1145,
+      "gap": -1145
+    },
+    "MACUNDO FLOWERS AND GREENS LLC": {
+      "online_skus": 11,
+      "offline_skus": 1137,
+      "total_skus": 1137,
+      "gap": 1126
+    },
+    "Florabundance.": {
+      "online_skus": 1135,
+      "offline_skus": 0,
+      "total_skus": 1135,
+      "gap": -1135
+    },
+    "Unifour Wholesale ": {
+      "online_skus": 1127,
+      "offline_skus": 0,
+      "total_skus": 1127,
+      "gap": -1127
+    },
+    "Valley Floral Co. - Wichita": {
+      "online_skus": 1085,
+      "offline_skus": 0,
+      "total_skus": 1085,
+      "gap": -1085
+    },
+    "Sieck Floral Distributing, Inc": {
+      "online_skus": 1052,
+      "offline_skus": 0,
+      "total_skus": 1052,
+      "gap": -1052
+    },
+    "Zeidler Floral": {
+      "online_skus": 666,
+      "offline_skus": 984,
+      "total_skus": 1042,
+      "gap": 318
+    },
+    "AMORES FLORES INC": {
+      "online_skus": 8,
+      "offline_skus": 1026,
+      "total_skus": 1029,
+      "gap": 1018
+    },
+    "*FLORAL1 INC": {
+      "online_skus": 120,
+      "offline_skus": 1021,
+      "total_skus": 1027,
+      "gap": 901
+    },
+    "LD Trading/ Lawrence Developments Inc.": {
+      "online_skus": 1000,
+      "offline_skus": 0,
+      "total_skus": 1000,
+      "gap": -1000
+    },
+    "Coastal Wholesale Flowers, Inc.": {
+      "online_skus": 994,
+      "offline_skus": 0,
+      "total_skus": 994,
+      "gap": -994
+    },
+    "JOHNSENS WHOLESALE FLORIST": {
+      "online_skus": 984,
+      "offline_skus": 0,
+      "total_skus": 984,
+      "gap": -984
+    },
+    "Tradewinds/ KING FLORAL SUPPLY": {
+      "online_skus": 982,
+      "offline_skus": 0,
+      "total_skus": 982,
+      "gap": -982
+    },
+    "HALL´S - BIRMINGHAM": {
+      "online_skus": 970,
+      "offline_skus": 0,
+      "total_skus": 970,
+      "gap": -970
+    },
+    "Naranjo Farms LLC": {
+      "online_skus": 486,
+      "offline_skus": 857,
+      "total_skus": 956,
+      "gap": 371
+    },
+    "Anton Spaargaren B.V.": {
+      "online_skus": 459,
+      "offline_skus": 892,
+      "total_skus": 935,
+      "gap": 433
+    },
+    "U.S. Greens Corp": {
+      "online_skus": 933,
+      "offline_skus": 2,
+      "total_skus": 933,
+      "gap": -931
+    },
+    "CASCADE FLOWERS DBA STADIUM FLOWERS INC": {
+      "online_skus": 927,
+      "offline_skus": 0,
+      "total_skus": 927,
+      "gap": -927
+    },
+    "Premium Flowers": {
+      "online_skus": 925,
+      "offline_skus": 0,
+      "total_skus": 925,
+      "gap": -925
+    },
+    "COWARD WHOLESALE": {
+      "online_skus": 913,
+      "offline_skus": 0,
+      "total_skus": 913,
+      "gap": -913
+    },
+    "Bella Blossom LLC": {
+      "online_skus": 679,
+      "offline_skus": 793,
+      "total_skus": 888,
+      "gap": 114
+    },
+    "Dr Delphinium": {
+      "online_skus": 0,
+      "offline_skus": 878,
+      "total_skus": 878,
+      "gap": 878
+    },
+    "White Rose Flowers & Supplies Inc.": {
+      "online_skus": 0,
+      "offline_skus": 846,
+      "total_skus": 846,
+      "gap": 846
+    },
+    "PETALS WEST, INC.": {
+      "online_skus": 838,
+      "offline_skus": 0,
+      "total_skus": 838,
+      "gap": -838
+    },
+    "CHICAGO´S WHOLESALE": {
+      "online_skus": 837,
+      "offline_skus": 0,
+      "total_skus": 837,
+      "gap": -837
+    },
+    "Equiflor LLC": {
+      "online_skus": 831,
+      "offline_skus": 0,
+      "total_skus": 831,
+      "gap": -831
+    },
+    "Pronto Farms LLC": {
+      "online_skus": 65,
+      "offline_skus": 805,
+      "total_skus": 831,
+      "gap": 740
+    },
+    "A1 Floral Xpressions": {
+      "online_skus": 464,
+      "offline_skus": 736,
+      "total_skus": 829,
+      "gap": 272
+    },
+    "ECOROSES LLC": {
+      "online_skus": 589,
+      "offline_skus": 618,
+      "total_skus": 827,
+      "gap": 29
+    },
+    "Fletch Wholesale llc": {
+      "online_skus": 826,
+      "offline_skus": 0,
+      "total_skus": 826,
+      "gap": -826
+    },
+    "Tradewinds / Pristine Wholesale Floral": {
+      "online_skus": 820,
+      "offline_skus": 0,
+      "total_skus": 820,
+      "gap": -820
+    },
+    "Valley Springs LLC": {
+      "online_skus": 141,
+      "offline_skus": 803,
+      "total_skus": 811,
+      "gap": 662
+    },
+    "VELDKAMP´S FLOWERS": {
+      "online_skus": 800,
+      "offline_skus": 0,
+      "total_skus": 800,
+      "gap": -800
+    },
+    "Vosz Floral LLC": {
+      "online_skus": 249,
+      "offline_skus": 790,
+      "total_skus": 794,
+      "gap": 541
+    },
+    "Lucas and Greer, Inc. dba L & G Wholesale Florist": {
+      "online_skus": 758,
+      "offline_skus": 0,
+      "total_skus": 758,
+      "gap": -758
+    },
+    "FLEUPHORIA S.A.S": {
+      "online_skus": 0,
+      "offline_skus": 754,
+      "total_skus": 754,
+      "gap": 754
+    },
+    "Continental Floral LLC": {
+      "online_skus": 298,
+      "offline_skus": 737,
+      "total_skus": 743,
+      "gap": 439
+    },
+    "Penelope's Petals, LLC": {
+      "online_skus": 18,
+      "offline_skus": 740,
+      "total_skus": 741,
+      "gap": 722
+    },
+    "Georgia State Floral Distributors": {
+      "online_skus": 734,
+      "offline_skus": 0,
+      "total_skus": 734,
+      "gap": -734
+    },
+    "Metropolitan Wholesale/Cityside Flowers": {
+      "online_skus": 727,
+      "offline_skus": 0,
+      "total_skus": 727,
+      "gap": -727
+    },
+    "Natural Flowers, Inc": {
+      "online_skus": 382,
+      "offline_skus": 682,
+      "total_skus": 724,
+      "gap": 300
+    },
+    "BOTANICA WHSLE FLORIST-HOUSTON": {
+      "online_skus": 721,
+      "offline_skus": 0,
+      "total_skus": 721,
+      "gap": -721
+    },
+    "Mayta International LLC / Native Blooms": {
+      "online_skus": 416,
+      "offline_skus": 626,
+      "total_skus": 708,
+      "gap": 210
+    },
+    "South Florals Imports LLC": {
+      "online_skus": 164,
+      "offline_skus": 690,
+      "total_skus": 706,
+      "gap": 526
+    },
+    "Wolfe Wholesale Florist, Inc. Waco": {
+      "online_skus": 701,
+      "offline_skus": 0,
+      "total_skus": 701,
+      "gap": -701
+    },
+    "Blossom Bliss LLC": {
+      "online_skus": 232,
+      "offline_skus": 545,
+      "total_skus": 692,
+      "gap": 313
+    },
+    "Riverdale Farms": {
+      "online_skus": 683,
+      "offline_skus": 0,
+      "total_skus": 683,
+      "gap": -683
+    },
+    "Alders Wholesale Florist, Inc.": {
+      "online_skus": 667,
+      "offline_skus": 0,
+      "total_skus": 667,
+      "gap": -667
+    },
+    "Petals Direct": {
+      "online_skus": 15,
+      "offline_skus": 645,
+      "total_skus": 659,
+      "gap": 630
+    },
+    "The Elite Flower": {
+      "online_skus": 535,
+      "offline_skus": 406,
+      "total_skus": 656,
+      "gap": -129
+    },
+    "Shamrock Wholesale Florist Memphis": {
+      "online_skus": 642,
+      "offline_skus": 0,
+      "total_skus": 642,
+      "gap": -642
+    },
+    "Zoom-Bloom": {
+      "online_skus": 0,
+      "offline_skus": 626,
+      "total_skus": 626,
+      "gap": 626
+    },
+    "Price's Floral Wholesale, LLC": {
+      "online_skus": 113,
+      "offline_skus": 612,
+      "total_skus": 616,
+      "gap": 499
+    },
+    "Muchflowers Inc.": {
+      "online_skus": 228,
+      "offline_skus": 579,
+      "total_skus": 612,
+      "gap": 351
+    },
+    "Apex Floral Distributors Mississauga": {
+      "online_skus": 0,
+      "offline_skus": 602,
+      "total_skus": 602,
+      "gap": 602
+    },
+    "Del Tropico/ Ameriblooms": {
+      "online_skus": 0,
+      "offline_skus": 589,
+      "total_skus": 589,
+      "gap": 589
+    },
+    "The Flower Co, LLC": {
+      "online_skus": 152,
+      "offline_skus": 566,
+      "total_skus": 583,
+      "gap": 414
+    },
+    "Golden Flowers": {
+      "online_skus": 581,
+      "offline_skus": 2,
+      "total_skus": 581,
+      "gap": -579
+    },
+    "Gassafy Wholesale Florist Inc": {
+      "online_skus": 563,
+      "offline_skus": 0,
+      "total_skus": 563,
+      "gap": -563
+    },
+    "UNIVERSAL FLOWER SERVICE CORP": {
+      "online_skus": 0,
+      "offline_skus": 549,
+      "total_skus": 549,
+      "gap": 549
+    },
+    "Tristate Wholesale Florist": {
+      "online_skus": 548,
+      "offline_skus": 0,
+      "total_skus": 548,
+      "gap": -548
+    },
+    "Pikes Peak Floral": {
+      "online_skus": 525,
+      "offline_skus": 6,
+      "total_skus": 527,
+      "gap": -519
+    },
+    "POSIES TRUCK": {
+      "online_skus": 522,
+      "offline_skus": 0,
+      "total_skus": 522,
+      "gap": -522
+    },
+    "Rokay Floral": {
+      "online_skus": 522,
+      "offline_skus": 0,
+      "total_skus": 522,
+      "gap": -522
+    },
+    "Webb's Wholesale Florist": {
+      "online_skus": 508,
+      "offline_skus": 0,
+      "total_skus": 508,
+      "gap": -508
+    },
+    "MAGNOLIA HOLDINGS 301 LLC  ABSOLUTELY BEAUTIFUL FLOWERS": {
+      "online_skus": 507,
+      "offline_skus": 0,
+      "total_skus": 507,
+      "gap": -507
+    },
+    "Ecuador's Origin Product": {
+      "online_skus": 0,
+      "offline_skus": 503,
+      "total_skus": 503,
+      "gap": 503
+    },
+    "CINCINNATI WHSLE FLORIST INC.5643": {
+      "online_skus": 497,
+      "offline_skus": 0,
+      "total_skus": 497,
+      "gap": -497
+    },
+    "Cananvalle USA LLC": {
+      "online_skus": 252,
+      "offline_skus": 481,
+      "total_skus": 496,
+      "gap": 229
+    },
+    "ROYAL BASE (U.S.A) CORPORATION": {
+      "online_skus": 85,
+      "offline_skus": 452,
+      "total_skus": 488,
+      "gap": 367
+    },
+    "Magnolia Wholesale Florist Inc": {
+      "online_skus": 488,
+      "offline_skus": 0,
+      "total_skus": 488,
+      "gap": -488
+    },
+    "Washington Floral Service, Inc": {
+      "online_skus": 479,
+      "offline_skus": 0,
+      "total_skus": 479,
+      "gap": -479
+    },
+    "Moonlight Flowers": {
+      "online_skus": 28,
+      "offline_skus": 470,
+      "total_skus": 470,
+      "gap": 442
+    },
+    "Zion Flowers INC": {
+      "online_skus": 163,
+      "offline_skus": 437,
+      "total_skus": 460,
+      "gap": 274
+    },
+    "The Queens Flowers Corp": {
+      "online_skus": 443,
+      "offline_skus": 0,
+      "total_skus": 443,
+      "gap": -443
+    },
+    "Len Busch Roses": {
+      "online_skus": 442,
+      "offline_skus": 0,
+      "total_skus": 442,
+      "gap": -442
+    },
+    "DP Flowers Corp": {
+      "online_skus": 393,
+      "offline_skus": 161,
+      "total_skus": 439,
+      "gap": -232
+    },
+    "Exclusive Wholesale": {
+      "online_skus": 432,
+      "offline_skus": 0,
+      "total_skus": 432,
+      "gap": -432
+    },
+    "Bloomistics": {
+      "online_skus": 145,
+      "offline_skus": 421,
+      "total_skus": 430,
+      "gap": 276
+    },
+    "SUNRITE FARMS COLLECTIONS CORP": {
+      "online_skus": 263,
+      "offline_skus": 415,
+      "total_skus": 426,
+      "gap": 152
+    },
+    "Sierra Flower Trading": {
+      "online_skus": 424,
+      "offline_skus": 0,
+      "total_skus": 424,
+      "gap": -424
+    },
+    "Flower List": {
+      "online_skus": 10,
+      "offline_skus": 421,
+      "total_skus": 421,
+      "gap": 411
+    },
+    "Fleurametz Chicago": {
+      "online_skus": 421,
+      "offline_skus": 0,
+      "total_skus": 421,
+      "gap": -421
+    },
+    "Honey Bee Wholesale Florist, LLC": {
+      "online_skus": 421,
+      "offline_skus": 0,
+      "total_skus": 421,
+      "gap": -421
+    },
+    "Southern Floral Co": {
+      "online_skus": 416,
+      "offline_skus": 0,
+      "total_skus": 416,
+      "gap": -416
+    },
+    "New England Wholesale Florist": {
+      "online_skus": 1,
+      "offline_skus": 415,
+      "total_skus": 415,
+      "gap": 414
+    },
+    "Ashland Addison": {
+      "online_skus": 408,
+      "offline_skus": 0,
+      "total_skus": 408,
+      "gap": -408
+    },
+    "Fleurametz USA NYC": {
+      "online_skus": 407,
+      "offline_skus": 0,
+      "total_skus": 407,
+      "gap": -407
+    },
+    "Solo Wholesale Flower LLC": {
+      "online_skus": 405,
+      "offline_skus": 0,
+      "total_skus": 405,
+      "gap": -405
+    },
+    "ALLIANCE FLORAL COMPANY. 6270": {
+      "online_skus": 403,
+      "offline_skus": 0,
+      "total_skus": 403,
+      "gap": -403
+    },
+    "PAT FLOR SCARL": {
+      "online_skus": 55,
+      "offline_skus": 377,
+      "total_skus": 401,
+      "gap": 322
+    },
+    "Farms Connect": {
+      "online_skus": 0,
+      "offline_skus": 400,
+      "total_skus": 400,
+      "gap": 400
+    },
+    "Sofi's Flowers": {
+      "online_skus": 7,
+      "offline_skus": 398,
+      "total_skus": 398,
+      "gap": 391
+    },
+    "The Queens Flowers, Corp": {
+      "online_skus": 397,
+      "offline_skus": 0,
+      "total_skus": 397,
+      "gap": -397
+    },
+    "* Welyflor / PROFILE FLOWERS": {
+      "online_skus": 350,
+      "offline_skus": 378,
+      "total_skus": 394,
+      "gap": 28
+    },
+    "Rose Runners": {
+      "online_skus": 0,
+      "offline_skus": 386,
+      "total_skus": 386,
+      "gap": 386
+    },
+    "MONTEROSAS LLC": {
+      "online_skus": 184,
+      "offline_skus": 374,
+      "total_skus": 385,
+      "gap": 190
+    },
+    "Torchio Nursery": {
+      "online_skus": 381,
+      "offline_skus": 0,
+      "total_skus": 381,
+      "gap": -381
+    },
+    "Direct Farms, LLC": {
+      "online_skus": 8,
+      "offline_skus": 379,
+      "total_skus": 379,
+      "gap": 371
+    },
+    "UNITED WHOLESALE- FFL  ENTERPRISES ": {
+      "online_skus": 360,
+      "offline_skus": 0,
+      "total_skus": 360,
+      "gap": -360
+    },
+    "Dramm & Echter, Inc": {
+      "online_skus": 11,
+      "offline_skus": 359,
+      "total_skus": 359,
+      "gap": 348
+    },
+    "GREEN OCEAN LLC": {
+      "online_skus": 0,
+      "offline_skus": 355,
+      "total_skus": 355,
+      "gap": 355
+    },
+    "! Juliet Wholesale Flowers LLC": {
+      "online_skus": 56,
+      "offline_skus": 347,
+      "total_skus": 354,
+      "gap": 291
+    },
+    "Louisiana Wholesale Florist": {
+      "online_skus": 353,
+      "offline_skus": 0,
+      "total_skus": 353,
+      "gap": -353
+    },
+    "BRIEGER WHSLE -TX.": {
+      "online_skus": 347,
+      "offline_skus": 0,
+      "total_skus": 347,
+      "gap": -347
+    },
+    "POPPIES DESIGN STUDIO, LLC": {
+      "online_skus": 343,
+      "offline_skus": 0,
+      "total_skus": 343,
+      "gap": -343
+    },
+    "-Groflowers": {
+      "online_skus": 250,
+      "offline_skus": 280,
+      "total_skus": 339,
+      "gap": 30
+    },
+    "Rosamina SAS": {
+      "online_skus": 0,
+      "offline_skus": 329,
+      "total_skus": 329,
+      "gap": 329
+    },
+    "AmeriLink Floratrader": {
+      "online_skus": 63,
+      "offline_skus": 325,
+      "total_skus": 326,
+      "gap": 262
+    },
+    "Hoja Verde - Rosen Financial": {
+      "online_skus": 0,
+      "offline_skus": 319,
+      "total_skus": 319,
+      "gap": 319
+    },
+    "Frank Adams Wholesale Florist": {
+      "online_skus": 317,
+      "offline_skus": 0,
+      "total_skus": 317,
+      "gap": -317
+    },
+    "MYSTICFLOWERS LLC": {
+      "online_skus": 99,
+      "offline_skus": 307,
+      "total_skus": 312,
+      "gap": 208
+    },
+    "Aurum Farms LLC": {
+      "online_skus": 7,
+      "offline_skus": 311,
+      "total_skus": 312,
+      "gap": 304
+    },
+    "Green Bouquet LLC": {
+      "online_skus": 1,
+      "offline_skus": 312,
+      "total_skus": 312,
+      "gap": 311
+    },
+    "FLOWERMART CORP": {
+      "online_skus": 36,
+      "offline_skus": 310,
+      "total_skus": 311,
+      "gap": 274
+    },
+    "Nazcaflor USA, Inc": {
+      "online_skus": 121,
+      "offline_skus": 307,
+      "total_skus": 310,
+      "gap": 186
+    },
+    "J&E Greens": {
+      "online_skus": 126,
+      "offline_skus": 300,
+      "total_skus": 305,
+      "gap": 174
+    },
+    "Ensign Wholesale Flower Market": {
+      "online_skus": 300,
+      "offline_skus": 0,
+      "total_skus": 300,
+      "gap": -300
+    },
+    "Megaflor USA": {
+      "online_skus": 151,
+      "offline_skus": 253,
+      "total_skus": 287,
+      "gap": 102
+    },
+    "Sieck Wright Floral Products": {
+      "online_skus": 284,
+      "offline_skus": 0,
+      "total_skus": 284,
+      "gap": -284
+    },
+    "Dreaming Roses Corp": {
+      "online_skus": 105,
+      "offline_skus": 251,
+      "total_skus": 274,
+      "gap": 146
+    },
+    "The Flower Emporium LLC": {
+      "online_skus": 38,
+      "offline_skus": 249,
+      "total_skus": 270,
+      "gap": 211
+    },
+    "IKEBANA CO SAS": {
+      "online_skus": 0,
+      "offline_skus": 258,
+      "total_skus": 258,
+      "gap": 258
+    },
+    "RUMHORA GREENS LLC": {
+      "online_skus": 61,
+      "offline_skus": 249,
+      "total_skus": 253,
+      "gap": 188
+    },
+    "Servicios Chilfresh Ltda.": {
+      "online_skus": 57,
+      "offline_skus": 245,
+      "total_skus": 247,
+      "gap": 188
+    },
+    "INTERNATIONAL TRADING AND SERVICES INC": {
+      "online_skus": 0,
+      "offline_skus": 242,
+      "total_skus": 242,
+      "gap": 242
+    },
+    "Arizona Floral Exchange": {
+      "online_skus": 237,
+      "offline_skus": 0,
+      "total_skus": 237,
+      "gap": -237
+    },
+    "Evergreen Plant Company": {
+      "online_skus": 0,
+      "offline_skus": 228,
+      "total_skus": 228,
+      "gap": 228
+    },
+    "DC FLOWERS DIRECT": {
+      "online_skus": 227,
+      "offline_skus": 0,
+      "total_skus": 227,
+      "gap": -227
+    },
+    "FleuraMetz Montreal Ltd": {
+      "online_skus": 226,
+      "offline_skus": 0,
+      "total_skus": 226,
+      "gap": -226
+    },
+    "The Oklahoma Flower Market": {
+      "online_skus": 220,
+      "offline_skus": 0,
+      "total_skus": 220,
+      "gap": -220
+    },
+    "Interflor LLC": {
+      "online_skus": 48,
+      "offline_skus": 215,
+      "total_skus": 216,
+      "gap": 167
+    },
+    "Royal Flowers S.A": {
+      "online_skus": 0,
+      "offline_skus": 214,
+      "total_skus": 214,
+      "gap": 214
+    },
+    "San Jose Floral": {
+      "online_skus": 0,
+      "offline_skus": 212,
+      "total_skus": 212,
+      "gap": 212
+    },
+    "Valley Floral Co. of OKC - Oklahoma": {
+      "online_skus": 211,
+      "offline_skus": 0,
+      "total_skus": 211,
+      "gap": -211
+    },
+    "Continental Floral OR LLC": {
+      "online_skus": 0,
+      "offline_skus": 210,
+      "total_skus": 210,
+      "gap": 210
+    },
+    "Herradura Growers": {
+      "online_skus": 0,
+      "offline_skus": 209,
+      "total_skus": 209,
+      "gap": 209
+    },
+    "MRS. BLOOM'S DIRECT, INC.": {
+      "online_skus": 208,
+      "offline_skus": 0,
+      "total_skus": 208,
+      "gap": -208
+    },
+    "Younger & Son Inc": {
+      "online_skus": 205,
+      "offline_skus": 0,
+      "total_skus": 205,
+      "gap": -205
+    },
+    "Bunches Direct Blumenimport GmbH": {
+      "online_skus": 26,
+      "offline_skus": 204,
+      "total_skus": 204,
+      "gap": 178
+    },
+    "Hana Farms Inc.": {
+      "online_skus": 54,
+      "offline_skus": 184,
+      "total_skus": 204,
+      "gap": 130
+    },
+    "Lubbock Wholesale": {
+      "online_skus": 200,
+      "offline_skus": 0,
+      "total_skus": 200,
+      "gap": -200
+    },
+    "Floral Chain Direct": {
+      "online_skus": 169,
+      "offline_skus": 193,
+      "total_skus": 199,
+      "gap": 24
+    },
+    "HIRE`S BEST FLOWERS": {
+      "online_skus": 195,
+      "offline_skus": 0,
+      "total_skus": 195,
+      "gap": -195
+    },
+    "Flowerist LLC": {
+      "online_skus": 19,
+      "offline_skus": 186,
+      "total_skus": 186,
+      "gap": 167
+    },
+    "SKY FLOWERS S.A.S": {
+      "online_skus": 0,
+      "offline_skus": 185,
+      "total_skus": 185,
+      "gap": 185
+    },
+    "Floramix, Inc.": {
+      "online_skus": 0,
+      "offline_skus": 180,
+      "total_skus": 180,
+      "gap": 180
+    },
+    "ADEESE FLOWERS LLC": {
+      "online_skus": 95,
+      "offline_skus": 122,
+      "total_skus": 175,
+      "gap": 27
+    },
+    "Continental Floral CA LLC": {
+      "online_skus": 0,
+      "offline_skus": 173,
+      "total_skus": 173,
+      "gap": 173
+    },
+    "Andean Fresh LLC": {
+      "online_skus": 71,
+      "offline_skus": 157,
+      "total_skus": 170,
+      "gap": 86
+    },
+    "CANTIZA FLORAL DBA NFD": {
+      "online_skus": 13,
+      "offline_skus": 159,
+      "total_skus": 166,
+      "gap": 146
+    },
+    "POTOMAC WHSLE": {
+      "online_skus": 164,
+      "offline_skus": 0,
+      "total_skus": 164,
+      "gap": -164
+    },
+    "LA TOSCANA FARMS": {
+      "online_skus": 128,
+      "offline_skus": 158,
+      "total_skus": 163,
+      "gap": 30
+    },
+    "Greens and Flowers Connection": {
+      "online_skus": 79,
+      "offline_skus": 156,
+      "total_skus": 159,
+      "gap": 77
+    },
+    "Details Direct - Core": {
+      "online_skus": 151,
+      "offline_skus": 2,
+      "total_skus": 153,
+      "gap": -149
+    },
+    "Global Flowers": {
+      "online_skus": 111,
+      "offline_skus": 135,
+      "total_skus": 148,
+      "gap": 24
+    },
+    "Liberty Blooms": {
+      "online_skus": 148,
+      "offline_skus": 0,
+      "total_skus": 148,
+      "gap": -148
+    },
+    "FOB UIO -  Alma Spray / Agrinag / Natuflor": {
+      "online_skus": 147,
+      "offline_skus": 0,
+      "total_skus": 147,
+      "gap": -147
+    },
+    "HANAYA FARMS": {
+      "online_skus": 0,
+      "offline_skus": 142,
+      "total_skus": 142,
+      "gap": 142
+    },
+    "Kennicott Kuts": {
+      "online_skus": 43,
+      "offline_skus": 132,
+      "total_skus": 134,
+      "gap": 89
+    },
+    "CONNECTION FLOWERS SAS": {
+      "online_skus": 0,
+      "offline_skus": 132,
+      "total_skus": 132,
+      "gap": 132
+    },
+    "VERA": {
+      "online_skus": 59,
+      "offline_skus": 129,
+      "total_skus": 132,
+      "gap": 70
+    },
+    "Forest Flowers": {
+      "online_skus": 0,
+      "offline_skus": 131,
+      "total_skus": 131,
+      "gap": 131
+    },
+    "FGS.Flowers.MIA": {
+      "online_skus": 5,
+      "offline_skus": 130,
+      "total_skus": 130,
+      "gap": 125
+    },
+    "H&F Greens Inc (Mariposa Growers)": {
+      "online_skus": 0,
+      "offline_skus": 126,
+      "total_skus": 126,
+      "gap": 126
+    },
+    "The Flowerman, Inc.": {
+      "online_skus": 125,
+      "offline_skus": 0,
+      "total_skus": 125,
+      "gap": -125
+    },
+    "Northline Wholesale Flowers": {
+      "online_skus": 117,
+      "offline_skus": 2,
+      "total_skus": 119,
+      "gap": -115
+    },
+    "FLORISOL & COMPANY FLOWER TRADING LLC": {
+      "online_skus": 20,
+      "offline_skus": 104,
+      "total_skus": 118,
+      "gap": 84
+    },
+    "Mideast Flowers Distributors, Inc.": {
+      "online_skus": 117,
+      "offline_skus": 0,
+      "total_skus": 117,
+      "gap": -117
+    },
+    "Faguaflowers Intl LLC": {
+      "online_skus": 115,
+      "offline_skus": 3,
+      "total_skus": 117,
+      "gap": -112
+    },
+    "IRIS ROSES LLC": {
+      "online_skus": 68,
+      "offline_skus": 109,
+      "total_skus": 116,
+      "gap": 41
+    },
+    "Dreisbach Wholesale": {
+      "online_skus": 115,
+      "offline_skus": 0,
+      "total_skus": 115,
+      "gap": -115
+    },
+    "Quinlan-Wasserman, Inc": {
+      "online_skus": 112,
+      "offline_skus": 0,
+      "total_skus": 112,
+      "gap": -112
+    },
+    "Valleflor USA": {
+      "online_skus": 48,
+      "offline_skus": 104,
+      "total_skus": 109,
+      "gap": 56
+    },
+    "Nova Packaging Solutions, Inc.": {
+      "online_skus": 3,
+      "offline_skus": 106,
+      "total_skus": 109,
+      "gap": 103
+    },
+    "Details Direct": {
+      "online_skus": 108,
+      "offline_skus": 0,
+      "total_skus": 108,
+      "gap": -108
+    },
+    "DVFLORA SEWELL": {
+      "online_skus": 102,
+      "offline_skus": 0,
+      "total_skus": 102,
+      "gap": -102
+    },
+    "FloraCo, Inc": {
+      "online_skus": 42,
+      "offline_skus": 94,
+      "total_skus": 101,
+      "gap": 52
+    },
+    "Continental Floral FL LLC": {
+      "online_skus": 0,
+      "offline_skus": 99,
+      "total_skus": 99,
+      "gap": 99
+    },
+    "Tutuli Flower Farms": {
+      "online_skus": 95,
+      "offline_skus": 3,
+      "total_skus": 95,
+      "gap": -92
+    },
+    "Lartisan Roses LLC": {
+      "online_skus": 35,
+      "offline_skus": 89,
+      "total_skus": 91,
+      "gap": 54
+    },
+    "Pacifica Farms - CAL": {
+      "online_skus": 87,
+      "offline_skus": 0,
+      "total_skus": 87,
+      "gap": -87
+    },
+    "Bo's Wholesale Florist": {
+      "online_skus": 81,
+      "offline_skus": 0,
+      "total_skus": 81,
+      "gap": -81
+    },
+    "Ontario Flower Growers Cooperative Ltd.": {
+      "online_skus": 0,
+      "offline_skus": 79,
+      "total_skus": 79,
+      "gap": 79
+    },
+    "Premium Greens Australia LLC": {
+      "online_skus": 40,
+      "offline_skus": 73,
+      "total_skus": 76,
+      "gap": 33
+    },
+    "Continental Floral PNW LLC": {
+      "online_skus": 0,
+      "offline_skus": 75,
+      "total_skus": 75,
+      "gap": 75
+    },
+    "MAGNIFICA FLOWERS": {
+      "online_skus": 0,
+      "offline_skus": 73,
+      "total_skus": 73,
+      "gap": 73
+    },
+    "SHAW LAKE FARMS INC.": {
+      "online_skus": 72,
+      "offline_skus": 0,
+      "total_skus": 72,
+      "gap": -72
+    },
+    "Inversiones Napy S.A": {
+      "online_skus": 1,
+      "offline_skus": 71,
+      "total_skus": 71,
+      "gap": 70
+    },
+    "Coquette Roses": {
+      "online_skus": 3,
+      "offline_skus": 71,
+      "total_skus": 71,
+      "gap": 68
+    },
+    "MALIMA USA": {
+      "online_skus": 3,
+      "offline_skus": 67,
+      "total_skus": 67,
+      "gap": 64
+    },
+    "FMI, LLC.-FL": {
+      "online_skus": 67,
+      "offline_skus": 0,
+      "total_skus": 67,
+      "gap": -67
+    },
+    "BlossomR": {
+      "online_skus": 0,
+      "offline_skus": 64,
+      "total_skus": 64,
+      "gap": 64
+    },
+    "Taylor Wholesale Florist": {
+      "online_skus": 61,
+      "offline_skus": 0,
+      "total_skus": 61,
+      "gap": -61
+    },
+    "Expo Flora S.A.": {
+      "online_skus": 0,
+      "offline_skus": 60,
+      "total_skus": 60,
+      "gap": 60
+    },
+    "(OLD) Avon Valley Floral": {
+      "online_skus": 3,
+      "offline_skus": 56,
+      "total_skus": 56,
+      "gap": 53
+    },
+    "EPIC FARMS USA LLC": {
+      "online_skus": 0,
+      "offline_skus": 44,
+      "total_skus": 44,
+      "gap": 44
+    },
+    "FleuraMetz LA": {
+      "online_skus": 43,
+      "offline_skus": 0,
+      "total_skus": 43,
+      "gap": -43
+    },
+    "Albin Hagstrom & Son, Inc.": {
+      "online_skus": 40,
+      "offline_skus": 5,
+      "total_skus": 40,
+      "gap": -35
+    },
+    "International Fresh Group LLC": {
+      "online_skus": 1,
+      "offline_skus": 39,
+      "total_skus": 40,
+      "gap": 38
+    },
+    "Kontikiflor BV": {
+      "online_skus": 0,
+      "offline_skus": 39,
+      "total_skus": 39,
+      "gap": 39
+    },
+    "STRANGE`S FLORIST, INC.": {
+      "online_skus": 39,
+      "offline_skus": 0,
+      "total_skus": 39,
+      "gap": -39
+    },
+    "ACA Flowers": {
+      "online_skus": 9,
+      "offline_skus": 29,
+      "total_skus": 37,
+      "gap": 20
+    },
+    "First Choice Floral": {
+      "online_skus": 36,
+      "offline_skus": 0,
+      "total_skus": 36,
+      "gap": -36
+    },
+    "Floropolis": {
+      "online_skus": 31,
+      "offline_skus": 3,
+      "total_skus": 33,
+      "gap": -28
+    },
+    "FLORIAD- MONTREAL CANADA INC.": {
+      "online_skus": 33,
+      "offline_skus": 0,
+      "total_skus": 33,
+      "gap": -33
+    },
+    "MGA Flowers": {
+      "online_skus": 12,
+      "offline_skus": 31,
+      "total_skus": 32,
+      "gap": 19
+    },
+    "Nathalia Bloemenexport LLC - MIA": {
+      "online_skus": 32,
+      "offline_skus": 0,
+      "total_skus": 32,
+      "gap": -32
+    },
+    "South Carolina Specialty Cut": {
+      "online_skus": 31,
+      "offline_skus": 0,
+      "total_skus": 31,
+      "gap": -31
+    },
+    "Global Bouquet, LLC": {
+      "online_skus": 0,
+      "offline_skus": 31,
+      "total_skus": 31,
+      "gap": 31
+    },
+    "Dynamic Farms": {
+      "online_skus": 20,
+      "offline_skus": 29,
+      "total_skus": 29,
+      "gap": 9
+    },
+    "Main Wholesale Florist LLC / Clifton": {
+      "online_skus": 28,
+      "offline_skus": 0,
+      "total_skus": 28,
+      "gap": -28
+    },
+    "MegaFlor - UIO": {
+      "online_skus": 28,
+      "offline_skus": 0,
+      "total_skus": 28,
+      "gap": -28
+    },
+    "Universal Flower Farms Inc.": {
+      "online_skus": 13,
+      "offline_skus": 26,
+      "total_skus": 27,
+      "gap": 13
+    },
+    "Ecoroses - Floropolis": {
+      "online_skus": 27,
+      "offline_skus": 0,
+      "total_skus": 27,
+      "gap": -27
+    },
+    "KD & Company": {
+      "online_skus": 26,
+      "offline_skus": 0,
+      "total_skus": 26,
+      "gap": -26
+    },
+    "Patagonia Sun": {
+      "online_skus": 9,
+      "offline_skus": 26,
+      "total_skus": 26,
+      "gap": 17
+    },
+    "* AquaRose": {
+      "online_skus": 6,
+      "offline_skus": 20,
+      "total_skus": 25,
+      "gap": 14
+    },
+    "Florens Group LLC": {
+      "online_skus": 7,
+      "offline_skus": 22,
+      "total_skus": 23,
+      "gap": 15
+    },
+    "Premium Greens Australia B.V.": {
+      "online_skus": 9,
+      "offline_skus": 23,
+      "total_skus": 23,
+      "gap": 14
+    },
+    "EQ Blooms by Flodecol": {
+      "online_skus": 20,
+      "offline_skus": 20,
+      "total_skus": 22,
+      "gap": 0
+    },
+    "Magic Flowers - Floropolis": {
+      "online_skus": 20,
+      "offline_skus": 1,
+      "total_skus": 20,
+      "gap": -19
+    },
+    "Jetty USA LLC": {
+      "online_skus": 19,
+      "offline_skus": 0,
+      "total_skus": 19,
+      "gap": -19
+    },
+    "LIHML INC Fayetteville - #01235 GF Rep Kareena 19": {
+      "online_skus": 19,
+      "offline_skus": 0,
+      "total_skus": 19,
+      "gap": -19
+    },
+    "Coward & Glisson Whsl. Flst.": {
+      "online_skus": 18,
+      "offline_skus": 0,
+      "total_skus": 18,
+      "gap": -18
+    },
+    "Bellaflor Group Inc.": {
+      "online_skus": 17,
+      "offline_skus": 1,
+      "total_skus": 17,
+      "gap": -16
+    },
+    "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN": {
+      "online_skus": 17,
+      "offline_skus": 0,
+      "total_skus": 17,
+      "gap": -17
+    },
+    "Flodecol - Floropolis": {
+      "online_skus": 16,
+      "offline_skus": 0,
+      "total_skus": 16,
+      "gap": -16
+    },
+    "Allied Cut Flower": {
+      "online_skus": 15,
+      "offline_skus": 0,
+      "total_skus": 15,
+      "gap": -15
+    },
+    "Kennicott Brothers West": {
+      "online_skus": 14,
+      "offline_skus": 7,
+      "total_skus": 14,
+      "gap": -7
+    },
+    "Hyperactive Farms Inc.": {
+      "online_skus": 13,
+      "offline_skus": 0,
+      "total_skus": 13,
+      "gap": -13
+    },
+    "Flores de la Hacienda": {
+      "online_skus": 2,
+      "offline_skus": 10,
+      "total_skus": 12,
+      "gap": 8
+    },
+    "Flores San Miguel": {
+      "online_skus": 0,
+      "offline_skus": 11,
+      "total_skus": 11,
+      "gap": 11
+    },
+    "Valle Verde LLC": {
+      "online_skus": 0,
+      "offline_skus": 10,
+      "total_skus": 10,
+      "gap": 10
+    },
+    "Floral Cooperative Purchasing Group LLC": {
+      "online_skus": 0,
+      "offline_skus": 10,
+      "total_skus": 10,
+      "gap": 10
+    },
+    "NYC FLORAL GREENS": {
+      "online_skus": 0,
+      "offline_skus": 9,
+      "total_skus": 9,
+      "gap": 9
+    },
+    "Floral Importers and Distributors Inc. /Buds": {
+      "online_skus": 9,
+      "offline_skus": 0,
+      "total_skus": 9,
+      "gap": -9
+    },
+    "FALL RIVER WHOLESALE": {
+      "online_skus": 8,
+      "offline_skus": 0,
+      "total_skus": 8,
+      "gap": -8
+    },
+    "Llanos De Alba LLADEAL - UIO": {
+      "online_skus": 8,
+      "offline_skus": 0,
+      "total_skus": 8,
+      "gap": -8
+    },
+    "Alison Flowers - UIO": {
+      "online_skus": 8,
+      "offline_skus": 0,
+      "total_skus": 8,
+      "gap": -8
+    },
+    "Salter's Evergreen Supply": {
+      "online_skus": 6,
+      "offline_skus": 7,
+      "total_skus": 7,
+      "gap": 1
+    },
+    "Grupo Vegaflor - Medellin": {
+      "online_skus": 6,
+      "offline_skus": 0,
+      "total_skus": 6,
+      "gap": -6
+    },
+    "Star Roses": {
+      "online_skus": 4,
+      "offline_skus": 2,
+      "total_skus": 6,
+      "gap": -2
+    },
+    "Hortensias Cabogana Cia Ltda": {
+      "online_skus": 5,
+      "offline_skus": 2,
+      "total_skus": 5,
+      "gap": -3
+    },
+    "GRUPO DEL PACIFICO": {
+      "online_skus": 0,
+      "offline_skus": 5,
+      "total_skus": 5,
+      "gap": 5
+    },
+    "Mikes Finest Wholesale Flowers, Inc.": {
+      "online_skus": 5,
+      "offline_skus": 0,
+      "total_skus": 5,
+      "gap": -5
+    },
+    "Claymore C. Sieck Wholesale Florist": {
+      "online_skus": 5,
+      "offline_skus": 0,
+      "total_skus": 5,
+      "gap": -5
+    },
+    "Olimpo Flowers Finca": {
+      "online_skus": 4,
+      "offline_skus": 0,
+      "total_skus": 4,
+      "gap": -4
+    },
+    "Hall´s Wholesale Florist Theodore": {
+      "online_skus": 4,
+      "offline_skus": 0,
+      "total_skus": 4,
+      "gap": -4
+    },
+    "Littlefloyd Investments, LLC": {
+      "online_skus": 4,
+      "offline_skus": 0,
+      "total_skus": 4,
+      "gap": -4
+    },
+    "American Agroproducts": {
+      "online_skus": 3,
+      "offline_skus": 0,
+      "total_skus": 3,
+      "gap": -3
+    },
+    "Gypso S.A. UIO": {
+      "online_skus": 3,
+      "offline_skus": 0,
+      "total_skus": 3,
+      "gap": -3
+    },
+    "Roots Peru": {
+      "online_skus": 3,
+      "offline_skus": 0,
+      "total_skus": 3,
+      "gap": -3
+    },
+    "SPRINGFIELD FLORIST SUPPLY INC": {
+      "online_skus": 1,
+      "offline_skus": 2,
+      "total_skus": 2,
+      "gap": 1
+    },
+    "FLEURIGROS QUEBEC 1995 INC.": {
+      "online_skus": 2,
+      "offline_skus": 0,
+      "total_skus": 2,
+      "gap": -2
+    },
+    "Expobloom - BOG": {
+      "online_skus": 2,
+      "offline_skus": 0,
+      "total_skus": 2,
+      "gap": -2
+    },
+    "Akarana Farms - UIO": {
+      "online_skus": 2,
+      "offline_skus": 0,
+      "total_skus": 2,
+      "gap": -2
+    },
+    "Royal Flowers Inc, International": {
+      "online_skus": 0,
+      "offline_skus": 2,
+      "total_skus": 2,
+      "gap": 2
+    },
+    "Flores Silvestres": {
+      "online_skus": 2,
+      "offline_skus": 0,
+      "total_skus": 2,
+      "gap": -2
+    },
+    "Matthioli Flowers Ecuador": {
+      "online_skus": 2,
+      "offline_skus": 0,
+      "total_skus": 2,
+      "gap": -2
+    },
+    "Much Flowers - UIO": {
+      "online_skus": 2,
+      "offline_skus": 0,
+      "total_skus": 2,
+      "gap": -2
+    },
+    "Everflorals": {
+      "online_skus": 0,
+      "offline_skus": 1,
+      "total_skus": 1,
+      "gap": 1
+    },
+    "McCarthy Wholesale": {
+      "online_skus": 1,
+      "offline_skus": 0,
+      "total_skus": 1,
+      "gap": -1
+    },
+    "Quimflowers - UIO": {
+      "online_skus": 1,
+      "offline_skus": 0,
+      "total_skus": 1,
+      "gap": -1
+    },
+    "ACME Testing, Inc.": {
+      "online_skus": 0,
+      "offline_skus": 1,
+      "total_skus": 1,
+      "gap": 1
+    },
+    "MAHONEYS ROCKY LEDGE FARM &": {
+      "online_skus": 1,
+      "offline_skus": 0,
+      "total_skus": 1,
+      "gap": -1
+    },
+    "Specialty Cut Flowers": {
+      "online_skus": 1,
+      "offline_skus": 0,
+      "total_skus": 1,
+      "gap": -1
+    }
+  }
+}

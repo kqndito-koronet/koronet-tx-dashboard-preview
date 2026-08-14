@@ -1,0 +1,317 @@
+[
+  {
+    "account_name": "Miaflora Farms",
+    "opp_name": "Miaflora Farms LLC: Komet Core",
+    "stage": "Negotiating",
+    "amount": 51689,
+    "close_date": "2026-08-31",
+    "type": "Existing Business",
+    "owner": "Felipe Mesa"
+  },
+  {
+    "account_name": "J Van Vliet",
+    "opp_name": "J Van Vliet - Annual Contract ERP",
+    "stage": "Discovery",
+    "amount": 41856.7,
+    "close_date": "2026-07-28",
+    "type": "Existing Business",
+    "owner": "Davie van Eekelen"
+  },
+  {
+    "account_name": "Bill Doran Company",
+    "opp_name": "Bill Doran Company: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 21030,
+    "close_date": "2026-12-15",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "HARDIN´S WHLSE - LIBERTY",
+    "opp_name": "HARDIN´S WHLSE - LIBERTY: Komet Core",
+    "stage": "Selling",
+    "amount": 15299,
+    "close_date": "2026-08-28",
+    "type": "New Business",
+    "owner": "Felipe Mesa"
+  },
+  {
+    "account_name": "J Van Vliet",
+    "opp_name": "J Van Vliet: Van Vliet - eShops",
+    "stage": "Selling",
+    "amount": 11900,
+    "close_date": "2026-07-28",
+    "type": "Existing Business",
+    "owner": "Davie van Eekelen"
+  },
+  {
+    "account_name": "Louisiana Wholesale Florist",
+    "opp_name": "Louisiana Wholesale Florist: Core Multilocation",
+    "stage": "Closing",
+    "amount": 11369,
+    "close_date": "2026-08-21",
+    "type": "Existing Business",
+    "owner": "Felipe Mesa"
+  },
+  {
+    "account_name": "Lartisan Roses LLC",
+    "opp_name": "L'artisan Roses - Unosof Core",
+    "stage": "Closing",
+    "amount": 7606,
+    "close_date": "2026-08-31",
+    "type": "New Business",
+    "owner": "Felipe Mesa"
+  },
+  {
+    "account_name": "Bill Doran Company",
+    "opp_name": "Bill Doran Company - Expansion Proposal",
+    "stage": "Negotiating",
+    "amount": 7490,
+    "close_date": "2026-08-31",
+    "type": "Existing Business",
+    "owner": "Christian Medina"
+  },
+  {
+    "account_name": "EZ flowers BV",
+    "opp_name": "EZ flowers BV: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 5694.8,
+    "close_date": "2026-10-31",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "Full Pot - Ft. Lauderdale",
+    "opp_name": "Full Pot - Ft. Lauderdale: Multilocation Komet Core",
+    "stage": "Selling",
+    "amount": 5598,
+    "close_date": "2026-08-14",
+    "type": "Existing Business",
+    "owner": "Felipe Mesa"
+  },
+  {
+    "account_name": "MRS. BLOOM’S DIRECT, INC.",
+    "opp_name": "MRS. BLOOM’S DIRECT, INC.: Sunset Project Komet Core",
+    "stage": "Selling",
+    "amount": 5022,
+    "close_date": "2026-09-30",
+    "type": "New Business",
+    "owner": "Mateo Morales"
+  },
+  {
+    "account_name": "Frank Adams Wholesale Florist",
+    "opp_name": "Frank Adams Wholesale Florist: Sunset Project Komet Core Single Location",
+    "stage": "Negotiating",
+    "amount": 4579,
+    "close_date": "2026-08-30",
+    "type": "Existing Business",
+    "owner": "Christian Medina"
+  },
+  {
+    "account_name": "Algro Flowers & Plants",
+    "opp_name": "Algro Flowers & Plants - Algro - Annual Contract",
+    "stage": "Negotiating",
+    "amount": 3719.9,
+    "close_date": "2026-07-15",
+    "type": "Renewal",
+    "owner": "Davie van Eekelen"
+  },
+  {
+    "account_name": "FGS.Flowers",
+    "opp_name": "Floral Global Sourcing B.V.: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 3798,
+    "close_date": "2026-11-27",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "MARKET FLOWERS",
+    "opp_name": "MARKET FLOWERS: Komet Core",
+    "stage": "Selling",
+    "amount": 3498,
+    "close_date": "2026-10-01",
+    "type": "New Business",
+    "owner": "Mateo Morales"
+  },
+  {
+    "account_name": "Unifour Wholesale",
+    "opp_name": "Unifour Wholesale - Komet Core",
+    "stage": "Negotiating",
+    "amount": 3498,
+    "close_date": "2026-08-28",
+    "type": "New Business",
+    "owner": "Felipe Mesa"
+  },
+  {
+    "account_name": "Exclusive Wholesale",
+    "opp_name": "Exclusive Wholesale: eSuites Wholesaler",
+    "stage": "Selling",
+    "amount": 3298,
+    "close_date": "2026-08-29",
+    "type": "Existing Business",
+    "owner": "Felipe Mesa"
+  },
+  {
+    "account_name": "Nashville Flower Market",
+    "opp_name": "Nashville Flower Market: Sunset Project Komet Core",
+    "stage": "Selling",
+    "amount": 3298,
+    "close_date": "2026-08-28",
+    "type": "New Business",
+    "owner": "Felipe Mesa"
+  },
+  {
+    "account_name": "Zeidler Floral",
+    "opp_name": "Zeidler's Flowers: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 2744,
+    "close_date": "2026-09-14",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "Hartford Florist Supply",
+    "opp_name": "Hartford Florists' Supp.: Komet Core",
+    "stage": "Closing",
+    "amount": 2699,
+    "close_date": "2026-07-31",
+    "type": "New Business",
+    "owner": "Felipe Mesa"
+  },
+  {
+    "account_name": "Apex Floral Distributors Mississauga",
+    "opp_name": "Apex Floral Distributors Mississauga: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 2590.92,
+    "close_date": "2026-09-14",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "Kontikiflor BV",
+    "opp_name": "Kontikiflor BV: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 2299,
+    "close_date": "2026-10-07",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "Mellano Sales",
+    "opp_name": "Mellano Sales: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 2155.68,
+    "close_date": "2026-09-14",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "First Choice Floral",
+    "opp_name": "First Choice Floral - Sunset Project Komet Core Multilocation",
+    "stage": "Discovery",
+    "amount": 2098,
+    "close_date": "2026-08-31",
+    "type": "New Business",
+    "owner": "Mateo Morales"
+  },
+  {
+    "account_name": "Bellaflor Group Inc.",
+    "opp_name": "BellaFlor Group Inc: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 1999,
+    "close_date": "2026-10-28",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "Fleurametz USA NYC",
+    "opp_name": "Fleurametz USA NYC: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 1946.52,
+    "close_date": "2026-11-17",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "Metropolitan Wholesale/Cityside Flowers",
+    "opp_name": "Metropolitan Wholesale/Cityside Flowers: eSuite",
+    "stage": "Negotiating",
+    "amount": 1798,
+    "close_date": "2026-08-28",
+    "type": "Existing Business",
+    "owner": "Felipe Mesa"
+  },
+  {
+    "account_name": "Nova Packaging Solutions, Inc.",
+    "opp_name": "Nova Packaging Solutions, Inc.: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 1798,
+    "close_date": "2026-08-03",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "Bella Blossom LLC",
+    "opp_name": "Bella Blossom LLC: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 1684.63,
+    "close_date": "2026-10-07",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "ADEESE FLOWERS LLC",
+    "opp_name": "Adesse Flowers LLC: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 1499,
+    "close_date": "2026-12-17",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "Hyperactive Farms",
+    "opp_name": "Hyperactive Farms - Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 1499,
+    "close_date": "2027-09-30",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "Northline Wholesale Flowers",
+    "opp_name": "Northline Wholesale Flowers - Komet Core + Koronet Procurement",
+    "stage": "Selling",
+    "amount": 1449,
+    "close_date": "2026-08-24",
+    "type": "Existing Business",
+    "owner": "Christian Medina"
+  },
+  {
+    "account_name": "GOMEZ B.V.",
+    "opp_name": "GOMEZ B.V. - Renewal 2026-2027",
+    "stage": "Discovery",
+    "amount": 1449,
+    "close_date": "2026-07-31",
+    "type": "Renewal",
+    "owner": "Catalina Rojas"
+  },
+  {
+    "account_name": "Muchflowers Inc.",
+    "opp_name": "Muchflowers Inc.: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 1399,
+    "close_date": "2026-09-27",
+    "type": null,
+    "owner": "Revenue Operations"
+  },
+  {
+    "account_name": "ACA Flowers",
+    "opp_name": "ACA Flowers: Renewal Opportunity",
+    "stage": "Discovery",
+    "amount": 1399,
+    "close_date": "2026-08-03",
+    "type": null,
+    "owner": "Revenue Operations"
+  }
+]

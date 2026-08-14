@@ -1,0 +1,3178 @@
+{
+  "1241": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "1614": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "2516": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "6864": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "7030": {
+    "max_age": 9,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "7631": {
+    "max_age": 9,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "13989": {
+    "max_age": 15,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "14422": {
+    "max_age": 90,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "17789": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "18322": {
+    "max_age": 9,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "20749": {
+    "max_age": 15,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "20769": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "25120": {
+    "max_age": 200,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "25489": {
+    "max_age": 6,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "33023": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "35266": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "38582": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "39124": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "41934": {
+    "max_age": 30,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "44150": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "44225": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "46206": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "54343": {
+    "max_age": 60,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "73730": {
+    "max_age": 99,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "77300": {
+    "max_age": 4,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "103078": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "103112": {
+    "max_age": 15,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "130337": {
+    "max_age": 14,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "139851": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "144192": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "144369": {
+    "max_age": 60,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "146183": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "146846": {
+    "max_age": 5,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "152602": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "153031": {
+    "max_age": 15,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "153536": {
+    "max_age": 6,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "159761": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "182870": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "188968": {
+    "max_age": 60,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "189419": {
+    "max_age": 12,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "189685": {
+    "max_age": 180,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "193828": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "193829": {
+    "max_age": 5,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "193886": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "194206": {
+    "max_age": 8,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "196051": {
+    "max_age": 40,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "198117": {
+    "max_age": 100,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "199908": {
+    "max_age": 9,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "200279": {
+    "max_age": 160,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "200503": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "257477": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "296458": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "313164": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "319143": {
+    "max_age": 6,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "321023": {
+    "max_age": 35,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "321907": {
+    "max_age": 90,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "322928": {
+    "max_age": 200,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "341499": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "343614": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "375054": {
+    "max_age": 12,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "377256": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "378242": {
+    "max_age": 13,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "378264": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "393475": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "394783": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "395159": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "395357": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "395382": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "397194": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "397789": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "398856": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "399890": {
+    "max_age": 21,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "401680": {
+    "max_age": 12,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "412951": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "449344": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "449683": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "453081": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "453769": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "453771": {
+    "max_age": 60,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "454705": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "467802": {
+    "max_age": 5,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "471458": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "473329": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "476379": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "477128": {
+    "max_age": 12,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "477673": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "483642": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "484037": {
+    "max_age": 5,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "488495": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "489148": {
+    "max_age": 15,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "492201": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "492219": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "496600": {
+    "max_age": 10,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "498769": {
+    "max_age": 11,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "498865": {
+    "max_age": 9,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "498992": {
+    "max_age": 30,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "503075": {
+    "max_age": 60,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "505063": {
+    "max_age": 25,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "505603": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "505896": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "507479": {
+    "max_age": 6,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "507518": {
+    "max_age": 35,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "508421": {
+    "max_age": 750,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "509751": {
+    "max_age": 9,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "521854": {
+    "max_age": 90,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "529464": {
+    "max_age": 20,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "536956": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "541415": {
+    "max_age": 20,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "541854": {
+    "max_age": 5,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "543610": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "552759": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "554187": {
+    "max_age": 15,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "554905": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "560072": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "561230": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "561453": {
+    "max_age": 30,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "569309": {
+    "max_age": 5,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "571220": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "572900": {
+    "max_age": 3,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "573661": {
+    "max_age": 99,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "575819": {
+    "max_age": 9,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "577566": {
+    "max_age": 30,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "578194": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "584972": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "584973": {
+    "max_age": 20,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "585613": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "586784": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "588171": {
+    "max_age": 180,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "590675": {
+    "max_age": 14,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "590728": {
+    "max_age": 4,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "591665": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "591877": {
+    "max_age": 14,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "592345": {
+    "max_age": 5,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "592806": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "594981": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "598944": {
+    "max_age": 4,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "600370": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "600558": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "601280": {
+    "max_age": 5,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "601933": {
+    "max_age": 5,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "603102": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "603611": {
+    "max_age": 4,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "608547": {
+    "max_age": 14,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "610510": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "610818": {
+    "max_age": 199,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "612641": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "612783": {
+    "max_age": 6,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "613695": {
+    "max_age": 12,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "617226": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "618758": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "619847": {
+    "max_age": 60,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "620453": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "620603": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "622743": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "623491": {
+    "max_age": 14,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "624737": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "624816": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "631459": {
+    "max_age": 30,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "632203": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "632322": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "635064": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "640251": {
+    "max_age": 40,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "640460": {
+    "max_age": null,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "640563": {
+    "max_age": 30,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "640762": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "640977": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "641341": {
+    "max_age": 300,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "642076": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "649585": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "649745": {
+    "max_age": 14,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "650252": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "650536": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "650721": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "650767": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "650815": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "650927": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "650986": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651039": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651200": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651216": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651277": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651327": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651479": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651513": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651574": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651632": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651671": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651680": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651684": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651721": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651742": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651765": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651922": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "651959": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "652199": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "652251": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "652302": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "652505": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "652551": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "652793": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "653842": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "654052": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "654131": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "654374": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "654566": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "654661": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "654758": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "654862": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "654944": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "655098": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "655608": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "655643": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "655985": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664019": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664054": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "664103": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664133": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664201": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "664231": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664288": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664314": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664341": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664381": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "664398": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664422": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664494": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664509": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664540": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664575": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664587": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664602": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664623": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664648": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "664670": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664719": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664750": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664820": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "664944": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "664988": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665008": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665027": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665080": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665136": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665147": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665210": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665216": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665261": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "665296": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665316": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665336": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "665358": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665369": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665432": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665443": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665453": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "665481": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "667626": {
+    "max_age": 5,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670288": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670302": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670311": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670366": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670423": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670437": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670450": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670473": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670508": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670546": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670554": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670569": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670590": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670596": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "670675": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "671046": {
+    "max_age": 15,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "672147": {
+    "max_age": 15,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "672205": {
+    "max_age": 6,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "672728": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "672781": {
+    "max_age": 100,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "673823": {
+    "max_age": 20,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "675361": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "675363": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "675451": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "676090": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "677319": {
+    "max_age": 6,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "680290": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "681686": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "681739": {
+    "max_age": 14,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "700069": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "700340": {
+    "max_age": 20,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "700747": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "701220": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "702933": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "702938": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "704005": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "704680": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "704690": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "712429": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "713789": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "713840": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "716166": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "716378": {
+    "max_age": 12,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "726631": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "727131": {
+    "max_age": 20,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "727605": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "729585": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "729609": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "729634": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "729666": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "729684": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "729692": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "729696": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "729712": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "729719": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "730920": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "731091": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "731381": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "731402": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "731414": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "731453": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "731480": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "731500": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "731540": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "731558": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "732448": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "732518": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "732830": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "733807": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "734128": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "735220": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "735300": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "735488": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "735642": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "738936": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "739329": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "740646": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "740696": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "740734": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "742781": {
+    "max_age": 10,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "743217": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "743373": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "743648": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "743681": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "746233": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "751334": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "751350": {
+    "max_age": 5,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "751391": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "755593": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "756108": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "scorecard (NOT VERIFIED)",
+    "audited": false
+  },
+  "756140": {
+    "max_age": 30,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "761636": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "762172": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "762941": {
+    "max_age": 4,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "764867": {
+    "max_age": 12,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "765491": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "765583": {
+    "max_age": 1,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "768931": {
+    "max_age": 6,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "769085": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "769099": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "770224": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "770598": {
+    "max_age": 15,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "795517": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "795674": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "796715": {
+    "max_age": 15,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "796779": {
+    "max_age": 30,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "796848": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "798243": {
+    "max_age": 5,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "799014": {
+    "max_age": 30,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "800562": {
+    "max_age": 11,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "801947": {
+    "max_age": 15,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "802590": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "804758": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "806417": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "808079": {
+    "max_age": 10,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "808448": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "808527": {
+    "max_age": 5,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "809546": {
+    "max_age": 21,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "811196": {
+    "max_age": 365,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "811368": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "812869": {
+    "max_age": 12,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "813857": {
+    "max_age": 0,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "813947": {
+    "max_age": 40,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "814810": {
+    "max_age": 9,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "815425": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "815558": {
+    "max_age": 11,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "815945": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "816515": {
+    "max_age": 5,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "817168": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "817285": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "819114": {
+    "max_age": 5,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "821576": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "821768": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "822374": {
+    "max_age": 7,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "822905": {
+    "max_age": 7,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "822938": {
+    "max_age": 8,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "825239": {
+    "max_age": 14,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "825773": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "827180": {
+    "max_age": 10,
+    "future": false,
+    "bunches_flag": false,
+    "on_hand": false,
+    "source": "COMPANIES_SV",
+    "audited": true
+  },
+  "828336": {
+    "max_age": 10,
+    "future": true,
+    "bunches_flag": true,
+    "on_hand": true,
+    "source": "COMPANIES_SV",
+    "audited": true
+  }
+}

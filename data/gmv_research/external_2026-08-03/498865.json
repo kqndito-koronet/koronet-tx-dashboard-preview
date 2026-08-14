@@ -1,0 +1,27 @@
+{
+  "account_id": "498865",
+  "account_name": "H&T Wholesale Flowers",
+  "status": "EXTERNAL_RANGE_CANDIDATE_NEEDS_IMPORTER_SUPPORT",
+  "researched_at": "2026-08-03",
+  "classification": {
+    "primary": "B2B floral wholesaler / distributor",
+    "evidence": [
+      {"source": "https://htwholesale.com/pages/about-us", "observed": "Official site requires a floral-business resale license, supplies fresh flowers and floral supplies, and identifies Phoenix and Houston wholesale locations."}
+    ]
+  },
+  "observations": [
+    {"evidence_key_suffix": "official-two-b2b-locations", "claim_key": "operating_locations", "claim_summary": "H&T's official site lists B2B wholesale operations in Phoenix, Arizona and Houston, Texas.", "evidence_type": "official_website", "source_url": "https://htwholesale.com/pages/about-us", "source_title": "H&T Wholesale Flowers — About Us", "evidence_state": "observed", "confidence": "high"},
+    {"evidence_key_suffix": "buzzfile-phoenix-estimate", "claim_key": "third_party_revenue_estimate", "claim_summary": "Buzzfile estimates $4,620,075 annual revenue and 19 employees at the Phoenix location; this is a third-party location-level estimate, not audited financials.", "evidence_type": "directory_listing", "source_url": "https://www.buzzfile.com/business/H%26T-Wholesale-Flowers-Inc.-480-463-3333", "source_title": "Buzzfile — H&T Wholesale Flowers Inc.", "evidence_state": "modeled", "confidence": "medium"},
+    {"evidence_key_suffix": "dnb-phoenix-estimate", "claim_key": "third_party_revenue_estimate", "claim_summary": "Dun & Bradstreet's Arizona wholesaler directory lists H&T Wholesale Flowers, Inc. at $5.16M sales revenue; the result does not state whether it includes the Houston location.", "evidence_type": "directory_listing", "source_url": "https://www.dnb.com/business-directory/company-information.miscellaneous_nondurable_goods_merchant_wholesalers.us.arizona.html", "source_title": "Dun & Bradstreet Arizona merchant-wholesaler directory", "evidence_state": "modeled", "confidence": "medium"}
+  ],
+  "gmv_estimate": {"low": 7000000, "mid": 8500000, "high": 10500000, "currency": "USD", "method": "Phoenix third-party revenue estimates ($4.62M and $5.16M) reconciled with official evidence of a second B2B Houston location; range is deliberately not a mechanical doubling because entity scope is unverified.", "confidence": "low", "validation_state": "EXTERNAL_CANDIDATE; validate legal-entity scope and Houston revenue before promotion"},
+  "buys_estimate": {"low": 4340000, "mid": 5780000, "high": 7875000, "currency": "USD", "method": "GMV range × wholesaler procurement band of 62%–75%; model-derived, not externally observed procurement.", "confidence": "low", "validation_state": "DERIVED_FROM_EXTERNAL_GMV_CANDIDATE"},
+  "external_estimates": [
+    {"estimate_type": "company_gmv", "low_value": 7000000, "midpoint_value": 8500000, "high_value": 10500000, "method_key": "two_location_directory_reconciliation", "method_version": "v1", "estimate_state": "modeled", "confidence": "low", "as_of_date": "2026-08-03", "notes": "Phoenix directory estimates are $4.62M and $5.16M; official site proves a second B2B Houston location but legal/entity revenue scope is unverified.", "evidence_key_suffixes": ["official-two-b2b-locations", "buzzfile-phoenix-estimate", "dnb-phoenix-estimate"]},
+    {"estimate_type": "total_purchases", "low_value": 4340000, "midpoint_value": 5780000, "high_value": 7875000, "method_key": "wholesaler_gmv_margin_band", "method_version": "v1", "estimate_state": "modeled", "confidence": "low", "as_of_date": "2026-08-03", "notes": "Derived from the external GMV candidate × 62%–75% wholesaler procurement band; not directly observed.", "evidence_key_suffixes": ["official-two-b2b-locations", "buzzfile-phoenix-estimate", "dnb-phoenix-estimate"]}
+  ],
+  "current_internal_estimate": {"gmv_usd": 7000000, "source": "COMPANIES_SV annual_total_sales", "confidence": "medium", "validation_state": "INTERNAL_MODEL; do not treat as observed actual"},
+  "why_no_external_estimate_yet": null,
+  "next_best_signals": ["Verify whether the Houston location is operated by the same legal entity and find its headcount/revenue or facility size.", "Reconcile the external range with annualized observed Koronet SELL and BUY without treating Koronet as total company GMV."],
+  "estimator_framework": "ops/frameworks/floral_gmv_estimator_prompt.md"
+}

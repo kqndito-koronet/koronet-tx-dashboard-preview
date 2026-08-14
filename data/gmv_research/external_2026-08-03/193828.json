@@ -1,0 +1,29 @@
+{
+  "account_id": "193828",
+  "account_name": "Arizona Family Florist",
+  "status": "EXTERNAL_RANGE_CANDIDATE_NEEDS_IMPORTER_SUPPORT",
+  "researched_at": "2026-08-03",
+  "classification": {
+    "primary": "vertically integrated retail florist, wholesale market and event business",
+    "evidence": [
+      {"source": "https://azfamilyflorist.com/about-us/", "observed": "Official company history states operations consolidated in a 35,000 sq ft Phoenix facility and the business later added wedding/events and a wholesale division."},
+      {"source": "https://azfamilyflorist.com/brands/", "observed": "Official brands page lists retail Arizona Florist, LUX Wedding Florist, Arizona Flower Market, a B2B wholesale division and Geneva Fine Chocolate."}
+    ]
+  },
+  "observations": [
+    {"evidence_key_suffix": "official-35000sqft-multibrand", "claim_key": "operating_footprint", "claim_summary": "Official history describes a centralized 35,000 sq ft Phoenix facility and multiple retail, event, market and wholesale brands.", "evidence_type": "official_website", "source_url": "https://azfamilyflorist.com/about-us/", "source_title": "Arizona Family Florist — About Us", "evidence_state": "observed", "confidence": "high"},
+    {"evidence_key_suffix": "official-brand-portfolio", "claim_key": "business_model_scope", "claim_summary": "Official brands page confirms retail, wedding/event, market, B2B wholesale and chocolate offerings under Arizona Family Florist.", "evidence_type": "official_website", "source_url": "https://azfamilyflorist.com/brands/", "source_title": "Arizona Family Florist — Family of Brands", "evidence_state": "observed", "confidence": "high"},
+    {"evidence_key_suffix": "saf-2012-headcount", "claim_key": "historical_headcount", "claim_summary": "A SAF profile reported 40 full-time employees and up to 170 seasonal employees in 2012; it is historical and cannot establish current headcount.", "evidence_type": "trade_publication", "source_url": "https://safnow.org/wp-content/uploads/2015/05/LuxLadies_12.pdf", "source_title": "SAF / Floral Management — Arizona Family Florist profile", "evidence_state": "historical", "confidence": "medium"},
+    {"evidence_key_suffix": "adapt-employee-band", "claim_key": "third_party_headcount_band", "claim_summary": "Adapt lists an estimated 25–100 employee band and $1–10M revenue band; it is an aggregator estimate and conflicts with the much larger official operating footprint.", "evidence_type": "directory_listing", "source_url": "https://www.adapt.io/contact/brennen-rigler/829805590", "source_title": "Adapt — Arizona Family Florist contact profile", "evidence_state": "modeled", "confidence": "low"}
+  ],
+  "gmv_estimate": {"low": 8000000, "mid": 11000000, "high": 15000000, "currency": "USD", "method": "A 35,000 sq ft integrated retail/wholesale/event facility plus the historical 40-FTE operating signal supports a materially larger scale than low-end directory estimates; range brackets the internal $10M reference rather than replacing it.", "confidence": "low", "validation_state": "EXTERNAL_CANDIDATE; mixed retail/wholesale scope and current headcount require validation"},
+  "buys_estimate": {"low": 3200000, "mid": 6050000, "high": 9750000, "currency": "USD", "method": "Hybrid model: 40%–65% of GMV to reflect retail/event product COGS plus B2B wholesale/market procurement; not externally observed procurement.", "confidence": "low", "validation_state": "DERIVED_FROM_EXTERNAL_GMV_CANDIDATE"},
+  "external_estimates": [
+    {"estimate_type": "company_gmv", "low_value": 8000000, "midpoint_value": 11000000, "high_value": 15000000, "method_key": "hybrid_footprint_headcount_reconciliation", "method_version": "v1", "estimate_state": "modeled", "confidence": "low", "as_of_date": "2026-08-03", "notes": "Official 35,000 sq ft multi-brand operation plus historical 40 FTE signal; mixed retail/wholesale scope makes current revenue uncertain.", "evidence_key_suffixes": ["official-35000sqft-multibrand", "official-brand-portfolio", "saf-2012-headcount", "adapt-employee-band"]},
+    {"estimate_type": "total_purchases", "low_value": 3200000, "midpoint_value": 6050000, "high_value": 9750000, "method_key": "hybrid_cogs_band", "method_version": "v1", "estimate_state": "modeled", "confidence": "low", "as_of_date": "2026-08-03", "notes": "Derived from candidate GMV × 40%–65% to reflect retail/event product COGS plus wholesale/market procurement; not directly observed.", "evidence_key_suffixes": ["official-35000sqft-multibrand", "official-brand-portfolio", "saf-2012-headcount", "adapt-employee-band"]}
+  ],
+  "current_internal_estimate": {"gmv_usd": 10000000, "source": "SFDC Account.AnnualRevenue", "confidence": "medium", "validation_state": "INTERNAL_MODEL; do not treat as observed actual"},
+  "why_no_external_estimate_yet": null,
+  "next_best_signals": ["Obtain current headcount or warehouse/route capacity from a reliable source.", "Separate retail/event/market/wholesale revenue and procurement before using a single BUY ratio."],
+  "estimator_framework": "ops/frameworks/floral_gmv_estimator_prompt.md"
+}

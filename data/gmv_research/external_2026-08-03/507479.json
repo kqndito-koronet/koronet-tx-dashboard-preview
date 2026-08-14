@@ -1,0 +1,30 @@
+{
+  "account_id": "507479",
+  "account_name": "Ashland Addison",
+  "status": "EXTERNAL_RANGE_CANDIDATE_REQUIRES_REVIEW",
+  "researched_at": "2026-08-03",
+  "entity_scope": "Koronet company_location 507479. Public evidence identifies the Chicago Ashland Addison florist business and several Chicago locations; it does not prove the exact legal/company-location boundary used by Koronet.",
+  "classification": {
+    "primary": "retail florist and event floral business",
+    "evidence": [
+      {"source": "https://www.ashaddflorist.com/meet-our-team-chicago", "observed": "Official site says it is hiring across Pilsen, Prentice Hospital, Rush Hospital, LaSalle Flowers and Bunches locations."},
+      {"source": "https://www.ashaddevents.com/about-us/", "observed": "Official site describes family-owned floral design, gifts and event styling."}
+    ]
+  },
+  "observations": [
+    {"evidence_key_suffix": "official-multilocation", "claim_key": "operating_footprint", "claim_summary": "Official site lists multiple Chicago retail locations; this supports a multi-location retail florist scope but not a revenue amount.", "evidence_type": "official_website", "source_url": "https://www.ashaddflorist.com/meet-our-team-chicago", "source_title": "Ashland Addison — Meet Our Team", "evidence_state": "observed", "confidence": "medium"},
+    {"evidence_key_suffix": "indeed-90plus", "claim_key": "public_headcount_signal", "claim_summary": "An Indeed employer profile says the company has a dedicated team of 90+ employees. It is a public employment-platform claim, not audited payroll.", "evidence_type": "third_party_employment_platform", "source_url": "https://www.indeed.com/viewjob?jk=29bcd51757e48ead", "source_title": "Indeed — Ashland Addison Event Stylist listing", "evidence_state": "partial", "confidence": "medium"},
+    {"evidence_key_suffix": "signalhire-revenue-band", "claim_key": "third_party_revenue_band", "claim_summary": "SignalHire reports an estimated annual revenue band of $5M–$25M and approximately $11.6M. This is a vendor-generated estimate, not a company disclosure.", "evidence_type": "third_party_company_database", "source_url": "https://www.signalhire.com/overview/ashland-addison-florist", "source_title": "SignalHire — Ashland Addison Florist", "evidence_state": "partial", "confidence": "low"},
+    {"evidence_key_suffix": "salary-revenue-band", "claim_key": "second_third_party_revenue_band", "claim_summary": "Salary.com reports a $5M–$10M revenue band. It is a vendor-generated estimate, not audited financial data.", "evidence_type": "third_party_company_database", "source_url": "https://www.salary.com/research/company/ashland-addison-florist-co-salary", "source_title": "Salary.com — Ashland Addison Florist Co", "evidence_state": "partial", "confidence": "low"}
+  ],
+  "external_estimates": [
+    {"estimate_type": "company_gmv", "low_value": 5000000, "midpoint_value": 7500000, "high_value": 10000000, "method_key": "intersection_of_independent_public_directory_bands", "method_version": "v1", "estimate_state": "modeled", "confidence": "low", "as_of_date": "2026-08-03", "notes": "Candidate only: intersection of two non-audited directory bands ($5M–$25M and $5M–$10M). It requires entity-scope validation before promotion.", "evidence_key_suffixes": ["signalhire-revenue-band", "salary-revenue-band"]},
+    {"estimate_type": "total_purchases", "low_value": null, "midpoint_value": null, "high_value": null, "method_key": "not_estimated", "method_version": "v1", "estimate_state": "blocked", "confidence": "low", "as_of_date": "2026-08-03", "notes": "No external COGS, purchase-volume, product-margin or independently calibrated florist purchase ratio was found.", "evidence_key_suffixes": []}
+  ],
+  "current_internal_estimate": null,
+  "gmv_estimate": {"low_usd": 5000000, "mid_usd": 7500000, "high_usd": 10000000, "estimate_type": "company_gmv", "method": "intersection of two independently published but non-audited directory revenue bands ($5M–$25M and $5M–$10M); company scope is still unverified", "confidence": "LOW", "validation_state": "CANDIDATE_NOT_PROMOTED", "limitations": "Do not treat as exact, audited or necessarily identical to Koronet company_location 507479. The broader $25M high from one directory remains conflicting evidence, not discarded truth."},
+  "buys_estimate": null,
+  "why_no_buy_estimate_yet": "No external COGS, purchase-volume, product-margin or independently calibrated florist purchase ratio was found. A BUY range would be invented.",
+  "next_best_signals": ["Verify legal/entity mapping of company_location 507479 against Ashland Addison operating locations.", "Obtain company-provided sales range, credit reference or audited/validated commercial data.", "After scope verification, compare only like-for-like Koronet observed SELL and BUY windows against the candidate range."],
+  "tx_strategy_lane": "selective_test"
+}

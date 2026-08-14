@@ -1,0 +1,143 @@
+{
+  "_metadata": {
+    "query": "Q12_repeat_rate",
+    "as_of": "2026-07-30",
+    "source": "PRODUCTION.ANALYTICS.SALES_SV",
+    "channels": "eCommerce, API, K2K (online only)",
+    "rules_applied": "R1,R4,R5,R6,R8,R9,R12,R16",
+    "query_id": "01c616d8-000a-7a52-0001-83020eceb402",
+    "total_companies": 373,
+    "generated": "2026-07-31"
+  },
+  "companies": {
+    "Mayesh Wholesale Florist Inc": {
+      "online_buyers": {
+        "current_month": 659,
+        "prior_month": 765,
+        "ytd": 4202,
+        "prior_ytd": 4898,
+        "as_of": "2026-07-30"
+      },
+      "repeat_rate_pct": {
+        "current_month": 50.8,
+        "prior_month": 46.8,
+        "ytd": 64.6,
+        "prior_ytd": 68.2,
+        "as_of": "2026-07-30"
+      }
+    },
+    "Kennicott Brothers Company": {
+      "online_buyers": {
+        "current_month": 710,
+        "prior_month": 830,
+        "ytd": 1906,
+        "prior_ytd": 1659,
+        "as_of": "2026-07-30"
+      },
+      "repeat_rate_pct": {
+        "current_month": 55.4,
+        "prior_month": 59.5,
+        "ytd": 67.8,
+        "prior_ytd": 66.7,
+        "as_of": "2026-07-30"
+      }
+    },
+    "* Jet Fresh Flower Distributors Inc.": {
+      "online_buyers": {
+        "current_month": 410,
+        "prior_month": 466,
+        "ytd": 728,
+        "prior_ytd": 520,
+        "as_of": "2026-07-30"
+      },
+      "repeat_rate_pct": {
+        "current_month": 78.8,
+        "prior_month": 79.2,
+        "ytd": 82.6,
+        "prior_ytd": 84.0,
+        "as_of": "2026-07-30"
+      }
+    },
+    "Rosaprima International, LLC": {
+      "online_buyers": {
+        "current_month": 565,
+        "prior_month": 570,
+        "ytd": 647,
+        "prior_ytd": 616,
+        "as_of": "2026-07-30"
+      },
+      "repeat_rate_pct": {
+        "current_month": 95.4,
+        "prior_month": 96.8,
+        "ytd": 97.2,
+        "prior_ytd": 96.4,
+        "as_of": "2026-07-30"
+      }
+    },
+    "-Sole Farms": {
+      "online_buyers": {
+        "current_month": 373,
+        "prior_month": 386,
+        "ytd": 442,
+        "prior_ytd": 400,
+        "as_of": "2026-07-30"
+      },
+      "repeat_rate_pct": {
+        "current_month": 93.0,
+        "prior_month": 93.0,
+        "ytd": 97.3,
+        "prior_ytd": 97.2,
+        "as_of": "2026-07-30"
+      }
+    },
+    "Bill Doran Company": {
+      "online_buyers": {
+        "current_month": 199,
+        "prior_month": 196,
+        "ytd": 323,
+        "prior_ytd": 174,
+        "as_of": "2026-07-30"
+      },
+      "repeat_rate_pct": {
+        "current_month": 65.3,
+        "prior_month": 73.0,
+        "ytd": 78.6,
+        "prior_ytd": 74.1,
+        "as_of": "2026-07-30"
+      }
+    },
+    "Allure Farms": {
+      "online_buyers": {
+        "current_month": 261,
+        "prior_month": 298,
+        "ytd": 429,
+        "prior_ytd": 359,
+        "as_of": "2026-07-30"
+      },
+      "repeat_rate_pct": {
+        "current_month": 67.4,
+        "prior_month": 72.5,
+        "ytd": 89.7,
+        "prior_ytd": 88.0,
+        "as_of": "2026-07-30"
+      }
+    },
+    "Continental Flowers": {
+      "online_buyers": {
+        "current_month": 309,
+        "prior_month": 309,
+        "ytd": 375,
+        "prior_ytd": 364,
+        "as_of": "2026-07-30"
+      },
+      "repeat_rate_pct": {
+        "current_month": 85.4,
+        "prior_month": 88.3,
+        "ytd": 96.8,
+        "prior_ytd": 96.2,
+        "as_of": "2026-07-30"
+      }
+    }
+  },
+  "_note": "Top 8 companies shown. Full 373-company dataset from Q12."
+}
