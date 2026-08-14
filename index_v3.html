@@ -1567,11 +1567,12 @@ function buildDiagnosis(ev) {
     parts.push(`${offBuyers.toLocaleString()} offline buyers not yet invited`);
   }
 
-  // Config signals
+  // Config signals — bunches_reality is ground truth (actual sales data)
   const cfg = ev.list && ev.list.config && ev.list.config.value;
-  if (cfg && cfg.raw) {
-    const bunches = cfg.raw.sell_in_bunches;
-    if (bunches === false || bunches === 'false' || bunches === 0) {
+  if (cfg) {
+    var bunchReality = cfg.bunches_reality ? cfg.bunches_reality.actually_sells_bunches_ecom : null;
+    var bunchFlag = cfg.raw ? (cfg.raw.is_on_hand_inventory_units != null ? cfg.raw.is_on_hand_inventory_units : cfg.raw.sell_in_bunches) : null;
+    if (bunchReality !== true && !bunchFlag) {
       parts.push('Bunches OFF — retail TAM blocked');
     }
   }
@@ -2756,9 +2757,11 @@ function renderListCard(ev) {
     // Inventory totals (fallback SKU source)
     const totalSkus  = inv && inv.totals ? inv.totals.total_skus : null;
 
-    // Bunches config
-    const bunches = cfgRaw ? (cfgRaw.sell_in_bunches != null ? cfgRaw.sell_in_bunches : cfgRaw.bunches) : null;
-    const bunchesOn  = bunches === true || bunches === 'true' || bunches === 1;
+    // Bunches config — check reality first, then is_on_hand_inventory_units, then flag
+    const bunchRealityList = cfg && cfg.bunches_reality ? cfg.bunches_reality.actually_sells_bunches_ecom : null;
+    const bunchFlagList = cfgRaw ? (cfgRaw.is_on_hand_inventory_units != null ? cfgRaw.is_on_hand_inventory_units : cfgRaw.sell_in_bunches != null ? cfgRaw.sell_in_bunches : cfgRaw.bunches) : null;
+    const bunches = bunchRealityList != null ? bunchRealityList : bunchFlagList;
+    const bunchesOn = bunchRealityList === true || bunchFlagList === true || bunchFlagList === 1;
 
     const hasCompData = onlineVarCount != null || offlineVarCount != null || skuOnline != null || catOnline != null || bunches != null;
     if (hasCompData) {
