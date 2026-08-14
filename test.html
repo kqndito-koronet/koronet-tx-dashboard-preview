@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html><head><title>V3 Test</title></head>
+<body>
+<h2>TX V3 Adapter Test</h2>
+<pre id="log">Starting...</pre>
+<script src="evidence_adapter_v3.js"></script>
+<script>
+var log = document.getElementById('log');
+function addLog(msg) { log.textContent += '\n' + msg; console.log(msg); }
+
+addLog('EvidenceAdapter exists: ' + (typeof EvidenceAdapter));
+addLog('EvidenceAdapter.init exists: ' + (typeof EvidenceAdapter.init));
+
+EvidenceAdapter.init().then(function() {
+  addLog('INIT SUCCESS');
+  var ids = EvidenceAdapter.getAllAccountIds();
+  addLog('Account IDs: ' + ids.length);
+  var state = EvidenceAdapter.getLoadedState();
+  addLog('Loaded state: ' + JSON.stringify(state));
+
+  if (ids.length > 0) {
+    addLog('Testing first account: ' + ids[0]);
+    var ev = EvidenceAdapter.getAccountEvidence(ids[0], 'ytd');
+    addLog('Evidence: ' + (ev ? 'OK' : 'NULL'));
+    if (ev) {
+      addLog('Company: ' + ev._company_name);
+      addLog('Identity: ' + JSON.stringify(ev.identity ? {bt: ev.identity.business_type, pt: ev.identity.product_tier} : null));
+      addLog('Potential: ' + (ev.potential ? 'has data' : 'null'));
+    }
+  }
+}).catch(function(err) {
+  addLog('INIT ERROR: ' + err.message);
+  addLog('Stack: ' + err.stack);
+});
+</script>
+</body></html>
