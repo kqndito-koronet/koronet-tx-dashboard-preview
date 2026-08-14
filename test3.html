@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html><head><title>Render Test</title></head>
+<body>
+<pre id="log">Loading adapter...</pre>
+<div id="output"></div>
+<script src="evidence_adapter_v3.js"></script>
+<script>
+var log = document.getElementById('log');
+function addLog(msg) { log.textContent += '\n' + msg; }
+
+function fmt$(n, compact) {
+  if (n == null || isNaN(n)) return '—';
+  if (compact) {
+    if (Math.abs(n) >= 1e9) return '$' + (n/1e9).toFixed(1) + 'B';
+    if (Math.abs(n) >= 1e6) return '$' + (n/1e6).toFixed(1) + 'M';
+    if (Math.abs(n) >= 1e3) return '$' + (n/1e3).toFixed(0) + 'K';
+  }
+  return '$' + n.toLocaleString(undefined, {maximumFractionDigits:0});
+}
+
+function fmtEv(evObj) {
+  if (!evObj) return null;
+  return evObj.value != null ? evObj.value : null;
+}
+
+function escHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+EvidenceAdapter.init().then(function() {
+  var ids = EvidenceAdapter.getAllAccountIds();
+  addLog('Loaded ' + ids.length + ' accounts. Testing renderRow...');
+
+  // Test each account one by one
+  var errors = [];
+  for (var i = 0; i < Math.min(ids.length, 20); i++) {
+    try {
+      var ev = EvidenceAdapter.getAccountEvidence(ids[i], 'ytd');
+      if (!ev) { addLog('  ' + ids[i] + ': null evidence'); continue; }
+
+      var p = ev.potential;
+      var identity = ev.identity || {};
+
+      // Test the key operations renderRow does
+      var name = ev._company_name || 'Unknown';
+      var koronetSell = p ? fmtEv(p.koronet_sell_ytd) : null;
+      var onlinePct = p ? fmtEv(p.sell_online_pct) : null;
+      var feesYtd = p ? fmtEv(p.fees_ytd_2026) : null;
+      var takeRate = p ? fmtEv(p.take_rate) : null;
+
+      // Test GMV display
+      var gmvRef = p ? p.gmv_reference : null;
+      var gmvVal = gmvRef ? gmvRef.value : null;
+      var gmvSrc = gmvRef ? gmvRef.source : null;
+      var gmvConf = gmvRef ? gmvRef.confidence : null;
+
+      // Test identity fields
+      var bt = identity.business_type || '?';
+      var pt = identity.product_tier || '?';
+      var sc = identity.sell_channel || '?';
+      var potTier = identity.potential_tier || '?';
+
+      addLog('  OK: ' + name + ' | ' + bt + '/' + pt + ' | GMV=' + fmt$(gmvVal,true) + ' (' + gmvSrc + '/' + gmvConf + ') | sell=' + fmt$(koronetSell,true));
+    } catch(e) {
+      errors.push({id: ids[i], error: e.message, stack: e.stack});
+      addLog('  ERROR: ' + ids[i] + ': ' + e.message);
+    }
+  }
+
+  if (errors.length === 0) {
+    addLog('\nAll 20 accounts rendered without errors.');
+    addLog('The issue is likely in the HTML template (renderRow produces invalid HTML) or DOM manipulation.');
+  } else {
+    addLog('\n' + errors.length + ' errors found:');
+    errors.forEach(function(e) { addLog('  ' + e.id + ': ' + e.stack); });
+  }
+}).catch(function(err) {
+  addLog('INIT ERROR: ' + err.message + '\n' + err.stack);
+});
+</script>
+</body></html>
