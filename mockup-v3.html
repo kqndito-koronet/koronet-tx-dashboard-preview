@@ -68,7 +68,7 @@
   }
 
   .topbar-inner {
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 24px;
   }
@@ -242,7 +242,7 @@
 
   /* ─── MAIN LAYOUT ──────────────────────────────── */
   .main {
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 16px 24px 40px;
   }
@@ -323,7 +323,7 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--text-muted);
-    padding: 8px 12px;
+    padding: 8px 10px;
     text-align: left;
     border-bottom: 1px solid var(--border);
     white-space: nowrap;
@@ -395,21 +395,33 @@
   .toggle-btn.open .toggle-chevron { transform: rotate(90deg); }
 
   /* Account name cell */
-  .account-cell { padding: 10px 12px !important; }
+  .account-cell { padding: 10px 10px !important; }
 
   .account-name {
     font-size: var(--font-emphasis);
     font-weight: 600;
     color: var(--text-primary);
+    margin-bottom: 2px;
+  }
+
+  .account-diagnosis {
+    font-size: 10px;
+    color: var(--text-secondary);
+    line-height: 1.4;
     margin-bottom: 4px;
+  }
+
+  .account-diagnosis strong {
+    font-weight: 600;
+    color: var(--text-primary);
   }
 
   /* ─── ACCOUNT META BADGES ──────────────────────────────── */
   .account-meta-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
-    margin-bottom: 3px;
+    gap: 3px;
+    margin-bottom: 0;
   }
 
   .meta-badge {
@@ -440,13 +452,21 @@
   .badge-api     { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
   .badge-none    { background: #f8fafc; color: var(--text-muted); border: 1px solid var(--border); }
 
+  /* Priority badges */
+  .badge-p1        { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); font-weight: 800; }
+  .badge-impl      { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+  .badge-ta        { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+  .badge-watch     { background: #f8fafc; color: var(--text-muted); border: 1px solid var(--border); }
+  .badge-ecosystem { background: var(--teal-bg); color: var(--teal); border: 1px solid var(--teal-border); }
+  .badge-cs-tracked { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+
   /* Engagement */
   .badge-purchasing  { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
   .badge-onboarding  { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
 
   /* Metric cells */
   .metric-cell {
-    padding: 10px 12px !important;
+    padding: 10px 10px !important;
     white-space: nowrap;
   }
 
@@ -480,6 +500,8 @@
   .fees-value { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-primary); }
   .fees-zero  { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-muted); }
   .takerate { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-secondary); }
+  .takerate-good { font-size: var(--font-emphasis); font-weight: 600; color: var(--green); }
+  .takerate-bad { font-size: var(--font-emphasis); font-weight: 600; color: var(--red); }
 
   /* ─── GMV PROVENANCE TAG ──────────────────────────────── */
   .gmv-wrap { display: flex; flex-direction: column; gap: 2px; }
@@ -564,6 +586,17 @@
     align-items: center;
     gap: 6px;
   }
+
+  .card-label-badge {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .badge-open { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
 
   .card-title {
     font-size: var(--font-card);
@@ -669,7 +702,7 @@
     overflow: hidden;
   }
 
-  /* ─── GMV CHALLENGE TABLE (POTENTIAL card) ──────────────────────────── */
+  /* ─── GMV CHALLENGE TABLE ──────────────────────────── */
   .gmv-challenge-table {
     width: 100%;
     border-collapse: collapse;
@@ -821,6 +854,301 @@
   .metric-pill.blue-pill { border-color: var(--blue-border); background: var(--blue-bg); }
   .metric-pill.red-pill  { border-color: var(--red-border); background: var(--red-bg); }
 
+  /* ─── CONFIG VISUAL TOGGLES ──────────────────────────────── */
+  .config-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .config-item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px;
+    background: var(--surface);
+    text-align: center;
+  }
+
+  .config-item.config-bad { border-color: var(--red-border); background: var(--red-bg); }
+  .config-item.config-warn { border-color: var(--amber-border); background: var(--amber-bg); }
+  .config-item.config-ok { border-color: var(--green-border); background: var(--green-bg); }
+
+  .config-item-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+
+  .config-toggle-track {
+    width: 36px;
+    height: 18px;
+    border-radius: 9px;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px;
+    margin: 0 auto 4px;
+  }
+
+  .config-toggle-track.off { background: #fca5a5; justify-content: flex-start; }
+  .config-toggle-track.on  { background: #86efac; justify-content: flex-end; }
+
+  .config-toggle-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  }
+
+  .config-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+  }
+
+  .config-bad .config-value { color: var(--red); }
+  .config-warn .config-value { color: var(--amber); }
+  .config-ok .config-value { color: var(--green); }
+
+  .config-sub {
+    font-size: 10px;
+    color: var(--text-muted);
+    line-height: 1.3;
+  }
+
+  .config-impact {
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 4px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  .config-bad .config-impact { color: var(--red); background: rgba(220,38,38,0.1); }
+  .config-warn .config-impact { color: var(--amber); background: rgba(217,119,6,0.1); }
+
+  /* ─── BAR CHART ──────────────────────────────── */
+  .bar-chart {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .bar-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: center;
+    padding: 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .bar-row:last-of-type { border-bottom: none; }
+
+  .bar-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    padding: 8px 10px;
+    border-right: 1px solid var(--border-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .bar-row.best-row .bar-label { color: var(--green); }
+
+  .bar-track {
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .bar-segments {
+    display: flex;
+    height: 16px;
+    border-radius: 3px;
+    overflow: hidden;
+    flex: 1;
+    max-width: 400px;
+    gap: 1px;
+  }
+
+  .bar-seg { height: 100%; transition: width 0.3s ease; }
+
+  .bar-avg {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  .bar-row.best-row .bar-avg { color: var(--green); }
+
+  .bar-legend {
+    display: flex;
+    gap: 10px;
+    padding: 6px 10px;
+    background: #f8fafc;
+    border-top: 1px solid var(--border-light);
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 9px;
+    color: var(--text-muted);
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+  }
+
+  .seg-0-3 { background: #dc2626; }
+  .seg-4-7 { background: #f97316; }
+  .seg-8-14 { background: #eab308; }
+  .seg-15-30 { background: #22c55e; }
+  .seg-31-90 { background: #16a34a; }
+  .seg-90p { background: #15803d; }
+
+  /* ─── CVR GAUGE ──────────────────────────────── */
+  .cvr-gauge-section { margin-top: 10px; }
+
+  .gauge-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .gauge-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    width: 100px;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .gauge-track {
+    flex: 1;
+    height: 20px;
+    background: var(--border-light);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    max-width: 400px;
+  }
+
+  .gauge-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+
+  .gauge-fill.fill-blue { background: var(--blue); }
+  .gauge-fill.fill-green { background: var(--green); }
+  .gauge-fill.fill-gray { background: var(--text-muted); }
+
+  .gauge-value {
+    font-size: var(--font-emphasis);
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+    width: 50px;
+    flex-shrink: 0;
+  }
+
+  /* ─── HANDOFF ARROW ──────────────────────────────── */
+  .handoff {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-body);
+    color: var(--text-secondary);
+    margin-top: 10px;
+  }
+
+  .handoff-arrow { color: var(--blue); font-weight: 700; }
+  .handoff a { color: var(--blue); font-weight: 600; text-decoration: none; }
+  .handoff a:hover { text-decoration: underline; }
+
+  /* ─── METRIC LINE ──────────────────────────────── */
+  .metric-line {
+    font-size: var(--font-body);
+    color: var(--text-secondary);
+    padding: 3px 0;
+  }
+
+  .metric-line strong { font-weight: 600; color: var(--text-primary); }
+  .metric-line .blue { color: var(--blue); font-weight: 600; }
+  .metric-line .green { color: var(--green); font-weight: 600; }
+  .metric-line .amber { color: var(--amber); font-weight: 600; }
+  .metric-line .red { color: var(--red); font-weight: 600; }
+
+  /* ─── ACTION BLOCK ──────────────────────────────── */
+  .action-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .action-item {
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-body);
+  }
+
+  .action-item.bottleneck { background: var(--amber-bg); border: 1px solid var(--amber-border); }
+  .action-item.next { background: var(--green-bg); border: 1px solid var(--green-border); }
+
+  .action-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+  }
+
+  .action-item.bottleneck .action-label { color: var(--amber); }
+  .action-item.next .action-label { color: var(--green); }
+
+  .action-text { color: var(--text-primary); font-weight: 500; }
+
+  /* ─── NET BUYER INDICATOR ──────────────────────────────── */
+  .net-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--font-emphasis);
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    margin: 8px 0;
+  }
+
+  .net-indicator.net-negative { background: var(--red-bg); border: 1px solid var(--red-border); color: var(--red); }
+  .net-indicator.net-positive { background: var(--green-bg); border: 1px solid var(--green-border); color: var(--green); }
+
+  .net-detail { font-size: 10px; font-weight: 500; color: var(--text-secondary); }
+
   /* ─── TAB PANELS ──────────────────────────────── */
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
@@ -868,7 +1196,6 @@
 
   .quadrant-A { border-bottom: 2px solid var(--border-light); }
   .quadrant-B { border-bottom: 2px solid var(--border-light); border-left: 2px solid var(--border-light); }
-  .quadrant-C {}
   .quadrant-D { border-left: 2px solid var(--border-light); }
 
   .q-label-A { color: var(--green); }
@@ -913,37 +1240,6 @@
   .dot-amber  { background: var(--amber); }
   .dot-red    { background: var(--red); }
   .dot-blue   { background: var(--blue); }
-
-  .q-axes {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-
-  .q-axis-label {
-    font-size: 9px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--text-muted);
-  }
-
-  .quadrant-axis-bar {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 10px;
-    color: var(--text-muted);
-    font-weight: 500;
-    margin-bottom: 12px;
-    padding: 6px 12px;
-    background: #f8fafc;
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-sm);
-  }
-
-  .axis-arrow { font-size: 12px; }
 
   /* ─── DEFINITIONS PANEL ──────────────────────────────── */
   .definitions-panel {
@@ -1006,12 +1302,61 @@
 
   .collapse-row:hover { background: var(--border-light); }
   .collapse-row span  { color: var(--text-muted); font-size: 10px; }
+
+  /* ─── FRESHNESS SOURCE ROW ──────────────────────────────── */
+  .freshness-source-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--border-light);
+    font-size: var(--font-body);
+  }
+
+  .freshness-source-row:last-child { border-bottom: none; }
+
+  .source-status {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+
+  .source-found { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .source-missing { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+
+  /* ─── INTERNAL BANNER ──────────────────────────────── */
+  .internal-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #991b1b;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 4px;
+    padding: 2px 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  /* ─── TAUTOLOGICAL LABEL ──────────────────────────────── */
+  .tautological-label {
+    font-size: 9px;
+    color: var(--amber);
+    font-weight: 600;
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
 
 <!-- ════════════════════════════════════════════════
      TOP BAR (sticky)
+     Items 1-7: Filters, Period, Search, KPI strip
 ════════════════════════════════════════════════ -->
 <div class="topbar">
   <div class="topbar-inner">
@@ -1024,6 +1369,49 @@
         <span class="mockup-banner">Visual Mockup</span>
       </div>
       <div class="topbar-controls">
+        <!-- [1] Business Type filter -->
+        <select class="select-pill" id="business-type-filter">
+          <option value="">All Types</option>
+          <option value="Wholesaler">Wholesaler (210)</option>
+          <option value="Importer">Importer (148)</option>
+          <option value="Grower">Grower (61)</option>
+          <option value="Retailer">Retailer (11)</option>
+        </select>
+
+        <!-- [2] Product Tier filter -->
+        <select class="select-pill" id="product-tier-filter">
+          <option value="">All Tiers</option>
+          <option value="Core+">Core+ (333)</option>
+          <option value="Procurement">Procurement (46)</option>
+          <option value="K2K">K2K (4)</option>
+          <option value="eSuite">eSuite (20)</option>
+        </select>
+
+        <!-- [3] Sell Channel filter -->
+        <select class="select-pill" id="sell-channel-filter">
+          <option value="">All Channels</option>
+          <option value="eShop">eShop (94)</option>
+          <option value="K2K">K2K (99)</option>
+          <option value="API">API (5)</option>
+          <option value="None">No digital (238)</option>
+        </select>
+
+        <!-- [4] Priority filter -->
+        <select class="select-pill" id="priority-filter">
+          <option value="">All Priorities</option>
+          <option value="P1">P1</option>
+          <option value="IMPL">IMPL</option>
+          <option value="TA">TA</option>
+          <option value="WATCH">WATCH</option>
+          <option value="ECOSYSTEM">ECOSYSTEM</option>
+          <option value="CS_TRACKED">CS_TRACKED</option>
+          <option value="CS_P2">CS_P2</option>
+          <option value="NEEDS_REVIEW">NEEDS_REVIEW</option>
+        </select>
+
+        <div class="filter-divider"></div>
+
+        <!-- [5] Period selector -->
         <span class="period-label">Period</span>
         <select class="select-pill" id="timeframe-select">
           <option value="ytd_2026" selected>YTD 2026</option>
@@ -1035,50 +1423,24 @@
 
         <div class="filter-divider"></div>
 
-        <!-- NEW V3 FILTER TRIO -->
-        <select class="select-pill" id="business-type-filter">
-          <option value="">All Types</option>
-          <option value="Wholesaler">Wholesaler (210)</option>
-          <option value="Importer">Importer (148)</option>
-          <option value="Grower">Grower (61)</option>
-          <option value="Retailer">Retailer (11)</option>
-        </select>
-
-        <select class="select-pill" id="product-tier-filter">
-          <option value="">All Tiers</option>
-          <option value="Core+">Core+ (333)</option>
-          <option value="Procurement">Procurement (46)</option>
-          <option value="K2K">K2K (4)</option>
-          <option value="eSuite">eSuite (20)</option>
-        </select>
-
-        <select class="select-pill" id="sell-channel-filter">
-          <option value="">All Channels</option>
-          <option value="eShop">eShop (94)</option>
-          <option value="K2K">K2K (99)</option>
-          <option value="API">API (5)</option>
-          <option value="None">No digital (238)</option>
-        </select>
-
-        <div class="filter-divider"></div>
-
-        <input class="search-input" id="search-input" type="text" placeholder="Search account…">
+        <!-- [6] Search input -->
+        <input class="search-input" id="search-input" type="text" placeholder="Search account...">
       </div>
     </div>
 
-    <!-- KPI Strip -->
+    <!-- [7] KPI Strip (5 cards) -->
     <div class="kpi-strip">
       <div class="kpi-item">
         <div>
           <span class="kpi-value">$215.9M</span>
-          <span class="kpi-delta up">▲18%</span>
+          <span class="kpi-delta up">&#9650;18%</span>
         </div>
         <div class="kpi-label">Est GMV (Medido)</div>
       </div>
       <div class="kpi-item">
         <div>
           <span class="kpi-value">$171K</span>
-          <span class="kpi-delta up">▲32%</span>
+          <span class="kpi-delta up">&#9650;32%</span>
         </div>
         <div class="kpi-label">Fees YTD</div>
       </div>
@@ -1092,14 +1454,14 @@
       <div class="kpi-item">
         <div>
           <span class="kpi-value">18.2%</span>
-          <span class="kpi-delta down">▼2.1pp</span>
+          <span class="kpi-delta down">&#9660;2.1pp</span>
         </div>
         <div class="kpi-label">Avg % Digital</div>
       </div>
       <div class="kpi-item">
         <div>
           <span class="kpi-value">0.08%</span>
-          <span class="kpi-delta up">▲0.01pp</span>
+          <span class="kpi-delta up">&#9650;0.01pp</span>
         </div>
         <div class="kpi-label">Avg Take Rate</div>
       </div>
@@ -1108,8 +1470,8 @@
     <!-- Coverage warning -->
     <div class="coverage-warn">
       <span class="warn-icon">&#9888;</span>
-      <span>192 accounts have no GMV data — showing as Piso de red.</span>
-      <span class="muted">82% GMV offline at $0 fees · ORA vs Medido discrepancy flagged on 34 accounts</span>
+      <span>192 accounts have no GMV data &mdash; showing as Piso de red.</span>
+      <span class="muted">82% GMV offline at $0 fees &middot; ORA vs Medido discrepancy flagged on 34 accounts</span>
     </div>
 
   </div>
@@ -1121,88 +1483,134 @@
 ════════════════════════════════════════════════ -->
 <div class="main">
 
-  <!-- Tabs (static — V3 adds Procurement Behavior and Definitions) -->
+  <!-- [68] Tab 1: Portfolio (active) + [8-12] Tab count rows + [69] Procurement + [70] Definitions -->
   <div class="tabs-nav">
     <button class="tab-btn active" id="tab-portfolio" onclick="showTab('portfolio')">
       Portfolio <span class="tab-count">430</span>
     </button>
+    <button class="tab-btn" id="tab-buy-leads" onclick="showTab('portfolio')">
+      BUY Leads <span class="tab-count">68</span>   <!-- [8] -->
+    </button>
+    <button class="tab-btn" id="tab-list-leads" onclick="showTab('portfolio')">
+      LIST Leads <span class="tab-count">54</span>   <!-- [9] -->
+    </button>
+    <button class="tab-btn" id="tab-sell-leads" onclick="showTab('portfolio')">
+      SELL Leads <span class="tab-count">31</span>   <!-- [10] -->
+    </button>
+    <button class="tab-btn" id="tab-config-leads" onclick="showTab('portfolio')">
+      CONFIG Leads <span class="tab-count">22</span> <!-- [11] -->
+    </button>
+    <button class="tab-btn" id="tab-declining" onclick="showTab('portfolio')">
+      Declining <span class="tab-count">15</span>    <!-- [12] -->
+    </button>
     <button class="tab-btn" id="tab-procurement" onclick="showTab('procurement')">
-      Procurement Behavior <span class="tab-count">46</span>
+      Procurement Behavior <span class="tab-count">46</span> <!-- [69] -->
     </button>
     <button class="tab-btn" id="tab-definitions" onclick="showTab('definitions')">
-      Definitions <span class="tab-count">—</span>
+      Definitions <span class="tab-count">&mdash;</span>     <!-- [70] -->
     </button>
   </div>
 
   <!-- ══ TAB: Portfolio ══ -->
   <div class="tab-panel active" id="panel-portfolio">
 
-    <div class="section-label">430 accounts · YTD 2026 · Sorted by Fees YTD desc</div>
+    <div class="section-label">430 accounts &middot; YTD 2026 &middot; Sorted by Fees YTD desc</div>
 
     <div class="portfolio-wrap">
       <table class="portfolio-table">
         <thead>
           <tr>
-            <th class="sticky-col sticky-col-1"></th>
-            <th class="sticky-col sticky-col-2">Account</th>
-            <th>Engagement</th>
-            <th>Est GMV</th>
-            <th>Koronet Sell YTD</th>
-            <th>% Digital</th>
-            <th>MoM Δ</th>
-            <th>Koronet Buy YTD</th>
-            <th>Fees YTD</th>
-            <th>Take Rate</th>
-            <th>Trend</th>
-            <th>$ at Stake</th>
+            <th class="sticky-col sticky-col-1"></th>                        <!-- [13] chevron -->
+            <th class="sticky-col sticky-col-2">Account</th>                <!-- [14][15][16] name + diagnosis + meta -->
+            <th>Engagement</th>                                              <!-- [17] -->
+            <th>Est GMV</th>                                                 <!-- [18] + provenance -->
+            <th>Koronet Sell</th>                                            <!-- [19] -->
+            <th>Sell Pen %</th>                                              <!-- [20] -->
+            <th>Online Sell %</th>                                           <!-- [21] -->
+            <th>Koronet Buy</th>                                             <!-- [22] -->
+            <th>Buy Pen %</th>                                               <!-- [23] -->
+            <th>Online Buy %</th>                                            <!-- [24] -->
+            <th>Fees YTD</th>                                                <!-- [25] -->
+            <th>Take Rate</th>                                               <!-- [26] -->
+            <th>MoM &#916;</th>                                              <!-- [27] -->
+            <th>Trend</th>                                                   <!-- [28][29] sparkline + MoM label -->
+            <th>$ at Stake</th>                                              <!-- [30] -->
           </tr>
         </thead>
         <tbody>
 
           <!-- ══ ROW 1: Kennicott — EXPANDED ══ -->
           <tr class="row-expanded" id="tr-kennicott">
+            <!-- [13] Expand/collapse chevron -->
             <td class="sticky-col sticky-col-1 toggle-cell">
               <button class="toggle-btn open">
                 <span class="toggle-chevron">&#9658;</span>
               </button>
             </td>
+            <!-- [14] Account name + [15] diagnosis + [16] meta badges -->
             <td class="sticky-col sticky-col-2 account-cell">
               <div class="account-name">Kennicott Brothers Company</div>
+              <div class="account-diagnosis"><strong>$110M offline at $0 fees.</strong> 8.2% online despite API channel. Focus: offline buyer activation + catalog depth.</div>
               <div class="account-meta-row">
                 <span class="meta-badge badge-wholesaler">Wholesaler</span>
                 <span class="meta-badge badge-core-plus">Core+</span>
                 <span class="meta-badge badge-api">API</span>
-                <span class="meta-badge badge-purchasing">Purchasing</span>
+                <span class="meta-badge badge-p1">P1</span>
               </div>
             </td>
+            <!-- [17] Engagement status -->
             <td class="metric-cell">
               <span class="meta-badge badge-purchasing">Purchasing</span>
             </td>
+            <!-- [18] Est GMV + provenance tag -->
             <td class="metric-cell">
               <div class="gmv-wrap">
                 <span class="gmv-value">$120M</span>
                 <span class="provenance-tag prov-medido">Medido</span>
               </div>
             </td>
+            <!-- [19] Koronet Sell YTD + YoY delta -->
             <td class="metric-cell">
               <span class="metric-value">$9.8M</span>
+              <span class="metric-delta">&#9650;+3.1%</span>
             </td>
+            <!-- [20] Sell Penetration % -->
             <td class="metric-cell">
-              <span class="online-value">8.2%</span>
-              <div class="metric-qualifier">online</div>
+              <span class="metric-value">8.2%</span>
+              <div class="tautological-label">tautological</div>
             </td>
+            <!-- [21] Online Sell % + qualifier -->
             <td class="metric-cell">
-              <span class="metric-delta">▲4.2%</span>
+              <span class="online-low">8.2%</span>
+              <div class="metric-qualifier">mostly offline</div>
             </td>
+            <!-- [22] Koronet Buy YTD -->
             <td class="metric-cell">
               <span class="metric-value">$4.4M</span>
             </td>
+            <!-- [23] Buy Penetration % -->
+            <td class="metric-cell">
+              <span class="metric-value">8.1%</span>
+              <div class="tautological-label">tautological</div>
+            </td>
+            <!-- [24] Online Buy % -->
+            <td class="metric-cell">
+              <span class="online-low">25%</span>
+              <div class="metric-qualifier">mostly offline</div>
+            </td>
+            <!-- [25] Fees YTD -->
             <td class="metric-cell">
               <span class="fees-value">$87K</span>
             </td>
+            <!-- [26] Take Rate -->
             <td class="metric-cell">
-              <span class="takerate">0.89%</span>
+              <span class="takerate-good">0.89%</span>
             </td>
+            <!-- [27] MoM delta -->
+            <td class="metric-cell">
+              <span class="metric-delta">+4.2%</span>
+            </td>
+            <!-- [28] Sparkline + [29] Trend label (MoM) -->
             <td class="metric-cell">
               <div class="sparkline">
                 <div class="spark-bar up" style="height:55%"></div>
@@ -1210,32 +1618,107 @@
                 <div class="spark-bar up" style="height:75%"></div>
                 <div class="spark-bar up" style="height:100%"></div>
               </div>
+              <div class="metric-qualifier">MoM</div>
             </td>
+            <!-- [30] $ at Stake + source + intervention count -->
             <td class="metric-cell">
               <span class="stake-value sfdc">$250K</span>
-              <div class="stake-opps">SFDC · 2 opps</div>
+              <div class="stake-opps">SFDC opp &middot; 2 opps</div>
             </td>
           </tr>
 
-          <!-- ══ EXPANDED SECTION: Kennicott ══ -->
+          <!-- ══ EXPANDED SECTION: Kennicott — ALL 6 CARDS ══ -->
           <tr class="expanded-row">
-            <td colspan="12">
+            <td colspan="15">
               <div class="expanded-section">
                 <div class="cards-grid">
 
-                  <!-- CARD: Potential (GMV Challenge) -->
-                  <div class="card open">
+                  <!-- ══ CARD 1: POTENTIAL [31-39] ══ -->
+                  <div class="card open" id="card-potential">
                     <div class="card-header">
                       <div class="card-header-left">
-                        <div class="card-label">Potential</div>
-                        <div class="card-title">91.8% offline — $110M at $0 fees</div>
-                        <div class="card-subtitle">ORA shows +25% above Medido — discrepancy flagged</div>
+                        <!-- [31] Title with summary -->
+                        <div class="card-label">Card 1 of 6 &mdash; Potential</div>
+                        <div class="card-title">91.8% offline &mdash; $110M at $0 fees</div>
+                        <div class="card-subtitle">ORA shows +25% above Medido &mdash; discrepancy flagged</div>
                       </div>
                       <div class="card-toggle">&#9650;</div>
                     </div>
                     <div class="card-body">
                       <div class="content-gap-sm"></div>
 
+                      <!-- [32] Sell/Buy/Fees table with evidence states -->
+                      <div class="table-wrap">
+                        <table class="ev-table">
+                          <thead>
+                            <tr>
+                              <th style="width:80px"></th>
+                              <th>Estimated Total</th>
+                              <th>Koronet</th>
+                              <th>Penetration</th>
+                              <th>Online %</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="row-label">SELL</td>
+                              <td>
+                                <span class="highlight">$120M</span>
+                                <span class="ev-state observed">Observed &mdash; Medido</span>
+                              </td>
+                              <td>
+                                <span class="highlight">$9.8M</span>
+                                <span class="metric-delta">&#9650;</span>
+                                <span class="ev-state observed">Observed &mdash; Snowflake</span>
+                              </td>
+                              <td>
+                                <span>8.2%</span>
+                                <span class="ev-state model">Model &mdash; est/actual</span>
+                              </td>
+                              <td>
+                                <span class="online-low">8.2%</span>
+                                <span class="ev-state observed">Observed</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="row-label">BUY</td>
+                              <td>
+                                <span class="highlight">$54M</span>
+                                <span class="ev-state proxy">Proxy &mdash; sell x ratio</span>
+                              </td>
+                              <td>
+                                <span class="highlight">$4.4M</span>
+                                <span class="ev-state observed">Observed &mdash; Snowflake</span>
+                              </td>
+                              <td>
+                                <span>8.1%</span>
+                                <span class="ev-state model">Model</span>
+                              </td>
+                              <td>
+                                <span class="online-low">25%</span>
+                                <span class="ev-state observed">Observed</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="row-label">FEES</td>
+                              <td>&mdash;</td>
+                              <td>
+                                <span class="highlight">$87K</span>
+                                <span class="metric-delta">&#9650;+32%</span>
+                                <span class="ev-state observed">Observed &mdash; YTD 2026</span>
+                              </td>
+                              <td>
+                                <span>0.89% rate</span>
+                              </td>
+                              <td>&mdash;</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div class="content-gap"></div>
+
+                      <!-- [33] GMV Challenge row: Medido vs External Est vs ORA -->
                       <div class="callout amber">
                         <strong>GMV Challenge:</strong> 3 sources disagree on Kennicott's true market size. Medido is the floor; ORA may be inflated. External estimate (15 hubs surveyed) aligns closest to Medido.
                       </div>
@@ -1279,34 +1762,66 @@
                               <td><strong>$54M</strong></td>
                               <td>$52M</td>
                               <td>n/a</td>
-                              <td class="discrepancy-cell aligned">Aligned ✓</td>
+                              <td class="discrepancy-cell aligned">Aligned &#10003;</td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
 
                       <div class="content-gap-sm"></div>
-                      <div class="metrics-row">
-                        <div class="metric-pill red-pill"><strong>$110M</strong> offline sell at $0 fees</div>
-                        <div class="metric-pill warn-pill"><strong>8.2%</strong> digital — far below platform avg 18%</div>
-                        <div class="metric-pill blue-pill">API channel active — monetization unrealized</div>
+
+                      <!-- [34] Penetration with tautological label -->
+                      <div class="metric-line">
+                        <strong>Sell Penetration:</strong> 8.2% <span style="color:var(--amber);font-size:10px;font-style:italic;">(tautological &mdash; Koronet-derived denominator)</span>
+                      </div>
+
+                      <!-- [35] Online % -->
+                      <div class="metric-line">
+                        <strong>Online %:</strong> <span class="red">8.2% sell</span> &middot; <span class="red">25% buy</span> &mdash; mostly offline
+                      </div>
+
+                      <!-- [36] Fees by channel -->
+                      <div class="metric-line">
+                        <strong>Fees by channel:</strong>
+                        eCom <strong>$34K</strong> (0.8%) &middot; K2K <strong>$28K</strong> (1.5%) &middot; API <span class="amber">&#9888; $0 &mdash; not monetized</span> &middot; Indirect <strong>$25K</strong>
+                      </div>
+
+                      <div class="content-gap-sm"></div>
+
+                      <!-- [37] Focus callout ($ at Stake from SFDC) -->
+                      <div class="callout">
+                        <strong>Focus:</strong> $250K SFDC open opps. $110M offline sell at $0 fees. 8.2% digital &mdash; far below platform avg 18%.
+                      </div>
+
+                      <!-- [38] SO WHAT callout -->
+                      <div class="callout green">
+                        <strong>SO WHAT:</strong> Kennicott is the largest offline opportunity in the portfolio. The gap is activation, not product. API channel active but not monetized. Config and catalog gaps compound the offline problem.
+                      </div>
+
+                      <!-- [39] Handoff arrow to OPPORTUNITIES -->
+                      <div class="handoff">
+                        <span class="handoff-arrow">&rarr;</span>
+                        <span>Continue to <a href="#">OPPORTUNITIES</a>: $250K SFDC at stake, 3 plays identified</span>
                       </div>
                     </div>
                   </div>
 
-                  <!-- CARD: Opportunities (no ARR) -->
-                  <div class="card open">
+
+                  <!-- ══ CARD 2: OPPORTUNITIES [40-44] ══ -->
+                  <div class="card open" id="card-opps">
                     <div class="card-header">
                       <div class="card-header-left">
-                        <div class="card-label">Opportunities</div>
-                        <div class="card-title">$ at Stake: $250K · 2 open SFDC opps</div>
-                        <div class="card-subtitle">3 plays identified · 1 quick fix, 1 investigation, 1 project</div>
+                        <div class="card-label">Card 2 of 6 &mdash; Opportunities</div>
+                        <!-- [40] $ at Stake banner -->
+                        <div class="card-title">$ at Stake: $250K &middot; 2 open SFDC opps</div>
+                        <div class="card-subtitle">3 plays identified &middot; 1 quick fix, 1 investigation, 1 project</div>
                       </div>
                       <div class="card-toggle">&#9650;</div>
                     </div>
                     <div class="card-body">
                       <div class="content-gap-sm"></div>
 
+                      <!-- [40] $ at Stake banner (SFDC amount, source labeled) -->
                       <div class="stake-banner">
                         <div>
                           <div class="stake-banner-value">$250K</div>
@@ -1314,16 +1829,18 @@
                         </div>
                         <div class="stake-banner-right">
                           <div class="stake-banner-count">2 opportunities</div>
-                          <div class="stake-banner-sub">Source: Salesforce · As of Aug 2026</div>
+                          <div class="stake-banner-sub">Source: Salesforce &middot; As of Aug 2026</div>
                         </div>
                       </div>
 
+                      <!-- [41] Opp rows sorted BUY > LIST > SELL > CONFIG -->
+                      <!-- [42] Each opp: type badge + effort badge + description -->
                       <div class="opp-row">
                         <div class="opp-header">
-                          <span class="opp-stage stage-sell">SELL</span>
-                          <span class="opp-effort badge-quick">Quick Fix</span>
+                          <span class="opp-stage stage-buy">BUY</span>
+                          <span class="opp-effort badge-project">Project</span>
                         </div>
-                        <div class="opp-desc">API orders flowing but 0 eShop buyers invited. Enable buyer invitation flow — estimated 200+ eligible retail buyers on Kennicott's hub.</div>
+                        <div class="opp-desc">Buy/Sell ratio is 37% &mdash; below 45% platform benchmark. Procurement activation could unlock upstream volume and cross-sell revenue.</div>
                       </div>
 
                       <div class="opp-row">
@@ -1331,24 +1848,575 @@
                           <span class="opp-stage stage-list">LIST</span>
                           <span class="opp-effort badge-invest">Investigation</span>
                         </div>
-                        <div class="opp-desc">Catalog coverage unknown — no data on SKU count vs platform average. Audit needed to determine if listing gaps drive low digital %.</div>
+                        <div class="opp-desc">Catalog coverage unknown &mdash; no data on SKU count vs platform average. Audit needed to determine if listing gaps drive low digital %.</div>
                       </div>
 
                       <div class="opp-row">
                         <div class="opp-header">
-                          <span class="opp-stage stage-buy">BUY</span>
-                          <span class="opp-effort badge-project">Project</span>
+                          <span class="opp-stage stage-sell">SELL</span>
+                          <span class="opp-effort badge-quick">Quick Fix</span>
                         </div>
-                        <div class="opp-desc">Buy/Sell ratio is 37% — below 45% platform benchmark. Procurement activation could unlock upstream volume and cross-sell revenue.</div>
+                        <div class="opp-desc">API orders flowing but 0 eShop buyers invited. Enable buyer invitation flow &mdash; estimated 200+ eligible retail buyers on Kennicott's hub.</div>
                       </div>
 
+                      <!-- [43] NO invented ARR &mdash; only SFDC $ at Stake -->
+                      <div class="content-gap-sm"></div>
+                      <div class="callout">
+                        <strong>Note:</strong> All dollar amounts are SFDC open opportunity values. No modeled ARR or scenario estimates shown in this view.
+                      </div>
+
+                      <!-- [44] Bottleneck indicator -->
+                      <div class="action-block">
+                        <div class="action-item bottleneck">
+                          <div class="action-label">Bottleneck</div>
+                          <div class="action-text">LIST &mdash; catalog coverage unknown. Cannot size the sell opportunity without first auditing what's listed vs what's sold offline.</div>
+                        </div>
+                        <div class="action-item next">
+                          <div class="action-label">Next Action</div>
+                          <div class="action-text">Catalog audit + buyer invitation flow activation. Two parallel workstreams, one quick fix.</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                </div>
-              </div>
+
+                  <!-- ══ CARD 3: BUY [45-50] ══ -->
+                  <div class="card open" id="card-buy">
+                    <div class="card-header">
+                      <div class="card-header-left">
+                        <div class="card-label">Card 3 of 6 &mdash; Buy</div>
+                        <div class="card-title">BUY &mdash; 25% online. 75% of procurement offline at $0 fees.</div>
+                        <div class="card-subtitle">42 vendors with no K2K connection &middot; 3 K2K-eligible buying offline</div>
+                      </div>
+                      <div class="card-toggle">&#9650;</div>
+                    </div>
+                    <div class="card-body">
+                      <div class="content-gap-sm"></div>
+
+                      <div class="callout">
+                        <strong>SO WHAT:</strong> Kennicott buys $3.3M offline through Koronet at $0 fees. 42 vendors have no K2K connection. Activating 3 identified K2K-eligible vendors recovers immediate upstream volume.
+                      </div>
+
+                      <!-- [45] Online vs Non-Online sourcing comparison table -->
+                      <div class="table-wrap">
+                        <table class="ev-table">
+                          <thead>
+                            <tr>
+                              <th>SOURCING</th>
+                              <th>Online</th>
+                              <th>Non-Online</th>
+                              <th>Gap</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="row-label">Procurement GMV</td>
+                              <td><span class="online">$1.1M</span></td>
+                              <td>$3.3M</td>
+                              <td><span class="danger">$3.3M @ $0</span></td>
+                            </tr>
+                            <tr>
+                              <td class="row-label">Vendors</td>
+                              <td><span class="online">183</span></td>
+                              <td>97</td>
+                              <td><span class="warn">42 no K2K</span></td>
+                            </tr>
+                            <tr>
+                              <td class="row-label">Categories</td>
+                              <td><span class="online">108</span></td>
+                              <td>136</td>
+                              <td><span class="warn">28 offline only</span></td>
+                            </tr>
+                            <tr>
+                              <td class="row-label">SKUs</td>
+                              <td><span class="online">5,837</span></td>
+                              <td>9,643</td>
+                              <td><span class="warn">3,806</span></td>
+                            </tr>
+                            <tr>
+                              <td class="row-label">Varieties</td>
+                              <td><span class="online">5,600</span></td>
+                              <td>9,317</td>
+                              <td><span class="warn">3,717</span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div class="content-gap"></div>
+
+                      <!-- [46] Vendor lifecycle -->
+                      <div class="section-label">VENDOR LIFECYCLE</div>
+                      <div class="metric-line">
+                        <strong>Total vendors:</strong> 280 &rarr;
+                        <span class="green">Connected: 183</span> &rarr;
+                        Active: 160 &middot;
+                        <span class="blue">Active L30D: 142</span> &middot;
+                        <span class="amber">Dormant 30-90d: 12</span> &middot;
+                        <span class="red">Churned 90+: 6</span>
+                      </div>
+
+                      <div class="content-gap-sm"></div>
+
+                      <!-- [47] K2K connections lifecycle -->
+                      <div class="section-label">K2K CONNECTIONS LIFECYCLE</div>
+                      <div class="metric-line">
+                        <strong>K2K lifecycle:</strong>
+                        <span class="green">36 connected</span> &rarr; <span>32 activated</span> &rarr; <span class="blue">28 active L30D</span> &middot; <span class="amber">2 dormant</span> &middot; <span class="red">6 no K2K (eligible)</span>
+                      </div>
+
+                      <div class="content-gap-sm"></div>
+
+                      <!-- [48] Leakage callout -->
+                      <div class="callout amber">
+                        <strong>&#9888; Leakage:</strong> 3 K2K-connected vendors are buying offline today. $420K in procurement running through phone/fax instead of the connected digital channel. This is pure leakage.
+                      </div>
+
+                      <div class="content-gap"></div>
+
+                      <!-- [49] Anticipation comparison -->
+                      <div class="section-label">BUYING HORIZON &mdash; Anticipation (online vs offline)</div>
+                      <div class="bar-chart">
+                        <div class="bar-row">
+                          <div class="bar-label">ONLINE</div>
+                          <div class="bar-track">
+                            <div class="bar-segments">
+                              <div class="bar-seg seg-0-3" style="width:72%"></div>
+                              <div class="bar-seg seg-4-7" style="width:14%"></div>
+                              <div class="bar-seg seg-8-14" style="width:8%"></div>
+                              <div class="bar-seg seg-15-30" style="width:4%"></div>
+                              <div class="bar-seg seg-31-90" style="width:2%"></div>
+                            </div>
+                            <span class="bar-avg">3.3d avg</span>
+                          </div>
+                        </div>
+                        <div class="bar-row">
+                          <div class="bar-label">OFFLINE</div>
+                          <div class="bar-track">
+                            <div class="bar-segments">
+                              <div class="bar-seg seg-0-3" style="width:64%"></div>
+                              <div class="bar-seg seg-4-7" style="width:18%"></div>
+                              <div class="bar-seg seg-8-14" style="width:10%"></div>
+                              <div class="bar-seg seg-15-30" style="width:5%"></div>
+                              <div class="bar-seg seg-31-90" style="width:3%"></div>
+                            </div>
+                            <span class="bar-avg">4.5d avg</span>
+                          </div>
+                        </div>
+                        <div class="bar-row best-row">
+                          <div class="bar-label">TOP RANGE</div>
+                          <div class="bar-track">
+                            <div class="bar-segments">
+                              <div class="bar-seg seg-0-3" style="width:30%"></div>
+                              <div class="bar-seg seg-4-7" style="width:20%"></div>
+                              <div class="bar-seg seg-8-14" style="width:22%"></div>
+                              <div class="bar-seg seg-15-30" style="width:16%"></div>
+                              <div class="bar-seg seg-31-90" style="width:8%"></div>
+                              <div class="bar-seg seg-90p" style="width:4%"></div>
+                            </div>
+                            <span class="bar-avg" style="color:var(--green)">12.5d avg (best in class)</span>
+                          </div>
+                        </div>
+                        <div class="bar-legend">
+                          <span class="legend-item"><span class="legend-dot seg-0-3"></span>0&ndash;3d</span>
+                          <span class="legend-item"><span class="legend-dot seg-4-7"></span>4&ndash;7d</span>
+                          <span class="legend-item"><span class="legend-dot seg-8-14"></span>8&ndash;14d</span>
+                          <span class="legend-item"><span class="legend-dot seg-15-30"></span>15&ndash;30d</span>
+                          <span class="legend-item"><span class="legend-dot seg-31-90"></span>31&ndash;90d</span>
+                          <span class="legend-item"><span class="legend-dot seg-90p"></span>90d+</span>
+                        </div>
+                      </div>
+
+                      <div class="content-gap-sm"></div>
+
+                      <!-- [50] SO WHAT callout -->
+                      <div class="callout green">
+                        <strong>SO WHAT:</strong> 72% of orders placed 0-3 days before shipping. Online and offline both spot &mdash; no planning advantage online yet. Leakage from K2K-connected vendors buying offline is the easiest fix.
+                      </div>
+
+                      <div class="handoff">
+                        <span class="handoff-arrow">&rarr;</span>
+                        <span>Continue to <a href="#">LIST</a>: can the supply they buy be shown to their buyers?</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- ══ CARD 4: LIST [51-56] ══ -->
+                  <div class="card open" id="card-list">
+                    <div class="card-header">
+                      <div class="card-header-left">
+                        <div class="card-label">Card 4 of 6 &mdash; List</div>
+                        <div class="card-title">LIST &mdash; Shows 60% of what they sell. 3,717 varieties not online.</div>
+                        <div class="card-subtitle">MaxAge=10 blocks forward listing &middot; Bunches OFF &middot; Future Listing OFF</div>
+                      </div>
+                      <div class="card-toggle">&#9650;</div>
+                    </div>
+                    <div class="card-body">
+                      <div class="content-gap-sm"></div>
+
+                      <!-- [51] Config toggles visual -->
+                      <div class="section-label">CONFIGURATION STATUS</div>
+                      <div class="config-grid">
+                        <div class="config-item config-bad">
+                          <div class="config-item-label">MaxAge</div>
+                          <div class="config-value">10 days</div>
+                          <div style="display:flex;justify-content:center">
+                            <div style="position:relative;width:60px;height:8px;background:#fecaca;border-radius:4px;overflow:hidden">
+                              <div style="position:absolute;left:0;top:0;height:100%;width:33%;background:#dc2626;border-radius:4px"></div>
+                            </div>
+                          </div>
+                          <div class="config-sub">Need 30+ for forward listing</div>
+                          <div class="config-impact">Blocks 47% of catalog</div>
+                        </div>
+                        <div class="config-item config-bad">
+                          <div class="config-item-label">Bunches</div>
+                          <div style="display:flex;justify-content:center;margin-bottom:4px">
+                            <div class="config-toggle-track off">
+                              <div class="config-toggle-dot"></div>
+                            </div>
+                          </div>
+                          <div class="config-value">OFF</div>
+                          <div class="config-sub">95% retail TAM blocked</div>
+                          <div class="config-impact">$52M invisible</div>
+                        </div>
+                        <div class="config-item config-bad">
+                          <div class="config-item-label">Future Listing</div>
+                          <div style="display:flex;justify-content:center;margin-bottom:4px">
+                            <div class="config-toggle-track off">
+                              <div class="config-toggle-dot"></div>
+                            </div>
+                          </div>
+                          <div class="config-value">OFF</div>
+                          <div class="config-sub">No forward inventory shown</div>
+                          <div class="config-impact">Forward orders = $0</div>
+                        </div>
+                        <div class="config-item config-ok">
+                          <div class="config-item-label">On-hand</div>
+                          <div style="display:flex;justify-content:center;margin-bottom:4px">
+                            <div class="config-toggle-track on">
+                              <div class="config-toggle-dot"></div>
+                            </div>
+                          </div>
+                          <div class="config-value">ON</div>
+                          <div class="config-sub">Current inventory visible</div>
+                        </div>
+                      </div>
+
+                      <div class="content-gap"></div>
+
+                      <!-- [52] Online vs Offline comparison table -->
+                      <div class="table-wrap">
+                        <table class="ev-table">
+                          <thead>
+                            <tr>
+                              <th>ONLINE vs WHAT THEY SELL</th>
+                              <th>Online</th>
+                              <th>Offline</th>
+                              <th>Gap</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="row-label">Categories</td>
+                              <td><span class="online">412</span></td>
+                              <td>568</td>
+                              <td>156</td>
+                            </tr>
+                            <tr>
+                              <td class="row-label">Varieties</td>
+                              <td><span class="online">5,600</span></td>
+                              <td>9,317</td>
+                              <td><span class="warn">3,717</span></td>
+                            </tr>
+                            <tr>
+                              <td class="row-label">SKUs</td>
+                              <td><span class="online">5,837</span></td>
+                              <td>9,643</td>
+                              <td><span class="warn">3,806</span></td>
+                            </tr>
+                            <tr>
+                              <td class="row-label">Bunches</td>
+                              <td><span class="danger">&#9888; OFF</span><span class="ev-state gap">Config blocked</span></td>
+                              <td>$52M offline</td>
+                              <td><span class="danger">95% retail TAM</span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div class="content-gap"></div>
+
+                      <!-- [53] Variety freshness bars -->
+                      <div class="section-label">VARIETY FRESHNESS &mdash; How recently each variety last sold</div>
+                      <div class="bar-chart">
+                        <div class="bar-row">
+                          <div class="bar-label">ONLINE</div>
+                          <div class="bar-track">
+                            <div class="bar-segments">
+                              <div class="bar-seg seg-0-3" style="width:35%"></div>
+                              <div class="bar-seg seg-4-7" style="width:25%"></div>
+                              <div class="bar-seg seg-8-14" style="width:20%"></div>
+                              <div class="bar-seg seg-15-30" style="width:12%"></div>
+                              <div class="bar-seg seg-31-90" style="width:6%"></div>
+                              <div class="bar-seg seg-90p" style="width:2%"></div>
+                            </div>
+                            <span class="bar-avg">5.6K var</span>
+                          </div>
+                        </div>
+                        <div class="bar-row">
+                          <div class="bar-label">OFFLINE</div>
+                          <div class="bar-track">
+                            <div class="bar-segments">
+                              <div class="bar-seg seg-0-3" style="width:28%"></div>
+                              <div class="bar-seg seg-4-7" style="width:22%"></div>
+                              <div class="bar-seg seg-8-14" style="width:20%"></div>
+                              <div class="bar-seg seg-15-30" style="width:15%"></div>
+                              <div class="bar-seg seg-31-90" style="width:10%"></div>
+                              <div class="bar-seg seg-90p" style="width:5%"></div>
+                            </div>
+                            <span class="bar-avg">9.3K var</span>
+                          </div>
+                        </div>
+                        <div class="bar-legend">
+                          <span class="legend-item"><span class="legend-dot seg-0-3"></span>0&ndash;3d</span>
+                          <span class="legend-item"><span class="legend-dot seg-4-7"></span>4&ndash;7d</span>
+                          <span class="legend-item"><span class="legend-dot seg-8-14"></span>8&ndash;14d</span>
+                          <span class="legend-item"><span class="legend-dot seg-15-30"></span>15&ndash;30d</span>
+                          <span class="legend-item"><span class="legend-dot seg-31-90"></span>31&ndash;90d</span>
+                          <span class="legend-item"><span class="legend-dot seg-90p"></span>90d+</span>
+                        </div>
+                      </div>
+
+                      <div class="content-gap"></div>
+
+                      <!-- [54] Inventory by type -->
+                      <div class="section-label">INVENTORY BY TYPE</div>
+                      <div class="metrics-row" style="margin-top:0">
+                        <div class="metric-pill blue-pill"><strong>On-hand:</strong> 3,200 SKUs active</div>
+                        <div class="metric-pill warn-pill"><strong>Prebook:</strong> 0 (Future Listing OFF)</div>
+                        <div class="metric-pill"><strong>Standing Order:</strong> 48 vendor connections</div>
+                        <div class="metric-pill"><strong>Open Market:</strong> not configured</div>
+                      </div>
+
+                      <div class="content-gap-sm"></div>
+
+                      <!-- [55] Forward inventory depth -->
+                      <div class="metric-line">
+                        <strong>Forward inventory depth:</strong> <span class="red">0 days</span> &mdash; Future Listing is OFF. No prebook or forward inventory visible online. All sales are spot.
+                      </div>
+
+                      <div class="content-gap-sm"></div>
+
+                      <!-- [56] SO WHAT callout -->
+                      <div class="callout green">
+                        <strong>SO WHAT:</strong> Kennicott's catalog online is 60% of what they sell offline. MaxAge=10 blocks 3,717 varieties. Bunches entirely OFF. Fix config = 3x catalog depth in 5 minutes.
+                      </div>
+
+                      <div class="handoff">
+                        <span class="handoff-arrow">&rarr;</span>
+                        <span>Continue to <a href="#">SELL</a>: do their buyers convert what IS already online?</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- ══ CARD 5: SELL [57-64] ══ -->
+                  <div class="card open" id="card-sell">
+                    <div class="card-header">
+                      <div class="card-header-left">
+                        <div class="card-label">Card 5 of 6 &mdash; Sell</div>
+                        <div class="card-title">SELL &mdash; 8.2% online. Offline buyers not yet invited.</div>
+                        <div class="card-subtitle">22.8% CVR, 94.8% repeat &mdash; conversion is strong, gap is activation</div>
+                      </div>
+                      <div class="card-toggle">&#9650;</div>
+                    </div>
+                    <div class="card-body">
+                      <div class="content-gap-sm"></div>
+
+                      <div class="callout green">
+                        <strong>SO WHAT:</strong> This is a best-in-class online performer &mdash; 22.8% CVR, 94.8% repeat rate, 7.3% concentration. The gap is activation: offline buyers trust this wholesaler and haven't been invited online.
+                      </div>
+
+                      <!-- [57] Buyer landscape table -->
+                      <div class="section-label" style="margin-top:8px">BUYER LANDSCAPE</div>
+
+                      <!-- [58] New buyers / Churned row (via net indicator) -->
+                      <div class="net-indicator net-negative">
+                        <span style="font-size:16px">&#8595;</span>
+                        <span>Net &ndash;894 buyers (Jul)</span>
+                        <span class="net-detail">&nbsp;&middot;&nbsp; +312 new &nbsp;/&nbsp; &ndash;1,206 churned L90D</span>
+                      </div>
+
+                      <div class="table-wrap">
+                        <table class="ev-table" style="font-size:12px">
+                          <thead>
+                            <tr>
+                              <th style="font-size:10px">BUYERS</th>
+                              <th style="font-size:10px">Online</th>
+                              <th style="font-size:10px">Offline</th>
+                              <th style="font-size:10px">Total / Context</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="row-label" style="font-size:12px">Total Buyers</td>
+                              <td style="font-size:12px"><span class="online" style="font-size:12px">1,890</span><span class="ev-state observed">Observed</span></td>
+                              <td style="font-size:12px">5,554<span class="ev-state observed">Observed</span></td>
+                              <td style="font-size:12px"><strong>7,444</strong> total<span class="ev-state proxy">May overlap</span></td>
+                            </tr>
+                            <tr>
+                              <td class="row-label" style="font-size:12px">Active L30D</td>
+                              <td style="font-size:12px"><span class="online" style="font-size:12px">830</span></td>
+                              <td style="font-size:12px">3,807</td>
+                              <td style="font-size:12px">44% online retention</td>
+                            </tr>
+                            <tr>
+                              <td class="row-label" style="font-size:12px">AOV</td>
+                              <td style="font-size:12px"><span class="online" style="font-size:12px">$625</span></td>
+                              <td style="font-size:12px">$563</td>
+                              <td style="font-size:12px">online AOV <span class="good">+10.9%</span></td>
+                            </tr>
+                            <tr style="background:var(--green-bg)">
+                              <td class="row-label" style="font-size:12px"><span class="good">&#9679;</span> New (Jul)</td>
+                              <td style="font-size:12px"><span class="good" style="font-size:12px">142</span></td>
+                              <td style="font-size:12px"><span class="good">170</span></td>
+                              <td style="font-size:12px"><strong class="good">312 total</strong> &mdash; new activations</td>
+                            </tr>
+                            <tr style="background:var(--red-bg)">
+                              <td class="row-label" style="font-size:12px"><span class="danger">&#9679;</span> Churned / Lapsed</td>
+                              <td style="font-size:12px"><span class="danger" style="font-size:12px">486</span></td>
+                              <td style="font-size:12px"><span class="danger">720</span></td>
+                              <td style="font-size:12px"><strong class="danger">1,206 L90D</strong> &mdash; at risk</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div class="content-gap-sm"></div>
+
+                      <!-- [59] AOV online vs offline already in table above -->
+
+                      <!-- [60] CVR gauge -->
+                      <div class="section-label">WEB CONVERSION RATE (CVR)</div>
+                      <div class="internal-banner">&#9888; Internal only &mdash; not for customer-facing use</div>
+
+                      <div class="cvr-gauge-section">
+                        <div class="gauge-row">
+                          <div class="gauge-label">Login CVR %</div>
+                          <div class="gauge-track">
+                            <div class="gauge-fill fill-blue" style="width:100%"></div>
+                          </div>
+                          <div class="gauge-value" style="color:var(--blue)">32.7%</div>
+                        </div>
+                        <div class="gauge-row">
+                          <div class="gauge-label">This account</div>
+                          <div class="gauge-track">
+                            <div class="gauge-fill fill-blue" style="width:76%"></div>
+                          </div>
+                          <div class="gauge-value" style="color:var(--blue)">22.8%</div>
+                        </div>
+                        <div class="gauge-row">
+                          <div class="gauge-label">Network avg</div>
+                          <div class="gauge-track">
+                            <div class="gauge-fill fill-gray" style="width:64%"></div>
+                          </div>
+                          <div class="gauge-value">19.3%</div>
+                        </div>
+                      </div>
+
+                      <div class="content-gap-sm"></div>
+
+                      <!-- [61] Repeat rate pill + [62] Concentration top 5 pill -->
+                      <div class="metrics-row">
+                        <div class="metric-pill good-pill"><strong>Repeat rate:</strong> 94.8% <span style="color:var(--text-muted)">(p75 network)</span></div>
+                        <div class="metric-pill good-pill"><strong>Conc. Top 5:</strong> 7.3% <span style="color:var(--text-muted)">healthy</span></div>
+                        <div class="metric-pill warn-pill"><strong>Retention L30D:</strong> 44%</div>
+                      </div>
+
+                      <div class="content-gap"></div>
+
+                      <!-- [63] Online sale format breakdown -->
+                      <div class="section-label">ONLINE SALE FORMAT</div>
+                      <div class="metric-line"><strong>Channels:</strong> eCom <strong>38%</strong> &middot; K2K <strong>48%</strong> &middot; API <span class="amber">14% &mdash; not monetized</span></div>
+                      <div class="metric-line"><strong>Format:</strong> Boxes 48% &middot; Bunches 52% (offline only) &middot; Short 85% &middot; Forward 15%</div>
+
+                      <div class="content-gap-sm"></div>
+
+                      <!-- [64] SO WHAT callout -->
+                      <div class="callout green">
+                        <strong>SO WHAT:</strong> Conversion and retention are best-in-class. The biggest lever is activation &mdash; moving offline buyers online. 5,554 buyers who already trust this wholesaler haven't been invited to order digitally.
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- ══ CARD 6: FRESHNESS [65-67] ══ -->
+                  <div class="card open" id="card-freshness">
+                    <div class="card-header">
+                      <div class="card-header-left">
+                        <div class="card-label">Card 6 of 6 &mdash; Freshness</div>
+                        <div class="card-title">DATA FRESHNESS &mdash; 4 of 6 sources current</div>
+                        <div class="card-subtitle">Coverage: 67% &mdash; 2 sources missing or stale</div>
+                      </div>
+                      <div class="card-toggle">&#9650;</div>
+                    </div>
+                    <div class="card-body">
+                      <div class="content-gap-sm"></div>
+
+                      <!-- [65] Sources used / total pill -->
+                      <div class="metrics-row" style="margin-top:0;margin-bottom:10px;">
+                        <div class="metric-pill blue-pill"><strong>4 / 6</strong> sources used</div>
+                        <!-- [66] Coverage % with color -->
+                        <div class="metric-pill warn-pill"><strong>67%</strong> coverage</div>
+                      </div>
+
+                      <!-- [67] Per-source status rows -->
+                      <div class="table-wrap">
+                        <div style="background:#f8fafc;padding:6px 10px;border-bottom:1px solid var(--border);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);display:flex;gap:40px;">
+                          <span style="flex:1">Source</span>
+                          <span style="width:80px;text-align:center">Status</span>
+                          <span style="width:100px;text-align:right">As-of Date</span>
+                        </div>
+                        <div class="freshness-source-row">
+                          <span style="flex:1;font-weight:600;">Snowflake (Sell)</span>
+                          <span style="width:80px;text-align:center"><span class="source-status source-found">Found</span></span>
+                          <span style="width:100px;text-align:right;color:var(--text-muted);">Aug 6, 2026</span>
+                        </div>
+                        <div class="freshness-source-row">
+                          <span style="flex:1;font-weight:600;">Snowflake (Buy)</span>
+                          <span style="width:80px;text-align:center"><span class="source-status source-found">Found</span></span>
+                          <span style="width:100px;text-align:right;color:var(--text-muted);">Aug 6, 2026</span>
+                        </div>
+                        <div class="freshness-source-row">
+                          <span style="flex:1;font-weight:600;">Salesforce (Opps)</span>
+                          <span style="width:80px;text-align:center"><span class="source-status source-found">Found</span></span>
+                          <span style="width:100px;text-align:right;color:var(--text-muted);">Aug 5, 2026</span>
+                        </div>
+                        <div class="freshness-source-row">
+                          <span style="flex:1;font-weight:600;">Christine GMV Sheet</span>
+                          <span style="width:80px;text-align:center"><span class="source-status source-found">Found</span></span>
+                          <span style="width:100px;text-align:right;color:var(--text-muted);">Jul 31, 2026</span>
+                        </div>
+                        <div class="freshness-source-row">
+                          <span style="flex:1;font-weight:600;">GA4 (eShop traffic)</span>
+                          <span style="width:80px;text-align:center"><span class="source-status source-missing">Missing</span></span>
+                          <span style="width:100px;text-align:right;color:var(--text-muted);">&mdash;</span>
+                        </div>
+                        <div class="freshness-source-row">
+                          <span style="flex:1;font-weight:600;">Customer.io (engagement)</span>
+                          <span style="width:80px;text-align:center"><span class="source-status source-missing">Missing</span></span>
+                          <span style="width:100px;text-align:right;color:var(--text-muted);">&mdash;</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!-- /cards-grid -->
+              </div><!-- /expanded-section -->
             </td>
           </tr>
+
 
           <!-- ══ ROW 2: Fresca Farms ══ -->
           <tr id="tr-fresca">
@@ -1359,11 +2427,12 @@
             </td>
             <td class="sticky-col sticky-col-2 account-cell">
               <div class="account-name">Fresca Farms</div>
+              <div class="account-diagnosis"><strong>53% digital, strong importer.</strong> eCom is the primary sell channel. Watch for declining MoM trend.</div>
               <div class="account-meta-row">
                 <span class="meta-badge badge-importer">Importer</span>
                 <span class="meta-badge badge-core-plus">Core+</span>
                 <span class="meta-badge badge-eshop">eShop</span>
-                <span class="meta-badge badge-purchasing">Purchasing</span>
+                <span class="meta-badge badge-ecosystem">Ecosystem</span>
               </div>
             </td>
             <td class="metric-cell">
@@ -1377,16 +2446,24 @@
             </td>
             <td class="metric-cell">
               <span class="metric-value">$34.5M</span>
+              <span class="metric-delta">&#9650;+5.2%</span>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-value">53%</span>
             </td>
             <td class="metric-cell">
               <span class="online-value">53%</span>
-              <div class="metric-qualifier">online</div>
-            </td>
-            <td class="metric-cell">
-              <span class="metric-delta neg">▼1.8%</span>
+              <div class="metric-qualifier">healthy</div>
             </td>
             <td class="metric-cell">
               <span class="metric-value">$15.6M</span>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-value">24%</span>
+            </td>
+            <td class="metric-cell">
+              <span class="online-value">41%</span>
+              <div class="metric-qualifier">healthy</div>
             </td>
             <td class="metric-cell">
               <span class="fees-value">$84K</span>
@@ -1395,18 +2472,23 @@
               <span class="takerate">0.24%</span>
             </td>
             <td class="metric-cell">
+              <span class="metric-delta neg">-1.8%</span>
+            </td>
+            <td class="metric-cell">
               <div class="sparkline">
                 <div class="spark-bar flat" style="height:80%"></div>
                 <div class="spark-bar down" style="height:70%"></div>
                 <div class="spark-bar flat" style="height:68%"></div>
                 <div class="spark-bar down" style="height:60%"></div>
               </div>
+              <div class="metric-qualifier">MoM</div>
             </td>
             <td class="metric-cell">
               <span class="stake-value sfdc">$120K</span>
-              <div class="stake-opps">SFDC · 1 opp</div>
+              <div class="stake-opps">SFDC opp &middot; 1 opp</div>
             </td>
           </tr>
+
 
           <!-- ══ ROW 3: Price's Floral Wholesale ══ -->
           <tr id="tr-prices">
@@ -1417,11 +2499,12 @@
             </td>
             <td class="sticky-col sticky-col-2 account-cell">
               <div class="account-name">Price's Floral Wholesale</div>
+              <div class="account-diagnosis"><strong>Onboarding &mdash; eShop live, 0 TX in 47 days.</strong> Catalog listed but no buyers invited. Activation stalled.</div>
               <div class="account-meta-row">
                 <span class="meta-badge badge-wholesaler">Wholesaler</span>
                 <span class="meta-badge badge-core-plus">Core+</span>
                 <span class="meta-badge badge-eshop">eShop</span>
-                <span class="meta-badge badge-onboarding">Onboarding</span>
+                <span class="meta-badge badge-impl">IMPL</span>
               </div>
             </td>
             <td class="metric-cell">
@@ -1437,20 +2520,32 @@
               <span class="metric-value">$3.5K</span>
             </td>
             <td class="metric-cell">
-              <span class="online-low">2.2%</span>
-              <div class="metric-qualifier">online</div>
+              <span class="metric-value">2.2%</span>
+              <div class="tautological-label">tautological</div>
             </td>
             <td class="metric-cell">
-              <span style="color:var(--text-muted);font-size:10px;">—</span>
+              <span class="online-low">2.2%</span>
+              <div class="metric-qualifier">mostly offline</div>
             </td>
             <td class="metric-cell">
               <span class="metric-value">$1.6K</span>
             </td>
             <td class="metric-cell">
+              <span class="metric-value">1.0%</span>
+              <div class="tautological-label">tautological</div>
+            </td>
+            <td class="metric-cell">
+              <span class="online-low">1.0%</span>
+              <div class="metric-qualifier">mostly offline</div>
+            </td>
+            <td class="metric-cell">
               <span class="fees-zero">$0</span>
             </td>
             <td class="metric-cell">
-              <span class="takerate" style="color:var(--text-muted)">—</span>
+              <span class="takerate" style="color:var(--text-muted)">&mdash;</span>
+            </td>
+            <td class="metric-cell">
+              <span style="color:var(--text-muted);font-size:10px;">&mdash;</span>
             </td>
             <td class="metric-cell">
               <div class="sparkline">
@@ -1459,12 +2554,14 @@
                 <div class="spark-bar up" style="height:35%"></div>
                 <div class="spark-bar flat" style="height:33%"></div>
               </div>
+              <div class="metric-qualifier">MoM</div>
             </td>
             <td class="metric-cell">
-              <span class="stake-value" style="color:var(--text-muted)">—</span>
+              <span class="stake-value" style="color:var(--text-muted)">&mdash;</span>
               <div class="stake-opps">No SFDC opp</div>
             </td>
           </tr>
+
 
           <!-- ══ ROW 4: Arizona Floral Exchange ══ -->
           <tr id="tr-azf">
@@ -1475,11 +2572,12 @@
             </td>
             <td class="sticky-col sticky-col-2 account-cell">
               <div class="account-name">Arizona Floral Exchange</div>
+              <div class="account-diagnosis"><strong>Procurement-only, 0% digital sell.</strong> Buys through Koronet but sells entirely offline. No eShop or K2K configured.</div>
               <div class="account-meta-row">
                 <span class="meta-badge badge-wholesaler">Wholesaler</span>
                 <span class="meta-badge badge-procurement">Procurement</span>
                 <span class="meta-badge badge-none">No digital</span>
-                <span class="meta-badge badge-purchasing">Purchasing</span>
+                <span class="meta-badge badge-ta">TA</span>
               </div>
             </td>
             <td class="metric-cell">
@@ -1495,20 +2593,30 @@
               <span class="metric-value">$0</span>
             </td>
             <td class="metric-cell">
-              <span class="online-zero">0%</span>
-              <div class="metric-qualifier">all offline</div>
+              <span class="metric-value">0%</span>
             </td>
             <td class="metric-cell">
-              <span style="color:var(--text-muted);font-size:10px;">—</span>
+              <span class="online-zero">0%</span>
+              <div class="metric-qualifier">all offline</div>
             </td>
             <td class="metric-cell">
               <span class="metric-value">$3.6M</span>
             </td>
             <td class="metric-cell">
+              <span class="metric-value">45%</span>
+            </td>
+            <td class="metric-cell">
+              <span class="online-value">38%</span>
+              <div class="metric-qualifier">healthy</div>
+            </td>
+            <td class="metric-cell">
               <span class="fees-zero">$0</span>
             </td>
             <td class="metric-cell">
-              <span class="takerate" style="color:var(--text-muted)">—</span>
+              <span class="takerate" style="color:var(--text-muted)">&mdash;</span>
+            </td>
+            <td class="metric-cell">
+              <span style="color:var(--text-muted);font-size:10px;">&mdash;</span>
             </td>
             <td class="metric-cell">
               <div class="sparkline">
@@ -1517,12 +2625,14 @@
                 <div class="spark-bar flat" style="height:50%"></div>
                 <div class="spark-bar flat" style="height:50%"></div>
               </div>
+              <div class="metric-qualifier">MoM</div>
             </td>
             <td class="metric-cell">
-              <span class="stake-value" style="color:var(--text-muted)">—</span>
+              <span class="stake-value" style="color:var(--text-muted)">&mdash;</span>
               <div class="stake-opps">No SFDC opp</div>
             </td>
           </tr>
+
 
           <!-- ══ ROW 5: GQ Flowers ══ -->
           <tr id="tr-gq">
@@ -1533,11 +2643,12 @@
             </td>
             <td class="sticky-col sticky-col-2 account-cell">
               <div class="account-name">GQ Flowers</div>
+              <div class="account-diagnosis"><strong>100% digital grower, small but growing.</strong> All volume flows through eShop. No fees yet &mdash; eSuite tier.</div>
               <div class="account-meta-row">
                 <span class="meta-badge badge-grower">Grower</span>
                 <span class="meta-badge badge-esuite">eSuite</span>
                 <span class="meta-badge badge-eshop">eShop</span>
-                <span class="meta-badge badge-purchasing">Purchasing</span>
+                <span class="meta-badge badge-watch">Watch</span>
               </div>
             </td>
             <td class="metric-cell">
@@ -1551,22 +2662,33 @@
             </td>
             <td class="metric-cell">
               <span class="metric-value">$27K</span>
+              <span class="metric-delta">&#9650;+18%</span>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-value">100%</span>
+              <div class="tautological-label">tautological</div>
             </td>
             <td class="metric-cell">
               <span class="online-full">100%</span>
-              <div class="metric-qualifier">all digital</div>
+              <div class="metric-qualifier">digital-first</div>
             </td>
             <td class="metric-cell">
-              <span class="metric-delta">▲12.0%</span>
+              <span style="color:var(--text-muted)">&mdash;</span>
             </td>
             <td class="metric-cell">
-              <span style="color:var(--text-muted)">—</span>
+              <span style="color:var(--text-muted)">&mdash;</span>
+            </td>
+            <td class="metric-cell">
+              <span style="color:var(--text-muted)">&mdash;</span>
             </td>
             <td class="metric-cell">
               <span class="fees-zero">$0</span>
             </td>
             <td class="metric-cell">
-              <span class="takerate" style="color:var(--text-muted)">—</span>
+              <span class="takerate" style="color:var(--text-muted)">&mdash;</span>
+            </td>
+            <td class="metric-cell">
+              <span class="metric-delta">+12.0%</span>
             </td>
             <td class="metric-cell">
               <div class="sparkline">
@@ -1575,9 +2697,10 @@
                 <div class="spark-bar up" style="height:80%"></div>
                 <div class="spark-bar up" style="height:100%"></div>
               </div>
+              <div class="metric-qualifier">MoM</div>
             </td>
             <td class="metric-cell">
-              <span class="stake-value" style="color:var(--text-muted)">—</span>
+              <span class="stake-value" style="color:var(--text-muted)">&mdash;</span>
               <div class="stake-opps">No SFDC opp</div>
             </td>
           </tr>
@@ -1586,20 +2709,23 @@
       </table>
     </div>
 
+    <!-- [72] Load more button -->
     <div class="load-more-wrap">
       <button class="load-more-btn">Load more accounts (425 remaining)</button>
     </div>
 
+    <!-- [71] Note strip -->
     <div class="note-strip">
-      Mockup data — 5 fictional accounts shown. GMV provenance: Medido = measured via Koronet data, ORA = Oracle estimate, Piso = network floor (minimum observed). $ at Stake = SFDC open opps only, no modeled ARR.
+      Showing 5 of 430 accounts &middot; Sorted by Fees YTD desc &middot; Updated Aug 7, 2026 06:00 AM CT &middot; GMV provenance: Medido=measured, ORA=Oracle estimate, Piso=network floor. $ at Stake = SFDC open opps only.
     </div>
 
   </div><!-- /panel-portfolio -->
 
-  <!-- ══ TAB: Procurement Behavior ══ -->
+
+  <!-- ══ TAB: Procurement Behavior [69] ══ -->
   <div class="tab-panel" id="panel-procurement">
 
-    <div class="section-label">46 Procurement accounts · 2x2 by purchasing frequency vs catalog depth</div>
+    <div class="section-label">46 Procurement accounts &middot; 2x2 by purchasing frequency vs catalog depth</div>
 
     <!-- Axis labels above quadrant -->
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; padding:0 2px;">
@@ -1618,84 +2744,84 @@
 
       <!-- Y-axis label -->
       <div style="display:flex; align-items:center; writing-mode:vertical-rl; transform:rotate(180deg); font-size:10px; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; white-space:nowrap; padding:8px 0;">
-        Purchasing Frequency &#8595; Low · High &#8593;
+        Purchasing Frequency &#8595; Low &middot; High &#8593;
       </div>
 
       <div style="flex:1;">
         <div class="quadrant-container">
 
-          <!-- Q A: High Frequency, High Depth (top-left) -->
+          <!-- Q A: Strong (High Frequency, High Depth) -->
           <div class="quadrant quadrant-A">
             <div class="quadrant-label q-label-A">
               <span class="q-badge q-badge-A">A</span>
-              Champions
+              Strong
             </div>
-            <div class="quadrant-desc">High frequency · Deep catalog · Full platform users</div>
+            <div class="quadrant-desc">High frequency &middot; Deep catalog &middot; Full platform users</div>
             <div class="account-dot">
               <div class="dot-circle dot-green"></div>
-              Fresca Farms — 53% digital, $65M
-            </div>
-            <div class="account-dot">
-              <div class="dot-circle dot-green"></div>
-              Pacific Coast Floral — 41% digital, $38M
+              Fresca Farms &mdash; 53% digital, $65M
             </div>
             <div class="account-dot">
               <div class="dot-circle dot-green"></div>
-              Miami Flowers — 38% digital, $22M
+              Pacific Coast Floral &mdash; 41% digital, $38M
+            </div>
+            <div class="account-dot">
+              <div class="dot-circle dot-green"></div>
+              Miami Flowers &mdash; 38% digital, $22M
             </div>
             <div style="font-size:10px; color:var(--text-muted); margin-top:8px; font-style:italic;">+8 more accounts</div>
           </div>
 
-          <!-- Q B: High Frequency, Low Depth (top-right in 2x2 grid — col 2, row 1) -->
+          <!-- Q B: Frequent-low-ticket -->
           <div class="quadrant quadrant-B">
             <div class="quadrant-label q-label-B">
               <span class="q-badge q-badge-B">B</span>
-              Repeat Buyers, Shallow Catalog
+              Frequent, Low Ticket
             </div>
-            <div class="quadrant-desc">Buys often but doesn't list — procurement tool only</div>
+            <div class="quadrant-desc">Buys often but doesn't list &mdash; procurement tool only</div>
             <div class="account-dot">
               <div class="dot-circle dot-amber"></div>
-              Arizona Floral Exchange — 0% digital, $8M
+              Arizona Floral Exchange &mdash; 0% digital, $8M
             </div>
             <div class="account-dot">
               <div class="dot-circle dot-amber"></div>
-              Rio Grande Wholesale — 0% digital, $5M
+              Rio Grande Wholesale &mdash; 0% digital, $5M
             </div>
             <div style="font-size:10px; color:var(--text-muted); margin-top:8px; font-style:italic;">+12 more accounts</div>
           </div>
 
-          <!-- Q C: Low Frequency, High Depth (bottom-left) -->
+          <!-- Q C: High-ticket-infrequent -->
           <div class="quadrant quadrant-C">
             <div class="quadrant-label q-label-C">
               <span class="q-badge q-badge-C">C</span>
-              Dormant Listers
+              High Ticket, Infrequent
             </div>
-            <div class="quadrant-desc">Listed catalog but barely buying — activation risk</div>
+            <div class="quadrant-desc">Listed catalog but barely buying &mdash; activation risk</div>
             <div class="account-dot">
               <div class="dot-circle dot-red"></div>
-              Blue Ridge Flowers — 12% digital, $2M
+              Blue Ridge Flowers &mdash; 12% digital, $2M
             </div>
             <div class="account-dot">
               <div class="dot-circle dot-red"></div>
-              Desert Blooms WS — 8% digital, $1.4M
+              Desert Blooms WS &mdash; 8% digital, $1.4M
             </div>
             <div style="font-size:10px; color:var(--text-muted); margin-top:8px; font-style:italic;">+7 more accounts</div>
           </div>
 
-          <!-- Q D: Low Frequency, Low Depth (bottom-right) -->
+          <!-- Q D: Occasional -->
           <div class="quadrant quadrant-D">
             <div class="quadrant-label q-label-D">
               <span class="q-badge q-badge-D">D</span>
-              At Risk / New
+              Occasional
             </div>
-            <div class="quadrant-desc">Low engagement on both dimensions — churn or new</div>
+            <div class="quadrant-desc">Low engagement on both dimensions &mdash; churn or new</div>
             <div class="account-dot">
               <div class="dot-circle dot-blue"></div>
-              Price's Floral WS — 2.2% digital, onboarding
+              Price's Floral WS &mdash; 2.2% digital, onboarding
             </div>
             <div class="account-dot">
               <div class="dot-circle dot-blue"></div>
-              Sunrise Wholesale — 0% digital, new impl.
+              Sunrise Wholesale &mdash; 0% digital, new impl.
             </div>
             <div style="font-size:10px; color:var(--text-muted); margin-top:8px; font-style:italic;">+14 more accounts</div>
           </div>
@@ -1703,30 +2829,39 @@
         </div><!-- /quadrant-container -->
 
         <div class="note-strip">
-          Mockup visualization. X-axis = SKU catalog depth (# active products listed). Y-axis = procurement frequency (orders/month). Each dot = 1 account. Quadrant assignment = live, not static — will update with data refresh.
+          Mockup visualization. X-axis = SKU catalog depth (# active products listed). Y-axis = procurement frequency (orders/month). Each dot = 1 account. Quadrant assignment = live, not static.
         </div>
       </div>
     </div>
 
   </div><!-- /panel-procurement -->
 
-  <!-- ══ TAB: Definitions ══ -->
+
+  <!-- ══ TAB: Definitions [70] ══ -->
   <div class="tab-panel" id="panel-definitions">
     <div class="definitions-panel">
       <h2>Definitions</h2>
-      <p>Coming soon — metric definitions, data provenance guide, and methodology reference will live here.</p>
+      <p>Coming soon &mdash; metric definitions, data provenance guide, and methodology reference will live here.</p>
     </div>
   </div>
 
 </div><!-- /main -->
 
 <script>
-  // Tab switching — pure static, no data logic
+  // Tab switching
   function showTab(name) {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('panel-' + name).classList.add('active');
-    document.getElementById('tab-' + name).classList.add('active');
+    // Find and activate the matching tab button
+    const tabMap = {
+      'portfolio': 'tab-portfolio',
+      'procurement': 'tab-procurement',
+      'definitions': 'tab-definitions'
+    };
+    if (tabMap[name]) {
+      document.getElementById(tabMap[name]).classList.add('active');
+    }
   }
 
   // Toggle expand row (visual only)
@@ -1740,6 +2875,13 @@
         nextRow.style.display = isOpen ? '' : 'none';
         row.classList.toggle('row-expanded', isOpen);
       }
+    });
+  });
+
+  // Card accordion toggle
+  document.querySelectorAll('.card-header').forEach(header => {
+    header.addEventListener('click', function() {
+      this.closest('.card').classList.toggle('open');
     });
   });
 </script>
