@@ -2,7 +2,7 @@
   "_meta": {
     "generated_at": "2026-08-13",
     "source": "Christine GMV sheet (1xUIR_mpuMOrwDLz8IWCzJAlg_cf6WSBf-1cSrOPf_pM) + account_universe_v1 + sell_domain_v2 + fees_domain_v2",
-    "total_accounts": 434,
+    "total_accounts": 436,
     "excluded_dead": 357,
     "excluded_test": 11,
     "excluded_training_ids": 12,
@@ -12412,6 +12412,42 @@
       "pmt_lead": null,
       "pmt_status": null,
       "pmt_health": null
+    },
+    {
+      "company_id": "650986",
+      "company_name": "Tennessee Florist Supply - Knox",
+      "business_type": "Wholesaler",
+      "product_tier": "Core+",
+      "sell_channel": "no_fees_data",
+      "komet_status": "Production - Live",
+      "industry": "Floral - Wholesaler",
+      "gmv_reference": null,
+      "gmv_source": "Sin dato",
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "impl_stage_display": "Established",
+      "has_active_pmt": true,
+      "pmt_lead": "Camila Peña",
+      "priority_level": "",
+      "in_christine_sheet": true
+    },
+    {
+      "company_id": null,
+      "company_name": "Alaska Wholesale / Mylords Floral",
+      "business_type": "Wholesaler",
+      "product_tier": "Unknown",
+      "sell_channel": "no_fees_data",
+      "komet_status": "Implementation - Not Live",
+      "industry": "Floral - Wholesaler",
+      "gmv_reference": null,
+      "gmv_source": "Sin dato",
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Onboarding",
+      "impl_stage_display": "Pre-live",
+      "has_active_pmt": true,
+      "pmt_lead": "Christine Nickelsen",
+      "priority_level": "",
+      "in_christine_sheet": true
     }
   ]
 }
