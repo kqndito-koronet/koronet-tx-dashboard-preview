@@ -266,11 +266,6 @@
   .gmv-challenge-table td { padding: 8px 10px; border-bottom: 1px solid var(--border-light); vertical-align: middle; text-align: right; font-size: var(--font-body); color: var(--text-primary); }
   .gmv-challenge-table td:first-child { text-align: left; font-weight: 600; }
   .gmv-challenge-table tr:last-child td { border-bottom: none; }
-  .discrepancy-cell { font-size: 10px; font-weight: 600; color: var(--amber); }
-  .discrepancy-cell.aligned { color: var(--green); }
-  .gmv-source-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
-  .gmv-source-label { font-size: 9px; color: var(--text-muted); }
-  .gmv-source-count { font-size: 9px; color: var(--text-muted); font-style: italic; }
 
   /* Metric line */
   .metric-line { font-size: var(--font-body); color: var(--text-secondary); padding: 3px 0; }
@@ -326,10 +321,6 @@
   .seg-31-90 { background: #16a34a; }
   .seg-90p { background: #15803d; }
 
-  .seg-online { background: var(--blue-bg); border-left: 2px solid var(--blue); }
-  .seg-offline { background: var(--red-bg); border-left: 2px solid var(--red); }
-  .seg-best { background: var(--green-bg); border-left: 2px solid var(--green); }
-
   /* Config grid */
   .config-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 8px; }
   .config-item { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px; background: var(--surface); text-align: center; }
@@ -346,9 +337,6 @@
   .config-warn .config-value { color: var(--amber); }
   .config-ok .config-value { color: var(--green); }
   .config-sub { font-size: 10px; color: var(--text-muted); line-height: 1.3; }
-  .config-impact { font-size: 10px; font-weight: 600; margin-top: 4px; padding: 2px 6px; border-radius: 3px; display: inline-block; }
-  .config-bad .config-impact { color: var(--red); background: rgba(220,38,38,0.1); }
-  .config-warn .config-impact { color: var(--amber); background: rgba(217,119,6,0.1); }
 
   /* CVR gauge */
   .cvr-gauge-section { margin-top: 10px; }
@@ -397,8 +385,6 @@
   .badge-project { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
   .opp-rank { font-size: 9px; font-weight: 700; color: var(--text-muted); }
   .opp-desc { font-size: var(--font-body); color: var(--text-secondary); }
-  .opp-link { font-size: 10px; color: var(--blue); text-decoration: none; cursor: pointer; display: inline-block; margin-top: 2px; }
-  .opp-link:hover { text-decoration: underline; }
 
   /* Collapse row */
   .collapse-row { display: flex; align-items: center; gap: 6px; padding: 6px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; font-size: var(--font-body); margin-bottom: 6px; background: #fafbfd; transition: background 0.15s; }
@@ -430,35 +416,6 @@
   .tab-panel.active { display: block; }
 
   /* Procurement quadrant */
-  .quadrant-container { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2px; height: 420px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--border); box-shadow: var(--shadow); margin-bottom: 16px; }
-  .quadrant { background: var(--surface); padding: 16px; position: relative; display: flex; flex-direction: column; }
-  .quadrant-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
-  .quadrant-desc { font-size: 10px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4; }
-  .quadrant-A { border-bottom: 2px solid var(--border-light); }
-  .quadrant-B { border-bottom: 2px solid var(--border-light); border-left: 2px solid var(--border-light); }
-  .quadrant-D { border-left: 2px solid var(--border-light); }
-  .q-label-A { color: var(--green); }
-  .q-label-B { color: var(--amber); }
-  .q-label-C { color: var(--red); }
-  .q-label-D { color: var(--blue); }
-  .q-badge { font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 3px; }
-  .q-badge-A { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
-  .q-badge-B { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
-  .q-badge-C { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
-  .q-badge-D { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
-  .account-dot { display: flex; align-items: center; gap: 6px; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 10px; font-weight: 500; color: var(--text-secondary); margin-bottom: 4px; background: var(--bg); border: 1px solid var(--border-light); }
-  .dot-circle { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .dot-green { background: var(--green); }
-  .dot-amber { background: var(--amber); }
-  .dot-red { background: var(--red); }
-  .dot-blue { background: var(--blue); }
-
-  /* Definitions panel */
-  .definitions-panel { padding: 40px 24px; text-align: center; color: var(--text-muted); border: 1px dashed var(--border); border-radius: var(--radius); background: var(--surface); }
-  .definitions-panel h2 { font-size: var(--font-section); font-weight: 700; color: var(--text-secondary); margin-bottom: 8px; }
-  .definitions-panel p { font-size: var(--font-body); color: var(--text-muted); }
-
-  /* Procurement computed view */
   .procurement-quadrant-table { width: 100%; border-collapse: collapse; font-size: var(--font-body); margin-bottom: 16px; }
   .procurement-quadrant-table th { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); padding: 7px 10px; text-align: left; background: #f8fafc; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border-light); }
   .procurement-quadrant-table td { padding: 7px 10px; border-bottom: 1px solid var(--border-light); border-right: 1px solid var(--border-light); color: var(--text-primary); vertical-align: top; font-size: var(--font-body); }
@@ -471,6 +428,11 @@
   .procurement-quadrant-table .q-header-F { color: var(--text-muted); font-weight: 700; }
   .pq-name { font-weight: 500; display: block; }
   .pq-meta { font-size: 9px; color: var(--text-muted); }
+  .q-badge { font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 3px; }
+  .q-badge-A { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .q-badge-B { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+  .q-badge-C { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+  .q-badge-D { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
 
   /* Matrix visualization */
   .matrix-table { border-collapse: collapse; font-size: 10px; margin-bottom: 12px; }
@@ -501,6 +463,11 @@
   /* Note strip */
   .note-strip { font-size: 10px; color: var(--text-muted); font-style: italic; padding: 4px 0 2px; }
 
+  /* Definitions panel */
+  .definitions-panel { padding: 40px 24px; text-align: center; color: var(--text-muted); border: 1px dashed var(--border); border-radius: var(--radius); background: var(--surface); }
+  .definitions-panel h2 { font-size: var(--font-section); font-weight: 700; color: var(--text-secondary); margin-bottom: 8px; }
+  .definitions-panel p { font-size: var(--font-body); color: var(--text-muted); }
+
   @media (max-width: 900px) {
     .kpi-strip { grid-template-columns: repeat(3, 1fr); }
     .action-block { grid-template-columns: 1fr; }
@@ -520,7 +487,6 @@
         <span class="brand-v3">V3</span>
       </div>
       <div class="topbar-controls">
-        <!-- [1] Business Type filter -->
         <select class="select-pill" id="business-type-filter">
           <option value="">All Types</option>
           <option value="Wholesaler">Wholesaler</option>
@@ -528,7 +494,6 @@
           <option value="Grower">Grower</option>
           <option value="Retailer">Retailer</option>
         </select>
-        <!-- [2] Product Tier filter -->
         <select class="select-pill" id="product-tier-filter">
           <option value="">All Tiers</option>
           <option value="Core+">Core+</option>
@@ -536,7 +501,6 @@
           <option value="K2K">K2K</option>
           <option value="eSuite">eSuite</option>
         </select>
-        <!-- [3] Sell Channel filter -->
         <select class="select-pill" id="sell-channel-filter">
           <option value="">All Channels</option>
           <option value="eShop">eShop</option>
@@ -544,7 +508,6 @@
           <option value="API">API</option>
           <option value="None">No digital</option>
         </select>
-        <!-- [4] Priority filter -->
         <select class="select-pill" id="priority-filter">
           <option value="">All Priorities</option>
           <option value="P1">P1</option>
@@ -556,7 +519,6 @@
           <option value="CS_P2">CS_P2</option>
           <option value="NEEDS_REVIEW">NEEDS_REVIEW</option>
         </select>
-        <!-- [5] Potential Tier filter -->
         <select class="select-pill" id="potential-tier-filter">
           <option value="">All Potential</option>
           <option value="Flagship">Flagship</option>
@@ -568,7 +530,6 @@
 
         <div class="filter-divider"></div>
 
-        <!-- [5] Period selector -->
         <span class="period-label">Period</span>
         <select class="select-pill" id="timeframe-select">
           <option value="ytd_2026" selected>YTD 2026</option>
@@ -580,7 +541,6 @@
 
         <div class="filter-divider"></div>
 
-        <!-- [6] Search input -->
         <input class="search-input" id="search-input" type="text" placeholder="Search account...">
         <div class="filter-chips" id="filter-chips"></div>
       </div>
@@ -781,14 +741,18 @@
 <script src="evidence_adapter_v3.js"></script>
 <script>
 /* ===================================================================
-   TX Dashboard V3 — Data-Wired Renderer
-   Koronet Revenue OS · Chapter TX
+   TX Dashboard V3 — Rebuilt Renderer
+   Koronet Revenue OS - Chapter TX
    Uses evidence_adapter_v3.js (430 accounts, cubes, pacing, external)
+
+   Architecture: test5.html pattern (var + string concat, proven render)
+   with V3 features layered on top.
    =================================================================== */
 
-/* --- FORMATTING HELPERS --- */
+/* ========== LAYER 0: FORMATTING HELPERS ========== */
+
 function fmt$(n, compact) {
-  if (n == null) return '\u2014';
+  if (n == null || isNaN(n)) return '\u2014';
   if (compact) {
     if (Math.abs(n) >= 1e9) return '$' + (n / 1e9).toFixed(1) + 'B';
     if (Math.abs(n) >= 1e6) return '$' + (n / 1e6).toFixed(1) + 'M';
@@ -799,14 +763,14 @@ function fmt$(n, compact) {
 }
 
 function fmtPct(n, dp) {
-  if (n == null) return '\u2014';
-  return (n).toFixed(dp != null ? dp : 1) + '%';
+  if (n == null || isNaN(n)) return '\u2014';
+  return n.toFixed(dp != null ? dp : 1) + '%';
 }
 
 function fmtDelta(delta) {
   if (!delta) return '';
   var sign = delta.direction === 'up' ? '\u25B2' : delta.direction === 'down' ? '\u25BC' : '';
-  var cls  = delta.direction === 'up' ? '' : delta.direction === 'down' ? ' neg' : '';
+  var cls = delta.direction === 'down' ? ' neg' : '';
   return '<span class="metric-delta' + cls + '">' + sign + fmtPct(Math.abs(delta.pct), 1) + '</span>';
 }
 
@@ -825,34 +789,64 @@ function escHtml(str) {
   return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-/* --- SPARKLINE GENERATION --- */
+
+/* ========== LAYER 0: GLOBALS ========== */
+
+var _sfdcOpps = {};
+var _allEvidence = [];
+var _filteredEvidence = [];
+var _displayedCount = 0;
+var PAGE_SIZE = 50;
+var _procurementRendered = false;
+var _currentSort = { key: 'fees', dir: 'desc' };
+
+var tfMap = {
+  'jul_2026': 'current_month',
+  'jun_2026': 'prior_month',
+  'q2_2026': 'prior_quarter',
+  'h1_2026': 'ytd',
+  'ytd_2026': 'ytd'
+};
+
+function _adapterTf() {
+  var rawTf = document.getElementById('timeframe-select').value;
+  return tfMap[rawTf] || 'ytd';
+}
+
+
+/* ========== LAYER 2: SPARKLINE ========== */
+
 function buildSparkline(ev) {
+  var emptyBars = '<div class="sparkline"><div class="spark-bar flat" style="height:40%"></div><div class="spark-bar flat" style="height:40%"></div><div class="spark-bar flat" style="height:40%"></div><div class="spark-bar flat" style="height:40%"></div></div>';
   if (!ev || !ev.sell || !ev.sell.monthly_series || !ev.sell.monthly_series.value) {
-    return '<div class="sparkline"><div class="spark-bar flat" style="height:40%"></div><div class="spark-bar flat" style="height:40%"></div><div class="spark-bar flat" style="height:40%"></div><div class="spark-bar flat" style="height:40%"></div></div>';
+    return emptyBars;
   }
   var monthly = ev.sell.monthly_series.value;
-  var sorted = monthly.slice().sort(function(a,b) { return a.month < b.month ? -1 : 1; });
+  var sorted = monthly.slice().sort(function(a, b) { return a.month < b.month ? -1 : 1; });
   var last4 = sorted.slice(-4);
-  if (last4.length < 2) {
-    return '<div class="sparkline"><div class="spark-bar flat" style="height:50%"></div><div class="spark-bar flat" style="height:50%"></div><div class="spark-bar flat" style="height:50%"></div><div class="spark-bar flat" style="height:50%"></div></div>';
-  }
+  if (last4.length < 2) return emptyBars;
+
   var vals = last4.map(function(m) { return parseFloat(m.sell_gmv) || 0; });
   var maxV = Math.max.apply(null, vals);
-  var bars = last4.map(function(m, i) {
-    var v = parseFloat(m.sell_gmv) || 0;
+  var bars = '';
+  var i;
+  for (i = 0; i < last4.length; i++) {
+    var v = parseFloat(last4[i].sell_gmv) || 0;
     var h = maxV > 0 ? Math.max(15, Math.round((v / maxV) * 100)) : 40;
     var cls = 'flat';
     if (i > 0) {
-      var prev = parseFloat(last4[i-1].sell_gmv) || 0;
+      var prev = parseFloat(last4[i - 1].sell_gmv) || 0;
       if (v > prev * 1.02) cls = 'up';
       else if (v < prev * 0.98) cls = 'down';
     }
-    return '<div class="spark-bar ' + cls + '" style="height:' + h + '%"></div>';
-  });
-  return '<div class="sparkline">' + bars.join('') + '</div>';
+    bars += '<div class="spark-bar ' + cls + '" style="height:' + h + '%"></div>';
+  }
+  return '<div class="sparkline">' + bars + '</div>';
 }
 
-/* --- DIAGNOSIS BUILDER --- */
+
+/* ========== LAYER 2: DIAGNOSIS BUILDER ========== */
+
 function buildDiagnosis(ev) {
   if (!ev) return 'No data available.';
   var p = ev.potential;
@@ -888,7 +882,9 @@ function buildDiagnosis(ev) {
   return parts.join('. ') + '.';
 }
 
-/* --- AT-STAKE CALCULATOR --- */
+
+/* ========== LAYER 2: AT-STAKE CALCULATOR ========== */
+
 function calcAtStake(ev) {
   if (!ev) return null;
   var sfdcId = ev.identity && ev.identity.sfdc_id ? ev.identity.sfdc_id : null;
@@ -910,7 +906,9 @@ function calcAtStakeAmount(ev) {
   return r ? r.amount : null;
 }
 
-/* --- GMV DISPLAY (V3 pace logic) --- */
+
+/* ========== LAYER 2: GMV DISPLAY ========== */
+
 function buildGmvDisplay(ev) {
   if (!ev || !ev.potential) return { html: '\u2014', sortValue: 0 };
   var p = ev.potential;
@@ -925,7 +923,6 @@ function buildGmvDisplay(ev) {
   var ext = p.gmv_external;
   var ora = p.gmv_ora;
 
-  // Alta (12M) = measured
   if (conf === 'Alta' && src === 'Medido') {
     return {
       html: '<div class="gmv-wrap"><span class="gmv-value">' + fmt$(val, true) + '</span><span class="provenance-tag prov-medido">&#10003; Medido (12M)</span></div>',
@@ -933,7 +930,6 @@ function buildGmvDisplay(ev) {
     };
   }
 
-  // Alta from Piso de red
   if (conf === 'Alta' && src === 'Piso de red') {
     return {
       html: '<div class="gmv-wrap"><span class="gmv-value">' + fmt$(val, true) + '</span><span class="provenance-tag prov-medido">&#10003; Alta (12M)</span></div>',
@@ -941,7 +937,6 @@ function buildGmvDisplay(ev) {
     };
   }
 
-  // Baja (<120d) = pace with contrast
   if (conf === 'Baja' && pace && pace.value != null) {
     var paceVal = pace.value;
     var daysLabel = days != null ? days + 'd' : '';
@@ -954,7 +949,6 @@ function buildGmvDisplay(ev) {
     };
   }
 
-  // ORA (no Core) = declared with challenge
   if (src === 'ORA' || src === 'FCS') {
     var challenge = '';
     if (ext && ext.value != null) challenge = ' vs Est ' + fmt$(ext.value, true) + ' &#9888;';
@@ -964,9 +958,7 @@ function buildGmvDisplay(ev) {
     };
   }
 
-  // Red floor (only visible in network)
   if (src === 'not in Christine cascade' || src === 'Sin dato') {
-    // Use pace if available
     if (pace && pace.value != null) {
       var dLabel = days != null ? days + 'd' : '';
       return {
@@ -974,7 +966,6 @@ function buildGmvDisplay(ev) {
         sortValue: pace.value
       };
     }
-    // Fallback: show koronet sell as floor
     var kSell = fmtEv(p.koronet_sell_ytd);
     if (kSell != null && kSell > 0) {
       return {
@@ -985,14 +976,15 @@ function buildGmvDisplay(ev) {
     return { html: '\u2014', sortValue: 0 };
   }
 
-  // Default: show with source
   return {
     html: '<div class="gmv-wrap"><span class="gmv-value">' + fmt$(val, true) + '</span><span class="provenance-tag prov-fcs">' + escHtml(src || 'Unknown') + '</span></div>',
     sortValue: val
   };
 }
 
-/* --- BUSINESS TYPE BADGE --- */
+
+/* ========== LAYER 2: BADGE FUNCTIONS ========== */
+
 function businessTypeBadge(type) {
   if (!type) return '';
   var t = type.toLowerCase();
@@ -1043,156 +1035,9 @@ function engagementBadge(status) {
   return '<span class="meta-badge badge-watch">' + escHtml(status) + '</span>';
 }
 
-/* --- TABLE ROW RENDERER (V3) --- */
-function renderRow(ev, idx) {
-  if (!ev) return '';
-  var id = ev._company_id;
-  var name = ev._company_name || ('Account ' + id);
-  var p = ev.potential;
-  var identity = ev.identity;
 
-  var koronetSell   = p ? fmtEv(p.koronet_sell_ytd) : null;
-  var sellPen       = p ? fmtEv(p.sell_penetration) : null;
-  var onlinePct     = p ? fmtEv(p.sell_online_pct) : null;
-  var koronetBuy    = p ? fmtEv(p.koronet_buy_ytd) : null;
-  var buyPen        = p ? fmtEv(p.buy_penetration) : null;
-  var buyOnlinePct  = p ? fmtEv(p.buy_online_pct) : null;
-  var feesYtd       = p ? fmtEv(p.fees_ytd_2026) : null;
-  var takeRate      = p ? fmtEv(p.take_rate) : null;
-  var sellYoyDelta  = p ? p.sell_yoy_delta : null;
-  var sellMomDelta  = p ? p.sell_mom_delta : null;
+/* ========== LAYER 2: CHANNEL BREAKDOWN ========== */
 
-  var atStakeResult = calcAtStake(ev);
-  var atStake = atStakeResult ? atStakeResult.amount : null;
-  var atStakeSource = atStakeResult ? atStakeResult.source : null;
-  var diagnosis = buildDiagnosis(ev);
-
-  // GMV display with provenance
-  var gmvDisplay = buildGmvDisplay(ev);
-
-  // Online color (sell)
-  var onlineClass = (onlinePct != null)
-    ? (onlinePct >= 30 ? 'online-value' : onlinePct > 0 ? 'online-low' : 'online-zero')
-    : 'metric-value';
-  var onlineQualifier = onlinePct != null
-    ? (onlinePct === 0 ? 'all offline' : onlinePct < 20 ? 'mostly offline' : onlinePct >= 60 ? 'digital-first' : 'healthy')
-    : '';
-
-  // Penetration handling
-  var sellPenEv = p && p.sell_penetration ? p.sell_penetration.ev : 'gap';
-  var isSellPenTautological = sellPenEv === 'tautological' || (sellPen != null && sellPen > 95 && (sellPenEv === 'proxy' || sellPenEv === 'model'));
-
-  // Take rate color
-  var takeRateClass = 'takerate';
-  if (takeRate != null) {
-    if (takeRate >= 0.3) takeRateClass = 'takerate-good';
-    else if (takeRate < 0.05 && feesYtd != null && feesYtd > 0) takeRateClass = 'takerate-bad';
-  }
-
-  // Sparkline
-  var spark = buildSparkline(ev);
-
-  // MoM delta cell
-  var momHtml = '';
-  if (sellMomDelta && sellMomDelta.pct != null) {
-    var momSign = sellMomDelta.pct >= 0 ? '+' : '';
-    var momCls = sellMomDelta.pct >= 0 ? '' : ' neg';
-    momHtml = '<span class="metric-delta' + momCls + '">' + momSign + sellMomDelta.pct.toFixed(1) + '%</span>';
-  } else {
-    momHtml = '<span style="color:var(--text-muted);font-size:10px;">\u2014</span>';
-  }
-
-  // Intervention count
-  var interventionCount = 0;
-  if (p && fmtEv(p.buy_offline_ytd) > 0) interventionCount++;
-  var cfgEv = ev.list && ev.list.config ? ev.list.config.value : null;
-  var cfgRawEv = cfgEv && cfgEv.raw ? cfgEv.raw : null;
-  if (cfgRawEv) {
-    var bunchesEv = cfgRawEv.sell_in_bunches != null ? cfgRawEv.sell_in_bunches : cfgRawEv.bunches;
-    if (bunchesEv === false || bunchesEv === 'false' || bunchesEv === 0) interventionCount++;
-    var maxAgeEv = cfgRawEv.max_age_sell != null ? cfgRawEv.max_age_sell : cfgRawEv.MaxAge;
-    if (maxAgeEv != null && maxAgeEv < 30) interventionCount++;
-  }
-  var btEv = ev.sell && ev.sell.buyers_table ? ev.sell.buyers_table.value : null;
-  if (btEv && btEv.offline_buyers > 0) interventionCount++;
-
-  // Meta badges row
-  var badges = [];
-  if (identity) {
-    badges.push(businessTypeBadge(identity.business_type));
-    badges.push(productTierBadge(identity.product_tier));
-    badges.push(sellChannelBadge(identity.sell_channel));
-    badges.push(priorityBadge(identity.priority_level));
-  }
-  var badgesHtml = badges.filter(Boolean).join('');
-
-  // Buy online class
-  var buyOnlineClass = buyOnlinePct != null ? (buyOnlinePct >= 30 ? 'online-value' : buyOnlinePct > 0 ? 'online-low' : 'online-zero') : 'metric-value';
-  var buyOnlineQual = buyOnlinePct != null ? (buyOnlinePct === 0 ? 'all offline' : buyOnlinePct < 20 ? 'mostly offline' : 'healthy') : '';
-
-  return '<tr id="row-' + id + '">' +
-    '<td class="toggle-cell sticky-col sticky-col-1"><button class="toggle-btn" onclick="toggleExpand(\'' + id + '\')"><span class="toggle-chevron">&#9654;</span></button></td>' +
-    '<td class="account-cell sticky-col sticky-col-2">' +
-      '<div class="account-name">' + escHtml(name) + '</div>' +
-      '<div class="account-diagnosis">' + diagnosis + '</div>' +
-      '<div class="account-meta-row">' + badgesHtml + '</div>' +
-    '</td>' +
-    '<td class="metric-cell">' + engagementBadge(identity ? identity.engagement_status : null) + '</td>' +
-    '<td class="metric-cell">' + gmvDisplay.html + '</td>' +
-    '<td class="metric-cell"><div class="metric-value">' + fmt$(koronetSell, true) + (sellYoyDelta ? ' ' + fmtDelta(sellYoyDelta) : '') + '</div></td>' +
-    '<td class="metric-cell"><div class="metric-value"' + (isSellPenTautological ? ' style="color:var(--text-muted);font-style:italic"' : '') + '>' + (isSellPenTautological ? '~100%' : fmtPct(sellPen)) + '</div>' + (isSellPenTautological ? '<div class="tautological-label">tautological</div>' : '') + '</td>' +
-    '<td class="metric-cell"><div class="' + onlineClass + '">' + fmtPct(onlinePct) + '</div>' + (onlineQualifier ? '<div class="metric-qualifier">' + onlineQualifier + '</div>' : '') + '</td>' +
-    '<td class="metric-cell"><div class="metric-value">' + fmt$(koronetBuy, true) + '</div></td>' +
-    '<td class="metric-cell"><div class="metric-value"' + ((p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? ' style="color:var(--text-muted);font-style:italic"' : '') + '>' + ((p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? '~100%' : fmtPct(buyPen)) + '</div>' + ((p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? '<div class="tautological-label">tautological</div>' : '') + '</td>' +
-    '<td class="metric-cell"><div class="' + buyOnlineClass + '">' + fmtPct(buyOnlinePct) + '</div>' + (buyOnlineQual ? '<div class="metric-qualifier">' + buyOnlineQual + '</div>' : '') + '</td>' +
-    '<td class="metric-cell"><div class="' + (feesYtd != null && feesYtd > 0 ? 'fees-value' : 'fees-zero') + '">' + fmt$(feesYtd, true) + '</div></td>' +
-    '<td class="metric-cell"><div class="' + takeRateClass + '">' + fmtPct(takeRate, 2) + '</div></td>' +
-    '<td class="metric-cell">' + momHtml + '</td>' +
-    '<td class="metric-cell">' + spark + '<div class="metric-qualifier">MoM</div></td>' +
-    '<td class="metric-cell"><div class="stake-value' + (atStakeSource === 'sfdc' ? ' sfdc' : '') + '">' + fmt$(atStake, true) + '</div><div class="stake-opps">' + (atStakeSource === 'sfdc' ? 'SFDC opp' : atStakeSource === 'scenario' ? 'scenario est.' : '\u2014') + (interventionCount > 0 ? ' &middot; ' + interventionCount + ' intervention' + (interventionCount !== 1 ? 's' : '') : '') + '</div></td>' +
-    '</tr>' +
-    '<tr id="expanded-' + id + '" style="display:none"><td colspan="15"><div class="expanded-section" id="cards-' + id + '"><div style="font-size:12px;color:var(--text-muted);font-style:italic;">&#8627; Loading account data\u2026</div></div></td></tr>';
-}
-
-/* --- CARD SHELL --- */
-function cardShell(label, title, body, openByDefault, cardId, subtitle) {
-  var openClass = openByDefault ? ' open' : '';
-  var cid = cardId || ('card-' + Math.random().toString(36).slice(2));
-  return '<div class="card' + openClass + '" id="' + cid + '">' +
-    '<div class="card-header" onclick="toggleCard(\'' + cid + '\')">' +
-      '<div class="card-header-left">' +
-        '<div class="card-label">' + label + '</div>' +
-        '<div class="card-title">' + title + '</div>' +
-        (subtitle ? '<div class="card-subtitle">' + subtitle + '</div>' : '') +
-      '</div>' +
-      '<div class="card-toggle">&#9662;</div>' +
-    '</div>' +
-    '<div class="card-body">' + body + '</div>' +
-  '</div>';
-}
-
-/* --- CARD RENDERER --- */
-function renderCards(companyId, ev) {
-  if (!ev) return '<div class="data-gap-row">No evidence data available for this account.</div>';
-  return '<div class="cards-grid">' +
-    renderPotentialCard(ev) +
-    renderOpportunitiesCard(ev) +
-    renderBuyCard(ev) +
-    renderListCard(ev) +
-    renderSellCard(ev) +
-    renderDataTimeline(ev) +
-  '</div>';
-}
-
-/* ===================================================================
-   ITEM 6: SELL CUBE K2K/API CHANNEL HELPERS
-   Reads from potential.fees_by_channel when available.
-   =================================================================== */
-
-/**
- * Build a compact channel breakdown string from fees_by_channel.
- * Returns HTML string or '' if no data.
- */
 function buildChannelBreakdownHtml(feesByChannel) {
   if (!feesByChannel) return '';
   var parts = [];
@@ -1213,6 +1058,259 @@ function buildChannelBreakdownHtml(feesByChannel) {
   return '<div class="metric-line" style="margin-top:3px;font-size:10px;color:var(--text-muted);">Fees: ' + parts.join(' &middot; ') + '</div>';
 }
 
+
+/* ========== LAYER 3: renderRow — test5 pattern (var + concat) ========== */
+/* 15 <td> cells to match 15 <th> columns. Every open tag has a close tag. */
+
+function renderRow(ev, idx) {
+  if (!ev) return '';
+  var id = ev._company_id;
+  var name = ev._company_name || ('Account ' + id);
+  var p = ev.potential || null;
+  var identity = ev.identity || null;
+
+  /* --- Safe extractions with null checks --- */
+  var koronetSell = p ? fmtEv(p.koronet_sell_ytd) : null;
+  var sellPen = p ? fmtEv(p.sell_penetration) : null;
+  var onlinePct = p ? fmtEv(p.sell_online_pct) : null;
+  var koronetBuy = p ? fmtEv(p.koronet_buy_ytd) : null;
+  var buyPen = p ? fmtEv(p.buy_penetration) : null;
+  var buyOnlinePct = p ? fmtEv(p.buy_online_pct) : null;
+  var feesYtd = p ? fmtEv(p.fees_ytd_2026) : null;
+  var takeRate = p ? fmtEv(p.take_rate) : null;
+  var sellYoyDelta = p ? p.sell_yoy_delta : null;
+  var sellMomDelta = p ? p.sell_mom_delta : null;
+
+  var atStakeResult = calcAtStake(ev);
+  var atStake = atStakeResult ? atStakeResult.amount : null;
+  var atStakeSource = atStakeResult ? atStakeResult.source : null;
+  var diagnosis = buildDiagnosis(ev);
+  var gmvDisplay = buildGmvDisplay(ev);
+
+  /* Online color (sell) */
+  var onlineClass = 'metric-value';
+  if (onlinePct != null) {
+    if (onlinePct >= 30) onlineClass = 'online-value';
+    else if (onlinePct > 0) onlineClass = 'online-low';
+    else onlineClass = 'online-zero';
+  }
+  var onlineQualifier = '';
+  if (onlinePct != null) {
+    if (onlinePct === 0) onlineQualifier = 'all offline';
+    else if (onlinePct < 20) onlineQualifier = 'mostly offline';
+    else if (onlinePct >= 60) onlineQualifier = 'digital-first';
+    else onlineQualifier = 'healthy';
+  }
+
+  /* Penetration handling */
+  var sellPenEv = p && p.sell_penetration ? p.sell_penetration.ev : 'gap';
+  var isSellPenTautological = sellPenEv === 'tautological' || (sellPen != null && sellPen > 95 && (sellPenEv === 'proxy' || sellPenEv === 'model'));
+  var isBuyPenTautological = p && p.buy_penetration && p.buy_penetration.ev === 'tautological';
+
+  /* Take rate color */
+  var takeRateClass = 'takerate';
+  if (takeRate != null) {
+    if (takeRate >= 0.3) takeRateClass = 'takerate-good';
+    else if (takeRate < 0.05 && feesYtd != null && feesYtd > 0) takeRateClass = 'takerate-bad';
+  }
+
+  /* Sparkline */
+  var spark = buildSparkline(ev);
+
+  /* MoM delta cell */
+  var momHtml = '';
+  if (sellMomDelta && sellMomDelta.pct != null) {
+    var momSign = sellMomDelta.pct >= 0 ? '+' : '';
+    var momCls = sellMomDelta.pct >= 0 ? '' : ' neg';
+    momHtml = '<span class="metric-delta' + momCls + '">' + momSign + sellMomDelta.pct.toFixed(1) + '%</span>';
+  } else {
+    momHtml = '<span style="color:var(--text-muted);font-size:10px;">\u2014</span>';
+  }
+
+  /* Intervention count */
+  var interventionCount = 0;
+  if (p && fmtEv(p.buy_offline_ytd) > 0) interventionCount++;
+  var cfgEv = ev.list && ev.list.config ? ev.list.config.value : null;
+  var cfgRawEv = cfgEv && cfgEv.raw ? cfgEv.raw : null;
+  if (cfgRawEv) {
+    var bunchesEv = cfgRawEv.sell_in_bunches != null ? cfgRawEv.sell_in_bunches : cfgRawEv.bunches;
+    if (bunchesEv === false || bunchesEv === 'false' || bunchesEv === 0) interventionCount++;
+    var maxAgeEv = cfgRawEv.max_age_sell != null ? cfgRawEv.max_age_sell : cfgRawEv.MaxAge;
+    if (maxAgeEv != null && maxAgeEv < 30) interventionCount++;
+  }
+  var btEv = ev.sell && ev.sell.buyers_table ? ev.sell.buyers_table.value : null;
+  if (btEv && btEv.offline_buyers > 0) interventionCount++;
+
+  /* Meta badges row */
+  var badges = [];
+  if (identity) {
+    badges.push(businessTypeBadge(identity.business_type));
+    badges.push(productTierBadge(identity.product_tier));
+    badges.push(sellChannelBadge(identity.sell_channel));
+    badges.push(priorityBadge(identity.priority_level));
+  }
+  var badgesHtml = badges.filter(Boolean).join('');
+
+  /* Buy online class */
+  var buyOnlineClass = 'metric-value';
+  if (buyOnlinePct != null) {
+    if (buyOnlinePct >= 30) buyOnlineClass = 'online-value';
+    else if (buyOnlinePct > 0) buyOnlineClass = 'online-low';
+    else buyOnlineClass = 'online-zero';
+  }
+  var buyOnlineQual = '';
+  if (buyOnlinePct != null) {
+    if (buyOnlinePct === 0) buyOnlineQual = 'all offline';
+    else if (buyOnlinePct < 20) buyOnlineQual = 'mostly offline';
+    else buyOnlineQual = 'healthy';
+  }
+
+  /* === BUILD THE ROW (15 tds) === */
+  var html = '';
+
+  /* Row 1: main data row */
+  html += '<tr id="row-' + id + '">';
+
+  /* TD 1: toggle */
+  html += '<td class="toggle-cell sticky-col sticky-col-1">';
+  html += '<button class="toggle-btn" onclick="toggleExpand(\'' + id + '\')">';
+  html += '<span class="toggle-chevron">&#9654;</span>';
+  html += '</button>';
+  html += '</td>';
+
+  /* TD 2: account name + diagnosis + badges */
+  html += '<td class="account-cell sticky-col sticky-col-2">';
+  html += '<div class="account-name">' + escHtml(name) + '</div>';
+  html += '<div class="account-diagnosis">' + diagnosis + '</div>';
+  html += '<div class="account-meta-row">' + badgesHtml + '</div>';
+  html += '</td>';
+
+  /* TD 3: engagement */
+  html += '<td class="metric-cell">' + engagementBadge(identity ? identity.engagement_status : null) + '</td>';
+
+  /* TD 4: est GMV */
+  html += '<td class="metric-cell">' + gmvDisplay.html + '</td>';
+
+  /* TD 5: koronet sell */
+  html += '<td class="metric-cell"><div class="metric-value">' + fmt$(koronetSell, true);
+  if (sellYoyDelta) html += ' ' + fmtDelta(sellYoyDelta);
+  html += '</div></td>';
+
+  /* TD 6: sell pen % */
+  html += '<td class="metric-cell">';
+  if (isSellPenTautological) {
+    html += '<div class="metric-value" style="color:var(--text-muted);font-style:italic">~100%</div>';
+    html += '<div class="tautological-label">tautological</div>';
+  } else {
+    html += '<div class="metric-value">' + fmtPct(sellPen) + '</div>';
+  }
+  html += '</td>';
+
+  /* TD 7: online sell % */
+  html += '<td class="metric-cell">';
+  html += '<div class="' + onlineClass + '">' + fmtPct(onlinePct) + '</div>';
+  if (onlineQualifier) html += '<div class="metric-qualifier">' + onlineQualifier + '</div>';
+  html += '</td>';
+
+  /* TD 8: koronet buy */
+  html += '<td class="metric-cell"><div class="metric-value">' + fmt$(koronetBuy, true) + '</div></td>';
+
+  /* TD 9: buy pen % */
+  html += '<td class="metric-cell">';
+  if (isBuyPenTautological) {
+    html += '<div class="metric-value" style="color:var(--text-muted);font-style:italic">~100%</div>';
+    html += '<div class="tautological-label">tautological</div>';
+  } else {
+    html += '<div class="metric-value">' + fmtPct(buyPen) + '</div>';
+  }
+  html += '</td>';
+
+  /* TD 10: online buy % */
+  html += '<td class="metric-cell">';
+  html += '<div class="' + buyOnlineClass + '">' + fmtPct(buyOnlinePct) + '</div>';
+  if (buyOnlineQual) html += '<div class="metric-qualifier">' + buyOnlineQual + '</div>';
+  html += '</td>';
+
+  /* TD 11: fees */
+  html += '<td class="metric-cell">';
+  html += '<div class="' + (feesYtd != null && feesYtd > 0 ? 'fees-value' : 'fees-zero') + '">' + fmt$(feesYtd, true) + '</div>';
+  html += '</td>';
+
+  /* TD 12: take rate */
+  html += '<td class="metric-cell"><div class="' + takeRateClass + '">' + fmtPct(takeRate, 2) + '</div></td>';
+
+  /* TD 13: MoM delta */
+  html += '<td class="metric-cell">' + momHtml + '</td>';
+
+  /* TD 14: trend sparkline */
+  html += '<td class="metric-cell">' + spark + '<div class="metric-qualifier">MoM</div></td>';
+
+  /* TD 15: $ at stake */
+  html += '<td class="metric-cell">';
+  html += '<div class="stake-value' + (atStakeSource === 'sfdc' ? ' sfdc' : '') + '">' + fmt$(atStake, true) + '</div>';
+  html += '<div class="stake-opps">';
+  html += (atStakeSource === 'sfdc' ? 'SFDC opp' : atStakeSource === 'scenario' ? 'scenario est.' : '\u2014');
+  if (interventionCount > 0) html += ' &middot; ' + interventionCount + ' intervention' + (interventionCount !== 1 ? 's' : '');
+  html += '</div>';
+  html += '</td>';
+
+  html += '</tr>';
+
+  /* Row 2: expandable cards row */
+  html += '<tr id="expanded-' + id + '" style="display:none">';
+  html += '<td colspan="15">';
+  html += '<div class="expanded-section" id="cards-' + id + '">';
+  html += '<div style="font-size:12px;color:var(--text-muted);font-style:italic;">&#8627; Loading account data\u2026</div>';
+  html += '</div>';
+  html += '</td>';
+  html += '</tr>';
+
+  return html;
+}
+
+
+/* ========== LAYER 4: CARD SHELL + CARD TOGGLE ========== */
+
+function cardShell(label, title, body, openByDefault, cardId, subtitle) {
+  var openClass = openByDefault ? ' open' : '';
+  var cid = cardId || ('card-' + Math.random().toString(36).slice(2));
+  var html = '';
+  html += '<div class="card' + openClass + '" id="' + cid + '">';
+  html += '<div class="card-header" onclick="toggleCard(\'' + cid + '\')">';
+  html += '<div class="card-header-left">';
+  html += '<div class="card-label">' + label + '</div>';
+  html += '<div class="card-title">' + title + '</div>';
+  if (subtitle) html += '<div class="card-subtitle">' + subtitle + '</div>';
+  html += '</div>';
+  html += '<div class="card-toggle">&#9662;</div>';
+  html += '</div>';
+  html += '<div class="card-body">' + body + '</div>';
+  html += '</div>';
+  return html;
+}
+
+function toggleCard(cardId) {
+  var card = document.getElementById(cardId);
+  if (card) card.classList.toggle('open');
+}
+
+
+/* ========== LAYER 4: CARD RENDERERS (from V3 codebase, already var+concat) ========== */
+
+function renderCards(companyId, ev) {
+  if (!ev) return '<div class="data-gap-row">No evidence data available for this account.</div>';
+  var html = '<div class="cards-grid">';
+  html += renderPotentialCard(ev);
+  html += renderOpportunitiesCard(ev);
+  html += renderBuyCard(ev);
+  html += renderListCard(ev);
+  html += renderSellCard(ev);
+  html += renderDataTimeline(ev);
+  html += '</div>';
+  return html;
+}
+
+
 /* --- CARD 1: POTENTIAL --- */
 function renderPotentialCard(ev) {
   var p = ev.potential;
@@ -1231,7 +1329,6 @@ function renderPotentialCard(ev) {
   var buyOffline = fmtEv(p.buy_offline_ytd);
   var feesByChannel = p.fees_by_channel ? p.fees_by_channel.value : null;
 
-  // GMV reference info
   var gmvRef = p.gmv_reference || {};
   var gmvVal = gmvRef.value;
   var gmvSrc = gmvRef.source || '';
@@ -1239,18 +1336,14 @@ function renderPotentialCard(ev) {
   var gmvExt = p.gmv_external;
   var gmvOra = p.gmv_ora;
   var buyGmvEst = p.buy_gmv_estimated ? p.buy_gmv_estimated.value : null;
-
-  // Est sell = gmv_reference value
   var estSell = gmvVal;
   var estBuy = buyGmvEst;
 
-  // Evidence states
   var estSellEvClass = gmvConf === 'Alta' ? 'observed' : gmvSrc === 'ORA' ? 'proxy' : 'gap';
   var estSellEvLabel = gmvSrc === 'Medido' ? 'Observed \u2014 Medido' : gmvSrc || 'gap';
 
   var sellPenTautological = p.sell_penetration && (p.sell_penetration.ev === 'tautological' || (sellPen != null && sellPen > 95));
 
-  // Focus callout
   var atStakeResult = calcAtStake(ev);
   var atStake = atStakeResult ? atStakeResult.amount : null;
   var atStakeSource = atStakeResult ? atStakeResult.source : null;
@@ -1265,7 +1358,6 @@ function renderPotentialCard(ev) {
     focusText = 'Pull more data to compute offline opportunity.';
   }
 
-  // Fees by channel
   var feesChannelHtml = '';
   if (feesByChannel) {
     var fcParts = [];
@@ -1280,7 +1372,6 @@ function renderPotentialCard(ev) {
     }
   }
 
-  // GMV Challenge section
   var gmvChallengeHtml = '';
   if (gmvConf === 'Alta' && gmvSrc === 'Medido') {
     var challengeText = '<strong>GMV: ' + fmt$(gmvVal, true) + ' medido (12 meses completos).</strong>';
@@ -1296,7 +1387,6 @@ function renderPotentialCard(ev) {
 
   var title = 'POTENTIAL \u2014 ' + (sellOffline ? fmt$(sellOffline, true) + ' offline at $0 fees. ' : '') + (sellPenTautological ? 'Koronet = primary channel' : (sellPen ? fmtPct(sellPen) + ' sell captured' : '')) + (sellOnline ? ', ' + fmtPct(sellOnline) + ' online' : '') + '.';
 
-  // Item 2: Benchmark context for online %
   var benchmarks = ev.benchmarks;
   var sellOnlineBenchmarkHtml = '';
   var buyOnlineBenchmarkHtml = '';
@@ -1308,9 +1398,6 @@ function renderPotentialCard(ev) {
       if (segMed != null) {
         var vsSegCls = (sellOnline != null && sellOnline >= segMed) ? 'good' : 'warn';
         sellOnlineBenchmarkHtml = '<span class="ev-state ' + vsSegCls + '">Seg median: ' + fmtPct(segMed, 0) + (netMed != null ? ' &middot; Net: ' + fmtPct(netMed, 0) : '') + '</span>';
-      } else if (netMed != null) {
-        var vsNetCls = (sellOnline != null && sellOnline >= netMed) ? 'good' : 'warn';
-        sellOnlineBenchmarkHtml = '<span class="ev-state ' + vsNetCls + '">Net median: ' + fmtPct(netMed, 0) + '</span>';
       }
     }
     var bBuyOnline = benchmarks.per_metric['buy_online_pct'] || null;
@@ -1323,7 +1410,6 @@ function renderPotentialCard(ev) {
     }
   }
 
-  // Item 6: fees by channel HTML
   var feesChannelInlineHtml = buildChannelBreakdownHtml(feesByChannel);
 
   var body = '<div class="content-gap-sm"></div>' +
@@ -1342,7 +1428,8 @@ function renderPotentialCard(ev) {
   return cardShell('Card 1 &middot; POTENTIAL', title, body, true, 'card-potential-' + ev._company_id);
 }
 
-/* --- CARD 2: OPPORTUNITIES (from V2 verbatim with no invented ARR) --- */
+
+/* --- CARD 2: OPPORTUNITIES --- */
 function renderOpportunitiesCard(ev) {
   var id = ev._company_id;
   var p = ev.potential;
@@ -1356,7 +1443,6 @@ function renderOpportunitiesCard(ev) {
   var opps = [];
   var sellOfflineYtd = p ? fmtEv(p.sell_offline_ytd) : null;
 
-  // BUY opp
   var buyOffline = p ? fmtEv(p.buy_offline_ytd) : null;
   var buyOnline = p ? fmtEv(p.buy_online_pct) : null;
   var k2k = buy && buy.k2k_lifecycle ? buy.k2k_lifecycle.value : null;
@@ -1369,7 +1455,6 @@ function renderOpportunitiesCard(ev) {
     opps.push({ type: 'BUY', stage: 'stage-buy', effort: 'quick fix', effortClass: 'badge-quick', desc: buyDesc });
   }
 
-  // LIST opps (MaxAge + Bunches)
   var cfg = list && list.config ? list.config.value : null;
   var cfgRaw = cfg && cfg.raw ? cfg.raw : null;
   var bunchesReality = cfg && cfg.bunches_reality ? cfg.bunches_reality : null;
@@ -1398,14 +1483,12 @@ function renderOpportunitiesCard(ev) {
     }
   }
 
-  // SELL opp
   var bt = sell && sell.buyers_table ? sell.buyers_table.value : null;
   var offlineBuyers = bt ? bt.offline_buyers : null;
   if (offlineBuyers && offlineBuyers > 0) {
     opps.push({ type: 'SELL', stage: 'stage-sell', effort: 'project', effortClass: 'badge-project', desc: offlineBuyers.toLocaleString() + ' offline buyers never invited to eShop.' + (bt.aov_online ? ' AOV online: ' + fmt$(bt.aov_online, true) + '.' : '') });
   }
 
-  // Leakage opp
   var leakageData = buy && buy.leakage ? buy.leakage.value : null;
   var leakageCost = leakageData ? leakageData.leakage_cost : null;
   if (leakageCost != null && leakageCost > 10000) {
@@ -1413,18 +1496,15 @@ function renderOpportunitiesCard(ev) {
     opps.push({ type: 'BUY', stage: 'stage-buy', effort: 'quick fix', effortClass: 'badge-quick', desc: (leakageVendors != null ? leakageVendors + ' K2K-connected vendors buying ' : 'K2K-connected vendors buying ') + fmt$(leakageCost, true) + ' offline. Recoverable.' });
   }
 
-  // Dormant K2K
   var dormantCount = k2k ? k2k.dormant : null;
   if (dormantCount != null && dormantCount > 0) {
     opps.push({ type: 'BUY', stage: 'stage-buy', effort: 'investigation', effortClass: 'badge-invest', desc: dormantCount + ' dormant K2K connections \u2014 connected but never bought.' });
   }
 
-  // Variety gap
   if (varietyGap != null && varietyGap > 100) {
     opps.push({ type: 'LIST', stage: 'stage-list', effort: 'project', effortClass: 'badge-project', desc: varietyGap.toLocaleString() + ' varieties sold offline not shown online.' });
   }
 
-  // Declining sell
   var sellYoyDelta = p ? p.sell_yoy_delta : null;
   var sellYoyPct = null;
   if (sellYoyDelta) {
@@ -1434,7 +1514,6 @@ function renderOpportunitiesCard(ev) {
     opps.push({ type: 'SELL', stage: 'stage-sell', effort: 'investigation', effortClass: 'badge-invest', desc: 'Sell GMV declining ' + fmtPct(Math.abs(sellYoyPct), 1) + ' YoY.' });
   }
 
-  // 0TX post go-live
   var _identityOpp9 = ev.identity;
   var implStage = _identityOpp9 ? _identityOpp9.impl_stage : null;
   var koronetSellYtd = p ? fmtEv(p.koronet_sell_ytd) : null;
@@ -1444,7 +1523,6 @@ function renderOpportunitiesCard(ev) {
 
   if (opps.length === 0 && atStake == null) return '';
 
-  // Sort BUY > LIST > SELL > CONFIG
   var _typeOrder = { BUY: 0, LIST: 1, SELL: 2, CONFIG: 3 };
   opps.sort(function(a, b) { return (_typeOrder[a.type] || 99) - (_typeOrder[b.type] || 99); });
 
@@ -1452,7 +1530,6 @@ function renderOpportunitiesCard(ev) {
     return '<div class="opp-row"><div class="opp-header"><span class="opp-rank">#' + (i + 1) + '</span><span class="opp-stage ' + o.stage + '">' + escHtml(o.type) + '</span><span class="opp-effort ' + (o.effortClass || '') + '">' + escHtml(o.effort) + '</span></div><div class="opp-desc">' + escHtml(o.desc) + '</div></div>';
   }).join('');
 
-  // Bottleneck
   function _firstBlocker() {
     if (configBlocker) { var lo = opps.filter(function(x){ return x.type === 'LIST'; }); return lo.length ? lo[0] : opps[0]; }
     var co = ['BUY','LIST','SELL','CONFIG'];
@@ -1461,7 +1538,6 @@ function renderOpportunitiesCard(ev) {
   }
   var bottleneckOpp = opps.length > 0 ? _firstBlocker() : null;
 
-  // Item 4: H-D1 hypothesis context callout
   var hd1CalloutHtml = opps.length > 0
     ? '<div class="callout info-muted" style="margin-top:10px;font-size:10px;"><strong>Context:</strong> The leading hypothesis (H-D1, unconfirmed) is that pricing \u2014 not configuration \u2014 drives offline buying. Config opps above are secondary to this structural factor.</div>'
     : '';
@@ -1476,7 +1552,8 @@ function renderOpportunitiesCard(ev) {
   return cardShell('Card 2 &middot; OPPORTUNITIES', 'OPPORTUNITIES \u2014 ' + fmt$(atStake, true) + ' ' + (atStakeSource2 === 'sfdc' ? '(SFDC opps)' : 'scenario') + ' at stake &middot; ' + opps.length + ' intervention' + (opps.length !== 1 ? 's' : ''), body, true, 'card-opps-' + id);
 }
 
-/* --- CARD 3: BUY (adapted from V2) --- */
+
+/* --- CARD 3: BUY --- */
 function renderBuyCard(ev) {
   var buy = ev.buy;
   var p = ev.potential;
@@ -1489,21 +1566,7 @@ function renderBuyCard(ev) {
   if (kBuy != null) {
     var offlinePart = buyOfflineYtd != null ? ' \u2014 ' + fmt$(buyOfflineYtd, true) + ' offline at $0 fees' : '';
     var onlinePart = buyOnlinePct != null ? ' ' + fmtPct(buyOnlinePct, 0) + ' purchased online.' : '';
-
-    // Item 2: benchmark context for buy online %
-    var buyBenchCtx = '';
-    var evBenchmarks = ev.benchmarks;
-    if (evBenchmarks && evBenchmarks.per_metric) {
-      var bBuyOnlineCard = evBenchmarks.per_metric['buy_online_pct'] || null;
-      if (bBuyOnlineCard) {
-        var bCardSegMed = bBuyOnlineCard.seg_median != null ? bBuyOnlineCard.seg_median : bBuyOnlineCard.median;
-        if (bCardSegMed != null) {
-          var above = buyOnlinePct != null && buyOnlinePct >= bCardSegMed;
-          buyBenchCtx = ' <span style="font-size:9px;color:' + (above ? 'var(--green)' : 'var(--amber)') + ';">(Seg median: ' + fmtPct(bCardSegMed, 0) + ')</span>';
-        }
-      }
-    }
-    buyCallout = '<strong>SO WHAT:</strong> ' + fmt$(kBuy, true) + ' total Koronet procurement' + offlinePart + '.' + onlinePart + buyBenchCtx;
+    buyCallout = '<strong>SO WHAT:</strong> ' + fmt$(kBuy, true) + ' total Koronet procurement' + offlinePart + '.' + onlinePart;
   }
 
   var k2kHtml = '';
@@ -1565,7 +1628,8 @@ function renderBuyCard(ev) {
   return cardShell('Card 3 &middot; BUY', cardTitle, body, true, 'card-buy-' + id);
 }
 
-/* --- CARD 4: LIST (adapted from V2) --- */
+
+/* --- CARD 4: LIST --- */
 function renderListCard(ev) {
   var list = ev.list;
   var buy = ev.buy;
@@ -1630,19 +1694,15 @@ function renderListCard(ev) {
     }
   }
 
-  // Item 3: Forward inventory section
+  /* Forward inventory */
   var forwardInvHtml = '';
   if (list && list.forward_inventory && list.forward_inventory.value) {
     var fi = list.forward_inventory.value;
     var fiByBucket = fi.by_bucket || {};
     var horizonOrder = ['1-7d', '8-14d', '15-30d', '31-90d'];
     var horizonLabels = { '1-7d': '1\u20137d', '8-14d': '8\u201314d', '15-30d': '15\u201330d', '31-90d': '31\u201390d' };
-    // Find max total_value for bar scaling
     var maxFiVal = 0;
-    horizonOrder.forEach(function(h) {
-      var b = fiByBucket[h];
-      if (b && b.total_value != null && b.total_value > maxFiVal) maxFiVal = b.total_value;
-    });
+    horizonOrder.forEach(function(h) { var b = fiByBucket[h]; if (b && b.total_value != null && b.total_value > maxFiVal) maxFiVal = b.total_value; });
     var fiRows = '';
     var hasFiData = false;
     horizonOrder.forEach(function(h) {
@@ -1653,16 +1713,10 @@ function renderListCard(ev) {
       var lines = b.prebook_lines != null ? b.prebook_lines : '\u2014';
       var val = b.total_value != null ? fmt$(b.total_value, true) : '\u2014';
       var vendors = b.distinct_vendors != null ? b.distinct_vendors + ' vendors' : '';
-      fiRows += '<div class="fi-bar-row">' +
-        '<div class="fi-bar-label">' + (horizonLabels[h] || h) + '</div>' +
-        '<div class="fi-bar-track"><div class="fi-bar-fill" style="width:' + fillPct + '%"></div></div>' +
-        '<div class="fi-bar-val"><strong>' + val + '</strong>' + (vendors ? ' &middot; ' + vendors : '') + ' &middot; ' + lines + ' lines</div>' +
-        '</div>';
+      fiRows += '<div class="fi-bar-row"><div class="fi-bar-label">' + (horizonLabels[h] || h) + '</div><div class="fi-bar-track"><div class="fi-bar-fill" style="width:' + fillPct + '%"></div></div><div class="fi-bar-val"><strong>' + val + '</strong>' + (vendors ? ' &middot; ' + vendors : '') + ' &middot; ' + lines + ' lines</div></div>';
     });
     if (hasFiData) {
-      forwardInvHtml = '<div class="content-gap"></div><div class="section-label">FORWARD INVENTORY (Prebook Depth)</div>' +
-        '<div class="fi-bar-wrap">' + fiRows + '</div>' +
-        '<div class="note-strip">Prebook orders by delivery horizon. Value = total $ committed. Lines = prebook line items.</div>';
+      forwardInvHtml = '<div class="content-gap"></div><div class="section-label">FORWARD INVENTORY (Prebook Depth)</div><div class="fi-bar-wrap">' + fiRows + '</div><div class="note-strip">Prebook orders by delivery horizon. Value = total $ committed. Lines = prebook line items.</div>';
     }
   }
 
@@ -1672,7 +1726,8 @@ function renderListCard(ev) {
   return cardShell('Card 4 &middot; LIST', 'LIST \u2014 Catalog configuration &amp; published supply', body, true, 'card-list-' + id);
 }
 
-/* --- CARD 5: SELL (adapted from V2) --- */
+
+/* --- CARD 5: SELL --- */
 function renderSellCard(ev) {
   var sell = ev.sell;
   var p = ev.potential;
@@ -1727,18 +1782,17 @@ function renderSellCard(ev) {
   return cardShell('Card 5 &middot; SELL', title, body, true, 'card-sell-' + id);
 }
 
-/* --- DATA TIMELINE (compact strip, replaces Freshness card) --- */
+
+/* --- DATA TIMELINE --- */
 function renderDataTimeline(ev) {
   var f = ev.freshness;
   if (!f) return '';
-
   var foundCount = f.sources_used;
   var totalCount = f.sources_total;
   var pct = f.coverage_pct;
 
   var sourceItems = f.sources.map(function(s) {
     var label = s.source.replace(/_/g, ' ').replace(/evidence/g, '').replace(/current/g, '').trim();
-    // Abbreviate
     if (label.indexOf('sell cube') >= 0 || label.indexOf('sell') >= 0) label = 'Sell';
     else if (label.indexOf('buy cube') >= 0 || label.indexOf('buy') >= 0) label = 'Buy';
     else if (label.indexOf('fees') >= 0) label = 'Fees';
@@ -1764,7 +1818,9 @@ function renderDataTimeline(ev) {
   '</div>';
 }
 
-/* --- SHARED OPPORTUNITY FLAG DETECTOR --- */
+
+/* ========== LAYER 5: OPPORTUNITY FLAG DETECTOR ========== */
+
 function detectOpportunityFlags(ev) {
   if (!ev) return { hasBuy: false, hasList: false, hasSell: false, hasConfig: false, isDecl: false };
   var p = ev.potential;
@@ -1815,14 +1871,9 @@ function detectOpportunityFlags(ev) {
   return { hasBuy: hasBuy, hasList: hasList, hasSell: hasSell, hasConfig: hasConfig, isDecl: isDecl };
 }
 
-/* ===================================================================
-   ITEM 1: PROCUREMENT BEHAVIOR TAB — COMPUTED QUADRANT VIEW
-   Computes AOV + order frequency from sell/buy cubes, splits at median.
-   =================================================================== */
 
-/**
- * Compute median of an array of numbers.
- */
+/* ========== LAYER 6: PROCUREMENT TAB ========== */
+
 function _median(arr) {
   if (!arr || !arr.length) return null;
   var sorted = arr.slice().sort(function(a, b) { return a - b; });
@@ -1830,77 +1881,56 @@ function _median(arr) {
   return sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid];
 }
 
-/**
- * Render the Procurement Behavior tab content.
- * Computes quadrants from _allEvidence after data is loaded.
- */
 function renderProcurementTab() {
   var container = document.getElementById('procurement-content');
   var sectionLabel = document.getElementById('procurement-section-label');
   if (!container) return;
 
-  // Gather accounts with sell data
   var candidates = [];
   _allEvidence.forEach(function(ev) {
     if (!ev || !ev.potential) return;
     var p = ev.potential;
     var kSell = p.koronet_sell_ytd ? p.koronet_sell_ytd.value : null;
-    if (kSell == null || kSell <= 0) return; // skip no-sell accounts
+    if (kSell == null || kSell <= 0) return;
 
     var engagement = ev.identity ? ev.identity.engagement_status : null;
     var engLower = (engagement || '').toLowerCase();
 
-    // Compute AOV from buyers cube (sell domain)
     var bt = ev.sell && ev.sell.buyers_table ? ev.sell.buyers_table.value : null;
     var aovOnline = bt ? bt.aov_online : null;
     var aovOffline = bt ? bt.aov_offline : null;
     var totalBuyers = bt ? bt.total_buyers : null;
-    // Use online AOV if available, else offline AOV, else estimate from kSell/buyers
     var aov = null;
     if (aovOnline != null && aovOnline > 0) aov = aovOnline;
     else if (aovOffline != null && aovOffline > 0) aov = aovOffline;
     else if (totalBuyers != null && totalBuyers > 0 && kSell > 0) aov = kSell / totalBuyers;
 
-    // Compute order frequency: proxy = sell_total / AOV (rough orders count per period)
-    // Better: use buyers count as proxy for frequency signal when no order count available
-    // We use total_buyers as the frequency proxy (more buyers = more frequent overall engagement)
     var freqProxy = null;
     if (totalBuyers != null && totalBuyers > 0) freqProxy = totalBuyers;
     else if (aov != null && aov > 0 && kSell > 0) freqProxy = kSell / aov;
 
-    // Bin E (At Risk/Lapsed) and F (Dormant/Onboarding) separately
     var isAtRisk = engLower === 'at risk' || engLower === 'lapsed';
     var isDormant = engLower === 'dormant' || engLower === 'onboarding' || engLower === 'never purchased';
-
-    // Only put into A-D if we have enough signal
     if ((aov == null || freqProxy == null) && !isAtRisk && !isDormant) return;
 
     candidates.push({
-      ev: ev,
-      id: ev._company_id,
-      name: ev._company_name || ('Acct ' + ev._company_id),
-      kSell: kSell,
-      aov: aov,
-      freqProxy: freqProxy,
+      ev: ev, id: ev._company_id, name: ev._company_name || ('Acct ' + ev._company_id),
+      kSell: kSell, aov: aov, freqProxy: freqProxy,
       digitalPct: p.sell_online_pct ? p.sell_online_pct.value : null,
-      isAtRisk: isAtRisk,
-      isDormant: isDormant,
-      tier: ev.identity ? ev.identity.potential_tier : null,
+      isAtRisk: isAtRisk, isDormant: isDormant,
+      tier: ev.identity ? ev.identity.potential_tier : null
     });
   });
 
-  // Separate bins E and F
   var binE = candidates.filter(function(c) { return c.isAtRisk; });
   var binF = candidates.filter(function(c) { return c.isDormant; });
   var active = candidates.filter(function(c) { return !c.isAtRisk && !c.isDormant && c.aov != null && c.freqProxy != null; });
 
-  // Compute medians on active population
   var aovs = active.map(function(c) { return c.aov; }).filter(function(v) { return v != null; });
   var freqs = active.map(function(c) { return c.freqProxy; }).filter(function(v) { return v != null; });
   var medAov = _median(aovs);
   var medFreq = _median(freqs);
 
-  // Assign quadrants
   var qA = [], qB = [], qC = [], qD = [];
   if (medAov != null && medFreq != null) {
     active.forEach(function(c) {
@@ -1913,26 +1943,16 @@ function renderProcurementTab() {
     });
   }
 
-  // Sort each quadrant by kSell desc
-  function sortQ(arr) {
-    return arr.slice().sort(function(a, b) { return (b.kSell || 0) - (a.kSell || 0); });
-  }
+  function sortQ(arr) { return arr.slice().sort(function(a, b) { return (b.kSell || 0) - (a.kSell || 0); }); }
   qA = sortQ(qA); qB = sortQ(qB); qC = sortQ(qC); qD = sortQ(qD);
   binE = sortQ(binE); binF = sortQ(binF);
 
-  // Render quadrant table rows (top 10 each to keep it manageable)
   function renderQRows(arr, max) {
     if (!arr.length) return '<tr><td colspan="4" style="color:var(--text-muted);font-style:italic;font-size:10px;">No accounts in this quadrant</td></tr>';
     var rows = arr.slice(0, max || 10).map(function(c) {
       var dPct = c.digitalPct != null ? fmtPct(c.digitalPct, 0) : '\u2014';
       var aovStr = c.aov != null ? fmt$(c.aov, true) : '\u2014';
-      return '<tr>' +
-        '<td><span class="pq-name">' + escHtml(c.name) + '</span>' +
-        (c.tier ? '<span class="pq-meta">' + escHtml(c.tier) + '</span>' : '') + '</td>' +
-        '<td>' + fmt$(c.kSell, true) + '</td>' +
-        '<td>' + aovStr + '</td>' +
-        '<td>' + dPct + '</td>' +
-        '</tr>';
+      return '<tr><td><span class="pq-name">' + escHtml(c.name) + '</span>' + (c.tier ? '<span class="pq-meta">' + escHtml(c.tier) + '</span>' : '') + '</td><td>' + fmt$(c.kSell, true) + '</td><td>' + aovStr + '</td><td>' + dPct + '</td></tr>';
     });
     if (arr.length > (max || 10)) {
       rows.push('<tr><td colspan="4" style="color:var(--text-muted);font-size:10px;font-style:italic;">+' + (arr.length - (max || 10)) + ' more</td></tr>');
@@ -1941,17 +1961,7 @@ function renderProcurementTab() {
   }
 
   function renderQSection(letter, label, desc, arr, colorClass) {
-    return '<div style="margin-bottom:16px;">' +
-      '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">' +
-        '<span class="q-badge q-badge-' + letter + '">' + letter + '</span>' +
-        '<span class="' + colorClass + '" style="font-size:12px;font-weight:700;">' + label + '</span>' +
-        '<span style="font-size:10px;color:var(--text-muted);">' + escHtml(desc) + '</span>' +
-        '<span style="margin-left:auto;font-size:10px;font-weight:600;color:var(--text-secondary);">' + arr.length + ' accounts</span>' +
-      '</div>' +
-      '<div class="table-wrap"><table class="procurement-quadrant-table"><thead><tr>' +
-        '<th>Account</th><th>Koronet Sell</th><th>AOV</th><th>Digital %</th>' +
-        '</tr></thead><tbody>' + renderQRows(arr, 8) + '</tbody></table></div>' +
-    '</div>';
+    return '<div style="margin-bottom:16px;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span class="q-badge q-badge-' + letter + '">' + letter + '</span><span class="' + colorClass + '" style="font-size:12px;font-weight:700;">' + label + '</span><span style="font-size:10px;color:var(--text-muted);">' + escHtml(desc) + '</span><span style="margin-left:auto;font-size:10px;font-weight:600;color:var(--text-secondary);">' + arr.length + ' accounts</span></div><div class="table-wrap"><table class="procurement-quadrant-table"><thead><tr><th>Account</th><th>Koronet Sell</th><th>AOV</th><th>Digital %</th></tr></thead><tbody>' + renderQRows(arr, 8) + '</tbody></table></div></div>';
   }
 
   var totalActive = qA.length + qB.length + qC.length + qD.length;
@@ -1959,7 +1969,6 @@ function renderProcurementTab() {
 
   var html = '<div class="callout" style="margin-bottom:16px;"><strong>2x2 quadrant:</strong> X-axis = AOV (order value proxy), Y-axis = buyer frequency (total buyer count). ' + noteStr + ' &middot; ' + totalActive + ' accounts with sell data.</div>';
 
-  // A-D quadrants
   html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">';
   html += '<div>' + renderQSection('A', 'Strong', 'High AOV, high freq \u00b7 Full platform users', qA, 'q-header-A') + '</div>';
   html += '<div>' + renderQSection('B', 'Frequent, Low Ticket', 'Low AOV, high freq \u00b7 Procurement tool only', qB, 'q-header-B') + '</div>';
@@ -1967,7 +1976,6 @@ function renderProcurementTab() {
   html += '<div>' + renderQSection('D', 'Occasional', 'Low AOV, low freq \u00b7 Churn or new', qD, 'q-header-D') + '</div>';
   html += '</div>';
 
-  // E and F bins
   if (binE.length > 0 || binF.length > 0) {
     html += '<div class="section-header">At Risk &amp; Dormant Accounts</div>';
     html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">';
@@ -1976,24 +1984,19 @@ function renderProcurementTab() {
     html += '</div>';
   }
 
-  // Item 5: Matrix visualization (tier × digital %)
   html += renderTierDigitalMatrix();
-
   container.innerHTML = html;
   if (sectionLabel) {
     sectionLabel.textContent = 'Procurement Behavior \u00b7 ' + candidates.length + ' accounts with sell data \u00b7 ' + totalActive + ' in A\u2013D quadrants';
   }
 }
 
-/* ===================================================================
-   ITEM 5: MATRIX VISUALIZATION — POTENTIAL TIER × DIGITAL % BUCKETS
-   Computed from _allEvidence after load.
-   =================================================================== */
+
+/* --- TIER x DIGITAL % MATRIX --- */
 function renderTierDigitalMatrix() {
   var TIERS = ['Flagship', 'Growth Engine', 'Activate', 'Seed', 'Unmeasured'];
   var BUCKETS = ['0%', '1\u201310%', '10\u201330%', '30\u201350%', '50%+', '100%'];
 
-  // Count matrix
   var matrix = {};
   var tierTotals = {};
   TIERS.forEach(function(t) { matrix[t] = {}; tierTotals[t] = 0; BUCKETS.forEach(function(b) { matrix[t][b] = 0; }); });
@@ -2005,7 +2008,7 @@ function renderTierDigitalMatrix() {
     var dPct = ev.potential && ev.potential.sell_online_pct ? ev.potential.sell_online_pct.value : null;
 
     var bucket;
-    if (dPct == null) bucket = '0%'; // treat no data as 0%
+    if (dPct == null) bucket = '0%';
     else if (dPct === 0) bucket = '0%';
     else if (dPct < 10) bucket = '1\u201310%';
     else if (dPct < 30) bucket = '10\u201330%';
@@ -2017,12 +2020,10 @@ function renderTierDigitalMatrix() {
     tierTotals[tier] = (tierTotals[tier] || 0) + 1;
   });
 
-  // Max count for coloring
   var allCounts = [];
   TIERS.forEach(function(t) { BUCKETS.forEach(function(b) { allCounts.push(matrix[t][b]); }); });
   var maxCount = Math.max.apply(null, allCounts) || 1;
 
-  // Header row
   var headerCells = BUCKETS.map(function(b) { return '<th>' + b + '</th>'; }).join('');
   var rows = TIERS.map(function(t) {
     var cells = BUCKETS.map(function(b) {
@@ -2034,20 +2035,19 @@ function renderTierDigitalMatrix() {
   }).join('');
 
   return '<div class="section-header">Tier &times; Digital % Matrix</div>' +
-    '<div style="overflow-x:auto;margin-bottom:16px;">' +
-    '<table class="matrix-table"><thead><tr><th>Potential Tier</th>' + headerCells + '</tr></thead><tbody>' + rows + '</tbody></table>' +
-    '</div>' +
+    '<div style="overflow-x:auto;margin-bottom:16px;"><table class="matrix-table"><thead><tr><th>Potential Tier</th>' + headerCells + '</tr></thead><tbody>' + rows + '</tbody></table></div>' +
     '<div class="note-strip">Rows = Potential Tier. Columns = % Digital (sell online / sell total). Cells = account count. Blue = highest concentration. 0% bucket includes accounts with no sell data (digital % = gap).</div>';
 }
 
-/* --- KPI AGGREGATOR --- */
+
+/* ========== LAYER 5: KPI AGGREGATOR ========== */
+
 function computeKPIs(evidenceList) {
   var totalSell = 0, totalFees = 0, totalOnlinePct = 0, totalTakeRate = 0;
-  var totalSell2025 = 0, totalFees2025 = 0;
+  var totalSell2025 = 0;
   var onlineCount = 0, trCount = 0;
   var accountsWithData = 0;
   var hasSell2025 = false;
-  // Item 6: aggregate fees by channel across portfolio
   var totalFeesEcom = 0, totalFeesK2k = 0, totalFeesApi = 0;
   var hasChannelData = false;
 
@@ -2064,7 +2064,6 @@ function computeKPIs(evidenceList) {
     if (op != null) { totalOnlinePct += op; onlineCount++; }
     var tr = p.take_rate ? p.take_rate.value : null;
     if (tr != null && tr > 0) { totalTakeRate += tr; trCount++; }
-    // Channel fees aggregation
     var fbc = p.fees_by_channel ? p.fees_by_channel.value : null;
     if (fbc) {
       hasChannelData = true;
@@ -2077,41 +2076,40 @@ function computeKPIs(evidenceList) {
   var sellYoyPct = (hasSell2025 && totalSell2025 > 0) ? ((totalSell - totalSell2025) / totalSell2025) * 100 : null;
 
   return {
-    totalSell: totalSell,
-    totalFees: totalFees,
-    sellYoyPct: sellYoyPct,
+    totalSell: totalSell, totalFees: totalFees, sellYoyPct: sellYoyPct,
     avgOnlinePct: onlineCount > 0 ? totalOnlinePct / onlineCount : null,
     avgTakeRate: trCount > 0 ? totalTakeRate / trCount : null,
-    accountsWithData: accountsWithData,
-    total: evidenceList.length,
-    // Item 6 channel data
+    accountsWithData: accountsWithData, total: evidenceList.length,
     totalFeesEcom: hasChannelData ? totalFeesEcom : null,
     totalFeesK2k: hasChannelData ? totalFeesK2k : null,
-    totalFeesApi: hasChannelData ? totalFeesApi : null,
+    totalFeesApi: hasChannelData ? totalFeesApi : null
   };
 }
 
-/* --- TAB SWITCHING --- */
-var _procurementRendered = false;
+
+/* ========== LAYER 6: TAB SWITCHING ========== */
+
 function showTab(name) {
   document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
   document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
   document.getElementById('panel-' + name).classList.add('active');
   var tabMap = { 'portfolio': 'tab-portfolio', 'procurement': 'tab-procurement-btn', 'definitions': 'tab-definitions-btn' };
   if (tabMap[name]) document.getElementById(tabMap[name]).classList.add('active');
-  // Lazy-render procurement tab on first open (needs _allEvidence to be populated)
   if (name === 'procurement' && !_procurementRendered && _allEvidence.length > 0) {
     _procurementRendered = true;
     renderProcurementTab();
   }
 }
 
-/* --- FILTER CHIPS --- */
+
+/* ========== LAYER 2: FILTER CHIPS (BUG FIX: potFilter now declared) ========== */
+
 function renderFilterChips() {
   var btFilter = document.getElementById('business-type-filter').value;
   var ptFilter = document.getElementById('product-tier-filter').value;
   var scFilter = document.getElementById('sell-channel-filter').value;
   var prFilter = document.getElementById('priority-filter').value;
+  var potFilter = document.getElementById('potential-tier-filter').value;
   var search = document.getElementById('search-input').value.trim();
   var container = document.getElementById('filter-chips');
   if (!container) return;
@@ -2142,8 +2140,8 @@ function clearAllFilters() {
   applyFilters();
 }
 
-/* --- SFDC OPPORTUNITIES --- */
-var _sfdcOpps = {};
+
+/* ========== SFDC OPPORTUNITIES ========== */
 
 function _loadSfdcOpps() {
   return fetch('data/sfdc_open_opportunities_v1.json')
@@ -2159,24 +2157,8 @@ function _loadSfdcOpps() {
     });
 }
 
-/* --- FILTER LOGIC --- */
-var _allEvidence = [];
-var _filteredEvidence = [];
-var _displayedCount = 0;
-var PAGE_SIZE = 50;
 
-var tfMap = {
-  'jul_2026': 'current_month',
-  'jun_2026': 'prior_month',
-  'q2_2026': 'prior_quarter',
-  'h1_2026': 'ytd',
-  'ytd_2026': 'ytd',
-};
-
-function _adapterTf() {
-  var rawTf = document.getElementById('timeframe-select').value;
-  return tfMap[rawTf] || 'ytd';
-}
+/* ========== LAYER 2: FILTER LOGIC ========== */
 
 function applyFilters() {
   var btFilter = document.getElementById('business-type-filter').value.toLowerCase();
@@ -2207,11 +2189,25 @@ function applyFilters() {
   renderTable();
 }
 
+
+/* ========== LAYER 3: TABLE RENDER ========== */
+
 function renderTable() {
   var tbody = document.getElementById('portfolio-tbody');
   var toShow = _filteredEvidence.slice(0, _displayedCount + PAGE_SIZE);
   _displayedCount = toShow.length;
-  tbody.innerHTML = toShow.map(function(ev, i) { return renderRow(ev, i); }).join('');
+
+  var html = '';
+  var i;
+  for (i = 0; i < toShow.length; i++) {
+    try {
+      html += renderRow(toShow[i], i);
+    } catch (e) {
+      html += '<tr><td colspan="15" style="color:var(--red);padding:8px;">ERROR rendering row ' + i + ': ' + escHtml(e.message) + '</td></tr>';
+      console.error('[TX V3] renderRow error:', e);
+    }
+  }
+  tbody.innerHTML = html;
 
   var kpis = computeKPIs(_filteredEvidence);
   document.getElementById('kpi-sell').textContent = fmt$(kpis.totalSell, true);
@@ -2219,11 +2215,10 @@ function renderTable() {
   document.getElementById('kpi-accounts').textContent = kpis.accountsWithData + ' of ' + kpis.total;
   document.getElementById('kpi-online').textContent = fmtPct(kpis.avgOnlinePct, 1);
   document.getElementById('kpi-takerate').textContent = fmtPct(kpis.avgTakeRate, 2);
-  // Item 6: show channel breakdown under Fees KPI
-  var feesKpiLabel = document.querySelector('#kpi-fees ~ .kpi-label') || document.querySelectorAll('.kpi-label')[1];
+
+  /* Channel breakdown under Fees KPI */
   var feesChannelEl = document.getElementById('kpi-fees-channel');
   if (!feesChannelEl) {
-    // Create it once
     var feesParent = document.getElementById('kpi-fees').parentElement;
     if (feesParent) {
       feesChannelEl = document.createElement('div');
@@ -2240,7 +2235,7 @@ function renderTable() {
     feesChannelEl.textContent = channelParts.length ? channelParts.join(' \u00b7 ') : '';
   }
 
-  // YoY delta
+  /* YoY delta */
   var sellDeltaEl = document.getElementById('kpi-sell-delta');
   if (kpis.sellYoyPct != null) {
     sellDeltaEl.textContent = (kpis.sellYoyPct >= 0 ? '+' : '') + kpis.sellYoyPct.toFixed(1) + '% YoY';
@@ -2248,7 +2243,7 @@ function renderTable() {
     sellDeltaEl.style.display = '';
   } else { sellDeltaEl.style.display = 'none'; }
 
-  // Tab counts
+  /* Tab counts */
   document.getElementById('tab-count-portfolio').textContent = _filteredEvidence.length;
   var buyLeads = 0, listLeads = 0, sellLeads = 0, configLeads = 0, declining = 0;
   _filteredEvidence.forEach(function(ev) {
@@ -2265,21 +2260,21 @@ function renderTable() {
   document.getElementById('tab-count-config').textContent = configLeads;
   document.getElementById('tab-count-declining').textContent = declining;
 
-  // Section label
+  /* Section label */
   var rawTfLabel = document.getElementById('timeframe-select').value;
   document.getElementById('section-label').textContent = 'Portfolio \u00b7 ' + _filteredEvidence.length + ' accounts \u00b7 ' + rawTfLabel.toUpperCase() + ' \u00b7 Updated ' + new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
-  // Load more
+  /* Load more */
   var loadMoreWrap = document.getElementById('load-more-wrap');
   if (_filteredEvidence.length > _displayedCount) {
     loadMoreWrap.style.display = 'block';
     document.getElementById('load-more-btn').textContent = 'Load more accounts (' + (_filteredEvidence.length - _displayedCount) + ' remaining)';
   } else { loadMoreWrap.style.display = 'none'; }
 
-  // Note strip
+  /* Note strip */
   document.getElementById('note-strip').textContent = 'Showing ' + _displayedCount + ' of ' + _filteredEvidence.length + ' filtered accounts \u00b7 Total: ' + _allEvidence.length + ' in universe \u00b7 Sorted by Fees YTD desc \u00b7 GMV: Medido (12M)=measured. Pace=$/day x 365. ORA=declared. Red=network floor. $ at Stake = SFDC open opps only.';
 
-  // Coverage warn
+  /* Coverage warn */
   var noData = kpis.total - kpis.accountsWithData;
   var cvWarn = document.getElementById('coverage-warn');
   if (noData > 0) {
@@ -2288,7 +2283,9 @@ function renderTable() {
   } else { cvWarn.style.display = 'none'; }
 }
 
-/* --- ROW EXPAND --- */
+
+/* ========== LAYER 4: ROW EXPAND ========== */
+
 function toggleExpand(id) {
   var row = document.getElementById('row-' + id);
   var expanded = document.getElementById('expanded-' + id);
@@ -2306,24 +2303,23 @@ function toggleExpand(id) {
     var cardsContainer = document.getElementById('cards-' + id);
     if (cardsContainer && cardsContainer.dataset.loaded !== 'true') {
       cardsContainer.dataset.loaded = 'true';
-      var ev = EvidenceAdapter.getAccountEvidence(id, _adapterTf());
-      if (ev) {
-        cardsContainer.innerHTML = renderCards(id, ev);
-      } else {
-        cardsContainer.innerHTML = '<div class="data-gap-row">No evidence data found for company ID: ' + escHtml(id) + '</div>';
+      try {
+        var ev = EvidenceAdapter.getAccountEvidence(id, _adapterTf());
+        if (ev) {
+          cardsContainer.innerHTML = renderCards(id, ev);
+        } else {
+          cardsContainer.innerHTML = '<div class="data-gap-row">No evidence data found for company ID: ' + escHtml(id) + '</div>';
+        }
+      } catch (e) {
+        cardsContainer.innerHTML = '<div class="data-gap-row" style="color:var(--red)">Error rendering cards: ' + escHtml(e.message) + '</div>';
+        console.error('[TX V3] renderCards error for ' + id + ':', e);
       }
     }
   }
 }
 
-/* --- CARD TOGGLE --- */
-function toggleCard(cardId) {
-  var card = document.getElementById(cardId);
-  if (card) card.classList.toggle('open');
-}
 
-/* --- COLUMN SORTING --- */
-var _currentSort = { key: 'fees', dir: 'desc' };
+/* ========== LAYER 7: COLUMN SORTING ========== */
 
 function getSortValue(ev, key) {
   if (!ev) return null;
@@ -2374,9 +2370,10 @@ function sortEvidence(key) {
   });
 }
 
-/* --- TIMEFRAME CHANGE --- */
+
+/* ========== LAYER 7: TIMEFRAME CHANGE ========== */
+
 function onTimeframeChange() {
-  // Reset procurement tab so it re-renders with new timeframe
   _procurementRendered = false;
   var procContent = document.getElementById('procurement-content');
   if (procContent) procContent.innerHTML = '<div class="loading-overlay"><div class="loading-spinner"></div><div class="loading-text">Recomputing quadrants\u2026</div></div>';
@@ -2391,7 +2388,10 @@ function onTimeframeChange() {
 
   var newTf = _adapterTf();
   var allIds = EvidenceAdapter.getAllAccountIds();
-  _allEvidence = allIds.map(function(cid) { return EvidenceAdapter.getAccountEvidence(cid, newTf); });
+  _allEvidence = allIds.map(function(cid) {
+    try { return EvidenceAdapter.getAccountEvidence(cid, newTf); }
+    catch(e) { console.error('[TX V3] Error loading ' + cid, e); return null; }
+  });
   _allEvidence.sort(function(a, b) {
     var fa = (a && a.potential && a.potential.fees_ytd_2026 && a.potential.fees_ytd_2026.value) || 0;
     var fb = (b && b.potential && b.potential.fees_ytd_2026 && b.potential.fees_ytd_2026.value) || 0;
@@ -2401,7 +2401,9 @@ function onTimeframeChange() {
   applyFilters();
 }
 
-/* --- MAIN INIT --- */
+
+/* ========== MAIN INIT ========== */
+
 console.log('[TX V3] Starting init...');
 Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
   console.log('[TX V3] Adapter loaded. Getting account IDs...');
@@ -2415,8 +2417,8 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
     var slice = allIds.slice(idx, idx + BATCH);
     slice.forEach(function(cid) {
       try {
-      var ev = EvidenceAdapter.getAccountEvidence(cid, tf);
-      _allEvidence.push(ev);
+        var ev = EvidenceAdapter.getAccountEvidence(cid, tf);
+        _allEvidence.push(ev);
       } catch(e) { console.error('[TX V3] Error loading account ' + cid + ':', e); }
     });
     idx += slice.length;
@@ -2424,7 +2426,7 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
     if (idx < allIds.length) {
       requestAnimationFrame(loadBatch);
     } else {
-      console.log('[TX V3] All accounts loaded. Applying filters...');
+      console.log('[TX V3] All accounts loaded. Sorting and rendering...');
       _allEvidence.sort(function(a, b) {
         var fa = (a && a.potential && a.potential.fees_ytd_2026 && a.potential.fees_ytd_2026.value) || 0;
         var fb = (b && b.potential && b.potential.fees_ytd_2026 && b.potential.fees_ytd_2026.value) || 0;
@@ -2437,7 +2439,7 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
 
   loadBatch();
 
-  // Bind controls
+  /* Bind controls */
   document.getElementById('timeframe-select').addEventListener('change', onTimeframeChange);
   document.getElementById('business-type-filter').addEventListener('change', applyFilters);
   document.getElementById('product-tier-filter').addEventListener('change', applyFilters);
@@ -2450,9 +2452,12 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
     _displayedCount = toShow.length;
     var tbody = document.getElementById('portfolio-tbody');
     var newRows = _filteredEvidence.slice(_displayedCount - PAGE_SIZE, _displayedCount);
+    var html = '';
     newRows.forEach(function(ev, i) {
-      tbody.insertAdjacentHTML('beforeend', renderRow(ev, _displayedCount - PAGE_SIZE + i));
+      try { html += renderRow(ev, _displayedCount - PAGE_SIZE + i); }
+      catch(e) { html += '<tr><td colspan="15" style="color:var(--red);padding:8px;">ERROR: ' + escHtml(e.message) + '</td></tr>'; }
     });
+    tbody.insertAdjacentHTML('beforeend', html);
     var loadMoreWrap = document.getElementById('load-more-wrap');
     if (_filteredEvidence.length > _displayedCount) {
       document.getElementById('load-more-btn').textContent = 'Load more accounts (' + (_filteredEvidence.length - _displayedCount) + ' remaining)';
@@ -2460,12 +2465,12 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
     document.getElementById('note-strip').textContent = 'Showing ' + _displayedCount + ' of ' + _filteredEvidence.length + ' filtered accounts \u00b7 Total: ' + _allEvidence.length + ' in universe';
   });
 
-  // Column sort
+  /* Column sort */
   document.querySelectorAll('#portfolio-table th[data-sort]').forEach(function(th) {
     th.addEventListener('click', function() { sortEvidence(th.dataset.sort); });
   });
 
-  // Tab buttons (lead tabs filter then re-show portfolio)
+  /* Tab buttons (lead tabs filter then re-show portfolio) */
   ['tab-buy','tab-list','tab-sell','tab-config','tab-declining'].forEach(function(tabId) {
     document.getElementById(tabId).addEventListener('click', function() {
       document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
@@ -2474,7 +2479,7 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
   });
 
 }).catch(function(err) {
-  document.getElementById('section-label').innerHTML = '<span style="color:var(--red)">Error loading data: ' + (err.message || err) + '. Make sure evidence_adapter_v3.js and the data/ folder are available.</span>';
+  document.getElementById('section-label').innerHTML = '<span style="color:var(--red)">Error loading data: ' + escHtml(err.message || String(err)) + '. Make sure evidence_adapter_v3.js and the data/ folder are available.</span>';
   console.error('[TX Dashboard V3] init error:', err);
 });
 </script>
