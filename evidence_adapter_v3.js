@@ -544,6 +544,7 @@
     return {
       company_id:       id,
       company_name:     rec.company_name || null,
+      account_class:    rec.account_class || null,
       business_type:    rec.business_type || null,
       product_tier:     rec.product_tier || null,
       sell_channel:     rec.sell_channel || null,

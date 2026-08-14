@@ -4122,9 +4122,9 @@ function populateTierMatrix() {
     {label: '<$500K', fn: function(g){return g > 0 && g < 500000;}}
   ];
 
-  // Only wholesalers with known product tier
+  // Only CLIENT wholesalers with known product tier
   var ws = _allEvidence.filter(function(ev) {
-    return ev && ev.identity && ev.identity.business_type === 'Wholesaler' && ev.identity.product_tier && ev.identity.product_tier !== 'Unknown';
+    return ev && ev.identity && ev.identity.account_class === 'Client' && ev.identity.business_type === 'Wholesaler' && ev.identity.product_tier && ev.identity.product_tier !== 'Unknown';
   });
 
   // Build cells — track online sell, online buy, and GMV for penetration
