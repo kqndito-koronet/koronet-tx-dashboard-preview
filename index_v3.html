@@ -4193,11 +4193,13 @@ function populateTierMatrix() {
   // Canonical filter — defined once in EvidenceAdapter.isClientWholesaler()
   var ws = _allEvidence.filter(EvidenceAdapter.isClientWholesaler);
 
-  // Build cells — track online sell, online buy, and GMV for penetration
+  // Build cells — track Koronet totals and Est GMV for penetration
+  // Penetration = Koronet total / Est GMV (capped at 100%)
+  // Online % = Online / Koronet total (capped at 100%)
   var cells = {};
   gmvBands.forEach(function(b) {
     cells[b.label] = {};
-    prodTiers.forEach(function(t) { cells[b.label][t] = {n:0, gmv:0, onlineSell:0, onlineBuy:0, buyGmv:0}; });
+    prodTiers.forEach(function(t) { cells[b.label][t] = {n:0, gmv:0, kSell:0, kBuy:0, buyGmv:0, onlineSell:0, onlineBuy:0}; });
   });
 
   ws.forEach(function(ev) {
@@ -4212,12 +4214,16 @@ function populateTierMatrix() {
     var c = cells[band][pt];
     c.n++;
     c.gmv += gmv;
-    // Online sell = koronet_sell_ytd * sell_online_pct / 100
+    // Koronet sell (total — online + offline)
     var sellYtd = p.koronet_sell_ytd ? (p.koronet_sell_ytd.value || 0) : 0;
+    c.kSell += sellYtd;
+    // Online sell
     var sellOnPct = p.sell_online_pct ? (p.sell_online_pct.value || 0) : 0;
     c.onlineSell += sellYtd * sellOnPct / 100;
-    // Online buy = koronet_buy_ytd * buy_online_pct / 100
+    // Koronet buy (total — online + offline)
     var buyYtd = p.koronet_buy_ytd ? (p.koronet_buy_ytd.value || 0) : 0;
+    c.kBuy += buyYtd;
+    // Online buy
     var buyOnPct = p.buy_online_pct ? (p.buy_online_pct.value || 0) : 0;
     c.onlineBuy += buyYtd * buyOnPct / 100;
     // Buy GMV estimated (Est GMV × 0.45)
@@ -4231,25 +4237,49 @@ function populateTierMatrix() {
     if (g >= 1e3) return '$' + Math.round(g/1e3) + 'K';
     return g > 0 ? '$' + Math.round(g) : '';
   }
-  function pctColor(p) { return p >= 30 ? '#16a34a' : p > 0 ? '#d97706' : '#94a3b8'; }
+  // Color coding: green >= 30%, amber > 0%, grey = 0%
+  // Red = over 100% (data error)
+  function pctColor(p) {
+    if (p > 100) return '#dc2626';
+    return p >= 30 ? '#16a34a' : p > 0 ? '#d97706' : '#94a3b8';
+  }
 
-  // Render cell with %S and %B — clickable to drill into portfolio
-  // %S = online sell / Est GMV — Procurement shows "—" (can't sell)
-  // %B = online buy / (Est GMV × 0.45)
+  // Cap at 100%, flag if over
+  function capPct(raw) {
+    if (raw == null) return null;
+    return raw;  // show actual value — color flags > 100%
+  }
+
+  // Render cell — two rows: Pen (penetration) and Dig (online %)
+  // Penetration = Koronet total / Est GMV
+  // Online % = Online / Koronet total
+  // Procurement can't sell → "—" for sell metrics
   function cellHtml(d, tier, bg, band) {
     if (d.n === 0) return '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;color:#94a3b8">—</td>';
-    var pctS = (tier === 'Procurement') ? null : (d.gmv > 0 ? Math.round(d.onlineSell / d.gmv * 100) : 0);
-    var pctB = d.buyGmv > 0 ? Math.round(d.onlineBuy / d.buyGmv * 100) : 0;
-    var sLabel = pctS === null ? '<span style="color:#94a3b8">—%S</span>' : '<span style="color:' + pctColor(pctS) + '">' + pctS + '%S</span>';
-    var bLabel = '<span style="color:' + pctColor(pctB) + '">' + pctB + '%B</span>';
+
+    // Sell penetration = Koronet sell / Est GMV
+    var penS = (tier === 'Procurement') ? null : (d.gmv > 0 ? Math.round(d.kSell / d.gmv * 100) : 0);
+    // Buy penetration = Koronet buy / Est Buy GMV
+    var penB = d.buyGmv > 0 ? Math.round(d.kBuy / d.buyGmv * 100) : 0;
+    // Sell online % = Online sell / Koronet sell
+    var digS = (tier === 'Procurement') ? null : (d.kSell > 0 ? Math.round(d.onlineSell / d.kSell * 100) : 0);
+    // Buy online % = Online buy / Koronet buy
+    var digB = d.kBuy > 0 ? Math.round(d.onlineBuy / d.kBuy * 100) : 0;
+
+    var dash = '<span style="color:#94a3b8">—</span>';
+    var penSLabel = penS === null ? dash : '<span style="color:' + pctColor(penS) + '">' + penS + '%</span>';
+    var penBLabel = '<span style="color:' + pctColor(penB) + '">' + penB + '%</span>';
+    var digSLabel = digS === null ? dash : '<span style="color:' + pctColor(digS) + '">' + digS + '%</span>';
+    var digBLabel = '<span style="color:' + pctColor(digB) + '">' + digB + '%</span>';
+
     var bgStyle = bg ? 'background:' + bg : (d.n >= 10 ? 'background:#dbeafe' : d.n >= 3 ? 'background:#eff6ff' : '');
-    // Clickable — drill into portfolio filtered by tier + band
     var onclick = (tier && tier !== 'TOTAL' && band) ? ' onclick="drillFromMatrix(\'' + tier + '\',\'' + band + '\')" style="cursor:pointer;padding:6px 8px;border:1px solid #e2e8f0;text-align:center;' + bgStyle + '"'
       : ' style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;' + bgStyle + '"';
     return '<td' + onclick + '>'
       + '<strong>' + d.n + '</strong>'
       + '<div style="font-size:10px;color:#475569">' + fG(d.gmv) + '</div>'
-      + '<div style="font-size:9px">' + sLabel + ' · ' + bLabel + '</div></td>';
+      + '<div style="font-size:9px">Pen ' + penSLabel + 'S ' + penBLabel + 'B</div>'
+      + '<div style="font-size:9px">Dig ' + digSLabel + 'S ' + digBLabel + 'B</div></td>';
   }
 
   // Count how many actually land in a band (have GMV > 0)
@@ -4263,7 +4293,7 @@ function populateTierMatrix() {
 
   var descEl = document.getElementById('matrix-description');
   if (descEl) {
-    var desc = wsInMatrix + ' client wholesalers in matrix. %S = online sell / Est GMV. %B = online buy / Est Buy GMV. Procurement can\u2019t sell (\u2014%S).';
+    var desc = wsInMatrix + ' client wholesalers. Pen = Koronet / Est GMV (penetration). Dig = Online / Koronet (digital %). S=sell B=buy. Procurement can\u2019t sell (\u2014). Red = >100% (data error).';
     if (wsNoGmv.length > 0) desc += ' ' + wsNoGmv.length + ' excluded (no GMV): ' + wsNoGmv.join(', ') + '.';
     descEl.textContent = desc;
   }
@@ -4280,21 +4310,22 @@ function populateTierMatrix() {
     thead.innerHTML = hrow;
   }
 
+  var _z = {n:0, gmv:0, kSell:0, kBuy:0, onlineSell:0, onlineBuy:0, buyGmv:0};
   var colT = {};
-  prodTiers.forEach(function(t) { colT[t] = {n:0, gmv:0, onlineSell:0, onlineBuy:0, buyGmv:0}; });
-  var gt = {n:0, gmv:0, onlineSell:0, onlineBuy:0, buyGmv:0};
+  prodTiers.forEach(function(t) { colT[t] = Object.assign({}, _z); });
+  var gt = Object.assign({}, _z);
   var html = '';
 
   gmvBands.forEach(function(b) {
     html += '<tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">' + b.label + '</td>';
-    var rt = {n:0, gmv:0, onlineSell:0, onlineBuy:0, buyGmv:0};
+    var rt = Object.assign({}, _z);
     prodTiers.forEach(function(t) {
       var d = cells[b.label][t];
-      rt.n+=d.n; rt.gmv+=d.gmv; rt.onlineSell+=d.onlineSell; rt.onlineBuy+=d.onlineBuy; rt.buyGmv+=d.buyGmv;
-      colT[t].n+=d.n; colT[t].gmv+=d.gmv; colT[t].onlineSell+=d.onlineSell; colT[t].onlineBuy+=d.onlineBuy; colT[t].buyGmv+=d.buyGmv;
+      var keys = Object.keys(_z);
+      keys.forEach(function(k) { rt[k] += d[k]; colT[t][k] += d[k]; });
       html += cellHtml(d, t, '', b.label);
     });
-    gt.n+=rt.n; gt.gmv+=rt.gmv; gt.onlineSell+=rt.onlineSell; gt.onlineBuy+=rt.onlineBuy; gt.buyGmv+=rt.buyGmv;
+    Object.keys(_z).forEach(function(k) { gt[k] += rt[k]; });
     html += cellHtml(rt, 'TOTAL', '#f8fafc', null);
     html += '</tr>';
   });
