@@ -1484,10 +1484,16 @@
 
   <!-- ═══ DEFINITIONS TAB ═══ -->
   <div id="definitions-section" style="display:none;max-width:960px;margin:24px auto;padding:0 24px;">
-    <h2 style="font-size:18px;margin-bottom:16px;">Definitions &amp; Methodology</h2>
+    <h3 style="margin:0 0 8px;color:#2563eb;font-size:14px;">Wholesaler Potential Matrix (Est GMV &times; Product Tier)</h3>
+    <p id="matrix-description" style="font-size:10px;color:#64748b;margin-bottom:6px;">Client wholesalers with known product tier. %S = online sell / Est GMV (sell penetration). %B = online buy / Est Buy GMV (buy penetration). Procurement can't sell (&mdash;%S).</p>
+    <table id="tier-matrix" style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:16px;">
+      <thead><tr style="background:#f1f5f9;"><th style="padding:6px 8px;border:1px solid #e2e8f0;">Est GMV</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Core+</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">eSuite</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Procurement</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">K2K</th><th style="padding:6px 8px;border:1px solid #e2e8f0;background:#f8fafc;">TOTAL</th></tr></thead>
+      <tbody id="tier-matrix-body"></tbody>
+    </table>
+
+    <h2 style="font-size:16px;margin:32px 0 16px;padding-top:16px;border-top:2px solid #e2e8f0;">Definitions &amp; Methodology</h2>
 
     <h3 style="margin:20px 0 8px;color:#2563eb;font-size:14px;">Potential Tiers (SIZE &times; PRODUCT)</h3>
-    <p style="font-size:11px;color:#64748b;margin-bottom:8px;">This is the matrix Mauro needs — how we prioritize accounts by their size and what they can do on the platform.</p>
     <table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:16px;">
       <thead><tr style="background:#f1f5f9;"><th style="padding:6px 8px;border:1px solid #e2e8f0;text-align:left;">Tier</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Criteria</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Meaning</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Action</th></tr></thead>
       <tbody>
@@ -1497,13 +1503,6 @@
         <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">Seed</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">GMV &lt;$500K any tier</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Small or limited</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Nurture</td></tr>
         <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">Unmeasured</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">No GMV data</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Can't prioritize</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Run estimator</td></tr>
       </tbody>
-    </table>
-
-    <h3 style="margin:20px 0 8px;color:#2563eb;font-size:14px;">Wholesaler Potential Matrix (Est GMV &times; Product Tier)</h3>
-    <p id="matrix-description" style="font-size:10px;color:#64748b;margin-bottom:6px;">Client wholesalers with known product tier. %S = online sell / Est GMV (sell penetration). %B = online buy / Est Buy GMV (buy penetration). Procurement can't sell (&mdash;%S).</p>
-    <table id="tier-matrix" style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:16px;">
-      <thead><tr style="background:#f1f5f9;"><th style="padding:6px 8px;border:1px solid #e2e8f0;">Est GMV</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Core+</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">eSuite</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Procurement</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">K2K</th><th style="padding:6px 8px;border:1px solid #e2e8f0;background:#f8fafc;">TOTAL</th></tr></thead>
-      <tbody id="tier-matrix-body"></tbody>
     </table>
 
     <h3 style="margin:20px 0 8px;color:#2563eb;font-size:14px;">Product Tiers (what they CAN DO)</h3>
@@ -1525,20 +1524,23 @@
         <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">Estimado</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">External research: hubs &times; $4-6M, employees &times; $375K</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Medium (verified against 10 Core accounts, &lt;5% error)</td></tr>
         <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">ORA</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Declared in Salesforce at onboarding</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Unverified &mdash; one-time, never updated</td></tr>
         <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">Piso (solo K2K/KP)</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Only Koronet channel visible &mdash; real business much larger</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Floor, not estimate</td></tr>
-        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">Piso de red</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Network footprint &mdash; what other Koronet companies buy/sell</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Floor only</td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">Piso de red</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Auto-upgrade: Estimado replaced when annualized Koronet sell exceeds it. Measured floor &mdash; real GMV is at least this.</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Floor (measured)</td></tr>
       </tbody>
     </table>
     <p style="font-size:10px;color:#94a3b8;">Buy GMV estimated at 45% of sell GMV (Christine measured). External estimator runs as CHALLENGE for all accounts. Sources: UX Research Hub, Christine GMV Sheet, wholesalers-hypotheses repo, Snowflake data catalog.</p>
 
     <h3 style="margin:20px 0 8px;color:#2563eb;font-size:14px;">Key Metrics</h3>
     <table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:16px;">
-      <thead><tr style="background:#f1f5f9;"><th style="padding:6px 8px;border:1px solid #e2e8f0;">Metric</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Formula</th></tr></thead>
+      <thead><tr style="background:#f1f5f9;"><th style="padding:6px 8px;border:1px solid #e2e8f0;">Metric</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Formula</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Bounded</th></tr></thead>
       <tbody>
-        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;">% Digital</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">sell_online / sell_total. "(solo digital)" = no offline visible</td></tr>
-        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;">Penetration</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">koronet_sell / gmv_reference (Christine cascade denominator)</td></tr>
-        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;">Take Rate</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">fees_ytd / (sell + buy)</td></tr>
-        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;">MoM</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Last month vs prior month sell</td></tr>
-        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;">$ at Stake</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">SFDC open opportunity Amount (not computed scenarios)</td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">Sell Penetration</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Annualized Koronet sell / Est GMV. Medido/Piso &rarr; tautological (~100%)</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">&le;100% by logic</td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">Buy Penetration</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Annualized Koronet buy / Est Buy GMV (Est GMV &times; 0.45)</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">&le;100% by logic</td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">Sell Online %</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">External: annualized online sell / Est GMV. Tautological: online YTD / Koronet YTD</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">&le;Penetration &le;100%</td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">Buy Online %</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Same logic as Sell Online %, applied to buy side</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">&le;100%</td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">Piso auto-upgrade</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">If annualized Koronet &gt; Estimado &rarr; Estimado was wrong &rarr; replace with &ldquo;Piso de red&rdquo; (measured floor)</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Prevents &gt;100%</td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;">Take Rate</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">fees_ytd / koronet_sell_ytd</td><td style="padding:6px 8px;border:1px solid #e2e8f0;"></td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;">MoM</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">Last month vs prior month sell</td><td style="padding:6px 8px;border:1px solid #e2e8f0;"></td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #e2e8f0;">$ at Stake</td><td style="padding:6px 8px;border:1px solid #e2e8f0;">SFDC open opportunity Amount</td><td style="padding:6px 8px;border:1px solid #e2e8f0;"></td></tr>
       </tbody>
     </table>
   </div>
@@ -4282,7 +4284,7 @@ function populateTierMatrix() {
 
   var descEl = document.getElementById('matrix-description');
   if (descEl) {
-    var desc = wsInMatrix + ' client wholesalers. %S = sell penetration (Koronet sell / Est GMV). %B = buy penetration (Koronet buy / Est Buy GMV). Capped at 100%. Procurement can\u2019t sell (\u2014S).';
+    var desc = wsInMatrix + ' client wholesalers. %S = sell penetration. %B = buy penetration. Procurement can\u2019t sell (\u2014S). Click cell to filter portfolio.';
     if (wsNoGmv.length > 0) desc += ' ' + wsNoGmv.length + ' excluded (no GMV): ' + wsNoGmv.join(', ') + '.';
     descEl.textContent = desc;
   }
