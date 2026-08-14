@@ -4122,16 +4122,16 @@ function populateTierMatrix() {
     {label: '<$500K', fn: function(g){return g > 0 && g < 500000;}}
   ];
 
-  // Only wholesalers with known product
+  // Only wholesalers with known product tier
   var ws = _allEvidence.filter(function(ev) {
     return ev && ev.identity && ev.identity.business_type === 'Wholesaler' && ev.identity.product_tier && ev.identity.product_tier !== 'Unknown';
   });
 
-  // Build cells
+  // Build cells — track online sell, online buy, and GMV for penetration
   var cells = {};
   gmvBands.forEach(function(b) {
     cells[b.label] = {};
-    prodTiers.forEach(function(t) { cells[b.label][t] = {n:0, gmv:0, online:0, sell:0}; });
+    prodTiers.forEach(function(t) { cells[b.label][t] = {n:0, gmv:0, onlineSell:0, onlineBuy:0, buyGmv:0}; });
   });
 
   ws.forEach(function(ev) {
@@ -4143,12 +4143,20 @@ function populateTierMatrix() {
     var band = null;
     for (var i = 0; i < gmvBands.length; i++) { if (gmvBands[i].fn(gmv)) { band = gmvBands[i].label; break; } }
     if (!band) return;
-    cells[band][pt].n++;
-    cells[band][pt].gmv += gmv;
+    var c = cells[band][pt];
+    c.n++;
+    c.gmv += gmv;
+    // Online sell = koronet_sell_ytd * sell_online_pct / 100
     var sellYtd = p.koronet_sell_ytd ? (p.koronet_sell_ytd.value || 0) : 0;
-    var onPct = p.sell_online_pct ? (p.sell_online_pct.value || 0) : 0;
-    cells[band][pt].online += sellYtd * onPct / 100;
-    cells[band][pt].sell += sellYtd;
+    var sellOnPct = p.sell_online_pct ? (p.sell_online_pct.value || 0) : 0;
+    c.onlineSell += sellYtd * sellOnPct / 100;
+    // Online buy = koronet_buy_ytd * buy_online_pct / 100
+    var buyYtd = p.koronet_buy_ytd ? (p.koronet_buy_ytd.value || 0) : 0;
+    var buyOnPct = p.buy_online_pct ? (p.buy_online_pct.value || 0) : 0;
+    c.onlineBuy += buyYtd * buyOnPct / 100;
+    // Buy GMV estimated (Est GMV × 0.45)
+    var buyGmvEst = p.buy_gmv_estimated ? (p.buy_gmv_estimated.value || 0) : 0;
+    c.buyGmv += buyGmvEst || (gmv * 0.45);
   });
 
   function fG(g) {
@@ -4159,10 +4167,26 @@ function populateTierMatrix() {
   }
   function pctColor(p) { return p >= 30 ? '#16a34a' : p > 0 ? '#d97706' : '#94a3b8'; }
 
+  // Render cell with %S and %B
+  // %S = online sell / Est GMV — Procurement shows "—" (can't sell)
+  // %B = online buy / (Est GMV × 0.45)
+  function cellHtml(d, tier, bg) {
+    if (d.n === 0) return '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;color:#94a3b8">—</td>';
+    var pctS = (tier === 'Procurement') ? null : (d.gmv > 0 ? Math.round(d.onlineSell / d.gmv * 100) : 0);
+    var pctB = d.buyGmv > 0 ? Math.round(d.onlineBuy / d.buyGmv * 100) : 0;
+    var sLabel = pctS === null ? '<span style="color:#94a3b8">—%S</span>' : '<span style="color:' + pctColor(pctS) + '">' + pctS + '%S</span>';
+    var bLabel = '<span style="color:' + pctColor(pctB) + '">' + pctB + '%B</span>';
+    var bgStyle = bg ? 'background:' + bg : (d.n >= 10 ? 'background:#dbeafe' : d.n >= 3 ? 'background:#eff6ff' : '');
+    return '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;' + bgStyle + '">'
+      + '<strong>' + d.n + '</strong>'
+      + '<div style="font-size:10px;color:#475569">' + fG(d.gmv) + '</div>'
+      + '<div style="font-size:9px">' + sLabel + ' · ' + bLabel + '</div></td>';
+  }
+
   var tbody = document.getElementById('tier-matrix-body');
   if (!tbody) return;
 
-  // Update header to show product tiers + TOTAL
+  // Update header
   var thead = tbody.parentElement ? tbody.parentElement.querySelector('thead') : null;
   if (thead) {
     var hrow = '<tr style="background:#f1f5f9;"><th style="padding:6px 8px;border:1px solid #e2e8f0;">Est GMV</th>';
@@ -4172,52 +4196,31 @@ function populateTierMatrix() {
   }
 
   var colT = {};
-  prodTiers.forEach(function(t) { colT[t] = {n:0, gmv:0, online:0, sell:0}; });
-  var gt = {n:0, gmv:0, online:0, sell:0};
+  prodTiers.forEach(function(t) { colT[t] = {n:0, gmv:0, onlineSell:0, onlineBuy:0, buyGmv:0}; });
+  var gt = {n:0, gmv:0, onlineSell:0, onlineBuy:0, buyGmv:0};
   var html = '';
 
   gmvBands.forEach(function(b) {
     html += '<tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">' + b.label + '</td>';
-    var rn=0, rg=0, ro=0, rs=0;
+    var rt = {n:0, gmv:0, onlineSell:0, onlineBuy:0, buyGmv:0};
     prodTiers.forEach(function(t) {
       var d = cells[b.label][t];
-      rn+=d.n; rg+=d.gmv; ro+=d.online; rs+=d.sell;
-      colT[t].n+=d.n; colT[t].gmv+=d.gmv; colT[t].online+=d.online; colT[t].sell+=d.sell;
-      if (d.n > 0) {
-        var pct = d.sell > 0 ? Math.round(d.online/d.sell*100) : 0;
-        var bg = d.n >= 10 ? '#dbeafe' : d.n >= 3 ? '#eff6ff' : '';
-        html += '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;' + (bg?'background:'+bg:'') + '">';
-        html += '<strong>' + d.n + '</strong>';
-        html += '<div style="font-size:10px;color:#475569">' + fG(d.gmv) + '</div>';
-        html += '<div style="font-size:9px;color:' + pctColor(pct) + '">' + pct + '% on</div></td>';
-      } else {
-        html += '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;color:#94a3b8">—</td>';
-      }
+      rt.n+=d.n; rt.gmv+=d.gmv; rt.onlineSell+=d.onlineSell; rt.onlineBuy+=d.onlineBuy; rt.buyGmv+=d.buyGmv;
+      colT[t].n+=d.n; colT[t].gmv+=d.gmv; colT[t].onlineSell+=d.onlineSell; colT[t].onlineBuy+=d.onlineBuy; colT[t].buyGmv+=d.buyGmv;
+      html += cellHtml(d, t, '');
     });
-    gt.n+=rn; gt.gmv+=rg; gt.online+=ro; gt.sell+=rs;
-    var rp = rs > 0 ? Math.round(ro/rs*100) : 0;
-    html += '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;background:#f8fafc;font-weight:600;">';
-    html += '<strong>' + rn + '</strong><div style="font-size:10px;color:#475569">' + fG(rg) + '</div>';
-    html += '<div style="font-size:9px;color:' + pctColor(rp) + '">' + rp + '% on</div></td></tr>';
+    gt.n+=rt.n; gt.gmv+=rt.gmv; gt.onlineSell+=rt.onlineSell; gt.onlineBuy+=rt.onlineBuy; gt.buyGmv+=rt.buyGmv;
+    html += cellHtml(rt, 'TOTAL', '#f8fafc');
+    html += '</tr>';
   });
 
   // Total row
   html += '<tr style="background:#f1f5f9;font-weight:700;"><td style="padding:6px 8px;border:1px solid #e2e8f0;">TOTAL</td>';
   prodTiers.forEach(function(t) {
-    var d = colT[t];
-    if (d.n > 0) {
-      var pct = d.sell > 0 ? Math.round(d.online/d.sell*100) : 0;
-      html += '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;">';
-      html += '<strong>' + d.n + '</strong><div style="font-size:10px;color:#475569">' + fG(d.gmv) + '</div>';
-      html += '<div style="font-size:9px;color:' + pctColor(pct) + '">' + pct + '% on</div></td>';
-    } else {
-      html += '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;color:#94a3b8">—</td>';
-    }
+    html += cellHtml(colT[t], t, '');
   });
-  var gp = gt.sell > 0 ? Math.round(gt.online/gt.sell*100) : 0;
-  html += '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;background:#f8fafc;">';
-  html += '<strong>' + gt.n + '</strong><div style="font-size:10px;color:#475569">' + fG(gt.gmv) + '</div>';
-  html += '<div style="font-size:9px;color:' + pctColor(gp) + '">' + gp + '% on</div></td></tr>';
+  html += cellHtml(gt, 'TOTAL', '#f8fafc');
+  html += '</tr>';
 
   tbody.innerHTML = html;
 }
