@@ -1485,7 +1485,8 @@
       </tbody>
     </table>
 
-    <h3 style="margin:20px 0 8px;color:#2563eb;font-size:14px;">Potential Tier Matrix (accounts &times; product tier)</h3>
+    <h3 style="margin:20px 0 8px;color:#2563eb;font-size:14px;">Wholesaler Potential Matrix (Est GMV &times; Product Tier)</h3>
+    <p style="font-size:10px;color:#64748b;margin-bottom:6px;">174 wholesalers with Komet product (Unknown/targets excluded). % on = % of Koronet sell online. K2K/Proc show 100% because we only see digital channel.</p>
     <table id="tier-matrix" style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:16px;">
       <thead><tr style="background:#f1f5f9;"><th style="padding:6px 8px;border:1px solid #e2e8f0;"></th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Core+</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">eSuite</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Procurement</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">K2K</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Unknown</th></tr></thead>
       <tbody id="tier-matrix-body"></tbody>
@@ -4113,39 +4114,111 @@ function toggleDefinitions() {
 }
 
 function populateTierMatrix() {
-  var tiers = ['Flagship','Growth Engine','Activate','Seed','Unmeasured'];
-  var ptiers = ['Core+','eSuite','Procurement','K2K','Unknown'];
-  var counts = {};
-  var gmvs = {};
-  tiers.forEach(function(t) { counts[t] = {}; gmvs[t] = {}; ptiers.forEach(function(p) { counts[t][p] = 0; gmvs[t][p] = 0; }); });
+  var prodTiers = ['Core+','eSuite','Procurement','K2K'];
+  var gmvBands = [
+    {label: '>=10M', fn: function(g){return g >= 10000000;}},
+    {label: '$2-10M', fn: function(g){return g >= 2000000 && g < 10000000;}},
+    {label: '$500K-2M', fn: function(g){return g >= 500000 && g < 2000000;}},
+    {label: '<$500K', fn: function(g){return g > 0 && g < 500000;}}
+  ];
 
-  _allEvidence.forEach(function(ev) {
-    if (!ev || !ev.identity) return;
-    var pot = ev.identity.potential_tier || 'Unmeasured';
-    var prod = ev.identity.product_tier || 'Unknown';
-    if (!counts[pot]) return;
-    if (!counts[pot][prod]) { counts[pot][prod] = 0; gmvs[pot][prod] = 0; }
-    counts[pot][prod]++;
-    var gmv = ev.potential && ev.potential.gmv_reference ? ev.potential.gmv_reference.value : 0;
-    gmvs[pot][prod] += (gmv || 0);
+  // Only wholesalers with known product
+  var ws = _allEvidence.filter(function(ev) {
+    return ev && ev.identity && ev.identity.business_type === 'Wholesaler' && ev.identity.product_tier && ev.identity.product_tier !== 'Unknown';
   });
+
+  // Build cells
+  var cells = {};
+  gmvBands.forEach(function(b) {
+    cells[b.label] = {};
+    prodTiers.forEach(function(t) { cells[b.label][t] = {n:0, gmv:0, online:0, sell:0}; });
+  });
+
+  ws.forEach(function(ev) {
+    var id = ev.identity || {};
+    var p = ev.potential || {};
+    var gmv = p.gmv_reference ? (p.gmv_reference.value || 0) : 0;
+    var pt = id.product_tier || '';
+    if (prodTiers.indexOf(pt) < 0) return;
+    var band = null;
+    for (var i = 0; i < gmvBands.length; i++) { if (gmvBands[i].fn(gmv)) { band = gmvBands[i].label; break; } }
+    if (!band) return;
+    cells[band][pt].n++;
+    cells[band][pt].gmv += gmv;
+    var sellYtd = p.koronet_sell_ytd ? (p.koronet_sell_ytd.value || 0) : 0;
+    var onPct = p.sell_online_pct ? (p.sell_online_pct.value || 0) : 0;
+    cells[band][pt].online += sellYtd * onPct / 100;
+    cells[band][pt].sell += sellYtd;
+  });
+
+  function fG(g) {
+    if (g >= 1e9) return '$' + (g/1e9).toFixed(1) + 'B';
+    if (g >= 1e6) return '$' + Math.round(g/1e6) + 'M';
+    if (g >= 1e3) return '$' + Math.round(g/1e3) + 'K';
+    return g > 0 ? '$' + Math.round(g) : '';
+  }
+  function pctColor(p) { return p >= 30 ? '#16a34a' : p > 0 ? '#d97706' : '#94a3b8'; }
 
   var tbody = document.getElementById('tier-matrix-body');
   if (!tbody) return;
+
+  // Update header to show product tiers + TOTAL
+  var thead = tbody.parentElement ? tbody.parentElement.querySelector('thead') : null;
+  if (thead) {
+    var hrow = '<tr style="background:#f1f5f9;"><th style="padding:6px 8px;border:1px solid #e2e8f0;">Est GMV</th>';
+    prodTiers.forEach(function(t) { hrow += '<th style="padding:6px 8px;border:1px solid #e2e8f0;">' + t + '</th>'; });
+    hrow += '<th style="padding:6px 8px;border:1px solid #e2e8f0;background:#f8fafc;">TOTAL</th></tr>';
+    thead.innerHTML = hrow;
+  }
+
+  var colT = {};
+  prodTiers.forEach(function(t) { colT[t] = {n:0, gmv:0, online:0, sell:0}; });
+  var gt = {n:0, gmv:0, online:0, sell:0};
   var html = '';
-  tiers.forEach(function(t) {
-    html += '<tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">' + t + '</td>';
-    ptiers.forEach(function(p) {
-      var n = counts[t][p] || 0;
-      var g = gmvs[t][p] || 0;
-      var gStr = g >= 1e9 ? '$' + (g/1e9).toFixed(1) + 'B' : g >= 1e6 ? '$' + (g/1e6).toFixed(0) + 'M' : g > 0 ? '$' + (g/1e3).toFixed(0) + 'K' : '';
-      var bg = n > 10 ? '#dbeafe' : n > 3 ? '#eff6ff' : '';
-      html += '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;' + (bg ? 'background:' + bg : '') + '">';
-      html += n > 0 ? '<strong>' + n + '</strong><div style="font-size:9px;color:#64748b">' + gStr + '</div>' : '—';
-      html += '</td>';
+
+  gmvBands.forEach(function(b) {
+    html += '<tr><td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:700;">' + b.label + '</td>';
+    var rn=0, rg=0, ro=0, rs=0;
+    prodTiers.forEach(function(t) {
+      var d = cells[b.label][t];
+      rn+=d.n; rg+=d.gmv; ro+=d.online; rs+=d.sell;
+      colT[t].n+=d.n; colT[t].gmv+=d.gmv; colT[t].online+=d.online; colT[t].sell+=d.sell;
+      if (d.n > 0) {
+        var pct = d.sell > 0 ? Math.round(d.online/d.sell*100) : 0;
+        var bg = d.n >= 10 ? '#dbeafe' : d.n >= 3 ? '#eff6ff' : '';
+        html += '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;' + (bg?'background:'+bg:'') + '">';
+        html += '<strong>' + d.n + '</strong>';
+        html += '<div style="font-size:10px;color:#475569">' + fG(d.gmv) + '</div>';
+        html += '<div style="font-size:9px;color:' + pctColor(pct) + '">' + pct + '% on</div></td>';
+      } else {
+        html += '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;color:#94a3b8">—</td>';
+      }
     });
-    html += '</tr>';
+    gt.n+=rn; gt.gmv+=rg; gt.online+=ro; gt.sell+=rs;
+    var rp = rs > 0 ? Math.round(ro/rs*100) : 0;
+    html += '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;background:#f8fafc;font-weight:600;">';
+    html += '<strong>' + rn + '</strong><div style="font-size:10px;color:#475569">' + fG(rg) + '</div>';
+    html += '<div style="font-size:9px;color:' + pctColor(rp) + '">' + rp + '% on</div></td></tr>';
   });
+
+  // Total row
+  html += '<tr style="background:#f1f5f9;font-weight:700;"><td style="padding:6px 8px;border:1px solid #e2e8f0;">TOTAL</td>';
+  prodTiers.forEach(function(t) {
+    var d = colT[t];
+    if (d.n > 0) {
+      var pct = d.sell > 0 ? Math.round(d.online/d.sell*100) : 0;
+      html += '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;">';
+      html += '<strong>' + d.n + '</strong><div style="font-size:10px;color:#475569">' + fG(d.gmv) + '</div>';
+      html += '<div style="font-size:9px;color:' + pctColor(pct) + '">' + pct + '% on</div></td>';
+    } else {
+      html += '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;color:#94a3b8">—</td>';
+    }
+  });
+  var gp = gt.sell > 0 ? Math.round(gt.online/gt.sell*100) : 0;
+  html += '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;background:#f8fafc;">';
+  html += '<strong>' + gt.n + '</strong><div style="font-size:10px;color:#475569">' + fG(gt.gmv) + '</div>';
+  html += '<div style="font-size:9px;color:' + pctColor(gp) + '">' + gp + '% on</div></td></tr>';
+
   tbody.innerHTML = html;
 }
 </script>
