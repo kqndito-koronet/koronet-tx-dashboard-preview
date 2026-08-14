@@ -2402,22 +2402,29 @@ function onTimeframeChange() {
 }
 
 /* --- MAIN INIT --- */
+console.log('[TX V3] Starting init...');
 Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
+  console.log('[TX V3] Adapter loaded. Getting account IDs...');
   var tf = _adapterTf();
   var allIds = EvidenceAdapter.getAllAccountIds();
+  console.log('[TX V3] Got ' + allIds.length + ' account IDs. Timeframe: ' + tf);
   var idx = 0;
   var BATCH = 50;
 
   function loadBatch() {
     var slice = allIds.slice(idx, idx + BATCH);
     slice.forEach(function(cid) {
+      try {
       var ev = EvidenceAdapter.getAccountEvidence(cid, tf);
       _allEvidence.push(ev);
+      } catch(e) { console.error('[TX V3] Error loading account ' + cid + ':', e); }
     });
     idx += slice.length;
+    console.log('[TX V3] Loaded ' + idx + '/' + allIds.length + ' accounts');
     if (idx < allIds.length) {
       requestAnimationFrame(loadBatch);
     } else {
+      console.log('[TX V3] All accounts loaded. Applying filters...');
       _allEvidence.sort(function(a, b) {
         var fa = (a && a.potential && a.potential.fees_ytd_2026 && a.potential.fees_ytd_2026.value) || 0;
         var fb = (b && b.potential && b.potential.fees_ytd_2026 && b.potential.fees_ytd_2026.value) || 0;
