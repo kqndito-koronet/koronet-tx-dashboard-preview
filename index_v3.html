@@ -634,26 +634,58 @@ function priBadge(pri) {
   return '<span class="' + cls + '">' + esc(pri) + '</span>';
 }
 
-/* GMV Display */
+/* GMV Display — V3: shows confidence + pace + ORA contrast */
 function buildGmvDisplay(p) {
   if (!p) return { html: '\u2014', value: null };
   var gmvRef = p.gmv_reference || {};
   var val = gmvRef.value;
   var src = gmvRef.source || '';
-  var provClass = 'prov-piso';
-  if (src === 'Medido') provClass = 'prov-medido';
-  else if (src === 'ORA' || src === 'FCS') provClass = 'prov-ora';
-  else if (src === 'Pace' || src === 'Piso de red') provClass = 'prov-piso';
+  var conf = gmvRef.confidence || '';
+  var daysObs = gmvRef.days_observed;
 
-  var label = src;
-  if (src === 'Piso de red') label = 'Piso';
-  if (!src || src === 'not in Christine cascade' || src === 'Sin dato') label = '';
-
-  var h = '<span class="gmv-value">' + fmt$(val) + '</span>';
-  if (label) {
-    h += ' <span class="prov-tag ' + provClass + '">' + esc(label) + '</span>';
+  try {
+    /* V3: confidence-aware display */
+    if (!val && val !== 0) {
+      return { html: '\u2014', value: null };
+    }
+    if (conf === 'Alta' && src === 'Medido') {
+      var h = '<span class="gmv-value">' + fmt$(val) + '</span> <span class="prov-tag prov-medido">&#10003; Medido</span>';
+      return { html: h, value: val };
+    }
+    if (conf === 'Baja') {
+      var daysStr = daysObs != null ? daysObs + 'd' : '';
+      var paceRec = p.gmv_pace || null;
+      var paceVal = paceRec ? paceRec.value : null;
+      var contrastHtml = '';
+      if (paceVal != null && paceVal !== val) {
+        contrastHtml = ' <span style="color:var(--text-muted);font-size:9px">vs ' + fmt$(paceVal) + ' pace</span>';
+      }
+      var h = '<span class="gmv-value">' + fmt$(val) + ' pace</span> <span class="prov-tag prov-ora">Baja' + (daysStr ? ' ' + daysStr : '') + '</span>' + contrastHtml;
+      return { html: h, value: val };
+    }
+    if (src === 'ORA' || src === 'FCS') {
+      var extRec = p.gmv_external || null;
+      var extVal = extRec ? extRec.value : null;
+      var contrastHtml = '';
+      if (extVal != null && extVal !== val) {
+        contrastHtml = ' <span style="color:var(--text-muted);font-size:9px">ext: ' + fmt$(extVal) + '</span>';
+      }
+      var h = '<span class="gmv-value">' + fmt$(val) + '</span> <span class="prov-tag prov-ora">ORA</span>' + contrastHtml;
+      return { html: h, value: val };
+    }
+    /* Legacy fallback */
+    var provClass = 'prov-piso';
+    if (src === 'Medido') provClass = 'prov-medido';
+    else if (src === 'ORA' || src === 'FCS') provClass = 'prov-ora';
+    var label = src;
+    if (src === 'Piso de red') label = 'Piso';
+    if (!src || src === 'not in Christine cascade' || src === 'Sin dato') label = '';
+    var h = '<span class="gmv-value">' + fmt$(val) + '</span>';
+    if (label) { h += ' <span class="prov-tag ' + provClass + '">' + esc(label) + '</span>'; }
+    return { html: h, value: val };
+  } catch (e) {
+    return { html: '\u2014', value: null };
   }
-  return { html: h, value: val };
 }
 
 /* At-Stake Calculator */
@@ -678,15 +710,17 @@ function calcAtStakeAmount(ev) {
   return r ? r.amount : null;
 }
 
-/* MoM Display */
+/* MoM Display — V3: includes "MoM" label */
 function buildMomDisplay(p) {
   if (!p) return '\u2014';
-  var mom = p.sell_mom_delta;
-  if (!mom || mom.pct == null) return '\u2014';
-  var pct = mom.pct;
-  var cls = pct >= 0 ? 'color:var(--green)' : 'color:var(--red)';
-  var sign = pct >= 0 ? '+' : '';
-  return '<span style="font-weight:600;' + cls + '">' + sign + pct.toFixed(1) + '%</span>';
+  try {
+    var mom = p.sell_mom_delta;
+    if (!mom || mom.pct == null) return '\u2014';
+    var pct = mom.pct;
+    var cls = pct >= 0 ? 'color:var(--green)' : 'color:var(--red)';
+    var sign = pct >= 0 ? '+' : '';
+    return '<span style="font-weight:600;' + cls + '">' + sign + pct.toFixed(1) + '% MoM</span>';
+  } catch (e) { return '\u2014'; }
 }
 
 /* Sparkline */
@@ -751,6 +785,14 @@ function renderRow(ev, idx) {
       onlineClass = onlinePct >= 30 ? 'online-value' : 'online-low';
     }
 
+    /* V3 Feature 1: solo_digital_visible caveat */
+    var onlineCaveatHtml = '';
+    try {
+      if (identity.digital_pct_caveat === 'solo_digital_visible') {
+        onlineCaveatHtml = '<div style="font-size:9px;color:var(--text-muted);font-style:italic;margin-top:1px">(solo digital)</div>';
+      }
+    } catch (e) { onlineCaveatHtml = ''; }
+
     var takeRateStyle = '';
     if (takeRate != null) {
       if (takeRate >= 0.3) takeRateStyle = 'color:var(--green);font-weight:600;';
@@ -772,7 +814,7 @@ function renderRow(ev, idx) {
       '<td class="metric-cell">' + gmvDisp.html + '</td>' +
       '<td class="metric-cell"><span class="metric-value">' + fmt$(koronetSell) + '</span></td>' +
       '<td class="metric-cell"><span class="metric-value">' + fmtPct(sellPen) + '</span></td>' +
-      '<td class="metric-cell"><span class="' + onlineClass + '">' + fmtPct(onlinePct) + '</span></td>' +
+      '<td class="metric-cell"><span class="' + onlineClass + '">' + fmtPct(onlinePct) + '</span>' + onlineCaveatHtml + '</td>' +
       '<td class="metric-cell"><span class="metric-value">' + fmt$(koronetBuy) + '</span></td>' +
       '<td class="metric-cell"><span class="fees-value">' + fmt$(feesYtd) + '</span></td>' +
       '<td class="metric-cell"><span class="takerate" style="' + takeRateStyle + '">' + fmtPct(takeRate, 2) + '</span></td>' +
@@ -846,9 +888,22 @@ function renderPotentialCard(ev) {
       if (feesByChannel.indirect != null) parts.push('Indirect <strong>' + fmt$(feesByChannel.indirect, true) + '</strong>');
       if (parts.length) feesChannelHtml = '<div class="content-gap-sm"></div><div class="metric-line"><strong>Fees by channel:</strong> ' + parts.join(' &middot; ') + '</div>';
     }
+    /* V3 Feature 3: Segment benchmark for online % */
+    var benchmarkLineHtml = '';
+    try {
+      var bmarks = ev.benchmarks;
+      if (bmarks && bmarks.per_metric && bmarks.per_metric.sell_online_pct) {
+        var bmEntry = bmarks.per_metric.sell_online_pct;
+        var segMedian = bmEntry.seg_median != null ? bmEntry.seg_median : bmEntry.median;
+        if (segMedian != null) {
+          benchmarkLineHtml = '<div style="font-size:10px;color:var(--text-muted);margin-top:4px">Seg median: ' + fmtPct(segMedian) + '</div>';
+        }
+      }
+    } catch (e) { benchmarkLineHtml = ''; }
+
     var body = '<div class="content-gap-sm"></div>' +
       '<div class="table-wrap"><table class="ev-table"><thead><tr><th style="width:80px"></th><th>Est Total</th><th>Koronet</th><th>Penetration</th><th>Online %</th></tr></thead><tbody>' +
-      '<tr><td class="row-label">SELL</td><td><span class="highlight">' + fmt$(gmvRef.value, true) + '</span> <span class="ev-state">' + esc(gmvSource) + '</span></td><td><span class="highlight">' + fmt$(kSell, true) + '</span></td><td>' + fmtPct(sellPen) + '</td><td><span class="' + (sellOnline != null && sellOnline >= 30 ? 'online' : 'online-low') + '">' + fmtPct(sellOnline) + '</span></td></tr>' +
+      '<tr><td class="row-label">SELL</td><td><span class="highlight">' + fmt$(gmvRef.value, true) + '</span> <span class="ev-state">' + esc(gmvSource) + '</span></td><td><span class="highlight">' + fmt$(kSell, true) + '</span></td><td>' + fmtPct(sellPen) + '</td><td><span class="' + (sellOnline != null && sellOnline >= 30 ? 'online' : 'online-low') + '">' + fmtPct(sellOnline) + '</span>' + benchmarkLineHtml + '</td></tr>' +
       '<tr><td class="row-label">BUY</td><td><span class="highlight">' + fmt$(p.buy_gmv_estimated ? p.buy_gmv_estimated.value : null, true) + '</span></td><td><span class="highlight">' + fmt$(kBuy, true) + '</span></td><td>' + fmtPct(buyPen) + '</td><td><span class="' + (buyOnline != null && buyOnline >= 30 ? 'online' : 'online-low') + '">' + fmtPct(buyOnline) + '</span></td></tr>' +
       '<tr><td class="row-label">FEES</td><td>&mdash;</td><td><span class="highlight">' + fmt$(feesYtd, true) + '</span></td><td>' + (takeRate != null ? fmtPct(takeRate, 2) + ' rate' : '&mdash;') + '</td><td>&mdash;</td></tr>' +
       '</tbody></table></div>' + feesChannelHtml +
@@ -923,7 +978,15 @@ function renderOpportunitiesCard(ev) {
       var o = opps[i];
       oppsHtml += '<div class="opp-row"><div class="opp-header"><span class="opp-rank">#' + (i + 1) + '</span><span class="opp-stage ' + o.stage + '">' + esc(o.type) + '</span><span class="opp-effort ' + (o.effortClass || '') + '">' + esc(o.effort) + '</span></div><div class="opp-desc">' + esc(o.desc) + '</div></div>';
     }
-    var body = '<div class="content-gap-sm"></div><div class="stake-banner"><div><div class="stake-banner-value">' + fmt$(atStake, true) + '</div><div class="stake-banner-label">' + (atStakeSource === 'sfdc' ? 'SFDC open opportunities' : 'Scenario &middot; 12-month window') + '</div></div><div class="stake-banner-right"><div class="stake-banner-count">' + opps.length + ' intervention' + (opps.length !== 1 ? 's' : '') + '</div></div></div>' + oppsHtml;
+    /* V3 Feature 4: Hypotheses context paragraph */
+    var hypothesesHtml = '';
+    try {
+      hypothesesHtml = '<div style="margin-top:10px;font-size:10px;color:var(--text-muted);font-style:italic">' +
+        'Context: The leading hypothesis (H-D1, unconfirmed) is that pricing &mdash; not configuration &mdash; drives offline buying.' +
+        '</div>';
+    } catch (e) { hypothesesHtml = ''; }
+
+    var body = '<div class="content-gap-sm"></div><div class="stake-banner"><div><div class="stake-banner-value">' + fmt$(atStake, true) + '</div><div class="stake-banner-label">' + (atStakeSource === 'sfdc' ? 'SFDC open opportunities' : 'Scenario &middot; 12-month window') + '</div></div><div class="stake-banner-right"><div class="stake-banner-count">' + opps.length + ' intervention' + (opps.length !== 1 ? 's' : '') + '</div></div></div>' + oppsHtml + hypothesesHtml;
     return cardShell('Card 2 &middot; OPPORTUNITIES', 'OPPORTUNITIES &mdash; ' + fmt$(atStake, true) + ' at stake &middot; ' + opps.length + ' interventions', body, true, 'card-opps-' + id);
   } catch (e) { return cardShell('OPPORTUNITIES', 'Error: ' + e.message, '', false); }
 }
@@ -1062,10 +1125,41 @@ function renderFreshnessCard(ev) {
   } catch (e) { return ''; }
 }
 
+/* V3 Feature 5: Data Timeline compact strip */
+function buildDataTimeline(ev) {
+  try {
+    if (!ev) return '';
+    var sellDate = '\u2014';
+    var buyDate = '\u2014';
+    var gmvDate = '\u2014';
+    /* Try to get latest month from sell cube via monthly_series */
+    if (ev.sell && ev.sell.monthly_series && ev.sell.monthly_series.value) {
+      var ms = ev.sell.monthly_series.value;
+      if (ms.length > 0) {
+        var sorted = ms.slice().sort(function(a, b) { return a.month < b.month ? -1 : a.month > b.month ? 1 : 0; });
+        sellDate = sorted[sorted.length - 1].month;
+      }
+    }
+    /* Try to get latest buy month from buy sourcing_table */
+    if (ev.buy && ev.buy.sourcing_table && ev.buy.sourcing_table.value) {
+      var st = ev.buy.sourcing_table.value;
+      if (st.current_month_key) { buyDate = st.current_month_key; }
+    }
+    /* GMV date from freshness as_of */
+    if (ev.freshness && ev.freshness.as_of) { gmvDate = ev.freshness.as_of; }
+    /* Only show if we have at least one real date */
+    if (sellDate === '\u2014' && buyDate === '\u2014' && gmvDate === '\u2014') return '';
+    return '<div style="margin-top:10px;font-size:10px;color:var(--text-muted);border-top:1px solid var(--border-light);padding-top:8px">' +
+      'Data as-of: Sell ' + sellDate + ' &middot; Buy ' + buyDate + ' &middot; GMV ' + gmvDate +
+      '</div>';
+  } catch (e) { return ''; }
+}
+
 /* Render All Cards */
 function renderCards(companyId, ev) {
   if (!ev) return '<div class="data-gap-row">No evidence data available.</div>';
-  return '<div class="cards-grid">' + renderPotentialCard(ev) + renderOpportunitiesCard(ev) + renderBuyCard(ev) + renderListCard(ev) + renderSellCard(ev) + renderFreshnessCard(ev) + '</div>';
+  var timelineHtml = buildDataTimeline(ev);
+  return '<div class="cards-grid">' + renderPotentialCard(ev) + renderOpportunitiesCard(ev) + renderBuyCard(ev) + renderListCard(ev) + renderSellCard(ev) + renderFreshnessCard(ev) + '</div>' + timelineHtml;
 }
 
 /* Toggle Card */
