@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html><head><title>V3 Renderer Test</title></head>
+<body>
+<h2>TX V3 Renderer Debug</h2>
+<pre id="log">Starting...</pre>
+<script src="evidence_adapter_v3.js"></script>
+<script>
+var log = document.getElementById('log');
+function addLog(msg) { log.textContent += '\n' + msg; }
+
+EvidenceAdapter.init().then(function() {
+  addLog('Adapter loaded: ' + EvidenceAdapter.getAllAccountIds().length + ' accounts');
+
+  // Now load the renderer and test each function
+  var ids = EvidenceAdapter.getAllAccountIds();
+  var ev = EvidenceAdapter.getAccountEvidence(ids[0], 'ytd');
+  addLog('First account: ' + ev._company_name);
+
+  // Test if the issue is in the HTML loading or JS execution
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'index_v3.html', true);
+  xhr.onload = function() {
+    addLog('index_v3.html loaded: ' + xhr.responseText.length + ' chars');
+
+    // Extract and test the script
+    var scripts = xhr.responseText.match(/<script[^>]*>([\s\S]*?)<\/script>/g);
+    addLog('Scripts found: ' + (scripts ? scripts.length : 0));
+
+    if (scripts && scripts.length > 1) {
+      var mainScript = scripts[1].replace(/<\/?script[^>]*>/g, '');
+      addLog('Main script size: ' + mainScript.length + ' chars');
+
+      // Look for common issues
+      var hasRenderRow = mainScript.indexOf('function renderRow') >= 0;
+      var hasApplyFilters = mainScript.indexOf('function applyFilters') >= 0;
+      var hasRenderTable = mainScript.indexOf('function renderTable') >= 0;
+      var hasFmtEv = mainScript.indexOf('function fmtEv') >= 0;
+      var hasFmt$ = mainScript.indexOf('function fmt$') >= 0 || mainScript.indexOf('function fmt\\$') >= 0;
+      var hasEscHtml = mainScript.indexOf('function escHtml') >= 0;
+
+      addLog('renderRow: ' + hasRenderRow);
+      addLog('applyFilters: ' + hasApplyFilters);
+      addLog('renderTable: ' + hasRenderTable);
+      addLog('fmtEv: ' + hasFmtEv);
+      addLog('fmt$: ' + hasFmt$);
+      addLog('escHtml: ' + hasEscHtml);
+
+      // Try to execute it
+      try {
+        // Can't eval the full script since it references DOM elements
+        // But we can check for syntax errors
+        new Function(mainScript);
+        addLog('Script syntax: OK');
+      } catch(e) {
+        addLog('Script syntax ERROR: ' + e.message);
+        addLog('At: ' + e.stack);
+      }
+    }
+  };
+  xhr.send();
+}).catch(function(err) {
+  addLog('ERROR: ' + err.message);
+});
+</script>
+</body></html>
