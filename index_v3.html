@@ -1486,9 +1486,9 @@
     </table>
 
     <h3 style="margin:20px 0 8px;color:#2563eb;font-size:14px;">Wholesaler Potential Matrix (Est GMV &times; Product Tier)</h3>
-    <p style="font-size:10px;color:#64748b;margin-bottom:6px;">174 wholesalers with Komet product (Unknown/targets excluded). % on = % of Koronet sell online. K2K/Proc show 100% because we only see digital channel.</p>
+    <p id="matrix-description" style="font-size:10px;color:#64748b;margin-bottom:6px;">Client wholesalers with known product tier. %S = online sell / Est GMV (sell penetration). %B = online buy / Est Buy GMV (buy penetration). Procurement can't sell (&mdash;%S).</p>
     <table id="tier-matrix" style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:16px;">
-      <thead><tr style="background:#f1f5f9;"><th style="padding:6px 8px;border:1px solid #e2e8f0;"></th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Core+</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">eSuite</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Procurement</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">K2K</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Unknown</th></tr></thead>
+      <thead><tr style="background:#f1f5f9;"><th style="padding:6px 8px;border:1px solid #e2e8f0;">Est GMV</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Core+</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">eSuite</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">Procurement</th><th style="padding:6px 8px;border:1px solid #e2e8f0;">K2K</th><th style="padding:6px 8px;border:1px solid #e2e8f0;background:#f8fafc;">TOTAL</th></tr></thead>
       <tbody id="tier-matrix-body"></tbody>
     </table>
 
@@ -4179,6 +4179,12 @@ function populateTierMatrix() {
       + '<strong>' + d.n + '</strong>'
       + '<div style="font-size:10px;color:#475569">' + fG(d.gmv) + '</div>'
       + '<div style="font-size:9px">' + sLabel + ' · ' + bLabel + '</div></td>';
+  }
+
+  // Update description with actual count
+  var descEl = document.getElementById('matrix-description');
+  if (descEl) {
+    descEl.textContent = ws.length + ' client wholesalers with known product tier. %S = online sell / Est GMV (sell penetration). %B = online buy / Est Buy GMV (buy penetration). Procurement can\u2019t sell (\u2014%S).';
   }
 
   var tbody = document.getElementById('tier-matrix-body');
