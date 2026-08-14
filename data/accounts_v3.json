@@ -2,7 +2,7 @@
   "_meta": {
     "generated_at": "2026-08-13",
     "source": "Christine GMV sheet (1xUIR_mpuMOrwDLz8IWCzJAlg_cf6WSBf-1cSrOPf_pM) + account_universe_v1 + sell_domain_v2 + fees_domain_v2",
-    "total_accounts": 430,
+    "total_accounts": 428,
     "excluded_dead": 357,
     "excluded_test": 11,
     "excluded_training_ids": 12,
@@ -28,7 +28,10 @@
       "Training IDs excluded: 561353 549016 6316 554582 531246 531265 55326 751276 132431 468006 398804 806094"
     ],
     "duplicates_merged": 8,
-    "potential_tier_added": true
+    "potential_tier_added": true,
+    "engagement_status_computed": true,
+    "buy_digital_pct_computed": true,
+    "removed_dc_flowers_komet_sales": true
   },
   "accounts": [
     {
@@ -48,7 +51,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001ZwODhIAN",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "470794",
@@ -67,7 +72,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002Y8j3vQAB",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "198117",
@@ -86,7 +93,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4OsIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "18322",
@@ -105,7 +114,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4QWIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.5
     },
     {
       "company_id": "453081",
@@ -124,7 +135,9 @@
       "has_procurement": false,
       "sfdc_id": "001160000221mrNAAQ",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "54343",
@@ -143,7 +156,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001jjTb0IAE",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "613695",
@@ -162,7 +177,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000022EMZLAA4",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "1614",
@@ -181,7 +198,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4QJIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "25489",
@@ -200,7 +219,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4T2IAL",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "561453",
@@ -219,7 +240,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000021c3HoAAI",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "7631",
@@ -238,7 +261,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DW4TQIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "672147",
@@ -257,7 +282,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000Hqn2xYAB",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "738936",
@@ -276,7 +303,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001a07MXIAY",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 1.3
     },
     {
       "company_id": "665296",
@@ -295,7 +324,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001V5Q2WIAV",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "796715",
@@ -314,7 +345,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000ehkNEYAY",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "664719",
@@ -333,7 +366,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L00002ICyF3QAL",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "624737",
@@ -352,7 +387,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000020wFxeAAE",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.1
     },
     {
       "company_id": "795674",
@@ -371,7 +408,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000egpjqYAA",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "521854",
@@ -390,7 +429,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001xHhmfAAC",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "650721",
@@ -409,7 +450,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000F4yJVYAZ",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "798243",
@@ -428,7 +471,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001xlhgkAAA",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "643672",
@@ -447,7 +492,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000020OCgLAAW",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "73730",
@@ -466,7 +513,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DW4OuIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 2.4
     },
     {
       "company_id": "743681",
@@ -485,7 +534,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002WO7dMQAT",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "20769",
@@ -504,7 +555,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4O5IAL",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "393475",
@@ -523,7 +576,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001IYgNpIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "295299",
@@ -542,7 +597,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L000028SPvlQAG",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": "505063",
@@ -561,7 +618,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001zF6GkAAK",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "507518",
@@ -580,7 +639,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001zW56mAAC",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "654944",
@@ -599,7 +660,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001TsKPSIA3",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "193828",
@@ -618,7 +681,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000023rB8qAAE",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "477128",
@@ -637,7 +702,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001mLcyvAAC",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 71.0
     },
     {
       "company_id": "507479",
@@ -656,7 +723,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L00002WO3HUQA1",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "592806",
@@ -675,7 +744,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001waeZYAAY",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "830406",
@@ -694,7 +765,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4OGIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": "651277",
@@ -713,7 +786,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001V7resIAB",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": "652251",
@@ -732,7 +807,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DW4OTIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "654374",
@@ -751,7 +828,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000RiggjYAB",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 99.8
     },
     {
       "company_id": "655098",
@@ -770,7 +849,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001TsMbNIAV",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "623491",
@@ -789,7 +870,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001riCHoAAM",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 99.9
     },
     {
       "company_id": "17789",
@@ -808,7 +891,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4OKIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "765583",
@@ -827,7 +912,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4OLIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "509751",
@@ -846,7 +933,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001zFAH3AAO",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "7030",
@@ -865,7 +954,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DVt5TIAT",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 3.6
     },
     {
       "company_id": "321023",
@@ -884,7 +975,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001TtEaaIAF",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "199908",
@@ -903,7 +996,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uRq3BAAS",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "671046",
@@ -922,7 +1017,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000IAI7mYAH",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 11.1
     },
     {
       "company_id": "734065",
@@ -941,7 +1038,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000Pk117YAB",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "618758",
@@ -960,7 +1059,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000021zRPfAAM",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "2516",
@@ -979,7 +1080,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4OWIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "313164",
@@ -998,7 +1101,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L000028F9SYQA0",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "664988",
@@ -1017,7 +1122,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002IE8YMQA1",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 0.3
     },
     {
       "company_id": "498992",
@@ -1036,7 +1143,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002rFEJwQAO",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "652302",
@@ -1055,7 +1164,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p0000220OCmAAM",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "624816",
@@ -1074,7 +1185,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL000003MuLTYA0",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "731381",
@@ -1093,7 +1206,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p000022EYvBAAW",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "651959",
@@ -1112,7 +1227,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001Tsg6jIAB",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 56.8
     },
     {
       "company_id": "617226",
@@ -1131,7 +1248,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000021zpeLAAQ",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "665080",
@@ -1150,7 +1269,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001uSYzvAAG",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "182870",
@@ -1169,7 +1290,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001lhZANAA2",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "735300",
@@ -1188,7 +1311,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000UN5fFYAT",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 48.6
     },
     {
       "company_id": "397194",
@@ -1207,7 +1332,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L000028V2EyQAK",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "341499",
@@ -1226,7 +1353,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4OlIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "591877",
@@ -1245,7 +1374,9 @@
       "has_procurement": true,
       "sfdc_id": "00116000021Z8FtAAK",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "159761",
@@ -1264,7 +1395,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001TsgdSIAR",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 99.4
     },
     {
       "company_id": "650767",
@@ -1283,7 +1416,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001TsYWjIAN",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 97.6
     },
     {
       "company_id": "453771",
@@ -1302,7 +1437,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002dFBf0QAG",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "453769",
@@ -1321,7 +1458,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002dFBcfQAG",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "41934",
@@ -1340,7 +1479,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4OtIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "471458",
@@ -1359,7 +1500,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002fOqChQAK",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "505896",
@@ -1378,7 +1521,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001lOEl6AAG",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "146846",
@@ -1397,7 +1542,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001UTWVuIAP",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "821768",
@@ -1416,7 +1563,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000bzq64YAA",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "815425",
@@ -1435,7 +1584,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001buCmhIAE",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "825773",
@@ -1454,26 +1605,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000r1tVOYAY",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
-    },
-    {
-      "company_id": "590728",
-      "company_name": "DC FLOWERS DIRECT",
-      "business_type": "Wholesaler",
-      "product_tier": "Core+",
-      "sell_channel": "K2K-dominant",
-      "komet_status": "Deactivated",
-      "industry": "Floral - Wholesaler",
-      "gmv_reference": null,
-      "gmv_source": "not in Christine cascade",
-      "gmv_is_floor": false,
-      "buy_gmv_estimated": null,
-      "digital_pct": 96.99,
-      "has_eshop": false,
-      "has_procurement": false,
-      "sfdc_id": "0014p000020wmRFAAY",
-      "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": "732518",
@@ -1492,7 +1626,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001TskZ7IAJ",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 99.9
     },
     {
       "company_id": "200279",
@@ -1511,7 +1647,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000026VeXIAA0",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 14.6
     },
     {
       "company_id": "654131",
@@ -1530,7 +1668,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001TskmvIAB",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 98.0
     },
     {
       "company_id": "672205",
@@ -1549,7 +1689,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000IFWlxYAH",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "808448",
@@ -1568,7 +1710,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000LVfPRYA1",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "819114",
@@ -1587,7 +1731,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000q86lRYAQ",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "734128",
@@ -1606,7 +1752,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000020OMNhAAO",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 99.0
     },
     {
       "company_id": "529464",
@@ -1625,7 +1773,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4P4IAL",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "640460",
@@ -1644,7 +1794,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p0000220O7wAAE",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 23.1
     },
     {
       "company_id": "571220",
@@ -1663,7 +1815,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4PAIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "397789",
@@ -1682,7 +1836,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002WOF1LQAX",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "765491",
@@ -1701,7 +1857,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DW4PBIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "378264",
@@ -1720,7 +1878,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002Sbi4xQAB",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "477673",
@@ -1739,7 +1899,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001mLv33AAC",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "20749",
@@ -1758,7 +1920,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4PPIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "146183",
@@ -1777,7 +1941,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001zrCXXAA2",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "727131",
@@ -1796,7 +1962,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001lgrcKAAQ",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "130337",
@@ -1815,7 +1983,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4PKIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "769085",
@@ -1834,7 +2004,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000gC7ITYA0",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "672728",
@@ -1853,7 +2025,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001yqo0aAAA",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "635064",
@@ -1872,7 +2046,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p000022HSvrAAG",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 88.9
     },
     {
       "company_id": "395159",
@@ -1891,7 +2067,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4OEIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "664623",
@@ -1910,7 +2088,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uSZVYAA4",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "811196",
@@ -1929,7 +2109,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000gB1JzYAK",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "594981",
@@ -1948,7 +2130,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000021IdyjAAC",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "716166",
@@ -1967,7 +2151,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001uSZXFAA4",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 94.5
     },
     {
       "company_id": "813857",
@@ -1986,7 +2172,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000mJQuTYAW",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "809546",
@@ -2005,7 +2193,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000kXPUzYAO",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "652793",
@@ -2024,7 +2214,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4PQIA1",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "804758",
@@ -2043,7 +2235,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000jjhrhYAA",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "577566",
@@ -2062,7 +2256,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001y6Ac0AAE",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "670423",
@@ -2081,7 +2277,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000022WUhzAAG",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "670450",
@@ -2100,7 +2298,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4PkIAL",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 87.6
     },
     {
       "company_id": "401680",
@@ -2119,7 +2319,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001f8XFWIA2",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "46206",
@@ -2138,7 +2340,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001V8C6jIAF",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "489148",
@@ -2157,7 +2361,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002jVSxCQAW",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "664019",
@@ -2176,7 +2382,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001ndeAmAAI",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": "664540",
@@ -2195,7 +2403,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001bQpeJIAS",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 96.5
     },
     {
       "company_id": "762941",
@@ -2214,7 +2424,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL000006l9ajYAA",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "612783",
@@ -2233,7 +2445,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p000022FEx7AAG",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "153536",
@@ -2252,7 +2466,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uUyJlAAK",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "189685",
@@ -2271,7 +2487,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000020LCvJAAW",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "1241",
@@ -2290,7 +2508,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4PTIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "610818",
@@ -2309,7 +2529,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002rEB34QAG",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "732830",
@@ -2328,7 +2550,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000026WSexAAG",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 10.4
     },
     {
       "company_id": "541854",
@@ -2347,7 +2571,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p00001so6ueAAA",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "700340",
@@ -2366,7 +2592,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000L1QR0YAN",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "676090",
@@ -2385,7 +2613,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000KKWD8YAP",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "681739",
@@ -2404,7 +2634,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000L1SkaYAF",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "675361",
@@ -2423,7 +2655,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000JGRHRYA5",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 96.3
     },
     {
       "company_id": "769099",
@@ -2442,7 +2676,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000gC6uHYAS",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "601933",
@@ -2461,7 +2697,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001TsqcLIAR",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.3
     },
     {
       "company_id": "319143",
@@ -2480,7 +2718,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L000029aO9sQAE",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "153031",
@@ -2499,7 +2739,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001ncRipAAE",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "664314",
@@ -2518,7 +2760,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DW4PaIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "139851",
@@ -2537,7 +2781,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uUbL8AAK",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "37745",
@@ -2556,7 +2802,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001Tssa3IAB",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "670311",
@@ -2575,7 +2823,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p0000220SneAAE",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "561518",
@@ -2594,7 +2844,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001ueJDCAA2",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "449683",
@@ -2613,7 +2865,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4PgIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "815558",
@@ -2632,7 +2886,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000ndtN0YAI",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "822938",
@@ -2651,7 +2907,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000k74R0YAI",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "601280",
@@ -2670,7 +2928,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uRrj9AAC",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "584973",
@@ -2689,7 +2949,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001zAFqOAAW",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "817285",
@@ -2708,7 +2970,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000mScY9YAK",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": "296458",
@@ -2727,7 +2991,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L000027XBWKQA4",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "699974",
@@ -2746,7 +3012,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uSvGlAAK",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": null
     },
     {
       "company_id": "496600",
@@ -2765,7 +3033,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002rCC5zQAG",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 1.0
     },
     {
       "company_id": "762172",
@@ -2784,7 +3054,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000bryvBYAQ",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 99.2
     },
     {
       "company_id": "756140",
@@ -2803,7 +3075,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000acaTxYAI",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "673823",
@@ -2822,7 +3096,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000HrwgpYAB",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "578194",
@@ -2841,7 +3117,9 @@
       "has_procurement": true,
       "sfdc_id": "00116000023sYATAA2",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "665316",
@@ -2860,7 +3138,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000HW85ZYAT",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 0.4
     },
     {
       "company_id": "492201",
@@ -2879,7 +3159,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000026Vdd4AAC",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "543610",
@@ -2898,7 +3180,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001uTH0wAAG",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "103112",
@@ -2917,7 +3201,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4PzIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "640251",
@@ -2936,7 +3222,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000A5ntfYAB",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "642076",
@@ -2955,7 +3243,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001V5PivIAF",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 99.0
     },
     {
       "company_id": "600370",
@@ -2974,7 +3264,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001zanUFAAY",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "603611",
@@ -2993,7 +3285,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000021zHQjAAM",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "650252",
@@ -3012,7 +3306,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002IDjZOQA1",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "38582",
@@ -3031,7 +3327,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4PFIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "343614",
@@ -3050,7 +3348,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001bpcuyIAA",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "508421",
@@ -3069,7 +3369,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4Q6IAL",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "654566",
@@ -3088,7 +3390,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001lfVtAAAU",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "484037",
@@ -3107,7 +3411,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001TtDnBIAV",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "529514",
@@ -3126,7 +3432,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002DO9nVQAT",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "188968",
@@ -3145,7 +3453,9 @@
       "has_procurement": false,
       "sfdc_id": "001160000223WK5AAM",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "77300",
@@ -3164,7 +3474,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4QCIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "667626",
@@ -3183,7 +3495,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000GL2fAYAT",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "321907",
@@ -3202,7 +3516,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002BInj0QAD",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "751350",
@@ -3221,7 +3537,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001rj9yaAAA",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "166363",
@@ -3240,7 +3558,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uSo7OAAS",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": null
     },
     {
       "company_id": "812869",
@@ -3259,7 +3579,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L000028VL26QAG",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "194206",
@@ -3278,7 +3600,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000023rUnKAAU",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "498865",
@@ -3297,7 +3621,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L00002p55GMQAY",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.4
     },
     {
       "company_id": "713789",
@@ -3316,7 +3642,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001uScxFAAS",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 93.7
     },
     {
       "company_id": "503075",
@@ -3335,7 +3663,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000025sMRVAA2",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "651216",
@@ -3354,7 +3684,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001GQ6u4IAD",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "665358",
@@ -3373,7 +3705,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uSd7yAAC",
       "in_christine_sheet": false,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 99.1
     },
     {
       "company_id": "664341",
@@ -3392,7 +3726,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001lfdddAAA",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "764867",
@@ -3411,7 +3747,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000Vp156YAB",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.6
     },
     {
       "company_id": "670508",
@@ -3430,7 +3768,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001TtIBxIAN",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "39124",
@@ -3449,7 +3789,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001XIVGOIA5",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "640563",
@@ -3468,7 +3810,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL000007zem5YAA",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "631459",
@@ -3487,7 +3831,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000022R9RlAAK",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "808527",
@@ -3506,7 +3852,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL000005qn9pYAA",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "806417",
@@ -3525,7 +3873,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L00002eqDgTQAU",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 19.1
     },
     {
       "company_id": "572900",
@@ -3544,7 +3894,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001xzL4bAAE",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "144192",
@@ -3563,7 +3915,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uUw5EAAS",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "554187",
@@ -3582,7 +3936,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001v3oKUAAY",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "492219",
@@ -3601,7 +3957,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002kvsqiQAA",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "817168",
@@ -3620,7 +3978,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000022Vab1AAC",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "322928",
@@ -3639,7 +3999,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uRssiAAC",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "573661",
@@ -3658,7 +4020,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001zAsAQAA0",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "808079",
@@ -3677,7 +4041,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000021bflwAAA",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "652199",
@@ -3696,7 +4062,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001lhbwBAAQ",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 99.9
     },
     {
       "company_id": "651200",
@@ -3715,7 +4083,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L00002Y7yX7QAJ",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "800562",
@@ -3734,7 +4104,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00001zyz09QAA",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "412951",
@@ -3753,7 +4125,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001aIv6EIAS",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.5
     },
     {
       "company_id": "469713",
@@ -3772,7 +4146,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000027KCBbAAO",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "731091",
@@ -3791,7 +4167,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uSdIzAAK",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 28.2
     },
     {
       "company_id": "44150",
@@ -3810,7 +4188,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001H3CrIIAV",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 23.8
     },
     {
       "company_id": "796779",
@@ -3829,7 +4209,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000at0XJYAY",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "25120",
@@ -3848,7 +4230,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4QdIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "755593",
@@ -3867,7 +4251,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000PwohBYAR",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "575819",
@@ -3886,7 +4272,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001fjeOcIAI",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "652551",
@@ -3905,7 +4293,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L000028VnGrQAK",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "654758",
@@ -3924,7 +4314,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4QoIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 66.7
     },
     {
       "company_id": "814810",
@@ -3943,7 +4335,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000n94eUYAQ",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "598944",
@@ -3962,7 +4356,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001TsE8iIAF",
       "in_christine_sheet": false,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "189419",
@@ -3981,7 +4377,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4QmIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.1
     },
     {
       "company_id": "541415",
@@ -4000,7 +4398,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DW4QnIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "35266",
@@ -4019,7 +4419,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001K7URpIAN",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "664133",
@@ -4038,7 +4440,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000HHz7rYAD",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "813947",
@@ -4057,7 +4461,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000lGG96YAG",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "476379",
@@ -4076,7 +4482,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000025JsB2AAK",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": "586784",
@@ -4095,7 +4503,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001TsFyvIAF",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "152602",
@@ -4114,7 +4524,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001TsGEcIAN",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "727605",
@@ -4133,7 +4545,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p000022EYvCAAW",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "651574",
@@ -4152,7 +4566,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p000022EYw1AAG",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "619847",
@@ -4171,7 +4587,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000022HqunAAC",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "536956",
@@ -4190,7 +4608,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001sHtlXAAS",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "664494",
@@ -4209,7 +4629,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000HVuQvYAL",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 98.3
     },
     {
       "company_id": "670554",
@@ -4228,7 +4650,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000YmEOTYA3",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 24.2
     },
     {
       "company_id": "821576",
@@ -4247,7 +4671,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001zVU4vAAG",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 86.2
     },
     {
       "company_id": "620453",
@@ -4266,7 +4692,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00001zyyyYQAQ",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "505603",
@@ -4285,7 +4713,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002aTOTFQA4",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "608547",
@@ -4304,7 +4734,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002IGHtEQAX",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "731558",
@@ -4323,7 +4755,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DW4S5IAL",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "610510",
@@ -4342,7 +4776,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001as1u1IAA",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "770224",
@@ -4361,7 +4797,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000gBuLGYA0",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "588171",
@@ -4380,7 +4818,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001z9zUXAAY",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "827180",
@@ -4399,7 +4839,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000qmfPWYAY",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "641341",
@@ -4418,7 +4860,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001ZFNa1IAH",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 18.8
     },
     {
       "company_id": "799014",
@@ -4437,7 +4881,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000fUtUIYA0",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "103078",
@@ -4456,7 +4902,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DW4R3IAL",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.9
     },
     {
       "company_id": "257477",
@@ -4475,7 +4923,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L000026fmYoQAI",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "701220",
@@ -4494,7 +4944,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000YlWTzYAN",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 44.2
     },
     {
       "company_id": "751391",
@@ -4513,7 +4965,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000dIwWvYAK",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "622743",
@@ -4532,7 +4986,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL000001pKqXYAU",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 1.2
     },
     {
       "company_id": "655985",
@@ -4551,7 +5007,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4R5IAL",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 93.9
     },
     {
       "company_id": "498769",
@@ -4570,7 +5028,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4R6IAL",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.2
     },
     {
       "company_id": "394783",
@@ -4589,7 +5049,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L000028TahoQAC",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "600558",
@@ -4608,7 +5070,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000021fXK6AAM",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 10.9
     },
     {
       "company_id": "733807",
@@ -4627,7 +5091,9 @@
       "has_procurement": true,
       "sfdc_id": "001160000222AFqAAM",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "375054",
@@ -4646,7 +5112,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4RwIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "665027",
@@ -4665,7 +5133,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000HW91gYAD",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "664255",
@@ -4684,7 +5154,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001TsGfBIAV",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "649745",
@@ -4703,7 +5175,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000DlwqkYAB",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "716378",
@@ -4722,7 +5196,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000Pos6tYAB",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "751334",
@@ -4741,7 +5217,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL000007zWbfYAE",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": null
     },
     {
       "company_id": "193829",
@@ -4760,7 +5238,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001lg8CAAAY",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "377256",
@@ -4779,7 +5259,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001f8bp1IAA",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "729666",
@@ -4798,7 +5280,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uTOjKAAW",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": "672781",
@@ -4817,7 +5301,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000GL9dQYAT",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "592615",
@@ -4836,7 +5322,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000020wDaDAAU",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "395382",
@@ -4855,7 +5343,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uRt3EAAS",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "795517",
@@ -4874,7 +5364,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000WNEfpYAH",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "398856",
@@ -4893,7 +5385,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002WOu1fQAD",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "591665",
@@ -4912,7 +5406,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000020vycQAAQ",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "732448",
@@ -4931,7 +5427,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4SGIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "742781",
@@ -4950,7 +5448,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001uSjSfAAK",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 16.4
     },
     {
       "company_id": "640977",
@@ -4969,7 +5469,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL000001TMnmYAG",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "632322",
@@ -4988,7 +5490,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001lgc6sAAA",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "743217",
@@ -5007,7 +5511,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000TUGt3YAH",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 2.0
     },
     {
       "company_id": "751341",
@@ -5026,7 +5532,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002SYckRQAT",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "676861",
@@ -5045,7 +5553,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L000029kgNZQAY",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "592345",
@@ -5064,7 +5574,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00001zzDR9QAM",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.1
     },
     {
       "company_id": "14422",
@@ -5083,7 +5595,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4SSIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 7.3
     },
     {
       "company_id": "651513",
@@ -5102,7 +5616,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001K8yfgIAB",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "665443",
@@ -5121,7 +5637,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L000029kBhZQAU",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "664944",
@@ -5140,7 +5658,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL000001CXvhYAG",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "654661",
@@ -5159,7 +5679,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uSjmkAAC",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "802590",
@@ -5178,7 +5700,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002KYI4OQAX",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "675363",
@@ -5197,7 +5721,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p0000220b01AAA",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "399890",
@@ -5216,7 +5742,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002SaN5JQAV",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "649585",
@@ -5235,7 +5763,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000DSXzGYAX",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "739329",
@@ -5254,7 +5784,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000LmynPYAR",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": "620160",
@@ -5273,7 +5805,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL000000ln6xYAA",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.3
     },
     {
       "company_id": "395357",
@@ -5292,7 +5826,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001TsIbtIAF",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 81.6
     },
     {
       "company_id": "44225",
@@ -5311,7 +5847,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001evx5aIAA",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.8
     },
     {
       "company_id": "378242",
@@ -5330,7 +5868,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4SZIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "483642",
@@ -5349,7 +5889,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002h0i8vQAA",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "144369",
@@ -5368,7 +5910,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001lgY6YAAU",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "816515",
@@ -5387,7 +5931,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p000022EYtaAAG",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 57.1
     },
     {
       "company_id": "33023",
@@ -5406,7 +5952,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DW4SbIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.4
     },
     {
       "company_id": "734521",
@@ -5425,7 +5973,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000LYFbdYAH",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "13989",
@@ -5444,7 +5994,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4SeIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 1.1
     },
     {
       "company_id": "467802",
@@ -5463,7 +6015,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DW4SfIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "812278",
@@ -5482,7 +6036,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000lLmD4YAK",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "554905",
@@ -5501,7 +6057,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001TsIedIAF",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "650536",
@@ -5520,7 +6078,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001TsIltIAF",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "733250",
@@ -5539,7 +6099,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000U1C7VYAV",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "680251",
@@ -5558,7 +6120,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uRvGlAAK",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "701292",
@@ -5577,7 +6141,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4SlIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "664096",
@@ -5596,7 +6162,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DW4SmIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 16.0
     },
     {
       "company_id": "672799",
@@ -5615,7 +6183,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00001zzDSCQA2",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 92.8
     },
     {
       "company_id": "557903",
@@ -5634,7 +6204,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000020LDINAA4",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "295294",
@@ -5653,7 +6225,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uSoWFAA0",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "12941",
@@ -5672,7 +6246,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4SoIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "712429",
@@ -5691,7 +6267,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000OLqk9YAD",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 9.8
     },
     {
       "company_id": "327132",
@@ -5710,7 +6288,9 @@
       "has_procurement": false,
       "sfdc_id": "001160000276ptzAAA",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "33986",
@@ -5729,7 +6309,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DXD6JIAX",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "22143",
@@ -5748,7 +6330,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4SpIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "189002",
@@ -5767,7 +6351,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000025JAqTAAW",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "588417",
@@ -5786,7 +6372,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001zwoT5AAI",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "400914",
@@ -5805,7 +6393,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000023XoIIAA0",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "17503",
@@ -5824,7 +6414,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4T3IAL",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "828336",
@@ -5843,7 +6435,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001L8zkpIAB",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "670668",
@@ -5862,7 +6456,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000022EZ85AAG",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "498842",
@@ -5881,7 +6477,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001lNPUzAAO",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "615898",
@@ -5900,7 +6498,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000022GMTCAA4",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "664201",
@@ -5919,7 +6519,9 @@
       "has_procurement": true,
       "sfdc_id": "001160000276kVxAAI",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 68.7
     },
     {
       "company_id": "809201",
@@ -5938,7 +6540,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000hSd5hYAC",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "13982",
@@ -5957,7 +6561,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4OkIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "730920",
@@ -5976,7 +6582,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001uSjyvAAC",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "585613",
@@ -5995,7 +6603,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DW4SyIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "600910",
@@ -6014,7 +6624,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000020tateAAA",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 72.3
     },
     {
       "company_id": "488495",
@@ -6033,7 +6645,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L000028F0KvQAK",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "649935",
@@ -6052,7 +6666,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL000002uhlyYAA",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 11.0
     },
     {
       "company_id": "6864",
@@ -6071,7 +6687,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001DW4T1IAL",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 9.5
     },
     {
       "company_id": "38477",
@@ -6090,7 +6708,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001xGH4yAAG",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "655643",
@@ -6109,7 +6729,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p000021zRSBAA2",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "475168",
@@ -6128,7 +6750,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001TsJj3IAF",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "454705",
@@ -6147,7 +6771,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L00002dPqOxQAK",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "449344",
@@ -6166,7 +6792,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L00001zzDYPQA2",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 99.9
     },
     {
       "company_id": "665425",
@@ -6185,7 +6813,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000022EYjsAAG",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "655382",
@@ -6204,7 +6834,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001tWETgAAO",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 99.2
     },
     {
       "company_id": "734327",
@@ -6223,7 +6855,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000Pl0XeYAJ",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "200503",
@@ -6242,7 +6876,9 @@
       "has_procurement": true,
       "sfdc_id": "00116000026WjjWAAS",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "742939",
@@ -6261,7 +6897,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000V2gNuYAJ",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 9.1
     },
     {
       "company_id": "22218",
@@ -6280,7 +6918,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4TAIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "828357",
@@ -6299,7 +6939,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000tTNWIYA4",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "664054",
@@ -6318,7 +6960,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000HI21dYAD",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "653842",
@@ -6337,7 +6981,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001uSk8RAAS",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "731457",
@@ -6356,7 +7002,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uSczfAAC",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "476679",
@@ -6375,7 +7023,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001TsJNiIAN",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "182872",
@@ -6394,7 +7044,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001zsxbOAAQ",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "530493",
@@ -6413,7 +7065,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001nd9sQAAQ",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "610504",
@@ -6432,7 +7086,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p0000220MfNAAU",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 15.6
     },
     {
       "company_id": "665232",
@@ -6451,7 +7107,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001TsJVrIAN",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 95.1
     },
     {
       "company_id": "669090",
@@ -6470,7 +7128,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001TsIX2IAN",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "315007",
@@ -6489,7 +7149,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uTSvRAAW",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "614448",
@@ -6508,7 +7170,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p000022Gz8DAAS",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "665336",
@@ -6527,7 +7191,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001uSU5jAAG",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 92.4
     },
     {
       "company_id": "665261",
@@ -6546,7 +7212,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L000029kBirQAE",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "664648",
@@ -6565,7 +7233,9 @@
       "has_procurement": true,
       "sfdc_id": "001G000001TtTOOIA3",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "632203",
@@ -6584,7 +7254,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL000003KcH9YAK",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 86.3
     },
     {
       "company_id": "537092",
@@ -6603,7 +7275,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p00001lORHxAAO",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "579932",
@@ -6622,7 +7296,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001uSI8QAAW",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": null
     },
     {
       "company_id": "468041",
@@ -6641,7 +7317,9 @@
       "has_procurement": false,
       "sfdc_id": "0011600001ygzykAAA",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "704636",
@@ -6660,7 +7338,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001mKVtUAAW",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 84.0
     },
     {
       "company_id": "767361",
@@ -6679,7 +7359,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000baxM1YAI",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "664381",
@@ -6698,7 +7380,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001uSkCOAA0",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 99.0
     },
     {
       "company_id": "808064",
@@ -6717,7 +7401,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000jkf6KYAQ",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "670675",
@@ -6736,7 +7422,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p000022HSNzAAO",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 83.7
     },
     {
       "company_id": "770796",
@@ -6755,7 +7443,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000fpcExYAI",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "635167",
@@ -6774,7 +7464,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL0000077mLdYAI",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "475084",
@@ -6793,7 +7485,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4TWIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "740646",
@@ -6812,7 +7506,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000YHEixYAH",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "740734",
@@ -6831,7 +7527,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L00002KVe1mQAD",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "740696",
@@ -6850,7 +7548,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000YHLNpYAP",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "6554",
@@ -6869,7 +7569,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4QOIA1",
       "in_christine_sheet": true,
-      "potential_tier": "Flagship"
+      "potential_tier": "Flagship",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "755509",
@@ -6888,7 +7590,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L000029ajdrQAA",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": "534902",
@@ -6907,7 +7611,9 @@
       "has_procurement": false,
       "sfdc_id": "001160000279CXUAA2",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": "474847",
@@ -6926,7 +7632,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00002h0CH9QAM",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 1.1
     },
     {
       "company_id": "650815",
@@ -6945,7 +7653,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p0000220Lp4AAE",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "735220",
@@ -6964,7 +7674,9 @@
       "has_procurement": true,
       "sfdc_id": "0011L000028TcCRQA0",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.4
     },
     {
       "company_id": "651344",
@@ -6983,7 +7695,9 @@
       "has_procurement": false,
       "sfdc_id": "0014p0000220KQkAAM",
       "in_christine_sheet": false,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "713840",
@@ -7002,7 +7716,9 @@
       "has_procurement": true,
       "sfdc_id": "00116000022ofJ2AAI",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "At Risk",
+      "buy_digital_pct": 51.0
     },
     {
       "company_id": "400013",
@@ -7021,7 +7737,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000021BDnbAAG",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "670701",
@@ -7040,7 +7758,9 @@
       "has_procurement": true,
       "sfdc_id": "0011600001uSkF3AAK",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 99.5
     },
     {
       "company_id": "640762",
@@ -7059,7 +7779,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p00001ycDwZAAU",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": 97.4
     },
     {
       "company_id": "642311",
@@ -7078,7 +7800,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000AsdReYAJ",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "726631",
@@ -7097,7 +7821,9 @@
       "has_procurement": true,
       "sfdc_id": "00116000021BPGhAAO",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "664820",
@@ -7116,7 +7842,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000k6ul2YAA",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 100.0
     },
     {
       "company_id": "743648",
@@ -7135,7 +7863,9 @@
       "has_procurement": true,
       "sfdc_id": "0014p0000220KDPAA2",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 15.5
     },
     {
       "company_id": "533116",
@@ -7154,7 +7884,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001DW4ThIAL",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "77787",
@@ -7173,7 +7905,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001JbAIjIAN",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Purchasing",
+      "buy_digital_pct": 0.0
     },
     {
       "company_id": "831651",
@@ -7192,7 +7926,9 @@
       "has_procurement": false,
       "sfdc_id": "001G000001f8NvuIAE",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": "831754",
@@ -7211,7 +7947,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000sK4BfYAK",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7230,7 +7968,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL000007leUPYAY",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7249,7 +7989,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000QFjUHYA1",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7268,7 +8010,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000iNZjkYAG",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7287,7 +8031,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL0000085zKsYAI",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7306,26 +8052,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000021CRCIAA4",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
-    },
-    {
-      "company_id": null,
-      "company_name": "Komet Sales LLC",
-      "business_type": "Wholesaler",
-      "product_tier": "Unknown",
-      "sell_channel": "no_fees_data",
-      "komet_status": "Production - Live",
-      "industry": "Other",
-      "gmv_reference": null,
-      "gmv_source": "Sin dato",
-      "gmv_is_floor": false,
-      "buy_gmv_estimated": null,
-      "digital_pct": null,
-      "has_eshop": false,
-      "has_procurement": false,
-      "sfdc_id": "001VL00000M3MH5YAN",
-      "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7344,7 +8073,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000DMetlYAD",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7363,7 +8094,9 @@
       "has_procurement": true,
       "sfdc_id": "001VL00000sy1IKYAY",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7382,7 +8115,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000orzIIYAY",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7401,7 +8136,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000w4tCdYAI",
       "in_christine_sheet": true,
-      "potential_tier": "Growth Engine"
+      "potential_tier": "Growth Engine",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7420,7 +8157,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000q00y9YAA",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7439,7 +8178,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000nXxzaYAC",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7458,7 +8199,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000Mxkv0YAB",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7477,7 +8220,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000gRjVVYA0",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7496,7 +8241,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000rc05JYAQ",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7515,7 +8262,9 @@
       "has_procurement": false,
       "sfdc_id": "0011L00001zz7XSQAY",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7534,7 +8283,9 @@
       "has_procurement": false,
       "sfdc_id": "00116000026XtsiAAC",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7553,7 +8304,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000nK235YAC",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7572,7 +8325,9 @@
       "has_procurement": false,
       "sfdc_id": "001VL00000rajOHYAY",
       "in_christine_sheet": true,
-      "potential_tier": "Activate"
+      "potential_tier": "Activate",
+      "engagement_status": "Onboarding",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7591,7 +8346,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7610,7 +8367,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7629,7 +8388,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7648,7 +8409,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7667,7 +8430,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7686,7 +8451,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7705,7 +8472,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7724,7 +8493,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7743,7 +8514,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7762,7 +8535,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7781,7 +8556,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7800,7 +8577,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7819,7 +8598,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7838,7 +8619,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7857,7 +8640,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7876,7 +8661,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7895,7 +8682,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7914,7 +8703,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7933,7 +8724,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7952,7 +8745,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7971,7 +8766,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -7990,7 +8787,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -8009,7 +8808,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -8028,7 +8829,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -8047,7 +8850,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -8066,7 +8871,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -8085,7 +8892,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -8104,7 +8913,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -8123,7 +8934,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -8142,7 +8955,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -8161,7 +8976,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Seed"
+      "potential_tier": "Seed",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -8180,7 +8997,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     },
     {
       "company_id": null,
@@ -8199,7 +9018,9 @@
       "has_procurement": false,
       "sfdc_id": "",
       "in_christine_sheet": true,
-      "potential_tier": "Unmeasured"
+      "potential_tier": "Unmeasured",
+      "engagement_status": "Dormant",
+      "buy_digital_pct": null
     }
   ]
 }

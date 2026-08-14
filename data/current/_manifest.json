@@ -14,6 +14,22 @@
     "fees_ytd": {
       "rows": 362,
       "companies": 227
+    },
+    "anticipation": {
+      "rows": 1470,
+      "companies": 294
+    },
+    "catalog": {
+      "rows": 337
+    },
+    "vendors": {
+      "rows": 524
+    },
+    "buyers": {
+      "rows": 397
+    },
+    "inventory": {
+      "rows": 436
     }
   }
 }
