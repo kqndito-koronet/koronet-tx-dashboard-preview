@@ -2,7 +2,7 @@
   "_meta": {
     "generated_at": "2026-08-13",
     "source": "Christine GMV sheet (1xUIR_mpuMOrwDLz8IWCzJAlg_cf6WSBf-1cSrOPf_pM) + account_universe_v1 + sell_domain_v2 + fees_domain_v2",
-    "total_accounts": 428,
+    "total_accounts": 430,
     "excluded_dead": 357,
     "excluded_test": 11,
     "excluded_training_ids": 12,
@@ -720,7 +720,7 @@
       "buy_digital_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -1030,7 +1030,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -1062,7 +1062,7 @@
       "kp_active_buyer_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -2738,7 +2738,7 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -3264,7 +3264,7 @@
       "kp_active_buyer_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -3677,7 +3677,7 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -4069,7 +4069,7 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -5285,7 +5285,7 @@
       "buy_digital_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -5317,7 +5317,7 @@
       "kp_active_buyer_pct": 1.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -5914,7 +5914,7 @@
       "kp_active_buyer_pct": 0.6667,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -6580,7 +6580,7 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -6634,10 +6634,10 @@
       "buy_digital_pct": 100.0,
       "priority_level": "IMPL",
       "impl_stage_display": "Recently live (2026)",
-      "pmt_lead": null,
+      "pmt_lead": "Milena Mezamell",
       "pmt_status": null,
       "pmt_health": null,
-      "has_active_pmt": false
+      "has_active_pmt": true
     },
     {
       "company_id": "641341",
@@ -7246,7 +7246,7 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -8810,7 +8810,7 @@
       "impl_stage_display": "Pre-live",
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": null,
+      "pmt_lead": "IMPL",
       "pmt_health": null
     },
     {
@@ -9507,7 +9507,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": 0.0,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -10419,7 +10419,7 @@
       "kp_total_orders": 0,
       "kp_active_buyer_pct": 1.0,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -10901,7 +10901,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -10927,7 +10927,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -11109,7 +11109,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -11135,7 +11135,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -11161,7 +11161,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -11187,7 +11187,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -11213,7 +11213,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -11239,7 +11239,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -11265,7 +11265,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -11291,7 +11291,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -11317,7 +11317,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -11343,7 +11343,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -11369,7 +11369,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -11395,7 +11395,7 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_status": "Pre-live",
       "pmt_lead": null,
       "pmt_health": null
@@ -12257,6 +12257,52 @@
       "pmt_lead": null,
       "pmt_status": null,
       "pmt_health": null
+    },
+    {
+      "company_id": "825239",
+      "company_name": "Pampa Products LLC",
+      "business_type": "Importer",
+      "product_tier": "Core+",
+      "sell_channel": "no_fees_data",
+      "komet_status": "Production - Live",
+      "industry": "Floral - Importer",
+      "gmv_reference": 43017,
+      "gmv_source": "Piso de red",
+      "gmv_is_floor": true,
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "impl_stage_display": "Recently live (2026)",
+      "has_active_pmt": true,
+      "pmt_lead": "Milena Mezamell",
+      "pmt_status": "Go-Live and Growth",
+      "pmt_health": "On Track",
+      "priority_level": "ECOSYSTEM",
+      "buy_gmv_estimated": 19358,
+      "digital_pct": null,
+      "in_christine_sheet": true
+    },
+    {
+      "company_id": "822905",
+      "company_name": "GQ FLOWERS",
+      "business_type": "Grower",
+      "product_tier": "eSuite",
+      "sell_channel": "no_fees_data",
+      "komet_status": "Production - Live",
+      "industry": "Floral - Grower",
+      "gmv_reference": 26975.5,
+      "gmv_source": "Piso de red",
+      "gmv_is_floor": true,
+      "potential_tier": "Seed",
+      "engagement_status": "Purchasing",
+      "impl_stage_display": "Recently live (2026)",
+      "has_active_pmt": true,
+      "pmt_lead": "Fernando Yepez",
+      "pmt_status": "Go-Live and Growth",
+      "pmt_health": "Completed",
+      "priority_level": "ECOSYSTEM",
+      "buy_gmv_estimated": 12139,
+      "digital_pct": 100.0,
+      "in_christine_sheet": true
     }
   ]
 }
