@@ -458,6 +458,41 @@
   .definitions-panel h2 { font-size: var(--font-section); font-weight: 700; color: var(--text-secondary); margin-bottom: 8px; }
   .definitions-panel p { font-size: var(--font-body); color: var(--text-muted); }
 
+  /* Procurement computed view */
+  .procurement-quadrant-table { width: 100%; border-collapse: collapse; font-size: var(--font-body); margin-bottom: 16px; }
+  .procurement-quadrant-table th { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); padding: 7px 10px; text-align: left; background: #f8fafc; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border-light); }
+  .procurement-quadrant-table td { padding: 7px 10px; border-bottom: 1px solid var(--border-light); border-right: 1px solid var(--border-light); color: var(--text-primary); vertical-align: top; font-size: var(--font-body); }
+  .procurement-quadrant-table tr:last-child td { border-bottom: none; }
+  .procurement-quadrant-table .q-header-A { color: var(--green); font-weight: 700; }
+  .procurement-quadrant-table .q-header-B { color: var(--amber); font-weight: 700; }
+  .procurement-quadrant-table .q-header-C { color: var(--red); font-weight: 700; }
+  .procurement-quadrant-table .q-header-D { color: var(--blue); font-weight: 700; }
+  .procurement-quadrant-table .q-header-E { color: var(--amber); font-weight: 700; }
+  .procurement-quadrant-table .q-header-F { color: var(--text-muted); font-weight: 700; }
+  .pq-name { font-weight: 500; display: block; }
+  .pq-meta { font-size: 9px; color: var(--text-muted); }
+
+  /* Matrix visualization */
+  .matrix-table { border-collapse: collapse; font-size: 10px; margin-bottom: 12px; }
+  .matrix-table th { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: var(--text-muted); padding: 5px 8px; text-align: center; background: #f8fafc; border: 1px solid var(--border); }
+  .matrix-table th:first-child { text-align: left; min-width: 120px; }
+  .matrix-table td { padding: 5px 8px; border: 1px solid var(--border-light); text-align: center; font-weight: 600; color: var(--text-primary); }
+  .matrix-table td:first-child { text-align: left; font-weight: 600; color: var(--text-secondary); background: #f8fafc; }
+  .matrix-cell-0 { color: var(--text-muted); }
+  .matrix-cell-high { background: var(--blue-bg); color: var(--blue); }
+  .matrix-cell-med { background: var(--green-bg); color: var(--green); }
+
+  /* Forward inventory bar */
+  .fi-bar-wrap { margin-top: 8px; }
+  .fi-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .fi-bar-label { font-size: 10px; font-weight: 600; color: var(--text-secondary); width: 60px; flex-shrink: 0; }
+  .fi-bar-track { flex: 1; height: 14px; background: var(--border-light); border-radius: 3px; overflow: hidden; max-width: 300px; }
+  .fi-bar-fill { height: 100%; background: var(--blue); border-radius: 3px; }
+  .fi-bar-val { font-size: 10px; color: var(--text-secondary); white-space: nowrap; }
+
+  /* Info callout (muted) */
+  .callout.info-muted { border-left-color: var(--border); background: #f8fafc; color: var(--text-muted); font-style: italic; }
+
   /* Load more */
   .load-more-wrap { text-align: center; padding: 12px; }
   .load-more-btn { font-size: var(--font-body); font-weight: 600; color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: var(--radius-sm); padding: 6px 20px; cursor: pointer; }
@@ -648,30 +683,10 @@
 
   <!-- Tab: Procurement Behavior -->
   <div class="tab-panel" id="panel-procurement">
-    <div class="section-label">Procurement accounts &middot; 2x2 by purchasing frequency vs catalog depth</div>
-    <div class="quadrant-container">
-      <div class="quadrant quadrant-A">
-        <div class="quadrant-label q-label-A"><span class="q-badge q-badge-A">A</span> Strong</div>
-        <div class="quadrant-desc">High frequency &middot; Deep catalog &middot; Full platform users</div>
-        <div style="font-size:10px;color:var(--text-muted);font-style:italic;">Placeholder &mdash; will populate from data</div>
-      </div>
-      <div class="quadrant quadrant-B">
-        <div class="quadrant-label q-label-B"><span class="q-badge q-badge-B">B</span> Frequent, Low Ticket</div>
-        <div class="quadrant-desc">Buys often but doesn't list &mdash; procurement tool only</div>
-        <div style="font-size:10px;color:var(--text-muted);font-style:italic;">Placeholder &mdash; will populate from data</div>
-      </div>
-      <div class="quadrant quadrant-C">
-        <div class="quadrant-label q-label-C"><span class="q-badge q-badge-C">C</span> High Ticket, Infrequent</div>
-        <div class="quadrant-desc">Listed catalog but barely buying &mdash; activation risk</div>
-        <div style="font-size:10px;color:var(--text-muted);font-style:italic;">Placeholder &mdash; will populate from data</div>
-      </div>
-      <div class="quadrant quadrant-D">
-        <div class="quadrant-label q-label-D"><span class="q-badge q-badge-D">D</span> Occasional</div>
-        <div class="quadrant-desc">Low engagement on both dimensions &mdash; churn or new</div>
-        <div style="font-size:10px;color:var(--text-muted);font-style:italic;">Placeholder &mdash; will populate from data</div>
-      </div>
+    <div class="section-label" id="procurement-section-label">Procurement Behavior &middot; loading&hellip;</div>
+    <div id="procurement-content">
+      <div class="loading-overlay"><div class="loading-spinner"></div><div class="loading-text">Computing quadrants&hellip;</div></div>
     </div>
-    <div class="note-strip">Placeholder visualization. X-axis = SKU catalog depth. Y-axis = procurement frequency. Quadrant assignment will be live, not static.</div>
   </div>
 
   <!-- Tab: Definitions -->
@@ -705,7 +720,7 @@
 
       <h3 style="margin:24px 0 12px;color:var(--blue);">Procurement Archetypes (from UX Research Hub)</h3>
       <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px;">Based on 221 KP accounts. Behavioral classification from purchase patterns.</p>
-      <table class="ev-table" style="font-size:12px;margin-bottom:16px;">
+      <table class="ev-table" style="font-size:12px;margin-bottom:8px;">
         <thead><tr><th>Code</th><th>Name</th><th>n</th><th>Behavioral Signal</th></tr></thead>
         <tbody>
           <tr><td><strong>B1</strong></td><td>Enterprise &middot; top-volume</td><td>3</td><td>National multi-branch, near-daily, median 34 buyers</td></tr>
@@ -715,6 +730,9 @@
           <tr><td>&mdash;</td><td>Never purchased</td><td>86</td><td>Active contract, 0 POs</td></tr>
         </tbody>
       </table>
+      <div style="margin-bottom:16px;padding:8px 12px;background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:var(--radius-sm);font-size:11px;color:#92400e;text-align:left;">
+        <strong>Mapping gap:</strong> Archetypes (B1&ndash;B4) from UX Research Hub apply to 221 KP accounts. Mapping to this dashboard&rsquo;s 428-account universe is pending. Until the KP account crosswalk is available, archetype labels are <em>not shown</em> per-account in this dashboard &mdash; displaying them without the crosswalk would be fabricated data.
+      </div>
 
       <h3 style="margin:24px 0 12px;color:var(--blue);">Engagement Status</h3>
       <table class="ev-table" style="font-size:12px;margin-bottom:16px;">
@@ -1166,6 +1184,35 @@ function renderCards(companyId, ev) {
   '</div>';
 }
 
+/* ===================================================================
+   ITEM 6: SELL CUBE K2K/API CHANNEL HELPERS
+   Reads from potential.fees_by_channel when available.
+   =================================================================== */
+
+/**
+ * Build a compact channel breakdown string from fees_by_channel.
+ * Returns HTML string or '' if no data.
+ */
+function buildChannelBreakdownHtml(feesByChannel) {
+  if (!feesByChannel) return '';
+  var parts = [];
+  if (feesByChannel.ecom != null && feesByChannel.ecom > 0) {
+    parts.push('<span style="color:var(--blue);font-weight:600;">eCom ' + fmt$(feesByChannel.ecom, true) + '</span>');
+  }
+  if (feesByChannel.k2k != null && feesByChannel.k2k > 0) {
+    parts.push('<span style="color:var(--purple);font-weight:600;">K2K ' + fmt$(feesByChannel.k2k, true) + '</span>');
+  }
+  if (feesByChannel.api != null) {
+    if (feesByChannel.api === 0) {
+      parts.push('<span style="color:var(--amber);font-weight:600;">API &#9888; $0</span>');
+    } else {
+      parts.push('<span style="color:var(--green);font-weight:600;">API ' + fmt$(feesByChannel.api, true) + '</span>');
+    }
+  }
+  if (!parts.length) return '';
+  return '<div class="metric-line" style="margin-top:3px;font-size:10px;color:var(--text-muted);">Fees: ' + parts.join(' &middot; ') + '</div>';
+}
+
 /* --- CARD 1: POTENTIAL --- */
 function renderPotentialCard(ev) {
   var p = ev.potential;
@@ -1249,11 +1296,41 @@ function renderPotentialCard(ev) {
 
   var title = 'POTENTIAL \u2014 ' + (sellOffline ? fmt$(sellOffline, true) + ' offline at $0 fees. ' : '') + (sellPenTautological ? 'Koronet = primary channel' : (sellPen ? fmtPct(sellPen) + ' sell captured' : '')) + (sellOnline ? ', ' + fmtPct(sellOnline) + ' online' : '') + '.';
 
+  // Item 2: Benchmark context for online %
+  var benchmarks = ev.benchmarks;
+  var sellOnlineBenchmarkHtml = '';
+  var buyOnlineBenchmarkHtml = '';
+  if (benchmarks && benchmarks.per_metric) {
+    var bSellOnline = benchmarks.per_metric['sell_online_pct'] || benchmarks.per_metric['online_pct'] || null;
+    if (bSellOnline) {
+      var segMed = bSellOnline.seg_median != null ? bSellOnline.seg_median : bSellOnline.median;
+      var netMed = bSellOnline.median;
+      if (segMed != null) {
+        var vsSegCls = (sellOnline != null && sellOnline >= segMed) ? 'good' : 'warn';
+        sellOnlineBenchmarkHtml = '<span class="ev-state ' + vsSegCls + '">Seg median: ' + fmtPct(segMed, 0) + (netMed != null ? ' &middot; Net: ' + fmtPct(netMed, 0) : '') + '</span>';
+      } else if (netMed != null) {
+        var vsNetCls = (sellOnline != null && sellOnline >= netMed) ? 'good' : 'warn';
+        sellOnlineBenchmarkHtml = '<span class="ev-state ' + vsNetCls + '">Net median: ' + fmtPct(netMed, 0) + '</span>';
+      }
+    }
+    var bBuyOnline = benchmarks.per_metric['buy_online_pct'] || null;
+    if (bBuyOnline) {
+      var bSegMed = bBuyOnline.seg_median != null ? bBuyOnline.seg_median : bBuyOnline.median;
+      if (bSegMed != null) {
+        var vsBuyCls = (buyOnline != null && buyOnline >= bSegMed) ? 'good' : 'warn';
+        buyOnlineBenchmarkHtml = '<span class="ev-state ' + vsBuyCls + '">Seg median: ' + fmtPct(bSegMed, 0) + '</span>';
+      }
+    }
+  }
+
+  // Item 6: fees by channel HTML
+  var feesChannelInlineHtml = buildChannelBreakdownHtml(feesByChannel);
+
   var body = '<div class="content-gap-sm"></div>' +
     '<div class="table-wrap"><table class="ev-table"><thead><tr><th style="width:80px"></th><th>Estimated Total</th><th>Koronet</th><th>Penetration</th><th>Online %</th></tr></thead><tbody>' +
-    '<tr><td class="row-label">SELL</td><td><span class="highlight">' + fmt$(estSell, true) + '</span><span class="ev-state ' + estSellEvClass + '">' + estSellEvLabel + '</span></td><td><span class="highlight">' + fmt$(kSell, true) + '</span><span class="ev-state observed">Observed \u2014 Snowflake</span></td><td>' + (sellPenTautological ? '<span style="color:var(--text-muted);font-style:italic">~100%</span><span class="ev-state gap">Tautological</span>' : '<span>' + fmtPct(sellPen) + '</span><span class="ev-state model">Model</span>') + '</td><td><span class="' + (sellOnline != null && sellOnline >= 30 ? 'online' : 'online-low') + '">' + fmtPct(sellOnline) + '</span><span class="ev-state observed">Observed</span></td></tr>' +
-    '<tr><td class="row-label">BUY</td><td><span class="highlight">' + fmt$(estBuy, true) + '</span><span class="ev-state proxy">Proxy \u2014 sell x ratio</span></td><td><span class="highlight">' + fmt$(kBuy, true) + '</span><span class="ev-state observed">Observed \u2014 Snowflake</span></td><td>' + ((p.buy_penetration && p.buy_penetration.ev === 'tautological') ? '<span style="color:var(--text-muted);font-style:italic">~100%</span><span class="ev-state gap">Tautological</span>' : '<span>' + fmtPct(buyPen) + '</span><span class="ev-state model">Model</span>') + '</td><td><span class="' + (buyOnline != null && buyOnline >= 30 ? 'online' : 'online-low') + '">' + fmtPct(buyOnline) + '</span><span class="ev-state observed">Observed</span></td></tr>' +
-    '<tr><td class="row-label">FEES</td><td>&mdash;</td><td><span class="highlight">' + fmt$(feesYtd, true) + '</span>' + (feesYoy != null ? '<span class="metric-delta">&#9650;+' + fmtPct(feesYoy, 0) + '</span>' : '') + '<span class="ev-state observed">Observed \u2014 YTD 2026</span></td><td><span>' + (takeRate != null ? fmtPct(takeRate, 2) + ' rate' : '&mdash;') + '</span></td><td>&mdash;</td></tr>' +
+    '<tr><td class="row-label">SELL</td><td><span class="highlight">' + fmt$(estSell, true) + '</span><span class="ev-state ' + estSellEvClass + '">' + estSellEvLabel + '</span></td><td><span class="highlight">' + fmt$(kSell, true) + '</span><span class="ev-state observed">Observed \u2014 Snowflake</span></td><td>' + (sellPenTautological ? '<span style="color:var(--text-muted);font-style:italic">~100%</span><span class="ev-state gap">Tautological</span>' : '<span>' + fmtPct(sellPen) + '</span><span class="ev-state model">Model</span>') + '</td><td><span class="' + (sellOnline != null && sellOnline >= 30 ? 'online' : 'online-low') + '">' + fmtPct(sellOnline) + '</span><span class="ev-state observed">Observed</span>' + sellOnlineBenchmarkHtml + '</td></tr>' +
+    '<tr><td class="row-label">BUY</td><td><span class="highlight">' + fmt$(estBuy, true) + '</span><span class="ev-state proxy">Proxy \u2014 sell x ratio</span></td><td><span class="highlight">' + fmt$(kBuy, true) + '</span><span class="ev-state observed">Observed \u2014 Snowflake</span></td><td>' + ((p.buy_penetration && p.buy_penetration.ev === 'tautological') ? '<span style="color:var(--text-muted);font-style:italic">~100%</span><span class="ev-state gap">Tautological</span>' : '<span>' + fmtPct(buyPen) + '</span><span class="ev-state model">Model</span>') + '</td><td><span class="' + (buyOnline != null && buyOnline >= 30 ? 'online' : 'online-low') + '">' + fmtPct(buyOnline) + '</span><span class="ev-state observed">Observed</span>' + buyOnlineBenchmarkHtml + '</td></tr>' +
+    '<tr><td class="row-label">FEES</td><td>&mdash;</td><td><span class="highlight">' + fmt$(feesYtd, true) + '</span>' + (feesYoy != null ? '<span class="metric-delta">&#9650;+' + fmtPct(feesYoy, 0) + '</span>' : '') + '<span class="ev-state observed">Observed \u2014 YTD 2026</span>' + feesChannelInlineHtml + '</td><td><span>' + (takeRate != null ? fmtPct(takeRate, 2) + ' rate' : '&mdash;') + '</span></td><td>&mdash;</td></tr>' +
     '</tbody></table></div>' +
     gmvChallengeHtml +
     feesChannelHtml +
@@ -1384,9 +1461,15 @@ function renderOpportunitiesCard(ev) {
   }
   var bottleneckOpp = opps.length > 0 ? _firstBlocker() : null;
 
+  // Item 4: H-D1 hypothesis context callout
+  var hd1CalloutHtml = opps.length > 0
+    ? '<div class="callout info-muted" style="margin-top:10px;font-size:10px;"><strong>Context:</strong> The leading hypothesis (H-D1, unconfirmed) is that pricing \u2014 not configuration \u2014 drives offline buying. Config opps above are secondary to this structural factor.</div>'
+    : '';
+
   var body = '<div class="content-gap-sm"></div>' +
     '<div class="stake-banner"><div><div class="stake-banner-value">' + fmt$(atStake, true) + '</div><div class="stake-banner-label">' + (atStakeSource2 === 'sfdc' ? 'SFDC open opportunities' : 'Scenario &middot; 12-month window') + '</div></div><div class="stake-banner-right"><div class="stake-banner-count">' + opps.length + ' intervention' + (opps.length !== 1 ? 's' : '') + '</div><div class="stake-banner-sub">' + opps.map(function(o){ return o.type; }).join(' &rarr; ') + '</div></div></div>' +
     oppsHtml +
+    hd1CalloutHtml +
     (bottleneckOpp ? '<div class="action-block"><div class="action-item bottleneck"><div class="action-label">Bottleneck</div><div class="action-text">' + bottleneckOpp.type + ' \u2014 ' + escHtml(bottleneckOpp.desc) + '</div></div><div class="action-item next"><div class="action-label">Next Action</div><div class="action-text">Address first blocker \u2014 config before supply before demand.</div></div></div>' : '') +
     '<div class="handoff"><span class="handoff-arrow">&rarr;</span><span>Continue to <strong>BUY</strong></span></div>';
 
@@ -1406,7 +1489,21 @@ function renderBuyCard(ev) {
   if (kBuy != null) {
     var offlinePart = buyOfflineYtd != null ? ' \u2014 ' + fmt$(buyOfflineYtd, true) + ' offline at $0 fees' : '';
     var onlinePart = buyOnlinePct != null ? ' ' + fmtPct(buyOnlinePct, 0) + ' purchased online.' : '';
-    buyCallout = '<strong>SO WHAT:</strong> ' + fmt$(kBuy, true) + ' total Koronet procurement' + offlinePart + '.' + onlinePart;
+
+    // Item 2: benchmark context for buy online %
+    var buyBenchCtx = '';
+    var evBenchmarks = ev.benchmarks;
+    if (evBenchmarks && evBenchmarks.per_metric) {
+      var bBuyOnlineCard = evBenchmarks.per_metric['buy_online_pct'] || null;
+      if (bBuyOnlineCard) {
+        var bCardSegMed = bBuyOnlineCard.seg_median != null ? bBuyOnlineCard.seg_median : bBuyOnlineCard.median;
+        if (bCardSegMed != null) {
+          var above = buyOnlinePct != null && buyOnlinePct >= bCardSegMed;
+          buyBenchCtx = ' <span style="font-size:9px;color:' + (above ? 'var(--green)' : 'var(--amber)') + ';">(Seg median: ' + fmtPct(bCardSegMed, 0) + ')</span>';
+        }
+      }
+    }
+    buyCallout = '<strong>SO WHAT:</strong> ' + fmt$(kBuy, true) + ' total Koronet procurement' + offlinePart + '.' + onlinePart + buyBenchCtx;
   }
 
   var k2kHtml = '';
@@ -1533,8 +1630,44 @@ function renderListCard(ev) {
     }
   }
 
+  // Item 3: Forward inventory section
+  var forwardInvHtml = '';
+  if (list && list.forward_inventory && list.forward_inventory.value) {
+    var fi = list.forward_inventory.value;
+    var fiByBucket = fi.by_bucket || {};
+    var horizonOrder = ['1-7d', '8-14d', '15-30d', '31-90d'];
+    var horizonLabels = { '1-7d': '1\u20137d', '8-14d': '8\u201314d', '15-30d': '15\u201330d', '31-90d': '31\u201390d' };
+    // Find max total_value for bar scaling
+    var maxFiVal = 0;
+    horizonOrder.forEach(function(h) {
+      var b = fiByBucket[h];
+      if (b && b.total_value != null && b.total_value > maxFiVal) maxFiVal = b.total_value;
+    });
+    var fiRows = '';
+    var hasFiData = false;
+    horizonOrder.forEach(function(h) {
+      var b = fiByBucket[h];
+      if (!b) return;
+      hasFiData = true;
+      var fillPct = maxFiVal > 0 ? Math.max(4, Math.round((b.total_value / maxFiVal) * 100)) : 0;
+      var lines = b.prebook_lines != null ? b.prebook_lines : '\u2014';
+      var val = b.total_value != null ? fmt$(b.total_value, true) : '\u2014';
+      var vendors = b.distinct_vendors != null ? b.distinct_vendors + ' vendors' : '';
+      fiRows += '<div class="fi-bar-row">' +
+        '<div class="fi-bar-label">' + (horizonLabels[h] || h) + '</div>' +
+        '<div class="fi-bar-track"><div class="fi-bar-fill" style="width:' + fillPct + '%"></div></div>' +
+        '<div class="fi-bar-val"><strong>' + val + '</strong>' + (vendors ? ' &middot; ' + vendors : '') + ' &middot; ' + lines + ' lines</div>' +
+        '</div>';
+    });
+    if (hasFiData) {
+      forwardInvHtml = '<div class="content-gap"></div><div class="section-label">FORWARD INVENTORY (Prebook Depth)</div>' +
+        '<div class="fi-bar-wrap">' + fiRows + '</div>' +
+        '<div class="note-strip">Prebook orders by delivery horizon. Value = total $ committed. Lines = prebook line items.</div>';
+    }
+  }
+
   var listCalloutText = !list ? 'No list domain data available.' : '<strong>SO WHAT:</strong> LIST \u2014 Catalog configuration & published supply.';
-  var body = '<div class="content-gap-sm"></div><div class="callout">' + listCalloutText + '</div>' + comparisonHtml + varietyHtml + configHtml + (!list ? '<div class="data-gap-row">List domain data not found for this account.</div>' : '') + '<div class="handoff"><span class="handoff-arrow">&rarr;</span><span>Continue to <strong>SELL</strong></span></div>';
+  var body = '<div class="content-gap-sm"></div><div class="callout">' + listCalloutText + '</div>' + comparisonHtml + varietyHtml + configHtml + forwardInvHtml + (!list ? '<div class="data-gap-row">List domain data not found for this account.</div>' : '') + '<div class="handoff"><span class="handoff-arrow">&rarr;</span><span>Continue to <strong>SELL</strong></span></div>';
 
   return cardShell('Card 4 &middot; LIST', 'LIST \u2014 Catalog configuration &amp; published supply', body, true, 'card-list-' + id);
 }
@@ -1682,6 +1815,231 @@ function detectOpportunityFlags(ev) {
   return { hasBuy: hasBuy, hasList: hasList, hasSell: hasSell, hasConfig: hasConfig, isDecl: isDecl };
 }
 
+/* ===================================================================
+   ITEM 1: PROCUREMENT BEHAVIOR TAB — COMPUTED QUADRANT VIEW
+   Computes AOV + order frequency from sell/buy cubes, splits at median.
+   =================================================================== */
+
+/**
+ * Compute median of an array of numbers.
+ */
+function _median(arr) {
+  if (!arr || !arr.length) return null;
+  var sorted = arr.slice().sort(function(a, b) { return a - b; });
+  var mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid];
+}
+
+/**
+ * Render the Procurement Behavior tab content.
+ * Computes quadrants from _allEvidence after data is loaded.
+ */
+function renderProcurementTab() {
+  var container = document.getElementById('procurement-content');
+  var sectionLabel = document.getElementById('procurement-section-label');
+  if (!container) return;
+
+  // Gather accounts with sell data
+  var candidates = [];
+  _allEvidence.forEach(function(ev) {
+    if (!ev || !ev.potential) return;
+    var p = ev.potential;
+    var kSell = p.koronet_sell_ytd ? p.koronet_sell_ytd.value : null;
+    if (kSell == null || kSell <= 0) return; // skip no-sell accounts
+
+    var engagement = ev.identity ? ev.identity.engagement_status : null;
+    var engLower = (engagement || '').toLowerCase();
+
+    // Compute AOV from buyers cube (sell domain)
+    var bt = ev.sell && ev.sell.buyers_table ? ev.sell.buyers_table.value : null;
+    var aovOnline = bt ? bt.aov_online : null;
+    var aovOffline = bt ? bt.aov_offline : null;
+    var totalBuyers = bt ? bt.total_buyers : null;
+    // Use online AOV if available, else offline AOV, else estimate from kSell/buyers
+    var aov = null;
+    if (aovOnline != null && aovOnline > 0) aov = aovOnline;
+    else if (aovOffline != null && aovOffline > 0) aov = aovOffline;
+    else if (totalBuyers != null && totalBuyers > 0 && kSell > 0) aov = kSell / totalBuyers;
+
+    // Compute order frequency: proxy = sell_total / AOV (rough orders count per period)
+    // Better: use buyers count as proxy for frequency signal when no order count available
+    // We use total_buyers as the frequency proxy (more buyers = more frequent overall engagement)
+    var freqProxy = null;
+    if (totalBuyers != null && totalBuyers > 0) freqProxy = totalBuyers;
+    else if (aov != null && aov > 0 && kSell > 0) freqProxy = kSell / aov;
+
+    // Bin E (At Risk/Lapsed) and F (Dormant/Onboarding) separately
+    var isAtRisk = engLower === 'at risk' || engLower === 'lapsed';
+    var isDormant = engLower === 'dormant' || engLower === 'onboarding' || engLower === 'never purchased';
+
+    // Only put into A-D if we have enough signal
+    if ((aov == null || freqProxy == null) && !isAtRisk && !isDormant) return;
+
+    candidates.push({
+      ev: ev,
+      id: ev._company_id,
+      name: ev._company_name || ('Acct ' + ev._company_id),
+      kSell: kSell,
+      aov: aov,
+      freqProxy: freqProxy,
+      digitalPct: p.sell_online_pct ? p.sell_online_pct.value : null,
+      isAtRisk: isAtRisk,
+      isDormant: isDormant,
+      tier: ev.identity ? ev.identity.potential_tier : null,
+    });
+  });
+
+  // Separate bins E and F
+  var binE = candidates.filter(function(c) { return c.isAtRisk; });
+  var binF = candidates.filter(function(c) { return c.isDormant; });
+  var active = candidates.filter(function(c) { return !c.isAtRisk && !c.isDormant && c.aov != null && c.freqProxy != null; });
+
+  // Compute medians on active population
+  var aovs = active.map(function(c) { return c.aov; }).filter(function(v) { return v != null; });
+  var freqs = active.map(function(c) { return c.freqProxy; }).filter(function(v) { return v != null; });
+  var medAov = _median(aovs);
+  var medFreq = _median(freqs);
+
+  // Assign quadrants
+  var qA = [], qB = [], qC = [], qD = [];
+  if (medAov != null && medFreq != null) {
+    active.forEach(function(c) {
+      var highAov = c.aov >= medAov;
+      var highFreq = c.freqProxy >= medFreq;
+      if (highAov && highFreq) qA.push(c);
+      else if (!highAov && highFreq) qB.push(c);
+      else if (highAov && !highFreq) qC.push(c);
+      else qD.push(c);
+    });
+  }
+
+  // Sort each quadrant by kSell desc
+  function sortQ(arr) {
+    return arr.slice().sort(function(a, b) { return (b.kSell || 0) - (a.kSell || 0); });
+  }
+  qA = sortQ(qA); qB = sortQ(qB); qC = sortQ(qC); qD = sortQ(qD);
+  binE = sortQ(binE); binF = sortQ(binF);
+
+  // Render quadrant table rows (top 10 each to keep it manageable)
+  function renderQRows(arr, max) {
+    if (!arr.length) return '<tr><td colspan="4" style="color:var(--text-muted);font-style:italic;font-size:10px;">No accounts in this quadrant</td></tr>';
+    var rows = arr.slice(0, max || 10).map(function(c) {
+      var dPct = c.digitalPct != null ? fmtPct(c.digitalPct, 0) : '\u2014';
+      var aovStr = c.aov != null ? fmt$(c.aov, true) : '\u2014';
+      return '<tr>' +
+        '<td><span class="pq-name">' + escHtml(c.name) + '</span>' +
+        (c.tier ? '<span class="pq-meta">' + escHtml(c.tier) + '</span>' : '') + '</td>' +
+        '<td>' + fmt$(c.kSell, true) + '</td>' +
+        '<td>' + aovStr + '</td>' +
+        '<td>' + dPct + '</td>' +
+        '</tr>';
+    });
+    if (arr.length > (max || 10)) {
+      rows.push('<tr><td colspan="4" style="color:var(--text-muted);font-size:10px;font-style:italic;">+' + (arr.length - (max || 10)) + ' more</td></tr>');
+    }
+    return rows.join('');
+  }
+
+  function renderQSection(letter, label, desc, arr, colorClass) {
+    return '<div style="margin-bottom:16px;">' +
+      '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">' +
+        '<span class="q-badge q-badge-' + letter + '">' + letter + '</span>' +
+        '<span class="' + colorClass + '" style="font-size:12px;font-weight:700;">' + label + '</span>' +
+        '<span style="font-size:10px;color:var(--text-muted);">' + escHtml(desc) + '</span>' +
+        '<span style="margin-left:auto;font-size:10px;font-weight:600;color:var(--text-secondary);">' + arr.length + ' accounts</span>' +
+      '</div>' +
+      '<div class="table-wrap"><table class="procurement-quadrant-table"><thead><tr>' +
+        '<th>Account</th><th>Koronet Sell</th><th>AOV</th><th>Digital %</th>' +
+        '</tr></thead><tbody>' + renderQRows(arr, 8) + '</tbody></table></div>' +
+    '</div>';
+  }
+
+  var totalActive = qA.length + qB.length + qC.length + qD.length;
+  var noteStr = medAov != null ? 'Split at median AOV: ' + fmt$(medAov, true) + ' \u00b7 median frequency proxy: ' + Math.round(medFreq) + ' buyers' : 'Insufficient data for median split.';
+
+  var html = '<div class="callout" style="margin-bottom:16px;"><strong>2x2 quadrant:</strong> X-axis = AOV (order value proxy), Y-axis = buyer frequency (total buyer count). ' + noteStr + ' &middot; ' + totalActive + ' accounts with sell data.</div>';
+
+  // A-D quadrants
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">';
+  html += '<div>' + renderQSection('A', 'Strong', 'High AOV, high freq \u00b7 Full platform users', qA, 'q-header-A') + '</div>';
+  html += '<div>' + renderQSection('B', 'Frequent, Low Ticket', 'Low AOV, high freq \u00b7 Procurement tool only', qB, 'q-header-B') + '</div>';
+  html += '<div>' + renderQSection('C', 'High Ticket, Infrequent', 'High AOV, low freq \u00b7 Activation risk', qC, 'q-header-C') + '</div>';
+  html += '<div>' + renderQSection('D', 'Occasional', 'Low AOV, low freq \u00b7 Churn or new', qD, 'q-header-D') + '</div>';
+  html += '</div>';
+
+  // E and F bins
+  if (binE.length > 0 || binF.length > 0) {
+    html += '<div class="section-header">At Risk &amp; Dormant Accounts</div>';
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">';
+    if (binE.length > 0) html += '<div>' + renderQSection('E', 'At Risk / Lapsed', 'Had activity, now silent', binE, 'q-header-E') + '</div>';
+    if (binF.length > 0) html += '<div>' + renderQSection('F', 'Dormant / Onboarding', 'Never purchased or just onboarded', binF, 'q-header-F') + '</div>';
+    html += '</div>';
+  }
+
+  // Item 5: Matrix visualization (tier × digital %)
+  html += renderTierDigitalMatrix();
+
+  container.innerHTML = html;
+  if (sectionLabel) {
+    sectionLabel.textContent = 'Procurement Behavior \u00b7 ' + candidates.length + ' accounts with sell data \u00b7 ' + totalActive + ' in A\u2013D quadrants';
+  }
+}
+
+/* ===================================================================
+   ITEM 5: MATRIX VISUALIZATION — POTENTIAL TIER × DIGITAL % BUCKETS
+   Computed from _allEvidence after load.
+   =================================================================== */
+function renderTierDigitalMatrix() {
+  var TIERS = ['Flagship', 'Growth Engine', 'Activate', 'Seed', 'Unmeasured'];
+  var BUCKETS = ['0%', '1\u201310%', '10\u201330%', '30\u201350%', '50%+', '100%'];
+
+  // Count matrix
+  var matrix = {};
+  var tierTotals = {};
+  TIERS.forEach(function(t) { matrix[t] = {}; tierTotals[t] = 0; BUCKETS.forEach(function(b) { matrix[t][b] = 0; }); });
+
+  _allEvidence.forEach(function(ev) {
+    if (!ev || !ev.identity) return;
+    var tier = ev.identity.potential_tier || 'Unmeasured';
+    if (TIERS.indexOf(tier) < 0) tier = 'Unmeasured';
+    var dPct = ev.potential && ev.potential.sell_online_pct ? ev.potential.sell_online_pct.value : null;
+
+    var bucket;
+    if (dPct == null) bucket = '0%'; // treat no data as 0%
+    else if (dPct === 0) bucket = '0%';
+    else if (dPct < 10) bucket = '1\u201310%';
+    else if (dPct < 30) bucket = '10\u201330%';
+    else if (dPct < 50) bucket = '30\u201350%';
+    else if (dPct < 100) bucket = '50%+';
+    else bucket = '100%';
+
+    matrix[tier][bucket] = (matrix[tier][bucket] || 0) + 1;
+    tierTotals[tier] = (tierTotals[tier] || 0) + 1;
+  });
+
+  // Max count for coloring
+  var allCounts = [];
+  TIERS.forEach(function(t) { BUCKETS.forEach(function(b) { allCounts.push(matrix[t][b]); }); });
+  var maxCount = Math.max.apply(null, allCounts) || 1;
+
+  // Header row
+  var headerCells = BUCKETS.map(function(b) { return '<th>' + b + '</th>'; }).join('');
+  var rows = TIERS.map(function(t) {
+    var cells = BUCKETS.map(function(b) {
+      var count = matrix[t][b];
+      var colorClass = count === 0 ? ' class="matrix-cell-0"' : count >= maxCount * 0.6 ? ' class="matrix-cell-high"' : count >= maxCount * 0.3 ? ' class="matrix-cell-med"' : '';
+      return '<td' + colorClass + '>' + (count === 0 ? '\u2014' : count) + '</td>';
+    }).join('');
+    return '<tr><td>' + escHtml(t) + ' <span style="font-size:9px;color:var(--text-muted);">(' + tierTotals[t] + ')</span></td>' + cells + '</tr>';
+  }).join('');
+
+  return '<div class="section-header">Tier &times; Digital % Matrix</div>' +
+    '<div style="overflow-x:auto;margin-bottom:16px;">' +
+    '<table class="matrix-table"><thead><tr><th>Potential Tier</th>' + headerCells + '</tr></thead><tbody>' + rows + '</tbody></table>' +
+    '</div>' +
+    '<div class="note-strip">Rows = Potential Tier. Columns = % Digital (sell online / sell total). Cells = account count. Blue = highest concentration. 0% bucket includes accounts with no sell data (digital % = gap).</div>';
+}
+
 /* --- KPI AGGREGATOR --- */
 function computeKPIs(evidenceList) {
   var totalSell = 0, totalFees = 0, totalOnlinePct = 0, totalTakeRate = 0;
@@ -1689,6 +2047,9 @@ function computeKPIs(evidenceList) {
   var onlineCount = 0, trCount = 0;
   var accountsWithData = 0;
   var hasSell2025 = false;
+  // Item 6: aggregate fees by channel across portfolio
+  var totalFeesEcom = 0, totalFeesK2k = 0, totalFeesApi = 0;
+  var hasChannelData = false;
 
   evidenceList.forEach(function(ev) {
     if (!ev || !ev.potential) return;
@@ -1703,6 +2064,14 @@ function computeKPIs(evidenceList) {
     if (op != null) { totalOnlinePct += op; onlineCount++; }
     var tr = p.take_rate ? p.take_rate.value : null;
     if (tr != null && tr > 0) { totalTakeRate += tr; trCount++; }
+    // Channel fees aggregation
+    var fbc = p.fees_by_channel ? p.fees_by_channel.value : null;
+    if (fbc) {
+      hasChannelData = true;
+      if (fbc.ecom != null) totalFeesEcom += fbc.ecom;
+      if (fbc.k2k != null) totalFeesK2k += fbc.k2k;
+      if (fbc.api != null) totalFeesApi += fbc.api;
+    }
   });
 
   var sellYoyPct = (hasSell2025 && totalSell2025 > 0) ? ((totalSell - totalSell2025) / totalSell2025) * 100 : null;
@@ -1715,16 +2084,26 @@ function computeKPIs(evidenceList) {
     avgTakeRate: trCount > 0 ? totalTakeRate / trCount : null,
     accountsWithData: accountsWithData,
     total: evidenceList.length,
+    // Item 6 channel data
+    totalFeesEcom: hasChannelData ? totalFeesEcom : null,
+    totalFeesK2k: hasChannelData ? totalFeesK2k : null,
+    totalFeesApi: hasChannelData ? totalFeesApi : null,
   };
 }
 
 /* --- TAB SWITCHING --- */
+var _procurementRendered = false;
 function showTab(name) {
   document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
   document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
   document.getElementById('panel-' + name).classList.add('active');
   var tabMap = { 'portfolio': 'tab-portfolio', 'procurement': 'tab-procurement-btn', 'definitions': 'tab-definitions-btn' };
   if (tabMap[name]) document.getElementById(tabMap[name]).classList.add('active');
+  // Lazy-render procurement tab on first open (needs _allEvidence to be populated)
+  if (name === 'procurement' && !_procurementRendered && _allEvidence.length > 0) {
+    _procurementRendered = true;
+    renderProcurementTab();
+  }
 }
 
 /* --- FILTER CHIPS --- */
@@ -1840,6 +2219,26 @@ function renderTable() {
   document.getElementById('kpi-accounts').textContent = kpis.accountsWithData + ' of ' + kpis.total;
   document.getElementById('kpi-online').textContent = fmtPct(kpis.avgOnlinePct, 1);
   document.getElementById('kpi-takerate').textContent = fmtPct(kpis.avgTakeRate, 2);
+  // Item 6: show channel breakdown under Fees KPI
+  var feesKpiLabel = document.querySelector('#kpi-fees ~ .kpi-label') || document.querySelectorAll('.kpi-label')[1];
+  var feesChannelEl = document.getElementById('kpi-fees-channel');
+  if (!feesChannelEl) {
+    // Create it once
+    var feesParent = document.getElementById('kpi-fees').parentElement;
+    if (feesParent) {
+      feesChannelEl = document.createElement('div');
+      feesChannelEl.id = 'kpi-fees-channel';
+      feesChannelEl.style.cssText = 'font-size:9px;color:var(--text-muted);margin-top:1px;';
+      feesParent.appendChild(feesChannelEl);
+    }
+  }
+  if (feesChannelEl && kpis.totalFeesEcom != null) {
+    var channelParts = [];
+    if (kpis.totalFeesEcom > 0) channelParts.push('eCom ' + fmt$(kpis.totalFeesEcom, true));
+    if (kpis.totalFeesK2k > 0) channelParts.push('K2K ' + fmt$(kpis.totalFeesK2k, true));
+    if (kpis.totalFeesApi > 0) channelParts.push('API ' + fmt$(kpis.totalFeesApi, true));
+    feesChannelEl.textContent = channelParts.length ? channelParts.join(' \u00b7 ') : '';
+  }
 
   // YoY delta
   var sellDeltaEl = document.getElementById('kpi-sell-delta');
@@ -1977,6 +2376,11 @@ function sortEvidence(key) {
 
 /* --- TIMEFRAME CHANGE --- */
 function onTimeframeChange() {
+  // Reset procurement tab so it re-renders with new timeframe
+  _procurementRendered = false;
+  var procContent = document.getElementById('procurement-content');
+  if (procContent) procContent.innerHTML = '<div class="loading-overlay"><div class="loading-spinner"></div><div class="loading-text">Recomputing quadrants\u2026</div></div>';
+
   document.querySelectorAll('[id^="cards-"]').forEach(function(el) {
     el.dataset.loaded = '';
     el.innerHTML = '<div style="font-size:12px;color:var(--text-muted);font-style:italic;">&#8627; Re-expand to load with new timeframe.</div>';
