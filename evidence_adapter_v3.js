@@ -664,14 +664,14 @@
     // Will be null unless we load it from V2 fees_domain
     var feesYtd2025 = null;
 
-    // ── Online % — capped at 100 (online is a subset of total)
+    // ── Online % (online is a subset of total — should never exceed 100%)
     var sellOnlinePct = null;
     if (sellAgg && sellAgg.total > 0) {
-      sellOnlinePct = Math.min((sellAgg.online / sellAgg.total) * 100, 100);
+      sellOnlinePct = (sellAgg.online / sellAgg.total) * 100;
     }
     var buyOnlinePct = null;
     if (buyAgg && buyAgg.total > 0) {
-      buyOnlinePct = Math.min((buyAgg.online / buyAgg.total) * 100, 100);
+      buyOnlinePct = (buyAgg.online / buyAgg.total) * 100;
     }
 
     // Offline amounts
@@ -693,22 +693,35 @@
     var koronetBuyYtd  = buyAggYtd  ? buyAggYtd.total  : null;
 
     if (gmvRef && gmvRef > 0 && gmvSource !== 'not in Christine cascade' && gmvSource !== 'Sin dato') {
-      // Annualize the YTD value
+      // Tautological check: if gmv_reference IS Koronet data (Medido, Piso),
+      // penetration = Koronet / Koronet → meaningless. Mark as tautological.
+      var isTautological = /^(Medido|Piso)/.test(gmvSource || '');
+
       var ytdMonths = sellAggYtd ? sellAggYtd.months.length : 0;
       if (koronetSellYtd && koronetSellYtd > 0 && ytdMonths > 0) {
-        var annualized = koronetSellYtd * (12 / ytdMonths);
-        sellPenetration = Math.min((annualized / gmvRef) * 100, 100);
-        sellPenEv = gmvConfidence === 'Alta' ? 'model' : 'proxy';
+        if (isTautological) {
+          sellPenetration = 100;
+          sellPenEv = 'tautological';
+        } else {
+          var annualized = koronetSellYtd * (12 / ytdMonths);
+          sellPenetration = (annualized / gmvRef) * 100;
+          sellPenEv = gmvConfidence === 'Alta' ? 'model' : 'proxy';
+        }
         sellPenNote = gmvSource;
       }
 
-      // Buy penetration — use buy_gmv_estimated (45% ratio) as denominator
+      // Buy penetration
       if (buyGmvEst && buyGmvEst > 0 && koronetBuyYtd && koronetBuyYtd > 0) {
         var buyYtdMonths = buyAggYtd ? buyAggYtd.months.length : 0;
         if (buyYtdMonths > 0) {
-          var buyAnnualized = koronetBuyYtd * (12 / buyYtdMonths);
-          buyPenetration = Math.min((buyAnnualized / buyGmvEst) * 100, 100);
-          buyPenEv = gmvConfidence === 'Alta' ? 'model' : 'proxy';
+          if (isTautological) {
+            buyPenetration = 100;
+            buyPenEv = 'tautological';
+          } else {
+            var buyAnnualized = koronetBuyYtd * (12 / buyYtdMonths);
+            buyPenetration = (buyAnnualized / buyGmvEst) * 100;
+            buyPenEv = gmvConfidence === 'Alta' ? 'model' : 'proxy';
+          }
           buyPenNote = gmvSource;
         }
       }
