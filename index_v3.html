@@ -1319,10 +1319,17 @@
         </select>
         <select class="select-pill" id="product-tier-filter">
           <option value="">All Product Tiers</option>
+          <option value="Core+">Core+</option>
           <option value="eSuite">eSuite</option>
-          <option value="K2K">K2K</option>
           <option value="Procurement">Procurement</option>
-          <option value="Core">Core</option>
+          <option value="K2K">K2K</option>
+        </select>
+        <select class="select-pill" id="gmv-band-filter">
+          <option value="">All GMV Bands</option>
+          <option value=">=10M">&ge;$10M</option>
+          <option value="$2-10M">$2-10M</option>
+          <option value="$500K-2M">$500K-2M</option>
+          <option value="<$500K">&lt;$500K</option>
         </select>
         <select class="select-pill" id="sell-channel-filter">
           <option value="">All Sell Channels</option>
@@ -3647,6 +3654,7 @@ function computeKPIs(evidenceList) {
 function renderFilterChips() {
   var businessTypeFilter = document.getElementById('business-type-filter').value;
   var productTierFilter = document.getElementById('product-tier-filter').value;
+  var gmvBandFilter = document.getElementById('gmv-band-filter').value;
   var sellChannelFilter = document.getElementById('sell-channel-filter').value;
   var priorityFilter = document.getElementById('priority-filter').value;
   var potentialTierFilter = document.getElementById('potential-tier-filter').value;
@@ -3661,6 +3669,9 @@ function renderFilterChips() {
   }
   if (productTierFilter) {
     chips.push('<div class="chip" onclick="clearFilter(\'product-tier-filter\')">' + escHtml(productTierFilter) + ' <span class="chip-x">&times;</span></div>');
+  }
+  if (gmvBandFilter) {
+    chips.push('<div class="chip" onclick="clearFilter(\'gmv-band-filter\')">' + escHtml(gmvBandFilter) + ' <span class="chip-x">&times;</span></div>');
   }
   if (sellChannelFilter) {
     chips.push('<div class="chip" onclick="clearFilter(\'sell-channel-filter\')">' + escHtml(sellChannelFilter) + ' <span class="chip-x">&times;</span></div>');
@@ -3739,10 +3750,25 @@ function _adapterTf() {
   return tfMap[rawTf] || 'ytd';
 }
 
+// GMV band boundaries — same as matrix, defined once
+var GMV_BANDS = [
+  {label: '>=10M', fn: function(g){return g >= 10000000;}},
+  {label: '$2-10M', fn: function(g){return g >= 2000000 && g < 10000000;}},
+  {label: '$500K-2M', fn: function(g){return g >= 500000 && g < 2000000;}},
+  {label: '<$500K', fn: function(g){return g > 0 && g < 500000;}}
+];
+
+function _getGmvBand(ev) {
+  var gmv = ev && ev.potential && ev.potential.gmv_reference ? (ev.potential.gmv_reference.value || 0) : 0;
+  for (var i = 0; i < GMV_BANDS.length; i++) { if (GMV_BANDS[i].fn(gmv)) return GMV_BANDS[i].label; }
+  return null;
+}
+
 function applyFilters() {
   var tf = _adapterTf();
   var businessTypeFilter = document.getElementById('business-type-filter').value;
   var productTierFilter = document.getElementById('product-tier-filter').value;
+  var gmvBandFilter = document.getElementById('gmv-band-filter').value;
   var sellChannelFilter = document.getElementById('sell-channel-filter').value;
   var priorityFilter = document.getElementById('priority-filter').value;
   var potentialTierFilter = document.getElementById('potential-tier-filter').value;
@@ -3761,6 +3787,9 @@ function applyFilters() {
     if (productTierFilter) {
       var pt = identity.product_tier || '';
       if (pt !== productTierFilter) return false;
+    }
+    if (gmvBandFilter) {
+      if (_getGmvBand(ev) !== gmvBandFilter) return false;
     }
     if (sellChannelFilter) {
       var sc = identity.sell_channel || '';
@@ -4048,6 +4077,7 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
   document.getElementById('priority-filter').addEventListener('change', applyFilters);
   document.getElementById('potential-tier-filter').addEventListener('change', applyFilters);
   document.getElementById('impl-stage-filter').addEventListener('change', applyFilters);
+  document.getElementById('gmv-band-filter').addEventListener('change', applyFilters);
   document.getElementById('search-input').addEventListener('input', applyFilters);
   document.getElementById('load-more-btn').addEventListener('click', function() {
     const toShow = _filteredEvidence.slice(0, _displayedCount + PAGE_SIZE);
@@ -4088,6 +4118,23 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
     `<div class="loading-text" style="color:var(--red)">Error loading data: ${err.message || err}. Make sure evidence_adapter_v3.js and the data/ folder are available.</div>`;
   console.error('[TX Dashboard] init error:', err);
 });
+
+/* ─── MATRIX DRILL-DOWN ─── */
+function drillFromMatrix(tier, band) {
+  // Set filters to match the clicked cell
+  document.getElementById('business-type-filter').value = 'Wholesaler';
+  document.getElementById('product-tier-filter').value = tier;
+  document.getElementById('gmv-band-filter').value = band;
+  // Clear other filters
+  document.getElementById('sell-channel-filter').value = '';
+  document.getElementById('priority-filter').value = '';
+  document.getElementById('potential-tier-filter').value = '';
+  document.getElementById('impl-stage-filter').value = '';
+  document.getElementById('search-input').value = '';
+  // Close definitions, show portfolio
+  if (_defsVisible) toggleDefinitions();
+  applyFilters();
+}
 
 /* ─── DEFINITIONS TAB ─── */
 var _defsVisible = false;
@@ -4165,17 +4212,20 @@ function populateTierMatrix() {
   }
   function pctColor(p) { return p >= 30 ? '#16a34a' : p > 0 ? '#d97706' : '#94a3b8'; }
 
-  // Render cell with %S and %B
+  // Render cell with %S and %B — clickable to drill into portfolio
   // %S = online sell / Est GMV — Procurement shows "—" (can't sell)
   // %B = online buy / (Est GMV × 0.45)
-  function cellHtml(d, tier, bg) {
+  function cellHtml(d, tier, bg, band) {
     if (d.n === 0) return '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;color:#94a3b8">—</td>';
     var pctS = (tier === 'Procurement') ? null : (d.gmv > 0 ? Math.round(d.onlineSell / d.gmv * 100) : 0);
     var pctB = d.buyGmv > 0 ? Math.round(d.onlineBuy / d.buyGmv * 100) : 0;
     var sLabel = pctS === null ? '<span style="color:#94a3b8">—%S</span>' : '<span style="color:' + pctColor(pctS) + '">' + pctS + '%S</span>';
     var bLabel = '<span style="color:' + pctColor(pctB) + '">' + pctB + '%B</span>';
     var bgStyle = bg ? 'background:' + bg : (d.n >= 10 ? 'background:#dbeafe' : d.n >= 3 ? 'background:#eff6ff' : '');
-    return '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;' + bgStyle + '">'
+    // Clickable — drill into portfolio filtered by tier + band
+    var onclick = (tier && tier !== 'TOTAL' && band) ? ' onclick="drillFromMatrix(\'' + tier + '\',\'' + band + '\')" style="cursor:pointer;padding:6px 8px;border:1px solid #e2e8f0;text-align:center;' + bgStyle + '"'
+      : ' style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;' + bgStyle + '"';
+    return '<td' + onclick + '>'
       + '<strong>' + d.n + '</strong>'
       + '<div style="font-size:10px;color:#475569">' + fG(d.gmv) + '</div>'
       + '<div style="font-size:9px">' + sLabel + ' · ' + bLabel + '</div></td>';
@@ -4221,19 +4271,19 @@ function populateTierMatrix() {
       var d = cells[b.label][t];
       rt.n+=d.n; rt.gmv+=d.gmv; rt.onlineSell+=d.onlineSell; rt.onlineBuy+=d.onlineBuy; rt.buyGmv+=d.buyGmv;
       colT[t].n+=d.n; colT[t].gmv+=d.gmv; colT[t].onlineSell+=d.onlineSell; colT[t].onlineBuy+=d.onlineBuy; colT[t].buyGmv+=d.buyGmv;
-      html += cellHtml(d, t, '');
+      html += cellHtml(d, t, '', b.label);
     });
     gt.n+=rt.n; gt.gmv+=rt.gmv; gt.onlineSell+=rt.onlineSell; gt.onlineBuy+=rt.onlineBuy; gt.buyGmv+=rt.buyGmv;
-    html += cellHtml(rt, 'TOTAL', '#f8fafc');
+    html += cellHtml(rt, 'TOTAL', '#f8fafc', null);
     html += '</tr>';
   });
 
   // Total row
   html += '<tr style="background:#f1f5f9;font-weight:700;"><td style="padding:6px 8px;border:1px solid #e2e8f0;">TOTAL</td>';
   prodTiers.forEach(function(t) {
-    html += cellHtml(colT[t], t, '');
+    html += cellHtml(colT[t], t, '', null);
   });
-  html += cellHtml(gt, 'TOTAL', '#f8fafc');
+  html += cellHtml(gt, 'TOTAL', '#f8fafc', null);
   html += '</tr>';
 
   tbody.innerHTML = html;
