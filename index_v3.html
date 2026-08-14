@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TX Dashboard V3 — Koronet Revenue OS</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --border: #e2e8f0;
+    --border-light: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --text-caption: #64748b;
+
+    --green: #16a34a;
+    --green-bg: #f0fdf4;
+    --green-border: #bbf7d0;
+    --amber: #d97706;
+    --amber-bg: #fffbeb;
+    --amber-border: #fde68a;
+    --red: #dc2626;
+    --red-bg: #fef2f2;
+    --red-border: #fecaca;
+    --blue: #2563eb;
+    --blue-bg: #eff6ff;
+    --blue-border: #bfdbfe;
+    --blue-light: #3b82f6;
+    --teal: #0d9488;
+    --teal-bg: #f0fdfa;
+    --teal-border: #99f6e4;
+    --purple: #7c3aed;
+    --purple-bg: #f5f3ff;
+    --purple-border: #ddd6fe;
+
+    --font-body: 11px;
+    --font-emphasis: 12px;
+    --font-section: 14px;
+    --font-card: 16px;
+
+    --radius: 6px;
+    --radius-sm: 4px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    font-size: var(--font-body);
+    color: var(--text-primary);
+    background: var(--bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* --- TOP BAR --- */
+  .topbar { position: sticky; top: 0; z-index: 100; background: var(--surface); border-bottom: 1px solid var(--border); box-shadow: var(--shadow); }
+  .topbar-inner { max-width: 1440px; margin: 0 auto; padding: 0 24px; }
+  .topbar-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 0 8px; border-bottom: 1px solid var(--border-light); flex-wrap: wrap; gap: 8px; }
+  .brand { display: flex; align-items: center; gap: 8px; }
+  .brand-name { font-size: var(--font-card); font-weight: 700; color: var(--text-primary); letter-spacing: -0.3px; }
+  .brand-badge { font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--border-light); padding: 2px 6px; border-radius: 10px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .brand-v3 { font-size: 10px; font-weight: 700; color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-border); padding: 2px 6px; border-radius: 10px; letter-spacing: 0.3px; }
+  .topbar-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .period-label { font-size: var(--font-body); color: var(--text-secondary); font-weight: 500; }
+  .select-pill { font-size: var(--font-body); font-weight: 500; color: var(--text-primary); background: var(--border-light); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 8px center; padding-right: 24px; }
+  .search-input { font-size: var(--font-body); font-weight: 500; color: var(--text-primary); background: var(--border-light); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; width: 160px; }
+  .search-input::placeholder { color: var(--text-muted); }
+  .filter-divider { width: 1px; height: 18px; background: var(--border); margin: 0 2px; }
+  .filter-chips { display: flex; align-items: center; gap: 6px; margin-left: 8px; }
+  .chip { font-size: 10px; font-weight: 600; color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: 10px; padding: 2px 8px; display: flex; align-items: center; gap: 4px; cursor: pointer; }
+  .chip-x { color: var(--blue-light); font-weight: 700; font-size: 11px; }
+  .chip-clear { font-size: 10px; color: var(--text-muted); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+
+  /* --- KPI STRIP --- */
+  .kpi-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; padding: 8px 0 6px; border-bottom: 1px solid var(--border-light); }
+  .kpi-item { padding: 4px 16px 4px 0; border-right: 1px solid var(--border-light); }
+  .kpi-item:last-child { border-right: none; }
+  .kpi-item:first-child { padding-left: 0; }
+  .kpi-value { font-size: 18px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.5px; line-height: 1.2; }
+  .kpi-delta { font-size: 10px; font-weight: 600; margin-left: 4px; padding: 1px 5px; border-radius: 4px; }
+  .kpi-delta.up { color: var(--green); background: var(--green-bg); }
+  .kpi-delta.down { color: var(--red); background: var(--red-bg); }
+  .kpi-delta.neutral { color: var(--text-secondary); background: var(--border-light); }
+  .kpi-label { font-size: 10px; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 1px; }
+
+  /* --- COVERAGE WARNING --- */
+  .coverage-warn { display: flex; align-items: center; gap: 6px; padding: 5px 0; font-size: 10px; color: var(--amber); font-weight: 500; }
+  .warn-icon { font-size: 11px; }
+  .coverage-warn span.muted { color: var(--text-muted); font-weight: 400; }
+
+  /* --- LOADING --- */
+  .loading-overlay { display: flex; align-items: center; justify-content: center; padding: 60px 24px; flex-direction: column; gap: 12px; }
+  .loading-spinner { width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--blue); border-radius: 50%; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-text { font-size: var(--font-emphasis); color: var(--text-muted); }
+
+  /* --- MAIN LAYOUT --- */
+  .main { max-width: 1440px; margin: 0 auto; padding: 16px 24px 40px; }
+
+  /* --- TABS --- */
+  .tabs-nav { display: flex; gap: 2px; margin-bottom: 14px; border-bottom: 1px solid var(--border); padding-bottom: 0; }
+  .tab-btn { font-size: var(--font-body); font-weight: 600; color: var(--text-muted); padding: 7px 14px; border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.15s, border-color 0.15s; }
+  .tab-btn:hover { color: var(--text-secondary); }
+  .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
+  .tab-count { font-size: 9px; font-weight: 700; background: var(--border-light); border-radius: 8px; padding: 1px 5px; margin-left: 4px; color: var(--text-muted); }
+  .tab-btn.active .tab-count { background: var(--blue-bg); color: var(--blue); }
+
+  /* --- SECTION LABEL --- */
+  .section-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 8px; }
+
+  /* --- PORTFOLIO TABLE --- */
+  .portfolio-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); background: var(--surface); margin-bottom: 16px; }
+  .portfolio-table { width: 100%; border-collapse: collapse; font-size: var(--font-body); }
+  .portfolio-table thead { position: sticky; top: 0; z-index: 10; background: #f8fafc; }
+  .portfolio-table th { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; background: #f8fafc; }
+  .portfolio-table th[data-sort] { cursor: pointer; user-select: none; transition: color 0.15s; }
+  .portfolio-table th[data-sort]:hover { color: var(--blue); }
+  .portfolio-table th.sticky-col { position: sticky; background: #f8fafc; z-index: 11; }
+  .portfolio-table th.sticky-col-1 { left: 0; }
+  .portfolio-table th.sticky-col-2 { left: 32px; min-width: 240px; }
+  .portfolio-table td { padding: 0; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+  .portfolio-table td.sticky-col { position: sticky; background: var(--surface); z-index: 5; }
+  .portfolio-table td.sticky-col-1 { left: 0; width: 32px; }
+  .portfolio-table td.sticky-col-2 { left: 32px; min-width: 240px; }
+  .portfolio-table tr:last-child td { border-bottom: none; }
+  .portfolio-table tr:hover td { background: #fafbfd; }
+  .portfolio-table tr:hover td.sticky-col { background: #fafbfd; }
+  .row-expanded td { background: var(--blue-bg) !important; }
+  .row-expanded td.sticky-col { background: var(--blue-bg) !important; }
+
+  /* Toggle cell */
+  .toggle-cell { width: 32px; padding: 0 !important; text-align: center; }
+  .toggle-btn { width: 100%; height: 100%; min-height: 62px; background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 10px; display: flex; align-items: center; justify-content: center; padding: 0 8px; transition: color 0.15s; }
+  .toggle-btn:hover { color: var(--blue); }
+  .toggle-btn.open { color: var(--blue); }
+  .toggle-chevron { display: inline-block; transition: transform 0.2s ease; font-size: 9px; }
+  .toggle-btn.open .toggle-chevron { transform: rotate(90deg); }
+
+  /* Account name cell */
+  .account-cell { padding: 10px 10px !important; }
+  .account-name { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-primary); margin-bottom: 2px; }
+  .account-diagnosis { font-size: 10px; color: var(--text-secondary); line-height: 1.4; margin-bottom: 4px; }
+  .account-diagnosis strong { font-weight: 600; color: var(--text-primary); }
+
+  /* --- ACCOUNT META BADGES --- */
+  .account-meta-row { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 0; }
+  .meta-badge { font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap; }
+  .badge-wholesaler { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+  .badge-importer { background: var(--teal-bg); color: var(--teal); border: 1px solid var(--teal-border); }
+  .badge-grower { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .badge-retailer { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+  .badge-core-plus { background: var(--text-primary); color: white; border: 1px solid var(--text-primary); }
+  .badge-esuite { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
+  .badge-procurement { background: transparent; color: var(--amber); border: 1px dashed var(--amber-border); }
+  .badge-k2k { background: transparent; color: var(--blue); border: 1px dotted var(--blue-border); }
+  .badge-eshop { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+  .badge-k2k-ch { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+  .badge-api { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .badge-none { background: #f8fafc; color: var(--text-muted); border: 1px solid var(--border); }
+  .badge-p1 { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); font-weight: 800; }
+  .badge-impl { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+  .badge-ta { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+  .badge-watch { background: #f8fafc; color: var(--text-muted); border: 1px solid var(--border); }
+  .badge-ecosystem { background: var(--teal-bg); color: var(--teal); border: 1px solid var(--teal-border); }
+  .badge-cs-tracked { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .badge-purchasing { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .badge-onboarding { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+
+  /* Metric cells */
+  .metric-cell { padding: 10px 10px !important; white-space: nowrap; }
+  .metric-value { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-primary); }
+  .metric-delta { font-size: 10px; font-weight: 600; color: var(--green); margin-left: 3px; }
+  .metric-delta.neg { color: var(--red); }
+  .metric-qualifier { font-size: 10px; color: var(--text-muted); margin-top: 1px; font-weight: 400; }
+  .online-value { color: var(--blue); font-weight: 600; font-size: var(--font-emphasis); }
+  .online-low { color: var(--red); font-weight: 600; font-size: var(--font-emphasis); }
+  .online-full { color: var(--green); font-weight: 600; font-size: var(--font-emphasis); }
+  .online-zero { color: var(--text-muted); font-weight: 600; font-size: var(--font-emphasis); }
+  .fees-value { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-primary); }
+  .fees-zero { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-muted); }
+  .takerate { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-secondary); }
+  .takerate-good { font-size: var(--font-emphasis); font-weight: 600; color: var(--green); }
+  .takerate-bad { font-size: var(--font-emphasis); font-weight: 600; color: var(--red); }
+
+  /* GMV provenance */
+  .gmv-wrap { display: flex; flex-direction: column; gap: 2px; }
+  .gmv-value { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-primary); }
+  .provenance-tag { font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 3px; display: inline-block; letter-spacing: 0.3px; text-transform: uppercase; }
+  .prov-medido { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .prov-ora { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+  .prov-piso { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+  .prov-fcs { background: #f8fafc; color: var(--text-muted); border: 1px solid var(--border); }
+  .prov-estimado { background: transparent; color: var(--red); border: 1px solid var(--red-border); }
+
+  /* Sparkline */
+  .sparkline { display: flex; align-items: flex-end; gap: 2px; height: 20px; }
+  .spark-bar { width: 6px; border-radius: 2px 2px 0 0; background: var(--border); transition: width 0.3s ease; }
+  .spark-bar.up { background: var(--green); }
+  .spark-bar.down { background: var(--red); }
+  .spark-bar.flat { background: var(--text-muted); }
+
+  /* $ at stake */
+  .stake-value { font-size: var(--font-emphasis); font-weight: 700; color: var(--text-primary); }
+  .stake-value.sfdc { color: var(--blue); }
+  .stake-opps { font-size: 10px; color: var(--text-muted); margin-top: 1px; }
+
+  /* Tautological label */
+  .tautological-label { font-size: 9px; color: var(--amber); font-weight: 600; font-style: italic; }
+
+  /* --- EXPANDED ACCOUNT SECTION --- */
+  .expanded-row td { padding: 0 !important; }
+  .expanded-section { padding: 16px 20px 20px 36px; background: var(--blue-bg); border-top: 1px solid var(--blue-border); }
+  .cards-grid { display: flex; flex-direction: column; gap: 10px; }
+
+  /* --- CARDS --- */
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); position: relative; z-index: 1; }
+  .card-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 10px 14px; cursor: pointer; user-select: none; gap: 8px; }
+  .card-header:hover { background: #fafbfd; }
+  .card-header-left { flex: 1; min-width: 0; }
+  .card-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 2px; display: flex; align-items: center; gap: 6px; }
+  .card-label-badge { font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
+  .badge-open { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .card-title { font-size: var(--font-card); font-weight: 700; color: var(--text-primary); letter-spacing: -0.2px; line-height: 1.3; }
+  .card-subtitle { font-size: var(--font-body); color: var(--text-secondary); margin-top: 2px; }
+  .card-toggle { font-size: 12px; color: var(--text-muted); flex-shrink: 0; margin-top: 2px; transition: transform 0.2s ease; }
+  .card.open .card-toggle { transform: rotate(180deg); }
+  .card-body { display: none; padding: 0 14px 14px; border-top: 1px solid var(--border-light); }
+  .card.open .card-body { display: block; }
+
+  /* --- CONTENT BLOCKS --- */
+  .content-gap { height: 12px; }
+  .content-gap-sm { height: 6px; }
+  .callout { border-left: 3px solid var(--blue-border); background: var(--blue-bg); padding: 8px 10px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: var(--font-body); color: var(--text-primary); margin-bottom: 10px; }
+  .callout.amber { border-left-color: var(--amber); background: var(--amber-bg); color: #92400e; }
+  .callout.red { border-left-color: var(--red); background: var(--red-bg); color: #991b1b; }
+  .callout.green { border-left-color: var(--green); background: var(--green-bg); color: #166534; }
+  .callout strong { font-weight: 700; }
+
+  /* Evidence table */
+  .ev-table { width: 100%; border-collapse: collapse; font-size: var(--font-body); }
+  .ev-table th { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); padding: 6px 10px; text-align: left; background: #f8fafc; border-bottom: 1px solid var(--border); }
+  .ev-table td { padding: 7px 10px; border-bottom: 1px solid var(--border-light); color: var(--text-primary); vertical-align: top; }
+  .ev-table tr:last-child td { border-bottom: none; }
+  .ev-table .row-label { font-weight: 600; font-size: var(--font-body); white-space: nowrap; }
+  .ev-state { display: block; font-size: 9px; color: var(--text-muted); font-weight: 500; margin-top: 1px; letter-spacing: 0.3px; }
+  .ev-state.observed { color: var(--green); }
+  .ev-state.proxy { color: var(--amber); }
+  .ev-state.gap { color: var(--red); }
+  .ev-state.model { color: var(--blue); }
+  .ev-table .highlight { font-weight: 700; color: var(--text-primary); }
+  .ev-table .warn { font-weight: 600; color: var(--amber); }
+  .ev-table .danger { font-weight: 600; color: var(--red); }
+  .ev-table .online { font-weight: 600; color: var(--blue); }
+  .ev-table .good { font-weight: 600; color: var(--green); }
+  .table-wrap { border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+
+  /* GMV Challenge table */
+  .gmv-challenge-table { width: 100%; border-collapse: collapse; font-size: var(--font-body); }
+  .gmv-challenge-table th { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); padding: 7px 10px; text-align: right; background: #f8fafc; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  .gmv-challenge-table th:first-child { text-align: left; }
+  .gmv-challenge-table td { padding: 8px 10px; border-bottom: 1px solid var(--border-light); vertical-align: middle; text-align: right; font-size: var(--font-body); color: var(--text-primary); }
+  .gmv-challenge-table td:first-child { text-align: left; font-weight: 600; }
+  .gmv-challenge-table tr:last-child td { border-bottom: none; }
+  .discrepancy-cell { font-size: 10px; font-weight: 600; color: var(--amber); }
+  .discrepancy-cell.aligned { color: var(--green); }
+  .gmv-source-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+  .gmv-source-label { font-size: 9px; color: var(--text-muted); }
+  .gmv-source-count { font-size: 9px; color: var(--text-muted); font-style: italic; }
+
+  /* Metric line */
+  .metric-line { font-size: var(--font-body); color: var(--text-secondary); padding: 3px 0; }
+  .metric-line strong { font-weight: 600; color: var(--text-primary); }
+  .metric-line .blue { color: var(--blue); font-weight: 600; }
+  .metric-line .green { color: var(--green); font-weight: 600; }
+  .metric-line .amber { color: var(--amber); font-weight: 600; }
+  .metric-line .red { color: var(--red); font-weight: 600; }
+
+  /* Handoff */
+  .handoff { display: flex; align-items: center; gap: 6px; padding: 8px 10px; background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: var(--font-body); color: var(--text-secondary); margin-top: 10px; }
+  .handoff-arrow { color: var(--blue); font-weight: 700; }
+  .handoff a { color: var(--blue); font-weight: 600; text-decoration: none; }
+  .handoff a:hover { text-decoration: underline; }
+
+  /* Metrics row + pills */
+  .metrics-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .metric-pill { font-size: var(--font-body); padding: 4px 8px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: #f8fafc; color: var(--text-secondary); }
+  .metric-pill strong { font-weight: 700; color: var(--text-primary); }
+  .metric-pill.good-pill { border-color: var(--green-border); background: var(--green-bg); }
+  .metric-pill.warn-pill { border-color: var(--amber-border); background: var(--amber-bg); }
+  .metric-pill.blue-pill { border-color: var(--blue-border); background: var(--blue-bg); }
+  .metric-pill.red-pill { border-color: var(--red-border); background: var(--red-bg); }
+
+  /* Action block */
+  .action-block { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  .action-item { padding: 8px 10px; border-radius: var(--radius-sm); font-size: var(--font-body); }
+  .action-item.bottleneck { background: var(--amber-bg); border: 1px solid var(--amber-border); }
+  .action-item.next { background: var(--green-bg); border: 1px solid var(--green-border); }
+  .action-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+  .action-item.bottleneck .action-label { color: var(--amber); }
+  .action-item.next .action-label { color: var(--green); }
+  .action-text { color: var(--text-primary); font-weight: 500; }
+
+  /* Bar chart */
+  .bar-chart { border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; background: var(--surface); }
+  .bar-row { display: grid; grid-template-columns: 80px 1fr; align-items: center; padding: 0; border-bottom: 1px solid var(--border-light); }
+  .bar-row:last-of-type { border-bottom: none; }
+  .bar-label { font-size: 10px; font-weight: 700; color: var(--text-secondary); padding: 8px 10px; border-right: 1px solid var(--border-light); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+  .bar-row.best-row .bar-label { color: var(--green); }
+  .bar-track { padding: 6px 10px; display: flex; align-items: center; gap: 6px; }
+  .bar-segments { display: flex; height: 16px; border-radius: 3px; overflow: hidden; flex: 1; max-width: 400px; gap: 1px; }
+  .bar-seg { height: 100%; transition: width 0.3s ease; }
+  .bar-avg { font-size: 10px; font-weight: 700; color: var(--text-secondary); white-space: nowrap; }
+  .bar-row.best-row .bar-avg { color: var(--green); }
+  .bar-legend { display: flex; gap: 10px; padding: 6px 10px; background: #f8fafc; border-top: 1px solid var(--border-light); flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 3px; font-size: 9px; color: var(--text-muted); }
+  .legend-dot { width: 8px; height: 8px; border-radius: 2px; }
+  .seg-0-3 { background: #dc2626; }
+  .seg-4-7 { background: #f97316; }
+  .seg-8-14 { background: #eab308; }
+  .seg-15-30 { background: #22c55e; }
+  .seg-31-90 { background: #16a34a; }
+  .seg-90p { background: #15803d; }
+
+  .seg-online { background: var(--blue-bg); border-left: 2px solid var(--blue); }
+  .seg-offline { background: var(--red-bg); border-left: 2px solid var(--red); }
+  .seg-best { background: var(--green-bg); border-left: 2px solid var(--green); }
+
+  /* Config grid */
+  .config-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 8px; }
+  .config-item { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px; background: var(--surface); text-align: center; }
+  .config-item.config-bad { border-color: var(--red-border); background: var(--red-bg); }
+  .config-item.config-warn { border-color: var(--amber-border); background: var(--amber-bg); }
+  .config-item.config-ok { border-color: var(--green-border); background: var(--green-bg); }
+  .config-item-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); margin-bottom: 6px; }
+  .config-toggle-track { width: 36px; height: 18px; border-radius: 9px; display: inline-flex; align-items: center; padding: 2px; margin: 0 auto 4px; }
+  .config-toggle-track.off { background: #fca5a5; justify-content: flex-start; }
+  .config-toggle-track.on { background: #86efac; justify-content: flex-end; }
+  .config-toggle-dot { width: 14px; height: 14px; border-radius: 50%; background: white; box-shadow: 0 1px 2px rgba(0,0,0,0.15); }
+  .config-value { font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
+  .config-bad .config-value { color: var(--red); }
+  .config-warn .config-value { color: var(--amber); }
+  .config-ok .config-value { color: var(--green); }
+  .config-sub { font-size: 10px; color: var(--text-muted); line-height: 1.3; }
+  .config-impact { font-size: 10px; font-weight: 600; margin-top: 4px; padding: 2px 6px; border-radius: 3px; display: inline-block; }
+  .config-bad .config-impact { color: var(--red); background: rgba(220,38,38,0.1); }
+  .config-warn .config-impact { color: var(--amber); background: rgba(217,119,6,0.1); }
+
+  /* CVR gauge */
+  .cvr-gauge-section { margin-top: 10px; }
+  .gauge-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .gauge-label { font-size: 10px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; width: 100px; flex-shrink: 0; letter-spacing: 0.5px; }
+  .gauge-track { flex: 1; height: 20px; background: var(--border-light); border-radius: 4px; overflow: hidden; position: relative; max-width: 400px; }
+  .gauge-fill { height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+  .gauge-fill.fill-blue { background: var(--blue); }
+  .gauge-fill.fill-green { background: var(--green); }
+  .gauge-fill.fill-gray { background: var(--text-muted); }
+  .gauge-value { font-size: var(--font-emphasis); font-weight: 700; color: var(--text-primary); white-space: nowrap; width: 50px; flex-shrink: 0; }
+
+  /* Section header */
+  .section-header { font-size: var(--font-section); font-weight: 700; color: var(--text-primary); margin: 16px 0 8px; display: flex; align-items: center; gap: 8px; }
+  .section-header::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* Internal banner */
+  .internal-banner { display: inline-flex; align-items: center; gap: 4px; font-size: 9px; font-weight: 700; color: #991b1b; background: #fef2f2; border: 1px solid #fecaca; border-radius: 4px; padding: 2px 8px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+
+  /* Net indicator */
+  .net-indicator { display: inline-flex; align-items: center; gap: 6px; font-size: var(--font-emphasis); font-weight: 700; padding: 6px 12px; border-radius: var(--radius-sm); margin: 8px 0; }
+  .net-indicator.net-negative { background: var(--red-bg); border: 1px solid var(--red-border); color: var(--red); }
+  .net-indicator.net-positive { background: var(--green-bg); border: 1px solid var(--green-border); color: var(--green); }
+  .net-detail { font-size: 10px; font-weight: 500; color: var(--text-secondary); }
+
+  /* Stake banner */
+  .stake-banner { background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%); color: white; border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; }
+  .stake-banner-value { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+  .stake-banner-label { font-size: 10px; opacity: 0.8; font-weight: 500; margin-top: 1px; }
+  .stake-banner-right { text-align: right; }
+  .stake-banner-count { font-size: 13px; font-weight: 700; }
+  .stake-banner-sub { font-size: 9px; opacity: 0.7; }
+
+  /* Opp rows */
+  .opp-row { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 10px; margin-bottom: 6px; background: var(--surface); }
+  .opp-row:last-child { margin-bottom: 0; }
+  .opp-header { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+  .opp-stage { font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .stage-buy { background: #fff7ed; color: #ea580c; border: 1px solid #fed7aa; }
+  .stage-list { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+  .stage-sell { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .stage-config { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+  .opp-effort { font-size: 9px; font-weight: 600; padding: 1px 6px; border-radius: 4px; border: 1px solid var(--border); }
+  .badge-quick { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+  .badge-invest { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+  .badge-project { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+  .opp-rank { font-size: 9px; font-weight: 700; color: var(--text-muted); }
+  .opp-desc { font-size: var(--font-body); color: var(--text-secondary); }
+  .opp-link { font-size: 10px; color: var(--blue); text-decoration: none; cursor: pointer; display: inline-block; margin-top: 2px; }
+  .opp-link:hover { text-decoration: underline; }
+
+  /* Collapse row */
+  .collapse-row { display: flex; align-items: center; gap: 6px; padding: 6px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; font-size: var(--font-body); margin-bottom: 6px; background: #fafbfd; transition: background 0.15s; }
+  .collapse-row:hover { background: var(--border-light); }
+  .collapse-row span { color: var(--text-muted); font-size: 10px; }
+
+  /* Calculator box */
+  .calculator-box { border: 2px solid var(--blue-border); background: var(--blue-bg); border-radius: var(--radius); padding: 12px 14px; margin-top: 10px; }
+  .calc-header { font-size: var(--font-emphasis); font-weight: 700; color: var(--blue); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .calc-row { display: flex; align-items: center; gap: 8px; font-size: var(--font-body); color: var(--text-secondary); padding: 3px 0; }
+  .calc-label { flex: 1; }
+  .calc-value { font-weight: 700; color: var(--text-primary); text-align: right; min-width: 80px; }
+  .calc-result { border-top: 2px solid var(--blue-border); margin-top: 6px; padding-top: 6px; display: flex; align-items: center; justify-content: space-between; font-size: var(--font-section); font-weight: 700; color: var(--blue); }
+
+  /* Future data box */
+  .future-data-box { border: 1px dashed var(--border); border-radius: var(--radius-sm); padding: 8px 10px; background: #fafbfd; margin-top: 10px; }
+  .future-data-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 2px; }
+  .future-data-text { font-size: var(--font-body); color: var(--text-secondary); }
+
+  /* Gap alert */
+  .gap-alert { border: 1px solid var(--amber-border); border-radius: var(--radius-sm); background: var(--amber-bg); padding: 10px 12px; margin-bottom: 10px; }
+  .gap-alert-title { font-size: var(--font-emphasis); font-weight: 700; color: #92400e; margin-bottom: 6px; }
+
+  /* Data gap row */
+  .data-gap-row { font-size: 10px; color: var(--text-muted); font-style: italic; padding: 6px 10px; background: #f8fafc; border-radius: var(--radius-sm); margin-top: 4px; }
+
+  /* Tab panels */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Procurement quadrant */
+  .quadrant-container { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2px; height: 420px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--border); box-shadow: var(--shadow); margin-bottom: 16px; }
+  .quadrant { background: var(--surface); padding: 16px; position: relative; display: flex; flex-direction: column; }
+  .quadrant-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+  .quadrant-desc { font-size: 10px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4; }
+  .quadrant-A { border-bottom: 2px solid var(--border-light); }
+  .quadrant-B { border-bottom: 2px solid var(--border-light); border-left: 2px solid var(--border-light); }
+  .quadrant-D { border-left: 2px solid var(--border-light); }
+  .q-label-A { color: var(--green); }
+  .q-label-B { color: var(--amber); }
+  .q-label-C { color: var(--red); }
+  .q-label-D { color: var(--blue); }
+  .q-badge { font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 3px; }
+  .q-badge-A { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .q-badge-B { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+  .q-badge-C { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+  .q-badge-D { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+  .account-dot { display: flex; align-items: center; gap: 6px; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 10px; font-weight: 500; color: var(--text-secondary); margin-bottom: 4px; background: var(--bg); border: 1px solid var(--border-light); }
+  .dot-circle { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .dot-green { background: var(--green); }
+  .dot-amber { background: var(--amber); }
+  .dot-red { background: var(--red); }
+  .dot-blue { background: var(--blue); }
+
+  /* Definitions panel */
+  .definitions-panel { padding: 40px 24px; text-align: center; color: var(--text-muted); border: 1px dashed var(--border); border-radius: var(--radius); background: var(--surface); }
+  .definitions-panel h2 { font-size: var(--font-section); font-weight: 700; color: var(--text-secondary); margin-bottom: 8px; }
+  .definitions-panel p { font-size: var(--font-body); color: var(--text-muted); }
+
+  /* Load more */
+  .load-more-wrap { text-align: center; padding: 12px; }
+  .load-more-btn { font-size: var(--font-body); font-weight: 600; color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: var(--radius-sm); padding: 6px 20px; cursor: pointer; }
+  .load-more-btn:hover { background: #dbeafe; }
+
+  /* Note strip */
+  .note-strip { font-size: 10px; color: var(--text-muted); font-style: italic; padding: 4px 0 2px; }
+
+  @media (max-width: 900px) {
+    .kpi-strip { grid-template-columns: repeat(3, 1fr); }
+    .action-block { grid-template-columns: 1fr; }
+    .config-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR (sticky) -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-header">
+      <div class="brand">
+        <span class="brand-name">TX Dashboard</span>
+        <span class="brand-badge">Revenue OS</span>
+        <span class="brand-v3">V3</span>
+      </div>
+      <div class="topbar-controls">
+        <!-- [1] Business Type filter -->
+        <select class="select-pill" id="business-type-filter">
+          <option value="">All Types</option>
+          <option value="Wholesaler">Wholesaler</option>
+          <option value="Importer">Importer</option>
+          <option value="Grower">Grower</option>
+          <option value="Retailer">Retailer</option>
+        </select>
+        <!-- [2] Product Tier filter -->
+        <select class="select-pill" id="product-tier-filter">
+          <option value="">All Tiers</option>
+          <option value="Core+">Core+</option>
+          <option value="Procurement">Procurement</option>
+          <option value="K2K">K2K</option>
+          <option value="eSuite">eSuite</option>
+        </select>
+        <!-- [3] Sell Channel filter -->
+        <select class="select-pill" id="sell-channel-filter">
+          <option value="">All Channels</option>
+          <option value="eShop">eShop</option>
+          <option value="K2K">K2K</option>
+          <option value="API">API</option>
+          <option value="None">No digital</option>
+        </select>
+        <!-- [4] Priority filter -->
+        <select class="select-pill" id="priority-filter">
+          <option value="">All Priorities</option>
+          <option value="P1">P1</option>
+          <option value="IMPL">IMPL</option>
+          <option value="TA">TA</option>
+          <option value="WATCH">WATCH</option>
+          <option value="ECOSYSTEM">ECOSYSTEM</option>
+          <option value="CS_TRACKED">CS_TRACKED</option>
+          <option value="CS_P2">CS_P2</option>
+          <option value="NEEDS_REVIEW">NEEDS_REVIEW</option>
+        </select>
+        <!-- [5] Potential Tier filter -->
+        <select class="select-pill" id="potential-tier-filter">
+          <option value="">All Potential</option>
+          <option value="Flagship">Flagship</option>
+          <option value="Growth Engine">Growth Engine</option>
+          <option value="Activate">Activate</option>
+          <option value="Seed">Seed</option>
+          <option value="Unmeasured">Unmeasured</option>
+        </select>
+
+        <div class="filter-divider"></div>
+
+        <!-- [5] Period selector -->
+        <span class="period-label">Period</span>
+        <select class="select-pill" id="timeframe-select">
+          <option value="ytd_2026" selected>YTD 2026</option>
+          <option value="jul_2026">Jul 2026</option>
+          <option value="jun_2026">Jun 2026</option>
+          <option value="q2_2026">Q2 2026</option>
+          <option value="h1_2026">H1 2026</option>
+        </select>
+
+        <div class="filter-divider"></div>
+
+        <!-- [6] Search input -->
+        <input class="search-input" id="search-input" type="text" placeholder="Search account...">
+        <div class="filter-chips" id="filter-chips"></div>
+      </div>
+    </div>
+
+    <!-- KPI Strip -->
+    <div class="kpi-strip" id="kpi-strip">
+      <div class="kpi-item">
+        <div>
+          <span class="kpi-value" id="kpi-sell">Loading...</span>
+          <span class="kpi-delta neutral" id="kpi-sell-delta" style="display:none"></span>
+        </div>
+        <div class="kpi-label">Total Sell GMV</div>
+      </div>
+      <div class="kpi-item">
+        <div>
+          <span class="kpi-value" id="kpi-fees">Loading...</span>
+          <span class="kpi-delta neutral" id="kpi-fees-delta" style="display:none"></span>
+        </div>
+        <div class="kpi-label">Fees YTD</div>
+      </div>
+      <div class="kpi-item">
+        <div>
+          <span class="kpi-value" id="kpi-accounts">Loading...</span>
+        </div>
+        <div class="kpi-label">Accounts with Data</div>
+      </div>
+      <div class="kpi-item">
+        <div>
+          <span class="kpi-value" id="kpi-online">Loading...</span>
+        </div>
+        <div class="kpi-label">Avg % Digital</div>
+      </div>
+      <div class="kpi-item">
+        <div>
+          <span class="kpi-value" id="kpi-takerate">Loading...</span>
+        </div>
+        <div class="kpi-label">Avg Take Rate</div>
+      </div>
+    </div>
+
+    <!-- Coverage warning -->
+    <div class="coverage-warn" id="coverage-warn" style="display:none">
+      <span class="warn-icon">&#9888;</span>
+      <span id="coverage-text">Data loading...</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <!-- Tabs -->
+  <div class="tabs-nav">
+    <button class="tab-btn active" id="tab-portfolio" onclick="showTab('portfolio')">Portfolio <span class="tab-count" id="tab-count-portfolio">&mdash;</span></button>
+    <button class="tab-btn" id="tab-buy" onclick="showTab('portfolio')">BUY Leads <span class="tab-count" id="tab-count-buy">&mdash;</span></button>
+    <button class="tab-btn" id="tab-list" onclick="showTab('portfolio')">LIST Leads <span class="tab-count" id="tab-count-list">&mdash;</span></button>
+    <button class="tab-btn" id="tab-sell" onclick="showTab('portfolio')">SELL Leads <span class="tab-count" id="tab-count-sell">&mdash;</span></button>
+    <button class="tab-btn" id="tab-config" onclick="showTab('portfolio')">CONFIG Leads <span class="tab-count" id="tab-count-config">&mdash;</span></button>
+    <button class="tab-btn" id="tab-declining" onclick="showTab('portfolio')">Declining <span class="tab-count" id="tab-count-declining">&mdash;</span></button>
+    <button class="tab-btn" id="tab-procurement-btn" onclick="showTab('procurement')">Procurement Behavior</button>
+    <button class="tab-btn" id="tab-definitions-btn" onclick="showTab('definitions')">Definitions</button>
+  </div>
+
+  <!-- Tab: Portfolio -->
+  <div class="tab-panel active" id="panel-portfolio">
+    <div class="section-label" id="section-label">Loading portfolio...</div>
+
+    <div class="portfolio-wrap" id="portfolio-wrap">
+      <table class="portfolio-table" id="portfolio-table">
+        <thead>
+          <tr>
+            <th class="sticky-col sticky-col-1"></th>
+            <th class="sticky-col sticky-col-2" data-sort="name">Account</th>
+            <th>Engagement</th>
+            <th data-sort="est_gmv">Est GMV</th>
+            <th data-sort="koronet_sell">Koronet Sell</th>
+            <th data-sort="sell_pen">Sell Pen %</th>
+            <th data-sort="online_pct">Online Sell %</th>
+            <th data-sort="koronet_buy">Koronet Buy</th>
+            <th data-sort="buy_pen">Buy Pen %</th>
+            <th data-sort="buy_online_pct">Online Buy %</th>
+            <th data-sort="fees">Fees YTD</th>
+            <th data-sort="take_rate">Take Rate</th>
+            <th data-sort="mom_delta">MoM &#916;</th>
+            <th>Trend</th>
+            <th data-sort="at_stake">$ at Stake</th>
+          </tr>
+        </thead>
+        <tbody id="portfolio-tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="load-more-wrap" id="load-more-wrap" style="display:none">
+      <button class="load-more-btn" id="load-more-btn">Load more accounts</button>
+    </div>
+    <div class="note-strip" id="note-strip"></div>
+  </div>
+
+  <!-- Tab: Procurement Behavior -->
+  <div class="tab-panel" id="panel-procurement">
+    <div class="section-label">Procurement accounts &middot; 2x2 by purchasing frequency vs catalog depth</div>
+    <div class="quadrant-container">
+      <div class="quadrant quadrant-A">
+        <div class="quadrant-label q-label-A"><span class="q-badge q-badge-A">A</span> Strong</div>
+        <div class="quadrant-desc">High frequency &middot; Deep catalog &middot; Full platform users</div>
+        <div style="font-size:10px;color:var(--text-muted);font-style:italic;">Placeholder &mdash; will populate from data</div>
+      </div>
+      <div class="quadrant quadrant-B">
+        <div class="quadrant-label q-label-B"><span class="q-badge q-badge-B">B</span> Frequent, Low Ticket</div>
+        <div class="quadrant-desc">Buys often but doesn't list &mdash; procurement tool only</div>
+        <div style="font-size:10px;color:var(--text-muted);font-style:italic;">Placeholder &mdash; will populate from data</div>
+      </div>
+      <div class="quadrant quadrant-C">
+        <div class="quadrant-label q-label-C"><span class="q-badge q-badge-C">C</span> High Ticket, Infrequent</div>
+        <div class="quadrant-desc">Listed catalog but barely buying &mdash; activation risk</div>
+        <div style="font-size:10px;color:var(--text-muted);font-style:italic;">Placeholder &mdash; will populate from data</div>
+      </div>
+      <div class="quadrant quadrant-D">
+        <div class="quadrant-label q-label-D"><span class="q-badge q-badge-D">D</span> Occasional</div>
+        <div class="quadrant-desc">Low engagement on both dimensions &mdash; churn or new</div>
+        <div style="font-size:10px;color:var(--text-muted);font-style:italic;">Placeholder &mdash; will populate from data</div>
+      </div>
+    </div>
+    <div class="note-strip">Placeholder visualization. X-axis = SKU catalog depth. Y-axis = procurement frequency. Quadrant assignment will be live, not static.</div>
+  </div>
+
+  <!-- Tab: Definitions -->
+  <div class="tab-panel" id="panel-definitions">
+    <div class="definitions-panel">
+      <h2>Definitions</h2>
+      <p>Coming soon &mdash; metric definitions, data provenance guide, and methodology reference will live here.</p>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<script src="evidence_adapter_v3.js"></script>
+<script>
+/* ===================================================================
+   TX Dashboard V3 — Data-Wired Renderer
+   Koronet Revenue OS · Chapter TX
+   Uses evidence_adapter_v3.js (430 accounts, cubes, pacing, external)
+   =================================================================== */
+
+/* --- FORMATTING HELPERS --- */
+function fmt$(n, compact) {
+  if (n == null) return '\u2014';
+  if (compact) {
+    if (Math.abs(n) >= 1e9) return '$' + (n / 1e9).toFixed(1) + 'B';
+    if (Math.abs(n) >= 1e6) return '$' + (n / 1e6).toFixed(1) + 'M';
+    if (Math.abs(n) >= 1e3) return '$' + (n / 1e3).toFixed(0) + 'K';
+    return '$' + n.toFixed(0);
+  }
+  return '$' + n.toLocaleString('en-US', { maximumFractionDigits: 0 });
+}
+
+function fmtPct(n, dp) {
+  if (n == null) return '\u2014';
+  return (n).toFixed(dp != null ? dp : 1) + '%';
+}
+
+function fmtDelta(delta) {
+  if (!delta) return '';
+  var sign = delta.direction === 'up' ? '\u25B2' : delta.direction === 'down' ? '\u25BC' : '';
+  var cls  = delta.direction === 'up' ? '' : delta.direction === 'down' ? ' neg' : '';
+  return '<span class="metric-delta' + cls + '">' + sign + fmtPct(Math.abs(delta.pct), 1) + '</span>';
+}
+
+function fmtEv(evObj) {
+  if (!evObj) return null;
+  return evObj.value != null ? evObj.value : null;
+}
+
+function evLabel(state) {
+  if (!state || state === 'gap') return '';
+  return state.charAt(0).toUpperCase() + state.slice(1);
+}
+
+function escHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+/* --- SPARKLINE GENERATION --- */
+function buildSparkline(ev) {
+  if (!ev || !ev.sell || !ev.sell.monthly_series || !ev.sell.monthly_series.value) {
+    return '<div class="sparkline"><div class="spark-bar flat" style="height:40%"></div><div class="spark-bar flat" style="height:40%"></div><div class="spark-bar flat" style="height:40%"></div><div class="spark-bar flat" style="height:40%"></div></div>';
+  }
+  var monthly = ev.sell.monthly_series.value;
+  var sorted = monthly.slice().sort(function(a,b) { return a.month < b.month ? -1 : 1; });
+  var last4 = sorted.slice(-4);
+  if (last4.length < 2) {
+    return '<div class="sparkline"><div class="spark-bar flat" style="height:50%"></div><div class="spark-bar flat" style="height:50%"></div><div class="spark-bar flat" style="height:50%"></div><div class="spark-bar flat" style="height:50%"></div></div>';
+  }
+  var vals = last4.map(function(m) { return parseFloat(m.sell_gmv) || 0; });
+  var maxV = Math.max.apply(null, vals);
+  var bars = last4.map(function(m, i) {
+    var v = parseFloat(m.sell_gmv) || 0;
+    var h = maxV > 0 ? Math.max(15, Math.round((v / maxV) * 100)) : 40;
+    var cls = 'flat';
+    if (i > 0) {
+      var prev = parseFloat(last4[i-1].sell_gmv) || 0;
+      if (v > prev * 1.02) cls = 'up';
+      else if (v < prev * 0.98) cls = 'down';
+    }
+    return '<div class="spark-bar ' + cls + '" style="height:' + h + '%"></div>';
+  });
+  return '<div class="sparkline">' + bars.join('') + '</div>';
+}
+
+/* --- DIAGNOSIS BUILDER --- */
+function buildDiagnosis(ev) {
+  if (!ev) return 'No data available.';
+  var p = ev.potential;
+  if (!p) return 'Data loading\u2026';
+  var parts = [];
+  var onlinePct = fmtEv(p.sell_online_pct);
+  var offlineAmt = fmtEv(p.sell_offline_ytd);
+  var fees = fmtEv(p.fees_ytd_2026);
+  if (offlineAmt != null && offlineAmt > 0) {
+    parts.push('<strong>' + fmt$(offlineAmt, true) + ' offline at $0 fees</strong>');
+  }
+  if (onlinePct != null) {
+    if (onlinePct < 10) parts.push(fmtPct(onlinePct) + ' online \u2014 nearly all offline');
+    else if (onlinePct < 30) parts.push(fmtPct(onlinePct) + ' online \u2014 majority offline');
+    else if (onlinePct > 60) parts.push(fmtPct(onlinePct) + ' online \u2014 digital-first');
+    else parts.push(fmtPct(onlinePct) + ' online');
+  }
+  var offBuyers = ev.sell && ev.sell.buyers_table && ev.sell.buyers_table.value ? ev.sell.buyers_table.value.offline_buyers : null;
+  if (offBuyers != null && offBuyers > 0) {
+    parts.push(offBuyers.toLocaleString() + ' offline buyers not yet invited');
+  }
+  var cfg = ev.list && ev.list.config && ev.list.config.value;
+  if (cfg && cfg.raw) {
+    var bunches = cfg.raw.sell_in_bunches;
+    if (bunches === false || bunches === 'false' || bunches === 0) {
+      parts.push('Bunches OFF \u2014 retail TAM blocked');
+    }
+  }
+  if (!parts.length) {
+    if (fees != null && fees > 0) return 'Fees: ' + fmt$(fees, true) + ' YTD';
+    return 'Account data loaded.';
+  }
+  return parts.join('. ') + '.';
+}
+
+/* --- AT-STAKE CALCULATOR --- */
+function calcAtStake(ev) {
+  if (!ev) return null;
+  var sfdcId = ev.identity && ev.identity.sfdc_id ? ev.identity.sfdc_id : null;
+  if (sfdcId && _sfdcOpps[sfdcId] != null && _sfdcOpps[sfdcId] > 0) {
+    return { amount: _sfdcOpps[sfdcId], source: 'sfdc' };
+  }
+  if (!ev.potential) return null;
+  var p = ev.potential;
+  var offlineSell = fmtEv(p.sell_offline_ytd);
+  var takeRate = fmtEv(p.take_rate);
+  if (offlineSell == null) return null;
+  var rate = (takeRate != null && takeRate > 0) ? takeRate / 100 : 0.002;
+  var scenario = offlineSell * 0.10 * rate * 12;
+  return scenario > 0 ? { amount: scenario, source: 'scenario' } : null;
+}
+
+function calcAtStakeAmount(ev) {
+  var r = calcAtStake(ev);
+  return r ? r.amount : null;
+}
+
+/* --- GMV DISPLAY (V3 pace logic) --- */
+function buildGmvDisplay(ev) {
+  if (!ev || !ev.potential) return { html: '\u2014', sortValue: 0 };
+  var p = ev.potential;
+  var gmvRef = p.gmv_reference;
+  if (!gmvRef || gmvRef.value == null) return { html: '\u2014', sortValue: 0 };
+
+  var val = gmvRef.value;
+  var src = gmvRef.source || '';
+  var conf = gmvRef.confidence;
+  var days = gmvRef.days_observed;
+  var pace = p.gmv_pace;
+  var ext = p.gmv_external;
+  var ora = p.gmv_ora;
+
+  // Alta (12M) = measured
+  if (conf === 'Alta' && src === 'Medido') {
+    return {
+      html: '<div class="gmv-wrap"><span class="gmv-value">' + fmt$(val, true) + '</span><span class="provenance-tag prov-medido">&#10003; Medido (12M)</span></div>',
+      sortValue: val
+    };
+  }
+
+  // Alta from Piso de red
+  if (conf === 'Alta' && src === 'Piso de red') {
+    return {
+      html: '<div class="gmv-wrap"><span class="gmv-value">' + fmt$(val, true) + '</span><span class="provenance-tag prov-medido">&#10003; Alta (12M)</span></div>',
+      sortValue: val
+    };
+  }
+
+  // Baja (<120d) = pace with contrast
+  if (conf === 'Baja' && pace && pace.value != null) {
+    var paceVal = pace.value;
+    var daysLabel = days != null ? days + 'd' : '';
+    var contrast = '';
+    if (ora && ora.value != null) contrast += ' vs ORA ' + fmt$(ora.value, true);
+    if (ext && ext.value != null) contrast += ' vs Est ' + fmt$(ext.value, true);
+    return {
+      html: '<div class="gmv-wrap"><span class="gmv-value">' + fmt$(paceVal, true) + ' pace</span><span class="provenance-tag prov-piso">&#9650; Baja (' + daysLabel + ')</span>' + (contrast ? '<span style="font-size:9px;color:var(--text-muted);display:block">' + contrast + '</span>' : '') + '</div>',
+      sortValue: paceVal
+    };
+  }
+
+  // ORA (no Core) = declared with challenge
+  if (src === 'ORA' || src === 'FCS') {
+    var challenge = '';
+    if (ext && ext.value != null) challenge = ' vs Est ' + fmt$(ext.value, true) + ' &#9888;';
+    return {
+      html: '<div class="gmv-wrap"><span class="gmv-value">' + fmt$(val, true) + '</span><span class="provenance-tag prov-ora">ORA (declarado)</span>' + (challenge ? '<span style="font-size:9px;color:var(--text-muted);display:block">' + challenge + '</span>' : '') + '</div>',
+      sortValue: val
+    };
+  }
+
+  // Red floor (only visible in network)
+  if (src === 'not in Christine cascade' || src === 'Sin dato') {
+    // Use pace if available
+    if (pace && pace.value != null) {
+      var dLabel = days != null ? days + 'd' : '';
+      return {
+        html: '<div class="gmv-wrap"><span class="gmv-value">' + fmt$(pace.value, true) + '</span><span class="provenance-tag prov-piso">&#8805; Red (' + dLabel + ')</span></div>',
+        sortValue: pace.value
+      };
+    }
+    // Fallback: show koronet sell as floor
+    var kSell = fmtEv(p.koronet_sell_ytd);
+    if (kSell != null && kSell > 0) {
+      return {
+        html: '<div class="gmv-wrap"><span class="gmv-value">' + fmt$(kSell, true) + '</span><span class="provenance-tag prov-piso">&#8805; Red</span></div>',
+        sortValue: kSell
+      };
+    }
+    return { html: '\u2014', sortValue: 0 };
+  }
+
+  // Default: show with source
+  return {
+    html: '<div class="gmv-wrap"><span class="gmv-value">' + fmt$(val, true) + '</span><span class="provenance-tag prov-fcs">' + escHtml(src || 'Unknown') + '</span></div>',
+    sortValue: val
+  };
+}
+
+/* --- BUSINESS TYPE BADGE --- */
+function businessTypeBadge(type) {
+  if (!type) return '';
+  var t = type.toLowerCase();
+  if (t === 'wholesaler') return '<span class="meta-badge badge-wholesaler">Wholesaler</span>';
+  if (t === 'importer') return '<span class="meta-badge badge-importer">Importer</span>';
+  if (t === 'grower') return '<span class="meta-badge badge-grower">Grower</span>';
+  if (t === 'retailer') return '<span class="meta-badge badge-retailer">Retailer</span>';
+  return '<span class="meta-badge badge-wholesaler">' + escHtml(type) + '</span>';
+}
+
+function productTierBadge(tier) {
+  if (!tier) return '';
+  var t = tier.toLowerCase();
+  if (t === 'core+' || t === 'core') return '<span class="meta-badge badge-core-plus">Core+</span>';
+  if (t === 'esuite') return '<span class="meta-badge badge-esuite">eSuite</span>';
+  if (t === 'procurement') return '<span class="meta-badge badge-procurement">Procurement</span>';
+  if (t === 'k2k') return '<span class="meta-badge badge-k2k">K2K</span>';
+  return '<span class="meta-badge badge-esuite">' + escHtml(tier) + '</span>';
+}
+
+function sellChannelBadge(ch) {
+  if (!ch) return '';
+  var c = ch.toLowerCase();
+  if (c === 'eshop') return '<span class="meta-badge badge-eshop">eShop</span>';
+  if (c === 'k2k') return '<span class="meta-badge badge-k2k-ch">K2K</span>';
+  if (c === 'api') return '<span class="meta-badge badge-api">API</span>';
+  if (c === 'none' || c === 'no digital') return '<span class="meta-badge badge-none">No digital</span>';
+  return '<span class="meta-badge badge-none">' + escHtml(ch) + '</span>';
+}
+
+function priorityBadge(p) {
+  if (!p) return '';
+  var lp = p.toUpperCase();
+  if (lp === 'P1') return '<span class="meta-badge badge-p1">P1</span>';
+  if (lp === 'IMPL') return '<span class="meta-badge badge-impl">IMPL</span>';
+  if (lp === 'TA') return '<span class="meta-badge badge-ta">TA</span>';
+  if (lp === 'WATCH') return '<span class="meta-badge badge-watch">WATCH</span>';
+  if (lp === 'ECOSYSTEM') return '<span class="meta-badge badge-ecosystem">Ecosystem</span>';
+  if (lp === 'CS_TRACKED') return '<span class="meta-badge badge-cs-tracked">CS Tracked</span>';
+  return '<span class="meta-badge badge-watch">' + escHtml(p) + '</span>';
+}
+
+function engagementBadge(status) {
+  if (!status) return '<span style="color:var(--text-muted)">\u2014</span>';
+  var s = status.toLowerCase();
+  if (s === 'purchasing' || s === 'active') return '<span class="meta-badge badge-purchasing">Purchasing</span>';
+  if (s === 'onboarding') return '<span class="meta-badge badge-onboarding">Onboarding</span>';
+  return '<span class="meta-badge badge-watch">' + escHtml(status) + '</span>';
+}
+
+/* --- TABLE ROW RENDERER (V3) --- */
+function renderRow(ev, idx) {
+  if (!ev) return '';
+  var id = ev._company_id;
+  var name = ev._company_name || ('Account ' + id);
+  var p = ev.potential;
+  var identity = ev.identity;
+
+  var koronetSell   = p ? fmtEv(p.koronet_sell_ytd) : null;
+  var sellPen       = p ? fmtEv(p.sell_penetration) : null;
+  var onlinePct     = p ? fmtEv(p.sell_online_pct) : null;
+  var koronetBuy    = p ? fmtEv(p.koronet_buy_ytd) : null;
+  var buyPen        = p ? fmtEv(p.buy_penetration) : null;
+  var buyOnlinePct  = p ? fmtEv(p.buy_online_pct) : null;
+  var feesYtd       = p ? fmtEv(p.fees_ytd_2026) : null;
+  var takeRate      = p ? fmtEv(p.take_rate) : null;
+  var sellYoyDelta  = p ? p.sell_yoy_delta : null;
+  var sellMomDelta  = p ? p.sell_mom_delta : null;
+
+  var atStakeResult = calcAtStake(ev);
+  var atStake = atStakeResult ? atStakeResult.amount : null;
+  var atStakeSource = atStakeResult ? atStakeResult.source : null;
+  var diagnosis = buildDiagnosis(ev);
+
+  // GMV display with provenance
+  var gmvDisplay = buildGmvDisplay(ev);
+
+  // Online color (sell)
+  var onlineClass = (onlinePct != null)
+    ? (onlinePct >= 30 ? 'online-value' : onlinePct > 0 ? 'online-low' : 'online-zero')
+    : 'metric-value';
+  var onlineQualifier = onlinePct != null
+    ? (onlinePct === 0 ? 'all offline' : onlinePct < 20 ? 'mostly offline' : onlinePct >= 60 ? 'digital-first' : 'healthy')
+    : '';
+
+  // Penetration handling
+  var sellPenEv = p && p.sell_penetration ? p.sell_penetration.ev : 'gap';
+  var isSellPenTautological = sellPenEv === 'tautological' || (sellPen != null && sellPen > 95 && (sellPenEv === 'proxy' || sellPenEv === 'model'));
+
+  // Take rate color
+  var takeRateClass = 'takerate';
+  if (takeRate != null) {
+    if (takeRate >= 0.3) takeRateClass = 'takerate-good';
+    else if (takeRate < 0.05 && feesYtd != null && feesYtd > 0) takeRateClass = 'takerate-bad';
+  }
+
+  // Sparkline
+  var spark = buildSparkline(ev);
+
+  // MoM delta cell
+  var momHtml = '';
+  if (sellMomDelta && sellMomDelta.pct != null) {
+    var momSign = sellMomDelta.pct >= 0 ? '+' : '';
+    var momCls = sellMomDelta.pct >= 0 ? '' : ' neg';
+    momHtml = '<span class="metric-delta' + momCls + '">' + momSign + sellMomDelta.pct.toFixed(1) + '%</span>';
+  } else {
+    momHtml = '<span style="color:var(--text-muted);font-size:10px;">\u2014</span>';
+  }
+
+  // Intervention count
+  var interventionCount = 0;
+  if (p && fmtEv(p.buy_offline_ytd) > 0) interventionCount++;
+  var cfgEv = ev.list && ev.list.config ? ev.list.config.value : null;
+  var cfgRawEv = cfgEv && cfgEv.raw ? cfgEv.raw : null;
+  if (cfgRawEv) {
+    var bunchesEv = cfgRawEv.sell_in_bunches != null ? cfgRawEv.sell_in_bunches : cfgRawEv.bunches;
+    if (bunchesEv === false || bunchesEv === 'false' || bunchesEv === 0) interventionCount++;
+    var maxAgeEv = cfgRawEv.max_age_sell != null ? cfgRawEv.max_age_sell : cfgRawEv.MaxAge;
+    if (maxAgeEv != null && maxAgeEv < 30) interventionCount++;
+  }
+  var btEv = ev.sell && ev.sell.buyers_table ? ev.sell.buyers_table.value : null;
+  if (btEv && btEv.offline_buyers > 0) interventionCount++;
+
+  // Meta badges row
+  var badges = [];
+  if (identity) {
+    badges.push(businessTypeBadge(identity.business_type));
+    badges.push(productTierBadge(identity.product_tier));
+    badges.push(sellChannelBadge(identity.sell_channel));
+    badges.push(priorityBadge(identity.priority_level));
+  }
+  var badgesHtml = badges.filter(Boolean).join('');
+
+  // Buy online class
+  var buyOnlineClass = buyOnlinePct != null ? (buyOnlinePct >= 30 ? 'online-value' : buyOnlinePct > 0 ? 'online-low' : 'online-zero') : 'metric-value';
+  var buyOnlineQual = buyOnlinePct != null ? (buyOnlinePct === 0 ? 'all offline' : buyOnlinePct < 20 ? 'mostly offline' : 'healthy') : '';
+
+  return '<tr id="row-' + id + '">' +
+    '<td class="toggle-cell sticky-col sticky-col-1"><button class="toggle-btn" onclick="toggleExpand(\'' + id + '\')"><span class="toggle-chevron">&#9654;</span></button></td>' +
+    '<td class="account-cell sticky-col sticky-col-2">' +
+      '<div class="account-name">' + escHtml(name) + '</div>' +
+      '<div class="account-diagnosis">' + diagnosis + '</div>' +
+      '<div class="account-meta-row">' + badgesHtml + '</div>' +
+    '</td>' +
+    '<td class="metric-cell">' + engagementBadge(identity ? identity.engagement_status : null) + '</td>' +
+    '<td class="metric-cell">' + gmvDisplay.html + '</td>' +
+    '<td class="metric-cell"><div class="metric-value">' + fmt$(koronetSell, true) + (sellYoyDelta ? ' ' + fmtDelta(sellYoyDelta) : '') + '</div></td>' +
+    '<td class="metric-cell"><div class="metric-value"' + (isSellPenTautological ? ' style="color:var(--text-muted);font-style:italic"' : '') + '>' + (isSellPenTautological ? '~100%' : fmtPct(sellPen)) + '</div>' + (isSellPenTautological ? '<div class="tautological-label">tautological</div>' : '') + '</td>' +
+    '<td class="metric-cell"><div class="' + onlineClass + '">' + fmtPct(onlinePct) + '</div>' + (onlineQualifier ? '<div class="metric-qualifier">' + onlineQualifier + '</div>' : '') + '</td>' +
+    '<td class="metric-cell"><div class="metric-value">' + fmt$(koronetBuy, true) + '</div></td>' +
+    '<td class="metric-cell"><div class="metric-value"' + ((p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? ' style="color:var(--text-muted);font-style:italic"' : '') + '>' + ((p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? '~100%' : fmtPct(buyPen)) + '</div>' + ((p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? '<div class="tautological-label">tautological</div>' : '') + '</td>' +
+    '<td class="metric-cell"><div class="' + buyOnlineClass + '">' + fmtPct(buyOnlinePct) + '</div>' + (buyOnlineQual ? '<div class="metric-qualifier">' + buyOnlineQual + '</div>' : '') + '</td>' +
+    '<td class="metric-cell"><div class="' + (feesYtd != null && feesYtd > 0 ? 'fees-value' : 'fees-zero') + '">' + fmt$(feesYtd, true) + '</div></td>' +
+    '<td class="metric-cell"><div class="' + takeRateClass + '">' + fmtPct(takeRate, 2) + '</div></td>' +
+    '<td class="metric-cell">' + momHtml + '</td>' +
+    '<td class="metric-cell">' + spark + '<div class="metric-qualifier">MoM</div></td>' +
+    '<td class="metric-cell"><div class="stake-value' + (atStakeSource === 'sfdc' ? ' sfdc' : '') + '">' + fmt$(atStake, true) + '</div><div class="stake-opps">' + (atStakeSource === 'sfdc' ? 'SFDC opp' : atStakeSource === 'scenario' ? 'scenario est.' : '\u2014') + (interventionCount > 0 ? ' &middot; ' + interventionCount + ' intervention' + (interventionCount !== 1 ? 's' : '') : '') + '</div></td>' +
+    '</tr>' +
+    '<tr id="expanded-' + id + '" style="display:none"><td colspan="15"><div class="expanded-section" id="cards-' + id + '"><div style="font-size:12px;color:var(--text-muted);font-style:italic;">&#8627; Loading account data\u2026</div></div></td></tr>';
+}
+
+/* --- CARD SHELL --- */
+function cardShell(label, title, body, openByDefault, cardId, subtitle) {
+  var openClass = openByDefault ? ' open' : '';
+  var cid = cardId || ('card-' + Math.random().toString(36).slice(2));
+  return '<div class="card' + openClass + '" id="' + cid + '">' +
+    '<div class="card-header" onclick="toggleCard(\'' + cid + '\')">' +
+      '<div class="card-header-left">' +
+        '<div class="card-label">' + label + '</div>' +
+        '<div class="card-title">' + title + '</div>' +
+        (subtitle ? '<div class="card-subtitle">' + subtitle + '</div>' : '') +
+      '</div>' +
+      '<div class="card-toggle">&#9662;</div>' +
+    '</div>' +
+    '<div class="card-body">' + body + '</div>' +
+  '</div>';
+}
+
+/* --- CARD RENDERER --- */
+function renderCards(companyId, ev) {
+  if (!ev) return '<div class="data-gap-row">No evidence data available for this account.</div>';
+  return '<div class="cards-grid">' +
+    renderPotentialCard(ev) +
+    renderOpportunitiesCard(ev) +
+    renderBuyCard(ev) +
+    renderListCard(ev) +
+    renderSellCard(ev) +
+    renderDataTimeline(ev) +
+  '</div>';
+}
+
+/* --- CARD 1: POTENTIAL --- */
+function renderPotentialCard(ev) {
+  var p = ev.potential;
+  if (!p) return cardShell('POTENTIAL', 'No potential data', '', false);
+
+  var kSell = fmtEv(p.koronet_sell_ytd);
+  var sellPen = fmtEv(p.sell_penetration);
+  var sellOnline = fmtEv(p.sell_online_pct);
+  var kBuy = fmtEv(p.koronet_buy_ytd);
+  var buyPen = fmtEv(p.buy_penetration);
+  var buyOnline = fmtEv(p.buy_online_pct);
+  var feesYtd = fmtEv(p.fees_ytd_2026);
+  var feesYoy = fmtEv(p.fees_yoy_pct);
+  var takeRate = fmtEv(p.take_rate);
+  var sellOffline = fmtEv(p.sell_offline_ytd);
+  var buyOffline = fmtEv(p.buy_offline_ytd);
+  var feesByChannel = p.fees_by_channel ? p.fees_by_channel.value : null;
+
+  // GMV reference info
+  var gmvRef = p.gmv_reference || {};
+  var gmvVal = gmvRef.value;
+  var gmvSrc = gmvRef.source || '';
+  var gmvConf = gmvRef.confidence;
+  var gmvExt = p.gmv_external;
+  var gmvOra = p.gmv_ora;
+  var buyGmvEst = p.buy_gmv_estimated ? p.buy_gmv_estimated.value : null;
+
+  // Est sell = gmv_reference value
+  var estSell = gmvVal;
+  var estBuy = buyGmvEst;
+
+  // Evidence states
+  var estSellEvClass = gmvConf === 'Alta' ? 'observed' : gmvSrc === 'ORA' ? 'proxy' : 'gap';
+  var estSellEvLabel = gmvSrc === 'Medido' ? 'Observed \u2014 Medido' : gmvSrc || 'gap';
+
+  var sellPenTautological = p.sell_penetration && (p.sell_penetration.ev === 'tautological' || (sellPen != null && sellPen > 95));
+
+  // Focus callout
+  var atStakeResult = calcAtStake(ev);
+  var atStake = atStakeResult ? atStakeResult.amount : null;
+  var atStakeSource = atStakeResult ? atStakeResult.source : null;
+  var focusText;
+  if (atStakeSource === 'sfdc') {
+    focusText = '<strong>' + fmt$(atStake, true) + ' in open SFDC opportunities</strong> \u2014 what this account is expected to pay (from Salesforce).';
+  } else if (sellOffline && buyOffline) {
+    focusText = fmt$(sellOffline, true) + ' offline sell + ' + fmt$(buyOffline, true) + ' offline buy &rarr; <strong>' + fmt$(atStake, true) + ' scenario</strong> if 10% shift online';
+  } else if (sellOffline) {
+    focusText = fmt$(sellOffline, true) + ' offline sell &rarr; <strong>' + fmt$(atStake, true) + ' scenario</strong> if 10% shift online';
+  } else {
+    focusText = 'Pull more data to compute offline opportunity.';
+  }
+
+  // Fees by channel
+  var feesChannelHtml = '';
+  if (feesByChannel) {
+    var fcParts = [];
+    if (feesByChannel.ecom != null) fcParts.push('eCom <strong>' + fmt$(feesByChannel.ecom, true) + '</strong>');
+    if (feesByChannel.k2k != null) fcParts.push('K2K <strong>' + fmt$(feesByChannel.k2k, true) + '</strong>');
+    if (feesByChannel.api != null) {
+      fcParts.push(feesByChannel.api === 0 ? 'API <span class="amber">&#9888; $0 \u2014 not monetized</span>' : 'API <strong>' + fmt$(feesByChannel.api, true) + '</strong>');
+    }
+    if (feesByChannel.indirect != null) fcParts.push('Indirect <strong>' + fmt$(feesByChannel.indirect, true) + '</strong>');
+    if (fcParts.length) {
+      feesChannelHtml = '<div class="content-gap-sm"></div><div class="metric-line"><strong>Fees by channel:</strong> ' + fcParts.join(' &middot; ') + '</div>';
+    }
+  }
+
+  // GMV Challenge section
+  var gmvChallengeHtml = '';
+  if (gmvConf === 'Alta' && gmvSrc === 'Medido') {
+    var challengeText = '<strong>GMV: ' + fmt$(gmvVal, true) + ' medido (12 meses completos).</strong>';
+    if (gmvExt && gmvExt.value != null) challengeText += ' External estimate (' + fmt$(gmvExt.value, true) + ') ';
+    if (gmvOra && gmvOra.value != null) {
+      var disc = gmvOra.value > gmvVal ? Math.round(((gmvOra.value - gmvVal) / gmvVal) * 100) : 0;
+      if (disc > 10) challengeText += 'ORA (' + fmt$(gmvOra.value, true) + ') est\u00e1 +' + disc + '% inflado vs realidad.';
+    }
+    gmvChallengeHtml = '<div class="content-gap"></div><div class="callout green">' + challengeText + '</div>';
+  } else if (gmvSrc === 'ORA' && gmvExt && gmvExt.value != null) {
+    gmvChallengeHtml = '<div class="content-gap"></div><div class="callout amber"><strong>GMV:</strong> ORA declara ' + fmt$(gmvVal, true) + ' pero estimador externo muestra ' + fmt$(gmvExt.value, true) + '. Discrepancia flaggeada.</div>';
+  }
+
+  var title = 'POTENTIAL \u2014 ' + (sellOffline ? fmt$(sellOffline, true) + ' offline at $0 fees. ' : '') + (sellPenTautological ? 'Koronet = primary channel' : (sellPen ? fmtPct(sellPen) + ' sell captured' : '')) + (sellOnline ? ', ' + fmtPct(sellOnline) + ' online' : '') + '.';
+
+  var body = '<div class="content-gap-sm"></div>' +
+    '<div class="table-wrap"><table class="ev-table"><thead><tr><th style="width:80px"></th><th>Estimated Total</th><th>Koronet</th><th>Penetration</th><th>Online %</th></tr></thead><tbody>' +
+    '<tr><td class="row-label">SELL</td><td><span class="highlight">' + fmt$(estSell, true) + '</span><span class="ev-state ' + estSellEvClass + '">' + estSellEvLabel + '</span></td><td><span class="highlight">' + fmt$(kSell, true) + '</span><span class="ev-state observed">Observed \u2014 Snowflake</span></td><td>' + (sellPenTautological ? '<span style="color:var(--text-muted);font-style:italic">~100%</span><span class="ev-state gap">Tautological</span>' : '<span>' + fmtPct(sellPen) + '</span><span class="ev-state model">Model</span>') + '</td><td><span class="' + (sellOnline != null && sellOnline >= 30 ? 'online' : 'online-low') + '">' + fmtPct(sellOnline) + '</span><span class="ev-state observed">Observed</span></td></tr>' +
+    '<tr><td class="row-label">BUY</td><td><span class="highlight">' + fmt$(estBuy, true) + '</span><span class="ev-state proxy">Proxy \u2014 sell x ratio</span></td><td><span class="highlight">' + fmt$(kBuy, true) + '</span><span class="ev-state observed">Observed \u2014 Snowflake</span></td><td>' + ((p.buy_penetration && p.buy_penetration.ev === 'tautological') ? '<span style="color:var(--text-muted);font-style:italic">~100%</span><span class="ev-state gap">Tautological</span>' : '<span>' + fmtPct(buyPen) + '</span><span class="ev-state model">Model</span>') + '</td><td><span class="' + (buyOnline != null && buyOnline >= 30 ? 'online' : 'online-low') + '">' + fmtPct(buyOnline) + '</span><span class="ev-state observed">Observed</span></td></tr>' +
+    '<tr><td class="row-label">FEES</td><td>&mdash;</td><td><span class="highlight">' + fmt$(feesYtd, true) + '</span>' + (feesYoy != null ? '<span class="metric-delta">&#9650;+' + fmtPct(feesYoy, 0) + '</span>' : '') + '<span class="ev-state observed">Observed \u2014 YTD 2026</span></td><td><span>' + (takeRate != null ? fmtPct(takeRate, 2) + ' rate' : '&mdash;') + '</span></td><td>&mdash;</td></tr>' +
+    '</tbody></table></div>' +
+    gmvChallengeHtml +
+    feesChannelHtml +
+    '<div class="content-gap-sm"></div>' +
+    '<div class="callout"><strong>Focus:</strong> ' + focusText + '</div>' +
+    '<div class="callout green"><strong>SO WHAT:</strong> ' + (sellOffline ? 'The gap is activation \u2014 ' + fmt$(sellOffline, true) + ' sells offline at $0 fees.' : 'Account data loaded.') + '</div>' +
+    '<div class="handoff"><span class="handoff-arrow">&rarr;</span><span>Continue to <strong>OPPORTUNITIES</strong></span></div>';
+
+  return cardShell('Card 1 &middot; POTENTIAL', title, body, true, 'card-potential-' + ev._company_id);
+}
+
+/* --- CARD 2: OPPORTUNITIES (from V2 verbatim with no invented ARR) --- */
+function renderOpportunitiesCard(ev) {
+  var id = ev._company_id;
+  var p = ev.potential;
+  var buy = ev.buy;
+  var list = ev.list;
+  var sell = ev.sell;
+
+  var atStakeResult2 = calcAtStake(ev);
+  var atStake = atStakeResult2 ? atStakeResult2.amount : null;
+  var atStakeSource2 = atStakeResult2 ? atStakeResult2.source : null;
+  var opps = [];
+  var sellOfflineYtd = p ? fmtEv(p.sell_offline_ytd) : null;
+
+  // BUY opp
+  var buyOffline = p ? fmtEv(p.buy_offline_ytd) : null;
+  var buyOnline = p ? fmtEv(p.buy_online_pct) : null;
+  var k2k = buy && buy.k2k_lifecycle ? buy.k2k_lifecycle.value : null;
+  var vendorLc = buy && buy.vendor_lifecycle ? buy.vendor_lifecycle.value : null;
+  if (buyOffline && buyOffline > 0) {
+    var offlineVendors = vendorLc && vendorLc.offline_vendors != null ? vendorLc.offline_vendors : null;
+    var k2kEligible = k2k ? (k2k.no_k2k != null ? k2k.no_k2k : (k2k.inactive_connections != null ? k2k.inactive_connections : null)) : null;
+    var buyDesc = (offlineVendors != null ? offlineVendors + ' vendors' : 'Vendors') + ' with procurement offline today \u2014 ' + fmt$(buyOffline, true) + ' at $0 fees.';
+    if (k2kEligible != null) buyDesc += ' ' + k2kEligible + ' K2K-eligible.';
+    opps.push({ type: 'BUY', stage: 'stage-buy', effort: 'quick fix', effortClass: 'badge-quick', desc: buyDesc });
+  }
+
+  // LIST opps (MaxAge + Bunches)
+  var cfg = list && list.config ? list.config.value : null;
+  var cfgRaw = cfg && cfg.raw ? cfg.raw : null;
+  var bunchesReality = cfg && cfg.bunches_reality ? cfg.bunches_reality : null;
+  var vf = list && list.variety_freshness ? list.variety_freshness.value : null;
+  var onlineVarCount = vf && vf.online ? (vf.online.total_varieties || 0) : null;
+  var offlineVarCount = vf && vf.offline ? (vf.offline.total_varieties || 0) : null;
+  var varietyGap = (onlineVarCount != null && offlineVarCount != null) ? Math.max(0, offlineVarCount - onlineVarCount) : null;
+  var maxAgeBad = false;
+  var bunchesOff = false;
+  var configBlocker = false;
+
+  if (cfgRaw) {
+    var maxAgeRaw = cfgRaw.ecommerce_max_age != null ? cfgRaw.ecommerce_max_age : cfgRaw.max_age_sell != null ? cfgRaw.max_age_sell : cfgRaw.MaxAge != null ? cfgRaw.MaxAge : null;
+    var maxAge = maxAgeRaw != null ? parseInt(maxAgeRaw, 10) : null;
+    maxAgeBad = maxAge != null && !isNaN(maxAge) && maxAge < 30;
+    if (maxAgeBad) {
+      configBlocker = true;
+      opps.push({ type: 'LIST', stage: 'stage-list', effort: 'investigation', effortClass: 'badge-invest', desc: 'MaxAge=' + maxAge + ' days \u2014 blocks forward inventory.' + (varietyGap != null ? ' ' + varietyGap.toLocaleString() + ' varieties offline not visible online.' : '') });
+    }
+    var actuallyBunches = bunchesReality != null ? bunchesReality.actually_sells_bunches_ecom : null;
+    var configBunchFlag = cfgRaw.is_on_hand_inventory_units != null ? cfgRaw.is_on_hand_inventory_units : cfgRaw.sell_in_bunches != null ? cfgRaw.sell_in_bunches : cfgRaw.bunches != null ? cfgRaw.bunches : null;
+    bunchesOff = actuallyBunches === false || (actuallyBunches == null && (configBunchFlag === false || configBunchFlag === 0));
+    if (bunchesOff) {
+      configBlocker = true;
+      opps.push({ type: 'LIST', stage: 'stage-list', effort: 'quick fix', effortClass: 'badge-quick', desc: 'Bunches format disabled \u2014 retail TAM blocked.' + (sellOfflineYtd != null ? ' ' + fmt$(sellOfflineYtd, true) + ' offline.' : '') });
+    }
+  }
+
+  // SELL opp
+  var bt = sell && sell.buyers_table ? sell.buyers_table.value : null;
+  var offlineBuyers = bt ? bt.offline_buyers : null;
+  if (offlineBuyers && offlineBuyers > 0) {
+    opps.push({ type: 'SELL', stage: 'stage-sell', effort: 'project', effortClass: 'badge-project', desc: offlineBuyers.toLocaleString() + ' offline buyers never invited to eShop.' + (bt.aov_online ? ' AOV online: ' + fmt$(bt.aov_online, true) + '.' : '') });
+  }
+
+  // Leakage opp
+  var leakageData = buy && buy.leakage ? buy.leakage.value : null;
+  var leakageCost = leakageData ? leakageData.leakage_cost : null;
+  if (leakageCost != null && leakageCost > 10000) {
+    var leakageVendors = leakageData.vendor_count != null ? leakageData.vendor_count : null;
+    opps.push({ type: 'BUY', stage: 'stage-buy', effort: 'quick fix', effortClass: 'badge-quick', desc: (leakageVendors != null ? leakageVendors + ' K2K-connected vendors buying ' : 'K2K-connected vendors buying ') + fmt$(leakageCost, true) + ' offline. Recoverable.' });
+  }
+
+  // Dormant K2K
+  var dormantCount = k2k ? k2k.dormant : null;
+  if (dormantCount != null && dormantCount > 0) {
+    opps.push({ type: 'BUY', stage: 'stage-buy', effort: 'investigation', effortClass: 'badge-invest', desc: dormantCount + ' dormant K2K connections \u2014 connected but never bought.' });
+  }
+
+  // Variety gap
+  if (varietyGap != null && varietyGap > 100) {
+    opps.push({ type: 'LIST', stage: 'stage-list', effort: 'project', effortClass: 'badge-project', desc: varietyGap.toLocaleString() + ' varieties sold offline not shown online.' });
+  }
+
+  // Declining sell
+  var sellYoyDelta = p ? p.sell_yoy_delta : null;
+  var sellYoyPct = null;
+  if (sellYoyDelta) {
+    if (typeof sellYoyDelta.pct === 'number') sellYoyPct = sellYoyDelta.pct;
+  }
+  if (sellYoyPct != null && sellYoyPct < -5) {
+    opps.push({ type: 'SELL', stage: 'stage-sell', effort: 'investigation', effortClass: 'badge-invest', desc: 'Sell GMV declining ' + fmtPct(Math.abs(sellYoyPct), 1) + ' YoY.' });
+  }
+
+  // 0TX post go-live
+  var _identityOpp9 = ev.identity;
+  var implStage = _identityOpp9 ? _identityOpp9.impl_stage : null;
+  var koronetSellYtd = p ? fmtEv(p.koronet_sell_ytd) : null;
+  if (implStage && (koronetSellYtd == null || koronetSellYtd < 500)) {
+    opps.push({ type: 'CONFIG', stage: 'stage-config', effort: 'investigation', effortClass: 'badge-invest', desc: 'Implementation complete (stage: ' + implStage + ') but near-zero transactions.' });
+  }
+
+  if (opps.length === 0 && atStake == null) return '';
+
+  // Sort BUY > LIST > SELL > CONFIG
+  var _typeOrder = { BUY: 0, LIST: 1, SELL: 2, CONFIG: 3 };
+  opps.sort(function(a, b) { return (_typeOrder[a.type] || 99) - (_typeOrder[b.type] || 99); });
+
+  var oppsHtml = opps.map(function(o, i) {
+    return '<div class="opp-row"><div class="opp-header"><span class="opp-rank">#' + (i + 1) + '</span><span class="opp-stage ' + o.stage + '">' + escHtml(o.type) + '</span><span class="opp-effort ' + (o.effortClass || '') + '">' + escHtml(o.effort) + '</span></div><div class="opp-desc">' + escHtml(o.desc) + '</div></div>';
+  }).join('');
+
+  // Bottleneck
+  function _firstBlocker() {
+    if (configBlocker) { var lo = opps.filter(function(x){ return x.type === 'LIST'; }); return lo.length ? lo[0] : opps[0]; }
+    var co = ['BUY','LIST','SELL','CONFIG'];
+    for (var ci = 0; ci < co.length; ci++) { var fo = opps.filter(function(x){ return x.type === co[ci]; }); if (fo.length) return fo[0]; }
+    return opps[0];
+  }
+  var bottleneckOpp = opps.length > 0 ? _firstBlocker() : null;
+
+  var body = '<div class="content-gap-sm"></div>' +
+    '<div class="stake-banner"><div><div class="stake-banner-value">' + fmt$(atStake, true) + '</div><div class="stake-banner-label">' + (atStakeSource2 === 'sfdc' ? 'SFDC open opportunities' : 'Scenario &middot; 12-month window') + '</div></div><div class="stake-banner-right"><div class="stake-banner-count">' + opps.length + ' intervention' + (opps.length !== 1 ? 's' : '') + '</div><div class="stake-banner-sub">' + opps.map(function(o){ return o.type; }).join(' &rarr; ') + '</div></div></div>' +
+    oppsHtml +
+    (bottleneckOpp ? '<div class="action-block"><div class="action-item bottleneck"><div class="action-label">Bottleneck</div><div class="action-text">' + bottleneckOpp.type + ' \u2014 ' + escHtml(bottleneckOpp.desc) + '</div></div><div class="action-item next"><div class="action-label">Next Action</div><div class="action-text">Address first blocker \u2014 config before supply before demand.</div></div></div>' : '') +
+    '<div class="handoff"><span class="handoff-arrow">&rarr;</span><span>Continue to <strong>BUY</strong></span></div>';
+
+  return cardShell('Card 2 &middot; OPPORTUNITIES', 'OPPORTUNITIES \u2014 ' + fmt$(atStake, true) + ' ' + (atStakeSource2 === 'sfdc' ? '(SFDC opps)' : 'scenario') + ' at stake &middot; ' + opps.length + ' intervention' + (opps.length !== 1 ? 's' : ''), body, true, 'card-opps-' + id);
+}
+
+/* --- CARD 3: BUY (adapted from V2) --- */
+function renderBuyCard(ev) {
+  var buy = ev.buy;
+  var p = ev.potential;
+  var id = ev._company_id;
+  var kBuy = p ? fmtEv(p.koronet_buy_ytd) : null;
+  var buyOnlinePct = p ? fmtEv(p.buy_online_pct) : null;
+  var buyOfflineYtd = p ? fmtEv(p.buy_offline_ytd) : null;
+
+  var buyCallout = 'No buy domain data available for this account.';
+  if (kBuy != null) {
+    var offlinePart = buyOfflineYtd != null ? ' \u2014 ' + fmt$(buyOfflineYtd, true) + ' offline at $0 fees' : '';
+    var onlinePart = buyOnlinePct != null ? ' ' + fmtPct(buyOnlinePct, 0) + ' purchased online.' : '';
+    buyCallout = '<strong>SO WHAT:</strong> ' + fmt$(kBuy, true) + ' total Koronet procurement' + offlinePart + '.' + onlinePart;
+  }
+
+  var k2kHtml = '';
+  if (buy && buy.k2k_lifecycle && buy.k2k_lifecycle.value) {
+    var k2kV = buy.k2k_lifecycle.value;
+    var connected = k2kV.connected != null ? k2kV.connected : k2kV.total_connections != null ? k2kV.total_connections : '\u2014';
+    var activated = k2kV.activated != null ? k2kV.activated : k2kV.active_connections != null ? k2kV.active_connections : '\u2014';
+    var active30d = k2kV.active_l30d != null ? k2kV.active_l30d : '\u2014';
+    var dormant = k2kV.dormant != null ? k2kV.dormant : '\u2014';
+    var noK2k = k2kV.no_k2k != null ? k2kV.no_k2k : k2kV.inactive_connections != null ? k2kV.inactive_connections : '\u2014';
+    k2kHtml = '<div class="metric-line"><strong>K2K lifecycle:</strong> <span class="green">' + connected + ' connected</span> &rarr; <span>' + activated + ' activated</span> &rarr; <span class="blue">' + active30d + ' active L30D</span> &middot; <span class="amber">' + dormant + ' dormant</span> &middot; <span class="red">' + noK2k + ' no K2K</span></div>';
+  }
+
+  var sourcingHtml = '';
+  if (buy) {
+    var vlc = buy.vendor_lifecycle ? buy.vendor_lifecycle.value : null;
+    var vendorsOnline = vlc ? vlc.online_vendors : null;
+    var vendorsOffline = vlc ? vlc.offline_vendors : null;
+    var procOnline = vlc && vlc.online_buy_gmv != null ? vlc.online_buy_gmv : null;
+    var procOffline = vlc && vlc.offline_buy_gmv != null ? vlc.offline_buy_gmv : buyOfflineYtd;
+    if (vlc || procOnline != null || procOffline != null) {
+      var sRows = [];
+      if (vlc) sRows.push('<tr><td class="row-label">Vendors</td><td><span class="online">' + (vendorsOnline != null ? vendorsOnline : '\u2014') + '</span></td><td>' + (vendorsOffline != null ? vendorsOffline : '\u2014') + '</td><td>\u2014</td></tr>');
+      sRows.push('<tr><td class="row-label">Procurement $</td><td><span class="online">' + fmt$(procOnline, true) + '</span></td><td>' + fmt$(procOffline, true) + '</td><td>' + (procOffline ? '<span class="danger">' + fmt$(procOffline, true) + ' @ $0</span>' : '\u2014') + '</td></tr>');
+      sourcingHtml = '<div class="content-gap-sm"></div><div class="table-wrap"><table class="ev-table"><thead><tr><th>SOURCING</th><th>Online</th><th>Offline</th><th>Gap</th></tr></thead><tbody>' + sRows.join('') + '</tbody></table></div>';
+    }
+  }
+
+  var anticipationHtml = '';
+  if (buy) {
+    var antOnline = buy.anticipation_online ? buy.anticipation_online.value : null;
+    var antOffline = buy.anticipation_offline ? buy.anticipation_offline.value : null;
+    if (antOnline || antOffline) {
+      var buildBucketBar = function(ant) {
+        if (!ant || !ant.buckets) return '';
+        var b = ant.buckets;
+        var total = ant.total_orders || 1;
+        var bucketOrder = ['0-3','4-7','8-14','15-30','31-90','90+'];
+        var segClass = ['seg-0-3','seg-4-7','seg-8-14','seg-15-30','seg-31-90','seg-90p'];
+        return bucketOrder.map(function(k, i) {
+          var entry = b[k] || b[k+'d'] || null;
+          if (k === '90+') entry = entry || b['90d+'] || b['90+d'] || null;
+          if (!entry) return '';
+          var orders = entry.orders || entry.total_orders || 0;
+          var pct = Math.round((orders / total) * 100);
+          return pct > 0 ? '<div class="bar-seg ' + segClass[i] + '" style="width:' + pct + '%"></div>' : '';
+        }).join('');
+      };
+      anticipationHtml = '<div class="content-gap"></div><div class="section-label">BUYING HORIZON</div><div class="bar-chart">' +
+        (antOnline ? '<div class="bar-row"><div class="bar-label">ONLINE</div><div class="bar-track"><div class="bar-segments">' + buildBucketBar(antOnline) + '</div><span class="bar-avg">' + (antOnline.avg_days != null ? antOnline.avg_days.toFixed(1) + 'd avg' : '') + '</span></div></div>' : '') +
+        (antOffline ? '<div class="bar-row"><div class="bar-label">OFFLINE</div><div class="bar-track"><div class="bar-segments">' + buildBucketBar(antOffline) + '</div><span class="bar-avg">' + (antOffline.avg_days != null ? antOffline.avg_days.toFixed(1) + 'd avg' : '') + '</span></div></div>' : '') +
+        '<div class="bar-legend"><span class="legend-item"><span class="legend-dot seg-0-3"></span>0\u20133d</span><span class="legend-item"><span class="legend-dot seg-4-7"></span>4\u20137d</span><span class="legend-item"><span class="legend-dot seg-8-14"></span>8\u201314d</span><span class="legend-item"><span class="legend-dot seg-15-30"></span>15\u201330d</span><span class="legend-item"><span class="legend-dot seg-31-90"></span>31\u201390d</span><span class="legend-item"><span class="legend-dot seg-90p"></span>90d+</span></div></div>';
+    }
+  }
+
+  var body = '<div class="content-gap-sm"></div><div class="callout">' + buyCallout + '</div>' + sourcingHtml + '<div class="content-gap-sm"></div>' + k2kHtml + anticipationHtml + (!buy ? '<div class="data-gap-row">Buy domain data not found for this account.</div>' : '') + '<div class="handoff"><span class="handoff-arrow">&rarr;</span><span>Continue to <strong>LIST</strong></span></div>';
+
+  var cardTitle = buyOnlinePct != null ? 'BUY \u2014 ' + Math.round(buyOnlinePct) + '% online' + (buyOfflineYtd ? ', ' + fmt$(buyOfflineYtd, true) + ' offline' : '') : 'BUY';
+  return cardShell('Card 3 &middot; BUY', cardTitle, body, true, 'card-buy-' + id);
+}
+
+/* --- CARD 4: LIST (adapted from V2) --- */
+function renderListCard(ev) {
+  var list = ev.list;
+  var buy = ev.buy;
+  var p = ev.potential;
+  var id = ev._company_id;
+  var sellOffline = p ? fmtEv(p.sell_offline_ytd) : null;
+  var configHtml = '', varietyHtml = '', comparisonHtml = '';
+
+  if (list) {
+    var cfg = list.config ? list.config.value : null;
+    var cfgRaw = cfg && cfg.raw ? cfg.raw : null;
+    var vf = list.variety_freshness ? list.variety_freshness.value : null;
+    var onlineVarCount = vf && vf.online ? (vf.online.total_varieties || 0) : null;
+    var offlineVarCount = vf && vf.offline ? (vf.offline.total_varieties || 0) : null;
+    var varGap = (onlineVarCount != null && offlineVarCount != null) ? Math.max(0, offlineVarCount - onlineVarCount) : null;
+    var bunches = cfgRaw ? (cfgRaw.sell_in_bunches != null ? cfgRaw.sell_in_bunches : cfgRaw.bunches) : null;
+    var bunchesOn = bunches === true || bunches === 'true' || bunches === 1;
+
+    if (onlineVarCount != null || offlineVarCount != null || bunches != null) {
+      var compRows = [];
+      if (onlineVarCount != null || offlineVarCount != null) {
+        compRows.push('<tr><td class="row-label">Varieties</td><td><span class="online">' + (onlineVarCount != null ? onlineVarCount.toLocaleString() : '\u2014') + '</span></td><td>' + (offlineVarCount != null ? offlineVarCount.toLocaleString() : '\u2014') + '</td><td>' + (varGap != null ? '<span class="warn">' + varGap.toLocaleString() + '</span>' : '\u2014') + '</td></tr>');
+      }
+      if (bunches != null) {
+        compRows.push('<tr><td class="row-label">Bunches</td><td>' + (bunchesOn ? '<span class="online">ON</span>' : '<span class="danger">&#9888; OFF</span>') + '</td><td>' + (sellOffline ? fmt$(sellOffline, true) + ' offline' : '\u2014') + '</td><td>' + (!bunchesOn ? '<span class="danger">95% retail TAM</span>' : '<span class="good">Accessible</span>') + '</td></tr>');
+      }
+      comparisonHtml = '<div class="table-wrap"><table class="ev-table"><thead><tr><th>ONLINE vs WHAT THEY SELL</th><th>Online</th><th>Offline</th><th>Gap</th></tr></thead><tbody>' + compRows.join('') + '</tbody></table></div>';
+    }
+
+    if (cfgRaw) {
+      var maxAge = cfgRaw.max_age_sell != null ? cfgRaw.max_age_sell : cfgRaw.MaxAge;
+      var futureListing = cfgRaw.future_listing != null ? cfgRaw.future_listing : cfgRaw.forward_listing;
+      var maxAgeOk = maxAge != null && maxAge >= 30;
+      var futureOn = futureListing === true || futureListing === 'true' || futureListing === 1;
+      configHtml = '<div class="content-gap"></div><div class="section-label">CONFIGURATION STATUS</div><div class="config-grid">' +
+        '<div class="config-item ' + (maxAge != null ? (maxAgeOk ? 'config-ok' : 'config-bad') : '') + '"><div class="config-item-label">MaxAge</div><div class="config-value">' + (maxAge != null ? maxAge + ' days' : '\u2014') + '</div><div class="config-sub">' + (maxAgeOk ? 'OK for forward listing' : 'Need 30+ for forward listing') + '</div></div>' +
+        '<div class="config-item ' + (bunches != null ? (bunchesOn ? 'config-ok' : 'config-bad') : '') + '"><div class="config-item-label">Bunches</div><div style="display:flex;justify-content:center;margin-bottom:4px"><div class="config-toggle-track ' + (bunchesOn ? 'on' : 'off') + '"><div class="config-toggle-dot"></div></div></div><div class="config-value">' + (bunchesOn ? 'ON' : (bunches != null ? 'OFF' : '\u2014')) + '</div><div class="config-sub">' + (bunchesOn ? 'Retail TAM accessible' : 'Retail TAM blocked') + '</div></div>' +
+        '<div class="config-item ' + (futureListing != null ? (futureOn ? 'config-ok' : 'config-bad') : '') + '"><div class="config-item-label">Future Listing</div><div style="display:flex;justify-content:center;margin-bottom:4px"><div class="config-toggle-track ' + (futureOn ? 'on' : 'off') + '"><div class="config-toggle-dot"></div></div></div><div class="config-value">' + (futureOn ? 'ON' : (futureListing != null ? 'OFF' : '\u2014')) + '</div><div class="config-sub">' + (futureOn ? 'Forward inventory visible' : 'Forward orders = $0') + '</div></div>' +
+      '</div>';
+    }
+
+    if (vf) {
+      var buildVFBar = function(channel) {
+        if (!channel || !channel.buckets) return '';
+        var b = channel.buckets;
+        var total = channel.total_varieties || 1;
+        var bucketOrder = ['0-3','4-7','8-14','15-30','31-90','90+'];
+        var segClass = ['seg-0-3','seg-4-7','seg-8-14','seg-15-30','seg-31-90','seg-90p'];
+        return bucketOrder.map(function(k, i) {
+          var entry = b[k] || b[k+'d'] || null;
+          if (k === '90+') entry = entry || b['90d+'] || null;
+          if (!entry) return '';
+          var count = entry.variety_count || 0;
+          var pct = Math.round((count / total) * 100);
+          return pct > 0 ? '<div class="bar-seg ' + segClass[i] + '" style="width:' + pct + '%"></div>' : '';
+        }).join('');
+      };
+      varietyHtml = '<div class="content-gap"></div><div class="section-label">VARIETY FRESHNESS</div><div class="bar-chart">' +
+        (vf.online ? '<div class="bar-row"><div class="bar-label">ONLINE</div><div class="bar-track"><div class="bar-segments">' + buildVFBar(vf.online) + '</div><span class="bar-avg">' + (vf.online.total_varieties || 0).toLocaleString() + ' var</span></div></div>' : '') +
+        (vf.offline ? '<div class="bar-row"><div class="bar-label">OFFLINE</div><div class="bar-track"><div class="bar-segments">' + buildVFBar(vf.offline) + '</div><span class="bar-avg">' + (vf.offline.total_varieties || 0).toLocaleString() + ' var</span></div></div>' : '') +
+        '<div class="bar-legend"><span class="legend-item"><span class="legend-dot seg-0-3"></span>0\u20133d</span><span class="legend-item"><span class="legend-dot seg-4-7"></span>4\u20137d</span><span class="legend-item"><span class="legend-dot seg-8-14"></span>8\u201314d</span><span class="legend-item"><span class="legend-dot seg-15-30"></span>15\u201330d</span><span class="legend-item"><span class="legend-dot seg-31-90"></span>31\u201390d</span><span class="legend-item"><span class="legend-dot seg-90p"></span>90d+</span></div></div>';
+    }
+  }
+
+  var listCalloutText = !list ? 'No list domain data available.' : '<strong>SO WHAT:</strong> LIST \u2014 Catalog configuration & published supply.';
+  var body = '<div class="content-gap-sm"></div><div class="callout">' + listCalloutText + '</div>' + comparisonHtml + varietyHtml + configHtml + (!list ? '<div class="data-gap-row">List domain data not found for this account.</div>' : '') + '<div class="handoff"><span class="handoff-arrow">&rarr;</span><span>Continue to <strong>SELL</strong></span></div>';
+
+  return cardShell('Card 4 &middot; LIST', 'LIST \u2014 Catalog configuration &amp; published supply', body, true, 'card-list-' + id);
+}
+
+/* --- CARD 5: SELL (adapted from V2) --- */
+function renderSellCard(ev) {
+  var sell = ev.sell;
+  var p = ev.potential;
+  var id = ev._company_id;
+  var buyersHtml = '', cvrHtml = '', metricsHtml = '';
+  var sellOnlinePct = p ? fmtEv(p.sell_online_pct) : null;
+
+  if (sell) {
+    var rr = sell.repeat_rate ? sell.repeat_rate.value : null;
+    var conc = sell.concentration ? sell.concentration.value : null;
+    var rrPct = rr ? rr.repeat_rate_pct : null;
+    var top5Pct = conc ? conc.top5_pct : null;
+    var pills = [];
+    if (rrPct != null) pills.push('<div class="metric-pill ' + (rrPct >= 80 ? 'good-pill' : 'warn-pill') + '"><strong>Repeat rate:</strong> ' + fmtPct(rrPct, 1) + '</div>');
+    if (top5Pct != null) pills.push('<div class="metric-pill ' + (top5Pct < 20 ? 'good-pill' : 'warn-pill') + '"><strong>Conc. Top 5:</strong> ' + fmtPct(top5Pct, 1) + '</div>');
+    if (pills.length) metricsHtml = '<div class="content-gap-sm"></div><div class="metrics-row">' + pills.join('') + '</div>';
+
+    var bt = sell.buyers_table ? sell.buyers_table.value : null;
+    if (bt) {
+      var netBuyers = (bt.new_month || 0) - (bt.churned || 0);
+      var netClass = netBuyers >= 0 ? 'net-positive' : 'net-negative';
+      var netIcon = netBuyers >= 0 ? '\u2191' : '\u2193';
+      buyersHtml = '<div class="section-label" style="margin-top:8px">BUYER LANDSCAPE</div>' +
+        (bt.new_month != null || bt.churned != null ? '<div class="net-indicator ' + netClass + '"><span style="font-size:16px">' + netIcon + '</span><span>Net ' + (netBuyers >= 0 ? '+' : '') + netBuyers + ' buyers</span><span class="net-detail">&nbsp;&middot;&nbsp; ' + (bt.new_month != null ? '+' + bt.new_month + ' new' : '') + ' ' + (bt.churned != null ? '/ \u2013' + bt.churned.toLocaleString() + ' churned' : '') + '</span></div>' : '') +
+        '<div class="table-wrap"><table class="ev-table" style="font-size:12px"><thead><tr><th style="font-size:10px">BUYERS</th><th style="font-size:10px">Online</th><th style="font-size:10px">Offline</th><th style="font-size:10px">Total / Context</th></tr></thead><tbody>' +
+        '<tr><td class="row-label" style="font-size:12px">Total Buyers</td><td style="font-size:12px"><span class="online" style="font-size:12px">' + (bt.online_buyers != null ? bt.online_buyers.toLocaleString() : '\u2014') + '</span></td><td style="font-size:12px">' + (bt.offline_buyers != null ? bt.offline_buyers.toLocaleString() : '\u2014') + '</td><td style="font-size:12px"><strong>' + (bt.total_buyers != null ? bt.total_buyers.toLocaleString() : '\u2014') + '</strong> total</td></tr>' +
+        '<tr><td class="row-label" style="font-size:12px">Active L30D</td><td style="font-size:12px"><span class="online" style="font-size:12px">' + (bt.l30d_online != null ? bt.l30d_online.toLocaleString() : '\u2014') + '</span></td><td style="font-size:12px">' + (bt.l30d_offline != null ? bt.l30d_offline.toLocaleString() : '\u2014') + '</td><td style="font-size:12px">' + (bt.online_buyers && bt.l30d_online ? Math.round((bt.l30d_online / bt.online_buyers) * 100) + '% online retention' : '') + '</td></tr>' +
+        '<tr><td class="row-label" style="font-size:12px">AOV</td><td style="font-size:12px"><span class="online" style="font-size:12px">' + fmt$(bt.aov_online, true) + '</span></td><td style="font-size:12px">' + fmt$(bt.aov_offline, true) + '</td><td style="font-size:12px"></td></tr>' +
+        '</tbody></table></div>';
+    }
+
+    var cvr = sell.cvr ? sell.cvr.value : null;
+    if (cvr) {
+      var cvrPct = cvr.user_cvr_pct != null ? cvr.user_cvr_pct : null;
+      var networkAvg = 19.3;
+      var topPerf = 30.1;
+      var cvrFill = cvrPct != null ? Math.min(100, Math.round((cvrPct / topPerf) * 100)) : 0;
+      cvrHtml = '<div class="content-gap"></div><div class="section-label">WEB CONVERSION RATE (CVR)</div><div class="internal-banner">&#9888; Internal only</div>' +
+        '<div class="cvr-gauge-section">' +
+        '<div class="gauge-row"><div class="gauge-label">This account</div><div class="gauge-track"><div class="gauge-fill fill-blue" style="width:' + cvrFill + '%"></div></div><div class="gauge-value" style="color:var(--blue)">' + (cvrPct != null ? fmtPct(cvrPct, 1) : '\u2014') + '</div></div>' +
+        '<div class="gauge-row"><div class="gauge-label">Top performers</div><div class="gauge-track"><div class="gauge-fill fill-green" style="width:100%"></div></div><div class="gauge-value" style="color:var(--green)">' + fmtPct(topPerf, 1) + '</div></div>' +
+        '<div class="gauge-row"><div class="gauge-label">Network avg</div><div class="gauge-track"><div class="gauge-fill fill-gray" style="width:' + Math.round((networkAvg/topPerf)*100) + '%"></div></div><div class="gauge-value">' + fmtPct(networkAvg, 1) + '</div></div></div>';
+    }
+  }
+
+  var offBuyers = sell && sell.buyers_table ? (sell.buyers_table.value ? sell.buyers_table.value.offline_buyers : null) : null;
+  var sellCallout = sell ? '<strong>SO WHAT:</strong> ' + fmtPct(sellOnlinePct) + ' online.' + (offBuyers != null ? ' ' + offBuyers.toLocaleString() + ' offline buyers not yet invited.' : '') : 'No sell domain data.';
+  var title = 'SELL \u2014 ' + fmtPct(sellOnlinePct) + ' online' + (offBuyers ? '. ' + offBuyers.toLocaleString() + ' offline buyers not yet invited.' : '.');
+
+  var body = '<div class="content-gap-sm"></div><div class="callout ' + (sellOnlinePct != null && sellOnlinePct < 30 ? '' : 'green') + '">' + sellCallout + '</div>' + buyersHtml + metricsHtml + cvrHtml + (!sell ? '<div class="data-gap-row">Sell domain data not found.</div>' : '');
+
+  return cardShell('Card 5 &middot; SELL', title, body, true, 'card-sell-' + id);
+}
+
+/* --- DATA TIMELINE (compact strip, replaces Freshness card) --- */
+function renderDataTimeline(ev) {
+  var f = ev.freshness;
+  if (!f) return '';
+
+  var foundCount = f.sources_used;
+  var totalCount = f.sources_total;
+  var pct = f.coverage_pct;
+
+  var sourceItems = f.sources.map(function(s) {
+    var label = s.source.replace(/_/g, ' ').replace(/evidence/g, '').replace(/current/g, '').trim();
+    // Abbreviate
+    if (label.indexOf('sell cube') >= 0 || label.indexOf('sell') >= 0) label = 'Sell';
+    else if (label.indexOf('buy cube') >= 0 || label.indexOf('buy') >= 0) label = 'Buy';
+    else if (label.indexOf('fees') >= 0) label = 'Fees';
+    else if (label.indexOf('gmv pacing') >= 0) label = 'GMV';
+    else if (label.indexOf('accounts v3') >= 0) label = 'Identity';
+    else if (label.indexOf('config') >= 0) label = 'Config';
+    else if (label.indexOf('inventory') >= 0) label = 'Inventory';
+    else if (label.indexOf('temporal') >= 0) label = 'Temporal';
+    else if (label.indexOf('benchmarks') >= 0) label = 'Benchmarks';
+    else if (label.indexOf('buyers') >= 0) label = 'Buyers';
+    else if (label.indexOf('vendors') >= 0) label = 'Vendors';
+    else if (label.indexOf('hardgoods') >= 0) label = 'Hardgoods';
+    else if (label.indexOf('gmv external') >= 0) label = 'GMV Est';
+    var color = s.found ? 'var(--green)' : 'var(--red)';
+    var dateStr = s.found ? (s.as_of || 'found') : 'missing';
+    return '<span>' + label + ' <strong style="color:' + color + '">' + dateStr + '</strong></span>';
+  });
+
+  return '<div style="margin-top:8px;padding:8px 14px;background:var(--border-light);border-radius:var(--radius-sm);font-size:10px;color:var(--text-muted);display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;">' +
+    '<span style="font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;margin-right:4px;">Data as-of:</span>' +
+    sourceItems.join('') +
+    '<span style="margin-left:auto;font-weight:600;color:var(--text-caption);">' + foundCount + '/' + totalCount + ' sources &middot; ' + pct + '% coverage</span>' +
+  '</div>';
+}
+
+/* --- SHARED OPPORTUNITY FLAG DETECTOR --- */
+function detectOpportunityFlags(ev) {
+  if (!ev) return { hasBuy: false, hasList: false, hasSell: false, hasConfig: false, isDecl: false };
+  var p = ev.potential;
+  var buyOffline = p && p.buy_offline_ytd ? fmtEv(p.buy_offline_ytd) : null;
+  var leakageData = ev.buy && ev.buy.leakage ? ev.buy.leakage.value : null;
+  var leakageCost = leakageData ? leakageData.leakage_cost : null;
+  var k2kLifecycle = ev.buy && ev.buy.k2k_lifecycle ? ev.buy.k2k_lifecycle.value : null;
+  var dormantK2k = k2kLifecycle ? k2kLifecycle.dormant : null;
+  var hasBuy = (buyOffline != null && buyOffline > 0) || (leakageCost != null && leakageCost > 10000) || (dormantK2k != null && dormantK2k > 0);
+
+  var cfgRaw = null;
+  if (ev.list && ev.list.config && ev.list.config.value && ev.list.config.value.raw) cfgRaw = ev.list.config.value.raw;
+  var maxAgeRaw = cfgRaw ? (cfgRaw.ecommerce_max_age != null ? cfgRaw.ecommerce_max_age : cfgRaw.max_age_sell != null ? cfgRaw.max_age_sell : cfgRaw.MaxAge != null ? cfgRaw.MaxAge : null) : null;
+  var maxAge = maxAgeRaw != null ? parseInt(maxAgeRaw, 10) : null;
+  var maxAgeBad = maxAge != null && !isNaN(maxAge) && maxAge < 30;
+  var maxAgeBlocking = maxAge != null && !isNaN(maxAge) && maxAge < 10;
+
+  var bunchesReality = ev.list && ev.list.config && ev.list.config.value && ev.list.config.value.bunches_reality ? ev.list.config.value.bunches_reality : null;
+  var actuallyBunches = bunchesReality != null ? bunchesReality.actually_sells_bunches_ecom : null;
+  var configBunchFlag = cfgRaw ? (cfgRaw.is_on_hand_inventory_units != null ? cfgRaw.is_on_hand_inventory_units : cfgRaw.sell_in_bunches != null ? cfgRaw.sell_in_bunches : cfgRaw.bunches != null ? cfgRaw.bunches : null) : null;
+  var bunchesOff = actuallyBunches === false || (actuallyBunches == null && (configBunchFlag === false || configBunchFlag === 0));
+
+  var vf = ev.list && ev.list.variety_freshness ? ev.list.variety_freshness.value : null;
+  var onlineVarCountF = vf && vf.online ? (vf.online.total_varieties || 0) : null;
+  var offlineVarCountF = vf && vf.offline ? (vf.offline.total_varieties || 0) : null;
+  var varietyGapF = (onlineVarCountF != null && offlineVarCountF != null) ? Math.max(0, offlineVarCountF - onlineVarCountF) : null;
+  var hasList = maxAgeBad || bunchesOff || (varietyGapF != null && varietyGapF > 100);
+
+  var bt = ev.sell && ev.sell.buyers_table ? ev.sell.buyers_table.value : null;
+  var offlineBuyers = bt ? bt.offline_buyers : null;
+  var yoyDelta = p ? p.sell_yoy_delta : null;
+  var yoyPct = null;
+  if (yoyDelta && typeof yoyDelta.pct === 'number') yoyPct = yoyDelta.pct;
+  var hasSell = (offlineBuyers != null && offlineBuyers > 0) || (yoyPct != null && yoyPct < -5);
+
+  var evIdentity = ev.identity;
+  var implStageF = evIdentity ? evIdentity.impl_stage : null;
+  var koronetSellYtdF = p ? fmtEv(p.koronet_sell_ytd) : null;
+  var hasConfig = maxAgeBlocking || (implStageF != null && (koronetSellYtdF == null || koronetSellYtdF < 500));
+
+  var sellYoy = p && p.sell_yoy_delta ? p.sell_yoy_delta : null;
+  var isDecl = false;
+  if (sellYoy) {
+    if (typeof sellYoy.pct === 'number') isDecl = sellYoy.pct < 0;
+    else if (sellYoy.direction === 'down') isDecl = true;
+  }
+
+  return { hasBuy: hasBuy, hasList: hasList, hasSell: hasSell, hasConfig: hasConfig, isDecl: isDecl };
+}
+
+/* --- KPI AGGREGATOR --- */
+function computeKPIs(evidenceList) {
+  var totalSell = 0, totalFees = 0, totalOnlinePct = 0, totalTakeRate = 0;
+  var totalSell2025 = 0, totalFees2025 = 0;
+  var onlineCount = 0, trCount = 0;
+  var accountsWithData = 0;
+  var hasSell2025 = false;
+
+  evidenceList.forEach(function(ev) {
+    if (!ev || !ev.potential) return;
+    var p = ev.potential;
+    var ks = p.koronet_sell_ytd ? p.koronet_sell_ytd.value : null;
+    if (ks != null && ks > 0) { totalSell += ks; accountsWithData++; }
+    var ks25 = p.sell_ytd_2025 ? p.sell_ytd_2025.value : null;
+    if (ks25 != null && ks25 > 0) { totalSell2025 += ks25; hasSell2025 = true; }
+    var f = p.fees_ytd_2026 ? p.fees_ytd_2026.value : null;
+    if (f != null) totalFees += f;
+    var op = p.sell_online_pct ? p.sell_online_pct.value : null;
+    if (op != null) { totalOnlinePct += op; onlineCount++; }
+    var tr = p.take_rate ? p.take_rate.value : null;
+    if (tr != null && tr > 0) { totalTakeRate += tr; trCount++; }
+  });
+
+  var sellYoyPct = (hasSell2025 && totalSell2025 > 0) ? ((totalSell - totalSell2025) / totalSell2025) * 100 : null;
+
+  return {
+    totalSell: totalSell,
+    totalFees: totalFees,
+    sellYoyPct: sellYoyPct,
+    avgOnlinePct: onlineCount > 0 ? totalOnlinePct / onlineCount : null,
+    avgTakeRate: trCount > 0 ? totalTakeRate / trCount : null,
+    accountsWithData: accountsWithData,
+    total: evidenceList.length,
+  };
+}
+
+/* --- TAB SWITCHING --- */
+function showTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.getElementById('panel-' + name).classList.add('active');
+  var tabMap = { 'portfolio': 'tab-portfolio', 'procurement': 'tab-procurement-btn', 'definitions': 'tab-definitions-btn' };
+  if (tabMap[name]) document.getElementById(tabMap[name]).classList.add('active');
+}
+
+/* --- FILTER CHIPS --- */
+function renderFilterChips() {
+  var btFilter = document.getElementById('business-type-filter').value;
+  var ptFilter = document.getElementById('product-tier-filter').value;
+  var scFilter = document.getElementById('sell-channel-filter').value;
+  var prFilter = document.getElementById('priority-filter').value;
+  var search = document.getElementById('search-input').value.trim();
+  var container = document.getElementById('filter-chips');
+  if (!container) return;
+  var chips = [];
+  if (btFilter) chips.push('<div class="chip" onclick="clearFilter(\'business-type-filter\')">' + escHtml(btFilter) + ' <span class="chip-x">&times;</span></div>');
+  if (ptFilter) chips.push('<div class="chip" onclick="clearFilter(\'product-tier-filter\')">' + escHtml(ptFilter) + ' <span class="chip-x">&times;</span></div>');
+  if (scFilter) chips.push('<div class="chip" onclick="clearFilter(\'sell-channel-filter\')">' + escHtml(scFilter) + ' <span class="chip-x">&times;</span></div>');
+  if (prFilter) chips.push('<div class="chip" onclick="clearFilter(\'priority-filter\')">' + escHtml(prFilter) + ' <span class="chip-x">&times;</span></div>');
+  if (potFilter) chips.push('<div class="chip" onclick="clearFilter(\'potential-tier-filter\')">' + escHtml(potFilter) + ' <span class="chip-x">&times;</span></div>');
+  if (search) chips.push('<div class="chip" onclick="clearFilter(\'search-input\')">&#8220;' + escHtml(search) + '&#8221; <span class="chip-x">&times;</span></div>');
+  if (chips.length > 1) chips.push('<span class="chip-clear" onclick="clearAllFilters()">clear all</span>');
+  container.innerHTML = chips.join('');
+}
+
+function clearFilter(id) {
+  var el = document.getElementById(id);
+  if (el) el.value = '';
+  applyFilters();
+}
+
+function clearAllFilters() {
+  document.getElementById('business-type-filter').value = '';
+  document.getElementById('product-tier-filter').value = '';
+  document.getElementById('sell-channel-filter').value = '';
+  document.getElementById('priority-filter').value = '';
+  document.getElementById('potential-tier-filter').value = '';
+  document.getElementById('search-input').value = '';
+  applyFilters();
+}
+
+/* --- SFDC OPPORTUNITIES --- */
+var _sfdcOpps = {};
+
+function _loadSfdcOpps() {
+  return fetch('data/sfdc_open_opportunities_v1.json')
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .catch(function() { return null; })
+    .then(function(data) {
+      if (!data || !Array.isArray(data.records)) return;
+      data.records.forEach(function(rec) {
+        if (!rec.account_id) return;
+        var amt = parseFloat(rec.amount) || 0;
+        _sfdcOpps[rec.account_id] = (_sfdcOpps[rec.account_id] || 0) + amt;
+      });
+    });
+}
+
+/* --- FILTER LOGIC --- */
+var _allEvidence = [];
+var _filteredEvidence = [];
+var _displayedCount = 0;
+var PAGE_SIZE = 50;
+
+var tfMap = {
+  'jul_2026': 'current_month',
+  'jun_2026': 'prior_month',
+  'q2_2026': 'prior_quarter',
+  'h1_2026': 'ytd',
+  'ytd_2026': 'ytd',
+};
+
+function _adapterTf() {
+  var rawTf = document.getElementById('timeframe-select').value;
+  return tfMap[rawTf] || 'ytd';
+}
+
+function applyFilters() {
+  var btFilter = document.getElementById('business-type-filter').value.toLowerCase();
+  var ptFilter = document.getElementById('product-tier-filter').value.toLowerCase();
+  var scFilter = document.getElementById('sell-channel-filter').value.toLowerCase();
+  var prFilter = document.getElementById('priority-filter').value.toLowerCase();
+  var potFilter = document.getElementById('potential-tier-filter').value.toLowerCase();
+  var search = document.getElementById('search-input').value.toLowerCase().trim();
+
+  _filteredEvidence = _allEvidence.filter(function(ev) {
+    if (!ev) return false;
+    var id = ev.identity || {};
+    if (btFilter && (id.business_type || '').toLowerCase() !== btFilter) return false;
+    if (ptFilter && (id.product_tier || '').toLowerCase() !== ptFilter) return false;
+    if (scFilter) {
+      var sc = (id.sell_channel || '').toLowerCase();
+      if (scFilter === 'none') { if (sc && sc !== 'none' && sc !== 'no digital') return false; }
+      else { if (sc !== scFilter) return false; }
+    }
+    if (prFilter && (id.priority_level || '').toLowerCase() !== prFilter) return false;
+    if (potFilter && (id.potential_tier || '').toLowerCase() !== potFilter) return false;
+    if (search && (ev._company_name || '').toLowerCase().indexOf(search) < 0) return false;
+    return true;
+  });
+
+  _displayedCount = 0;
+  renderFilterChips();
+  renderTable();
+}
+
+function renderTable() {
+  var tbody = document.getElementById('portfolio-tbody');
+  var toShow = _filteredEvidence.slice(0, _displayedCount + PAGE_SIZE);
+  _displayedCount = toShow.length;
+  tbody.innerHTML = toShow.map(function(ev, i) { return renderRow(ev, i); }).join('');
+
+  var kpis = computeKPIs(_filteredEvidence);
+  document.getElementById('kpi-sell').textContent = fmt$(kpis.totalSell, true);
+  document.getElementById('kpi-fees').textContent = fmt$(kpis.totalFees, true);
+  document.getElementById('kpi-accounts').textContent = kpis.accountsWithData + ' of ' + kpis.total;
+  document.getElementById('kpi-online').textContent = fmtPct(kpis.avgOnlinePct, 1);
+  document.getElementById('kpi-takerate').textContent = fmtPct(kpis.avgTakeRate, 2);
+
+  // YoY delta
+  var sellDeltaEl = document.getElementById('kpi-sell-delta');
+  if (kpis.sellYoyPct != null) {
+    sellDeltaEl.textContent = (kpis.sellYoyPct >= 0 ? '+' : '') + kpis.sellYoyPct.toFixed(1) + '% YoY';
+    sellDeltaEl.className = 'kpi-delta ' + (kpis.sellYoyPct >= 0 ? 'up' : 'down');
+    sellDeltaEl.style.display = '';
+  } else { sellDeltaEl.style.display = 'none'; }
+
+  // Tab counts
+  document.getElementById('tab-count-portfolio').textContent = _filteredEvidence.length;
+  var buyLeads = 0, listLeads = 0, sellLeads = 0, configLeads = 0, declining = 0;
+  _filteredEvidence.forEach(function(ev) {
+    var flags = detectOpportunityFlags(ev);
+    if (flags.hasBuy) buyLeads++;
+    if (flags.hasList) listLeads++;
+    if (flags.hasSell) sellLeads++;
+    if (flags.hasConfig) configLeads++;
+    if (flags.isDecl) declining++;
+  });
+  document.getElementById('tab-count-buy').textContent = buyLeads;
+  document.getElementById('tab-count-list').textContent = listLeads;
+  document.getElementById('tab-count-sell').textContent = sellLeads;
+  document.getElementById('tab-count-config').textContent = configLeads;
+  document.getElementById('tab-count-declining').textContent = declining;
+
+  // Section label
+  var rawTfLabel = document.getElementById('timeframe-select').value;
+  document.getElementById('section-label').textContent = 'Portfolio \u00b7 ' + _filteredEvidence.length + ' accounts \u00b7 ' + rawTfLabel.toUpperCase() + ' \u00b7 Updated ' + new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+  // Load more
+  var loadMoreWrap = document.getElementById('load-more-wrap');
+  if (_filteredEvidence.length > _displayedCount) {
+    loadMoreWrap.style.display = 'block';
+    document.getElementById('load-more-btn').textContent = 'Load more accounts (' + (_filteredEvidence.length - _displayedCount) + ' remaining)';
+  } else { loadMoreWrap.style.display = 'none'; }
+
+  // Note strip
+  document.getElementById('note-strip').textContent = 'Showing ' + _displayedCount + ' of ' + _filteredEvidence.length + ' filtered accounts \u00b7 Total: ' + _allEvidence.length + ' in universe \u00b7 Sorted by Fees YTD desc \u00b7 GMV: Medido (12M)=measured. Pace=$/day x 365. ORA=declared. Red=network floor. $ at Stake = SFDC open opps only.';
+
+  // Coverage warn
+  var noData = kpis.total - kpis.accountsWithData;
+  var cvWarn = document.getElementById('coverage-warn');
+  if (noData > 0) {
+    cvWarn.style.display = 'flex';
+    document.getElementById('coverage-text').textContent = noData + ' accounts without sell data. Coverage: ' + Math.round((kpis.accountsWithData/kpis.total)*100) + '% of portfolio.';
+  } else { cvWarn.style.display = 'none'; }
+}
+
+/* --- ROW EXPAND --- */
+function toggleExpand(id) {
+  var row = document.getElementById('row-' + id);
+  var expanded = document.getElementById('expanded-' + id);
+  var btn = row ? row.querySelector('.toggle-btn') : null;
+  if (!row || !expanded) return;
+  var isOpen = expanded.style.display === 'table-row';
+  if (isOpen) {
+    expanded.style.display = 'none';
+    if (btn) btn.classList.remove('open');
+    if (row) row.classList.remove('row-expanded');
+  } else {
+    expanded.style.display = 'table-row';
+    if (btn) btn.classList.add('open');
+    if (row) row.classList.add('row-expanded');
+    var cardsContainer = document.getElementById('cards-' + id);
+    if (cardsContainer && cardsContainer.dataset.loaded !== 'true') {
+      cardsContainer.dataset.loaded = 'true';
+      var ev = EvidenceAdapter.getAccountEvidence(id, _adapterTf());
+      if (ev) {
+        cardsContainer.innerHTML = renderCards(id, ev);
+      } else {
+        cardsContainer.innerHTML = '<div class="data-gap-row">No evidence data found for company ID: ' + escHtml(id) + '</div>';
+      }
+    }
+  }
+}
+
+/* --- CARD TOGGLE --- */
+function toggleCard(cardId) {
+  var card = document.getElementById(cardId);
+  if (card) card.classList.toggle('open');
+}
+
+/* --- COLUMN SORTING --- */
+var _currentSort = { key: 'fees', dir: 'desc' };
+
+function getSortValue(ev, key) {
+  if (!ev) return null;
+  var p = ev.potential;
+  var fmtEvVal = function(obj) { return obj && obj.value != null ? obj.value : null; };
+  switch(key) {
+    case 'name': return (ev._company_name || '').toLowerCase();
+    case 'est_gmv': return buildGmvDisplay(ev).sortValue;
+    case 'koronet_sell': return p ? fmtEvVal(p.koronet_sell_ytd) : null;
+    case 'sell_pen': return p ? fmtEvVal(p.sell_penetration) : null;
+    case 'online_pct': return p ? fmtEvVal(p.sell_online_pct) : null;
+    case 'koronet_buy': return p ? fmtEvVal(p.koronet_buy_ytd) : null;
+    case 'buy_pen': return p ? fmtEvVal(p.buy_penetration) : null;
+    case 'buy_online_pct': return p ? fmtEvVal(p.buy_online_pct) : null;
+    case 'fees': return p ? fmtEvVal(p.fees_ytd_2026) : null;
+    case 'take_rate': return p ? fmtEvVal(p.take_rate) : null;
+    case 'mom_delta': return p && p.sell_mom_delta ? p.sell_mom_delta.pct : null;
+    case 'at_stake': return calcAtStakeAmount(ev);
+    default: return null;
+  }
+}
+
+function sortEvidence(key) {
+  if (_currentSort.key === key) {
+    _currentSort.dir = _currentSort.dir === 'desc' ? 'asc' : 'desc';
+  } else {
+    _currentSort.key = key;
+    _currentSort.dir = key === 'name' ? 'asc' : 'desc';
+  }
+  _filteredEvidence.sort(function(a, b) {
+    var va = getSortValue(a, key);
+    var vb = getSortValue(b, key);
+    if (va == null && vb == null) return 0;
+    if (va == null) return 1;
+    if (vb == null) return -1;
+    if (key === 'name') {
+      var cmp = va.localeCompare(vb);
+      return _currentSort.dir === 'asc' ? cmp : -cmp;
+    }
+    var diff = va - vb;
+    return _currentSort.dir === 'asc' ? diff : -diff;
+  });
+  _displayedCount = 0;
+  renderTable();
+  document.querySelectorAll('#portfolio-table th[data-sort]').forEach(function(th) {
+    th.textContent = th.textContent.replace(/ [\u25B2\u25BC]$/, '');
+    if (th.dataset.sort === key) th.textContent += _currentSort.dir === 'asc' ? ' \u25B2' : ' \u25BC';
+  });
+}
+
+/* --- TIMEFRAME CHANGE --- */
+function onTimeframeChange() {
+  document.querySelectorAll('[id^="cards-"]').forEach(function(el) {
+    el.dataset.loaded = '';
+    el.innerHTML = '<div style="font-size:12px;color:var(--text-muted);font-style:italic;">&#8627; Re-expand to load with new timeframe.</div>';
+  });
+  document.querySelectorAll('.toggle-btn.open').forEach(function(btn) { btn.classList.remove('open'); });
+  document.querySelectorAll('.row-expanded').forEach(function(row) { row.classList.remove('row-expanded'); });
+  document.querySelectorAll('[id^="expanded-"]').forEach(function(el) { el.style.display = 'none'; });
+
+  var newTf = _adapterTf();
+  var allIds = EvidenceAdapter.getAllAccountIds();
+  _allEvidence = allIds.map(function(cid) { return EvidenceAdapter.getAccountEvidence(cid, newTf); });
+  _allEvidence.sort(function(a, b) {
+    var fa = (a && a.potential && a.potential.fees_ytd_2026 && a.potential.fees_ytd_2026.value) || 0;
+    var fb = (b && b.potential && b.potential.fees_ytd_2026 && b.potential.fees_ytd_2026.value) || 0;
+    if (fb !== fa) return fb - fa;
+    return ((a && a._company_name) || '').localeCompare((b && b._company_name) || '');
+  });
+  applyFilters();
+}
+
+/* --- MAIN INIT --- */
+Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
+  var tf = _adapterTf();
+  var allIds = EvidenceAdapter.getAllAccountIds();
+  var idx = 0;
+  var BATCH = 50;
+
+  function loadBatch() {
+    var slice = allIds.slice(idx, idx + BATCH);
+    slice.forEach(function(cid) {
+      var ev = EvidenceAdapter.getAccountEvidence(cid, tf);
+      _allEvidence.push(ev);
+    });
+    idx += slice.length;
+    if (idx < allIds.length) {
+      requestAnimationFrame(loadBatch);
+    } else {
+      _allEvidence.sort(function(a, b) {
+        var fa = (a && a.potential && a.potential.fees_ytd_2026 && a.potential.fees_ytd_2026.value) || 0;
+        var fb = (b && b.potential && b.potential.fees_ytd_2026 && b.potential.fees_ytd_2026.value) || 0;
+        if (fb !== fa) return fb - fa;
+        return ((a && a._company_name) || '').localeCompare((b && b._company_name) || '');
+      });
+      applyFilters();
+    }
+  }
+
+  loadBatch();
+
+  // Bind controls
+  document.getElementById('timeframe-select').addEventListener('change', onTimeframeChange);
+  document.getElementById('business-type-filter').addEventListener('change', applyFilters);
+  document.getElementById('product-tier-filter').addEventListener('change', applyFilters);
+  document.getElementById('sell-channel-filter').addEventListener('change', applyFilters);
+  document.getElementById('priority-filter').addEventListener('change', applyFilters);
+  document.getElementById('potential-tier-filter').addEventListener('change', applyFilters);
+  document.getElementById('search-input').addEventListener('input', applyFilters);
+  document.getElementById('load-more-btn').addEventListener('click', function() {
+    var toShow = _filteredEvidence.slice(0, _displayedCount + PAGE_SIZE);
+    _displayedCount = toShow.length;
+    var tbody = document.getElementById('portfolio-tbody');
+    var newRows = _filteredEvidence.slice(_displayedCount - PAGE_SIZE, _displayedCount);
+    newRows.forEach(function(ev, i) {
+      tbody.insertAdjacentHTML('beforeend', renderRow(ev, _displayedCount - PAGE_SIZE + i));
+    });
+    var loadMoreWrap = document.getElementById('load-more-wrap');
+    if (_filteredEvidence.length > _displayedCount) {
+      document.getElementById('load-more-btn').textContent = 'Load more accounts (' + (_filteredEvidence.length - _displayedCount) + ' remaining)';
+    } else { loadMoreWrap.style.display = 'none'; }
+    document.getElementById('note-strip').textContent = 'Showing ' + _displayedCount + ' of ' + _filteredEvidence.length + ' filtered accounts \u00b7 Total: ' + _allEvidence.length + ' in universe';
+  });
+
+  // Column sort
+  document.querySelectorAll('#portfolio-table th[data-sort]').forEach(function(th) {
+    th.addEventListener('click', function() { sortEvidence(th.dataset.sort); });
+  });
+
+  // Tab buttons (lead tabs filter then re-show portfolio)
+  ['tab-buy','tab-list','tab-sell','tab-config','tab-declining'].forEach(function(tabId) {
+    document.getElementById(tabId).addEventListener('click', function() {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+
+}).catch(function(err) {
+  document.getElementById('section-label').innerHTML = '<span style="color:var(--red)">Error loading data: ' + (err.message || err) + '. Make sure evidence_adapter_v3.js and the data/ folder are available.</span>';
+  console.error('[TX Dashboard V3] init error:', err);
+});
+</script>
+</body>
+</html>

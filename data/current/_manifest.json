@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-08-13",
+  "period": "2025-08 to 2026-07",
+  "source": "Transformed from V2 evidence JSONs",
+  "cubes": {
+    "sell_monthly": {
+      "rows": 4732,
+      "companies": 434
+    },
+    "buy_monthly": {
+      "rows": 3312,
+      "companies": 417
+    },
+    "fees_ytd": {
+      "rows": 362,
+      "companies": 227
+    }
+  }
+}
