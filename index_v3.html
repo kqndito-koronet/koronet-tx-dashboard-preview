@@ -676,9 +676,85 @@
 
   <!-- Tab: Definitions -->
   <div class="tab-panel" id="panel-definitions">
-    <div class="definitions-panel">
-      <h2>Definitions</h2>
-      <p>Coming soon &mdash; metric definitions, data provenance guide, and methodology reference will live here.</p>
+    <div class="definitions-panel" style="max-width:900px;margin:0 auto;padding:24px;">
+
+      <h2 style="margin-bottom:20px;">Definitions &amp; Methodology</h2>
+
+      <h3 style="margin:24px 0 12px;color:var(--blue);">Potential Tiers (SIZE &times; PRODUCT)</h3>
+      <table class="ev-table" style="font-size:12px;margin-bottom:16px;">
+        <thead><tr><th>Tier</th><th>Criteria</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Flagship</strong></td><td>GMV &ge;$10M + Core+/eSuite</td><td>Full platform, massive volume. Protect and grow.</td></tr>
+          <tr><td><strong>Growth Engine</strong></td><td>GMV &ge;$2M + Core+/eSuite, OR &ge;$10M + Procurement/K2K</td><td>High potential, worth investing in activation.</td></tr>
+          <tr><td><strong>Activate</strong></td><td>GMV $500K-$2M + Core+/eSuite, OR &ge;$2M + Procurement/K2K</td><td>Get them using the platform.</td></tr>
+          <tr><td><strong>Seed</strong></td><td>GMV &lt;$500K any tier, OR small Procurement/K2K</td><td>Nurture, don&rsquo;t over-invest.</td></tr>
+          <tr><td><strong>Unmeasured</strong></td><td>No GMV data</td><td>Need GMV estimator or Christine input.</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin:24px 0 12px;color:var(--blue);">Product Tiers (what they CAN DO)</h3>
+      <table class="ev-table" style="font-size:12px;margin-bottom:16px;">
+        <thead><tr><th>Tier</th><th>Can Buy</th><th>Can Sell</th><th>Full Inventory</th><th>Fee Potential</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Core+</strong></td><td>&check; (KP + Core)</td><td>&check; (eShop + Core)</td><td>&check; (ERP)</td><td>eCom + K2K + API</td></tr>
+          <tr><td><strong>eSuite</strong></td><td>&check; (KP)</td><td>&check; (eShop)</td><td>Partial</td><td>eCom + K2K</td></tr>
+          <tr><td><strong>Procurement</strong></td><td>&check; (KP only)</td><td>&cross;</td><td>&cross;</td><td>Buy fees only</td></tr>
+          <tr><td><strong>K2K</strong></td><td>&cross;</td><td>Connections only</td><td>&cross;</td><td>K2K fees only</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin:24px 0 12px;color:var(--blue);">Procurement Archetypes (from UX Research Hub)</h3>
+      <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px;">Based on 221 KP accounts. Behavioral classification from purchase patterns.</p>
+      <table class="ev-table" style="font-size:12px;margin-bottom:16px;">
+        <thead><tr><th>Code</th><th>Name</th><th>n</th><th>Behavioral Signal</th></tr></thead>
+        <tbody>
+          <tr><td><strong>B1</strong></td><td>Enterprise &middot; top-volume</td><td>3</td><td>National multi-branch, near-daily, median 34 buyers</td></tr>
+          <tr><td><strong>B2</strong></td><td>Scheduled &middot; high-volume</td><td>39</td><td>Fixed weekday buying, owner-operators, single carrier</td></tr>
+          <tr><td><strong>B3</strong></td><td>Steady &middot; mid-volume</td><td>22</td><td>Sustained ~$142K spend, no sharp cadence</td></tr>
+          <tr><td><strong>B4</strong></td><td>Occasional &middot; low-volume</td><td>71</td><td>Low spend (&lt;$30K), intermittent, includes trials</td></tr>
+          <tr><td>&mdash;</td><td>Never purchased</td><td>86</td><td>Active contract, 0 POs</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin:24px 0 12px;color:var(--blue);">Engagement Status</h3>
+      <table class="ev-table" style="font-size:12px;margin-bottom:16px;">
+        <thead><tr><th>Status</th><th>Definition</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Purchasing</strong></td><td>GMV &gt; 0 in last 6 months</td></tr>
+          <tr><td><strong>At Risk</strong></td><td>GMV &gt; 0 in 6-12M but not last 6M</td></tr>
+          <tr><td><strong>Lapsed</strong></td><td>Purchased before but not in last 12M</td></tr>
+          <tr><td><strong>Dormant</strong></td><td>Never purchased</td></tr>
+          <tr><td><strong>Onboarding</strong></td><td>&le;90 days on platform, no POs</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin:24px 0 12px;color:var(--blue);">GMV Methodology</h3>
+      <table class="ev-table" style="font-size:12px;margin-bottom:16px;">
+        <thead><tr><th>Source</th><th>How it&rsquo;s computed</th><th>Confidence</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Medido</strong></td><td>Snowflake T12 sales, full year</td><td>Alta (240d+)</td></tr>
+          <tr><td><strong>Pace</strong></td><td>$/day &times; 365 from observed window</td><td>Media (120-239d) or Baja (&lt;120d)</td></tr>
+          <tr><td><strong>ORA</strong></td><td>Declared in Salesforce at onboarding</td><td>Unverified &mdash; challenge vs estimator</td></tr>
+          <tr><td><strong>Red (&ge;)</strong></td><td>Network footprint &mdash; what Koronet companies buy/sell to this account</td><td>Floor only, not estimate</td></tr>
+          <tr><td><strong>FCS</strong></td><td>FCS Credit Card Clients planilla (2022 data)</td><td>Historical, 4 years old</td></tr>
+          <tr><td><strong>Estimado</strong></td><td>External research: hubs &times; $4-6M (wholesaler), employees &times; $375K, stems &times; $0.60</td><td>Challenge source</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:11px;color:var(--text-muted);">Buy GMV estimated at 45% of sell GMV (Christine measured on wholesaler segment). External estimator runs as CHALLENGE for all accounts, not just those without data.</p>
+
+      <h3 style="margin:24px 0 12px;color:var(--blue);">Key Metrics</h3>
+      <table class="ev-table" style="font-size:12px;margin-bottom:16px;">
+        <thead><tr><th>Metric</th><th>Formula</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td><strong>% Digital</strong></td><td>sell_online / sell_total &times; 100</td><td>Sell cube (Snowflake)</td></tr>
+          <tr><td><strong>Penetration</strong></td><td>koronet_sell_annualized / gmv_reference</td><td>Christine cascade denominator</td></tr>
+          <tr><td><strong>Take Rate</strong></td><td>fees_ytd / (sell_ytd + buy_ytd)</td><td>Fees + sell + buy cubes</td></tr>
+          <tr><td><strong>MoM Delta</strong></td><td>(current_month - prior_month) / prior_month</td><td>Sell cube monthly</td></tr>
+          <tr><td><strong>$ at Stake</strong></td><td>SFDC open opportunity Amount</td><td>sfdc_open_opportunities_v1.json</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:11px;color:var(--text-muted);">Source: UX Research Hub (koronet-network/ux-research-hub), Christine GMV Sheet, wholesalers-hypotheses repo, Snowflake data catalog (koronet-network/koronet-data-catalog).</p>
+
     </div>
   </div>
 
