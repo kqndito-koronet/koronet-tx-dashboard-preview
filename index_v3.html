@@ -527,6 +527,13 @@
           <option value="Seed">Seed</option>
           <option value="Unmeasured">Unmeasured</option>
         </select>
+        <select class="select-pill" id="impl-stage-filter">
+          <option value="">All Stages</option>
+          <option value="Pre-live">Pre-live</option>
+          <option value="Recently live (2026)">Go-live 2026</option>
+          <option value="Recently live (H2 2025)">Go-live H2 2025</option>
+          <option value="Established">Established</option>
+        </select>
 
         <div class="filter-divider"></div>
 
@@ -2114,6 +2121,7 @@ function renderFilterChips() {
   var scFilter = document.getElementById('sell-channel-filter').value;
   var prFilter = document.getElementById('priority-filter').value;
   var potFilter = document.getElementById('potential-tier-filter').value;
+  var implFilter = document.getElementById('impl-stage-filter').value;
   var search = document.getElementById('search-input').value.trim();
   var container = document.getElementById('filter-chips');
   if (!container) return;
@@ -2123,6 +2131,7 @@ function renderFilterChips() {
   if (scFilter) chips.push('<div class="chip" onclick="clearFilter(\'sell-channel-filter\')">' + escHtml(scFilter) + ' <span class="chip-x">&times;</span></div>');
   if (prFilter) chips.push('<div class="chip" onclick="clearFilter(\'priority-filter\')">' + escHtml(prFilter) + ' <span class="chip-x">&times;</span></div>');
   if (potFilter) chips.push('<div class="chip" onclick="clearFilter(\'potential-tier-filter\')">' + escHtml(potFilter) + ' <span class="chip-x">&times;</span></div>');
+  if (implFilter) chips.push('<div class="chip" onclick="clearFilter(\'impl-stage-filter\')">' + escHtml(implFilter) + ' <span class="chip-x">&times;</span></div>');
   if (search) chips.push('<div class="chip" onclick="clearFilter(\'search-input\')">&#8220;' + escHtml(search) + '&#8221; <span class="chip-x">&times;</span></div>');
   if (chips.length > 1) chips.push('<span class="chip-clear" onclick="clearAllFilters()">clear all</span>');
   container.innerHTML = chips.join('');
@@ -2140,6 +2149,7 @@ function clearAllFilters() {
   document.getElementById('sell-channel-filter').value = '';
   document.getElementById('priority-filter').value = '';
   document.getElementById('potential-tier-filter').value = '';
+  document.getElementById('impl-stage-filter').value = '';
   document.getElementById('search-input').value = '';
   applyFilters();
 }
@@ -2170,6 +2180,7 @@ function applyFilters() {
   var scFilter = document.getElementById('sell-channel-filter').value.toLowerCase();
   var prFilter = document.getElementById('priority-filter').value.toLowerCase();
   var potFilter = document.getElementById('potential-tier-filter').value.toLowerCase();
+  var implFilter = document.getElementById('impl-stage-filter').value;
   var search = document.getElementById('search-input').value.toLowerCase().trim();
 
   _filteredEvidence = _allEvidence.filter(function(ev) {
@@ -2184,6 +2195,7 @@ function applyFilters() {
     }
     if (prFilter && (id.priority_level || '').toLowerCase() !== prFilter) return false;
     if (potFilter && (id.potential_tier || '').toLowerCase() !== potFilter) return false;
+    if (implFilter && (id.impl_stage_display || '') !== implFilter) return false;
     if (search && (ev._company_name || '').toLowerCase().indexOf(search) < 0) return false;
     return true;
   });
@@ -2450,6 +2462,7 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
   document.getElementById('sell-channel-filter').addEventListener('change', applyFilters);
   document.getElementById('priority-filter').addEventListener('change', applyFilters);
   document.getElementById('potential-tier-filter').addEventListener('change', applyFilters);
+  document.getElementById('impl-stage-filter').addEventListener('change', applyFilters);
   document.getElementById('search-input').addEventListener('input', applyFilters);
   document.getElementById('load-more-btn').addEventListener('click', function() {
     var toShow = _filteredEvidence.slice(0, _displayedCount + PAGE_SIZE);

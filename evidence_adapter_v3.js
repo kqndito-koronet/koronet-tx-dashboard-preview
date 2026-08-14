@@ -548,6 +548,7 @@
       product_tier:     rec.product_tier || null,
       sell_channel:     rec.sell_channel || null,
       potential_tier:   rec.potential_tier || null,
+      impl_stage_display: rec.impl_stage_display || null,
       priority_level:   rec.priority_level || null,
       engagement_status: rec.engagement_status || null,
       komet_status:     rec.komet_status || null,
