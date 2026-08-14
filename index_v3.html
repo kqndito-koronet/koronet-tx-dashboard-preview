@@ -1748,22 +1748,22 @@ function renderRow(ev, idx) {
   const atStakeSource = atStakeResult ? atStakeResult.source : null;
   const diagnosis = buildDiagnosis(ev);
 
-  // Online color (sell) — red if > 100% (data error)
+  // Online color (sell)
   const onlineClass = (onlinePct != null)
-    ? (onlinePct > 100 ? 'online-error' : onlinePct >= 30 ? 'online-value' : 'online-low')
+    ? (onlinePct >= 30 ? 'online-value' : 'online-low')
     : 'metric-value';
 
   // Online qualifier (#18)
   const onlineQualifier = onlinePct != null
-    ? (onlinePct > 100 ? 'DATA ERROR >100%' : onlinePct < 20 ? 'mostly offline' : onlinePct >= 60 ? 'digital-first' : 'healthy')
+    ? (onlinePct < 20 ? 'mostly offline' : onlinePct >= 60 ? 'digital-first' : 'healthy')
     : '';
 
   // Buy online color — same scheme as sell
   const buyOnlineClass = (buyOnlinePct != null)
-    ? (buyOnlinePct > 100 ? 'online-error' : buyOnlinePct >= 30 ? 'online-value' : 'online-low')
+    ? (buyOnlinePct >= 30 ? 'online-value' : 'online-low')
     : 'metric-value';
   const buyOnlineQualifier = buyOnlinePct != null
-    ? (buyOnlinePct > 100 ? 'DATA ERROR >100%' : buyOnlinePct < 20 ? 'mostly offline' : buyOnlinePct >= 60 ? 'digital-first' : 'healthy')
+    ? (buyOnlinePct < 20 ? 'mostly offline' : buyOnlinePct >= 60 ? 'digital-first' : 'healthy')
     : '';
 
   // Penetration source — is it tautological (koronet-derived est) or real (external)?
@@ -1771,17 +1771,11 @@ function renderRow(ev, idx) {
   const isSellPenTautological = sellPenEv === 'tautological';
 
   // Penetration qualifier (#17) — only meaningful for real external estimates
-  // >100% = data error (Est GMV too low)
   const penQualifier = isSellPenTautological
     ? 'Koronet = primary'
     : (sellPen != null
-      ? (sellPen > 100 ? 'DATA ERROR >100%' : sellPen < 10 ? 'low capture' : sellPen >= 50 ? 'high capture' : '')
+      ? (sellPen < 10 ? 'low capture' : sellPen >= 50 ? 'high capture' : '')
       : '');
-  const sellPenStyle = (!isSellPenTautological && sellPen != null && sellPen > 100) ? 'color:var(--red);font-weight:700' : '';
-
-  // Buy penetration >100% check
-  const buyPenOver100 = (buyPen != null && buyPen > 100);
-  const buyPenQualifier = buyPenOver100 ? 'DATA ERROR >100%' : '';
 
   // Koronet Sell qualifier (#16) — only meaningful for real external estimates
   const sellGrowthQualifier = isSellPenTautological
@@ -1879,8 +1873,8 @@ function renderRow(ev, idx) {
         <div class="metric-qualifier">${sellGrowthQualifier}</div>
       </td>
       <td class="metric-cell">
-        <div class="metric-value" ${isSellPenTautological ? 'style="color:var(--text-muted);font-style:italic"' : sellPenStyle ? 'style="' + sellPenStyle + '"' : ''}>${isSellPenTautological ? '~100%' : fmtPct(sellPen)}</div>
-        ${penQualifier ? `<div class="metric-qualifier" ${sellPen > 100 ? 'style="color:var(--red)"' : ''}>${penQualifier}</div>` : ''}
+        <div class="metric-value" ${isSellPenTautological ? 'style="color:var(--text-muted);font-style:italic"' : ''}>${isSellPenTautological ? '~100%' : fmtPct(sellPen)}</div>
+        ${penQualifier ? `<div class="metric-qualifier">${penQualifier}</div>` : ''}
       </td>
       <td class="metric-cell ${onlineSegClass}">
         <div class="${onlineClass}">${fmtPct(onlinePct)}</div>
@@ -1894,12 +1888,11 @@ function renderRow(ev, idx) {
         <div class="metric-value">${fmt$(koronetBuy, true)}</div>
       </td>
       <td class="metric-cell">
-        <div class="metric-value" ${(p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? 'style="color:var(--text-muted);font-style:italic"' : buyPenOver100 ? 'style="color:var(--red);font-weight:700"' : ''}>${(p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? '~100%' : fmtPct(buyPen)}</div>
-        ${buyPenQualifier ? '<div class="metric-qualifier" style="color:var(--red)">' + buyPenQualifier + '</div>' : ''}
+        <div class="metric-value" ${(p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? 'style="color:var(--text-muted);font-style:italic"' : ''}>${(p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? '~100%' : fmtPct(buyPen)}</div>
       </td>
       <td class="metric-cell">
         <div class="${buyOnlineClass}">${fmtPct(buyOnlinePct)}</div>
-        ${buyOnlineQualifier ? '<div class="metric-qualifier"' + (buyOnlinePct > 100 ? ' style="color:var(--red)"' : '') + '>' + buyOnlineQualifier + '</div>' : ''}
+        ${buyOnlineQualifier ? '<div class="metric-qualifier">' + buyOnlineQualifier + '</div>' : ''}
       </td>
       <td class="metric-cell">
         <div class="fees-value">${fmt$(feesYtd, true)}</div>
@@ -4254,40 +4247,20 @@ function populateTierMatrix() {
     if (g >= 1e3) return '$' + Math.round(g/1e3) + 'K';
     return g > 0 ? '$' + Math.round(g) : '';
   }
-  // Color coding: green >= 30%, amber > 0%, grey = 0%
-  // Red = over 100% (data error)
-  function pctColor(p) {
-    if (p > 100) return '#dc2626';
-    return p >= 30 ? '#16a34a' : p > 0 ? '#d97706' : '#94a3b8';
-  }
+  function pctColor(p) { return p >= 30 ? '#16a34a' : p > 0 ? '#d97706' : '#94a3b8'; }
 
-  // Cap at 100%, flag if over
-  function capPct(raw) {
-    if (raw == null) return null;
-    return raw;  // show actual value — color flags > 100%
-  }
-
-  // Render cell — two rows: Pen (penetration) and Dig (online %)
-  // Penetration = Koronet total / Est GMV
-  // Online % = Online / Koronet total
-  // Procurement can't sell → "—" for sell metrics
+  // Render cell — penetration sell + buy (Koronet / Est GMV, capped at 100%)
+  // Procurement can't sell → "—" for sell
   function cellHtml(d, tier, bg, band) {
     if (d.n === 0) return '<td style="padding:6px 8px;border:1px solid #e2e8f0;text-align:center;color:#94a3b8">—</td>';
 
-    // Sell penetration = Koronet sell / Est GMV
-    var penS = (tier === 'Procurement') ? null : (d.gmv > 0 ? Math.round(d.kSell / d.gmv * 100) : 0);
-    // Buy penetration = Koronet buy / Est Buy GMV
-    var penB = d.buyGmv > 0 ? Math.round(d.kBuy / d.buyGmv * 100) : 0;
-    // Sell online % = Online sell / Koronet sell
-    var digS = (tier === 'Procurement') ? null : (d.kSell > 0 ? Math.round(d.onlineSell / d.kSell * 100) : 0);
-    // Buy online % = Online buy / Koronet buy
-    var digB = d.kBuy > 0 ? Math.round(d.onlineBuy / d.kBuy * 100) : 0;
+    // Sell penetration = Koronet sell / Est GMV (capped 100%)
+    var penS = (tier === 'Procurement') ? null : (d.gmv > 0 ? Math.min(Math.round(d.kSell / d.gmv * 100), 100) : 0);
+    // Buy penetration = Koronet buy / Est Buy GMV (capped 100%)
+    var penB = d.buyGmv > 0 ? Math.min(Math.round(d.kBuy / d.buyGmv * 100), 100) : 0;
 
-    var dash = '<span style="color:#94a3b8">—</span>';
-    var penSLabel = penS === null ? dash : '<span style="color:' + pctColor(penS) + '">' + penS + '%</span>';
-    var penBLabel = '<span style="color:' + pctColor(penB) + '">' + penB + '%</span>';
-    var digSLabel = digS === null ? dash : '<span style="color:' + pctColor(digS) + '">' + digS + '%</span>';
-    var digBLabel = '<span style="color:' + pctColor(digB) + '">' + digB + '%</span>';
+    var sLabel = penS === null ? '<span style="color:#94a3b8">—S</span>' : '<span style="color:' + pctColor(penS) + '">' + penS + '%S</span>';
+    var bLabel = '<span style="color:' + pctColor(penB) + '">' + penB + '%B</span>';
 
     var bgStyle = bg ? 'background:' + bg : (d.n >= 10 ? 'background:#dbeafe' : d.n >= 3 ? 'background:#eff6ff' : '');
     var onclick = (tier && tier !== 'TOTAL' && band) ? ' onclick="drillFromMatrix(\'' + tier + '\',\'' + band + '\')" style="cursor:pointer;padding:6px 8px;border:1px solid #e2e8f0;text-align:center;' + bgStyle + '"'
@@ -4295,8 +4268,7 @@ function populateTierMatrix() {
     return '<td' + onclick + '>'
       + '<strong>' + d.n + '</strong>'
       + '<div style="font-size:10px;color:#475569">' + fG(d.gmv) + '</div>'
-      + '<div style="font-size:9px">Pen ' + penSLabel + 'S ' + penBLabel + 'B</div>'
-      + '<div style="font-size:9px">Dig ' + digSLabel + 'S ' + digBLabel + 'B</div></td>';
+      + '<div style="font-size:9px">' + sLabel + ' · ' + bLabel + '</div></td>';
   }
 
   // Count how many actually land in a band (have GMV > 0)
@@ -4310,7 +4282,7 @@ function populateTierMatrix() {
 
   var descEl = document.getElementById('matrix-description');
   if (descEl) {
-    var desc = wsInMatrix + ' client wholesalers. Pen = Koronet / Est GMV (penetration). Dig = Online / Koronet (digital %). S=sell B=buy. Procurement can\u2019t sell (\u2014). Red = >100% (data error).';
+    var desc = wsInMatrix + ' client wholesalers. %S = sell penetration (Koronet sell / Est GMV). %B = buy penetration (Koronet buy / Est Buy GMV). Capped at 100%. Procurement can\u2019t sell (\u2014S).';
     if (wsNoGmv.length > 0) desc += ' ' + wsNoGmv.length + ' excluded (no GMV): ' + wsNoGmv.join(', ') + '.';
     descEl.textContent = desc;
   }

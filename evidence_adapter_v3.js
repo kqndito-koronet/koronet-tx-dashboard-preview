@@ -664,14 +664,14 @@
     // Will be null unless we load it from V2 fees_domain
     var feesYtd2025 = null;
 
-    // ── Online %
+    // ── Online % — capped at 100 (online is a subset of total)
     var sellOnlinePct = null;
     if (sellAgg && sellAgg.total > 0) {
-      sellOnlinePct = (sellAgg.online / sellAgg.total) * 100;
+      sellOnlinePct = Math.min((sellAgg.online / sellAgg.total) * 100, 100);
     }
     var buyOnlinePct = null;
     if (buyAgg && buyAgg.total > 0) {
-      buyOnlinePct = (buyAgg.online / buyAgg.total) * 100;
+      buyOnlinePct = Math.min((buyAgg.online / buyAgg.total) * 100, 100);
     }
 
     // Offline amounts
@@ -697,7 +697,7 @@
       var ytdMonths = sellAggYtd ? sellAggYtd.months.length : 0;
       if (koronetSellYtd && koronetSellYtd > 0 && ytdMonths > 0) {
         var annualized = koronetSellYtd * (12 / ytdMonths);
-        sellPenetration = (annualized / gmvRef) * 100;
+        sellPenetration = Math.min((annualized / gmvRef) * 100, 100);
         sellPenEv = gmvConfidence === 'Alta' ? 'model' : 'proxy';
         sellPenNote = gmvSource;
       }
@@ -707,7 +707,7 @@
         var buyYtdMonths = buyAggYtd ? buyAggYtd.months.length : 0;
         if (buyYtdMonths > 0) {
           var buyAnnualized = koronetBuyYtd * (12 / buyYtdMonths);
-          buyPenetration = (buyAnnualized / buyGmvEst) * 100;
+          buyPenetration = Math.min((buyAnnualized / buyGmvEst) * 100, 100);
           buyPenEv = gmvConfidence === 'Alta' ? 'model' : 'proxy';
           buyPenNote = gmvSource;
         }
