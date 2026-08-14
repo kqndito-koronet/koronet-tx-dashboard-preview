@@ -503,6 +503,7 @@
 
   .online-value { color: var(--blue); font-weight: 600; font-size: var(--font-emphasis); }
   .online-low { color: var(--red); font-weight: 600; font-size: var(--font-emphasis); }
+  .online-error { color: var(--red); font-weight: 700; font-size: var(--font-emphasis); background: var(--red-bg); }
 
   .fees-value { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-primary); }
   .takerate { font-size: var(--font-emphasis); font-weight: 600; color: var(--text-secondary); }
@@ -1747,14 +1748,22 @@ function renderRow(ev, idx) {
   const atStakeSource = atStakeResult ? atStakeResult.source : null;
   const diagnosis = buildDiagnosis(ev);
 
-  // Online color (sell)
+  // Online color (sell) — red if > 100% (data error)
   const onlineClass = (onlinePct != null)
-    ? (onlinePct >= 30 ? 'online-value' : 'online-low')
+    ? (onlinePct > 100 ? 'online-error' : onlinePct >= 30 ? 'online-value' : 'online-low')
     : 'metric-value';
 
   // Online qualifier (#18)
   const onlineQualifier = onlinePct != null
-    ? (onlinePct < 20 ? 'mostly offline' : onlinePct >= 60 ? 'digital-first' : 'healthy')
+    ? (onlinePct > 100 ? 'DATA ERROR >100%' : onlinePct < 20 ? 'mostly offline' : onlinePct >= 60 ? 'digital-first' : 'healthy')
+    : '';
+
+  // Buy online color — same scheme as sell
+  const buyOnlineClass = (buyOnlinePct != null)
+    ? (buyOnlinePct > 100 ? 'online-error' : buyOnlinePct >= 30 ? 'online-value' : 'online-low')
+    : 'metric-value';
+  const buyOnlineQualifier = buyOnlinePct != null
+    ? (buyOnlinePct > 100 ? 'DATA ERROR >100%' : buyOnlinePct < 20 ? 'mostly offline' : buyOnlinePct >= 60 ? 'digital-first' : 'healthy')
     : '';
 
   // Penetration source — is it tautological (koronet-derived est) or real (external)?
@@ -1762,11 +1771,17 @@ function renderRow(ev, idx) {
   const isSellPenTautological = sellPenEv === 'tautological';
 
   // Penetration qualifier (#17) — only meaningful for real external estimates
+  // >100% = data error (Est GMV too low)
   const penQualifier = isSellPenTautological
     ? 'Koronet = primary'
     : (sellPen != null
-      ? (sellPen < 10 ? 'low capture' : sellPen >= 50 ? 'high capture' : '')
+      ? (sellPen > 100 ? 'DATA ERROR >100%' : sellPen < 10 ? 'low capture' : sellPen >= 50 ? 'high capture' : '')
       : '');
+  const sellPenStyle = (!isSellPenTautological && sellPen != null && sellPen > 100) ? 'color:var(--red);font-weight:700' : '';
+
+  // Buy penetration >100% check
+  const buyPenOver100 = (buyPen != null && buyPen > 100);
+  const buyPenQualifier = buyPenOver100 ? 'DATA ERROR >100%' : '';
 
   // Koronet Sell qualifier (#16) — only meaningful for real external estimates
   const sellGrowthQualifier = isSellPenTautological
@@ -1864,8 +1879,8 @@ function renderRow(ev, idx) {
         <div class="metric-qualifier">${sellGrowthQualifier}</div>
       </td>
       <td class="metric-cell">
-        <div class="metric-value" ${isSellPenTautological ? 'style="color:var(--text-muted);font-style:italic"' : ''}>${isSellPenTautological ? '~100%' : fmtPct(sellPen)}</div>
-        ${penQualifier ? `<div class="metric-qualifier">${penQualifier}</div>` : ''}
+        <div class="metric-value" ${isSellPenTautological ? 'style="color:var(--text-muted);font-style:italic"' : sellPenStyle ? 'style="' + sellPenStyle + '"' : ''}>${isSellPenTautological ? '~100%' : fmtPct(sellPen)}</div>
+        ${penQualifier ? `<div class="metric-qualifier" ${sellPen > 100 ? 'style="color:var(--red)"' : ''}>${penQualifier}</div>` : ''}
       </td>
       <td class="metric-cell ${onlineSegClass}">
         <div class="${onlineClass}">${fmtPct(onlinePct)}</div>
@@ -1879,10 +1894,12 @@ function renderRow(ev, idx) {
         <div class="metric-value">${fmt$(koronetBuy, true)}</div>
       </td>
       <td class="metric-cell">
-        <div class="metric-value" ${(p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? 'style="color:var(--text-muted);font-style:italic"' : ''}>${(p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? '~100%' : fmtPct(buyPen)}</div>
+        <div class="metric-value" ${(p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? 'style="color:var(--text-muted);font-style:italic"' : buyPenOver100 ? 'style="color:var(--red);font-weight:700"' : ''}>${(p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? '~100%' : fmtPct(buyPen)}</div>
+        ${buyPenQualifier ? '<div class="metric-qualifier" style="color:var(--red)">' + buyPenQualifier + '</div>' : ''}
       </td>
       <td class="metric-cell">
-        <div class="${buyOnlinePct != null && buyOnlinePct >= 30 ? 'online-value' : 'online-low'}">${fmtPct(buyOnlinePct)}</div>
+        <div class="${buyOnlineClass}">${fmtPct(buyOnlinePct)}</div>
+        ${buyOnlineQualifier ? '<div class="metric-qualifier"' + (buyOnlinePct > 100 ? ' style="color:var(--red)"' : '') + '>' + buyOnlineQualifier + '</div>' : ''}
       </td>
       <td class="metric-cell">
         <div class="fees-value">${fmt$(feesYtd, true)}</div>
