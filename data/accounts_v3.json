@@ -178,8 +178,8 @@
       "buy_digital_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Established",
-      "has_active_pmt": false,
-      "pmt_lead": null,
+      "has_active_pmt": true,
+      "pmt_lead": "George Velez",
       "pmt_status": null,
       "pmt_health": null
     },
@@ -205,8 +205,8 @@
       "buy_digital_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Established",
-      "has_active_pmt": false,
-      "pmt_lead": null,
+      "has_active_pmt": true,
+      "pmt_lead": "George Velez",
       "pmt_status": null,
       "pmt_health": null
     },
@@ -1031,9 +1031,9 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false,
+      "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": null,
+      "pmt_lead": "Manuel Szajowicz",
       "pmt_health": null
     },
     {
@@ -1916,8 +1916,8 @@
       "kp_active_buyer_pct": 0.0,
       "priority_level": "IMPL",
       "impl_stage_display": "Established",
-      "has_active_pmt": false,
-      "pmt_lead": null,
+      "has_active_pmt": true,
+      "pmt_lead": "Camila Peña",
       "pmt_status": null,
       "pmt_health": null
     },
@@ -3823,8 +3823,8 @@
       "buy_digital_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Established",
-      "has_active_pmt": false,
-      "pmt_lead": null,
+      "has_active_pmt": true,
+      "pmt_lead": "Manuel Szajowicz",
       "pmt_status": null,
       "pmt_health": null
     },
@@ -4070,9 +4070,9 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false,
+      "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": null,
+      "pmt_lead": "George Velez",
       "pmt_health": null
     },
     {
@@ -4568,8 +4568,8 @@
       "buy_digital_pct": 0.0,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Established",
-      "has_active_pmt": false,
-      "pmt_lead": null,
+      "has_active_pmt": true,
+      "pmt_lead": "Valentina Espinel",
       "pmt_status": null,
       "pmt_health": null
     },
@@ -4959,8 +4959,8 @@
       "kp_active_buyer_pct": 0.0169,
       "priority_level": "P1",
       "impl_stage_display": "Established",
-      "has_active_pmt": false,
-      "pmt_lead": null,
+      "has_active_pmt": true,
+      "pmt_lead": "Camila Peña",
       "pmt_status": null,
       "pmt_health": null
     },
@@ -5743,7 +5743,7 @@
       "kp_active_buyer_pct": 0.0024,
       "priority_level": "TA",
       "impl_stage_display": "Established",
-      "has_active_pmt": true,
+      "has_active_pmt": false,
       "pmt_lead": "Camila Peña",
       "pmt_status": "Go-Live and Growth",
       "pmt_health": "On Track"
@@ -6638,7 +6638,7 @@
       "pmt_lead": "Milena Mezamell",
       "pmt_status": null,
       "pmt_health": null,
-      "has_active_pmt": true
+      "has_active_pmt": false
     },
     {
       "company_id": "641341",
@@ -6726,8 +6726,8 @@
       "kp_active_buyer_pct": 0.0014,
       "priority_level": "TA",
       "impl_stage_display": "Established",
-      "has_active_pmt": false,
-      "pmt_lead": null,
+      "has_active_pmt": true,
+      "pmt_lead": "Christine Nickelsen",
       "pmt_status": null,
       "pmt_health": null
     },
@@ -7247,9 +7247,9 @@
       "buy_digital_pct": null,
       "priority_level": "ECOSYSTEM",
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false,
+      "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": null,
+      "pmt_lead": "Christine Nickelsen",
       "pmt_health": null
     },
     {
@@ -8314,8 +8314,8 @@
       "buy_digital_pct": 100.0,
       "priority_level": "IMPL",
       "impl_stage_display": "Established",
-      "has_active_pmt": false,
-      "pmt_lead": null,
+      "has_active_pmt": true,
+      "pmt_lead": "George Velez",
       "pmt_status": null,
       "pmt_health": null
     },
@@ -8811,7 +8811,7 @@
       "impl_stage_display": "Pre-live",
       "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": "IMPL",
+      "pmt_lead": "Valentina Espinel",
       "pmt_health": null
     },
     {
@@ -9036,8 +9036,8 @@
       "buy_digital_pct": 100.0,
       "priority_level": "WATCH",
       "impl_stage_display": "Established",
-      "has_active_pmt": false,
-      "pmt_lead": null,
+      "has_active_pmt": true,
+      "pmt_lead": "Fernando Yepez",
       "pmt_status": null,
       "pmt_health": null
     },
@@ -9429,8 +9429,8 @@
       "kp_active_buyer_pct": 0.0013,
       "priority_level": "WATCH",
       "impl_stage_display": "Established",
-      "has_active_pmt": false,
-      "pmt_lead": null,
+      "has_active_pmt": true,
+      "pmt_lead": "Manuel Szajowicz",
       "pmt_status": null,
       "pmt_health": null
     },
@@ -9508,9 +9508,9 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": 0.0,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false,
+      "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": null,
+      "pmt_lead": "Christine Nickelsen",
       "pmt_health": null
     },
     {
@@ -10542,8 +10542,8 @@
       "kp_active_buyer_pct": 0.1333,
       "priority_level": "IMPL",
       "impl_stage_display": "Established",
-      "has_active_pmt": false,
-      "pmt_lead": null,
+      "has_active_pmt": true,
+      "pmt_lead": "Valentina Espinel",
       "pmt_status": null,
       "pmt_health": null
     },
@@ -10902,9 +10902,9 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false,
+      "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": null,
+      "pmt_lead": "Christine Nickelsen",
       "pmt_health": null
     },
     {
@@ -11110,9 +11110,9 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false,
+      "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": null,
+      "pmt_lead": "Nahomi Enriquez",
       "pmt_health": null
     },
     {
@@ -11136,9 +11136,9 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false,
+      "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": null,
+      "pmt_lead": "Christine Nickelsen",
       "pmt_health": null
     },
     {
@@ -11188,9 +11188,9 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false,
+      "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": null,
+      "pmt_lead": "Christine Nickelsen",
       "pmt_health": null
     },
     {
@@ -11214,9 +11214,9 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false,
+      "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": null,
+      "pmt_lead": "Fernando Yepez",
       "pmt_health": null
     },
     {
@@ -11266,9 +11266,9 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false,
+      "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": null,
+      "pmt_lead": "Christine Nickelsen",
       "pmt_health": null
     },
     {
@@ -11292,9 +11292,9 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false,
+      "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": null,
+      "pmt_lead": "Milena Mezamell",
       "pmt_health": null
     },
     {
@@ -11396,9 +11396,9 @@
       "engagement_status": "Onboarding",
       "buy_digital_pct": null,
       "impl_stage_display": "Pre-live",
-      "has_active_pmt": false,
+      "has_active_pmt": true,
       "pmt_status": "Pre-live",
-      "pmt_lead": null,
+      "pmt_lead": "Christine Nickelsen",
       "pmt_health": null
     },
     {
