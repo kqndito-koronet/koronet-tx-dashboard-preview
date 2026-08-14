@@ -1719,8 +1719,8 @@
                       <div class="content-gap"></div>
 
                       <!-- [33] GMV Challenge row: Medido vs External Est vs ORA -->
-                      <div class="callout amber">
-                        <strong>GMV Challenge:</strong> 3 sources disagree on Kennicott's true market size. Medido is the floor; ORA may be inflated. External estimate (15 hubs surveyed) aligns closest to Medido.
+                      <div class="callout" style="border-left-color:var(--green);background:var(--green-bg)">
+                        <strong>GMV: $120M medido (12 meses completos).</strong> External estimate ($115M, 15 hubs) confirma. ORA ($150M) está +25% inflado vs realidad.
                       </div>
 
                       <div class="table-wrap">
@@ -2351,65 +2351,16 @@
                   </div>
 
 
-                  <!-- ══ CARD 6: FRESHNESS [65-67] ══ -->
-                  <div class="card open" id="card-freshness">
-                    <div class="card-header">
-                      <div class="card-header-left">
-                        <div class="card-label">Card 6 of 6 &mdash; Data Timeline</div>
-                        <div class="card-title">DATA TIMELINE &mdash; 4 of 6 sources current</div>
-                        <div class="card-subtitle">Last updated: Aug 6, 2026 &mdash; Coverage: 67% &mdash; 2 sources missing</div>
-                      </div>
-                      <div class="card-toggle">&#9650;</div>
-                    </div>
-                    <div class="card-body">
-                      <div class="content-gap-sm"></div>
-
-                      <!-- [65] Sources used / total pill -->
-                      <div class="metrics-row" style="margin-top:0;margin-bottom:10px;">
-                        <div class="metric-pill blue-pill"><strong>4 / 6</strong> sources used</div>
-                        <!-- [66] Coverage % with color -->
-                        <div class="metric-pill warn-pill"><strong>67%</strong> coverage</div>
-                      </div>
-
-                      <!-- [67] Per-source status rows -->
-                      <div class="table-wrap">
-                        <div style="background:#f8fafc;padding:6px 10px;border-bottom:1px solid var(--border);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);display:flex;gap:40px;">
-                          <span style="flex:1">Source</span>
-                          <span style="width:80px;text-align:center">Status</span>
-                          <span style="width:100px;text-align:right">As-of Date</span>
-                        </div>
-                        <div class="freshness-source-row">
-                          <span style="flex:1;font-weight:600;">Snowflake (Sell)</span>
-                          <span style="width:80px;text-align:center"><span class="source-status source-found">Found</span></span>
-                          <span style="width:100px;text-align:right;color:var(--text-muted);">Aug 6, 2026</span>
-                        </div>
-                        <div class="freshness-source-row">
-                          <span style="flex:1;font-weight:600;">Snowflake (Buy)</span>
-                          <span style="width:80px;text-align:center"><span class="source-status source-found">Found</span></span>
-                          <span style="width:100px;text-align:right;color:var(--text-muted);">Aug 6, 2026</span>
-                        </div>
-                        <div class="freshness-source-row">
-                          <span style="flex:1;font-weight:600;">Salesforce (Opps)</span>
-                          <span style="width:80px;text-align:center"><span class="source-status source-found">Found</span></span>
-                          <span style="width:100px;text-align:right;color:var(--text-muted);">Aug 5, 2026</span>
-                        </div>
-                        <div class="freshness-source-row">
-                          <span style="flex:1;font-weight:600;">Christine GMV Sheet</span>
-                          <span style="width:80px;text-align:center"><span class="source-status source-found">Found</span></span>
-                          <span style="width:100px;text-align:right;color:var(--text-muted);">Jul 31, 2026</span>
-                        </div>
-                        <div class="freshness-source-row">
-                          <span style="flex:1;font-weight:600;">GA4 (eShop traffic)</span>
-                          <span style="width:80px;text-align:center"><span class="source-status source-missing">Missing</span></span>
-                          <span style="width:100px;text-align:right;color:var(--text-muted);">&mdash;</span>
-                        </div>
-                        <div class="freshness-source-row">
-                          <span style="flex:1;font-weight:600;">Customer.io (engagement)</span>
-                          <span style="width:80px;text-align:center"><span class="source-status source-missing">Missing</span></span>
-                          <span style="width:100px;text-align:right;color:var(--text-muted);">&mdash;</span>
-                        </div>
-                      </div>
-                    </div>
+                  <!-- ══ DATA TIMELINE [65-67] — compact strip below cards ══ -->
+                  <div style="margin-top:8px;padding:8px 14px;background:var(--border-light);border-radius:var(--radius-sm);font-size:10px;color:var(--text-muted);display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;">
+                    <span style="font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;margin-right:4px;">Data as-of:</span>
+                    <span>Sell <strong style="color:var(--green)">Aug 6</strong></span>
+                    <span>Buy <strong style="color:var(--green)">Aug 6</strong></span>
+                    <span>SFDC <strong style="color:var(--green)">Aug 5</strong></span>
+                    <span>GMV <strong style="color:var(--blue)">Jul 31</strong></span>
+                    <span>GA4 <strong style="color:var(--red)">missing</strong></span>
+                    <span>Engagement <strong style="color:var(--red)">missing</strong></span>
+                    <span style="margin-left:auto;font-weight:600;color:var(--text-caption);">4/6 sources &middot; 67% coverage</span>
                   </div>
 
                 </div><!-- /cards-grid -->
