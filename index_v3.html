@@ -3713,8 +3713,10 @@ function clearFilter(id) {
 }
 
 function clearAllFilters() {
+  document.getElementById('account-class-filter').value = '';
   document.getElementById('business-type-filter').value = '';
   document.getElementById('product-tier-filter').value = '';
+  document.getElementById('gmv-band-filter').value = '';
   document.getElementById('sell-channel-filter').value = '';
   document.getElementById('priority-filter').value = '';
   document.getElementById('potential-tier-filter').value = '';
@@ -4077,6 +4079,8 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
         const nb = (b && b._company_name) || '';
         return na.localeCompare(nb);
       });
+      // Enforce default: Client only
+      document.getElementById('account-class-filter').value = 'Client';
       applyFilters();
     }
   }
