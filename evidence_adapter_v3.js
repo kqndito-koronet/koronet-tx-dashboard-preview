@@ -1253,12 +1253,28 @@
      EXPORT
   ───────────────────────────────────────────────────────────────────────── */
 
+  /**
+   * isClientWholesaler(ev) — Canonical filter for the prioritization universe.
+   * Returns true if account is a Client + Wholesaler + known product tier.
+   * EVERY view that prioritizes wholesalers MUST use this function.
+   * Pre-live, Prospect, Unknown tier, non-Wholesaler → excluded.
+   */
+  function isClientWholesaler(ev) {
+    if (!ev || !ev.identity) return false;
+    var id = ev.identity;
+    return id.account_class === 'Client'
+      && id.business_type === 'Wholesaler'
+      && id.product_tier
+      && id.product_tier !== 'Unknown';
+  }
+
   var EvidenceAdapter = {
     init:               init,
     getAccountEvidence: getAccountEvidence,
     getAccountByName:   getAccountByName,
     getAllAccountIds:    getAllAccountIds,
     getLoadedState:     getLoadedState,
+    isClientWholesaler: isClientWholesaler,
   };
 
   if (typeof module !== 'undefined' && module.exports) {
