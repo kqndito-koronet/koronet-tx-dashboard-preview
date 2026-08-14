@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html><head><title>HTML Output Test</title></head>
+<body>
+<pre id="log">Loading...</pre>
+<div id="output" style="overflow:auto;max-height:600px;border:1px solid #ccc;margin-top:10px;"></div>
+<script src="evidence_adapter_v3.js"></script>
+<script src="index_v3.html" type="text/x-ignore"></script>
+<script>
+var log = document.getElementById('log');
+function addLog(msg) { log.textContent += '\n' + msg; }
+
+// Load the renderer source and extract just renderRow + helpers
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'index_v3.html', true);
+xhr.onload = function() {
+  var src = xhr.responseText;
+  // Extract the main script block
+  var scripts = src.match(/<script>[\s\S]*?<\/script>/g);
+  if (!scripts || scripts.length < 2) { addLog('Could not find script block'); return; }
+  var mainJs = scripts[scripts.length - 1].replace(/<\/?script>/g, '');
+
+  // We need to eval just the helper functions + renderRow
+  // Extract everything from "function fmt$" to "function renderTable"
+  var startIdx = mainJs.indexOf('function fmt$');
+  var endIdx = mainJs.indexOf('/* --- MAIN INIT ---');
+  if (startIdx < 0 || endIdx < 0) { addLog('Cannot find function boundaries: fmt$=' + startIdx + ' MAIN_INIT=' + endIdx); return; }
+
+  var functionsCode = mainJs.substring(startIdx, endIdx);
+  addLog('Extracted ' + functionsCode.length + ' chars of functions');
+
+  // Add stubs for DOM-dependent functions
+  var stubs = `
+    var _sfdcOpps = {};
+    var _allEvidence = [];
+    var _filteredEvidence = [];
+    var _displayedCount = 0;
+    var PAGE_SIZE = 50;
+    var _sortColumn = null;
+    var _sortAsc = true;
+    function _adapterTf() { return 'ytd'; }
+  `;
+
+  try {
+    eval(stubs + functionsCode);
+    addLog('Functions loaded OK');
+  } catch(e) {
+    addLog('Function eval ERROR: ' + e.message + ' at line ~' + e.lineNumber);
+    addLog(e.stack);
+    return;
+  }
+
+  // Now init adapter and test renderRow
+  EvidenceAdapter.init().then(function() {
+    var ids = EvidenceAdapter.getAllAccountIds();
+    addLog('Testing renderRow for first 5 accounts...');
+
+    var allHtml = '<table border="1" style="font-size:11px;border-collapse:collapse"><thead><tr><th>Name</th><th>GMV</th><th>Sell</th><th>Fees</th></tr></thead><tbody>';
+
+    for (var i = 0; i < Math.min(5, ids.length); i++) {
+      var ev = EvidenceAdapter.getAccountEvidence(ids[i], 'ytd');
+      try {
+        var rowHtml = renderRow(ev, i);
+        addLog('Row ' + i + ' (' + ev._company_name + '): ' + rowHtml.length + ' chars');
+        // Check for unclosed tags
+        var openTd = (rowHtml.match(/<td/g) || []).length;
+        var closeTd = (rowHtml.match(/<\/td>/g) || []).length;
+        var openTr = (rowHtml.match(/<tr/g) || []).length;
+        var closeTr = (rowHtml.match(/<\/tr>/g) || []).length;
+        addLog('  Tags: <td>=' + openTd + ' </td>=' + closeTd + ' <tr>=' + openTr + ' </tr>=' + closeTr);
+        if (openTd !== closeTd) addLog('  *** TD MISMATCH ***');
+        if (openTr !== closeTr) addLog('  *** TR MISMATCH ***');
+
+        allHtml += rowHtml;
+      } catch(e) {
+        addLog('Row ' + i + ' ERROR: ' + e.message);
+        addLog('  Stack: ' + e.stack);
+      }
+    }
+
+    allHtml += '</tbody></table>';
+    document.getElementById('output').innerHTML = allHtml;
+    addLog('\nHTML injected into page. Check if table renders below.');
+  });
+};
+xhr.send();
+</script>
+</body></html>
