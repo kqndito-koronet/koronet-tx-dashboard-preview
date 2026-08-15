@@ -10,84 +10,138 @@
       "company_id": "665296",
       "company_name": "AD TRADING CORP DBA AD FLORAL TRADING",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 5-9 emp x $375K", "aggregator floor: $1M x4"],
+      "methods_used": [
+        "headcount: 5-9 emp x $375K",
+        "aggregator floor: $1M x4"
+      ],
       "estimated_gmv_low": 2000000,
       "estimated_gmv_mid": 3000000,
       "estimated_gmv_high": 4500000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": "5-9", "website": "adfloral.com", "metro": "Miami/Doral FL"},
+      "signals": {
+        "locations": 1,
+        "employees": "5-9",
+        "website": "adfloral.com",
+        "metro": "Miami/Doral FL"
+      },
       "notes": "Aggregator says $1M rev - treat as floor (x4 = $4M). 5-9 employees x $375K = $1.9-3.4M. Single Doral FL location, B2B wholesale. Closed per Yelp Jan 2025 - may be inactive. Flag for verification."
     },
     {
       "company_id": "664719",
       "company_name": "ALLIANCE FLORAL COMPANY",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 1 hub Carlsbad CA x $5M"],
+      "methods_used": [
+        "location: 1 hub Carlsbad CA x $5M"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 5000000,
       "estimated_gmv_high": 7000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "sierraflowerfinder.com listing", "metro": "Carlsbad CA (San Diego County)"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "sierraflowerfinder.com listing",
+        "metro": "Carlsbad CA (San Diego County)"
+      },
       "notes": "Located in Carlsbad International Floral Trade Center. San Diego secondary metro. Supplies SD County florists and event designers. No employee count found. Single hub."
     },
     {
       "company_id": "643672",
       "company_name": "Allied Cut Flower",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 9 emp x $375K", "location: 1 hub Cleveland x $4M"],
+      "methods_used": [
+        "headcount: 9 emp x $375K",
+        "location: 1 hub Cleveland x $4M"
+      ],
       "estimated_gmv_low": 2000000,
       "estimated_gmv_mid": 3500000,
       "estimated_gmv_high": 5000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": 9, "website": "allied-cut-flowers.edan.io", "metro": "Cleveland OH"},
+      "signals": {
+        "locations": 1,
+        "employees": 9,
+        "website": "allied-cut-flowers.edan.io",
+        "metro": "Cleveland OH"
+      },
       "notes": "Family-owned, est 1991, single location on Carnegie Ave Cleveland. 9 employees. Serves Northeast Ohio retail florists. Cleveland secondary metro. $9 x $375K = $3.4M. Consistent with single-hub secondary market estimate."
     },
     {
       "company_id": "743681",
       "company_name": "Alpha Fern Company, LLC",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 50-65 emp x $375K", "production: 33M leatherleaf stems + other"],
+      "methods_used": [
+        "headcount: 50-65 emp x $375K",
+        "production: 33M leatherleaf stems + other"
+      ],
       "estimated_gmv_low": 15000000,
       "estimated_gmv_mid": 22000000,
       "estimated_gmv_high": 30000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": "50 FT + 10-15 PT", "website": "alphafern.net", "metro": "Pierson FL (national shipper)"},
+      "signals": {
+        "locations": 1,
+        "employees": "50 FT + 10-15 PT",
+        "website": "alphafern.net",
+        "metro": "Pierson FL (national shipper)"
+      },
       "notes": "Grower-shipper, 250+ acres, 78 varieties. Sells 33M leatherleaf stems/yr + 1.6M tree fern. At $0.55-0.65/stem wholesale, leatherleaf alone ~$18-21M. ~60 employees x $375K = $22.5M. National distribution. High-volume commodity greens operation."
     },
     {
       "company_id": "295299",
       "company_name": "American Floral Cargo/Splendor Proteas, LLC",
       "business_type": "Importer",
-      "methods_used": ["business model: Miami cargo consolidator"],
+      "methods_used": [
+        "business model: Miami cargo consolidator"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 6000000,
       "estimated_gmv_high": 10000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "americanfloralcargo.com + splendorproteas.com", "metro": "Miami FL"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "americanfloralcargo.com + splendorproteas.com",
+        "metro": "Miami FL"
+      },
       "notes": "Two entities: American Floral Cargo = Miami-based cargo consolidator/logistics from Ecuador/Colombia (est ~8yrs). Splendor Proteas = specialty protea importer. Combined entity unclear. No employee count. Logistics model = lower GMV than traditional importer."
     },
     {
       "company_id": "651277",
       "company_name": "BAYSTATE FARM DIRECT FLOWERS - CRANSTON",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 4 hubs x $5M", "headcount: 29 emp x $375K"],
+      "methods_used": [
+        "location: 4 hubs x $5M",
+        "headcount: 29 emp x $375K"
+      ],
       "estimated_gmv_low": 12000000,
       "estimated_gmv_mid": 18000000,
       "estimated_gmv_high": 25000000,
       "confidence": "High",
-      "signals": {"locations": 4, "employees": 29, "website": "baystateflowers.com", "metro": "New England (Wilmington MA, Cranston RI, Bedford NH, E Patchogue NY)"},
+      "signals": {
+        "locations": 4,
+        "employees": 29,
+        "website": "baystateflowers.com",
+        "metro": "New England (Wilmington MA, Cranston RI, Bedford NH, E Patchogue NY)"
+      },
       "notes": "New England's largest full-service floral distributor per own description. 4 locations, 80+ years. Cranston RI is one of 4 hubs. 29 employees total (may be per location or total - unclear). Method A: 4 hubs x $5M = $20M. Method B: 29 x $375K = $10.9M. Midpoint ~$18M reasonable for regional leader."
     },
     {
       "company_id": "655098",
       "company_name": "BRIEGER WHSLE -TX",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 4 emp x $375K", "aggregator: $640K x4"],
+      "methods_used": [
+        "headcount: 4 emp x $375K",
+        "aggregator: $640K x4"
+      ],
       "estimated_gmv_low": 1000000,
       "estimated_gmv_mid": 2000000,
       "estimated_gmv_high": 3000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": 4, "website": "brieger wholesale floral supply", "metro": "San Antonio TX"},
+      "signals": {
+        "locations": 1,
+        "employees": 4,
+        "website": "brieger wholesale floral supply",
+        "metro": "San Antonio TX"
+      },
       "notes": "Aggregator says $640K rev - floor. 4 employees x $375K = $1.5M. San Antonio secondary market. 40+ year family business. PPP loan data consistent with small operation. Single location."
     },
     {
@@ -99,31 +153,51 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "No public presence found under 'BlossomR'. Searched LinkedIn, web, industry directories. Company may be newly registered, DBA, or operate under different name. Needs internal Koronet data to proceed."
     },
     {
       "company_id": "664988",
       "company_name": "CALI WHOLESALE.-CA",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 1 hub Carlsbad CA x $5M"],
+      "methods_used": [
+        "location: 1 hub Carlsbad CA x $5M"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 5000000,
       "estimated_gmv_high": 7000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "caliwholesaleflowers.com", "metro": "Carlsbad CA"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "caliwholesaleflowers.com",
+        "metro": "Carlsbad CA"
+      },
       "notes": "Located at 5858 Dryden Pl, Carlsbad CA (International Floral Trade Center). Access for licensed florists/event pros only. Hours 5am-1pm M-F. Single location. No employee count found. SD county secondary metro."
     },
     {
       "company_id": "731381",
       "company_name": "CHICAGO'S WHOLESALE",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 4 emp x $375K", "aggregator: $240K x4"],
+      "methods_used": [
+        "headcount: 4 emp x $375K",
+        "aggregator: $240K x4"
+      ],
       "estimated_gmv_low": 800000,
       "estimated_gmv_mid": 1500000,
       "estimated_gmv_high": 2500000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": 4, "website": "chicagoswholesale.com", "metro": "Chicago IL"},
+      "signals": {
+        "locations": 1,
+        "employees": 4,
+        "website": "chicagoswholesale.com",
+        "metro": "Chicago IL"
+      },
       "notes": "Boutique-style wholesaler, women-owned, 25+ years. Buzzfile: 4 employees, ~$240K rev - aggregator floor. 4 x $375K = $1.5M. Chicago major metro but boutique model caps upside. Small operation."
     },
     {
@@ -135,7 +209,12 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "Multiple retail 'Cataleya Flowers' found (Spring Valley CA, Philadelphia PA, OKC OK) but none match 'D&A' as wholesale entity. Company ID 735300 may be a recently onboarded account with minimal web presence. Needs internal Koronet lookup."
     },
     {
@@ -147,31 +226,51 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": 0, "employees": null, "website": "dcflowersdirect.com (inactive)", "metro": "DC/DMV"},
+      "signals": {
+        "locations": 0,
+        "employees": null,
+        "website": "dcflowersdirect.com (inactive)",
+        "metro": "DC/DMV"
+      },
       "notes": "CONFIRMED CLOSED as of February 27, 2026. Operations concluded; customers redirected to DVFlora. GMV = $0 going forward. Flag for removal from active account list."
     },
     {
       "company_id": "732518",
       "company_name": "DKAY WHOLESALE INC",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 6 emp x $375K", "location: 1 hub Jacksonville x $4M"],
+      "methods_used": [
+        "headcount: 6 emp x $375K",
+        "location: 1 hub Jacksonville x $4M"
+      ],
       "estimated_gmv_low": 1500000,
       "estimated_gmv_mid": 2500000,
       "estimated_gmv_high": 4000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": 6, "website": "dkaywf.com", "metro": "Jacksonville FL"},
+      "signals": {
+        "locations": 1,
+        "employees": 6,
+        "website": "dkaywf.com",
+        "metro": "Jacksonville FL"
+      },
       "notes": "30+ year family business. Full-service wholesaler (cut flowers, greens, hardgoods). 6 employees. Jacksonville secondary metro. Delivery radius 45 miles. ZoomInfo: 1-10 emp. 6 x $375K = $2.25M. Jacksonville is mid-tier market."
     },
     {
       "company_id": "664623",
       "company_name": "Esprit Salt Lake, Inc",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 1 hub Salt Lake City x $4M"],
+      "methods_used": [
+        "location: 1 hub Salt Lake City x $4M"
+      ],
       "estimated_gmv_low": 2000000,
       "estimated_gmv_mid": 3500000,
       "estimated_gmv_high": 5000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "espritrawflowers.com", "metro": "Salt Lake City UT"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "espritrawflowers.com",
+        "metro": "Salt Lake City UT"
+      },
       "notes": "Est 1989, family-owned. Sources direct from top growers worldwide. Serves florists, grocery stores, corporate events, wedding coordinators. Single SLC location. No employee count. SLC = secondary metro."
     },
     {
@@ -183,151 +282,247 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "No match found for 'Exclusive Wholesale' as a floral company. Common name returns generic results. Needs Koronet internal data for address/website to proceed."
     },
     {
       "company_id": "652793",
       "company_name": "FALL RIVER WHOLESALE",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 150 emp x $375K", "facility: 130K sqft"],
+      "methods_used": [
+        "headcount: 150 emp x $375K",
+        "facility: 130K sqft"
+      ],
       "estimated_gmv_low": 25000000,
       "estimated_gmv_mid": 35000000,
       "estimated_gmv_high": 50000000,
       "confidence": "High",
-      "signals": {"locations": 1, "employees": 150, "website": "fallriverfloristsupply.com", "metro": "Fall River MA (New England regional)"},
+      "signals": {
+        "locations": 1,
+        "employees": 150,
+        "website": "fallriverfloristsupply.com",
+        "metro": "Fall River MA (New England regional)"
+      },
       "notes": "Largest direct importer in New England/NY per own description. Est 1947. 130,000 sqft facility. 150 employees (one source; another says 26 - use higher given facility size). RocketReach: $28.7M rev. 150 x $375K = $56M high but facility + import volumes support large scale. $35M mid reasonable."
     },
     {
       "company_id": "670423",
       "company_name": "FLEURIGROS QUEBEC 1995 INC.",
       "business_type": "Wholesaler",
-      "methods_used": ["facility: 43 cold-room doors", "aggregator: <$5M floor x3"],
+      "methods_used": [
+        "facility: 43 cold-room doors",
+        "aggregator: <$5M floor x3"
+      ],
       "estimated_gmv_low": 5000000,
       "estimated_gmv_mid": 8000000,
       "estimated_gmv_high": 12000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "fleurigros.ca", "metro": "Quebec City QC Canada"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "fleurigros.ca",
+        "metro": "Quebec City QC Canada"
+      },
       "notes": "Leading Quebec City distributor of cut flowers + accessories. 43 cold room doors = significant capacity. ZoomInfo: <$5M (aggregator floor). Quebec City = mid-tier Canadian market. No employee count found."
     },
     {
       "company_id": "670450",
       "company_name": "FLORIAD- MONTREAL CANADA INC.",
       "business_type": "Importer",
-      "methods_used": ["import records: 1513 shipments", "market position: Canada's largest per own claim"],
+      "methods_used": [
+        "import records: 1513 shipments",
+        "market position: Canada's largest per own claim"
+      ],
       "estimated_gmv_low": 20000000,
       "estimated_gmv_mid": 35000000,
       "estimated_gmv_high": 55000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": null, "website": "floriad.com", "metro": "Montreal QC Canada"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "floriad.com",
+        "metro": "Montreal QC Canada"
+      },
       "notes": "Est 1985, 'Canada's most reputable importer' per own description. 1,513 import shipments total, 10 trading partners. Montreal = major Canadian market. Imports from Colombia primarily. No employee count found. Large import volumes justify upper range estimate for Canadian market."
     },
     {
       "company_id": "664019",
       "company_name": "FLOWERS OF NASHVILLE",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 1 hub Nashville x $5M"],
+      "methods_used": [
+        "location: 1 hub Nashville x $5M"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 5000000,
       "estimated_gmv_high": 7000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "flowersofnashville.com", "metro": "Nashville TN"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "flowersofnashville.com",
+        "metro": "Nashville TN"
+      },
       "notes": "Located at 851 Visco Dr, Nashville TN. Nashville = growing major metro. No employee count found. Single hub. Nashville is rapidly growing market but limited signals found."
     },
     {
       "company_id": "664540",
       "company_name": "FMI, LLC.-FL",
       "business_type": "Wholesaler",
-      "methods_used": ["market position: Miami importer/distributor 20+ years"],
+      "methods_used": [
+        "market position: Miami importer/distributor 20+ years"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 6000000,
       "estimated_gmv_high": 10000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "flowermarketplace.com", "metro": "Miami/Doral FL"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "flowermarketplace.com",
+        "metro": "Miami/Doral FL"
+      },
       "notes": "FMI Farms - family-owned wholesale importer/distributor, 20+ years, Miami International Airport area (2153 NW 86th Ave, Doral). Ships nationwide. No employee count. Aggregator rev $770K = extreme floor for Miami importer. RocketReach estimate unreliable."
     },
     {
       "company_id": "664314",
       "company_name": "Florabundance.",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 18 emp x $375K", "aggregator: $961K x4"],
+      "methods_used": [
+        "headcount: 18 emp x $375K",
+        "aggregator: $961K x4"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 5000000,
       "estimated_gmv_high": 7000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": 18, "website": "florabundance.com", "metro": "Carpinteria CA (national shipper)"},
+      "signals": {
+        "locations": 1,
+        "employees": 18,
+        "website": "florabundance.com",
+        "metro": "Carpinteria CA (national shipper)"
+      },
       "notes": "Direct-ship wholesale, fresh cut flowers + foliage. 18 employees. Aggregator $961K = floor. RocketReach confirmed 18 emp. 18 x $375K = $6.75M. Ships nationally (not local delivery model). Carpinteria CA grower-adjacent. E-commerce model so $375K/emp may understate. $5M mid is conservative."
     },
     {
       "company_id": "37745",
       "company_name": "Floral Cooperative Purchasing Group LLC",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 1 hub Baltimore area x $4M"],
+      "methods_used": [
+        "location: 1 hub Baltimore area x $4M"
+      ],
       "estimated_gmv_low": 2000000,
       "estimated_gmv_mid": 4000000,
       "estimated_gmv_high": 6000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "weshook.com / floralcoop.com", "metro": "Gwynn Oak MD (Baltimore)"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "weshook.com / floralcoop.com",
+        "metro": "Gwynn Oak MD (Baltimore)"
+      },
       "notes": "Wholesale floral distributor, Baltimore area. Website: weshook.com. No employee count found. Cooperative purchasing model may indicate smaller GMV but pooled buying power."
     },
     {
       "company_id": "670311",
       "company_name": "Floral Importers and Distributors Inc. /Buds",
       "business_type": "Wholesaler",
-      "methods_used": ["market position: NY Metro importer/distributor", "team experience: 90+ combined years"],
+      "methods_used": [
+        "market position: NY Metro importer/distributor",
+        "team experience: 90+ combined years"
+      ],
       "estimated_gmv_low": 8000000,
       "estimated_gmv_mid": 15000000,
       "estimated_gmv_high": 25000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "budsfloral.com", "metro": "Northvale NJ (NY Metro)"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "budsfloral.com",
+        "metro": "Northvale NJ (NY Metro)"
+      },
       "notes": "BUDS Floral: est 1992, moved to larger Northvale NJ facility. Serves NY Metro area florists, wedding designers, supermarkets. No employee count. NY Metro = major market. 'Global sourcing' model. Single DC serving dense market."
     },
     {
       "company_id": "561518",
       "company_name": "Floramix, Inc.",
       "business_type": "Importer",
-      "methods_used": ["aggregator: $5-10M range", "headcount: 5-9 emp x $700K (importer rate)"],
+      "methods_used": [
+        "aggregator: $5-10M range",
+        "headcount: 5-9 emp x $700K (importer rate)"
+      ],
       "estimated_gmv_low": 5000000,
       "estimated_gmv_mid": 8000000,
       "estimated_gmv_high": 12000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": "5-9", "website": "Miami FL 33122", "metro": "Miami FL"},
+      "signals": {
+        "locations": 1,
+        "employees": "5-9",
+        "website": "Miami FL 33122",
+        "metro": "Miami FL"
+      },
       "notes": "Manta: $5-10M revenue, 5-9 employees. Miami importer. At importer rate ($700K-1.2M/US employee): 7 emp x $1M = $7M. Aggregator range $5-10M consistent. Mid $8M reasonable."
     },
     {
       "company_id": "699974",
       "company_name": "Florisert",
       "business_type": "Grower",
-      "methods_used": ["business model: Peru export grower"],
+      "methods_used": [
+        "business model: Peru export grower"
+      ],
       "estimated_gmv_low": 2000000,
       "estimated_gmv_mid": 5000000,
       "estimated_gmv_high": 10000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "florisert.com", "metro": "Peru (export)"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "florisert.com",
+        "metro": "Peru (export)"
+      },
       "notes": "Peruvian grower/exporter of limonium, wax flowers, foliage, ranunculus, anemones, mimosa, hydrangeas. Year-round supply. No employee count or revenue found. Estimate based on typical Andean medium grower export volumes."
     },
     {
       "company_id": "665316",
       "company_name": "Flowers by Fudgie, Inc",
       "business_type": "Wholesaler",
-      "methods_used": ["business type: appears retail not wholesale"],
+      "methods_used": [
+        "business type: appears retail not wholesale"
+      ],
       "estimated_gmv_low": 500000,
       "estimated_gmv_mid": 1000000,
       "estimated_gmv_high": 1500000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "Sarasota FL", "metro": "Sarasota FL"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "Sarasota FL",
+        "metro": "Sarasota FL"
+      },
       "notes": "WARNING: Yelp/LinkedIn shows as retail florist, not wholesale. Full service florist est 1981, Sarasota FL. If misclassified as Wholesaler in Koronet, GMV will be overstated. Retail florist estimate only."
     },
     {
       "company_id": "642076",
       "company_name": "Full Pot - Ft. Lauderdale",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 11-50 emp x $375K", "market position: South Florida since 1999"],
+      "methods_used": [
+        "headcount: 11-50 emp x $375K",
+        "market position: South Florida since 1999"
+      ],
       "estimated_gmv_low": 5000000,
       "estimated_gmv_mid": 8000000,
       "estimated_gmv_high": 12000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": "11-50", "website": "fullpot.com", "metro": "Pompano Beach/Fort Lauderdale FL"},
+      "signals": {
+        "locations": 1,
+        "employees": "11-50",
+        "website": "fullpot.com",
+        "metro": "Pompano Beach/Fort Lauderdale FL"
+      },
       "notes": "Trusted South FL wholesale distributor since 1999. LinkedIn: 11-50 employees. Serves Miami, Fort Lauderdale, Pompano Beach, Boca Raton. 25 emp x $375K = $9.4M. Major South Florida market."
     },
     {
@@ -339,19 +534,32 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": "Netherlands (likely)"},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": "Netherlands (likely)"
+      },
       "notes": "No public data found for 'GOMEZ BV' as flower importer. Dutch BV entity. Needs KVK (Dutch chamber) lookup or import record search. Likely small-to-mid Dutch trader given BV structure."
     },
     {
       "company_id": "654566",
       "company_name": "Gassafy Wholesale Florist Inc",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 17 emp x $375K", "aggregator: $6.2M"],
+      "methods_used": [
+        "headcount: 17 emp x $375K",
+        "aggregator: $6.2M"
+      ],
       "estimated_gmv_low": 4000000,
       "estimated_gmv_mid": 6000000,
       "estimated_gmv_high": 9000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": 17, "website": "gassafy.com", "metro": "Fort Wayne IN"},
+      "signals": {
+        "locations": 1,
+        "employees": 17,
+        "website": "gassafy.com",
+        "metro": "Fort Wayne IN"
+      },
       "notes": "Family-owned, 50+ years. Fort Wayne IN secondary market. ZoomInfo: 17 employees, $6.2M rev. 17 x $375K = $6.4M. Aggregator $6.2M unusual reliability - may be a source that has actual data. Consistent signals."
     },
     {
@@ -363,199 +571,330 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": "Florida (likely Miami)"},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": "Florida (likely Miami)"
+      },
       "notes": "No public data found under 'Global Bouquet LLC'. Miami importer area likely given company ID. Needs import record search (ImportYeti/Panjiva) or internal Koronet address data."
     },
     {
       "company_id": "321907",
       "company_name": "Greens and Flowers Connection",
       "business_type": "Importer",
-      "methods_used": ["import records: 46 US shipments since 2019"],
+      "methods_used": [
+        "import records: 46 US shipments since 2019"
+      ],
       "estimated_gmv_low": 2000000,
       "estimated_gmv_mid": 4000000,
       "estimated_gmv_high": 7000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": null, "metro": "Florida"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": null,
+        "metro": "Florida"
+      },
       "notes": "Florida-based importer. 46 shipments to US since Sep 2019 (Datamyne). Low shipment count suggests small-to-mid importer. No employee count, no website found."
     },
     {
       "company_id": "166363",
       "company_name": "Guamito S.A.S NIT 900116641-5",
       "business_type": "Grower",
-      "methods_used": ["import records: 5610 shipments", "location: Rionegro Antioquia Colombia"],
+      "methods_used": [
+        "import records: 5610 shipments",
+        "location: Rionegro Antioquia Colombia"
+      ],
       "estimated_gmv_low": 8000000,
       "estimated_gmv_mid": 15000000,
       "estimated_gmv_high": 25000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": null, "website": "Panjiva/ImportGenius records", "metro": "Rionegro Antioquia Colombia"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "Panjiva/ImportGenius records",
+        "metro": "Rionegro Antioquia Colombia"
+      },
       "notes": "Colombian exporter, 5,610 total shipments (very high volume). Top US partner: Americana Inc. Also ships to Legacy Flowers (Miami). Multiple addresses (farm + Bogota office). High shipment count indicates large production. Colombian carnation/rose farm."
     },
     {
       "company_id": "713789",
       "company_name": "HALL'S - BIRMINGHAM",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 1 hub Birmingham AL x $4M", "history: est 1947"],
+      "methods_used": [
+        "location: 1 hub Birmingham AL x $4M",
+        "history: est 1947"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 5000000,
       "estimated_gmv_high": 8000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "hallsbirmingham.com", "metro": "Birmingham AL"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "hallsbirmingham.com",
+        "metro": "Birmingham AL"
+      },
       "notes": "Est 1947, B2B only (not open to public). Birmingham secondary metro. Hall's seems to be a 2-location Alabama operation (Birmingham + Theodore). No employee count for Birmingham location specifically."
     },
     {
       "company_id": "651216",
       "company_name": "HARDIN'S WHLSE - LIBERTY",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 50-99 emp x $375K", "facility: 100K sqft + 285K sqft greenhouse"],
+      "methods_used": [
+        "headcount: 50-99 emp x $375K",
+        "facility: 100K sqft + 285K sqft greenhouse"
+      ],
       "estimated_gmv_low": 15000000,
       "estimated_gmv_mid": 22000000,
       "estimated_gmv_high": 30000000,
       "confidence": "High",
-      "signals": {"locations": 1, "employees": "50-99", "website": "hardins.com", "metro": "Liberty NC (regional)"},
+      "signals": {
+        "locations": 1,
+        "employees": "50-99",
+        "website": "hardins.com",
+        "metro": "Liberty NC (regional)"
+      },
       "notes": "Major operation: 100K sqft warehouse, 3100 sqft cut flower cooler, 285K sqft greenhouse on 6 acres. 14,000+ items, 3,825 flower varieties. 50-99 employees. Wholesale-only (trade). 75 emp x $375K = $28M. Facility size supports upper range. Strong High confidence."
     },
     {
       "company_id": "664341",
       "company_name": "Hall's Wholesale Florist Theodore",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 2 hubs (Birmingham + Theodore) x $4M each"],
+      "methods_used": [
+        "location: 2 hubs (Birmingham + Theodore) x $4M each"
+      ],
       "estimated_gmv_low": 5000000,
       "estimated_gmv_mid": 8000000,
       "estimated_gmv_high": 12000000,
       "confidence": "Low",
-      "signals": {"locations": 2, "employees": null, "website": "hallswholesalemobile.com", "metro": "Theodore AL (Mobile area)"},
+      "signals": {
+        "locations": 2,
+        "employees": null,
+        "website": "hallswholesalemobile.com",
+        "metro": "Theodore AL (Mobile area)"
+      },
       "notes": "Hall's Wholesale Mobile serves Mobile AL area for ~20 years, 105 years total in Alabama. 2 locations confirmed (Birmingham + Theodore). Mobile/Theodore = secondary market. No employee count."
     },
     {
       "company_id": "670508",
       "company_name": "Hartford Florist Supply",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 1 hub Bloomfield CT x $5M", "history: 75+ years"],
+      "methods_used": [
+        "location: 1 hub Bloomfield CT x $5M",
+        "history: 75+ years"
+      ],
       "estimated_gmv_low": 4000000,
       "estimated_gmv_mid": 7000000,
       "estimated_gmv_high": 10000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "hartfordfloristsupply.com", "metro": "Bloomfield CT (Hartford area)"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "hartfordfloristsupply.com",
+        "metro": "Bloomfield CT (Hartford area)"
+      },
       "notes": "75+ year Connecticut wholesale distributor. Serves New England floral professionals. Partners with South American farms + Canada + Asia. Single Bloomfield CT location. Hartford secondary metro."
     },
     {
       "company_id": "806417",
       "company_name": "Hyperactive Farms Inc.",
       "business_type": "Importer",
-      "methods_used": ["business model: specialty small-batch importer"],
+      "methods_used": [
+        "business model: specialty small-batch importer"
+      ],
       "estimated_gmv_low": 1000000,
       "estimated_gmv_mid": 3000000,
       "estimated_gmv_high": 5000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "hyperactivefarms.com", "metro": "Florida (likely)"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "hyperactivefarms.com",
+        "metro": "Florida (likely)"
+      },
       "notes": "Online-first specialty importer. Small-batch, novelty varieties. Flies flowers to nearest airport or ships to FL. Model suggests small/medium operation. No employee count or revenue found."
     },
     {
       "company_id": "652199",
       "company_name": "JOHNSENS WHOLESALE FLORIST",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 11-50 emp x $375K", "location: 1 hub Beaumont TX x $4M"],
+      "methods_used": [
+        "headcount: 11-50 emp x $375K",
+        "location: 1 hub Beaumont TX x $4M"
+      ],
       "estimated_gmv_low": 4000000,
       "estimated_gmv_mid": 6000000,
       "estimated_gmv_high": 9000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": "11-50", "website": "johnsens.co", "metro": "Beaumont TX"},
+      "signals": {
+        "locations": 1,
+        "employees": "11-50",
+        "website": "johnsens.co",
+        "metro": "Beaumont TX"
+      },
       "notes": "Family-owned. LinkedIn: 11-50 employees. Single location Beaumont TX (secondary market). 25 emp x $375K = $9.4M. Beaumont is smaller Texas market - downward adjustment. FMCSA: has trucking registration = delivery fleet."
     },
     {
       "company_id": "651200",
       "company_name": "Jacksonville Flower Market",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 1 hub Jacksonville FL x $4M", "2000 sqft walk-in cooler"],
+      "methods_used": [
+        "location: 1 hub Jacksonville FL x $4M",
+        "2000 sqft walk-in cooler"
+      ],
       "estimated_gmv_low": 1500000,
       "estimated_gmv_mid": 3000000,
       "estimated_gmv_high": 5000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "jacksonvilleflowermarket.com", "metro": "Jacksonville FL"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "jacksonvilleflowermarket.com",
+        "metro": "Jacksonville FL"
+      },
       "notes": "Est 2018, only FL wholesale open to public. 2000 sqft walk-in cooler. Sells by stem and bunch. Also does weddings/events/classes. Relatively new, smaller operation. Jacksonville secondary market. Public access model = lower B2B GMV."
     },
     {
       "company_id": "469713",
       "company_name": "KD & Company",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 2 remaining hubs (Louisville KY + Wheeling IL) x $4M each"],
+      "methods_used": [
+        "location: 2 remaining hubs (Louisville KY + Wheeling IL) x $4M each"
+      ],
       "estimated_gmv_low": 5000000,
       "estimated_gmv_mid": 8000000,
       "estimated_gmv_high": 12000000,
       "confidence": "Low",
-      "signals": {"locations": 2, "employees": null, "website": "kdcompany.net", "metro": "Louisville KY + Wheeling IL"},
+      "signals": {
+        "locations": 2,
+        "employees": null,
+        "website": "kdcompany.net",
+        "metro": "Louisville KY + Wheeling IL"
+      },
       "notes": "Est 2008. Richmond VA and Raleigh NC locations acquired by DVFG Oct 2025. Now 2 remaining: Louisville KY + Wheeling IL. Serves retail florists + event designers. No employee count. Midsize regional."
     },
     {
       "company_id": "731091",
       "company_name": "KRUEGER WHOLESALE PROMO",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 60 emp x $375K", "facility: 120K sqft", "service: 7-state Midwest"],
+      "methods_used": [
+        "headcount: 60 emp x $375K",
+        "facility: 120K sqft",
+        "service: 7-state Midwest"
+      ],
       "estimated_gmv_low": 15000000,
       "estimated_gmv_mid": 22000000,
       "estimated_gmv_high": 30000000,
       "confidence": "High",
-      "signals": {"locations": 1, "employees": 60, "website": "kruegerwholesale.com", "metro": "Rothschild WI (7-state Midwest)"},
+      "signals": {
+        "locations": 1,
+        "employees": 60,
+        "website": "kruegerwholesale.com",
+        "metro": "Rothschild WI (7-state Midwest)"
+      },
       "notes": "One of largest floral distributors in Midwest. Est 1963. 120K sqft corporate HQ + distribution center. Own logistics (KW Transit). Serves 7 states. 60-62 employees. 60 x $375K = $22.5M. Scale of facility + multistate reach supports upper range."
     },
     {
       "company_id": "652551",
       "company_name": "LD Trading/ Lawrence Developments Inc.",
       "business_type": "Wholesaler",
-      "methods_used": ["facility: 18K sqft Northbrook IL", "location: 1 hub Chicago metro x $5M"],
+      "methods_used": [
+        "facility: 18K sqft Northbrook IL",
+        "location: 1 hub Chicago metro x $5M"
+      ],
       "estimated_gmv_low": 4000000,
       "estimated_gmv_mid": 7000000,
       "estimated_gmv_high": 10000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "ldtrading.com", "metro": "Northbrook IL (Chicago)"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "ldtrading.com",
+        "metro": "Northbrook IL (Chicago)"
+      },
       "notes": "30+ years in industry. 18,000 sqft state-of-art facility, Northbrook IL. Direct from farms worldwide. Chicago major metro. Supply + design components. No employee count."
     },
     {
       "company_id": "654758",
       "company_name": "LIHML INC Fayetteville",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 4 emp x $375K", "aggregator: $258K x4"],
+      "methods_used": [
+        "headcount: 4 emp x $375K",
+        "aggregator: $258K x4"
+      ],
       "estimated_gmv_low": 800000,
       "estimated_gmv_mid": 1500000,
       "estimated_gmv_high": 2500000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": 4, "website": "lihmil.com", "metro": "Fayetteville NC"},
+      "signals": {
+        "locations": 1,
+        "employees": 4,
+        "website": "lihmil.com",
+        "metro": "Fayetteville NC"
+      },
       "notes": "LIHMIL Wholesale Flowers, est 2010, 820 Tom Starling Rd Fayetteville NC. 4 employees, $258K aggregator rev (floor). 4 x $375K = $1.5M. Fayetteville small market. Very small operation."
     },
     {
       "company_id": "476379",
       "company_name": "Lone Star Flower Market",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 3 hubs (Houston, Dallas, Tyler) x $5M each", "headcount: 51-200 emp"],
+      "methods_used": [
+        "location: 3 hubs (Houston, Dallas, Tyler) x $5M each",
+        "headcount: 51-200 emp"
+      ],
       "estimated_gmv_low": 12000000,
       "estimated_gmv_mid": 20000000,
       "estimated_gmv_high": 30000000,
       "confidence": "High",
-      "signals": {"locations": 3, "employees": "51-200", "website": "buyourflowers.com/wholesale-flowers-dallas + lsbco.com", "metro": "Houston TX + Dallas TX + Tyler TX"},
+      "signals": {
+        "locations": 3,
+        "employees": "51-200",
+        "website": "buyourflowers.com/wholesale-flowers-dallas + lsbco.com",
+        "metro": "Houston TX + Dallas TX + Tyler TX"
+      },
       "notes": "3 confirmed locations (Houston, Dallas, Tyler). Houston + Dallas = major metros. ZoomInfo: 51-200 employees, revenue $5-20M. Lone Star Bloom related: $9.6M. Est 2020 but rapid growth. 3 x $6M (major metro average) = $18M. 100 emp x $375K = $37.5M high end."
     },
     {
       "company_id": "727605",
       "company_name": "Lucas and Greer, Inc. dba L & G Wholesale Florist",
       "business_type": "Wholesaler",
-      "methods_used": ["market: 200+ shops Houston/Galveston", "headcount: 20-49 emp x $375K", "aggregator: $50-100M"],
+      "methods_used": [
+        "market: 200+ shops Houston/Galveston",
+        "headcount: 20-49 emp x $375K",
+        "aggregator: $50-100M"
+      ],
       "estimated_gmv_low": 15000000,
       "estimated_gmv_mid": 25000000,
       "estimated_gmv_high": 40000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": "20-49", "website": "lgwholesaleinc.com", "metro": "Houston TX"},
+      "signals": {
+        "locations": 1,
+        "employees": "20-49",
+        "website": "lgwholesaleinc.com",
+        "metro": "Houston TX"
+      },
       "notes": "Est 1987. Largest wholesaler in Houston/Galveston area. 200+ floral shops served. Manta aggregator says $50-100M rev - this is likely VERY overstated. 35 emp x $375K = $13M. Houston major metro. Adjust to $25M mid given market dominance."
     },
     {
       "company_id": "651574",
       "company_name": "M&M CUT FLORA",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 1 hub Denver CO x $5M", "acquisition: Mayesh Jun 2026"],
+      "methods_used": [
+        "location: 1 hub Denver CO x $5M",
+        "acquisition: Mayesh Jun 2026"
+      ],
       "estimated_gmv_low": 4000000,
       "estimated_gmv_mid": 7000000,
       "estimated_gmv_high": 10000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": null, "website": "cutflora.com", "metro": "Denver CO"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "cutflora.com",
+        "metro": "Denver CO"
+      },
       "notes": "Acquired by Mayesh effective June 12, 2026. Previously: Denver-based wholesale, Rocky Mountain region. M-F delivery to Denver metro + Front Range. Now operates as Mayesh Denver branch. Denver = major metro. Pre-acquisition GMV estimate."
     },
     {
@@ -567,115 +906,190 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "No match found for this entity. 'Magnolia Holdings 301 LLC' + 'Absolutely Beautiful Flowers' combined name suggests DBA. No web presence found. Needs Koronet internal data (address, phone) for identification."
     },
     {
       "company_id": "670554",
       "company_name": "MAHONEYS ROCKY LEDGE FARM &",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 7 Massachusetts garden centers"],
+      "methods_used": [
+        "location: 7 Massachusetts garden centers"
+      ],
       "estimated_gmv_low": 10000000,
       "estimated_gmv_mid": 20000000,
       "estimated_gmv_high": 35000000,
       "confidence": "Low",
-      "signals": {"locations": 7, "employees": null, "website": "mahoneysgarden.com", "metro": "Massachusetts (Winchester flagship)"},
+      "signals": {
+        "locations": 7,
+        "employees": null,
+        "website": "mahoneysgarden.com",
+        "metro": "Massachusetts (Winchester flagship)"
+      },
       "notes": "Mahoney's operates 7 Massachusetts garden centers (primarily retail/garden center, not traditional wholesale florist). Farm stand + flower shop + nursery. FTD/Teleflora delivery. If wholesale component is portion of 7 locations, GMV much lower. WARNING: May be primarily retail/garden center, not wholesale florist. Classification needs verification."
     },
     {
       "company_id": "731558",
       "company_name": "MRS. BLOOM'S DIRECT, INC.",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 7-11 emp x $700K (importer rate)", "market: NYC area importer"],
+      "methods_used": [
+        "headcount: 7-11 emp x $700K (importer rate)",
+        "market: NYC area importer"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 6000000,
       "estimated_gmv_high": 10000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": "7-50", "website": "mrsblooms.com", "metro": "Elmsford NY (NYC area)"},
+      "signals": {
+        "locations": 1,
+        "employees": "7-50",
+        "website": "mrsblooms.com",
+        "metro": "Elmsford NY (NYC area)"
+      },
       "notes": "Fresh flower importer, est 2003. NYC area (Elmsford NY). Offices in NYC, Ecuador, Bangkok. Direct from global farms. ZoomInfo: 7 employees. NYC metro = major market. Importer rate $700K-1.2M: 7 emp x $1M = $7M. 11-50 emp range from other source adds uncertainty."
     },
     {
       "company_id": "701220",
       "company_name": "McCarthy Wholesale",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 25+ locations", "headcount: 49-82 emp x $375K"],
+      "methods_used": [
+        "location: 25+ locations",
+        "headcount: 49-82 emp x $375K"
+      ],
       "estimated_gmv_low": 10000000,
       "estimated_gmv_mid": 18000000,
       "estimated_gmv_high": 30000000,
       "confidence": "Medium",
-      "signals": {"locations": "25-30", "employees": "49-82", "website": "familyflowers.com (McCarthy Group)", "metro": "10 states, HQ Alpharetta GA"},
+      "signals": {
+        "locations": "25-30",
+        "employees": "49-82",
+        "website": "familyflowers.com (McCarthy Group)",
+        "metro": "10 states, HQ Alpharetta GA"
+      },
       "notes": "Family Flowers / McCarthy Group Florists. 25-30 locations across 10 states. Family owned since 1952. GrowJo: $5.7-7.5M rev (aggregator - treat as floor). 60 emp x $375K = $22.5M. But McCarthy appears retail-oriented despite wholesale classification. Mix of retail/wholesale. Significant scale."
     },
     {
       "company_id": "733807",
       "company_name": "Metropolitan Wholesale/Cityside Flowers",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 2 hubs NJ x $5M each", "facility: 3000 sqft cooler + 6000 sqft plants"],
+      "methods_used": [
+        "location: 2 hubs NJ x $5M each",
+        "facility: 3000 sqft cooler + 6000 sqft plants"
+      ],
       "estimated_gmv_low": 6000000,
       "estimated_gmv_mid": 10000000,
       "estimated_gmv_high": 15000000,
       "confidence": "Medium",
-      "signals": {"locations": 2, "employees": null, "website": "metropolitanwholesale.com", "metro": "Saddle Brook NJ + River Edge NJ (Bergen County)"},
+      "signals": {
+        "locations": 2,
+        "employees": null,
+        "website": "metropolitanwholesale.com",
+        "metro": "Saddle Brook NJ + River Edge NJ (Bergen County)"
+      },
       "notes": "Est 1996. 2 NJ locations (Saddle Brook + River Edge). Bergen County NJ = NYC metro adjacent. 3000+ sqft cooler, 6000 sqft plant showroom. Serves florists, garden centers, landscapers, interior designers. NYC metro = major market. No employee count."
     },
     {
       "company_id": "665027",
       "company_name": "Mideast Flowers Distributors, Inc.",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 6 emp x $375K", "aggregator: $1.2M x3"],
+      "methods_used": [
+        "headcount: 6 emp x $375K",
+        "aggregator: $1.2M x3"
+      ],
       "estimated_gmv_low": 1000000,
       "estimated_gmv_mid": 2000000,
       "estimated_gmv_high": 3500000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": 6, "website": "Washington NC", "metro": "Washington NC (rural)"},
+      "signals": {
+        "locations": 1,
+        "employees": 6,
+        "website": "Washington NC",
+        "metro": "Washington NC (rural)"
+      },
       "notes": "Washington NC (small market). 6 employees. D&B: $1.2M rev. Buzzfile confirms small scale. 6 x $375K = $2.25M. Rural Eastern NC market. Small operation."
     },
     {
       "company_id": "664255",
       "company_name": "Mikes Finest Wholesale Flowers, Inc.",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 20-26 emp x $375K", "aggregator: $3.2-9M range"],
+      "methods_used": [
+        "headcount: 20-26 emp x $375K",
+        "aggregator: $3.2-9M range"
+      ],
       "estimated_gmv_low": 5000000,
       "estimated_gmv_mid": 8000000,
       "estimated_gmv_high": 12000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": 23, "website": "mikesfinest.com", "metro": "Norcross GA (Atlanta)"},
+      "signals": {
+        "locations": 1,
+        "employees": 23,
+        "website": "mikesfinest.com",
+        "metro": "Norcross GA (Atlanta)"
+      },
       "notes": "Atlanta premier wholesale. Est 1996. Norcross/Atlanta. 20-26 employees. ZoomInfo: $9M high. Buzzfile: $3.2M low (floor). 23 x $375K = $8.6M. Atlanta = major metro. Mid $8M supported by both methods."
     },
     {
       "company_id": "729666",
       "company_name": "NORTHWEST WHOLESALE FLORIST",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 13 emp x $375K", "location: Seattle hub x $5M"],
+      "methods_used": [
+        "headcount: 13 emp x $375K",
+        "location: Seattle hub x $5M"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 5000000,
       "estimated_gmv_high": 8000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": 13, "website": "nwwholesaleflorists.com", "metro": "Seattle WA"},
+      "signals": {
+        "locations": 1,
+        "employees": 13,
+        "website": "nwwholesaleflorists.com",
+        "metro": "Seattle WA"
+      },
       "notes": "Seattle-based wholesale. 13 employees (ZoomInfo 2025). Bulk flowers, plants, supplies to local businesses only (wholesale-only). Seattle = major metro. 13 x $375K = $4.9M. Single location."
     },
     {
       "company_id": "592615",
       "company_name": "NYC FLORAL GREENS",
       "business_type": "Wholesaler",
-      "methods_used": ["market: Brooklyn + Miami presence"],
+      "methods_used": [
+        "market: Brooklyn + Miami presence"
+      ],
       "estimated_gmv_low": 2000000,
       "estimated_gmv_mid": 4000000,
       "estimated_gmv_high": 7000000,
       "confidence": "Low",
-      "signals": {"locations": 2, "employees": null, "website": "flowersnow.us", "metro": "Brooklyn NY + Miami FL"},
+      "signals": {
+        "locations": 2,
+        "employees": null,
+        "website": "flowersnow.us",
+        "metro": "Brooklyn NY + Miami FL"
+      },
       "notes": "Wholesale operation with presence in Brooklyn NY and Miami FL. 65+ rose varieties. Pay-on-delivery model. NYC market is major but limited signals on scale. No employee count."
     },
     {
       "company_id": "676861",
       "company_name": "Ontario Flower Growers Cooperative Ltd.",
       "business_type": "Wholesaler",
-      "methods_used": ["market: 150+ growers, clock auction + marketplace", "location: Mississauga ON"],
+      "methods_used": [
+        "market: 150+ growers, clock auction + marketplace",
+        "location: Mississauga ON"
+      ],
       "estimated_gmv_low": 30000000,
       "estimated_gmv_mid": 50000000,
       "estimated_gmv_high": 80000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": null, "website": "ontarioflowers.com", "metro": "Mississauga ON (Toronto area)"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "ontarioflowers.com",
+        "metro": "Mississauga ON (Toronto area)"
+      },
       "notes": "Est 1972. Cooperative with 150+ growers. Central facility Mississauga. Clock auction + online sales + OFG Marketplace. Largest Ontario flower cooperative. Toronto area = major Canadian market. Cooperative throughput model (multiple growers' product flowing through) = high GMV per facility."
     },
     {
@@ -687,7 +1101,12 @@
       "estimated_gmv_mid": 500000,
       "estimated_gmv_high": 1000000,
       "confidence": "Low",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "Retail florist / design studio. Procurement tier. Limited signals. Typical single-shop retail range."
     },
     {
@@ -699,31 +1118,52 @@
       "estimated_gmv_mid": 300000,
       "estimated_gmv_high": 500000,
       "confidence": "Low",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "Mobile retail florist (truck). Very small operation by nature of business model. Low GMV."
     },
     {
       "company_id": "654661",
       "company_name": "POTOMAC WHSLE",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 35 emp x $375K", "aggregator: $4M"],
+      "methods_used": [
+        "headcount: 35 emp x $375K",
+        "aggregator: $4M"
+      ],
       "estimated_gmv_low": 5000000,
       "estimated_gmv_mid": 8000000,
       "estimated_gmv_high": 12000000,
       "confidence": "High",
-      "signals": {"locations": 1, "employees": 35, "website": "flowerwholesale.com", "metro": "Silver Spring MD (DC area)"},
+      "signals": {
+        "locations": 1,
+        "employees": 35,
+        "website": "flowerwholesale.com",
+        "metro": "Silver Spring MD (DC area)"
+      },
       "notes": "Est 1998. DC/Mid-Atlantic market. 35 employees (ZoomInfo 2026). Revenue ~$4M aggregator. 35 x $375K = $13.1M. Aggregator $4M is floor. DC metro = major market. Exclusive distributor for Ecuadorian rose farms + imports from 10 countries."
     },
     {
       "company_id": "675363",
       "company_name": "Palm Beach Whsle Flowers, Inc.",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 4-19 emp x $375K", "aggregator: $110K"],
+      "methods_used": [
+        "headcount: 4-19 emp x $375K",
+        "aggregator: $110K"
+      ],
       "estimated_gmv_low": 500000,
       "estimated_gmv_mid": 1500000,
       "estimated_gmv_high": 3000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": "4-19", "website": "pbwflowers.com", "metro": "West Palm Beach FL"},
+      "signals": {
+        "locations": 1,
+        "employees": "4-19",
+        "website": "pbwflowers.com",
+        "metro": "West Palm Beach FL"
+      },
       "notes": "Est 2012. West Palm Beach FL. Aggregator $110K = extreme floor. Online + nationwide shipping model. ZoomInfo: 19 employees (high signal), Manta: 5-9. 10 emp x $375K = $3.75M. Online model may cap local B2B. Small operation."
     },
     {
@@ -735,103 +1175,168 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "No public web presence found under 'Penn Valley Flora' as wholesale florist. Could be very new, DBA, or local-only operation. Needs Koronet internal address data."
     },
     {
       "company_id": "620160",
       "company_name": "Petals Direct",
       "business_type": "Wholesaler",
-      "methods_used": ["LinkedIn: exists, minimal data"],
+      "methods_used": [
+        "LinkedIn: exists, minimal data"
+      ],
       "estimated_gmv_low": null,
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "LinkedIn page exists for Petals Direct but no public company data (employees, revenue, location) found. No website discovered. Needs internal Koronet data or direct LinkedIn lookup."
     },
     {
       "company_id": "734521",
       "company_name": "Promoflor SRL",
       "business_type": "Wholesaler",
-      "methods_used": ["import/export: Italy to EU + Asia markets"],
+      "methods_used": [
+        "import/export: Italy to EU + Asia markets"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 6000000,
       "estimated_gmv_high": 10000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "promoflor.it", "metro": "Sanremo Liguria Italy"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "promoflor.it",
+        "metro": "Sanremo Liguria Italy"
+      },
       "notes": "Italian grower/exporter. Est 1998. Sanremo = Italy's flower capital. Exports eucalyptus, ruscus, Mediterranean species, ranunculus, anemones, mimosa, genisteae. Markets: EU, Russia, Norway, Japan, S Korea, China. Creditsafe EU registered. Likely Italian SME exporter."
     },
     {
       "company_id": "650536",
       "company_name": "R&W WHOLESALE, INC.",
       "business_type": "Wholesaler",
-      "methods_used": ["aggregator: $191K x4", "headcount: 1 emp"],
+      "methods_used": [
+        "aggregator: $191K x4",
+        "headcount: 1 emp"
+      ],
       "estimated_gmv_low": 500000,
       "estimated_gmv_mid": 1000000,
       "estimated_gmv_high": 2000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": 1, "website": "rwwholesale.net", "metro": "Birmingham AL"},
+      "signals": {
+        "locations": 1,
+        "employees": 1,
+        "website": "rwwholesale.net",
+        "metro": "Birmingham AL"
+      },
       "notes": "Very small operation. D&B: $191K rev, 1 employee. Est 2000 Birmingham AL. This is an extreme floor for any wholesale operation. May be home-based or part-time. Very small GMV."
     },
     {
       "company_id": "327132",
       "company_name": "Royal Flower Import Group Inc.",
       "business_type": "Wholesaler",
-      "methods_used": ["market: Toronto wholesale since 1991"],
+      "methods_used": [
+        "market: Toronto wholesale since 1991"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 6000000,
       "estimated_gmv_high": 10000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "royalflowerimportgroup.com", "metro": "Toronto ON Canada"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "royalflowerimportgroup.com",
+        "metro": "Toronto ON Canada"
+      },
       "notes": "Est 1991. Toronto-area wholesale distributor of premium cut flowers. Specialty: roses. Serves finest flower shops and designers in Toronto. Toronto = major Canadian market. No employee count or revenue data found."
     },
     {
       "company_id": "33986",
       "company_name": "Royal Flowers Inc, International",
       "business_type": "Importer",
-      "methods_used": ["farm: 120 hectares Ecuador"],
+      "methods_used": [
+        "farm: 120 hectares Ecuador"
+      ],
       "estimated_gmv_low": 15000000,
       "estimated_gmv_mid": 30000000,
       "estimated_gmv_high": 50000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "royalflowersgroup.com", "metro": "Ecuador (global distribution)"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "royalflowersgroup.com",
+        "metro": "Ecuador (global distribution)"
+      },
       "notes": "Royal Flowers Group: 120+ hectares (296 acres) Ecuador greenhouses at high altitude. Global distributor of Ecuadorian roses. Large farm scale. No US staff headcount. Revenue estimate based on typical large Ecuador grower-exporter scale."
     },
     {
       "company_id": "670668",
       "company_name": "STRANGE'S FLORIST, INC.",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 33-100 emp x $375K", "revenue: $9.6-21.3M aggregator"],
+      "methods_used": [
+        "headcount: 33-100 emp x $375K",
+        "revenue: $9.6-21.3M aggregator"
+      ],
       "estimated_gmv_low": 10000000,
       "estimated_gmv_mid": 18000000,
       "estimated_gmv_high": 28000000,
       "confidence": "Medium",
-      "signals": {"locations": 2, "employees": "33-100", "website": "stranges.com", "metro": "Richmond VA"},
+      "signals": {
+        "locations": 2,
+        "employees": "33-100",
+        "website": "stranges.com",
+        "metro": "Richmond VA"
+      },
       "notes": "One of Virginia's largest greenhouse growers + one of largest retail garden centers in US. 2 locations (West Broad + Mechanicsville). Zippia: $21.3M rev, 33 emp. GrowJo: $9.6M. 66 emp x $375K = $24.8M. Primarily retail/garden center with wholesale component. May not be full wholesale GMV."
     },
     {
       "company_id": "664201",
       "company_name": "San Antonio Flower CO",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 1 hub San Antonio x $4M", "history: est 1999"],
+      "methods_used": [
+        "location: 1 hub San Antonio x $4M",
+        "history: est 1999"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 5000000,
       "estimated_gmv_high": 8000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "sanantonioflowercompany.com", "metro": "San Antonio TX"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "sanantonioflowercompany.com",
+        "metro": "San Antonio TX"
+      },
       "notes": "Est 1999, European-style flower market. Self-service model. Wholesale pricing to licensed businesses. 60+ years combined experience in founders. San Antonio = major metro. No employee count found."
     },
     {
       "company_id": "38477",
       "company_name": "Sofia Flowers USA LLC",
       "business_type": "Importer",
-      "methods_used": ["import records: 211 bills of lading", "market: supermarket + e-commerce distributor"],
+      "methods_used": [
+        "import records: 211 bills of lading",
+        "market: supermarket + e-commerce distributor"
+      ],
       "estimated_gmv_low": 10000000,
       "estimated_gmv_mid": 20000000,
       "estimated_gmv_high": 35000000,
       "confidence": "Medium",
-      "signals": {"locations": "multiple DCs", "employees": null, "website": "sofiaflowersusa.com", "metro": "Miami FL (HQ) + national DCs"},
+      "signals": {
+        "locations": "multiple DCs",
+        "employees": null,
+        "website": "sofiaflowersusa.com",
+        "metro": "Miami FL (HQ) + national DCs"
+      },
       "notes": "Est 2010. Miami HQ (2200 NW 70th Ave). Multiple DCs nationally with direct farm flights. Targets supermarket chains + e-commerce retailers. 211 bills of lading Dec 2020-Apr 2026. B2B importer/distributor model. Significant scale for supermarket supply."
     },
     {
@@ -843,19 +1348,32 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "Generic name - no specific company identified. Multiple US growers use this descriptor. Needs Koronet internal data (address, contact) to identify correct entity."
     },
     {
       "company_id": "655382",
       "company_name": "Staalduinen Floral-LTF1118",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 31 emp x $375K", "aggregator: $10M"],
+      "methods_used": [
+        "headcount: 31 emp x $375K",
+        "aggregator: $10M"
+      ],
       "estimated_gmv_low": 7000000,
       "estimated_gmv_mid": 10000000,
       "estimated_gmv_high": 15000000,
       "confidence": "High",
-      "signals": {"locations": 1, "employees": 31, "website": "staalduinenfloral.com", "metro": "Hamilton ON Canada"},
+      "signals": {
+        "locations": 1,
+        "employees": 31,
+        "website": "staalduinenfloral.com",
+        "metro": "Hamilton ON Canada"
+      },
       "notes": "50+ year Canadian wholesaler. 31 employees (ZoomInfo). $10M revenue (ZoomInfo 2026). 31 x $375K = $11.6M. Serves most of Ontario + Eastern Canada. 26K sqft greenhouse. Two consistent signals converge."
     },
     {
@@ -867,31 +1385,52 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": "staroses.com", "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": "staroses.com",
+        "metro": null
+      },
       "notes": "Website staroses.com found (QA dept mentioned). Not to be confused with Star Roses and Plants/Conard-Pyle (plant nursery). No employee or revenue data for this specific entity. Needs Koronet address data."
     },
     {
       "company_id": "664054",
       "company_name": "TFS Bristol",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 3 TFS locations (Bristol TN, Knoxville TN, Roanoke VA)", "history: est 1953"],
+      "methods_used": [
+        "location: 3 TFS locations (Bristol TN, Knoxville TN, Roanoke VA)",
+        "history: est 1953"
+      ],
       "estimated_gmv_low": 8000000,
       "estimated_gmv_mid": 15000000,
       "estimated_gmv_high": 22000000,
       "confidence": "Low",
-      "signals": {"locations": 3, "employees": null, "website": "tfsflowers.net", "metro": "Bristol TN + Knoxville TN + Roanoke VA"},
+      "signals": {
+        "locations": 3,
+        "employees": null,
+        "website": "tfsflowers.net",
+        "metro": "Bristol TN + Knoxville TN + Roanoke VA"
+      },
       "notes": "Tennessee Florist Supply, est 1953. 3 locations: Bristol TN, Knoxville TN, Roanoke VA. Serves East TN, SE KY, NC, SC, WV, VA. Daily local delivery. 'Americana Inc.' parent company. Secondary/tertiary markets. 3 x $5M = $15M."
     },
     {
       "company_id": "731457",
       "company_name": "TWI SON HARRISON WHOLESALE FLORAL",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 5-9 emp x $375K", "revenue: $1-5M aggregator"],
+      "methods_used": [
+        "headcount: 5-9 emp x $375K",
+        "revenue: $1-5M aggregator"
+      ],
       "estimated_gmv_low": 1000000,
       "estimated_gmv_mid": 2500000,
       "estimated_gmv_high": 4000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": "5-9", "website": "harrisonwholesalefloral.com", "metro": "Odessa TX"},
+      "signals": {
+        "locations": 1,
+        "employees": "5-9",
+        "website": "harrisonwholesalefloral.com",
+        "metro": "Odessa TX"
+      },
       "notes": "Harrison Wholesale Floral, 610 N Hancock Ave, Odessa TX. Est 1977, Ron Harrison president. D&B: $1-5M rev. 5-9 employees. 7 x $375K = $2.6M. Odessa = small West Texas market. Small operation."
     },
     {
@@ -903,55 +1442,89 @@
       "estimated_gmv_mid": 1000000,
       "estimated_gmv_high": 2000000,
       "confidence": "Low",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "Retail florist. Limited signals. Typical retail range estimate only."
     },
     {
       "company_id": "665261",
       "company_name": "Tradewinds / Pristine Wholesale Floral",
       "business_type": "Wholesaler",
-      "methods_used": ["PPP loan: 75 jobs retained, $550K loan"],
+      "methods_used": [
+        "PPP loan: 75 jobs retained, $550K loan"
+      ],
       "estimated_gmv_low": 5000000,
       "estimated_gmv_mid": 10000000,
       "estimated_gmv_high": 15000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": 75, "website": "tradewindswholesale.wordpress.com", "metro": "Davie FL (South Florida)"},
+      "signals": {
+        "locations": 1,
+        "employees": 75,
+        "website": "tradewindswholesale.wordpress.com",
+        "metro": "Davie FL (South Florida)"
+      },
       "notes": "Field of Flowers Inc DBA Tradewinds Wholesale Florist. PPP 2020: 75 jobs retained, $550K loan. Davie FL (Broward County). 75 employees x $375K = $28M high - but PPP may overclaim. Delivery twice daily Dade, Broward, S Palm Beach. South FL major market. 'Pristine Wholesale Floral' may be related or different entity."
     },
     {
       "company_id": "664648",
       "company_name": "Tradewinds/ KING FLORAL SUPPLY",
       "business_type": "Wholesaler",
-      "methods_used": ["history: King's since 1948"],
+      "methods_used": [
+        "history: King's since 1948"
+      ],
       "estimated_gmv_low": 5000000,
       "estimated_gmv_mid": 10000000,
       "estimated_gmv_high": 15000000,
       "confidence": "Low",
-      "signals": {"locations": null, "employees": null, "website": "kingsdirect.com", "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": "kingsdirect.com",
+        "metro": null
+      },
       "notes": "King's Wholesale Florists: since 1948, large catalog of fresh flowers + greens + supplies. Relationship with Tradewinds unclear - may be same entity or related. No specific location or employee data found. Needs clarification on company relationship."
     },
     {
       "company_id": "704636",
       "company_name": "UNITED WHOLESALE- FFL  ENTERPRISES",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 14 emp x $375K", "aggregator: $3M"],
+      "methods_used": [
+        "headcount: 14 emp x $375K",
+        "aggregator: $3M"
+      ],
       "estimated_gmv_low": 2000000,
       "estimated_gmv_mid": 4000000,
       "estimated_gmv_high": 6000000,
       "confidence": "High",
-      "signals": {"locations": 1, "employees": 14, "website": "unitedwholesaleflowers.com", "metro": "San Jose CA (Bay Area)"},
+      "signals": {
+        "locations": 1,
+        "employees": 14,
+        "website": "unitedwholesaleflowers.com",
+        "metro": "San Jose CA (Bay Area)"
+      },
       "notes": "FFL Enterprises Inc DBA United Wholesale Flowers. Est 2009. San Jose CA (2350 Harris Way). 14 employees, $3M revenue (ZoomInfo). Same-day delivery for orders >$120 in Greater Bay Area + Central Valley. 14 x $375K = $5.25M. Aggregator $3M = floor. Bay Area = major metro."
     },
     {
       "company_id": "670675",
       "company_name": "VELDKAMP'S FLOWERS",
       "business_type": "Grower",
-      "methods_used": ["location: Lakewood CO garden center + farm operations"],
+      "methods_used": [
+        "location: Lakewood CO garden center + farm operations"
+      ],
       "estimated_gmv_low": 5000000,
       "estimated_gmv_mid": 10000000,
       "estimated_gmv_high": 20000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "veldkampsflowers.com", "metro": "Denver CO"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "veldkampsflowers.com",
+        "metro": "Denver CO"
+      },
       "notes": "3rd generation family, est 1959. Lakewood CO. Mix of: interior/exterior landscaping, garden center, wholesale, greenhouse production. Colorado-grown + sourced from CA/Holland/S. America. Denver market. Multi-business entity - wholesale portion of GMV is subset."
     },
     {
@@ -963,55 +1536,91 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "No public data found for 'Valle Verde LLC' as flower importer. Name is very common. Needs Koronet internal address/contact data to identify correct entity and search import records."
     },
     {
       "company_id": "740646",
       "company_name": "Valley Floral Co. - Wichita",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 3 locations (Wichita, OKC, Tulsa) x $4M each", "facility: 50K sqft Wichita"],
+      "methods_used": [
+        "location: 3 locations (Wichita, OKC, Tulsa) x $4M each",
+        "facility: 50K sqft Wichita"
+      ],
       "estimated_gmv_low": 8000000,
       "estimated_gmv_mid": 14000000,
       "estimated_gmv_high": 20000000,
       "confidence": "Medium",
-      "signals": {"locations": 3, "employees": 50, "website": "valleyfloral.com", "metro": "Wichita KS + OKC OK + Tulsa OK"},
+      "signals": {
+        "locations": 3,
+        "employees": 50,
+        "website": "valleyfloral.com",
+        "metro": "Wichita KS + OKC OK + Tulsa OK"
+      },
       "notes": "Est 1941. 3 locations: Wichita KS corporate, OKC OK, Tulsa OK. 50K sqft warehouse + greenhouse + distribution center. Zippia: 50 employees, $3M (floor). OKC BBB: 26 years in business. 50 x $375K = $18.75M. 3 x $5M = $15M. Secondary markets but strong regional coverage."
     },
     {
       "company_id": "740734",
       "company_name": "Valley Floral Co. of OKC - Oklahoma",
       "business_type": "Wholesaler",
-      "methods_used": ["location: OKC branch (part of Valley Floral 3-location network)"],
+      "methods_used": [
+        "location: OKC branch (part of Valley Floral 3-location network)"
+      ],
       "estimated_gmv_low": 2000000,
       "estimated_gmv_mid": 4000000,
       "estimated_gmv_high": 6000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "valleyfloral.com", "metro": "Oklahoma City OK"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "valleyfloral.com",
+        "metro": "Oklahoma City OK"
+      },
       "notes": "OKC branch of Valley Floral Co. (same corporate entity as Wichita + Tulsa). 301 N Rhode Island Ave Suite 108, Oklahoma City OK 73117. GMV estimated as portion of total Valley Floral operation. OKC secondary market."
     },
     {
       "company_id": "740696",
       "company_name": "Valley Floral Co. of Oklahoma LLC - Tulsa",
       "business_type": "Wholesaler",
-      "methods_used": ["location: Tulsa branch (part of Valley Floral 3-location network)"],
+      "methods_used": [
+        "location: Tulsa branch (part of Valley Floral 3-location network)"
+      ],
       "estimated_gmv_low": 2000000,
       "estimated_gmv_mid": 4000000,
       "estimated_gmv_high": 6000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "valleyfloral.com", "metro": "Tulsa OK"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "valleyfloral.com",
+        "metro": "Tulsa OK"
+      },
       "notes": "Tulsa branch of Valley Floral Co. (same corporate entity). 7350 E 38th St Tulsa OK. GMV estimated as portion of total Valley Floral operation. Tulsa secondary market."
     },
     {
       "company_id": "755509",
       "company_name": "Vimass Flora S.L.",
       "business_type": "Importer",
-      "methods_used": ["headcount: 10-49 emp", "revenue: 2-10M EUR", "import records: 768 shipments, 197 suppliers"],
+      "methods_used": [
+        "headcount: 10-49 emp",
+        "revenue: 2-10M EUR",
+        "import records: 768 shipments, 197 suppliers"
+      ],
       "estimated_gmv_low": 5000000,
       "estimated_gmv_mid": 10000000,
       "estimated_gmv_high": 18000000,
       "confidence": "High",
-      "signals": {"locations": 1, "employees": "10-49", "website": "Vilassar de Mar Barcelona Spain", "metro": "Barcelona Spain (European distributor)"},
+      "signals": {
+        "locations": 1,
+        "employees": "10-49",
+        "website": "Vilassar de Mar Barcelona Spain",
+        "metro": "Barcelona Spain (European distributor)"
+      },
       "notes": "Spanish importer/wholesaler. 768 import shipments from 197 suppliers (diverse sourcing from Colombia + Ecuador). Infoempresa: 10-49 employees, 2-10M EUR revenue. 3 consistent signals. Strong data for Spanish entity."
     },
     {
@@ -1023,19 +1632,31 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "No public web presence found under 'Vivofloral'. Likely Colombian or Ecuadorian grower given business type. Needs Koronet internal data (country, product) to identify correct entity."
     },
     {
       "company_id": "650815",
       "company_name": "WB FLORAL GROUP, LLC.-MD",
       "business_type": "Retailer",
-      "methods_used": ["market: Baltimore MD, since 2020"],
+      "methods_used": [
+        "market: Baltimore MD, since 2020"
+      ],
       "estimated_gmv_low": 1000000,
       "estimated_gmv_mid": 2500000,
       "estimated_gmv_high": 5000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "wbfloral.com", "metro": "Baltimore MD"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "wbfloral.com",
+        "metro": "Baltimore MD"
+      },
       "notes": "Est 2020. Baltimore MD. Dutch Direct + Miami Market + Farm Direct sourcing. Despite 'Retailer' classification, appears to be wholesale/distributor model. Limited public data on scale."
     },
     {
@@ -1047,19 +1668,32 @@
       "estimated_gmv_mid": 600000,
       "estimated_gmv_high": 1000000,
       "confidence": "Low",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "Retail florist. No public data found beyond name. Typical single-shop retail range."
     },
     {
       "company_id": "670701",
       "company_name": "Webb's Wholesale Florist",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 3-11 emp x $375K", "aggregator: $5.3M"],
+      "methods_used": [
+        "headcount: 3-11 emp x $375K",
+        "aggregator: $5.3M"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 5000000,
       "estimated_gmv_high": 8000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": "3-11", "website": "webbswholesale.com", "metro": "Crab Orchard WV (regional)"},
+      "signals": {
+        "locations": 1,
+        "employees": "3-11",
+        "website": "webbswholesale.com",
+        "metro": "Crab Orchard WV (regional)"
+      },
       "notes": "76 years in business. Serves WV, VA, OH, KY. Crab Orchard WV (rural). Buzzfile: $5.3M rev. 7 emp x $375K = $2.6M. Aggregator $5.3M may be more reliable given age. Regional wholesaler serving multi-state."
     },
     {
@@ -1071,19 +1705,31 @@
       "estimated_gmv_mid": 600000,
       "estimated_gmv_high": 1000000,
       "confidence": "Low",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "Retail florist. No public data found. Procurement tier. Typical single-shop retail range."
     },
     {
       "company_id": "726631",
       "company_name": "Wolfe Wholesale Florist, Inc. Waco",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 1 hub Waco TX x $4M"],
+      "methods_used": [
+        "location: 1 hub Waco TX x $4M"
+      ],
       "estimated_gmv_low": 2000000,
       "estimated_gmv_mid": 4000000,
       "estimated_gmv_high": 6000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "wolfetheflorist.com", "metro": "Waco TX"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "wolfetheflorist.com",
+        "metro": "Waco TX"
+      },
       "notes": "Waco TX wholesale florist. Small team (Tom Sr, Tom Jr, Amber, Anna mentioned). Waco = secondary market. No revenue or full employee count found. LinkedIn page exists."
     },
     {
@@ -1095,7 +1741,12 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "No public data found under 'Nexa Flowers Group'. Very new account (high ID number). Needs Koronet internal address data to identify."
     },
     {
@@ -1107,43 +1758,73 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": "Netherlands (likely)"},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": "Netherlands (likely)"
+      },
       "notes": "No public data found for 'Phyto Flowers BV'. Dutch entity. Needs KVK (Dutch chamber of commerce) lookup. Very limited web presence."
     },
     {
       "company_id": null,
       "company_name": "SQ Flora",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 1-10 emp", "revenue: <$5M", "location: Honselersdijk Netherlands"],
+      "methods_used": [
+        "headcount: 1-10 emp",
+        "revenue: <$5M",
+        "location: Honselersdijk Netherlands"
+      ],
       "estimated_gmv_low": 2000000,
       "estimated_gmv_mid": 4000000,
       "estimated_gmv_high": 7000000,
       "confidence": "Medium",
-      "signals": {"locations": 1, "employees": "1-10", "website": "ZoomInfo profile", "metro": "Honselersdijk Netherlands + Kenya operations"},
+      "signals": {
+        "locations": 1,
+        "employees": "1-10",
+        "website": "ZoomInfo profile",
+        "metro": "Honselersdijk Netherlands + Kenya operations"
+      },
       "notes": "Dutch-Kenyan flower trader. Located Middel Broekweg 29, Honselersdijk, South Holland. Sources from Holland + Kenya growers. Category management, fixed pricing for events. ZoomInfo: <$5M, 1-10 emp. Small specialist trader."
     },
     {
       "company_id": null,
       "company_name": "FM Group B.V./SPA",
       "business_type": "Wholesaler",
-      "methods_used": ["headcount: 2000 emp worldwide", "revenue: 500M EUR (2020)", "customers: 25000 in 82 countries"],
+      "methods_used": [
+        "headcount: 2000 emp worldwide",
+        "revenue: 500M EUR (2020)",
+        "customers: 25000 in 82 countries"
+      ],
       "estimated_gmv_low": 300000000,
       "estimated_gmv_mid": 500000000,
       "estimated_gmv_high": 700000000,
       "confidence": "High",
-      "signals": {"locations": "multiple", "employees": 2000, "website": "fmgroup.fm", "metro": "Noord-Holland Netherlands (global)"},
+      "signals": {
+        "locations": "multiple",
+        "employees": 2000,
+        "website": "fmgroup.fm",
+        "metro": "Noord-Holland Netherlands (global)"
+      },
       "notes": "FM Group is a MAJOR European wholesale/trade company. €500M turnover (2020). 2000 employees, 25,000 customers in 82 countries. 50+ year history. Serves florists, wholesale, retail/e-retail. Flowers + plants + accessories. One of the largest European floral trade companies. If this is the Koronet account, GMV will be enormous."
     },
     {
       "company_id": null,
       "company_name": "blooms2go",
       "business_type": "Importer",
-      "methods_used": ["business model: 3rd-generation Canadian wholesale"],
+      "methods_used": [
+        "business model: 3rd-generation Canadian wholesale"
+      ],
       "estimated_gmv_low": 2000000,
       "estimated_gmv_mid": 5000000,
       "estimated_gmv_high": 10000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "bloomstogo.ca", "metro": "Mississauga ON Canada"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "bloomstogo.ca",
+        "metro": "Mississauga ON Canada"
+      },
       "notes": "3rd generation family business, two sisters, Mississauga ON. Online-first model, shipment-ready bouquets, local + global flowers. Canadian market. No employee or revenue data found. Blooms2Go (blooms2go.org) is separate entity."
     },
     {
@@ -1155,7 +1836,12 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": "kometsales.com", "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": "kometsales.com",
+        "metro": null
+      },
       "notes": "NOTE: Komet Sales LLC is the platform provider (Koronet). This account should NOT be in the GMV estimation list - it is the software vendor, not a client. Flag for data quality review."
     },
     {
@@ -1167,19 +1853,31 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": "San Francisco CA (likely)"},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": "San Francisco CA (likely)"
+      },
       "notes": "No match found. 'L1' tag suggests this may be a lead/prospect designation. San Francisco Gardens could be SF Flower Market vendor or garden center. Needs Koronet internal data."
     },
     {
       "company_id": null,
       "company_name": "Flower Board - The Financial Company",
       "business_type": "Wholesaler",
-      "methods_used": ["import records: found on ImportGenius"],
+      "methods_used": [
+        "import records: found on ImportGenius"
+      ],
       "estimated_gmv_low": 3000000,
       "estimated_gmv_mid": 7000000,
       "estimated_gmv_high": 12000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": null, "metro": "Israel"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": null,
+        "metro": "Israel"
+      },
       "notes": "Israeli flower company with US import activity. Shipped to John Vena Inc in Philadelphia. ImportGenius records confirm import activity. Financial/factoring model for flower trade. No employee count."
     },
     {
@@ -1191,43 +1889,71 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": "Germany (likely)"},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": "Germany (likely)"
+      },
       "notes": "No public data found for 'Royal Flowers GmbH'. German entity (GmbH). Needs German Handelsregister lookup. Likely a German importer/distributor."
     },
     {
       "company_id": null,
       "company_name": "Bluumii/SoCal Flowers",
       "business_type": "Wholesaler",
-      "methods_used": ["location: 3 hubs (Van Nuys, Downtown LA, Oxnard) x $5M each"],
+      "methods_used": [
+        "location: 3 hubs (Van Nuys, Downtown LA, Oxnard) x $5M each"
+      ],
       "estimated_gmv_low": 8000000,
       "estimated_gmv_mid": 15000000,
       "estimated_gmv_high": 22000000,
       "confidence": "Low",
-      "signals": {"locations": 3, "employees": null, "website": "socalflowersinc.com + bluumii.com", "metro": "Van Nuys CA + Downtown LA + Oxnard CA"},
+      "signals": {
+        "locations": 3,
+        "employees": null,
+        "website": "socalflowersinc.com + bluumii.com",
+        "metro": "Van Nuys CA + Downtown LA + Oxnard CA"
+      },
       "notes": "Two related entities: SoCal Flowers Inc = 3 warehouses (Van Nuys, Downtown LA, Oxnard/nationwide shipping). Bluumii = subscription/hospitality arm serving Southern CA restaurants/retail. Combined: major Southern CA market. 3 hubs x $5M = $15M. LA is major metro."
     },
     {
       "company_id": null,
       "company_name": "Green Valley Floral",
       "business_type": "Wholesaler",
-      "methods_used": ["farm: Salinas CA grower-shipper", "crops: 150+ acres"],
+      "methods_used": [
+        "farm: Salinas CA grower-shipper",
+        "crops: 150+ acres"
+      ],
       "estimated_gmv_low": 5000000,
       "estimated_gmv_mid": 10000000,
       "estimated_gmv_high": 18000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "greenvalleyfloral.com", "metro": "Salinas CA (national distribution)"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "greenvalleyfloral.com",
+        "metro": "Salinas CA (national distribution)"
+      },
       "notes": "Multi-generation grower-shipper, est 1973. Salinas CA. Grows garden roses, lilies, Gerbera daisies. Ships to wholesalers across US + Canada. 150+ acres cultivated. California major grower. Also: Green Valley Flowers Wholesale (separate entity, San Marcos CA)."
     },
     {
       "company_id": "470794",
       "company_name": "AquaRose",
       "business_type": "Importer",
-      "methods_used": ["market: 20+ years, Miami logistics", "product: 90-200 rose varieties"],
+      "methods_used": [
+        "market: 20+ years, Miami logistics",
+        "product: 90-200 rose varieties"
+      ],
       "estimated_gmv_low": 5000000,
       "estimated_gmv_mid": 10000000,
       "estimated_gmv_high": 20000000,
       "confidence": "Low",
-      "signals": {"locations": 1, "employees": null, "website": "aquarose.ec", "metro": "Miami FL (Ecuador-based)"},
+      "signals": {
+        "locations": 1,
+        "employees": null,
+        "website": "aquarose.ec",
+        "metro": "Miami FL (Ecuador-based)"
+      },
       "notes": "Ecuadorian rose grower/importer with 20+ years. Miami logistics facility. 90+ varieties (200 on another source). Seasonal + holiday programs. No employee or revenue data. Ecuador grower with US distribution hub model."
     },
     {
@@ -1239,7 +1965,12 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": "Ecuador (Floropolis farm)"},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": "Ecuador (Floropolis farm)"
+      },
       "notes": "Floropolis internal farm entity. Facu's own business (Floropolis). GMV should come from internal data, not external estimation."
     },
     {
@@ -1251,7 +1982,12 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": "Colombia (Floropolis farm)"},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": "Colombia (Floropolis farm)"
+      },
       "notes": "Floropolis internal farm entity. Facu's own business (Floropolis). GMV should come from internal data, not external estimation."
     },
     {
@@ -1263,19 +1999,32 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": "Ecuador (Floropolis farm)"},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": "Ecuador (Floropolis farm)"
+      },
       "notes": "Floropolis internal farm entity. Facu's own business. GMV should come from internal data, not external estimation."
     },
     {
       "company_id": "655985",
       "company_name": "Mellano Sales",
       "business_type": "Grower",
-      "methods_used": ["farms: 375 acres San Luis Rey + 75 acres Carlsbad", "locations: 4 distribution hubs"],
+      "methods_used": [
+        "farms: 375 acres San Luis Rey + 75 acres Carlsbad",
+        "locations: 4 distribution hubs"
+      ],
       "estimated_gmv_low": 20000000,
       "estimated_gmv_mid": 35000000,
       "estimated_gmv_high": 55000000,
       "confidence": "Medium",
-      "signals": {"locations": 4, "employees": null, "website": "mellano.com", "metro": "LA + San Diego + Orange County + Las Vegas"},
+      "signals": {
+        "locations": 4,
+        "employees": null,
+        "website": "mellano.com",
+        "metro": "LA + San Diego + Orange County + Las Vegas"
+      },
       "notes": "One of CA's largest wholesale flower growers. Est 1925, 3rd generation. 450+ acres total. 4 distribution hubs: LA Flower Market, SD Floral Trade Center, Orange County, Las Vegas. Major CA producer. No employee count. Grower + wholesale hybrid - high GMV."
     },
     {
@@ -1287,7 +2036,12 @@
       "estimated_gmv_mid": null,
       "estimated_gmv_high": null,
       "confidence": "No data",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": "Colombia (likely Antioquia)"},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": "Colombia (likely Antioquia)"
+      },
       "notes": "Colombian flower farm (Finca). No public web presence found. Typical Antioquia small-to-mid rose/carnation farm. Needs import records lookup on Panjiva/ImportGenius."
     },
     {
@@ -1299,7 +2053,12 @@
       "estimated_gmv_mid": 600000,
       "estimated_gmv_high": 1200000,
       "confidence": "Low",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "Retail florist. Investment LLC structure suggests multi-unit possible. No public data found. Procurement tier."
     },
     {
@@ -1311,8 +2070,94 @@
       "estimated_gmv_mid": 1000000,
       "estimated_gmv_high": 2000000,
       "confidence": "Low",
-      "signals": {"locations": null, "employees": null, "website": null, "metro": null},
+      "signals": {
+        "locations": null,
+        "employees": null,
+        "website": null,
+        "metro": null
+      },
       "notes": "Retail florist. Procurement tier. Stadium/sports venue association may indicate event-driven retail. No public data found."
+    },
+    {
+      "company_name": "Dreisbach Wholesale",
+      "estimated_gmv_mid": 30000000,
+      "confidence": "High",
+      "methods_used": [
+        "location: 6 hubs x $4.5M",
+        "headcount: 47 emp x $375K",
+        "D&B $22.8M"
+      ],
+      "notes": "6 locations KY/OH/TN/WV, founded 1911",
+      "company_id": "765491",
+      "business_type": "Wholesaler"
+    },
+    {
+      "company_name": "Frank Adams Wholesale Florist",
+      "estimated_gmv_mid": 14000000,
+      "confidence": "Medium",
+      "methods_used": [
+        "headcount: 30-42 emp x $375K",
+        "location: 1 hub Portland x $5M"
+      ],
+      "notes": "1 Portland hub, aggregator $4.4-8.7M",
+      "company_id": "543610",
+      "business_type": "Wholesaler"
+    },
+    {
+      "company_name": "FloraLink",
+      "estimated_gmv_mid": 9000000,
+      "confidence": "Medium",
+      "methods_used": [
+        "headcount: 4-10 emp x $700K",
+        "aggregator $3M rev x4-5"
+      ],
+      "notes": "Importer/broker, 30% YoY growth",
+      "company_id": "153031",
+      "business_type": "Importer"
+    },
+    {
+      "company_name": "Fletch Wholesale llc",
+      "estimated_gmv_mid": 2500000,
+      "confidence": "Low",
+      "methods_used": [
+        "location: 1 hub Tampa Bay x $4M"
+      ],
+      "notes": "Family op, 2-person leadership",
+      "company_id": "541854",
+      "business_type": "Wholesaler"
+    },
+    {
+      "company_name": "HIRE`S BEST FLOWERS",
+      "estimated_gmv_mid": 1000000,
+      "confidence": "Low",
+      "methods_used": [
+        "headcount: 2 emp x $375K"
+      ],
+      "notes": "Pierson FL, SMART ERP",
+      "company_id": "665358",
+      "business_type": "Wholesaler"
+    },
+    {
+      "company_name": "JFS Wholesale Floral",
+      "estimated_gmv_mid": 4000000,
+      "confidence": "Low",
+      "methods_used": [
+        "location: 1 hub Syracuse UT x $4M"
+      ],
+      "notes": "Covers SLC metro, founded 2014",
+      "company_id": "808079",
+      "business_type": "Wholesaler"
+    },
+    {
+      "company_name": "Price's Floral Wholesale, LLC",
+      "estimated_gmv_mid": 1500000,
+      "confidence": "Low",
+      "methods_used": [
+        "location: 1 hub Chesapeake VA x $4M"
+      ],
+      "notes": "Founded Oct 2022, early stage",
+      "company_id": "816515",
+      "business_type": "Wholesaler"
     }
   ]
 }
