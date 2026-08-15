@@ -1750,44 +1750,65 @@ function renderRow(ev, idx) {
   const atStakeSource = atStakeResult ? atStakeResult.source : null;
   const diagnosis = buildDiagnosis(ev);
 
-  // Online color (sell)
-  const onlineClass = (onlinePct != null)
-    ? (onlinePct >= 30 ? 'online-value' : 'online-low')
-    : 'metric-value';
+  // ── COLOR CODING — consistent across all metrics ──
+  // Penetration (Koronet / Est GMV): how much we capture
+  //   ≥50% green (high capture) | 10-50% amber (room) | <10% red (low)
+  // Online % (online / Est GMV): how digital through us
+  //   ≥10% green (digital) | 2-10% amber (emerging) | <2% red (offline)
+  // Take rate: fee efficiency
+  //   ≥0.3% green | 0.1-0.3% neutral | <0.1% red
 
-  // Online qualifier (#18)
-  const onlineQualifier = onlinePct != null
-    ? (onlinePct < 20 ? 'mostly offline' : onlinePct >= 60 ? 'digital-first' : 'healthy')
-    : '';
-
-  // Buy online color — same scheme as sell
-  const buyOnlineClass = (buyOnlinePct != null)
-    ? (buyOnlinePct >= 30 ? 'online-value' : 'online-low')
-    : 'metric-value';
-  const buyOnlineQualifier = buyOnlinePct != null
-    ? (buyOnlinePct < 20 ? 'mostly offline' : buyOnlinePct >= 60 ? 'digital-first' : 'healthy')
-    : '';
-
-  // Penetration source — is it tautological (koronet-derived est) or real (external)?
   const sellPenEv = p && p.sell_penetration ? p.sell_penetration.ev : 'gap';
   const isSellPenTautological = sellPenEv === 'tautological';
+  const isBuyPenTautological = p && p.buy_penetration && p.buy_penetration.ev === 'tautological';
 
-  // Penetration qualifier (#17) — only meaningful for real external estimates
-  const penQualifier = isSellPenTautological
-    ? 'Koronet = primary'
-    : (sellPen != null
-      ? (sellPen < 10 ? 'low capture' : sellPen >= 50 ? 'high capture' : '')
-      : '');
+  // Sell penetration color
+  let sellPenStyle = '';
+  let penQualifier = '';
+  if (isSellPenTautological) {
+    sellPenStyle = 'color:var(--text-muted);font-style:italic';
+    penQualifier = 'Koronet = primary';
+  } else if (sellPen != null) {
+    if (sellPen >= 50) { sellPenStyle = 'color:var(--green);font-weight:600'; penQualifier = 'high capture'; }
+    else if (sellPen >= 10) { sellPenStyle = 'color:var(--amber);font-weight:600'; }
+    else { sellPenStyle = 'color:var(--red);font-weight:600'; penQualifier = 'low capture'; }
+  }
 
-  // Koronet Sell qualifier (#16) — only meaningful for real external estimates
-  const sellGrowthQualifier = isSellPenTautological
-    ? ''
-    : (sellPen != null
-      ? (sellPen < 15 ? 'big opportunity' : sellPen < 40 ? 'room to grow' : 'majority captured')
-      : '');
+  // Buy penetration color
+  let buyPenStyle = '';
+  if (isBuyPenTautological) {
+    buyPenStyle = 'color:var(--text-muted);font-style:italic';
+  } else if (buyPen != null) {
+    if (buyPen >= 50) buyPenStyle = 'color:var(--green);font-weight:600';
+    else if (buyPen >= 10) buyPenStyle = 'color:var(--amber);font-weight:600';
+    else buyPenStyle = 'color:var(--red);font-weight:600';
+  }
 
-  // Take rate color + class (#19)
-  const takeRateClass = 'takerate';
+  // Sell online % color
+  let onlineStyle = '';
+  let onlineQualifier = '';
+  if (onlinePct != null) {
+    if (onlinePct >= 10) { onlineStyle = 'color:var(--green);font-weight:600'; onlineQualifier = onlinePct >= 30 ? 'digital-first' : 'digital'; }
+    else if (onlinePct >= 2) { onlineStyle = 'color:var(--amber);font-weight:600'; onlineQualifier = 'emerging'; }
+    else if (onlinePct > 0) { onlineStyle = 'color:var(--red);font-weight:600'; onlineQualifier = 'mostly offline'; }
+    else { onlineStyle = 'color:var(--text-muted)'; onlineQualifier = 'offline'; }
+  }
+
+  // Buy online % color — same scheme
+  let buyOnlineStyle = '';
+  let buyOnlineQualifier = '';
+  if (buyOnlinePct != null) {
+    if (buyOnlinePct >= 10) { buyOnlineStyle = 'color:var(--green);font-weight:600'; buyOnlineQualifier = buyOnlinePct >= 30 ? 'digital-first' : 'digital'; }
+    else if (buyOnlinePct >= 2) { buyOnlineStyle = 'color:var(--amber);font-weight:600'; buyOnlineQualifier = 'emerging'; }
+    else if (buyOnlinePct > 0) { buyOnlineStyle = 'color:var(--red);font-weight:600'; buyOnlineQualifier = 'mostly offline'; }
+    else { buyOnlineStyle = 'color:var(--text-muted)'; buyOnlineQualifier = 'offline'; }
+  }
+
+  // Koronet Sell qualifier
+  const sellGrowthQualifier = isSellPenTautological ? ''
+    : (sellPen != null ? (sellPen < 15 ? 'big opportunity' : sellPen < 40 ? 'room to grow' : 'majority captured') : '');
+
+  // Take rate color
   let takeRateStyle = '';
   if (takeRate != null) {
     if (takeRate >= 0.3) takeRateStyle = 'color:var(--green);font-weight:600;font-size:12px;';
@@ -1875,11 +1896,11 @@ function renderRow(ev, idx) {
         <div class="metric-qualifier">${sellGrowthQualifier}</div>
       </td>
       <td class="metric-cell">
-        <div class="metric-value" ${isSellPenTautological ? 'style="color:var(--text-muted);font-style:italic"' : ''}>${isSellPenTautological ? '~100%' : fmtPct(sellPen)}</div>
+        <div class="metric-value" style="${sellPenStyle}">${isSellPenTautological ? '~100%' : fmtPct(sellPen)}</div>
         ${penQualifier ? `<div class="metric-qualifier">${penQualifier}</div>` : ''}
       </td>
-      <td class="metric-cell ${onlineSegClass}">
-        <div class="${onlineClass}">${fmtPct(onlinePct)}</div>
+      <td class="metric-cell">
+        <div class="metric-value" style="${onlineStyle}">${fmtPct(onlinePct)}</div>
         ${onlineQualifier ? '<div class="metric-qualifier">' + onlineQualifier + '</div>' : ''}
         ${(function() { try { return identity && identity.digital_pct_caveat === 'solo_digital_visible' ? '<div style="font-size:9px;color:var(--text-muted);font-style:italic">(solo digital)</div>' : ''; } catch(e) { return ''; } })()}
       </td>
@@ -1890,18 +1911,17 @@ function renderRow(ev, idx) {
         <div class="metric-value">${fmt$(koronetBuy, true)}</div>
       </td>
       <td class="metric-cell">
-        <div class="metric-value" ${(p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? 'style="color:var(--text-muted);font-style:italic"' : ''}>${(p && p.buy_penetration && p.buy_penetration.ev === 'tautological') ? '~100%' : fmtPct(buyPen)}</div>
+        <div class="metric-value" style="${buyPenStyle}">${isBuyPenTautological ? '~100%' : fmtPct(buyPen)}</div>
       </td>
       <td class="metric-cell">
-        <div class="${buyOnlineClass}">${fmtPct(buyOnlinePct)}</div>
+        <div class="metric-value" style="${buyOnlineStyle}">${fmtPct(buyOnlinePct)}</div>
         ${buyOnlineQualifier ? '<div class="metric-qualifier">' + buyOnlineQualifier + '</div>' : ''}
       </td>
       <td class="metric-cell">
-        <div class="fees-value">${fmt$(feesYtd, true)}</div>
+        <div class="metric-value" style="${feesYtd > 10000 ? 'color:var(--green);font-weight:600' : feesYtd > 0 ? '' : 'color:var(--text-muted)'}">${fmt$(feesYtd, true)}</div>
       </td>
       <td class="metric-cell">
-        <div class="${takeRateClass}" style="${takeRateStyle}">${fmtPct(takeRate, 2)}</div>
-        <div class="metric-qualifier">p50 network</div>
+        <div class="metric-value" style="${takeRateStyle}">${fmtPct(takeRate, 2)}</div>
       </td>
       <td class="metric-cell">
         ${spark}
