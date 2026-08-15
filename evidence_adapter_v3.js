@@ -687,6 +687,17 @@
     var buyPenEv = 'gap';
     var buyPenNote = null;
 
+    // Rule D: No GMV reference but has Koronet activity → auto Piso de red
+    var ytdMonthsSell = sellAggYtd ? sellAggYtd.months.length : 0;
+    if ((!gmvRef || gmvRef <= 0 || gmvSource === 'not in Christine cascade' || gmvSource === 'Sin dato')
+        && koronetSellYtd && koronetSellYtd > 0 && ytdMonthsSell > 0) {
+      gmvRef = koronetSellYtd * (12 / ytdMonthsSell);
+      gmvSource = 'Piso de red';
+      gmvConfidence = 'Alta';
+      gmvIsFloor = true;
+      buyGmvEst = gmvRef * 0.45;
+    }
+
     if (gmvRef && gmvRef > 0 && gmvSource !== 'not in Christine cascade' && gmvSource !== 'Sin dato') {
       var isTautological = /^(Medido|Piso)/.test(gmvSource || '');
 
