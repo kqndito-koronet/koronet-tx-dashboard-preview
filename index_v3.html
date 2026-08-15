@@ -1429,7 +1429,16 @@
 ════════════════════════════════════════════════ -->
 <div class="main">
 
-  <!-- Tabs (visual) -->
+  <!-- Business type tabs -->
+  <div class="tabs-nav" style="border-bottom:none;padding-bottom:0;gap:0;">
+    <button class="tab-btn active" id="bt-tab-wholesaler" onclick="switchBusinessType('Wholesaler')">Wholesalers <span class="tab-count" id="bt-count-wholesaler">—</span></button>
+    <button class="tab-btn" id="bt-tab-importer" onclick="switchBusinessType('Importer')">Importers <span class="tab-count" id="bt-count-importer">—</span></button>
+    <button class="tab-btn" id="bt-tab-other" onclick="switchBusinessType('')">All <span class="tab-count" id="bt-count-all">—</span></button>
+    <span style="margin-left:auto;"></span>
+    <button class="tab-btn" id="tab-definitions" style="background:#eff6ff;border-color:#bfdbfe;" onclick="toggleDefinitions()">Definitions &amp; Matrix</button>
+  </div>
+
+  <!-- Action tabs -->
   <div class="tabs-nav">
     <button class="tab-btn active" id="tab-portfolio">Portfolio <span class="tab-count" id="tab-count-portfolio">—</span></button>
     <button class="tab-btn" id="tab-buy">BUY Leads <span class="tab-count" id="tab-count-buy">—</span></button>
@@ -1437,8 +1446,6 @@
     <button class="tab-btn" id="tab-sell">SELL Leads <span class="tab-count" id="tab-count-sell">—</span></button>
     <button class="tab-btn" id="tab-config">CONFIG Leads <span class="tab-count" id="tab-count-config">—</span></button>
     <button class="tab-btn" id="tab-declining">Declining <span class="tab-count" id="tab-count-declining">—</span></button>
-    <span style="margin-left:auto;"></span>
-    <button class="tab-btn" id="tab-definitions" style="background:#eff6ff;border-color:#bfdbfe;" onclick="toggleDefinitions()">Definitions &amp; Matrix</button>
   </div>
 
   <div class="section-label" id="section-label">Loading portfolio…</div>
@@ -1762,44 +1769,44 @@ function renderRow(ev, idx) {
   const isSellPenTautological = sellPenEv === 'tautological';
   const isBuyPenTautological = p && p.buy_penetration && p.buy_penetration.ev === 'tautological';
 
-  // Sell penetration color
+  // Sell penetration color (≥40% green, 15-40% amber, <15% red)
   let sellPenStyle = '';
   let penQualifier = '';
   if (isSellPenTautological) {
     sellPenStyle = 'color:var(--text-muted);font-style:italic';
     penQualifier = 'Koronet = primary';
   } else if (sellPen != null) {
-    if (sellPen >= 50) { sellPenStyle = 'color:var(--green);font-weight:600'; penQualifier = 'high capture'; }
-    else if (sellPen >= 10) { sellPenStyle = 'color:var(--amber);font-weight:600'; }
+    if (sellPen >= 40) { sellPenStyle = 'color:var(--green);font-weight:600'; penQualifier = 'high capture'; }
+    else if (sellPen >= 15) { sellPenStyle = 'color:var(--amber);font-weight:600'; }
     else { sellPenStyle = 'color:var(--red);font-weight:600'; penQualifier = 'low capture'; }
   }
 
-  // Buy penetration color
+  // Buy penetration color (≥30% green, 10-30% amber, <10% red)
   let buyPenStyle = '';
   if (isBuyPenTautological) {
     buyPenStyle = 'color:var(--text-muted);font-style:italic';
   } else if (buyPen != null) {
-    if (buyPen >= 50) buyPenStyle = 'color:var(--green);font-weight:600';
+    if (buyPen >= 30) buyPenStyle = 'color:var(--green);font-weight:600';
     else if (buyPen >= 10) buyPenStyle = 'color:var(--amber);font-weight:600';
     else buyPenStyle = 'color:var(--red);font-weight:600';
   }
 
-  // Sell online % color
+  // Sell online % color (≥30% green, 10-30% amber, <10% red)
   let onlineStyle = '';
   let onlineQualifier = '';
   if (onlinePct != null) {
-    if (onlinePct >= 10) { onlineStyle = 'color:var(--green);font-weight:600'; onlineQualifier = onlinePct >= 30 ? 'digital-first' : 'digital'; }
-    else if (onlinePct >= 2) { onlineStyle = 'color:var(--amber);font-weight:600'; onlineQualifier = 'emerging'; }
+    if (onlinePct >= 30) { onlineStyle = 'color:var(--green);font-weight:600'; onlineQualifier = 'digital-first'; }
+    else if (onlinePct >= 10) { onlineStyle = 'color:var(--amber);font-weight:600'; onlineQualifier = 'digital'; }
     else if (onlinePct > 0) { onlineStyle = 'color:var(--red);font-weight:600'; onlineQualifier = 'mostly offline'; }
     else { onlineStyle = 'color:var(--text-muted)'; onlineQualifier = 'offline'; }
   }
 
-  // Buy online % color — same scheme
+  // Buy online % color (≥20% green, 5-20% amber, <5% red)
   let buyOnlineStyle = '';
   let buyOnlineQualifier = '';
   if (buyOnlinePct != null) {
-    if (buyOnlinePct >= 10) { buyOnlineStyle = 'color:var(--green);font-weight:600'; buyOnlineQualifier = buyOnlinePct >= 30 ? 'digital-first' : 'digital'; }
-    else if (buyOnlinePct >= 2) { buyOnlineStyle = 'color:var(--amber);font-weight:600'; buyOnlineQualifier = 'emerging'; }
+    if (buyOnlinePct >= 20) { buyOnlineStyle = 'color:var(--green);font-weight:600'; buyOnlineQualifier = 'digital-first'; }
+    else if (buyOnlinePct >= 5) { buyOnlineStyle = 'color:var(--amber);font-weight:600'; buyOnlineQualifier = 'emerging'; }
     else if (buyOnlinePct > 0) { buyOnlineStyle = 'color:var(--red);font-weight:600'; buyOnlineQualifier = 'mostly offline'; }
     else { buyOnlineStyle = 'color:var(--text-muted)'; buyOnlineQualifier = 'offline'; }
   }
@@ -3902,6 +3909,7 @@ function renderTable() {
 
   // Update count badges
   document.getElementById('tab-count-portfolio').textContent = _filteredEvidence.length;
+  updateBusinessTypeCounts();
   // Count leads per type using the shared opportunity detection function
   var buyLeads = 0, listLeads = 0, sellLeads = 0, configLeads = 0, declining = 0;
   _filteredEvidence.forEach(function(ev) {
@@ -4111,8 +4119,9 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
         const nb = (b && b._company_name) || '';
         return na.localeCompare(nb);
       });
-      // Enforce default: Client only
+      // Enforce defaults: Client + Wholesaler
       document.getElementById('account-class-filter').value = 'Client';
+      document.getElementById('business-type-filter').value = 'Wholesaler';
       applyFilters();
     }
   }
@@ -4171,6 +4180,32 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
   console.error('[TX Dashboard] init error:', err);
 });
 
+/* ─── BUSINESS TYPE TABS ─── */
+function switchBusinessType(bt) {
+  // Set dropdown
+  document.getElementById('business-type-filter').value = bt;
+  // Update tab active state
+  document.getElementById('bt-tab-wholesaler').classList.toggle('active', bt === 'Wholesaler');
+  document.getElementById('bt-tab-importer').classList.toggle('active', bt === 'Importer');
+  document.getElementById('bt-tab-other').classList.toggle('active', bt === '');
+  applyFilters();
+}
+
+function updateBusinessTypeCounts() {
+  var clientFilter = document.getElementById('account-class-filter').value;
+  var ws = 0, imp = 0, all = 0;
+  _allEvidence.forEach(function(ev) {
+    if (!ev || !ev.identity) return;
+    if (clientFilter && ev.identity.account_class !== clientFilter) return;
+    all++;
+    if (ev.identity.business_type === 'Wholesaler') ws++;
+    else if (ev.identity.business_type === 'Importer') imp++;
+  });
+  document.getElementById('bt-count-wholesaler').textContent = ws;
+  document.getElementById('bt-count-importer').textContent = imp;
+  document.getElementById('bt-count-all').textContent = all;
+}
+
 /* ─── MATRIX DRILL-DOWN ─── */
 function drillFromMatrix(tier, band) {
   // Set filters to match the clicked cell — Client + Wholesaler (same as matrix)
@@ -4178,6 +4213,10 @@ function drillFromMatrix(tier, band) {
   document.getElementById('business-type-filter').value = 'Wholesaler';
   document.getElementById('product-tier-filter').value = tier;
   document.getElementById('gmv-band-filter').value = band;
+  // Sync business type tabs
+  document.getElementById('bt-tab-wholesaler').classList.add('active');
+  document.getElementById('bt-tab-importer').classList.remove('active');
+  document.getElementById('bt-tab-other').classList.remove('active');
   // Clear other filters
   document.getElementById('sell-channel-filter').value = '';
   document.getElementById('priority-filter').value = '';
