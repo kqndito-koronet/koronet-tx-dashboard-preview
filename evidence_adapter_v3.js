@@ -749,31 +749,27 @@
       }
     }
 
-    // ── Online % — smart denominator:
-    // 1. External estimate (Estimado/ORA/FCS) with ≥4 months data:
-    //    online / Est GMV (% of total business that's digital through us)
-    // 2. Tautological OR new account (<4 months):
-    //    online / Koronet total (% of our capture that's online)
-    //    Because the estimate isn't reliable enough yet.
+    // ── Online % — denominator depends on source:
+    // Tautological (Medido/Piso): online / Koronet total (same period)
+    //   → "of what we capture, how much is online"
+    // External (Estimado/ORA): annualized online / Est GMV
+    //   → "of their total business, how much is online through us"
+    // Rule: online% ≤ penetration always (same denominator)
     var sellMonthCount = sellAggYtd ? sellAggYtd.months.length : 0;
     var buyMonthCount  = buyAggYtd  ? buyAggYtd.months.length  : 0;
-    var isNewAccount = sellMonthCount < 4;
 
     var sellOnlinePct = null;
     if (onlineSellYtd > 0) {
-      if ((sellPenEv === 'tautological' || isNewAccount) && koronetSellYtd && koronetSellYtd > 0) {
-        // Over Koronet total (same period, reliable)
+      if (sellPenEv === 'tautological' && koronetSellYtd && koronetSellYtd > 0) {
         sellOnlinePct = (onlineSellYtd / koronetSellYtd) * 100;
       } else if (gmvRef && gmvRef > 0 && sellMonthCount > 0) {
-        // Over Est GMV (annualized online / external estimate)
         var annOnlineSell = onlineSellYtd * (12 / sellMonthCount);
         sellOnlinePct = (annOnlineSell / gmvRef) * 100;
       }
     }
     var buyOnlinePct = null;
     if (onlineBuyYtd > 0) {
-      var isBuyNew = buyMonthCount < 4;
-      if ((buyPenEv === 'tautological' || isBuyNew) && koronetBuyYtd && koronetBuyYtd > 0) {
+      if (buyPenEv === 'tautological' && koronetBuyYtd && koronetBuyYtd > 0) {
         buyOnlinePct = (onlineBuyYtd / koronetBuyYtd) * 100;
       } else if (buyGmvEst && buyGmvEst > 0 && buyMonthCount > 0) {
         var annOnlineBuy = onlineBuyYtd * (12 / buyMonthCount);
