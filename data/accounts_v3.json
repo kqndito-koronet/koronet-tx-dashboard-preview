@@ -1,43 +1,4 @@
 {
-  "_meta": {
-    "generated_at": "2026-08-13",
-    "source": "Christine GMV sheet (1xUIR_mpuMOrwDLz8IWCzJAlg_cf6WSBf-1cSrOPf_pM) + account_universe_v1 + sell_domain_v2 + fees_domain_v2",
-    "total_accounts": 436,
-    "excluded_dead": 357,
-    "excluded_test": 11,
-    "excluded_training_ids": 12,
-    "in_christine_sheet": 386,
-    "not_in_christine_sheet": 48,
-    "with_gmv": 326,
-    "without_gmv": 108,
-    "buy_gmv_ratio": 0.45,
-    "gmv_source_legend": {
-      "Medido": "Measured sell GMV (actual Snowflake transactions)",
-      "Piso de red": "Network floor (observed network purchases from/to this account)",
-      "ORA": "ORA declared GMV (self-reported at onboarding)",
-      "FCS": "FCS Annual Sales 2022 (declared, 4 years old)",
-      "Sin dato": "No GMV data available",
-      "not in Christine cascade": "Account not in Christine's GMV sheet - no GMV assigned"
-    },
-    "notes": [
-      "buy_gmv_estimated = gmv_reference * 0.45 (Christine measured ratio)",
-      "sell_channel computed from fees_domain_v2 ytd_2026_by_channel",
-      "digital_pct computed from sell_domain_v2 trailing 12 months (Aug 2025 - Jul 2026)",
-      "gmv_is_floor=true means gmv_reference is a minimum, not a point estimate",
-      "Deactivated accounts included only if has_2026_sell or has_2026_buy in universe",
-      "Training IDs excluded: 561353 549016 6316 554582 531246 531265 55326 751276 132431 468006 398804 806094"
-    ],
-    "duplicates_merged": 8,
-    "potential_tier_added": true,
-    "engagement_status_computed": true,
-    "buy_digital_pct_computed": true,
-    "removed_dc_flowers_komet_sales": true,
-    "archetypes_mapped": 153,
-    "archetypes_source": "koronet-network/ux-research-hub/public/companies.js",
-    "priority_level_fixed": true,
-    "product_tier_system_type_priority": true,
-    "christine_sheet_diff_added": "2026-08-07: added 4 accounts missing from Christine sheet (816923, 816979, 735642, 815945)"
-  },
   "accounts": [
     {
       "company_id": "677319",
@@ -1584,7 +1545,7 @@
       "pmt_status": null,
       "pmt_health": null,
       "digital_pct_caveat": null,
-      "account_class": "Client",
+      "account_class": "Prospect",
       "prospect_reason": "Deactivated",
       "prospect_auto_promoted": true,
       "prospect_original_reason": "Deactivated"
@@ -2589,11 +2550,11 @@
     {
       "company_id": "672205",
       "company_name": "Del Tropico/ Ameriblooms",
-      "business_type": "Wholesaler",
+      "business_type": "Importer",
       "product_tier": "Core+",
       "sell_channel": "no_fees_data",
       "komet_status": "Production - Live",
-      "industry": "Floral - Wholesaler",
+      "industry": "Floral - Importer",
       "gmv_reference": 11423848,
       "gmv_source": "Medido",
       "gmv_is_floor": false,
@@ -4413,7 +4374,7 @@
       "pmt_health": null,
       "priority_level": "",
       "digital_pct_caveat": null,
-      "account_class": "Client",
+      "account_class": "Prospect",
       "prospect_reason": "Deactivated",
       "prospect_auto_promoted": true,
       "prospect_original_reason": "Deactivated",
@@ -5318,7 +5279,7 @@
       "pmt_health": null,
       "priority_level": "",
       "digital_pct_caveat": null,
-      "account_class": "Client",
+      "account_class": "Prospect",
       "prospect_reason": "Deactivated",
       "prospect_auto_promoted": true,
       "prospect_original_reason": "Deactivated"
@@ -8234,7 +8195,7 @@
       "pmt_status": null,
       "pmt_health": null,
       "digital_pct_caveat": null,
-      "account_class": "Client",
+      "account_class": "Prospect",
       "prospect_reason": "Deactivated",
       "prospect_auto_promoted": true,
       "prospect_original_reason": "Deactivated",
@@ -8585,7 +8546,7 @@
       "pmt_status": null,
       "pmt_health": null,
       "digital_pct_caveat": null,
-      "account_class": "Client",
+      "account_class": "Prospect",
       "prospect_reason": "Deactivated, Churned",
       "prospect_auto_promoted": true,
       "prospect_original_reason": "Deactivated, Churned"
@@ -8984,7 +8945,7 @@
       "pmt_status": null,
       "pmt_health": null,
       "digital_pct_caveat": null,
-      "account_class": "Client",
+      "account_class": "Prospect",
       "prospect_reason": "Deactivated",
       "prospect_auto_promoted": true,
       "prospect_original_reason": "Deactivated"
@@ -11598,7 +11559,7 @@
       "pmt_health": null,
       "priority_level": "",
       "digital_pct_caveat": null,
-      "account_class": "Client",
+      "account_class": "Prospect",
       "prospect_reason": "Deactivated",
       "prospect_auto_promoted": true,
       "prospect_original_reason": "Deactivated"
