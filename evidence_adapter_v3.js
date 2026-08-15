@@ -749,26 +749,34 @@
       }
     }
 
-    // ── Online % = online / Est GMV (% of total business that's digital through us)
-    // For tautological (Medido/Piso): use same-period Koronet total as denominator
-    //   (gmvRef is trailing 12M, YTD online uses different months → period mismatch)
-    // For external estimates: annualize and divide by gmvRef
+    // ── Online % — smart denominator:
+    // 1. External estimate (Estimado/ORA/FCS) with ≥4 months data:
+    //    online / Est GMV (% of total business that's digital through us)
+    // 2. Tautological OR new account (<4 months):
+    //    online / Koronet total (% of our capture that's online)
+    //    Because the estimate isn't reliable enough yet.
+    var sellMonthCount = sellAggYtd ? sellAggYtd.months.length : 0;
+    var buyMonthCount  = buyAggYtd  ? buyAggYtd.months.length  : 0;
+    var isNewAccount = sellMonthCount < 4;
+
     var sellOnlinePct = null;
     if (onlineSellYtd > 0) {
-      if (sellPenEv === 'tautological' && koronetSellYtd && koronetSellYtd > 0) {
-        // Same period: online YTD / total YTD → always ≤ 100%
+      if ((sellPenEv === 'tautological' || isNewAccount) && koronetSellYtd && koronetSellYtd > 0) {
+        // Over Koronet total (same period, reliable)
         sellOnlinePct = (onlineSellYtd / koronetSellYtd) * 100;
-      } else if (gmvRef && gmvRef > 0 && sellAggYtd && sellAggYtd.months.length > 0) {
-        var annOnlineSell = onlineSellYtd * (12 / sellAggYtd.months.length);
+      } else if (gmvRef && gmvRef > 0 && sellMonthCount > 0) {
+        // Over Est GMV (annualized online / external estimate)
+        var annOnlineSell = onlineSellYtd * (12 / sellMonthCount);
         sellOnlinePct = (annOnlineSell / gmvRef) * 100;
       }
     }
     var buyOnlinePct = null;
     if (onlineBuyYtd > 0) {
-      if (buyPenEv === 'tautological' && koronetBuyYtd && koronetBuyYtd > 0) {
+      var isBuyNew = buyMonthCount < 4;
+      if ((buyPenEv === 'tautological' || isBuyNew) && koronetBuyYtd && koronetBuyYtd > 0) {
         buyOnlinePct = (onlineBuyYtd / koronetBuyYtd) * 100;
-      } else if (buyGmvEst && buyGmvEst > 0 && buyAggYtd && buyAggYtd.months.length > 0) {
-        var annOnlineBuy = onlineBuyYtd * (12 / buyAggYtd.months.length);
+      } else if (buyGmvEst && buyGmvEst > 0 && buyMonthCount > 0) {
+        var annOnlineBuy = onlineBuyYtd * (12 / buyMonthCount);
         buyOnlinePct = (annOnlineBuy / buyGmvEst) * 100;
       }
     }
