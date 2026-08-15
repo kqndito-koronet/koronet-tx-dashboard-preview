@@ -2388,7 +2388,7 @@
       "company_id": "821768",
       "company_name": "Coquette Roses",
       "business_type": "Importer",
-      "product_tier": "eSuite",
+      "product_tier": "Core+",
       "sell_channel": "K2K-dominant",
       "komet_status": "Production - Live",
       "industry": "Floral - Importer",
@@ -2415,7 +2415,8 @@
       "prospect_reason": "SFDC Prospect, Other ERP: Excel",
       "tier_inferred": true,
       "prospect_auto_promoted": true,
-      "prospect_original_reason": "SFDC Prospect, Other ERP: Excel"
+      "prospect_original_reason": "SFDC Prospect, Other ERP: Excel",
+      "tier_upgrade_reason": "Offline sell 99% of total"
     },
     {
       "company_id": "815425",
@@ -3325,7 +3326,7 @@
       "company_id": "813857",
       "company_name": "Expo Flora S.A.",
       "business_type": "Grower",
-      "product_tier": "Unknown",
+      "product_tier": "K2K",
       "sell_channel": "no_fees_data",
       "komet_status": "Production - Live",
       "industry": "Floral - Grower",
@@ -3351,7 +3352,8 @@
       "account_class": "Client",
       "prospect_reason": "SFDC Prospect, Other ERP: Excel",
       "prospect_auto_promoted": true,
-      "prospect_original_reason": "SFDC Prospect, Other ERP: Excel"
+      "prospect_original_reason": "SFDC Prospect, Other ERP: Excel",
+      "tier_inferred": true
     },
     {
       "company_id": "809546",
@@ -3423,7 +3425,7 @@
       "company_id": "804758",
       "company_name": "FGS.Flowers.MIA",
       "business_type": "Importer",
-      "product_tier": "eSuite",
+      "product_tier": "Core+",
       "sell_channel": "K2K-dominant",
       "komet_status": "Production - Live",
       "industry": "Floral - Importer",
@@ -3455,7 +3457,8 @@
       "prospect_reason": "No Komet product: blank",
       "tier_inferred": true,
       "prospect_auto_promoted": true,
-      "prospect_original_reason": "No Komet product: blank"
+      "prospect_original_reason": "No Komet product: blank",
+      "tier_upgrade_reason": "Offline sell 98% of total"
     },
     {
       "company_id": "577566",
@@ -4480,7 +4483,7 @@
       "company_id": "822938",
       "company_name": "Flores San Miguel",
       "business_type": "Importer",
-      "product_tier": "Unknown",
+      "product_tier": "K2K",
       "sell_channel": "no_fees_data",
       "komet_status": "Production - Live",
       "industry": "Floral - Importer",
@@ -4506,7 +4509,8 @@
       "account_class": "Client",
       "prospect_reason": "SFDC Prospect, Other ERP: In House System",
       "prospect_auto_promoted": true,
-      "prospect_original_reason": "SFDC Prospect, Other ERP: In House System"
+      "prospect_original_reason": "SFDC Prospect, Other ERP: In House System",
+      "tier_inferred": true
     },
     {
       "company_id": "601280",
@@ -5775,7 +5779,7 @@
       "company_id": "764867",
       "company_name": "Hana Farms Inc.",
       "business_type": "Importer",
-      "product_tier": "eSuite",
+      "product_tier": "Core+",
       "sell_channel": "K2K-dominant",
       "komet_status": "Production - Live",
       "industry": "Floral - Importer",
@@ -5802,7 +5806,8 @@
       "prospect_reason": "Other ERP: Excel",
       "tier_inferred": true,
       "prospect_auto_promoted": true,
-      "prospect_original_reason": "Other ERP: Excel"
+      "prospect_original_reason": "Other ERP: Excel",
+      "tier_upgrade_reason": "Offline sell 86% of total"
     },
     {
       "company_id": "670508",
@@ -6216,7 +6221,7 @@
       "company_id": "808079",
       "company_name": "JFS Wholesale Floral",
       "business_type": "Wholesaler",
-      "product_tier": "eSuite",
+      "product_tier": "Core+",
       "sell_channel": "no_fees_data",
       "komet_status": "Production - Live",
       "industry": "Floral - Wholesaler",
@@ -6243,7 +6248,8 @@
       "prospect_reason": "Other ERP: SMART System",
       "prospect_auto_promoted": true,
       "prospect_original_reason": "Other ERP: SMART System",
-      "tier_inferred": true
+      "tier_inferred": true,
+      "tier_upgrade_reason": "Offline sell 100% of total"
     },
     {
       "company_id": "652199",
@@ -6675,7 +6681,7 @@
       "company_id": "814810",
       "company_name": "Lartisan Roses LLC",
       "business_type": "Importer",
-      "product_tier": "eSuite",
+      "product_tier": "Core+",
       "sell_channel": "K2K-dominant",
       "komet_status": "Production - Live",
       "industry": "Floral - Importer",
@@ -6702,7 +6708,8 @@
       "prospect_reason": "SFDC Prospect, No Komet product: blank",
       "tier_inferred": true,
       "prospect_auto_promoted": true,
-      "prospect_original_reason": "SFDC Prospect, No Komet product: blank"
+      "prospect_original_reason": "SFDC Prospect, No Komet product: blank",
+      "tier_upgrade_reason": "Offline sell 83% of total"
     },
     {
       "company_id": "598944",
@@ -9150,7 +9157,7 @@
       "company_id": "816515",
       "company_name": "Price's Floral Wholesale, LLC",
       "business_type": "Wholesaler",
-      "product_tier": "eSuite",
+      "product_tier": "Core+",
       "sell_channel": "eShop-dominant",
       "komet_status": "Production - Live",
       "industry": "Floral - Wholesaler",
@@ -9182,7 +9189,8 @@
       "prospect_reason": "No Komet product: unknown",
       "prospect_auto_promoted": true,
       "prospect_original_reason": "No Komet product: unknown",
-      "tier_inferred": true
+      "tier_inferred": true,
+      "tier_upgrade_reason": "Offline sell 98% of total"
     },
     {
       "company_id": "33023",
@@ -11533,7 +11541,7 @@
       "company_id": "770796",
       "company_name": "VERA",
       "business_type": "Importer",
-      "product_tier": "eSuite",
+      "product_tier": "Core+",
       "sell_channel": "no_fees_data",
       "komet_status": "Production - Live",
       "industry": "Floral - Importer",
@@ -11560,7 +11568,8 @@
       "prospect_reason": "No Komet product: blank",
       "prospect_auto_promoted": true,
       "prospect_original_reason": "No Komet product: blank",
-      "tier_inferred": true
+      "tier_inferred": true,
+      "tier_upgrade_reason": "Offline sell 91% of total"
     },
     {
       "company_id": "635167",
