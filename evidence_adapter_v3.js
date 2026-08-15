@@ -749,32 +749,30 @@
       }
     }
 
-    // ── Online % — denominator depends on source:
-    // Tautological (Medido/Piso): online / Koronet total (same period)
-    //   → "of what we capture, how much is online"
-    // External (Estimado/ORA): annualized online / Est GMV
-    //   → "of their total business, how much is online through us"
-    // Rule: online% ≤ penetration always (same denominator)
+    // ── Online % = ALWAYS annualized online / Est GMV
+    // "What fraction of their TOTAL business is digital through us"
+    // Same denominator as penetration → online% ≤ penetration always
     var sellMonthCount = sellAggYtd ? sellAggYtd.months.length : 0;
     var buyMonthCount  = buyAggYtd  ? buyAggYtd.months.length  : 0;
 
     var sellOnlinePct = null;
-    if (onlineSellYtd > 0) {
-      if (sellPenEv === 'tautological' && koronetSellYtd && koronetSellYtd > 0) {
-        sellOnlinePct = (onlineSellYtd / koronetSellYtd) * 100;
-      } else if (gmvRef && gmvRef > 0 && sellMonthCount > 0) {
-        var annOnlineSell = onlineSellYtd * (12 / sellMonthCount);
-        sellOnlinePct = (annOnlineSell / gmvRef) * 100;
-      }
+    if (onlineSellYtd > 0 && gmvRef && gmvRef > 0 && sellMonthCount > 0) {
+      var annOnlineSell = onlineSellYtd * (12 / sellMonthCount);
+      sellOnlinePct = (annOnlineSell / gmvRef) * 100;
     }
     var buyOnlinePct = null;
-    if (onlineBuyYtd > 0) {
-      if (buyPenEv === 'tautological' && koronetBuyYtd && koronetBuyYtd > 0) {
-        buyOnlinePct = (onlineBuyYtd / koronetBuyYtd) * 100;
-      } else if (buyGmvEst && buyGmvEst > 0 && buyMonthCount > 0) {
-        var annOnlineBuy = onlineBuyYtd * (12 / buyMonthCount);
-        buyOnlinePct = (annOnlineBuy / buyGmvEst) * 100;
-      }
+    if (onlineBuyYtd > 0 && buyGmvEst && buyGmvEst > 0 && buyMonthCount > 0) {
+      var annOnlineBuy = onlineBuyYtd * (12 / buyMonthCount);
+      buyOnlinePct = (annOnlineBuy / buyGmvEst) * 100;
+    }
+
+    // Logical constraint: online ⊂ total → online% ≤ penetration%
+    // Small overages are period/rounding artifacts, not real
+    if (sellOnlinePct != null && sellPenetration != null && sellOnlinePct > sellPenetration) {
+      sellOnlinePct = sellPenetration;
+    }
+    if (buyOnlinePct != null && buyPenetration != null && buyOnlinePct > buyPenetration) {
+      buyOnlinePct = buyPenetration;
     }
 
     // ── Take rate = fees_ytd / koronet_sell_ytd
