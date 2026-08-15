@@ -1791,10 +1791,17 @@ function renderRow(ev, idx) {
     else buyPenStyle = 'color:var(--red);font-weight:600';
   }
 
+  // solo_digital_visible = we only see online channel, offline exists but isn't in cube
+  // online% is meaningless (100% by definition) → show muted
+  const isSoloDigital = identity && identity.digital_pct_caveat === 'solo_digital_visible';
+
   // Sell online % color (≥30% green, 10-30% amber, <10% red)
   let onlineStyle = '';
   let onlineQualifier = '';
-  if (onlinePct != null) {
+  if (isSoloDigital) {
+    onlineStyle = 'color:var(--text-muted);font-style:italic';
+    onlineQualifier = 'solo digital visible';
+  } else if (onlinePct != null) {
     if (onlinePct >= 30) { onlineStyle = 'color:var(--green);font-weight:600'; onlineQualifier = 'digital-first'; }
     else if (onlinePct >= 10) { onlineStyle = 'color:var(--amber);font-weight:600'; onlineQualifier = 'digital'; }
     else if (onlinePct > 0) { onlineStyle = 'color:var(--red);font-weight:600'; onlineQualifier = 'mostly offline'; }
@@ -1804,7 +1811,10 @@ function renderRow(ev, idx) {
   // Buy online % color (≥20% green, 5-20% amber, <5% red)
   let buyOnlineStyle = '';
   let buyOnlineQualifier = '';
-  if (buyOnlinePct != null) {
+  if (isSoloDigital) {
+    buyOnlineStyle = 'color:var(--text-muted);font-style:italic';
+    buyOnlineQualifier = 'solo digital visible';
+  } else if (buyOnlinePct != null) {
     if (buyOnlinePct >= 20) { buyOnlineStyle = 'color:var(--green);font-weight:600'; buyOnlineQualifier = 'digital-first'; }
     else if (buyOnlinePct >= 5) { buyOnlineStyle = 'color:var(--amber);font-weight:600'; buyOnlineQualifier = 'emerging'; }
     else if (buyOnlinePct > 0) { buyOnlineStyle = 'color:var(--red);font-weight:600'; buyOnlineQualifier = 'mostly offline'; }
