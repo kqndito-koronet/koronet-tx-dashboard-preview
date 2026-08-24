@@ -501,6 +501,14 @@
     font-weight: 400;
   }
 
+  .filter-chip {
+    font-size: 10px; padding: 2px 8px; border-radius: 12px;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--text-secondary); cursor: pointer; transition: all 0.15s;
+  }
+  .filter-chip:hover { border-color: var(--blue-light); color: var(--blue); }
+  .filter-chip.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+
   .online-value { color: var(--blue); font-weight: 600; font-size: var(--font-emphasis); }
   .online-low { color: var(--red); font-weight: 600; font-size: var(--font-emphasis); }
   .online-error { color: var(--red); font-weight: 700; font-size: var(--font-emphasis); background: var(--red-bg); }
@@ -1345,17 +1353,6 @@
           <option value="API">API</option>
           <option value="no_fees_data">No fees data</option>
         </select>
-        <select class="select-pill" id="priority-filter">
-          <option value="">All Priorities</option>
-          <option value="P1">P1</option>
-          <option value="IMPL">IMPL</option>
-          <option value="TA">TA</option>
-          <option value="CS_TRACKED">CS_TRACKED</option>
-          <option value="CS_P2">CS_P2</option>
-          <option value="WATCH">WATCH</option>
-          <option value="NEEDS_REVIEW">NEEDS_REVIEW</option>
-          <option value="ECOSYSTEM">ECOSYSTEM</option>
-        </select>
         <select class="select-pill" id="potential-tier-filter">
           <option value="">All Potential Tiers</option>
           <option value="Flagship">Flagship</option>
@@ -1364,13 +1361,23 @@
           <option value="Seed">Seed</option>
           <option value="Unmeasured">Unmeasured</option>
         </select>
-        <select class="select-pill" id="impl-stage-filter">
-          <option value="">All Impl Stages</option>
-          <option value="active-pmt">Active PMT (8)</option>
-          <option value="Established">Established</option>
-          <option value="Recently live (2026)">Recently live (2026)</option>
-          <option value="Recently live (H2 2025)">Recently live (H2 2025)</option>
-        </select>
+      </div>
+      <div class="filter-row" style="display:flex;flex-wrap:wrap;gap:4px;padding:4px 24px 8px;">
+        <span style="font-size:10px;color:var(--text-muted);align-self:center;margin-right:4px;">Priority:</span>
+        <button class="filter-chip" data-filter="priority" data-value="P1">P1</button>
+        <button class="filter-chip" data-filter="priority" data-value="IMPL">IMPL</button>
+        <button class="filter-chip" data-filter="priority" data-value="TA">TA</button>
+        <button class="filter-chip" data-filter="priority" data-value="CS_TRACKED">CS</button>
+        <button class="filter-chip" data-filter="priority" data-value="CS_P2">CS_P2</button>
+        <button class="filter-chip" data-filter="priority" data-value="WATCH">WATCH</button>
+        <button class="filter-chip" data-filter="priority" data-value="NEEDS_REVIEW">REVIEW</button>
+        <button class="filter-chip" data-filter="priority" data-value="ECOSYSTEM">ECO</button>
+        <span style="font-size:10px;color:var(--text-muted);align-self:center;margin:0 4px 0 12px;">Impl:</span>
+        <button class="filter-chip" data-filter="impl" data-value="active-pmt">Active PMT</button>
+        <button class="filter-chip" data-filter="impl" data-value="go-live-growth">Go-Live & Growth</button>
+        <button class="filter-chip" data-filter="impl" data-value="Recently live (2026)">Live 2026</button>
+        <button class="filter-chip" data-filter="impl" data-value="Recently live (H2 2025)">Live H2 2025</button>
+        <button class="filter-chip" data-filter="impl" data-value="Established">Established</button>
         <input class="search-input" id="search-input" type="text" placeholder="Search account…">
       </div>
     </div>
@@ -3712,9 +3719,7 @@ function renderFilterChips() {
   var productTierFilter = document.getElementById('product-tier-filter').value;
   var gmvBandFilter = document.getElementById('gmv-band-filter').value;
   var sellChannelFilter = document.getElementById('sell-channel-filter').value;
-  var priorityFilter = document.getElementById('priority-filter').value;
   var potentialTierFilter = document.getElementById('potential-tier-filter').value;
-  var implStageFilter = document.getElementById('impl-stage-filter').value;
   var search = document.getElementById('search-input').value.trim();
   var container = document.getElementById('filter-chips');
   if (!container) return;
@@ -3735,15 +3740,15 @@ function renderFilterChips() {
   if (sellChannelFilter) {
     chips.push('<div class="chip" onclick="clearFilter(\'sell-channel-filter\')">' + escHtml(sellChannelFilter) + ' <span class="chip-x">&times;</span></div>');
   }
-  if (priorityFilter) {
-    chips.push('<div class="chip" onclick="clearFilter(\'priority-filter\')">' + escHtml(priorityFilter) + ' <span class="chip-x">&times;</span></div>');
-  }
+  _activePriorities.forEach(function(p) {
+    chips.push('<div class="chip" onclick="toggleChipFilter(\'priority\',\'' + p + '\')">' + escHtml(p) + ' <span class="chip-x">&times;</span></div>');
+  });
   if (potentialTierFilter) {
     chips.push('<div class="chip" onclick="clearFilter(\'potential-tier-filter\')">' + escHtml(potentialTierFilter) + ' <span class="chip-x">&times;</span></div>');
   }
-  if (implStageFilter) {
-    chips.push('<div class="chip" onclick="clearFilter(\'impl-stage-filter\')">' + escHtml(implStageFilter) + ' <span class="chip-x">&times;</span></div>');
-  }
+  _activeImpl.forEach(function(i) {
+    chips.push('<div class="chip" onclick="toggleChipFilter(\'impl\',\'' + i + '\')">' + escHtml(i) + ' <span class="chip-x">&times;</span></div>');
+  });
   if (search) {
     chips.push('<div class="chip" onclick="clearFilter(\'search-input\')">&ldquo;' + escHtml(search) + '&rdquo; <span class="chip-x">&times;</span></div>');
   }
@@ -3761,16 +3766,25 @@ function clearFilter(id) {
   applyFilters();
 }
 
+function toggleChipFilter(type, value) {
+  var set = type === 'priority' ? _activePriorities : _activeImpl;
+  set.delete(value);
+  // Update visual
+  document.querySelectorAll('.filter-chip[data-filter="' + type + '"][data-value="' + value + '"]').forEach(function(c) { c.classList.remove('active'); });
+  applyFilters();
+}
+
 function clearAllFilters() {
   document.getElementById('account-class-filter').value = '';
   document.getElementById('business-type-filter').value = '';
   document.getElementById('product-tier-filter').value = '';
   document.getElementById('gmv-band-filter').value = '';
   document.getElementById('sell-channel-filter').value = '';
-  document.getElementById('priority-filter').value = '';
   document.getElementById('potential-tier-filter').value = '';
-  document.getElementById('impl-stage-filter').value = '';
   document.getElementById('search-input').value = '';
+  _activePriorities.clear();
+  _activeImpl.clear();
+  document.querySelectorAll('.filter-chip.active').forEach(function(c) { c.classList.remove('active'); });
   applyFilters();
 }
 
@@ -3832,9 +3846,7 @@ function applyFilters() {
   var productTierFilter = document.getElementById('product-tier-filter').value;
   var gmvBandFilter = document.getElementById('gmv-band-filter').value;
   var sellChannelFilter = document.getElementById('sell-channel-filter').value;
-  var priorityFilter = document.getElementById('priority-filter').value;
   var potentialTierFilter = document.getElementById('potential-tier-filter').value;
-  var implStageFilter = document.getElementById('impl-stage-filter').value;
   var search = document.getElementById('search-input').value.toLowerCase().trim();
 
   _filteredEvidence = _allEvidence.filter(function(ev) {
@@ -3861,21 +3873,21 @@ function applyFilters() {
       var sc = identity.sell_channel || '';
       if (sc !== sellChannelFilter) return false;
     }
-    if (priorityFilter) {
+    if (_activePriorities.size > 0) {
       var pl = identity.priority_level || '';
-      if (pl !== priorityFilter) return false;
+      if (!_activePriorities.has(pl)) return false;
     }
     if (potentialTierFilter) {
       var ptr = identity.potential_tier || '';
       if (ptr !== potentialTierFilter) return false;
     }
-    if (implStageFilter) {
-      if (implStageFilter === 'active-pmt') {
-        if (!identity.has_active_pmt) return false;
-      } else {
-        var isd = identity.impl_stage_display || '';
-        if (isd !== implStageFilter) return false;
-      }
+    if (_activeImpl.size > 0) {
+      var matched = false;
+      if (_activeImpl.has('active-pmt') && identity.has_active_pmt) matched = true;
+      if (_activeImpl.has('go-live-growth') && identity.pmt_status === 'Go-Live and Growth') matched = true;
+      var isd = identity.impl_stage_display || '';
+      if (_activeImpl.has(isd)) matched = true;
+      if (!matched) return false;
     }
     if (search) {
       var name = (ev._company_name || '').toLowerCase();
@@ -4145,9 +4157,8 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
   document.getElementById('business-type-filter').addEventListener('change', applyFilters);
   document.getElementById('product-tier-filter').addEventListener('change', applyFilters);
   document.getElementById('sell-channel-filter').addEventListener('change', applyFilters);
-  document.getElementById('priority-filter').addEventListener('change', applyFilters);
   document.getElementById('potential-tier-filter').addEventListener('change', applyFilters);
-  document.getElementById('impl-stage-filter').addEventListener('change', applyFilters);
+  initFilterChips();
   document.getElementById('gmv-band-filter').addEventListener('change', applyFilters);
   document.getElementById('search-input').addEventListener('input', applyFilters);
   document.getElementById('load-more-btn').addEventListener('click', function() {
@@ -4189,6 +4200,28 @@ Promise.all([EvidenceAdapter.init(), _loadSfdcOpps()]).then(function() {
     `<div class="loading-text" style="color:var(--red)">Error loading data: ${err.message || err}. Make sure evidence_adapter_v3.js and the data/ folder are available.</div>`;
   console.error('[TX Dashboard] init error:', err);
 });
+
+/* ─── MULTI-SELECT FILTER CHIPS ─── */
+var _activePriorities = new Set();
+var _activeImpl = new Set();
+
+function initFilterChips() {
+  document.querySelectorAll('.filter-chip').forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      var filter = this.dataset.filter;
+      var value = this.dataset.value;
+      var set = filter === 'priority' ? _activePriorities : _activeImpl;
+      if (set.has(value)) {
+        set.delete(value);
+        this.classList.remove('active');
+      } else {
+        set.add(value);
+        this.classList.add('active');
+      }
+      applyFilters();
+    });
+  });
+}
 
 /* ─── BUSINESS TYPE TABS ─── */
 function switchBusinessType(bt) {
