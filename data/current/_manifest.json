@@ -1,42 +1,39 @@
 {
-  "generated_at": "2026-08-13",
-  "period": "2024-08 to 2026-07 (24 months)",
-  "source": "Transformed from V2 evidence JSONs",
+  "generated_at": "2026-08-24",
+  "period": "2024-08 to 2026-07 (24 months, last closed month)",
+  "source": "Snowflake SALE_DETAILS + PROCUREMENT_DETAILS + CONSOLIDATED_TRANSACTION_FEES_SV",
+  "refresh_note": "Sell/buy cubes unchanged from Aug 13 (already through Jul 2026). Fees updated from Jul 2025 \u2192 Jul 2026. Sell trends added.",
   "cubes": {
     "sell_monthly": {
       "rows": 10552,
       "companies": 455,
-      "months": 24
+      "months": 24,
+      "status": "complete"
     },
     "buy_monthly": {
       "rows": 3993,
       "companies": 390,
-      "months": 21
-    },
-    "fees_ytd": {
-      "rows": 362,
-      "companies": 227
-    },
-    "anticipation": {
-      "rows": 1470,
-      "companies": 294
-    },
-    "catalog": {
-      "rows": 337
-    },
-    "vendors": {
-      "rows": 524
-    },
-    "buyers": {
-      "rows": 397
-    },
-    "inventory": {
-      "rows": 436
+      "months": 21,
+      "status": "complete"
     },
     "fees_monthly": {
-      "rows": 1691,
-      "companies": 202,
-      "months": 13
+      "rows": 574,
+      "companies": 216,
+      "period": "YTD 2025 + YTD 2026",
+      "status": "UPDATED"
+    },
+    "sell_trends": {
+      "rows": 48,
+      "months": 24,
+      "granularity": "network monthly by channel",
+      "status": "NEW"
     }
+  },
+  "gates": {
+    "L12_GMV": "$1.61B \u2713",
+    "online_share": "17.6% \u2713",
+    "fees_YoY": "+34.2% \u2713 (gate ~+37%)",
+    "fees_YTD26": "$1,478K organic",
+    "fees_YTD25": "$1,101K"
   }
 }

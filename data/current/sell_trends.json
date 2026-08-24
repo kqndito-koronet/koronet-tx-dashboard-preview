@@ -1,0 +1,308 @@
+{
+  "_meta": {
+    "generated_at": "2026-08-14",
+    "period": "Aug 2024 - Jul 2026 (24 months)",
+    "source": "Snowflake network-level aggregation (Online + Offline channels)",
+    "row_count": 48,
+    "month_range": {
+      "from": "2024-08",
+      "to": "2026-07"
+    },
+    "channels": [
+      "Offline",
+      "Online"
+    ],
+    "total_gmv_ytd26": 950811219.14,
+    "schema": "month (YYYY-MM), channel (Online/Offline), gmv (float), items (int)"
+  },
+  "data": [
+    {
+      "month": "2024-08",
+      "channel": "Offline",
+      "gmv": 77055386.5,
+      "items": 1049263
+    },
+    {
+      "month": "2024-08",
+      "channel": "Online",
+      "gmv": 13594816.95,
+      "items": 185182
+    },
+    {
+      "month": "2024-09",
+      "channel": "Offline",
+      "gmv": 91825525.28,
+      "items": 1181689
+    },
+    {
+      "month": "2024-09",
+      "channel": "Online",
+      "gmv": 19030654.92,
+      "items": 232980
+    },
+    {
+      "month": "2024-10",
+      "channel": "Offline",
+      "gmv": 114164346.49,
+      "items": 1261359
+    },
+    {
+      "month": "2024-10",
+      "channel": "Online",
+      "gmv": 20517384.34,
+      "items": 256842
+    },
+    {
+      "month": "2024-11",
+      "channel": "Offline",
+      "gmv": 135778261.98,
+      "items": 1076417
+    },
+    {
+      "month": "2024-11",
+      "channel": "Online",
+      "gmv": 16448309.67,
+      "items": 210575
+    },
+    {
+      "month": "2024-12",
+      "channel": "Offline",
+      "gmv": 92290917.42,
+      "items": 991895
+    },
+    {
+      "month": "2024-12",
+      "channel": "Online",
+      "gmv": 15943973.75,
+      "items": 188772
+    },
+    {
+      "month": "2025-01",
+      "channel": "Offline",
+      "gmv": 95344962.15,
+      "items": 986613
+    },
+    {
+      "month": "2025-01",
+      "channel": "Online",
+      "gmv": 16952262.45,
+      "items": 209741
+    },
+    {
+      "month": "2025-02",
+      "channel": "Offline",
+      "gmv": 142494004.05,
+      "items": 1175646
+    },
+    {
+      "month": "2025-02",
+      "channel": "Online",
+      "gmv": 23093895.73,
+      "items": 241917
+    },
+    {
+      "month": "2025-03",
+      "channel": "Offline",
+      "gmv": 87974186.35,
+      "items": 1080676
+    },
+    {
+      "month": "2025-03",
+      "channel": "Online",
+      "gmv": 21084849.22,
+      "items": 265543
+    },
+    {
+      "month": "2025-04",
+      "channel": "Offline",
+      "gmv": 130687136.92,
+      "items": 1280624
+    },
+    {
+      "month": "2025-04",
+      "channel": "Online",
+      "gmv": 28962543.99,
+      "items": 329777
+    },
+    {
+      "month": "2025-05",
+      "channel": "Offline",
+      "gmv": 143974740.41,
+      "items": 1419474
+    },
+    {
+      "month": "2025-05",
+      "channel": "Online",
+      "gmv": 33680833.45,
+      "items": 361373
+    },
+    {
+      "month": "2025-06",
+      "channel": "Offline",
+      "gmv": 88382839.56,
+      "items": 1079196
+    },
+    {
+      "month": "2025-06",
+      "channel": "Online",
+      "gmv": 20958262.45,
+      "items": 249341
+    },
+    {
+      "month": "2025-07",
+      "channel": "Offline",
+      "gmv": 74155898.06,
+      "items": 995064
+    },
+    {
+      "month": "2025-07",
+      "channel": "Online",
+      "gmv": 16499693.83,
+      "items": 212087
+    },
+    {
+      "month": "2025-08",
+      "channel": "Offline",
+      "gmv": 81802514.88,
+      "items": 1041232
+    },
+    {
+      "month": "2025-08",
+      "channel": "Online",
+      "gmv": 19350681.44,
+      "items": 245048
+    },
+    {
+      "month": "2025-09",
+      "channel": "Offline",
+      "gmv": 97733631.66,
+      "items": 1229101
+    },
+    {
+      "month": "2025-09",
+      "channel": "Online",
+      "gmv": 25293673.88,
+      "items": 297592
+    },
+    {
+      "month": "2025-10",
+      "channel": "Offline",
+      "gmv": 124920754.36,
+      "items": 1314494
+    },
+    {
+      "month": "2025-10",
+      "channel": "Online",
+      "gmv": 26763711.58,
+      "items": 312885
+    },
+    {
+      "month": "2025-11",
+      "channel": "Offline",
+      "gmv": 143934932.09,
+      "items": 1111077
+    },
+    {
+      "month": "2025-11",
+      "channel": "Online",
+      "gmv": 20872334.02,
+      "items": 248025
+    },
+    {
+      "month": "2025-12",
+      "channel": "Offline",
+      "gmv": 102700656.6,
+      "items": 1065560
+    },
+    {
+      "month": "2025-12",
+      "channel": "Online",
+      "gmv": 19348473.94,
+      "items": 220328
+    },
+    {
+      "month": "2026-01",
+      "channel": "Offline",
+      "gmv": 96371761.93,
+      "items": 1011137
+    },
+    {
+      "month": "2026-01",
+      "channel": "Online",
+      "gmv": 18189704.88,
+      "items": 220242
+    },
+    {
+      "month": "2026-02",
+      "channel": "Offline",
+      "gmv": 156303613.39,
+      "items": 1275244
+    },
+    {
+      "month": "2026-02",
+      "channel": "Online",
+      "gmv": 25848519.52,
+      "items": 263378
+    },
+    {
+      "month": "2026-03",
+      "channel": "Offline",
+      "gmv": 99663377.56,
+      "items": 1205213
+    },
+    {
+      "month": "2026-03",
+      "channel": "Online",
+      "gmv": 24137312.83,
+      "items": 290842
+    },
+    {
+      "month": "2026-04",
+      "channel": "Offline",
+      "gmv": 131477196.61,
+      "items": 1231774
+    },
+    {
+      "month": "2026-04",
+      "channel": "Online",
+      "gmv": 31377304.16,
+      "items": 312194
+    },
+    {
+      "month": "2026-05",
+      "channel": "Offline",
+      "gmv": 134758567.46,
+      "items": 1317571
+    },
+    {
+      "month": "2026-05",
+      "channel": "Online",
+      "gmv": 32783055.34,
+      "items": 306576
+    },
+    {
+      "month": "2026-06",
+      "channel": "Offline",
+      "gmv": 86431749.76,
+      "items": 1044458
+    },
+    {
+      "month": "2026-06",
+      "channel": "Online",
+      "gmv": 21676636.8,
+      "items": 232038
+    },
+    {
+      "month": "2026-07",
+      "channel": "Offline",
+      "gmv": 73646268.33,
+      "items": 953836
+    },
+    {
+      "month": "2026-07",
+      "channel": "Online",
+      "gmv": 18146150.57,
+      "items": 208219
+    }
+  ]
+}
