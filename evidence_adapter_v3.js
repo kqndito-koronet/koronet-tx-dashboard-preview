@@ -756,14 +756,22 @@
     var buyMonthCount  = buyAggYtd  ? buyAggYtd.months.length  : 0;
 
     var sellOnlinePct = null;
-    if (onlineSellYtd > 0 && gmvRef && gmvRef > 0 && sellMonthCount > 0) {
-      var annOnlineSell = onlineSellYtd * (12 / sellMonthCount);
-      sellOnlinePct = (annOnlineSell / gmvRef) * 100;
+    if (koronetSellYtd && koronetSellYtd > 0 && gmvRef && gmvRef > 0) {
+      if (onlineSellYtd > 0 && sellMonthCount > 0) {
+        var annOnlineSell = onlineSellYtd * (12 / sellMonthCount);
+        sellOnlinePct = (annOnlineSell / gmvRef) * 100;
+      } else {
+        sellOnlinePct = 0;  // has sell but no online → 0%, not null
+      }
     }
     var buyOnlinePct = null;
-    if (onlineBuyYtd > 0 && buyGmvEst && buyGmvEst > 0 && buyMonthCount > 0) {
-      var annOnlineBuy = onlineBuyYtd * (12 / buyMonthCount);
-      buyOnlinePct = (annOnlineBuy / buyGmvEst) * 100;
+    if (koronetBuyYtd && koronetBuyYtd > 0 && buyGmvEst && buyGmvEst > 0) {
+      if (onlineBuyYtd > 0 && buyMonthCount > 0) {
+        var annOnlineBuy = onlineBuyYtd * (12 / buyMonthCount);
+        buyOnlinePct = (annOnlineBuy / buyGmvEst) * 100;
+      } else {
+        buyOnlinePct = 0;
+      }
     }
 
     // Logical constraint: online ⊂ total → online% ≤ penetration%
@@ -776,8 +784,9 @@
     }
 
     // ── Take rate = fees_ytd / koronet_sell_ytd
+    // Only meaningful with sufficient sell volume (> $10K YTD)
     var takeRate = null;
-    if (feesYtd2026 && koronetSellYtd && koronetSellYtd > 0) {
+    if (feesYtd2026 && koronetSellYtd && koronetSellYtd > 10000) {
       takeRate = (feesYtd2026 / koronetSellYtd) * 100;
     }
 

@@ -4187,11 +4187,11 @@
     {
       "company_id": "153031",
       "company_name": "FloraLink",
-      "business_type": "Wholesaler",
+      "business_type": "Importer",
       "product_tier": "Core+",
       "sell_channel": "K2K-dominant",
       "komet_status": "Production - Live",
-      "industry": "Floral - Wholesaler",
+      "industry": "Floral - Importer",
       "gmv_reference": 9000000,
       "gmv_source": "Estimado",
       "gmv_is_floor": false,
