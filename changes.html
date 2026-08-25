@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qué Cambió — TX Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+      font-size: 11px;
+      color: #0f172a;
+    }
+
+    /* ─── COLLAPSIBLE SECTIONS ─── */
+    .section {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .section-toggle {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      text-align: left;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      color: #0f172a;
+      transition: background 0.1s;
+    }
+    .section-toggle:hover { background: #f8fafc; }
+    .section-title-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-icon { font-size: 14px; }
+    .section-count {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+    .section-count.has-data {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+    .section-chevron {
+      font-size: 10px;
+      color: #94a3b8;
+      transition: transform 0.2s;
+    }
+    .section.open .section-chevron { transform: rotate(180deg); }
+    .section-body {
+      display: none;
+      padding: 0 16px 16px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .section.open .section-body { display: block; }
+
+    /* ─── SUB TABS (gainers / losers within fee/sell movers) ─── */
+    .subtabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .subtab {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: #475569;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      font-family: inherit;
+      transition: all 0.1s;
+    }
+    .subtab:hover { color: #0f172a; }
+    .subtab.active {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+      font-weight: 600;
+    }
+    .subtab-panel { display: none; }
+    .subtab-panel.active { display: block; }
+
+    /* ─── TABLE UTILITIES ─── */
+    .tx-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .tx-table th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #64748b;
+      padding: 6px 8px;
+      border-bottom: 2px solid #e2e8f0;
+      white-space: nowrap;
+    }
+    .tx-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #f1f5f9;
+      white-space: nowrap;
+    }
+    .tx-table tr:hover { background: #f8fafc; }
+    .tx-table tr:last-child td { border-bottom: none; }
+
+    /* Colored row backgrounds */
+    .row-gain td { background: #f0fdf4; }
+    .row-gain:hover td { background: #dcfce7; }
+    .row-loss td { background: #fef2f2; }
+    .row-loss:hover td { background: #fee2e2; }
+
+    /* ─── AMOUNT CELLS ─── */
+    .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .delta-up { color: #16a34a; font-weight: 600; }
+    .delta-down { color: #dc2626; font-weight: 600; }
+    .delta-flat { color: #94a3b8; }
+
+    /* ─── CHANNEL BADGE ─── */
+    .badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+    .badge-ecom { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+    .badge-k2k  { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+    .badge-api  { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+    .badge-gray { background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; }
+
+    /* ─── EMPTY STATE ─── */
+    .empty-state {
+      text-align: center;
+      padding: 32px;
+      color: #94a3b8;
+      font-size: 12px;
+    }
+
+    /* ─── ERROR / LOADING ─── */
+    .tx-loading {
+      text-align: center;
+      padding: 48px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    .tx-error {
+      text-align: center;
+      padding: 32px;
+      color: #dc2626;
+      font-size: 12px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 6px;
+      margin: 24px;
+    }
+
+    /* ─── META BAR ─── */
+    .meta-bar {
+      font-size: 10px;
+      color: #94a3b8;
+      padding: 4px 0 12px;
+    }
+
+    /* ─── FILTER RESULT NOTE ─── */
+    .filter-note {
+      font-size: 10px;
+      color: #94a3b8;
+      padding: 4px 0 8px;
+      font-style: italic;
+    }
+
+    /* ─── ACCOUNT LINK ─── */
+    .account-link {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .account-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<!-- Nav + filter bar injected by TXShared.init -->
+<div id="filter-container"></div>
+
+<div class="tx-content">
+
+  <div id="loading-state" class="tx-loading">Loading signals…</div>
+  <div id="error-state" class="tx-error" style="display:none"></div>
+  <div id="main-content" style="display:none">
+
+    <!-- ─── SUMMARY BAR ─── -->
+    <div class="tx-summary" id="summary-bar"></div>
+
+    <!-- ─── META ─── -->
+    <div class="meta-bar" id="meta-bar"></div>
+
+    <!-- ─── FILTER NOTE ─── -->
+    <div class="filter-note" id="filter-note" style="display:none"></div>
+
+    <!-- ─── SECTIONS ─── -->
+
+    <!-- 1. FEE MOVERS -->
+    <div class="section open" id="section-fees">
+      <button class="section-toggle" onclick="toggleSection('section-fees')">
+        <span class="section-title-left">
+          <span class="section-icon">💸</span>
+          <span>Fee Movers</span>
+          <span class="section-count" id="count-fees">—</span>
+        </span>
+        <span class="section-chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="subtabs">
+          <button class="subtab active" onclick="switchSubtab('fees', 'gainers', this)">Gainers YoY</button>
+          <button class="subtab" onclick="switchSubtab('fees', 'losers', this)">Losers YoY</button>
+          <button class="subtab" onclick="switchSubtab('fees', 'debuts', this)">New Fee Payers</button>
+        </div>
+        <div id="fees-gainers" class="subtab-panel active"></div>
+        <div id="fees-losers" class="subtab-panel"></div>
+        <div id="fees-debuts" class="subtab-panel"></div>
+      </div>
+    </div>
+
+    <!-- 2. SELL MOVERS -->
+    <div class="section open" id="section-sell">
+      <button class="section-toggle" onclick="toggleSection('section-sell')">
+        <span class="section-title-left">
+          <span class="section-icon">📈</span>
+          <span>Sell GMV Movers</span>
+          <span class="section-count" id="count-sell">—</span>
+        </span>
+        <span class="section-chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="subtabs">
+          <button class="subtab active" onclick="switchSubtab('sell', 'gainers', this)">Gainers YoY</button>
+          <button class="subtab" onclick="switchSubtab('sell', 'losers', this)">Losers YoY</button>
+        </div>
+        <div id="sell-gainers" class="subtab-panel active"></div>
+        <div id="sell-losers" class="subtab-panel"></div>
+      </div>
+    </div>
+
+    <!-- 3. GONE DARK -->
+    <div class="section" id="section-dark">
+      <button class="section-toggle" onclick="toggleSection('section-dark')">
+        <span class="section-title-left">
+          <span class="section-icon">🌑</span>
+          <span>Gone Dark</span>
+          <span class="section-count" id="count-dark">—</span>
+        </span>
+        <span class="section-chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div id="gone-dark-table"></div>
+      </div>
+    </div>
+
+    <!-- 4. WENT LIVE -->
+    <div class="section" id="section-live">
+      <button class="section-toggle" onclick="toggleSection('section-live')">
+        <span class="section-title-left">
+          <span class="section-icon">✨</span>
+          <span>Went Live</span>
+          <span class="section-count" id="count-live">—</span>
+        </span>
+        <span class="section-chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div id="went-live-table"></div>
+      </div>
+    </div>
+
+    <!-- 5. CLASSIFICATION CHANGES -->
+    <div class="section" id="section-class">
+      <button class="section-toggle" onclick="toggleSection('section-class')">
+        <span class="section-title-left">
+          <span class="section-icon">🏷</span>
+          <span>Classification Changes</span>
+          <span class="section-count" id="count-class">—</span>
+        </span>
+        <span class="section-chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div id="class-changes-table"></div>
+      </div>
+    </div>
+
+  </div><!-- /main-content -->
+</div><!-- /tx-content -->
+
+<script src="tx_shared.js"></script>
+<script>
+'use strict';
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+let DELTA = null;
+let ACCOUNTS = null;          // map: company_id → account record
+let CURRENT_FILTERS = null;
+
+// ─── SECTION TOGGLE ──────────────────────────────────────────────────────────
+function toggleSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle('open');
+}
+
+// ─── SUBTAB SWITCHER ─────────────────────────────────────────────────────────
+function switchSubtab(group, panel, btn) {
+  // Deactivate all subtabs/panels in this group
+  const parentSection = btn.closest('.section-body');
+  parentSection.querySelectorAll('.subtab').forEach(t => t.classList.remove('active'));
+  parentSection.querySelectorAll('.subtab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const target = document.getElementById(group + '-' + panel);
+  if (target) target.classList.add('active');
+}
+
+// ─── FORMATTING ──────────────────────────────────────────────────────────────
+const fmt = TXShared.fmtDollar;
+const fmtPct = TXShared.fmtPct;
+const fmtDelta = TXShared.fmtDelta;
+
+function fmtChannel(ch) {
+  if (!ch) return '';
+  const lower = (ch || '').toLowerCase();
+  if (lower.includes('k2k')) return '<span class="badge badge-k2k">K2K</span>';
+  if (lower.includes('api')) return '<span class="badge badge-api">API</span>';
+  if (lower.includes('ecom') || lower.includes('ecommerce')) return '<span class="badge badge-ecom">eCom</span>';
+  return `<span class="badge badge-gray">${ch}</span>`;
+}
+
+function fmtFieldName(field) {
+  const map = {
+    account_class: 'Account Class',
+    product_tier: 'Product Tier',
+    business_type: 'Business Type',
+    priority_level: 'Priority',
+  };
+  return map[field] || field;
+}
+
+function fmtEmpty(val) {
+  return val == null || val === '' ? '<em style="color:#94a3b8">—</em>' : val;
+}
+
+// ─── FILTER: get set of company_ids that pass current filters ─────────────────
+function getFilteredIds(filters) {
+  if (!ACCOUNTS) return null; // no filtering possible
+  const filtered = TXShared.applyFilters(Object.values(ACCOUNTS), filters);
+  return new Set(filtered.map(a => a.company_id));
+}
+
+// ─── RENDER HELPERS ──────────────────────────────────────────────────────────
+function emptyState(msg) {
+  return `<div class="empty-state">${msg || 'No data for current filters.'}</div>`;
+}
+
+function renderFeeGainers(rows, filteredIds) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState();
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th class="num">YTD 2026 Fees</th>
+          <th class="num">YTD 2025 Fees</th>
+          <th class="num">YoY $</th>
+          <th class="num">YoY %</th>
+          <th>Channel</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr class="row-gain">
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td class="num">${fmt(r.fees_current)}</td>
+            <td class="num">${fmt(r.fees_prior_year)}</td>
+            <td class="num"><span class="delta-up">+${fmt(r.yoy_abs)}</span></td>
+            <td class="num">${fmtDelta(r.yoy_pct)}</td>
+            <td>${fmtChannel(r.fee_channel)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderFeeLosers(rows, filteredIds) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState();
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th class="num">YTD 2026 Fees</th>
+          <th class="num">YTD 2025 Fees</th>
+          <th class="num">YoY $</th>
+          <th class="num">YoY %</th>
+          <th>Channel</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr class="row-loss">
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td class="num">${fmt(r.fees_current)}</td>
+            <td class="num">${fmt(r.fees_prior_year)}</td>
+            <td class="num"><span class="delta-down">${fmt(r.yoy_abs)}</span></td>
+            <td class="num">${fmtDelta(r.yoy_pct)}</td>
+            <td>${fmtChannel(r.fee_channel)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderFeeDebuts(rows, filteredIds) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState('No new fee payers for current filters.');
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th class="num">YTD 2026 Fees</th>
+          <th>Channel</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr>
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td class="num"><span class="delta-up">${fmt(r.first_fee_amount)}</span></td>
+            <td>${fmtChannel(r.fee_channel)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderSellGainers(rows, filteredIds, meta) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  const label = meta ? `${meta.latest_month} vs ${meta.yoy_month}` : 'YoY';
+  if (!visible.length) return emptyState();
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th class="num">${meta ? meta.latest_month : 'Current'} GMV</th>
+          <th class="num">${meta ? meta.yoy_month : 'Prior Year'} GMV</th>
+          <th class="num">YoY $</th>
+          <th class="num">YoY %</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr class="row-gain">
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td class="num">${fmt(r.sell_current_month)}</td>
+            <td class="num">${fmt(r.sell_yoy_month)}</td>
+            <td class="num"><span class="delta-up">+${fmt(r.yoy_abs)}</span></td>
+            <td class="num">${fmtDelta(r.yoy_pct)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderSellLosers(rows, filteredIds, meta) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState();
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th class="num">${meta ? meta.latest_month : 'Current'} GMV</th>
+          <th class="num">${meta ? meta.yoy_month : 'Prior Year'} GMV</th>
+          <th class="num">YoY $</th>
+          <th class="num">YoY %</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr class="row-loss">
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td class="num">${fmt(r.sell_current_month)}</td>
+            <td class="num">${fmt(r.sell_yoy_month)}</td>
+            <td class="num"><span class="delta-down">${fmt(r.yoy_abs)}</span></td>
+            <td class="num">${fmtDelta(r.yoy_pct)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderGoneDark(rows, filteredIds) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState('No accounts gone dark for current filters.');
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th>Last Active Month</th>
+          <th class="num">Peak 3-Month GMV</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr>
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td style="color:#d97706;font-weight:600">${r.last_active_month}</td>
+            <td class="num">${fmt(r.peak_3m_gmv)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderWentLive(rows, filteredIds) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState('No new accounts went live for current filters.');
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th>First Month</th>
+          <th class="num">Current Month GMV</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr>
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td style="color:#16a34a;font-weight:600">${r.first_month}</td>
+            <td class="num"><span class="delta-up">${fmt(r.current_month_gmv)}</span></td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderClassChanges(rows, filteredIds) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState('No classification changes for current filters.');
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th>Field</th>
+          <th>From</th>
+          <th>To</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr>
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td style="color:#475569;font-weight:500">${fmtFieldName(r.field)}</td>
+            <td>${fmtEmpty(r.from)}</td>
+            <td style="font-weight:600">${fmtEmpty(r.to)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+// ─── SUMMARY BAR ─────────────────────────────────────────────────────────────
+function renderSummaryBar(delta, filteredIds) {
+  const s = delta.summary;
+  const feeCount = filteredIds
+    ? [...delta.fee_movers.top_gainers_yoy, ...delta.fee_movers.top_losers_yoy]
+        .filter(r => filteredIds.has(r.company_id)).length
+    : s.fee_movers_count;
+  const sellCount = filteredIds
+    ? [...delta.sell_movers.top_gainers_yoy, ...delta.sell_movers.top_losers_yoy]
+        .filter(r => filteredIds.has(r.company_id)).length
+    : s.sell_movers_count;
+  const darkCount = filteredIds
+    ? delta.gone_dark.filter(r => filteredIds.has(r.company_id)).length
+    : s.gone_dark_count;
+  const liveCount = filteredIds
+    ? delta.went_live.filter(r => filteredIds.has(r.company_id)).length
+    : s.went_live_count;
+  const classCount = filteredIds
+    ? delta.classification_changes.filter(r => filteredIds.has(r.company_id)).length
+    : s.classification_changes_count;
+  const debutCount = filteredIds
+    ? delta.fee_movers.fee_debuts.filter(r => filteredIds.has(r.company_id)).length
+    : s.fee_debuts_count;
+
+  const items = [
+    { label: 'Fee Movers', value: feeCount, color: '#2563eb' },
+    { label: 'Sell Movers', value: sellCount, color: '#2563eb' },
+    { label: 'New Fee Payers', value: debutCount, color: '#16a34a' },
+    { label: 'Gone Dark', value: darkCount, color: '#d97706' },
+    { label: 'Went Live', value: liveCount, color: '#16a34a' },
+    { label: 'Class Changes', value: classCount, color: '#7c3aed' },
+  ];
+
+  return items.map(item => `
+    <div class="tx-summary-item">
+      <div class="tx-summary-value" style="color:${item.color}">${item.value}</div>
+      <div class="tx-summary-label">${item.label}</div>
+    </div>
+  `).join('');
+}
+
+// ─── MAIN RENDER ─────────────────────────────────────────────────────────────
+function render(filters) {
+  if (!DELTA) return;
+
+  const filteredIds = getFilteredIds(filters);
+  const isFiltered = filteredIds !== null;
+
+  // Summary bar
+  document.getElementById('summary-bar').innerHTML = renderSummaryBar(DELTA, filteredIds);
+
+  // Filter note
+  const noteEl = document.getElementById('filter-note');
+  if (isFiltered && filters) {
+    const parts = [];
+    if (filters.accountClass) parts.push(`Class: ${filters.accountClass}`);
+    if (filters.businessType) parts.push(`Type: ${filters.businessType}`);
+    if (filters.productTier) parts.push(`Tier: ${filters.productTier}`);
+    if (filters.priority && filters.priority.length) parts.push(`Priority: ${filters.priority.join(', ')}`);
+    if (filters.impl && filters.impl.length) parts.push(`Impl: ${filters.impl.join(', ')}`);
+    if (filters.search) parts.push(`Search: "${filters.search}"`);
+    if (parts.length) {
+      noteEl.textContent = `Filtered by: ${parts.join(' · ')}`;
+      noteEl.style.display = '';
+    } else {
+      noteEl.style.display = 'none';
+    }
+  } else {
+    noteEl.style.display = 'none';
+  }
+
+  // ── Fee Movers ──
+  const feeTotalCount = filteredIds
+    ? [...DELTA.fee_movers.top_gainers_yoy, ...DELTA.fee_movers.top_losers_yoy, ...DELTA.fee_movers.fee_debuts]
+        .filter(r => filteredIds.has(r.company_id)).length
+    : (DELTA.summary.fee_movers_count + DELTA.summary.fee_debuts_count);
+  setCount('count-fees', feeTotalCount);
+  document.getElementById('fees-gainers').innerHTML = renderFeeGainers(DELTA.fee_movers.top_gainers_yoy, filteredIds);
+  document.getElementById('fees-losers').innerHTML = renderFeeLosers(DELTA.fee_movers.top_losers_yoy, filteredIds);
+  document.getElementById('fees-debuts').innerHTML = renderFeeDebuts(DELTA.fee_movers.fee_debuts, filteredIds);
+
+  // ── Sell Movers ──
+  const meta = DELTA._meta;
+  const sellTotalCount = filteredIds
+    ? [...DELTA.sell_movers.top_gainers_yoy, ...DELTA.sell_movers.top_losers_yoy]
+        .filter(r => filteredIds.has(r.company_id)).length
+    : DELTA.summary.sell_movers_count;
+  setCount('count-sell', sellTotalCount);
+  document.getElementById('sell-gainers').innerHTML = renderSellGainers(DELTA.sell_movers.top_gainers_yoy, filteredIds, meta);
+  document.getElementById('sell-losers').innerHTML = renderSellLosers(DELTA.sell_movers.top_losers_yoy, filteredIds, meta);
+
+  // ── Gone Dark ──
+  const darkVisible = filteredIds
+    ? DELTA.gone_dark.filter(r => filteredIds.has(r.company_id))
+    : DELTA.gone_dark;
+  setCount('count-dark', darkVisible.length);
+  document.getElementById('gone-dark-table').innerHTML = renderGoneDark(DELTA.gone_dark, filteredIds);
+
+  // ── Went Live ──
+  const liveVisible = filteredIds
+    ? DELTA.went_live.filter(r => filteredIds.has(r.company_id))
+    : DELTA.went_live;
+  setCount('count-live', liveVisible.length);
+  document.getElementById('went-live-table').innerHTML = renderWentLive(DELTA.went_live, filteredIds);
+
+  // ── Classification Changes ──
+  const classVisible = filteredIds
+    ? DELTA.classification_changes.filter(r => filteredIds.has(r.company_id))
+    : DELTA.classification_changes;
+  setCount('count-class', classVisible.length);
+  document.getElementById('class-changes-table').innerHTML = renderClassChanges(DELTA.classification_changes, filteredIds);
+}
+
+function setCount(id, n) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = n;
+  el.classList.toggle('has-data', n > 0);
+}
+
+// ─── DATA LOADING ─────────────────────────────────────────────────────────────
+async function loadData() {
+  const loadingEl = document.getElementById('loading-state');
+  const errorEl = document.getElementById('error-state');
+  const mainEl = document.getElementById('main-content');
+
+  try {
+    // Load delta.json (required) and accounts_v3.json (for filtering)
+    const [deltaResp, accountsResp] = await Promise.allSettled([
+      fetch('data/delta.json'),
+      fetch('data/accounts_v3.json'),
+    ]);
+
+    if (deltaResp.status === 'rejected' || !deltaResp.value.ok) {
+      throw new Error(
+        'data/delta.json not found. Run scripts/generate_delta.py to generate it.'
+      );
+    }
+
+    DELTA = await deltaResp.value.json();
+
+    if (accountsResp.status === 'fulfilled' && accountsResp.value.ok) {
+      const accountData = await accountsResp.value.json();
+      const accountList = accountData.accounts || accountData;
+      ACCOUNTS = {};
+      accountList.forEach(a => { ACCOUNTS[a.company_id] = a; });
+    }
+
+    // Meta bar
+    const m = DELTA._meta || {};
+    const metaBar = document.getElementById('meta-bar');
+    const parts = [];
+    if (m.generated_at) parts.push(`Generated ${m.generated_at}`);
+    if (m.latest_month) parts.push(`Latest: ${m.latest_month}`);
+    if (m.yoy_month) parts.push(`YoY vs: ${m.yoy_month}`);
+    if (m.accounts_analyzed) parts.push(`${m.accounts_analyzed} accounts`);
+    if (m.snapshot_compared) parts.push(`vs snapshot ${m.snapshot_compared}`);
+    metaBar.textContent = parts.join(' · ');
+
+    loadingEl.style.display = 'none';
+    mainEl.style.display = '';
+
+    render(CURRENT_FILTERS);
+
+  } catch (err) {
+    loadingEl.style.display = 'none';
+    errorEl.style.display = '';
+    errorEl.innerHTML = `
+      <strong>Could not load delta data</strong><br>
+      ${err.message}<br><br>
+      <code style="font-size:10px;color:#64748b">python3 scripts/generate_delta.py</code>
+    `;
+  }
+}
+
+// ─── FILTER CHANGE HANDLER ────────────────────────────────────────────────────
+function onFilterChange(filterState) {
+  CURRENT_FILTERS = filterState;
+  render(filterState);
+}
+
+// ─── BOOT ────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  CURRENT_FILTERS = TXShared.init('changes', 'filter-container', onFilterChange);
+  loadData();
+});
+</script>
+</body>
+</html>

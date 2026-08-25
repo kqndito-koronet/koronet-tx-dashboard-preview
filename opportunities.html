@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opportunities — TX Dashboard</title>
+  <script src="tx_shared.js"></script>
+  <style>
+    /* ─── PAGE BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+      font-size: 12px;
+      color: #0f172a;
+      min-height: 100vh;
+    }
+
+    /* ─── SUMMARY BAR ─── */
+    .opp-summary-bar {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .opp-summary-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .opp-summary-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+    .opp-summary-value.green  { color: #16a34a; }
+    .opp-summary-value.blue   { color: #2563eb; }
+    .opp-summary-value.amber  { color: #d97706; }
+    .opp-summary-value.red    { color: #dc2626; }
+    .opp-summary-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #64748b;
+      letter-spacing: 0.04em;
+      margin-top: 2px;
+    }
+    .opp-summary-divider {
+      width: 1px;
+      height: 36px;
+      background: #e2e8f0;
+    }
+
+    /* ─── TOOLBAR (type filter + status filter) ─── */
+    .opp-toolbar {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .opp-toolbar-label {
+      font-size: 10px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-right: 2px;
+    }
+    .opp-type-btn {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 4px;
+      background: #fff;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.12s;
+      white-space: nowrap;
+    }
+    .opp-type-btn:hover { border-color: #94a3b8; color: #0f172a; }
+    .opp-type-btn.active {
+      background: #0f172a;
+      color: #fff;
+      border-color: #0f172a;
+    }
+    .opp-type-btn.type-BILLING_GAP.active   { background: #dc2626; border-color: #dc2626; }
+    .opp-type-btn.type-API_ZERO.active      { background: #7c3aed; border-color: #7c3aed; }
+    .opp-type-btn.type-LOW_TAKE_RATE.active { background: #d97706; border-color: #d97706; }
+    .opp-type-btn.type-PENETRATION_UPSIDE.active { background: #2563eb; border-color: #2563eb; }
+    .opp-type-btn.type-NO_ACTIVITY.active   { background: #64748b; border-color: #64748b; }
+    .opp-toolbar-sep { width: 1px; height: 22px; background: #e2e8f0; margin: 0 4px; }
+
+    .opp-status-btn {
+      font-size: 11px;
+      padding: 4px 10px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      background: #fff;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.12s;
+    }
+    .opp-status-btn:hover { border-color: #94a3b8; }
+    .opp-status-btn.active { background: #f1f5f9; color: #0f172a; border-color: #94a3b8; font-weight: 600; }
+
+    /* ─── CARDS AREA ─── */
+    .opp-cards-area {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px 40px;
+    }
+    .opp-results-meta {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .opp-results-meta strong { color: #0f172a; }
+
+    /* ─── OPPORTUNITY CARD ─── */
+    .opp-card {
+      background: #fff;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px 16px 12px;
+      margin-bottom: 10px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .opp-card:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .opp-card.status-approved  { border-color: #16a34a; background: #f0fdf4; }
+    .opp-card.status-rejected  { border-color: #dc2626; background: #fef2f2; opacity: 0.7; }
+    .opp-card.status-investigating { border-color: #2563eb; background: #eff6ff; }
+
+    .opp-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .opp-card-title-block {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+    .opp-type-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+    .badge-BILLING_GAP        { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+    .badge-API_ZERO           { background: #f5f3ff; color: #7c3aed; border: 1px solid #ddd6fe; }
+    .badge-LOW_TAKE_RATE      { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+    .badge-PENETRATION_UPSIDE { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+    .badge-NO_ACTIVITY        { background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; }
+
+    .opp-card-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .opp-card-tier {
+      font-size: 11px;
+      color: #64748b;
+    }
+    .opp-card-meta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .opp-card-potential {
+      font-size: 16px;
+      font-weight: 700;
+      color: #16a34a;
+    }
+    .opp-card-priority {
+      font-size: 11px;
+      color: #64748b;
+    }
+    .opp-card-priority span {
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .opp-card-evidence {
+      font-size: 11px;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      padding: 8px 10px;
+      background: #f8fafc;
+      border-radius: 4px;
+      border-left: 3px solid #e2e8f0;
+    }
+    .opp-card-evidence .evidence-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #94a3b8;
+      letter-spacing: 0.04em;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    /* ─── CARD ACTIONS ─── */
+    .opp-card-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .opp-action-btn {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 4px;
+      border: 1px solid;
+      cursor: pointer;
+      transition: all 0.12s;
+      white-space: nowrap;
+    }
+    .opp-btn-approve {
+      background: #f0fdf4;
+      color: #16a34a;
+      border-color: #bbf7d0;
+    }
+    .opp-btn-approve:hover, .opp-btn-approve.active {
+      background: #16a34a;
+      color: #fff;
+      border-color: #16a34a;
+    }
+    .opp-btn-reject {
+      background: #fef2f2;
+      color: #dc2626;
+      border-color: #fecaca;
+    }
+    .opp-btn-reject:hover, .opp-btn-reject.active {
+      background: #dc2626;
+      color: #fff;
+      border-color: #dc2626;
+    }
+    .opp-btn-investigate {
+      background: #eff6ff;
+      color: #2563eb;
+      border-color: #bfdbfe;
+    }
+    .opp-btn-investigate:hover, .opp-btn-investigate.active {
+      background: #2563eb;
+      color: #fff;
+      border-color: #2563eb;
+    }
+    .opp-btn-comment-toggle {
+      background: #fff;
+      color: #475569;
+      border-color: #e2e8f0;
+      margin-left: auto;
+    }
+    .opp-btn-comment-toggle:hover {
+      border-color: #94a3b8;
+      color: #0f172a;
+    }
+    .opp-status-badge {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      text-transform: uppercase;
+    }
+    .status-badge-approved     { background: #f0fdf4; color: #16a34a; }
+    .status-badge-rejected     { background: #fef2f2; color: #dc2626; }
+    .status-badge-investigating{ background: #eff6ff; color: #2563eb; }
+
+    /* ─── COMMENT SECTION ─── */
+    .opp-comment-section {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #e2e8f0;
+      display: none;
+    }
+    .opp-comment-section.open { display: block; }
+    .opp-comment-area {
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+    }
+    .opp-comment-input {
+      flex: 1;
+      font-size: 11px;
+      padding: 6px 10px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      resize: vertical;
+      min-height: 36px;
+      font-family: inherit;
+      color: #0f172a;
+    }
+    .opp-comment-input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 2px #bfdbfe;
+    }
+    .opp-comment-save {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.12s;
+      white-space: nowrap;
+    }
+    .opp-comment-save:hover { background: #f1f5f9; border-color: #94a3b8; }
+    .opp-comment-saved {
+      font-size: 10px;
+      color: #16a34a;
+      display: none;
+      align-items: center;
+      gap: 3px;
+    }
+    .opp-comment-display {
+      font-size: 11px;
+      color: #475569;
+      padding: 4px 0 6px;
+      font-style: italic;
+    }
+
+    /* ─── EMPTY STATE ─── */
+    .opp-empty {
+      text-align: center;
+      padding: 64px 24px;
+      color: #94a3b8;
+    }
+    .opp-empty-icon { font-size: 36px; margin-bottom: 12px; }
+    .opp-empty-title { font-size: 15px; font-weight: 600; color: #475569; margin-bottom: 6px; }
+    .opp-empty-sub   { font-size: 12px; }
+
+    /* ─── LOADING / ERROR ─── */
+    .opp-loading {
+      text-align: center;
+      padding: 64px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    .opp-error {
+      margin: 24px;
+      padding: 16px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 6px;
+      color: #dc2626;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Filter bar injected by TXShared after nav -->
+<div id="filter-container"></div>
+
+<!-- Summary bar -->
+<div class="opp-summary-bar" id="summary-bar">
+  <div class="opp-loading">Loading opportunities…</div>
+</div>
+
+<!-- Type + status toolbar -->
+<div class="opp-toolbar" id="opp-toolbar" style="display:none">
+  <span class="opp-toolbar-label">Type:</span>
+  <button class="opp-type-btn active" data-type="ALL">ALL</button>
+  <button class="opp-type-btn type-BILLING_GAP"        data-type="BILLING_GAP">Billing Gap</button>
+  <button class="opp-type-btn type-API_ZERO"            data-type="API_ZERO">API Zero</button>
+  <button class="opp-type-btn type-LOW_TAKE_RATE"       data-type="LOW_TAKE_RATE">Low Take Rate</button>
+  <button class="opp-type-btn type-PENETRATION_UPSIDE"  data-type="PENETRATION_UPSIDE">Penetration Upside</button>
+  <button class="opp-type-btn type-NO_ACTIVITY"         data-type="NO_ACTIVITY">No Activity</button>
+  <div class="opp-toolbar-sep"></div>
+  <span class="opp-toolbar-label">Status:</span>
+  <button class="opp-status-btn active" data-status="open">Open</button>
+  <button class="opp-status-btn" data-status="approved">Approved</button>
+  <button class="opp-status-btn" data-status="rejected">Rejected</button>
+  <button class="opp-status-btn" data-status="investigating">Investigating</button>
+  <button class="opp-status-btn" data-status="all">All</button>
+</div>
+
+<!-- Cards area -->
+<div class="opp-cards-area">
+  <div id="results-meta" class="opp-results-meta" style="display:none"></div>
+  <div id="cards-container"></div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════════
+   OPPORTUNITIES PAGE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+const LS_DECISIONS_KEY = 'tx_opp_decisions';
+const LS_COMMENTS_KEY  = 'tx_opp_comments';
+let _supabaseCache = {};   // {opportunity_key: {decision, comment, ...}}
+let _supabaseOK = false;
+
+// ─── State ────────────────────────────────────────────────────────────────
+let ALL_OPPS       = [];          // raw from JSON
+let ACCOUNTS_MAP   = {};          // {company_id: account}
+let FILTER_STATE   = null;        // from TXShared
+let ACTIVE_TYPE    = 'ALL';
+let ACTIVE_STATUS  = 'open';
+
+// ─── Decision helpers (Supabase + localStorage fallback) ──────────────────
+function loadDecisions() {
+  try { return JSON.parse(localStorage.getItem(LS_DECISIONS_KEY) || '{}'); } catch { return {}; }
+}
+function saveDecisions(obj) {
+  try { localStorage.setItem(LS_DECISIONS_KEY, JSON.stringify(obj)); } catch {}
+}
+function loadComments() {
+  try { return JSON.parse(localStorage.getItem(LS_COMMENTS_KEY) || '{}'); } catch { return {}; }
+}
+function saveComments(obj) {
+  try { localStorage.setItem(LS_COMMENTS_KEY, JSON.stringify(obj)); } catch {}
+}
+function getDecision(key) {
+  // Supabase first, then localStorage
+  if (_supabaseCache[key]) return _supabaseCache[key].decision || 'open';
+  return loadDecisions()[key] || 'open';
+}
+function setDecision(key, val) {
+  // Write to localStorage immediately
+  const d = loadDecisions(); d[key] = val; saveDecisions(d);
+  // Async write to Supabase
+  const opp = ALL_OPPS.find(o => o.opportunity_key === key);
+  if (_supabaseOK && TXShared.Supabase) {
+    TXShared.Supabase.saveDecision({
+      opportunity_key: key,
+      company_id: opp ? opp.company_id : '',
+      company_name: opp ? opp.company_name : '',
+      opportunity_type: opp ? opp.type : '',
+      potential_amount: opp ? opp.potential_amount : 0,
+      decision: val,
+      comment: getComment(key),
+    }).then(result => {
+      if (result && result[0]) _supabaseCache[key] = result[0];
+    });
+  }
+}
+function getComment(key) {
+  if (_supabaseCache[key] && _supabaseCache[key].comment) return _supabaseCache[key].comment;
+  return loadComments()[key] || '';
+}
+function setComment(key, val) {
+  // Write to localStorage immediately
+  const c = loadComments(); c[key] = val; saveComments(c);
+  // Async write to Supabase
+  const opp = ALL_OPPS.find(o => o.opportunity_key === key);
+  if (_supabaseOK && TXShared.Supabase) {
+    TXShared.Supabase.saveDecision({
+      opportunity_key: key,
+      company_id: opp ? opp.company_id : '',
+      company_name: opp ? opp.company_name : '',
+      opportunity_type: opp ? opp.type : '',
+      potential_amount: opp ? opp.potential_amount : 0,
+      decision: getDecision(key),
+      comment: val,
+    }).then(result => {
+      if (result && result[0]) _supabaseCache[key] = result[0];
+    });
+  }
+}
+
+// ─── Formatting ───────────────────────────────────────────────────────────
+function fmtDollar(val) {
+  if (val == null || isNaN(val)) return '—';
+  if (Math.abs(val) >= 1e6) return '$' + (val / 1e6).toFixed(1) + 'M';
+  if (Math.abs(val) >= 1e3) return '$' + (val / 1e3).toFixed(0) + 'K';
+  return '$' + Math.round(val).toLocaleString();
+}
+
+function typeLabelMap(type) {
+  return {
+    BILLING_GAP:        'Billing Gap',
+    API_ZERO:           'API Zero',
+    LOW_TAKE_RATE:      'Low Take Rate',
+    PENETRATION_UPSIDE: 'Penetration Upside',
+    NO_ACTIVITY:        'No Activity',
+  }[type] || type;
+}
+
+// ─── Filtering ────────────────────────────────────────────────────────────
+function applyFilters(opps) {
+  const fs = FILTER_STATE || {};
+  let filtered = opps;
+
+  // Shared filters (from TXShared via account data)
+  if (fs.accountClass) {
+    filtered = filtered.filter(o => {
+      const acc = ACCOUNTS_MAP[o.company_id] || {};
+      return acc.account_class === fs.accountClass;
+    });
+  }
+  if (fs.businessType) {
+    filtered = filtered.filter(o => o.business_type === fs.businessType);
+  }
+  if (fs.productTier) {
+    filtered = filtered.filter(o => o.product_tier === fs.productTier);
+  }
+  if (fs.priority && fs.priority.length > 0) {
+    filtered = filtered.filter(o => fs.priority.includes(o.priority_level));
+  }
+  if (fs.search) {
+    const q = fs.search.toLowerCase();
+    filtered = filtered.filter(o => (o.company_name || '').toLowerCase().includes(q));
+  }
+
+  // Type filter
+  if (ACTIVE_TYPE !== 'ALL') {
+    filtered = filtered.filter(o => o.type === ACTIVE_TYPE);
+  }
+
+  // Status filter
+  if (ACTIVE_STATUS !== 'all') {
+    filtered = filtered.filter(o => getDecision(o.opportunity_key) === ACTIVE_STATUS);
+  }
+
+  return filtered;
+}
+
+// ─── Summary bar ──────────────────────────────────────────────────────────
+function renderSummaryBar(opps, summary) {
+  const byType = summary.by_type || {};
+  const totalPotential = summary.total_potential || 0;
+
+  const approvedCount = opps.filter(o => getDecision(o.opportunity_key) === 'approved').length;
+  const openCount     = opps.filter(o => getDecision(o.opportunity_key) === 'open').length;
+
+  const typeChips = Object.entries(byType).map(([type, count]) => `
+    <div class="opp-summary-item">
+      <span class="opp-summary-value">${count}</span>
+      <span class="opp-summary-label">${typeLabelMap(type)}</span>
+    </div>
+  `).join('');
+
+  document.getElementById('summary-bar').innerHTML = `
+    <div class="opp-summary-item">
+      <span class="opp-summary-value blue">${summary.total}</span>
+      <span class="opp-summary-label">Total Opportunities</span>
+    </div>
+    <div class="opp-summary-divider"></div>
+    <div class="opp-summary-item">
+      <span class="opp-summary-value green">${fmtDollar(totalPotential)}</span>
+      <span class="opp-summary-label">Total Potential / yr</span>
+    </div>
+    <div class="opp-summary-divider"></div>
+    ${typeChips}
+    <div class="opp-summary-divider"></div>
+    <div class="opp-summary-item">
+      <span class="opp-summary-value amber">${openCount}</span>
+      <span class="opp-summary-label">Open</span>
+    </div>
+    <div class="opp-summary-item">
+      <span class="opp-summary-value green">${approvedCount}</span>
+      <span class="opp-summary-label">Approved</span>
+    </div>
+  `;
+}
+
+// ─── Card rendering ───────────────────────────────────────────────────────
+function renderCard(opp) {
+  const key      = opp.opportunity_key;
+  const decision = getDecision(key);
+  const comment  = getComment(key);
+  const hasComment = comment.trim().length > 0;
+
+  const statusClass = decision !== 'open' ? `status-${decision}` : '';
+
+  const approveActive    = decision === 'approved'     ? 'active' : '';
+  const rejectActive     = decision === 'rejected'     ? 'active' : '';
+  const investActive     = decision === 'investigating'? 'active' : '';
+
+  let statusBadge = '';
+  if (decision !== 'open') {
+    const badgeCls = `status-badge-${decision}`;
+    const label    = decision.charAt(0).toUpperCase() + decision.slice(1);
+    statusBadge = `<span class="opp-status-badge ${badgeCls}">${label}</span>`;
+  }
+
+  return `
+    <div class="opp-card ${statusClass}" data-key="${key}" id="card-${key}">
+      <div class="opp-card-header">
+        <div class="opp-card-title-block">
+          <span class="opp-type-badge badge-${opp.type}">${typeLabelMap(opp.type)}</span>
+          <span class="opp-card-name">${escHtml(opp.company_name)}</span>
+          <span class="opp-card-tier">(${escHtml(opp.product_tier)})</span>
+          ${statusBadge}
+        </div>
+      </div>
+      <div class="opp-card-meta">
+        <span class="opp-card-potential">${fmtDollar(opp.potential_amount)}</span>
+        <span class="opp-card-priority">Priority: <span>${escHtml(opp.priority_level)}</span></span>
+        <span class="opp-card-priority">Business: <span>${escHtml(opp.business_type)}</span></span>
+      </div>
+      <div class="opp-card-evidence">
+        <span class="evidence-label">Evidence</span>
+        ${escHtml(opp.evidence)}
+      </div>
+      <div class="opp-card-actions">
+        <button class="opp-action-btn opp-btn-approve ${approveActive}"
+                onclick="handleDecision('${key}', 'approved')">&#10003; Approve</button>
+        <button class="opp-action-btn opp-btn-reject ${rejectActive}"
+                onclick="handleDecision('${key}', 'rejected')">&#10007; Not real</button>
+        <button class="opp-action-btn opp-btn-investigate ${investActive}"
+                onclick="handleDecision('${key}', 'investigating')">&#8594; Investigate</button>
+        <button class="opp-action-btn opp-btn-comment-toggle"
+                onclick="toggleComment('${key}')">&#128172; Comment${hasComment ? ' (1)' : ''}</button>
+      </div>
+      <div class="opp-comment-section ${hasComment ? 'open' : ''}" id="comment-${key}">
+        ${hasComment ? `<div class="opp-comment-display" id="comment-display-${key}">"${escHtml(comment)}"</div>` : ''}
+        <div class="opp-comment-area">
+          <textarea class="opp-comment-input" id="comment-input-${key}"
+            placeholder="Add a note…" rows="2">${escHtml(comment)}</textarea>
+          <button class="opp-comment-save" onclick="saveComment('${key}')">Save</button>
+        </div>
+        <span class="opp-comment-saved" id="comment-saved-${key}">&#10003; Saved</span>
+      </div>
+    </div>
+  `;
+}
+
+function escHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// ─── Decision handlers ────────────────────────────────────────────────────
+function handleDecision(key, action) {
+  const current = getDecision(key);
+  // Toggle: clicking the active button resets to 'open'
+  const next = (current === action) ? 'open' : action;
+  setDecision(key, next);
+  rerenderCard(key);
+  updateResultsMeta();
+  updateSummaryBar();
+}
+
+function toggleComment(key) {
+  const section = document.getElementById(`comment-${key}`);
+  if (section) section.classList.toggle('open');
+}
+
+function saveComment(key) {
+  const input = document.getElementById(`comment-input-${key}`);
+  if (!input) return;
+  const val = input.value.trim();
+  setComment(key, val);
+
+  // Update display
+  const display = document.getElementById(`comment-display-${key}`);
+  if (display) {
+    display.textContent = val ? `"${val}"` : '';
+    display.style.display = val ? '' : 'none';
+  } else if (val) {
+    const section = document.getElementById(`comment-${key}`);
+    const area = section.querySelector('.opp-comment-area');
+    const newDisplay = document.createElement('div');
+    newDisplay.className = 'opp-comment-display';
+    newDisplay.id = `comment-display-${key}`;
+    newDisplay.textContent = `"${val}"`;
+    section.insertBefore(newDisplay, area);
+  }
+
+  // Flash saved
+  const saved = document.getElementById(`comment-saved-${key}`);
+  if (saved) {
+    saved.style.display = 'flex';
+    setTimeout(() => { saved.style.display = 'none'; }, 1800);
+  }
+
+  // Update comment toggle badge
+  const card = document.getElementById(`card-${key}`);
+  if (card) {
+    const toggleBtn = card.querySelector('.opp-btn-comment-toggle');
+    if (toggleBtn) toggleBtn.textContent = `💬 Comment${val ? ' (1)' : ''}`;
+  }
+}
+
+function rerenderCard(key) {
+  const el = document.getElementById(`card-${key}`);
+  if (!el) return;
+  const opp = ALL_OPPS.find(o => o.opportunity_key === key);
+  if (!opp) return;
+  const tmp = document.createElement('div');
+  tmp.innerHTML = renderCard(opp);
+  el.replaceWith(tmp.firstElementChild);
+}
+
+// ─── Main render ──────────────────────────────────────────────────────────
+function render() {
+  const filtered = applyFilters(ALL_OPPS);
+  const container = document.getElementById('cards-container');
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="opp-empty">
+        <div class="opp-empty-icon">&#128269;</div>
+        <div class="opp-empty-title">No opportunities match your filters</div>
+        <div class="opp-empty-sub">Try adjusting type, status, or account filters.</div>
+      </div>
+    `;
+  } else {
+    container.innerHTML = filtered.map(o => renderCard(o)).join('');
+  }
+
+  updateResultsMeta(filtered);
+}
+
+function updateResultsMeta(filtered) {
+  if (!filtered) filtered = applyFilters(ALL_OPPS);
+  const meta = document.getElementById('results-meta');
+  if (!meta) return;
+  const total = filtered.length;
+  const potential = filtered.reduce((s, o) => s + (o.potential_amount || 0), 0);
+  meta.innerHTML = `
+    <span>Showing <strong>${total}</strong> opportunities — <strong>${fmtDollar(potential)}</strong> potential</span>
+  `;
+}
+
+function updateSummaryBar() {
+  // Just re-render the counters in the summary bar
+  if (!ALL_OPPS.length) return;
+  const summaryEl = document.getElementById('summary-bar');
+  const approvedCount = ALL_OPPS.filter(o => getDecision(o.opportunity_key) === 'approved').length;
+  const openCount     = ALL_OPPS.filter(o => getDecision(o.opportunity_key) === 'open').length;
+  // Only update the counters (last two items), don't rebuild everything
+  // Simpler: just rebuild summary bar
+  const totalPotential = ALL_OPPS.reduce((s, o) => s + (o.potential_amount || 0), 0);
+  const byType = {};
+  ALL_OPPS.forEach(o => { byType[o.type] = (byType[o.type] || 0) + 1; });
+  renderSummaryBar(ALL_OPPS, { total: ALL_OPPS.length, by_type: byType, total_potential: totalPotential });
+}
+
+// ─── Type/Status toolbar events ──────────────────────────────────────────
+function initToolbar() {
+  document.querySelectorAll('.opp-type-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.opp-type-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      ACTIVE_TYPE = btn.dataset.type;
+      render();
+      updateResultsMeta();
+    });
+  });
+  document.querySelectorAll('.opp-status-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.opp-status-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      ACTIVE_STATUS = btn.dataset.status;
+      render();
+      updateResultsMeta();
+    });
+  });
+}
+
+// ─── Filter change handler (called by TXShared) ──────────────────────────
+function onFilterChange(state) {
+  FILTER_STATE = state;
+  render();
+  updateResultsMeta();
+}
+
+// ─── Boot ─────────────────────────────────────────────────────────────────
+(async function boot() {
+  // 1. Init shared (nav + filter bar)
+  FILTER_STATE = TXShared.init('opportunities', 'filter-container', onFilterChange);
+
+  // 2. Show toolbar
+  document.getElementById('opp-toolbar').style.display = 'flex';
+  document.getElementById('results-meta').style.display = 'flex';
+
+  // 3. Init toolbar events
+  initToolbar();
+
+  // 4. Load data
+  try {
+    const [oppData, accountsRaw] = await Promise.all([
+      TXShared.loadJSON('data/opportunities.json'),
+      TXShared.loadJSON('data/accounts_v3.json'),
+    ]);
+
+    // Build accounts map
+    const accts = accountsRaw.accounts || accountsRaw;
+    accts.forEach(a => { ACCOUNTS_MAP[String(a.company_id)] = a; });
+
+    // Store opps (already sorted by potential desc from generator)
+    ALL_OPPS = oppData.opportunities || [];
+
+    // 5. Load Supabase decisions (async, non-blocking)
+    try {
+      const sbDecisions = await TXShared.Supabase.getDecisions();
+      if (sbDecisions) {
+        _supabaseCache = sbDecisions;
+        _supabaseOK = true;
+        console.log(`Supabase connected: ${Object.keys(sbDecisions).length} decisions loaded`);
+        // Merge Supabase decisions into localStorage (Supabase wins)
+        const lsDec = loadDecisions();
+        const lsCom = loadComments();
+        Object.entries(sbDecisions).forEach(([key, row]) => {
+          if (row.decision && row.decision !== 'open') lsDec[key] = row.decision;
+          if (row.comment) lsCom[key] = row.comment;
+        });
+        saveDecisions(lsDec);
+        saveComments(lsCom);
+      }
+    } catch (e) { console.warn('Supabase sync skipped:', e.message); }
+
+    // Render summary bar
+    renderSummaryBar(ALL_OPPS, oppData.summary || {});
+
+    // Render cards
+    render();
+
+  } catch (err) {
+    console.error('Failed to load opportunity data:', err);
+    document.getElementById('summary-bar').innerHTML = '';
+    document.getElementById('cards-container').innerHTML = `
+      <div class="opp-error">
+        <strong>Failed to load opportunities data.</strong><br>
+        Run <code>scripts/generate_opportunities.py</code> to generate
+        <code>data/opportunities.json</code>, then reload this page.<br><br>
+        Error: ${err.message}
+      </div>
+    `;
+  }
+})();
+</script>
+</body>
+</html>

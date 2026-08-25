@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Issues — TX Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+      font-size: 11px;
+      color: #0f172a;
+    }
+
+    /* ── SUMMARY BAR ── */
+    .issues-summary {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      padding: 14px 24px;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .issues-summary-item { text-align: center; }
+    .issues-summary-value {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .issues-summary-label {
+      font-size: 9px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 1px;
+    }
+    .issues-summary-value.clr-red   { color: #dc2626; }
+    .issues-summary-value.clr-amber { color: #d97706; }
+    .issues-summary-value.clr-green { color: #16a34a; }
+    .issues-summary-divider {
+      width: 1px;
+      height: 36px;
+      background: #e2e8f0;
+    }
+    .issues-summary-meta {
+      margin-left: auto;
+      font-size: 10px;
+      color: #94a3b8;
+    }
+
+    /* ── CONTENT ── */
+    .issues-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 16px 24px;
+    }
+
+    /* ── ISSUE GROUP CARD ── */
+    .issue-group {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .issue-group-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      cursor: pointer;
+      user-select: none;
+      border-bottom: 1px solid transparent;
+      transition: background 0.1s;
+    }
+    .issue-group-header:hover { background: #f8fafc; }
+    .issue-group-header.open { border-bottom-color: #e2e8f0; }
+    .issue-group-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #0f172a;
+      flex: 1;
+    }
+    .issue-group-meta {
+      font-size: 10px;
+      color: #64748b;
+    }
+    .issue-group-impact {
+      font-size: 11px;
+      font-weight: 700;
+      color: #dc2626;
+    }
+    .issue-group-impact.zero { color: #94a3b8; font-weight: 500; }
+    .issue-group-chevron {
+      font-size: 10px;
+      color: #94a3b8;
+      transition: transform 0.15s;
+    }
+    .issue-group-header.open .issue-group-chevron { transform: rotate(90deg); }
+
+    /* ── ISSUE TABLE ── */
+    .issue-table-wrap { overflow-x: auto; }
+    .tx-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+    .tx-table th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #64748b;
+      padding: 6px 10px;
+      border-bottom: 1px solid #f1f5f9;
+      white-space: nowrap;
+      background: #f8fafc;
+    }
+    .tx-table td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #f8fafc;
+      vertical-align: top;
+    }
+    .tx-table tr:last-child td { border-bottom: none; }
+    .tx-table tr:hover td { background: #f8fafc; }
+    .tx-table td.td-impact {
+      font-weight: 700;
+      text-align: right;
+      white-space: nowrap;
+      color: #dc2626;
+    }
+    .tx-table td.td-impact.zero { color: #94a3b8; font-weight: 400; }
+    .tx-table td.td-detail { max-width: 480px; white-space: normal; color: #475569; }
+    .tx-table td.td-id { color: #94a3b8; font-size: 10px; }
+    .tx-table td.td-name { font-weight: 500; }
+
+    /* ── BADGES ── */
+    .tx-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .tx-badge-red    { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+    .tx-badge-amber  { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+    .tx-badge-green  { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+    .tx-badge-blue   { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+    .tx-badge-gray   { background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; }
+
+    /* ── EMPTY / ERROR STATES ── */
+    .issues-empty {
+      text-align: center;
+      padding: 64px 24px;
+      color: #94a3b8;
+    }
+    .issues-empty h2 { font-size: 15px; color: #64748b; margin-bottom: 8px; }
+    .issues-empty p  { font-size: 12px; line-height: 1.6; }
+    .issues-empty code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 11px;
+      color: #475569;
+    }
+
+    /* ── FILTER INFO BAR ── */
+    .filter-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 24px;
+      font-size: 10px;
+      color: #64748b;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .filter-info strong { color: #0f172a; }
+
+    /* ── LOADING ── */
+    .tx-loading {
+      text-align: center;
+      padding: 48px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    /* ── ACCOUNT FILTER NOTICE ── */
+    .filter-active-notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 9px;
+      color: #2563eb;
+      font-weight: 600;
+    }
+    .clear-filter-btn {
+      background: none;
+      border: none;
+      color: #2563eb;
+      cursor: pointer;
+      font-size: 10px;
+      text-decoration: underline;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav bar injected by TXShared.init() -->
+  <div id="filter-container"></div>
+
+  <!-- Summary bar -->
+  <div id="summary-bar" class="issues-summary" style="display:none">
+    <div class="issues-summary-item">
+      <div class="issues-summary-value clr-red" id="sum-errors">—</div>
+      <div class="issues-summary-label">Errors</div>
+    </div>
+    <div class="issues-summary-divider"></div>
+    <div class="issues-summary-item">
+      <div class="issues-summary-value clr-amber" id="sum-warnings">—</div>
+      <div class="issues-summary-label">Warnings</div>
+    </div>
+    <div class="issues-summary-divider"></div>
+    <div class="issues-summary-item">
+      <div class="issues-summary-value clr-red" id="sum-impact">—</div>
+      <div class="issues-summary-label">Total $ Impact</div>
+    </div>
+    <div class="issues-summary-divider"></div>
+    <div class="issues-summary-item">
+      <div class="issues-summary-value" id="sum-accounts">—</div>
+      <div class="issues-summary-label">Accounts Affected</div>
+    </div>
+    <div class="issues-summary-meta" id="sum-meta"></div>
+  </div>
+
+  <!-- Filter info -->
+  <div class="filter-info" id="filter-info" style="display:none">
+    <span id="filter-info-text">Showing all issues</span>
+    <span id="filter-active-tag" style="display:none"></span>
+  </div>
+
+  <!-- Main content -->
+  <div class="issues-content">
+    <div id="loading" class="tx-loading">Loading quality report…</div>
+    <div id="issues-root"></div>
+  </div>
+
+  <script src="tx_shared.js"></script>
+  <script>
+    'use strict';
+
+    // ── STATE ──────────────────────────────────────────────
+    let qualityReport = null;
+    let accountsData  = [];
+    let currentFilter = null;
+
+    // account class/type lookup from accounts_v3
+    const acctMeta = {};
+
+    // ── INIT ──────────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', () => {
+      // Init nav, filter bar
+      currentFilter = TXShared.init('issues', 'filter-container', onFilterChange);
+      boot();
+    });
+
+    async function boot() {
+      // Load quality report + accounts in parallel
+      const [reportResult, acctResult] = await Promise.allSettled([
+        TXShared.loadJSON('data/quality_report.json'),
+        TXShared.loadJSON('data/accounts_v3.json'),
+      ]);
+
+      // Accounts (used for filter matching)
+      if (acctResult.status === 'fulfilled') {
+        const raw = acctResult.value;
+        const list = raw.accounts || raw || [];
+        list.forEach(a => {
+          acctMeta[String(a.company_id)] = a;
+        });
+        accountsData = list;
+      }
+
+      // Quality report
+      if (reportResult.status === 'rejected') {
+        showEmpty();
+        return;
+      }
+
+      qualityReport = reportResult.value;
+
+      document.getElementById('loading').style.display = 'none';
+      renderSummary(qualityReport.summary);
+      renderIssues(qualityReport.issues, currentFilter);
+
+      document.getElementById('summary-bar').style.display = 'flex';
+      document.getElementById('filter-info').style.display = 'flex';
+    }
+
+    // ── FILTER CHANGE ─────────────────────────────────────
+    function onFilterChange(filterState) {
+      currentFilter = filterState;
+      if (!qualityReport) return;
+      renderIssues(qualityReport.issues, filterState);
+      renderFilterInfo(filterState);
+    }
+
+    // ── SUMMARY BAR ───────────────────────────────────────
+    function renderSummary(s) {
+      document.getElementById('sum-errors').textContent   = s.errors;
+      document.getElementById('sum-warnings').textContent = s.warnings;
+      document.getElementById('sum-impact').textContent   = TXShared.fmtDollar(s.total_dollar_impact);
+      document.getElementById('sum-accounts').textContent = s.accounts_affected || '—';
+      document.getElementById('sum-meta').textContent =
+        `Report: ${qualityReport.generated_at || 'unknown'} · ${s.total_checks || 16} checks run`;
+    }
+
+    // ── FILTER INFO ───────────────────────────────────────
+    function renderFilterInfo(fs) {
+      const parts = [];
+      if (fs.accountClass) parts.push(`class: ${fs.accountClass}`);
+      if (fs.businessType)  parts.push(`type: ${fs.businessType}`);
+      if (fs.productTier)   parts.push(`tier: ${fs.productTier}`);
+      if (fs.search)        parts.push(`search: "${fs.search}"`);
+      if (fs.impl && fs.impl.length)     parts.push(`impl: ${fs.impl.join(', ')}`);
+      if (fs.priority && fs.priority.length) parts.push(`priority: ${fs.priority.join(', ')}`);
+
+      const infoText = document.getElementById('filter-info-text');
+      const activeTag = document.getElementById('filter-active-tag');
+
+      if (parts.length === 0) {
+        infoText.textContent = 'Showing all issues across all accounts';
+        activeTag.style.display = 'none';
+      } else {
+        infoText.textContent = 'Filtered by: ';
+        activeTag.innerHTML = `<span class="filter-active-notice">${parts.join(' · ')}</span>`;
+        activeTag.style.display = 'inline-flex';
+      }
+    }
+
+    // ── ISSUE RENDER ──────────────────────────────────────
+    function renderIssues(issues, filterState) {
+      const root = document.getElementById('issues-root');
+      root.innerHTML = '';
+
+      if (!issues || issues.length === 0) {
+        root.innerHTML = `<div class="issues-empty">
+          <h2>No issues found</h2>
+          <p>All checks passed. Run <code>generate_quality_report.py</code> again after data refresh.</p>
+        </div>`;
+        return;
+      }
+
+      // Apply account-level filter
+      const filtered = applyAccountFilter(issues, filterState);
+      const visibleCount = filtered.filter(i => i._filtered_accounts.length > 0).length;
+
+      if (visibleCount === 0) {
+        const hasFilter = filterState && (
+          filterState.accountClass || filterState.businessType || filterState.productTier ||
+          filterState.search || (filterState.impl || []).length || (filterState.priority || []).length
+        );
+        root.innerHTML = `<div class="issues-empty">
+          <h2>${hasFilter ? 'No issues match current filter' : 'No issues found'}</h2>
+          <p>${hasFilter
+            ? 'Clear filters to see all issues, or check a different account class / tier.'
+            : 'All 16 checks passed. Run <code>generate_quality_report.py</code> again after data refresh.'
+          }</p>
+        </div>`;
+        return;
+      }
+
+      // Sort: errors first, then dollar_impact desc (already sorted from Python but re-sort for filtered)
+      filtered.sort((a, b) => {
+        if (a.severity !== b.severity) return a.severity === 'error' ? -1 : 1;
+        const aImpact = a._filtered_accounts.reduce((s, x) => s + (x.dollar_impact || 0), 0);
+        const bImpact = b._filtered_accounts.reduce((s, x) => s + (x.dollar_impact || 0), 0);
+        return bImpact - aImpact;
+      });
+
+      filtered.forEach((issue, idx) => {
+        if (issue._filtered_accounts.length === 0) return;
+        const el = buildIssueGroup(issue, idx === 0);
+        root.appendChild(el);
+      });
+
+      renderFilterInfo(filterState || {});
+    }
+
+    // ── FILTER APPLICATION ────────────────────────────────
+    function applyAccountFilter(issues, fs) {
+      return issues.map(issue => {
+        const filtered = issue.accounts.filter(acct => {
+          const cid = String(acct.company_id || '');
+          const meta = acctMeta[cid];
+
+          // If no filter or account not in metadata, pass through (can't filter unknown)
+          const hasFilter = fs && (
+            fs.accountClass || fs.businessType || fs.productTier ||
+            fs.search || (fs.impl || []).length || (fs.priority || []).length
+          );
+          if (!hasFilter) return true;
+          if (!meta) return true; // system-level issues (no company_id) always show
+
+          // Apply filters
+          if (fs.accountClass && meta.account_class !== fs.accountClass) return false;
+          if (fs.businessType && meta.business_type !== fs.businessType) return false;
+          if (fs.productTier && meta.product_tier !== fs.productTier) return false;
+          if (fs.search) {
+            const q = fs.search.toLowerCase();
+            if (!(meta.company_name || acct.company_name || '').toLowerCase().includes(q)) return false;
+          }
+          if (fs.priority && fs.priority.length > 0) {
+            if (!fs.priority.includes(meta.priority_level)) return false;
+          }
+          if (fs.impl && fs.impl.length > 0) {
+            // impl filter: active-pmt matches has_active_pmt, others match impl_stage_display
+            const implMatch = fs.impl.some(v => {
+              if (v === 'active-pmt') return meta.has_active_pmt === true;
+              return meta.impl_stage_display === v;
+            });
+            if (!implMatch) return false;
+          }
+          return true;
+        });
+
+        return { ...issue, _filtered_accounts: filtered };
+      });
+    }
+
+    // ── BUILD ISSUE GROUP ─────────────────────────────────
+    function buildIssueGroup(issue, expandByDefault) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'issue-group';
+      wrapper.dataset.checkId = issue.check_id;
+
+      const filteredImpact = issue._filtered_accounts.reduce((s, a) => s + (a.dollar_impact || 0), 0);
+      const count = issue._filtered_accounts.length;
+      const isOpen = expandByDefault || count <= 5;
+
+      const badgeClass = issue.severity === 'error' ? 'tx-badge-red' : 'tx-badge-amber';
+      const severityLabel = issue.severity === 'error' ? 'Error' : 'Warning';
+      const impactClass = filteredImpact > 0 ? '' : ' zero';
+
+      const header = document.createElement('div');
+      header.className = 'issue-group-header' + (isOpen ? ' open' : '');
+      header.innerHTML = `
+        <span class="tx-badge ${badgeClass}">${severityLabel}</span>
+        <span class="issue-group-title">${escHtml(issue.description)}</span>
+        <span class="issue-group-meta">${count} account${count !== 1 ? 's' : ''} &nbsp;·&nbsp; <code style="font-family:monospace;font-size:9px;color:#94a3b8">${escHtml(issue.check_id)}</code></span>
+        ${filteredImpact > 0
+          ? `<span class="issue-group-impact${impactClass}">${TXShared.fmtDollar(filteredImpact)}</span>`
+          : `<span class="issue-group-impact zero">—</span>`
+        }
+        <span class="issue-group-chevron">▶</span>
+      `;
+
+      const tableWrap = document.createElement('div');
+      tableWrap.className = 'issue-table-wrap';
+      tableWrap.style.display = isOpen ? 'block' : 'none';
+      tableWrap.innerHTML = buildAccountTable(issue._filtered_accounts, issue.check_id);
+
+      header.addEventListener('click', () => {
+        const nowOpen = tableWrap.style.display === 'none';
+        tableWrap.style.display = nowOpen ? 'block' : 'none';
+        header.classList.toggle('open', nowOpen);
+      });
+
+      wrapper.appendChild(header);
+      wrapper.appendChild(tableWrap);
+      return wrapper;
+    }
+
+    function buildAccountTable(accounts, checkId) {
+      if (!accounts || accounts.length === 0) {
+        return `<div style="padding:16px 14px;color:#94a3b8;font-size:11px;">No accounts match current filter.</div>`;
+      }
+
+      const rows = accounts.map(a => {
+        const impact = a.dollar_impact || 0;
+        const impactClass = impact > 0 ? '' : ' zero';
+        return `
+          <tr>
+            <td class="td-id">${escHtml(String(a.company_id || '—'))}</td>
+            <td class="td-name">${escHtml(a.company_name || '—')}</td>
+            <td class="td-detail">${escHtml(a.detail || '—')}</td>
+            <td class="td-impact${impactClass}">${impact > 0 ? TXShared.fmtDollar(impact) : '—'}</td>
+          </tr>
+        `;
+      }).join('');
+
+      return `
+        <table class="tx-table">
+          <thead>
+            <tr>
+              <th style="width:70px">ID</th>
+              <th style="width:220px">Account</th>
+              <th>Detail</th>
+              <th style="width:100px;text-align:right">$ Impact</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      `;
+    }
+
+    // ── EMPTY STATE ───────────────────────────────────────
+    function showEmpty() {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('issues-root').innerHTML = `
+        <div class="issues-empty">
+          <h2>No report generated yet</h2>
+          <p>
+            Run the quality report script to generate data:<br><br>
+            <code>python3 docs/transactions/scripts/generate_quality_report.py</code><br><br>
+            Output: <code>data/quality_report.json</code>
+          </p>
+        </div>
+      `;
+    }
+
+    // ── UTILS ─────────────────────────────────────────────
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+  </script>
+</body>
+</html>
