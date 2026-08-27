@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activación — TX Dashboard</title>
+  <script src="tx_shared.js"></script>
+  <style>
+    /* ─── PAGE BASE ─────────────────────────────────────────────────────── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+      font-size: 11px;
+      color: #0f172a;
+    }
+
+    /* ─── ACTIVATION SUMMARY BAR ─────────────────────────────────────────── */
+    .act-summary {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      padding: 10px 24px;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      flex-wrap: wrap;
+    }
+    .act-summary-item { text-align: center; min-width: 80px; }
+    .act-summary-value { font-size: 20px; font-weight: 700; color: #0f172a; }
+    .act-summary-label { font-size: 10px; color: #64748b; text-transform: uppercase; margin-top: 2px; }
+    .act-summary-divider { width: 1px; height: 32px; background: #e2e8f0; }
+
+    /* ─── VIEW TOGGLE ────────────────────────────────────────────────────── */
+    .act-view-toggle {
+      display: flex;
+      gap: 0;
+      padding: 10px 24px 0;
+      border-bottom: 2px solid #e2e8f0;
+      background: #ffffff;
+    }
+    .act-view-btn {
+      padding: 7px 20px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #475569;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.15s;
+    }
+    .act-view-btn:hover { color: #0f172a; background: #f8fafc; }
+    .act-view-btn.active {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+      font-weight: 600;
+    }
+
+    /* ─── CONTENT AREA ───────────────────────────────────────────────────── */
+    .act-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 16px 24px;
+    }
+
+    /* ─── IMPL COHORT CARDS ──────────────────────────────────────────────── */
+    .act-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .act-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .act-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .act-card-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #0f172a;
+      flex: 1;
+    }
+    .act-card-tier {
+      font-size: 10px;
+      color: #64748b;
+    }
+    .act-card-meta {
+      font-size: 10px;
+      color: #64748b;
+      margin-bottom: 10px;
+    }
+    .act-card-meta strong { color: #0f172a; }
+
+    /* ─── GAUGE BARS ─────────────────────────────────────────────────────── */
+    .act-gauge-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 5px;
+    }
+    .act-gauge-label {
+      font-size: 10px;
+      color: #64748b;
+      width: 84px;
+      flex-shrink: 0;
+    }
+    .act-gauge-bar-wrap {
+      flex: 1;
+      height: 8px;
+      background: #f1f5f9;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .act-gauge-bar {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+    .act-gauge-bar.red    { background: #dc2626; }
+    .act-gauge-bar.amber  { background: #f59e0b; }
+    .act-gauge-bar.green  { background: #16a34a; }
+    .act-gauge-pct {
+      font-size: 11px;
+      font-weight: 600;
+      width: 40px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .act-gauge-trend {
+      font-size: 10px;
+      font-weight: 600;
+      width: 60px;
+      flex-shrink: 0;
+    }
+    .trend-up   { color: #16a34a; }
+    .trend-down { color: #dc2626; }
+    .trend-flat { color: #94a3b8; }
+
+    /* ─── CARD FOOTER STATS ───────────────────────────────────────────────── */
+    .act-card-footer {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+    }
+    .act-stat { font-size: 10px; color: #475569; }
+    .act-stat strong { color: #0f172a; }
+
+    .act-take-rate {
+      margin: 6px 0 8px;
+      font-size: 11px;
+      color: #475569;
+    }
+    .act-take-rate strong { color: #0f172a; font-size: 12px; }
+
+    /* ─── ALL ACCOUNTS TABLE ─────────────────────────────────────────────── */
+    .act-table-wrap {
+      overflow-x: auto;
+      margin-top: 8px;
+    }
+    .act-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+    .act-table th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #64748b;
+      padding: 7px 8px;
+      border-bottom: 2px solid #e2e8f0;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      background: #f8fafc;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    .act-table th:hover { color: #0f172a; }
+    .act-table th .sort-arrow { font-size: 9px; margin-left: 3px; opacity: 0.5; }
+    .act-table th.sort-asc .sort-arrow::after { content: "▲"; opacity: 1; }
+    .act-table th.sort-desc .sort-arrow::after { content: "▼"; opacity: 1; }
+    .act-table th:not(.sort-asc):not(.sort-desc) .sort-arrow::after { content: "↕"; }
+    .act-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #f1f5f9;
+      white-space: nowrap;
+    }
+    .act-table tr:hover td { background: #f8fafc; }
+
+    /* share cell colors */
+    .share-red    { background: #fef2f2; color: #dc2626; font-weight: 600; }
+    .share-amber  { background: #fffbeb; color: #b45309; font-weight: 600; }
+    .share-green  { background: #f0fdf4; color: #15803d; font-weight: 600; }
+
+    /* ─── EMPTY STATE ────────────────────────────────────────────────────── */
+    .act-empty {
+      text-align: center;
+      padding: 60px 24px;
+      color: #94a3b8;
+    }
+    .act-empty h3 { font-size: 16px; margin-bottom: 8px; color: #64748b; }
+    .act-empty code {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 10px;
+      background: #f1f5f9;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 11px;
+      color: #475569;
+    }
+
+    /* ─── BADGE OVERRIDES ────────────────────────────────────────────────── */
+    .stage-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      flex-shrink: 0;
+    }
+    .stage-go-live       { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
+    .stage-training      { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+    .stage-pre-go-live   { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+    .stage-kickoff       { background: #fdf4ff; color: #7e22ce; border: 1px solid #e9d5ff; }
+    .stage-not-started   { background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; }
+    .stage-pre-live      { background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; }
+    .stage-established   { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
+    .stage-recently-live { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+    .stage-parked        { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+    .stage-unknown       { background: #f8fafc; color: #94a3b8; border: 1px solid #e2e8f0; }
+
+    /* ─── SECTION HEADER ─────────────────────────────────────────────────── */
+    .act-section-hdr {
+      font-size: 13px;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 4px 0 12px;
+    }
+    .act-count-badge {
+      font-size: 11px;
+      font-weight: 400;
+      color: #64748b;
+      margin-left: 8px;
+    }
+
+    /* ─── DECISION FLOW LABEL ────────────────────────────────────────────── */
+    .tx-decision-label {
+      font-size: 10px;
+      color: #2563eb;
+      font-style: italic;
+      margin: 4px 0 8px;
+    }
+    .act-card-decision {
+      font-size: 9px;
+      color: #2563eb;
+      font-style: italic;
+      margin: 2px 0 6px;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 6px;
+    }
+
+    /* ─── LOADING / ERROR ────────────────────────────────────────────────── */
+    .act-loading { text-align: center; padding: 48px; color: #94a3b8; font-size: 13px; }
+
+    /* ─── M1 PIPELINE ACTIVATION CARD ───────────────────────────────────── */
+    .m1-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .m1-card-header {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+    .m1-card-body {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .m1-rate-value {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .m1-rate-value.m1-red   { color: #dc2626; }
+    .m1-rate-value.m1-amber { color: #b45309; }
+    .m1-rate-value.m1-green { color: #15803d; }
+    .m1-rate-detail {
+      font-size: 12px;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .m1-status-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .m1-status-badge.red   { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+    .m1-status-badge.amber { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+    .m1-status-badge.green { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
+    .m1-card-note {
+      font-size: 10px;
+      color: #94a3b8;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* ─── DATA FRESHNESS BAR ──────────────────────────────────────────────── */
+    .act-freshness {
+      font-size: 10px;
+      color: #94a3b8;
+      text-align: right;
+      padding: 4px 24px 0;
+      background: #ffffff;
+    }
+
+    /* ─── BUY FUNNEL VIEW ────────────────────────────────────────────────── */
+    .funnel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    @media (max-width: 760px) {
+      .funnel-grid { grid-template-columns: 1fr; }
+    }
+    .funnel-panel {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 18px 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .funnel-panel-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .funnel-subtitle {
+      font-size: 10px;
+      color: #64748b;
+      margin-bottom: 14px;
+    }
+    .funnel-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 0;
+    }
+    .funnel-row.root   { padding-left: 0; }
+    .funnel-row.level1 { padding-left: 20px; }
+    .funnel-row.level2 { padding-left: 40px; }
+    .funnel-connector {
+      font-size: 10px;
+      color: #94a3b8;
+      font-family: monospace;
+      flex-shrink: 0;
+    }
+    .funnel-label {
+      flex: 1;
+      font-size: 11px;
+      color: #334155;
+    }
+    .funnel-count {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      min-width: 36px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .funnel-pct {
+      font-size: 11px;
+      font-weight: 600;
+      min-width: 48px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .funnel-tag {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 3px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .funnel-tag.gap     { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+    .funnel-tag.opp     { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+    .funnel-tag.good    { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
+    .funnel-tag.partial { background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; }
+    .funnel-divider {
+      height: 1px;
+      background: #f1f5f9;
+      margin: 8px 0;
+    }
+    /* Distribution bar chart */
+    .dist-chart { margin-top: 2px; }
+    .dist-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .dist-lbl {
+      font-size: 10px;
+      color: #64748b;
+      width: 60px;
+      flex-shrink: 0;
+    }
+    .dist-bar-wrap {
+      flex: 1;
+      height: 14px;
+      background: #f1f5f9;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .dist-bar {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+    .dist-bar.c-none { background: #dc2626; }
+    .dist-bar.c-low  { background: #f59e0b; }
+    .dist-bar.c-mid  { background: #3b82f6; }
+    .dist-bar.c-good { background: #22c55e; }
+    .dist-bar.c-high { background: #15803d; }
+    .dist-count {
+      font-size: 10px;
+      font-weight: 600;
+      color: #0f172a;
+      min-width: 28px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .dist-pct {
+      font-size: 10px;
+      color: #64748b;
+      min-width: 38px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .k2k-note {
+      font-size: 9px;
+      color: #94a3b8;
+      font-style: italic;
+      margin-top: 12px;
+      padding-top: 8px;
+      border-top: 1px solid #f1f5f9;
+      line-height: 1.5;
+    }
+
+    /* ─── ACCOUNT CLASS CHIP ─────────────────────────────────────────────── */
+    .class-chip {
+      font-size: 9px;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    .class-client   { background: #eff6ff; color: #2563eb; }
+    .class-prelive  { background: #fdf4ff; color: #7e22ce; }
+  </style>
+</head>
+<body>
+
+<!-- Nav bar injected by TXShared.init() -->
+
+<!-- Filter container -->
+<div id="filter-container"></div>
+<div id="scorecard-container"></div>
+
+<!-- Data freshness bar -->
+<div class="act-freshness" id="act-freshness"></div>
+
+<!-- View toggle + summary bar injected after filters -->
+<div id="act-controls"></div>
+
+<!-- Main content area -->
+<div class="act-content">
+  <div id="act-main"><div class="act-loading">Loading activation data…</div></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ─── STATE ─────────────────────────────────────────────────────────────────
+  let activationData = null;  // full data/activation_data.json payload
+  let currentView = 'cohort'; // 'cohort' | 'all' | 'funnel'
+  let currentFilters = {};
+  let sortField = 'digital_buy_share';
+  let sortDir = 'asc';        // smallest first = biggest gap first
+
+  // ─── BOOT ──────────────────────────────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    currentFilters = TXShared.init('activation', 'filter-container', onFilterChange);
+    TXShared.renderScorecard('scorecard-container');
+    buildControls();
+    loadData();
+  });
+
+  // ─── CONTROLS (view toggle + summary bar) ──────────────────────────────────
+  function buildControls() {
+    const wrap = document.getElementById('act-controls');
+    wrap.innerHTML = `
+      <div class="act-view-toggle">
+        <button class="act-view-btn${currentView === 'cohort' ? ' active' : ''}"
+                id="btn-cohort" onclick="switchView('cohort')">Impl Cohort</button>
+        <button class="act-view-btn${currentView === 'all' ? ' active' : ''}"
+                id="btn-all" onclick="switchView('all')">All Accounts</button>
+        <button class="act-view-btn${currentView === 'funnel' ? ' active' : ''}"
+                id="btn-funnel" onclick="switchView('funnel')">BUY Funnel</button>
+      </div>
+      <div class="act-summary" id="act-summary-bar">
+        <div class="act-loading" style="padding:10px 0;">Loading…</div>
+      </div>
+    `;
+  }
+
+  function switchView(view) {
+    currentView = view;
+    document.querySelectorAll('.act-view-btn').forEach(b => b.classList.remove('active'));
+    const btn = document.getElementById('btn-' + view);
+    if (btn) btn.classList.add('active');
+    render();
+  }
+  window.switchView = switchView;  // expose for onclick
+
+  // ─── DATA FRESHNESS ─────────────────────────────────────────────────────────
+  function renderFreshness() {
+    const el = document.getElementById('act-freshness');
+    if (!el || !activationData) return;
+    const generatedAt = (activationData._meta && activationData._meta.generated_at) || null;
+    el.textContent = generatedAt ? 'Data as of: ' + generatedAt : '';
+  }
+
+  // ─── DATA LOADING ───────────────────────────────────────────────────────────
+  async function loadData() {
+    try {
+      activationData = await TXShared.loadJSON('data/activation_data.json');
+      renderFreshness();
+      render();
+    } catch (err) {
+      document.getElementById('act-main').innerHTML = emptyState();
+      document.getElementById('act-summary-bar').innerHTML =
+        `<span style="color:#dc2626;font-size:11px;">Could not load activation_data.json — run generate_activation.py first</span>`;
+    }
+  }
+
+  // ─── FILTER CHANGE ──────────────────────────────────────────────────────────
+  function onFilterChange(filters) {
+    currentFilters = filters;
+    // Auto-switch to cohort view when IMPL priority chip is active
+    if (filters.priority && filters.priority.includes('IMPL') && currentView !== 'cohort') {
+      switchView('cohort');
+    }
+    render();
+  }
+
+  // ─── ACCOUNT FILTERING ─────────────────────────────────────────────────────
+  function applyFiltersLocal(accounts) {
+    let list = accounts;
+    const s = currentFilters;
+
+    if (s.accountClass) list = list.filter(a => a.account_class === s.accountClass);
+    if (s.businessType) list = list.filter(a => a.business_type === s.businessType);
+    if (s.productTier)  list = list.filter(a => a.product_tier === s.productTier);
+
+    if (s.gmvBand) {
+      list = list.filter(a => {
+        const g = a.gmv_reference || 0;
+        if (s.gmvBand === '>=10M')     return g >= 10000000;
+        if (s.gmvBand === '$2-10M')    return g >= 2000000 && g < 10000000;
+        if (s.gmvBand === '$500K-2M')  return g >= 500000  && g < 2000000;
+        if (s.gmvBand === '<$500K')    return g < 500000;
+        return true;
+      });
+    }
+
+    if (s.priority && s.priority.length > 0) {
+      list = list.filter(a => s.priority.includes(a.priority_level));
+    }
+
+    if (s.impl && s.impl.length > 0) {
+      list = list.filter(a => {
+        const stage = (a.stage || '').toLowerCase();
+        const isActivePmt = a.has_active_pmt;
+        return s.impl.some(chip => {
+          if (chip === 'active-pmt')           return isActivePmt;
+          if (chip === 'go-live-growth')       return ['go-live', 'training'].includes(stage);
+          if (chip === 'Recently live (2026)') return stage === 'recently live (2026)';
+          if (chip === 'Recently live (H2 2025)') return stage === 'recently live (h2 2025)';
+          if (chip === 'Established')          return stage === 'established';
+          return false;
+        });
+      });
+    }
+
+    if (s.search) {
+      const q = s.search.toLowerCase();
+      list = list.filter(a => (a.company_name || '').toLowerCase().includes(q));
+    }
+
+    return list;
+  }
+
+  // Impl cohort: accounts with active PMT OR priority_level IMPL OR Pre-live class
+  function isImplAccount(a) {
+    return a.has_active_pmt ||
+           a.priority_level === 'IMPL' ||
+           a.account_class === 'Pre-live';
+  }
+
+  // ─── RENDER DISPATCHER ─────────────────────────────────────────────────────
+  function render() {
+    if (!activationData) return;
+    const allAccounts = activationData.accounts || [];
+
+    // BUY Funnel uses the full dataset from _meta (not filtered per-account)
+    if (currentView === 'funnel') {
+      renderSummaryBar(allAccounts);
+      renderFunnelView();
+      return;
+    }
+
+    // Apply shared filters first
+    let filtered = applyFiltersLocal(allAccounts);
+
+    // For cohort view, further restrict to impl accounts
+    let viewAccounts = filtered;
+    if (currentView === 'cohort') {
+      viewAccounts = filtered.filter(isImplAccount);
+    }
+
+    renderSummaryBar(viewAccounts);
+
+    if (currentView === 'cohort') {
+      renderCohortView(viewAccounts);
+    } else {
+      renderTableView(viewAccounts);
+    }
+  }
+
+  // ─── SUMMARY BAR ───────────────────────────────────────────────────────────
+  function renderSummaryBar(accounts) {
+    const buyShares  = accounts.map(a => a.digital_buy_share).filter(v => v != null);
+    const sellShares = accounts.map(a => a.digital_sell_share).filter(v => v != null);
+    const takeRates  = accounts.map(a => a.take_rate).filter(v => v != null);
+
+    const avgBuy  = buyShares.length  ? buyShares.reduce((a,b) => a+b, 0) / buyShares.length  : null;
+    const avgSell = sellShares.length ? sellShares.reduce((a,b) => a+b, 0) / sellShares.length : null;
+    const avgTR   = takeRates.length  ? takeRates.reduce((a,b) => a+b, 0) / takeRates.length  : null;
+
+    const fmtPct = (v) => v != null ? (v * 100).toFixed(1) + '%' : '—';
+    const fmtTR  = (v) => v != null ? (v * 100).toFixed(2) + '%' : '—';
+
+    // Procurement stats from _meta.summary
+    const summary = (activationData && activationData._meta && activationData._meta.summary) || {};
+    const procActive = summary.procurement_active_count != null ? summary.procurement_active_count : null;
+    const procAvg    = summary.procurement_monthly_avg  != null ? summary.procurement_monthly_avg  : null;
+    const procAvgStr = procAvg != null ? '$' + (procAvg / 1000000).toFixed(1) + 'M' : '—';
+
+    // M5 units online
+    const m5Pct = summary.m5_units_online_pct;
+    const m5IsUnavailable = !m5Pct || m5Pct === 'data_unavailable';
+    const m5Html = `
+      <div class="act-summary-divider"></div>
+      <div class="act-summary-item" title="${escHtml(summary.m5_note || '')}">
+        <div class="act-summary-value" style="color:#94a3b8;">~1.5%</div>
+        <div class="act-summary-label" style="color:#94a3b8;">Units Online <span style="font-size:9px;">(target 5%)</span></div>
+        <div style="font-size:9px;color:#94a3b8;margin-top:2px;">DATA LIMITED</div>
+      </div>`;
+
+    document.getElementById('act-summary-bar').innerHTML = `
+      <div class="act-summary-item">
+        <div class="act-summary-value">${accounts.length}</div>
+        <div class="act-summary-label">Accounts shown</div>
+      </div>
+      <div class="act-summary-divider"></div>
+      <div class="act-summary-item">
+        <div class="act-summary-value" style="color:${avgBuy != null && avgBuy < 0.05 ? '#dc2626' : avgBuy != null && avgBuy < 0.15 ? '#b45309' : '#15803d'}">${fmtPct(avgBuy)}</div>
+        <div class="act-summary-label">Avg Digital Buy</div>
+      </div>
+      <div class="act-summary-item">
+        <div class="act-summary-value" style="color:${avgSell != null && avgSell < 0.05 ? '#dc2626' : avgSell != null && avgSell < 0.15 ? '#b45309' : '#15803d'}">${fmtPct(avgSell)}</div>
+        <div class="act-summary-label">Avg Digital Sell</div>
+      </div>
+      <div class="act-summary-item">
+        <div class="act-summary-value">${fmtTR(avgTR)}</div>
+        <div class="act-summary-label">Avg Take Rate</div>
+      </div>
+      <div class="act-summary-divider"></div>
+      <div class="act-summary-item">
+        <div class="act-summary-value" style="color:#0f172a;">${procActive != null ? procActive : '—'}</div>
+        <div class="act-summary-label">Proc Active Accts</div>
+      </div>
+      <div class="act-summary-item">
+        <div class="act-summary-value" style="color:#0f172a;">${procAvgStr}</div>
+        <div class="act-summary-label">Proc Monthly Avg</div>
+      </div>
+      ${m5IsUnavailable ? m5Html : `
+      <div class="act-summary-divider"></div>
+      <div class="act-summary-item">
+        <div class="act-summary-value">${m5Pct}</div>
+        <div class="act-summary-label">Units Online</div>
+      </div>`}
+    `;
+  }
+
+  // ─── M1 PIPELINE ACTIVATION CARD ───────────────────────────────────────────
+  function renderM1Card() {
+    const summary = (activationData && activationData._meta && activationData._meta.summary) || {};
+    const m1Rate  = summary.m1_rate  != null ? summary.m1_rate  : null;
+    const m1Met   = summary.m1_met_count != null ? summary.m1_met_count : null;
+    const cohortSz = summary.impl_cohort_size != null ? summary.impl_cohort_size : null;
+    const m1Note  = summary.m1_note || '';
+
+    if (m1Rate == null) return '';  // no data → skip card
+
+    const pctStr = (m1Rate * 100).toFixed(1) + '%';
+    const colorKey = m1Rate < 0.40 ? 'red' : m1Rate < 0.60 ? 'amber' : 'green';
+    const statusLabel = m1Rate < 0.40 ? '● AT RISK' : m1Rate < 0.60 ? '● MONITOR' : '● ON TRACK';
+
+    const countStr = (m1Met != null && cohortSz != null)
+      ? `${m1Met} of ${cohortSz}`
+      : (m1Met != null ? m1Met : '—');
+
+    return `
+      <div class="m1-card">
+        <div class="m1-card-header">Pipeline Activation (M1)</div>
+        <div class="m1-card-body">
+          <div class="m1-rate-value m1-${colorKey}">${pctStr}</div>
+          <div class="m1-rate-detail">
+            <strong>Activation rate:</strong> ${countStr}<br>
+            <strong>Target:</strong> 80% (OKR: 80% with 20+ procurement purchases)
+          </div>
+          <span class="m1-status-badge ${colorKey}">${statusLabel}</span>
+        </div>
+        <div class="m1-card-note">${escHtml(m1Note)}</div>
+      </div>`;
+  }
+
+  // ─── COHORT VIEW (cards) ────────────────────────────────────────────────────
+  function renderCohortView(accounts) {
+    const main = document.getElementById('act-main');
+
+    if (!accounts.length) {
+      main.innerHTML = '<div class="act-empty"><h3>No impl accounts match current filters</h3><p>Try clearing priority or class filters.</p></div>';
+      return;
+    }
+
+    // Sort by days_live desc (newest live accounts first); null = bottom
+    const sorted = [...accounts].sort((a, b) => {
+      const dA = a.days_live != null ? a.days_live : -1;
+      const dB = b.days_live != null ? b.days_live : -1;
+      return dB - dA;
+    });
+
+    main.innerHTML = `
+      ${renderM1Card()}
+      <div class="act-section-hdr">
+        Impl Cohort
+        <span class="act-count-badge">${sorted.length} accounts</span>
+      </div>
+      <div class="tx-decision-label">Decision: Are new accounts ramping as expected? Who needs CS intervention?</div>
+      <div class="act-cards">${sorted.map(renderCard).join('')}</div>
+    `;
+  }
+
+  function renderCard(a) {
+    const stageClass = stageCssClass(a.stage);
+    const stageLbl   = a.stage || 'Unknown';
+
+    const buyPct  = a.digital_buy_share  != null ? (a.digital_buy_share  * 100).toFixed(1) + '%' : '—';
+    const sellPct = a.digital_sell_share != null ? (a.digital_sell_share * 100).toFixed(1) + '%' : '—';
+
+    const buyBarPct  = a.digital_buy_share  != null ? Math.min(a.digital_buy_share  * 100, 100) : 0;
+    const sellBarPct = a.digital_sell_share != null ? Math.min(a.digital_sell_share * 100, 100) : 0;
+
+    const buyColor  = shareColor(a.digital_buy_share);
+    const sellColor = shareColor(a.digital_sell_share);
+
+    const buyTrendHtml  = trendHtml(a.buy_trend);
+    const sellTrendHtml = trendHtml(a.sell_trend);
+
+    const trStr    = a.take_rate != null ? (a.take_rate * 100).toFixed(2) + '%' : '—';
+    const pmt      = a.pmt_lead || '—';
+    const daysLive = a.days_live != null ? `${a.days_live}d live` : 'Not live';
+
+    // Kickoff date + source
+    let kickoffHtml = '';
+    if (a.kickoff_date) {
+      const dsk = a.days_since_kickoff != null ? `${a.days_since_kickoff}d ago` : '—';
+      const src = a.kickoff_source ? ` · src: ${escHtml(a.kickoff_source)}` : '';
+      kickoffHtml = `<br><span style="color:#64748b;">Kickoff: <strong style="color:#0f172a;">${escHtml(a.kickoff_date)}</strong> (${dsk})${src}</span>`;
+    }
+
+    const classChip = a.account_class === 'Pre-live'
+      ? '<span class="class-chip class-prelive">Pre-live</span>'
+      : '<span class="class-chip class-client">Client</span>';
+
+    const buyYtd  = TXShared.fmtDollar(a.buy_ytd);
+    const sellYtd = TXShared.fmtDollar(a.sell_online_ytd);
+    const feesYtd = TXShared.fmtDollar(a.fees_ytd);
+
+    const mActiveBuy  = a.months_active_buy  != null ? `${a.months_active_buy}/12 mo` : '—';
+    const mActiveSell = a.months_active_sell != null ? `${a.months_active_sell}/12 mo` : '—';
+
+    // ── Bunches (reality from SALE_DETAILS, not config flags) ──
+    let bunchesHtml = '';
+    if (a.bunches_reality === true) {
+      if (a.bunches_discrepancy) {
+        // Config says OFF but account actually sells bunches — flag discrepancy
+        const bGmv = a.bunch_gmv ? ` (${TXShared.fmtDollar(a.bunch_gmv)})` : '';
+        bunchesHtml = `<div class="act-stat" style="color:#d97706;">` +
+          `Bunches: <strong style="color:#d97706;">Active (sells bunches${bGmv})</strong>` +
+          ` <span title="Config says OFF but SALE_DETAILS shows actual bunch sales" style="color:#dc2626;font-size:9px;">⚠ Config says OFF</span></div>`;
+      } else {
+        const bGmv = a.bunch_gmv ? ` (${TXShared.fmtDollar(a.bunch_gmv)})` : '';
+        bunchesHtml = `<div class="act-stat">Bunches: <strong style="color:#15803d;">Active (sells bunches${bGmv})</strong></div>`;
+      }
+    } else if (a.bunches_reality === false) {
+      bunchesHtml = `<div class="act-stat" style="color:#94a3b8;">Bunches: No bunch sales in SALE_DETAILS</div>`;
+    }
+    // bunches_reality === null → no data in bunches.json for this account, show nothing
+
+    return `
+      <div class="act-card">
+        <div class="act-card-header">
+          <span class="stage-badge ${stageClass}">${stageLbl}</span>
+          <span class="act-card-name">${escHtml(a.company_name)}</span>
+          ${classChip}
+        </div>
+        <div class="act-card-meta">
+          <strong>${a.product_tier || '—'}</strong> &nbsp;·&nbsp;
+          PMT: <strong>${escHtml(pmt)}</strong> &nbsp;·&nbsp;
+          <strong>${daysLive}</strong>
+          ${kickoffHtml}
+        </div>
+
+        <div class="act-card-decision">Decision: Is the BUY engine producing? (Connection gap vs Usage gap vs SKU match)</div>
+        <div class="act-gauge-row">
+          <span class="act-gauge-label">Digital Buy</span>
+          <div class="act-gauge-bar-wrap">
+            <div class="act-gauge-bar ${buyColor}" style="width:${buyBarPct}%"></div>
+          </div>
+          <span class="act-gauge-pct" style="color:${gaugeTextColor(a.digital_buy_share)}">${buyPct}</span>
+          <span class="act-gauge-trend">${buyTrendHtml}</span>
+        </div>
+
+        <div class="act-card-decision" style="border-top:none; padding-top:0; margin-top:2px;">Decision: Is online sell penetration improving?</div>
+        <div class="act-gauge-row">
+          <span class="act-gauge-label">Digital Sell</span>
+          <div class="act-gauge-bar-wrap">
+            <div class="act-gauge-bar ${sellColor}" style="width:${sellBarPct}%"></div>
+          </div>
+          <span class="act-gauge-pct" style="color:${gaugeTextColor(a.digital_sell_share)}">${sellPct}</span>
+          <span class="act-gauge-trend">${sellTrendHtml}</span>
+        </div>
+
+        <div class="act-take-rate">Take Rate: <strong>${trStr}</strong></div>
+
+        <div class="act-card-footer">
+          <div class="act-stat">Buy: <strong>${buyYtd} YTD</strong> · ${mActiveBuy}</div>
+          <div class="act-stat">Sell online: <strong>${sellYtd} YTD</strong> · ${mActiveSell}</div>
+          <div class="act-stat">Fees: <strong>${feesYtd} YTD</strong></div>
+          ${bunchesHtml}
+        </div>
+      </div>
+    `;
+  }
+
+  // ─── BUY FUNNEL VIEW ────────────────────────────────────────────────────────
+  function renderFunnelView() {
+    const main = document.getElementById('act-main');
+    const meta = activationData._meta || {};
+    const f = meta.buy_funnel;
+
+    if (!f) {
+      main.innerHTML = `
+        <div class="act-empty">
+          <h3>BUY Funnel data not available</h3>
+          <p>Re-run the generator script to include funnel stats:</p>
+          <code>python3 scripts/generate_activation.py</code>
+        </div>`;
+      return;
+    }
+
+    const total = f.total_accounts;
+    const fmtPct = (n, d) => d ? (n / d * 100).toFixed(1) + '%' : '—';
+    const pctStr = (v) => v != null ? v.toFixed(1) + '%' : '—';
+
+    // Share distribution
+    const dist = f.share_distribution || {};
+    const distTotal = (dist.label_0pct || 0) + (dist.label_1_5pct || 0) +
+                      (dist.label_5_15pct || 0) + (dist.label_15_30pct || 0) +
+                      (dist.label_30plus || 0);
+    const maxDistVal = Math.max(
+      dist.label_0pct || 0, dist.label_1_5pct || 0,
+      dist.label_5_15pct || 0, dist.label_15_30pct || 0,
+      dist.label_30plus || 0, 1
+    );
+
+    function distRow(label, val, colorClass) {
+      const barW = Math.round(val / maxDistVal * 100);
+      const pct = distTotal ? (val / distTotal * 100).toFixed(0) + '%' : '—';
+      return `
+        <div class="dist-row">
+          <span class="dist-lbl">${label}</span>
+          <div class="dist-bar-wrap">
+            <div class="dist-bar ${colorClass}" style="width:${barW}%"></div>
+          </div>
+          <span class="dist-count">${val}</span>
+          <span class="dist-pct">${pct}</span>
+        </div>`;
+    }
+
+    // K2K section
+    const k2k = f.k2k_connection_coverage || {};
+    const k2kTotal = (k2k.connected_accounts_in_target || 0) + (k2k.no_connection_accounts_in_target || 0);
+    const k2kHasData = k2kTotal > 0;
+
+    let k2kHtml = '';
+    if (k2kHasData) {
+      const connPct = fmtPct(k2k.connected_accounts_in_target, k2kTotal + (k2k.not_in_k2k_data || 0));
+      k2kHtml = `
+        <div class="funnel-panel">
+          <div class="funnel-panel-title">Connection Coverage</div>
+          <div class="funnel-subtitle">
+            From K2K leads file (partial — ${k2k.leads_matched_to_account || 0} of ${k2k.total_leads_in_file || 0} leads matched to accounts)
+          </div>
+
+          <div class="funnel-row root">
+            <span class="funnel-label">In K2K leads data</span>
+            <span class="funnel-count">${k2kTotal}</span>
+            <span class="funnel-pct" style="color:#64748b;">${fmtPct(k2kTotal, total)}</span>
+          </div>
+
+          <div class="funnel-row level1">
+            <span class="funnel-connector">├─</span>
+            <span class="funnel-label">Has K2K connections</span>
+            <span class="funnel-count">${k2k.connected_accounts_in_target || 0}</span>
+            <span class="funnel-pct" style="color:#64748b;">${fmtPct(k2k.connected_accounts_in_target, k2kTotal)}</span>
+          </div>
+
+          <div class="funnel-row level2">
+            <span class="funnel-connector">├─</span>
+            <span class="funnel-label">Connected + buying</span>
+            <span class="funnel-count">${k2k.connected_buying || 0}</span>
+            <span class="funnel-pct" style="color:#15803d;">${fmtPct(k2k.connected_buying, k2k.connected_accounts_in_target)}</span>
+            <span class="funnel-tag good">WORKING</span>
+          </div>
+
+          <div class="funnel-row level2">
+            <span class="funnel-connector">└─</span>
+            <span class="funnel-label">Connected + NOT buying</span>
+            <span class="funnel-count">${k2k.connected_not_buying || 0}</span>
+            <span class="funnel-pct" style="color:#b45309;">${fmtPct(k2k.connected_not_buying, k2k.connected_accounts_in_target)}</span>
+            <span class="funnel-tag opp">USAGE GAP</span>
+          </div>
+
+          <div class="funnel-row level1">
+            <span class="funnel-connector">└─</span>
+            <span class="funnel-label">No K2K connections</span>
+            <span class="funnel-count">${k2k.no_connection_accounts_in_target || 0}</span>
+            <span class="funnel-pct" style="color:#dc2626;">${fmtPct(k2k.no_connection_accounts_in_target, k2kTotal)}</span>
+            <span class="funnel-tag gap">INFRA GAP</span>
+          </div>
+
+          <div class="funnel-divider"></div>
+
+          <div class="funnel-row root">
+            <span class="funnel-label" style="color:#94a3b8;">Not in K2K leads data</span>
+            <span class="funnel-count" style="color:#94a3b8;">${k2k.not_in_k2k_data || 0}</span>
+            <span class="funnel-pct" style="color:#94a3b8;">${fmtPct(k2k.not_in_k2k_data, total)}</span>
+            <span class="funnel-tag partial">UNKNOWN</span>
+          </div>
+
+          <div class="k2k-note">${escHtml(k2k.data_note || '')}</div>
+        </div>`;
+    } else {
+      k2kHtml = `
+        <div class="funnel-panel">
+          <div class="funnel-panel-title">Connection Coverage</div>
+          <div class="funnel-subtitle" style="color:#94a3b8;">
+            K2K connection leads data not available or no accounts matched.<br>
+            Re-run generator after adding k2k_connection_leads_*.json to data/.
+          </div>
+        </div>`;
+    }
+
+    main.innerHTML = `
+      <div class="act-section-hdr">
+        BUY Funnel
+        <span class="act-count-badge">${total} Client + Pre-live accounts · L12 months</span>
+      </div>
+      <div class="tx-decision-label">Decision: Is the BUY engine producing? Where are accounts stuck?</div>
+
+      <div class="funnel-grid">
+
+        <!-- LEFT: Funnel + Distribution -->
+        <div style="display:flex;flex-direction:column;gap:16px;">
+
+          <!-- Funnel -->
+          <div class="funnel-panel">
+            <div class="funnel-panel-title">BUY Funnel (${total} accounts)</div>
+            <div class="funnel-subtitle">How far along the buying journey are accounts? (L12 months)</div>
+
+            <div class="funnel-row root">
+              <span class="funnel-label" style="font-weight:600;">Has Koronet account</span>
+              <span class="funnel-count">${total}</span>
+              <span class="funnel-pct" style="color:#64748b;">100%</span>
+            </div>
+
+            <div class="funnel-divider"></div>
+
+            <div class="funnel-row level1">
+              <span class="funnel-connector">├─</span>
+              <span class="funnel-label">Has buy activity (L12)</span>
+              <span class="funnel-count">${f.has_buy_activity_l12}</span>
+              <span class="funnel-pct" style="color:#0f172a;">${pctStr(f.has_buy_activity_l12_pct)}</span>
+            </div>
+
+            <div class="funnel-row level2">
+              <span class="funnel-connector">├─</span>
+              <span class="funnel-label">&gt;10% digital buy share</span>
+              <span class="funnel-count">${f.above_10pct_digital_share}</span>
+              <span class="funnel-pct" style="color:#15803d;">${pctStr(f.above_10pct_pct)}</span>
+              <span class="funnel-tag good">WORKING</span>
+            </div>
+
+            <div class="funnel-row level2">
+              <span class="funnel-connector">└─</span>
+              <span class="funnel-label">&lt;10% digital buy share</span>
+              <span class="funnel-count">${f.below_10pct_digital_share}</span>
+              <span class="funnel-pct" style="color:#b45309;">${pctStr(f.below_10pct_pct)}</span>
+              <span class="funnel-tag opp">OPPORTUNITY</span>
+            </div>
+
+            <div class="funnel-divider"></div>
+
+            <div class="funnel-row level1">
+              <span class="funnel-connector">└─</span>
+              <span class="funnel-label">No buy activity (L12)</span>
+              <span class="funnel-count">${f.no_buy_activity_l12}</span>
+              <span class="funnel-pct" style="color:#dc2626;">${pctStr(f.no_buy_activity_l12_pct)}</span>
+              <span class="funnel-tag gap">ACTIVATION GAP</span>
+            </div>
+          </div>
+
+          <!-- Distribution -->
+          <div class="funnel-panel">
+            <div class="funnel-panel-title">Digital Buy Share Distribution</div>
+            <div class="funnel-subtitle">Among accounts with buy activity (L12 annual share)</div>
+            <div class="dist-chart">
+              ${distRow('0%', dist.label_0pct || 0, 'c-none')}
+              ${distRow('1–5%', dist.label_1_5pct || 0, 'c-low')}
+              ${distRow('5–15%', dist.label_5_15pct || 0, 'c-mid')}
+              ${distRow('15–30%', dist.label_15_30pct || 0, 'c-good')}
+              ${distRow('30%+', dist.label_30plus || 0, 'c-high')}
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: K2K Connection Coverage -->
+        ${k2kHtml}
+
+      </div>
+    `;
+  }
+
+  // ─── TABLE VIEW (all accounts) ──────────────────────────────────────────────
+  function renderTableView(accounts) {
+    const main = document.getElementById('act-main');
+
+    if (!accounts.length) {
+      main.innerHTML = '<div class="act-empty"><h3>No accounts match current filters</h3></div>';
+      return;
+    }
+
+    // Sort accounts
+    const sorted = sortAccounts(accounts);
+
+    const columns = [
+      { key: 'company_name',        label: 'Account',          sortable: true },
+      { key: 'product_tier',        label: 'Tier',             sortable: true },
+      { key: 'gmv_reference',       label: 'Est GMV',          sortable: true },
+      { key: 'digital_buy_share',   label: 'Digital Buy %',    sortable: true },
+      { key: 'digital_sell_share',  label: 'Digital Sell %',   sortable: true },
+      { key: 'take_rate',           label: 'Take Rate',        sortable: true },
+      { key: 'buy_trend',           label: 'Buy Trend',        sortable: true },
+      { key: 'sell_trend',          label: 'Sell Trend',       sortable: true },
+      { key: 'months_active_buy',   label: 'Mo Active Buy',    sortable: true },
+      { key: 'fees_ytd',            label: 'Fees YTD',         sortable: true },
+      { key: 'procurement_l3m',     label: 'Proc L3M',         sortable: true },
+      { key: 'procurement_trend',   label: 'Proc Trend',       sortable: true },
+      { key: 'has_procurement',     label: 'Has Proc',         sortable: true },
+    ];
+
+    const hdrCells = columns.map(col => {
+      if (!col.sortable) return `<th>${col.label}</th>`;
+      const cls = sortField === col.key ? ` sort-${sortDir}` : '';
+      return `<th class="${cls}" onclick="setSort('${col.key}')" title="Sort by ${col.label}">
+        ${col.label}<span class="sort-arrow"></span>
+      </th>`;
+    }).join('');
+
+    const rows = sorted.map(a => {
+      const buyClass  = shareClass(a.digital_buy_share);
+      const sellClass = shareClass(a.digital_sell_share);
+
+      return `<tr>
+        <td>${escHtml(a.company_name)}</td>
+        <td>${a.product_tier || '—'}</td>
+        <td>${TXShared.fmtDollar(a.gmv_reference)}</td>
+        <td class="${buyClass}">${fmtSharePct(a.digital_buy_share)}</td>
+        <td class="${sellClass}">${fmtSharePct(a.digital_sell_share)}</td>
+        <td>${a.take_rate != null ? (a.take_rate * 100).toFixed(2) + '%' : '—'}</td>
+        <td>${trendHtml(a.buy_trend)}</td>
+        <td>${trendHtml(a.sell_trend)}</td>
+        <td>${a.months_active_buy != null ? a.months_active_buy + '/12' : '—'}</td>
+        <td>${TXShared.fmtDollar(a.fees_ytd)}</td>
+        <td>${TXShared.fmtDollar(a.procurement_l3m)}</td>
+        <td>${trendHtml(a.procurement_trend != null ? a.procurement_trend : null)}</td>
+        <td>${a.has_procurement == null ? '—' : a.has_procurement ? '✓' : '✗'}</td>
+      </tr>`;
+    }).join('');
+
+    main.innerHTML = `
+      <div class="act-section-hdr">
+        All Accounts
+        <span class="act-count-badge">${sorted.length} accounts · sorted by ${sortField.replace(/_/g,' ')} ${sortDir}</span>
+      </div>
+      <div class="tx-decision-label">Decision: Which accounts have the biggest digital share gap?</div>
+      <div class="act-table-wrap">
+        <table class="act-table">
+          <thead><tr>${hdrCells}</tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  // ─── SORTING ────────────────────────────────────────────────────────────────
+  function setSort(field) {
+    if (sortField === field) {
+      sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+    } else {
+      sortField = field;
+      sortDir = 'asc';  // default: smallest first (biggest gap first for shares)
+    }
+    render();
+  }
+  window.setSort = setSort;  // expose for onclick
+
+  function sortAccounts(accounts) {
+    return [...accounts].sort((a, b) => {
+      let vA = a[sortField];
+      let vB = b[sortField];
+
+      // Nulls always last
+      if (vA == null && vB == null) return 0;
+      if (vA == null) return 1;
+      if (vB == null) return -1;
+
+      // String sort
+      if (typeof vA === 'string') {
+        const cmp = vA.localeCompare(vB);
+        return sortDir === 'asc' ? cmp : -cmp;
+      }
+
+      // Numeric sort
+      return sortDir === 'asc' ? vA - vB : vB - vA;
+    });
+  }
+
+  // ─── FORMATTING HELPERS ────────────────────────────────────────────────────
+  function fmtSharePct(v) {
+    if (v == null) return '—';
+    return (v * 100).toFixed(1) + '%';
+  }
+
+  function shareColor(v) {
+    if (v == null) return 'gray';
+    if (v < 0.05)  return 'red';
+    if (v < 0.15)  return 'amber';
+    return 'green';
+  }
+
+  function shareClass(v) {
+    if (v == null) return '';
+    if (v < 0.05)  return 'share-red';
+    if (v < 0.15)  return 'share-amber';
+    return 'share-green';
+  }
+
+  function gaugeTextColor(v) {
+    if (v == null) return '#94a3b8';
+    if (v < 0.05)  return '#dc2626';
+    if (v < 0.15)  return '#b45309';
+    return '#15803d';
+  }
+
+  function trendHtml(v) {
+    if (v == null) return '<span class="trend-flat">—</span>';
+    const pct = (v * 100).toFixed(1);
+    if (v > 0) return `<span class="trend-up">▲ +${pct}%</span>`;
+    if (v < 0) return `<span class="trend-down">▼ ${pct}%</span>`;
+    return `<span class="trend-flat">→ 0%</span>`;
+  }
+
+  function stageCssClass(stage) {
+    if (!stage) return 'stage-unknown';
+    const s = stage.toLowerCase();
+    if (s === 'go-live')          return 'stage-go-live';
+    if (s === 'training')         return 'stage-training';
+    if (s === 'pre-go-live')      return 'stage-pre-go-live';
+    if (s === 'kickoff')          return 'stage-kickoff';
+    if (s === 'not started')      return 'stage-not-started';
+    if (s === 'pre-live')         return 'stage-pre-live';
+    if (s === 'established')      return 'stage-established';
+    if (s.includes('recently'))   return 'stage-recently-live';
+    if (s === 'parked')           return 'stage-parked';
+    return 'stage-unknown';
+  }
+
+  function escHtml(str) {
+    if (!str) return '';
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ─── EMPTY STATE ────────────────────────────────────────────────────────────
+  function emptyState() {
+    return `
+      <div class="act-empty">
+        <h3>activation_data.json not found</h3>
+        <p>Run the generator script to create the data file:</p>
+        <code>python3 scripts/generate_activation.py</code>
+        <p style="margin-top:16px;font-size:10px;color:#94a3b8">
+          Reads: accounts_v3.json · christine.json · buy_monthly.json · sell_monthly.json · fees_monthly.json
+        </p>
+      </div>
+    `;
+  }
+
+})();
+</script>
+</body>
+</html>

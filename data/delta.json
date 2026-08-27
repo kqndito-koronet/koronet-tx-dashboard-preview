@@ -1,0 +1,3778 @@
+{
+  "_meta": {
+    "generated_at": "2026-08-26",
+    "latest_month": "2026-07",
+    "prior_month": "2026-06",
+    "yoy_month": "2025-07",
+    "snapshot_date": "2026-08-13",
+    "accounts_analyzed": 436,
+    "snapshot_compared": "2026-08-13",
+    "primary_signal": "vs_snapshot (weekly cadence)",
+    "signals": {
+      "vs_snapshot": "2026-08-13 → 2026-08-26 (primary — weekly refresh)",
+      "mom": "2026-06 → 2026-07 (directional, seasonal-adjusted)",
+      "yoy": "2025-07 → 2026-07 (context, handles seasonality)"
+    },
+    "note": "Fee movers: fee_growth sorted by MoM%, fee_debuts from validated Snowflake list (41). Sell movers: primary=MoM (sell cube unchanged Aug 13→Aug 25), context=YoY. Gone dark: split real vs seasonal (same month LY check). Activity: combined SFDC tasks + Fathom calls, L30D, per account."
+  },
+  "fee_movers": {
+    "fee_growth": [
+      {
+        "company_id": "618758",
+        "company_name": "Bo's Wholesale Florist",
+        "fees_current": 242.16,
+        "fees_prior_snapshot": 242.16,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "fees_current_month": 27.23,
+        "fees_prior_month": 7.12,
+        "delta_mom_abs": 20.11,
+        "delta_mom_pct": 282.44,
+        "fees_prior_year": 983.64,
+        "delta_yoy_abs": -741.48,
+        "delta_yoy_pct": -75.38,
+        "fee_channel": "K2K"
+      },
+      {
+        "company_id": "612783",
+        "company_name": "Faguaflowers Intl LLC",
+        "fees_current": 292.09,
+        "fees_prior_snapshot": 292.09,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "fees_current_month": 17.93,
+        "fees_prior_month": 6.25,
+        "delta_mom_abs": 11.68,
+        "delta_mom_pct": 186.88,
+        "fees_prior_year": 725.18,
+        "delta_yoy_abs": -433.09,
+        "delta_yoy_pct": -59.72,
+        "fee_channel": "K2K"
+      },
+      {
+        "company_id": "412951",
+        "company_name": "KBC Cooler Account",
+        "fees_current": 4826.06,
+        "fees_prior_snapshot": 4012.79,
+        "delta_vs_snapshot_abs": 813.27,
+        "delta_vs_snapshot_pct": 20.3,
+        "fees_current_month": 1295.34,
+        "fees_prior_month": 463.43,
+        "delta_mom_abs": 831.91,
+        "delta_mom_pct": 179.51,
+        "fees_prior_year": 8667.04,
+        "delta_yoy_abs": -3840.98,
+        "delta_yoy_pct": -44.32,
+        "fee_channel": "K2K"
+      },
+      {
+        "company_id": "578194",
+        "company_name": "Flowers Direct Inc",
+        "fees_current": 3131.67,
+        "fees_prior_snapshot": 3131.67,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "fees_current_month": 378.39,
+        "fees_prior_month": 181.15,
+        "delta_mom_abs": 197.24,
+        "delta_mom_pct": 108.88,
+        "fees_prior_year": 3458.56,
+        "delta_yoy_abs": -326.89,
+        "delta_yoy_pct": -9.45,
+        "fee_channel": "K2K"
+      },
+      {
+        "company_id": "669090",
+        "company_name": "The Oklahoma Flower Market",
+        "fees_current": 537.57,
+        "fees_prior_snapshot": 537.57,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "fees_current_month": 57.21,
+        "fees_prior_month": 33.31,
+        "delta_mom_abs": 23.9,
+        "delta_mom_pct": 71.75,
+        "fees_prior_year": 89.66,
+        "delta_yoy_abs": 447.91,
+        "delta_yoy_pct": 499.57,
+        "fee_channel": "K2K"
+      },
+      {
+        "company_id": "586784",
+        "company_name": "Louisiana Wholesale Florist",
+        "fees_current": 758.81,
+        "fees_prior_snapshot": 758.81,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "fees_current_month": 77.93,
+        "fees_prior_month": 54.14,
+        "delta_mom_abs": 23.79,
+        "delta_mom_pct": 43.94,
+        "fees_prior_year": 486.66,
+        "delta_yoy_abs": 272.15,
+        "delta_yoy_pct": 55.92,
+        "fee_channel": "K2K"
+      },
+      {
+        "company_id": "579932",
+        "company_name": "Tutuli Flower Farms",
+        "fees_current": 635.06,
+        "fees_prior_snapshot": 0,
+        "delta_vs_snapshot_abs": 635.06,
+        "delta_vs_snapshot_pct": null,
+        "fees_current_month": 87.09,
+        "fees_prior_month": 67.4,
+        "delta_mom_abs": 19.69,
+        "delta_mom_pct": 29.21,
+        "fees_prior_year": 690.32,
+        "delta_yoy_abs": -55.26,
+        "delta_yoy_pct": -8.0,
+        "fee_channel": "K2K"
+      },
+      {
+        "company_id": "716378",
+        "company_name": "Moonlight Flowers",
+        "fees_current": 52.28,
+        "fees_prior_snapshot": 52.28,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "fees_current_month": 4.16,
+        "fees_prior_month": 3.66,
+        "delta_mom_abs": 0.5,
+        "delta_mom_pct": 13.66,
+        "fees_prior_year": 9.21,
+        "delta_yoy_abs": 43.07,
+        "delta_yoy_pct": 467.64,
+        "fee_channel": "K2K"
+      },
+      {
+        "company_id": "400013",
+        "company_name": "Washington Floral Service, Inc",
+        "fees_current": 1249.58,
+        "fees_prior_snapshot": 0,
+        "delta_vs_snapshot_abs": 1249.58,
+        "delta_vs_snapshot_pct": null,
+        "fees_current_month": 230.64,
+        "fees_prior_month": 219.07,
+        "delta_mom_abs": 11.57,
+        "delta_mom_pct": 5.28,
+        "fees_prior_year": 754.12,
+        "delta_yoy_abs": 495.46,
+        "delta_yoy_pct": 65.7,
+        "fee_channel": "K2K"
+      },
+      {
+        "company_id": "654374",
+        "company_name": "BOTANICA WHSLE FLORIST-HOUSTON",
+        "fees_current": 947.47,
+        "fees_prior_snapshot": 947.47,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "fees_current_month": 83.75,
+        "fees_prior_month": 80.41,
+        "delta_mom_abs": 3.34,
+        "delta_mom_pct": 4.15,
+        "fees_prior_year": 167.87,
+        "delta_yoy_abs": 779.6,
+        "delta_yoy_pct": 464.41,
+        "fee_channel": "K2K"
+      }
+    ],
+    "top_losers": [
+      {
+        "company_id": "22143",
+        "company_name": "Royal Flowers Inc., Domestic",
+        "fees_current": 60374.72,
+        "fees_prior_snapshot": 157123.84,
+        "delta_vs_snapshot_abs": -96749.12,
+        "delta_vs_snapshot_pct": -61.6,
+        "fees_current_month": 4825.58,
+        "fees_prior_month": 7067.5,
+        "delta_mom_abs": -2241.92,
+        "delta_mom_pct": -31.72,
+        "fees_prior_year": 61894.88,
+        "delta_yoy_abs": -1520.16,
+        "delta_yoy_pct": -2.46,
+        "fee_channel": "eCommerce"
+      },
+      {
+        "company_id": "25489",
+        "company_name": "-Sole Farms",
+        "fees_current": 138547.97,
+        "fees_prior_snapshot": 227118.78,
+        "delta_vs_snapshot_abs": -88570.81,
+        "delta_vs_snapshot_pct": -39.0,
+        "fees_current_month": 12330.06,
+        "fees_prior_month": 15506.69,
+        "delta_mom_abs": -3176.63,
+        "delta_mom_pct": -20.49,
+        "fees_prior_year": 71589.36,
+        "delta_yoy_abs": 66958.61,
+        "delta_yoy_pct": 93.53,
+        "fee_channel": "eCommerce"
+      },
+      {
+        "company_id": "18322",
+        "company_name": "* Jet Fresh Flower Distributors Inc.",
+        "fees_current": 103415.51,
+        "fees_prior_snapshot": 191599.19,
+        "delta_vs_snapshot_abs": -88183.68,
+        "delta_vs_snapshot_pct": -46.0,
+        "fees_current_month": 10762.83,
+        "fees_prior_month": 15021.1,
+        "delta_mom_abs": -4258.27,
+        "delta_mom_pct": -28.35,
+        "fees_prior_year": 66730.48,
+        "delta_yoy_abs": 36685.03,
+        "delta_yoy_pct": 54.97,
+        "fee_channel": "eCommerce"
+      },
+      {
+        "company_id": "341499",
+        "company_name": "Choice Farms",
+        "fees_current": 59271.74,
+        "fees_prior_snapshot": 146148.11,
+        "delta_vs_snapshot_abs": -86876.37,
+        "delta_vs_snapshot_pct": -59.4,
+        "fees_current_month": 6598.79,
+        "fees_prior_month": 8744.48,
+        "delta_mom_abs": -2145.69,
+        "delta_mom_pct": -24.54,
+        "fees_prior_year": 42863.5,
+        "delta_yoy_abs": 16408.24,
+        "delta_yoy_pct": 38.28,
+        "fee_channel": "eCommerce"
+      },
+      {
+        "company_id": "146846",
+        "company_name": "Continental Flowers",
+        "fees_current": 60542.04,
+        "fees_prior_snapshot": 147279.58,
+        "delta_vs_snapshot_abs": -86737.54,
+        "delta_vs_snapshot_pct": -58.9,
+        "fees_current_month": 7089.38,
+        "fees_prior_month": 7096.36,
+        "delta_mom_abs": -6.98,
+        "delta_mom_pct": -0.1,
+        "fees_prior_year": 53883.16,
+        "delta_yoy_abs": 6658.88,
+        "delta_yoy_pct": 12.36,
+        "fee_channel": "eCommerce"
+      },
+      {
+        "company_id": "153031",
+        "company_name": "FloraLink",
+        "fees_current": 60900.7,
+        "fees_prior_snapshot": 135485.59,
+        "delta_vs_snapshot_abs": -74584.89,
+        "delta_vs_snapshot_pct": -55.1,
+        "fees_current_month": 5603.15,
+        "fees_prior_month": 6863.92,
+        "delta_mom_abs": -1260.77,
+        "delta_mom_pct": -18.37,
+        "fees_prior_year": 53260.46,
+        "delta_yoy_abs": 7640.24,
+        "delta_yoy_pct": 14.35,
+        "fee_channel": "K2K"
+      },
+      {
+        "company_id": "17789",
+        "company_name": "Bella Blossom LLC",
+        "fees_current": 44832.58,
+        "fees_prior_snapshot": 95815.32,
+        "delta_vs_snapshot_abs": -50982.74,
+        "delta_vs_snapshot_pct": -53.2,
+        "fees_current_month": 4151.62,
+        "fees_prior_month": 5919.11,
+        "delta_mom_abs": -1767.49,
+        "delta_mom_pct": -29.86,
+        "fees_prior_year": 33365.18,
+        "delta_yoy_abs": 11467.4,
+        "delta_yoy_pct": 34.37,
+        "fee_channel": "eCommerce"
+      },
+      {
+        "company_id": "22218",
+        "company_name": "Sunburst Farms",
+        "fees_current": 39173.71,
+        "fees_prior_snapshot": 87293.1,
+        "delta_vs_snapshot_abs": -48119.39,
+        "delta_vs_snapshot_pct": -55.1,
+        "fees_current_month": 2822.18,
+        "fees_prior_month": 3488.01,
+        "delta_mom_abs": -665.83,
+        "delta_mom_pct": -19.09,
+        "fees_prior_year": 33817.07,
+        "delta_yoy_abs": 5356.64,
+        "delta_yoy_pct": 15.84,
+        "fee_channel": "eCommerce"
+      },
+      {
+        "company_id": "103112",
+        "company_name": "Fresca Farms",
+        "fees_current": 84242.87,
+        "fees_prior_snapshot": 118695.02,
+        "delta_vs_snapshot_abs": -34452.15,
+        "delta_vs_snapshot_pct": -29.0,
+        "fees_current_month": 8263.66,
+        "fees_prior_month": 11255.22,
+        "delta_mom_abs": -2991.56,
+        "delta_mom_pct": -26.58,
+        "fees_prior_year": 24196.35,
+        "delta_yoy_abs": 60046.52,
+        "delta_yoy_pct": 248.16,
+        "fee_channel": "eCommerce"
+      },
+      {
+        "company_id": "377256",
+        "company_name": "Multiflora Corporation",
+        "fees_current": 22101.64,
+        "fees_prior_snapshot": 53368.8,
+        "delta_vs_snapshot_abs": -31267.16,
+        "delta_vs_snapshot_pct": -58.6,
+        "fees_current_month": 1644.52,
+        "fees_prior_month": 2217.31,
+        "delta_mom_abs": -572.79,
+        "delta_mom_pct": -25.83,
+        "fees_prior_year": 21552.1,
+        "delta_yoy_abs": 549.54,
+        "delta_yoy_pct": 2.55,
+        "fee_channel": "eCommerce"
+      }
+    ],
+    "fee_debuts": [
+      {
+        "company_id": "743648",
+        "company_name": "Zeidler Floral",
+        "first_fee_date": "2026-04-06",
+        "total_fees": 3120.4,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "796779",
+        "company_name": "Kennicott Brothers West",
+        "first_fee_date": "2026-02-06",
+        "total_fees": 1292.06,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "734128",
+        "company_name": "Details Direct - Core",
+        "first_fee_date": "2026-03-04",
+        "total_fees": 1219.36,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "762172",
+        "company_name": "Floropolis",
+        "first_fee_date": "2026-03-04",
+        "total_fees": 1050.28,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "802590",
+        "company_name": "Pacifica Farms - CAL",
+        "first_fee_date": "2026-04-06",
+        "total_fees": 679.21,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "765491",
+        "company_name": "Dreisbach Wholesale",
+        "first_fee_date": "2026-03-04",
+        "total_fees": 437.84,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "770796",
+        "company_name": "VERA",
+        "first_fee_date": "2026-03-04",
+        "total_fees": 436.49,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "764867",
+        "company_name": "Hana Farms Inc.",
+        "first_fee_date": "2026-02-05",
+        "total_fees": 333.03,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "796715",
+        "company_name": "ADEESE FLOWERS LLC",
+        "first_fee_date": "2026-03-04",
+        "total_fees": 267.84,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "762941",
+        "company_name": "FOB UIO -  Alma Spray / Agrinag / Natuflor",
+        "first_fee_date": "2026-02-05",
+        "total_fees": 261.89,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "474847",
+        "company_name": "Vosz Floral LLC",
+        "first_fee_date": "2026-01-05",
+        "total_fees": 233.47,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "819114",
+        "company_name": "Details Direct",
+        "first_fee_date": "2026-07-03",
+        "total_fees": 126.75,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "814810",
+        "company_name": "Lartisan Roses LLC",
+        "first_fee_date": "2026-06-02",
+        "total_fees": 119.09,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "816515",
+        "company_name": "Prices Floral Wholesale, LLC",
+        "first_fee_date": "2026-06-02",
+        "total_fees": 107.32,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "313164",
+        "company_name": "Bunches Direct Blumenimport GmbH",
+        "first_fee_date": "2026-02-05",
+        "total_fees": 102.95,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "800562",
+        "company_name": "Jetty USA LLC",
+        "first_fee_date": "2026-04-06",
+        "total_fees": 92.32,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "732830",
+        "company_name": "First Choice Floral",
+        "first_fee_date": "2026-03-04",
+        "total_fees": 74.83,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "742781",
+        "company_name": "New England Wholesale Florist",
+        "first_fee_date": "2026-02-05",
+        "total_fees": 57.25,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "815558",
+        "company_name": "Florens Group LLC",
+        "first_fee_date": "2026-07-03",
+        "total_fees": 52.84,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "751391",
+        "company_name": "MegaFlor - UIO",
+        "first_fee_date": "2026-04-07",
+        "total_fees": 51.85,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "743217",
+        "company_name": "Nova Packaging Solutions, Inc.",
+        "first_fee_date": "2026-07-03",
+        "total_fees": 49.44,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "795517",
+        "company_name": "Nathalia Bloemenexport LLC - MIA",
+        "first_fee_date": "2026-04-07",
+        "total_fees": 42.18,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "821576",
+        "company_name": "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN",
+        "first_fee_date": "2026-08-03",
+        "total_fees": 34.8,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "808064",
+        "company_name": "Universal Flower Farms Inc.",
+        "first_fee_date": "2026-05-04",
+        "total_fees": 26.45,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "619847",
+        "company_name": "MACUNDO FLOWERS AND GREENS LLC",
+        "first_fee_date": "2026-02-09",
+        "total_fees": 15.23,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "804758",
+        "company_name": "FGS.Flowers.MIA",
+        "first_fee_date": "2026-05-04",
+        "total_fees": 14.41,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "664096",
+        "company_name": "Riverside Wholesale Florists KY",
+        "first_fee_date": "2026-05-04",
+        "total_fees": 13.6,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "756140",
+        "company_name": "Flower List",
+        "first_fee_date": "2026-08-03",
+        "total_fees": 12.52,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "765583",
+        "company_name": "Bellaflor Group Inc.",
+        "first_fee_date": "2026-03-04",
+        "total_fees": 11.99,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "751341",
+        "company_name": "Olimpo Flowers Finca",
+        "first_fee_date": "2026-04-06",
+        "total_fees": 11.28,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "735220",
+        "company_name": "WE GOT FLOWERS",
+        "first_fee_date": "2026-05-04",
+        "total_fees": 10.89,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "813947",
+        "company_name": "Llanos De Alba LLADEAL - UIO",
+        "first_fee_date": "2026-05-04",
+        "total_fees": 8.18,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "821768",
+        "company_name": "Coquette Roses",
+        "first_fee_date": "2026-08-03",
+        "total_fees": 6.15,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "798243",
+        "company_name": "Alison Flowers - UIO",
+        "first_fee_date": "2026-04-06",
+        "total_fees": 5.26,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "817168",
+        "company_name": "International Fresh Group LLC",
+        "first_fee_date": "2026-06-02",
+        "total_fees": 3.09,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "751334",
+        "company_name": "Much Flowers - UIO",
+        "first_fee_date": "2026-04-07",
+        "total_fees": 2.93,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "812869",
+        "company_name": "Gypso S.A. UIO",
+        "first_fee_date": "2026-05-04",
+        "total_fees": 2.12,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "624816",
+        "company_name": "CD Wholesale",
+        "first_fee_date": "2026-04-06",
+        "total_fees": 1.78,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "795674",
+        "company_name": "Akarana Farms - UIO",
+        "first_fee_date": "2026-04-07",
+        "total_fees": 1.36,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "799014",
+        "company_name": "Matthioli Flowers Ecuador",
+        "first_fee_date": "2026-04-06",
+        "total_fees": 1.08,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      },
+      {
+        "company_id": "812278",
+        "company_name": "Quimflowers - UIO",
+        "first_fee_date": "2026-07-03",
+        "total_fees": 0.9,
+        "fee_channel": "eCommerce",
+        "validated": true,
+        "source": "TRANSACTION_FEES snowflake Aug 26"
+      }
+    ],
+    "fee_debuts_validated": true,
+    "fee_debuts_count": 41
+  },
+  "sell_movers": {
+    "top_gainers": [
+      {
+        "company_id": "505896",
+        "company_name": "Continental Floral PNW LLC",
+        "sell_current": 692356.36,
+        "sell_prior_snapshot": 692356.36,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 285802.65,
+        "delta_mom_abs": 406553.71,
+        "delta_mom_pct": 142.2,
+        "sell_yoy_month": 642641.37,
+        "delta_yoy_abs": 49714.99,
+        "delta_yoy_pct": 7.7
+      },
+      {
+        "company_id": "319143",
+        "company_name": "FloraCo, Inc",
+        "sell_current": 515402.02,
+        "sell_prior_snapshot": 515402.02,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 117022.44,
+        "delta_mom_abs": 398379.58,
+        "delta_mom_pct": 340.4,
+        "sell_yoy_month": 503688.79,
+        "delta_yoy_abs": 11713.23,
+        "delta_yoy_pct": 2.3
+      },
+      {
+        "company_id": "813857",
+        "company_name": "Expo Flora S.A.",
+        "sell_current": 600695.76,
+        "sell_prior_snapshot": 600695.76,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 215744.36,
+        "delta_mom_abs": 384951.4,
+        "delta_mom_pct": 178.4,
+        "sell_yoy_month": 0,
+        "delta_yoy_abs": 600695.76,
+        "delta_yoy_pct": null
+      },
+      {
+        "company_id": "822938",
+        "company_name": "Flores San Miguel",
+        "sell_current": 222232.01,
+        "sell_prior_snapshot": 222232.01,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 0,
+        "delta_mom_abs": 222232.01,
+        "delta_mom_pct": null,
+        "sell_yoy_month": 0,
+        "delta_yoy_abs": 222232.01,
+        "delta_yoy_pct": null
+      },
+      {
+        "company_id": "13982",
+        "company_name": "Servicios Chilfresh Ltda.",
+        "sell_current": 391011.93,
+        "sell_prior_snapshot": 391011.93,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 196392.36,
+        "delta_mom_abs": 194619.57,
+        "delta_mom_pct": 99.1,
+        "sell_yoy_month": 484888.13,
+        "delta_yoy_abs": -93876.2,
+        "delta_yoy_pct": -19.4
+      },
+      {
+        "company_id": "816515",
+        "company_name": "Price's Floral Wholesale, LLC",
+        "sell_current": 151807.71,
+        "sell_prior_snapshot": 151807.71,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 0,
+        "delta_mom_abs": 151807.71,
+        "delta_mom_pct": null,
+        "sell_yoy_month": 0,
+        "delta_yoy_abs": 151807.71,
+        "delta_yoy_pct": null
+      },
+      {
+        "company_id": "412951",
+        "company_name": "KBC Cooler Account",
+        "sell_current": 1149196.27,
+        "sell_prior_snapshot": 1149196.27,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 1078068.31,
+        "delta_mom_abs": 71127.96,
+        "delta_mom_pct": 6.6,
+        "sell_yoy_month": 891249.93,
+        "delta_yoy_abs": 257946.34,
+        "delta_yoy_pct": 28.9
+      },
+      {
+        "company_id": "594981",
+        "company_name": "Evergreen Plant Company",
+        "sell_current": 181874.43,
+        "sell_prior_snapshot": 181874.43,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 115726.65,
+        "delta_mom_abs": 66147.78,
+        "delta_mom_pct": 57.2,
+        "sell_yoy_month": 156992.18,
+        "delta_yoy_abs": 24882.25,
+        "delta_yoy_pct": 15.8
+      },
+      {
+        "company_id": "20769",
+        "company_name": "AmeriLink Floratrader",
+        "sell_current": 495434.95,
+        "sell_prior_snapshot": 495434.95,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 451930.1,
+        "delta_mom_abs": 43504.85,
+        "delta_mom_pct": 9.6,
+        "sell_yoy_month": 331379.87,
+        "delta_yoy_abs": 164055.08,
+        "delta_yoy_pct": 49.5
+      },
+      {
+        "company_id": "821768",
+        "company_name": "Coquette Roses",
+        "sell_current": 61657.37,
+        "sell_prior_snapshot": 61657.37,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 19039.66,
+        "delta_mom_abs": 42617.71,
+        "delta_mom_pct": 223.8,
+        "sell_yoy_month": 0,
+        "delta_yoy_abs": 61657.37,
+        "delta_yoy_pct": null
+      }
+    ],
+    "top_losers": [
+      {
+        "company_id": "44150",
+        "company_name": "Kennicott Brothers Company",
+        "sell_current": 8623275.8,
+        "sell_prior_snapshot": 8623275.8,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 10821192.22,
+        "delta_mom_abs": -2197916.42,
+        "delta_mom_pct": -20.3,
+        "sell_yoy_month": 8045136.5,
+        "delta_yoy_abs": 578139.3,
+        "delta_yoy_pct": 7.2
+      },
+      {
+        "company_id": "7030",
+        "company_name": "Bill Doran Company",
+        "sell_current": 6650992.5,
+        "sell_prior_snapshot": 6650992.5,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 8053646.49,
+        "delta_mom_abs": -1402653.99,
+        "delta_mom_pct": -17.4,
+        "sell_yoy_month": 6385091.57,
+        "delta_yoy_abs": 265900.93,
+        "delta_yoy_pct": 4.2
+      },
+      {
+        "company_id": "41934",
+        "company_name": "Continental Floral LLC",
+        "sell_current": 1828253.06,
+        "sell_prior_snapshot": 1828253.06,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 3081024.43,
+        "delta_mom_abs": -1252771.37,
+        "delta_mom_pct": -40.7,
+        "sell_yoy_month": 2058460.24,
+        "delta_yoy_abs": -230207.18,
+        "delta_yoy_pct": -11.2
+      },
+      {
+        "company_id": "103078",
+        "company_name": "Mayesh Wholesale Florist Inc",
+        "sell_current": 7944717.58,
+        "sell_prior_snapshot": 7944717.58,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 8989620.99,
+        "delta_mom_abs": -1044903.41,
+        "delta_mom_pct": -11.6,
+        "sell_yoy_month": 14041275.14,
+        "delta_yoy_abs": -6096557.56,
+        "delta_yoy_pct": -43.4
+      },
+      {
+        "company_id": "18322",
+        "company_name": "* Jet Fresh Flower Distributors Inc.",
+        "sell_current": 2714611.21,
+        "sell_prior_snapshot": 2714611.21,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 3672764.73,
+        "delta_mom_abs": -958153.52,
+        "delta_mom_pct": -26.1,
+        "sell_yoy_month": 2122740.29,
+        "delta_yoy_abs": 591870.92,
+        "delta_yoy_pct": 27.9
+      },
+      {
+        "company_id": "103112",
+        "company_name": "Fresca Farms",
+        "sell_current": 4015409.72,
+        "sell_prior_snapshot": 4015409.72,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 4776303.88,
+        "delta_mom_abs": -760894.16,
+        "delta_mom_pct": -15.9,
+        "sell_yoy_month": 3449019.79,
+        "delta_yoy_abs": 566389.93,
+        "delta_yoy_pct": 16.4
+      },
+      {
+        "company_id": "453771",
+        "company_name": "Continental Floral CA LLC",
+        "sell_current": 11764.65,
+        "sell_prior_snapshot": 11764.65,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 724509.03,
+        "delta_mom_abs": -712744.38,
+        "delta_mom_pct": -98.4,
+        "sell_yoy_month": 479950.66,
+        "delta_yoy_abs": -468186.01,
+        "delta_yoy_pct": -97.5
+      },
+      {
+        "company_id": "189419",
+        "company_name": "Legacy Flowers",
+        "sell_current": 677875.12,
+        "sell_prior_snapshot": 677875.12,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 1347144.32,
+        "delta_mom_abs": -669269.2,
+        "delta_mom_pct": -49.7,
+        "sell_yoy_month": 711651.83,
+        "delta_yoy_abs": -33776.71,
+        "delta_yoy_pct": -4.7
+      },
+      {
+        "company_id": "640977",
+        "company_name": "Ninfa Flowers",
+        "sell_current": 55054.16,
+        "sell_prior_snapshot": 55054.16,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 719939.99,
+        "delta_mom_abs": -664885.83,
+        "delta_mom_pct": -92.4,
+        "sell_yoy_month": 426496.34,
+        "delta_yoy_abs": -371442.18,
+        "delta_yoy_pct": -87.1
+      },
+      {
+        "company_id": "25489",
+        "company_name": "-Sole Farms",
+        "sell_current": 2814787.59,
+        "sell_prior_snapshot": 2814787.59,
+        "delta_vs_snapshot_abs": 0.0,
+        "delta_vs_snapshot_pct": 0.0,
+        "sell_prior_month": 3428281.09,
+        "delta_mom_abs": -613493.5,
+        "delta_mom_pct": -17.9,
+        "sell_yoy_month": 2414976.74,
+        "delta_yoy_abs": 399810.85,
+        "delta_yoy_pct": 16.6
+      }
+    ]
+  },
+  "gone_dark": {
+    "gone_dark_real": [
+      {
+        "company_id": "471458",
+        "company_name": "Continental Floral OR LLC",
+        "last_active_month": "2026-06",
+        "peak_3m_gmv": 3789020.37,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 142493.5,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "699974",
+        "company_name": "Florisert",
+        "last_active_month": "2025-11",
+        "peak_3m_gmv": 3044955.56,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 825714.9,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "592615",
+        "company_name": "NYC FLORAL GREENS",
+        "last_active_month": "2026-05",
+        "peak_3m_gmv": 2564569.87,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 330699.7,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "398856",
+        "company_name": "National Floral Supply",
+        "last_active_month": "2026-03",
+        "peak_3m_gmv": 2375363.59,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 416817.4,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "38477",
+        "company_name": "Sofia Flowers USA LLC",
+        "last_active_month": "2025-11",
+        "peak_3m_gmv": 2337998.45,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 264942.04,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "453769",
+        "company_name": "Continental Floral FL LLC",
+        "last_active_month": "2026-06",
+        "peak_3m_gmv": 2046683.28,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 240923.86,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "569309",
+        "company_name": "Castle Hayne Farms",
+        "last_active_month": "2025-11",
+        "peak_3m_gmv": 1865416.19,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 197044.71,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "166363",
+        "company_name": "Guamito S.A.S NIT 900116641-5",
+        "last_active_month": "2025-09",
+        "peak_3m_gmv": 1442562.11,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 351412.35,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "676861",
+        "company_name": "Ontario Flower Growers Cooperative Ltd.",
+        "last_active_month": "2026-01",
+        "peak_3m_gmv": 851579.94,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 46613.8,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "529514",
+        "company_name": "Global Bouquet, LLC",
+        "last_active_month": "2026-06",
+        "peak_3m_gmv": 836739.88,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 139250.97,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "561518",
+        "company_name": "Floramix, Inc.",
+        "last_active_month": "2026-05",
+        "peak_3m_gmv": 646301.95,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 109037.82,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "470794",
+        "company_name": "* AquaRose",
+        "last_active_month": "2026-05",
+        "peak_3m_gmv": 607479.67,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 102418.95,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "620160",
+        "company_name": "Petals Direct",
+        "last_active_month": "2026-06",
+        "peak_3m_gmv": 517456.93,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 33603.24,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "649109",
+        "company_name": "Blossoms Wholesale LLC",
+        "last_active_month": "2025-07",
+        "peak_3m_gmv": 496251.69,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 58266.94,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "475809",
+        "company_name": "Ponte Tresa USA LLC",
+        "last_active_month": "2025-07",
+        "peak_3m_gmv": 476310.47,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 158.95,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "609341",
+        "company_name": "ROYAL BASE (AMERICA) CORPORATION",
+        "last_active_month": "2025-07",
+        "peak_3m_gmv": 466111.5,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 1392.0,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "484037",
+        "company_name": "Georgia State Floral Distributors",
+        "last_active_month": "2026-04",
+        "peak_3m_gmv": 351830.78,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 26813.6,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "295299",
+        "company_name": "American Floral Cargo/Splendor Proteas, LLC",
+        "last_active_month": "2025-07",
+        "peak_3m_gmv": 265086.0,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 1125.32,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "35266",
+        "company_name": "Liberty Blooms",
+        "last_active_month": "2026-05",
+        "peak_3m_gmv": 197531.23,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 18209.52,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "568020",
+        "company_name": "Floraxis Cut Flowers, Inc",
+        "last_active_month": "2025-11",
+        "peak_3m_gmv": 186796.28,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 38979.65,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "590728",
+        "company_name": "DC FLOWERS DIRECT",
+        "last_active_month": "2026-03",
+        "peak_3m_gmv": 159109.6,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 20950.46,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "713840",
+        "company_name": "WHOLESALE NORTON'S FLORIST",
+        "last_active_month": "2025-12",
+        "peak_3m_gmv": 141862.59,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 1417.18,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "665232",
+        "company_name": "The Flowerman, Inc.",
+        "last_active_month": "2026-02",
+        "peak_3m_gmv": 55288.67,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 9709.2,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "635167",
+        "company_name": "Valle Verde LLC",
+        "last_active_month": "2026-04",
+        "peak_3m_gmv": 48216.5,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 15091.5,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "571542",
+        "company_name": "Geny's Flowers",
+        "last_active_month": "2025-11",
+        "peak_3m_gmv": 40502.59,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 453.6,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "664602",
+        "company_name": "GARFILED WHOLESALE FLOWERS",
+        "last_active_month": "2025-07",
+        "peak_3m_gmv": 39583.08,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 267.6,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "664532",
+        "company_name": "Simply Roses, LLC",
+        "last_active_month": "2025-07",
+        "peak_3m_gmv": 38370.22,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 5707.16,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "665358",
+        "company_name": "HIRE`S BEST FLOWERS",
+        "last_active_month": "2026-02",
+        "peak_3m_gmv": 36156.71,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 3960.04,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "680290",
+        "company_name": "Ecuflower Roses Kft.",
+        "last_active_month": "2025-12",
+        "peak_3m_gmv": 28649.0,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 3142.0,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "665027",
+        "company_name": "Mideast Flowers Distributors, Inc.",
+        "last_active_month": "2026-02",
+        "peak_3m_gmv": 26271.96,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 3075.79,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "665453",
+        "company_name": "MARKET FLOWERS",
+        "last_active_month": "2025-09",
+        "peak_3m_gmv": 24173.91,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 6159.71,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "670288",
+        "company_name": "Designs of the Times, Inc. dba: 321 Flower Market",
+        "last_active_month": "2025-08",
+        "peak_3m_gmv": 22720.69,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 2104.01,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "670450",
+        "company_name": "FLORIAD- MONTREAL CANADA INC.",
+        "last_active_month": "2026-02",
+        "peak_3m_gmv": 21646.91,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 2366.14,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "644100",
+        "company_name": "HYDRAPOLIS INC",
+        "last_active_month": "2025-08",
+        "peak_3m_gmv": 20180.03,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 2964.0,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "665481",
+        "company_name": "BloomTown Flower Market",
+        "last_active_month": "2025-07",
+        "peak_3m_gmv": 19453.25,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 1246.47,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "731540",
+        "company_name": "Kittelberger Florist & Gifts",
+        "last_active_month": "2025-09",
+        "peak_3m_gmv": 16874.73,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 9742.84,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "664540",
+        "company_name": "FMI, LLC.-FL",
+        "last_active_month": "2026-02",
+        "peak_3m_gmv": 11363.86,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 464.25,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "475168",
+        "company_name": "South Carolina Specialty Cut",
+        "last_active_month": "2026-06",
+        "peak_3m_gmv": 10939.67,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 304.0,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "704680",
+        "company_name": "AVANT GARDENS 5079 / HANA HOLDINGS",
+        "last_active_month": "2025-07",
+        "peak_3m_gmv": 8917.53,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 977.71,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "731480",
+        "company_name": "BELLA ROSA FLORIST",
+        "last_active_month": "2025-08",
+        "peak_3m_gmv": 8475.23,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 3129.43,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "729609",
+        "company_name": "OBERER´S",
+        "last_active_month": "2025-10",
+        "peak_3m_gmv": 6114.94,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 889.45,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "665326",
+        "company_name": "UPSTATE/COGGINS FLOWERS",
+        "last_active_month": "2025-07",
+        "peak_3m_gmv": 6114.21,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 569.64,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "681686",
+        "company_name": "J van Vliet (NL) Group",
+        "last_active_month": "2025-08",
+        "peak_3m_gmv": 5913.5,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 5695.0,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "651721",
+        "company_name": "PHIL HUTCHENS DBA MUM'S THE WORD",
+        "last_active_month": "2025-07",
+        "peak_3m_gmv": 5839.16,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 920.31,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "731453",
+        "company_name": "Casas Adobes Flower Shop",
+        "last_active_month": "2025-08",
+        "peak_3m_gmv": 3389.16,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 2201.66,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "644983",
+        "company_name": "AFLORA NOVA LLC",
+        "last_active_month": "2025-07",
+        "peak_3m_gmv": 3115.9,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 413.84,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "665376",
+        "company_name": "BFS - MIAMI",
+        "last_active_month": "2025-07",
+        "peak_3m_gmv": 2397.49,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 235.5,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "648089",
+        "company_name": "SAN FRANCISCO GARDENS",
+        "last_active_month": "2025-07",
+        "peak_3m_gmv": 2331.78,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 110.9,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "664133",
+        "company_name": "Littlefloyd Investments, LLC",
+        "last_active_month": "2026-02",
+        "peak_3m_gmv": 2021.19,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 177.0,
+        "seasonal_normal": false
+      },
+      {
+        "company_id": "664255",
+        "company_name": "Mikes Finest Wholesale Flowers, Inc.",
+        "last_active_month": "2026-05",
+        "peak_3m_gmv": 390.95,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 4882.14,
+        "seasonal_normal": false
+      }
+    ],
+    "gone_dark_seasonal": [
+      {
+        "company_id": "560072",
+        "company_name": "Continental Floral NC LLC",
+        "last_active_month": "2025-12",
+        "peak_3m_gmv": 6720577.63,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "640251",
+        "company_name": "FreshLink",
+        "last_active_month": "2025-06",
+        "peak_3m_gmv": 2650597.8,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "592061",
+        "company_name": "Americana Members",
+        "last_active_month": "2025-05",
+        "peak_3m_gmv": 1098342.91,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "578192",
+        "company_name": "Americana, Inc. - MIA",
+        "last_active_month": "2025-05",
+        "peak_3m_gmv": 845353.51,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "399890",
+        "company_name": "Patagonia Sun",
+        "last_active_month": "2026-01",
+        "peak_3m_gmv": 827355.36,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "767361",
+        "company_name": "UNIVERSAL FLOWER SERVICE CORP",
+        "last_active_month": "2026-05",
+        "peak_3m_gmv": 592530.2,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "734065",
+        "company_name": "BlossomR",
+        "last_active_month": "2026-01",
+        "peak_3m_gmv": 349670.82,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "742781",
+        "company_name": "New England Wholesale Florist",
+        "last_active_month": "2026-04",
+        "peak_3m_gmv": 224114.02,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "601982",
+        "company_name": "Greenrose",
+        "last_active_month": "2025-04",
+        "peak_3m_gmv": 126360.81,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "454290",
+        "company_name": "TRADEWINDS INTL LLC",
+        "last_active_month": "2025-02",
+        "peak_3m_gmv": 125693.24,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "651992",
+        "company_name": "SHAEFER WHOLESALE FLORIST",
+        "last_active_month": "2025-05",
+        "peak_3m_gmv": 124535.35,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "491757",
+        "company_name": "Del Alma Group",
+        "last_active_month": "2025-04",
+        "peak_3m_gmv": 88040.25,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "537236",
+        "company_name": "Symphony Flowers Corp",
+        "last_active_month": "2025-01",
+        "peak_3m_gmv": 82639.61,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "616761",
+        "company_name": "Flex Direct Locations",
+        "last_active_month": "2025-02",
+        "peak_3m_gmv": 79109.44,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "601414",
+        "company_name": "Americana, Inc. - CAL",
+        "last_active_month": "2025-05",
+        "peak_3m_gmv": 53563.43,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "664103",
+        "company_name": "JANAL WHOLESALE FLORIST",
+        "last_active_month": "2025-06",
+        "peak_3m_gmv": 51584.64,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "616760",
+        "company_name": "Flex Direct, LLC",
+        "last_active_month": "2025-03",
+        "peak_3m_gmv": 43985.15,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "664451",
+        "company_name": "TWI - KOEHLER AND DRAMM WHOLESALE FLORIST",
+        "last_active_month": "2025-06",
+        "peak_3m_gmv": 40114.97,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "664595",
+        "company_name": "Venetian Flowers",
+        "last_active_month": "2025-06",
+        "peak_3m_gmv": 38757.25,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "651168",
+        "company_name": "TWI - DILLON FLORAL CORPORATION",
+        "last_active_month": "2025-06",
+        "peak_3m_gmv": 35435.88,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "734128",
+        "company_name": "Details Direct - Core",
+        "last_active_month": "2026-06",
+        "peak_3m_gmv": 23454.93,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "651327",
+        "company_name": "Lovingly Charlotte LLC",
+        "last_active_month": "2024-12",
+        "peak_3m_gmv": 18537.26,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "770224",
+        "company_name": "Magic Flowers - Floropolis",
+        "last_active_month": "2026-05",
+        "peak_3m_gmv": 12304.1,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "755593",
+        "company_name": "Kontikiflor BV",
+        "last_active_month": "2026-06",
+        "peak_3m_gmv": 10647.53,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "650927",
+        "company_name": "BONNETT WHSLE. FLORIST, INC",
+        "last_active_month": "2025-06",
+        "peak_3m_gmv": 10343.87,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "664709",
+        "company_name": "Rose Hill Flowers",
+        "last_active_month": "2025-05",
+        "peak_3m_gmv": 9934.98,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "699881",
+        "company_name": "Elfi B Yes! exclusive flowers PTY LTD",
+        "last_active_month": "2025-05",
+        "peak_3m_gmv": 8947.5,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "808064",
+        "company_name": "Universal Flower Farms Inc.",
+        "last_active_month": "2026-06",
+        "peak_3m_gmv": 8109.35,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "664567",
+        "company_name": "Klis FK LLC",
+        "last_active_month": "2025-03",
+        "peak_3m_gmv": 7554.31,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "670668",
+        "company_name": "STRANGE`S FLORIST, INC.",
+        "last_active_month": "2026-02",
+        "peak_3m_gmv": 6211.42,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "732830",
+        "company_name": "First Choice Floral",
+        "last_active_month": "2026-06",
+        "peak_3m_gmv": 4755.5,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "751391",
+        "company_name": "MegaFlor - UIO",
+        "last_active_month": "2026-03",
+        "peak_3m_gmv": 3784.4,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "608626",
+        "company_name": "The Farm Direct Company",
+        "last_active_month": "2025-03",
+        "peak_3m_gmv": 2553.5,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "670311",
+        "company_name": "Floral Importers and Distributors Inc. /Buds",
+        "last_active_month": "2026-03",
+        "peak_3m_gmv": 2389.83,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "704690",
+        "company_name": "Quality Flowers&Greens-LTF1152",
+        "last_active_month": "2025-04",
+        "peak_3m_gmv": 2241.27,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "654758",
+        "company_name": "LIHML INC Fayetteville - #01235 GF Rep Kareena 19",
+        "last_active_month": "2026-06",
+        "peak_3m_gmv": 2233.75,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "765583",
+        "company_name": "Bellaflor Group Inc.",
+        "last_active_month": "2026-04",
+        "peak_3m_gmv": 2000.06,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "806417",
+        "company_name": "Hyperactive Farms Inc.",
+        "last_active_month": "2026-06",
+        "peak_3m_gmv": 1733.4,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "664019",
+        "company_name": "FLOWERS OF NASHVILLE",
+        "last_active_month": "2025-05",
+        "peak_3m_gmv": 1222.44,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "730903",
+        "company_name": "SKY FLORAL FARMS",
+        "last_active_month": "2025-10",
+        "peak_3m_gmv": 1038.0,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "603102",
+        "company_name": "AGM BROTHERS WORLD TRADING LLC",
+        "last_active_month": "2025-04",
+        "peak_3m_gmv": 614.4,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "670302",
+        "company_name": "AL´S FLORIST",
+        "last_active_month": "2025-05",
+        "peak_3m_gmv": 596.42,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      },
+      {
+        "company_id": "751334",
+        "company_name": "Much Flowers - UIO",
+        "last_active_month": "2026-01",
+        "peak_3m_gmv": 457.0,
+        "same_month_ly": "2025-07",
+        "same_month_ly_gmv": 0,
+        "seasonal_normal": true
+      }
+    ],
+    "gone_dark_real_count": 50,
+    "gone_dark_seasonal_count": 43,
+    "note": "real = same month LY had activity (churn signal). seasonal = same month LY also $0 (normal)."
+  },
+  "went_live": [
+    {
+      "company_id": "822938",
+      "company_name": "Flores San Miguel",
+      "first_month": "2026-07",
+      "current_month_gmv": 222232.01
+    },
+    {
+      "company_id": "816515",
+      "company_name": "Price's Floral Wholesale, LLC",
+      "first_month": "2026-07",
+      "current_month_gmv": 151807.71
+    },
+    {
+      "company_id": "827180",
+      "company_name": "Main Wholesale Florist LLC / Clifton",
+      "first_month": "2026-07",
+      "current_month_gmv": 3111.82
+    },
+    {
+      "company_id": "821576",
+      "company_name": "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN",
+      "first_month": "2026-07",
+      "current_month_gmv": 2531.26
+    },
+    {
+      "company_id": "828336",
+      "company_name": "SPRINGFIELD FLORIST SUPPLY INC",
+      "first_month": "2026-07",
+      "current_month_gmv": 260.0
+    }
+  ],
+  "classification_changes": [
+    {
+      "company_id": "25489",
+      "company_name": "-Sole Farms",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "WATCH"
+    },
+    {
+      "company_id": "665296",
+      "company_name": "AD TRADING CORP.DBA AD FLORAL TRADI",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "650721",
+      "company_name": "Alders Wholesale Florist, Inc.",
+      "field": "priority_level",
+      "from": "CS_TRACKED",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "643672",
+      "company_name": "Allied Cut Flower",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": ""
+    },
+    {
+      "company_id": "743681",
+      "company_name": "Alpha Fern Company, LLC",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "830406",
+      "company_name": "Avon Valley Floral",
+      "field": "priority_level",
+      "from": "",
+      "to": "IMPL"
+    },
+    {
+      "company_id": "651277",
+      "company_name": "BAYSTATE FARM DIRECT FLOWERS - CRANSTON",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "321023",
+      "company_name": "Bill Doran Company (2)",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "TA"
+    },
+    {
+      "company_id": "734065",
+      "company_name": "BlossomR",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": ""
+    },
+    {
+      "company_id": "664988",
+      "company_name": "CALI WHOLESALE.-CA",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "735300",
+      "company_name": "Cataleya Flowers D&A",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "821768",
+      "company_name": "Coquette Roses",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "WATCH"
+    },
+    {
+      "company_id": "815425",
+      "company_name": "Coward & Glisson Whsl. Flst.",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "808448",
+      "company_name": "Derita Floral Floral Supply Co",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "769085",
+      "company_name": "Ecoroses - Floropolis",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "WATCH"
+    },
+    {
+      "company_id": "395159",
+      "company_name": "Equiflor LLC",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "WATCH"
+    },
+    {
+      "company_id": "664623",
+      "company_name": "Esprit Salt Lake, Inc",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "811196",
+      "company_name": "Everflorals",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "652793",
+      "company_name": "FALL RIVER WHOLESALE",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "670423",
+      "company_name": "FLEURIGROS QUEBEC 1995 INC.",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "670450",
+      "company_name": "FLORIAD- MONTREAL CANADA INC.",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "664019",
+      "company_name": "FLOWERS OF NASHVILLE",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "664540",
+      "company_name": "FMI, LLC.-FL",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "681739",
+      "company_name": "Fleurametz Chicago",
+      "field": "priority_level",
+      "from": "CS_TRACKED",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "769099",
+      "company_name": "Flodecol - Floropolis",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "WATCH"
+    },
+    {
+      "company_id": "153031",
+      "company_name": "FloraLink",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "PIPELINE"
+    },
+    {
+      "company_id": "664314",
+      "company_name": "Florabundance.",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "TA"
+    },
+    {
+      "company_id": "37745",
+      "company_name": "Floral Cooperative Purchasing Group LLC",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": ""
+    },
+    {
+      "company_id": "670311",
+      "company_name": "Floral Importers and Distributors Inc. /Buds",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "815558",
+      "company_name": "Florens Group LLC",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "817285",
+      "company_name": "Flores de los Lagos",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "496600",
+      "company_name": "Floristcentric, LLC",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "PIPELINE"
+    },
+    {
+      "company_id": "762172",
+      "company_name": "Floropolis",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "WATCH"
+    },
+    {
+      "company_id": "665316",
+      "company_name": "Flowers by Fudgie, Inc",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "103112",
+      "company_name": "Fresca Farms",
+      "field": "priority_level",
+      "from": "TA",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "77300",
+      "company_name": "Golden Flowers",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "WATCH"
+    },
+    {
+      "company_id": "812869",
+      "company_name": "Gypso S.A. UIO",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "664341",
+      "company_name": "Hall´s Wholesale Florist Theodore",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "808527",
+      "company_name": "Hortensias Cabogana Cia Ltda",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "806417",
+      "company_name": "Hyperactive Farms Inc.",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "808079",
+      "company_name": "JFS Wholesale Floral",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "PARKED"
+    },
+    {
+      "company_id": "651200",
+      "company_name": "Jacksonville Flower Market",
+      "field": "priority_level",
+      "from": "CS_TRACKED",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "469713",
+      "company_name": "KD & Company",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": ""
+    },
+    {
+      "company_id": "731091",
+      "company_name": "KRUEGER WHOLESALE PROMO",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "796779",
+      "company_name": "Kennicott Brothers West",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "TA"
+    },
+    {
+      "company_id": "25120",
+      "company_name": "Kennicott Kuts",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "TA"
+    },
+    {
+      "company_id": "575819",
+      "company_name": "LA TOSCANA FARMS",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "WATCH"
+    },
+    {
+      "company_id": "654758",
+      "company_name": "LIHML INC Fayetteville - #01235 GF Rep Kareena 19",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "598944",
+      "company_name": "Las Vegas Floral Wholesale",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "664133",
+      "company_name": "Littlefloyd Investments, LLC",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "813947",
+      "company_name": "Llanos De Alba LLADEAL - UIO",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "476379",
+      "company_name": "Lone Star Flower Market",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "651574",
+      "company_name": "M&M CUT FLORA",
+      "field": "priority_level",
+      "from": "CS_TRACKED",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "670554",
+      "company_name": "MAHONEYS ROCKY LEDGE FARM &",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "770224",
+      "company_name": "Magic Flowers - Floropolis",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "WATCH"
+    },
+    {
+      "company_id": "701220",
+      "company_name": "McCarthy Wholesale",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "600558",
+      "company_name": "Metropetals",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "PIPELINE"
+    },
+    {
+      "company_id": "665027",
+      "company_name": "Mideast Flowers Distributors, Inc.",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "664255",
+      "company_name": "Mikes Finest Wholesale Flowers, Inc.",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": ""
+    },
+    {
+      "company_id": "751334",
+      "company_name": "Much Flowers - UIO",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "729666",
+      "company_name": "NORTHWEST WHOLESALE FLORIST",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "592615",
+      "company_name": "NYC FLORAL GREENS",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": ""
+    },
+    {
+      "company_id": "676861",
+      "company_name": "Ontario Flower Growers Cooperative Ltd.",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": ""
+    },
+    {
+      "company_id": "654661",
+      "company_name": "POTOMAC WHSLE",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "802590",
+      "company_name": "Pacifica Farms - CAL",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "620160",
+      "company_name": "Petals Direct",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": ""
+    },
+    {
+      "company_id": "734521",
+      "company_name": "Promoflor SRL",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": ""
+    },
+    {
+      "company_id": "733250",
+      "company_name": "ROYAL BASE (U.S.A) CORPORATION",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "680251",
+      "company_name": "RUMHORA GREENS LLC",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "701292",
+      "company_name": "Riverdale Farms",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "664096",
+      "company_name": "Riverside Wholesale Florists KY",
+      "field": "priority_level",
+      "from": "IMPL",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "672799",
+      "company_name": "Rokay Floral",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "557903",
+      "company_name": "Roots Peru",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "295294",
+      "company_name": "Rosamina SAS",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "12941",
+      "company_name": "Rosaprima International, LLC",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "327132",
+      "company_name": "Royal Flower Import Group Inc.",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "22143",
+      "company_name": "Royal Flowers Inc., Domestic",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "189002",
+      "company_name": "Royal Flowers S.A",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "588417",
+      "company_name": "SHAW LAKE FARMS INC.",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "400914",
+      "company_name": "SKY FLOWERS S.A.S",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "17503",
+      "company_name": "SOS Floral",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "498842",
+      "company_name": "SUNRITE FARMS COLLECTIONS CORP",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "615898",
+      "company_name": "Salter's Evergreen Supply",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "809201",
+      "company_name": "San Jose Floral",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "13982",
+      "company_name": "Servicios Chilfresh Ltda.",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "600910",
+      "company_name": "Sieck Wright Floral Products",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "WATCH"
+    },
+    {
+      "company_id": "488495",
+      "company_name": "Sierra Flower Trading",
+      "field": "priority_level",
+      "from": "WATCH",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "649935",
+      "company_name": "Sims Flower Distribution",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "CS_P2"
+    },
+    {
+      "company_id": "475168",
+      "company_name": "South Carolina Specialty Cut",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "454705",
+      "company_name": "South Florals Imports LLC",
+      "field": "priority_level",
+      "from": "WATCH",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "449344",
+      "company_name": "Southern Floral Co",
+      "field": "priority_level",
+      "from": "WATCH",
+      "to": "PIPELINE"
+    },
+    {
+      "company_id": "655382",
+      "company_name": "Staalduinen Floral-LTF1118",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "200503",
+      "company_name": "Stellar Farms",
+      "field": "priority_level",
+      "from": "WATCH",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "742939",
+      "company_name": "Stemline Wholesale",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "CS_P2"
+    },
+    {
+      "company_id": "22218",
+      "company_name": "Sunburst Farms",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "664054",
+      "company_name": "TFS Bristol",
+      "field": "priority_level",
+      "from": "WATCH",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "476679",
+      "company_name": "Taylor Wholesale Florist",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "182872",
+      "company_name": "The Elite Flower",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "530493",
+      "company_name": "The Flower Co, LLC",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "610504",
+      "company_name": "The Flower Emporium LLC",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "665232",
+      "company_name": "The Flowerman, Inc.",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "669090",
+      "company_name": "The Oklahoma Flower Market",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "315007",
+      "company_name": "The Queens Flowers Corp",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "614448",
+      "company_name": "The Queens Flowers, Corp",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "632203",
+      "company_name": "Tristate Wholesale Florist",
+      "field": "priority_level",
+      "from": "CS_TRACKED",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "537092",
+      "company_name": "Tropical Blooms Inc.",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "579932",
+      "company_name": "Tutuli Flower Farms",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "468041",
+      "company_name": "U.S. Greens Corp",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "704636",
+      "company_name": "UNITED WHOLESALE- FFL  ENTERPRISES ",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "767361",
+      "company_name": "UNIVERSAL FLOWER SERVICE CORP",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "670675",
+      "company_name": "VELDKAMP´S FLOWERS",
+      "field": "priority_level",
+      "from": "WATCH",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "770796",
+      "company_name": "VERA",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "475084",
+      "company_name": "Valleflor USA",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "6554",
+      "company_name": "Valley Springs LLC",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "474847",
+      "company_name": "Vosz Floral LLC",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "400013",
+      "company_name": "Washington Floral Service, Inc",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "670701",
+      "company_name": "Webb’s Wholesale Florist",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "642311",
+      "company_name": "White Rose Flowers & Supplies Inc.",
+      "field": "priority_level",
+      "from": "NEEDS_REVIEW",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "664820",
+      "company_name": "Younger & Son Inc",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "533116",
+      "company_name": "Zion Flowers INC",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": "77787",
+      "company_name": "Zoom-Bloom",
+      "field": "priority_level",
+      "from": "",
+      "to": "ECOSYSTEM"
+    },
+    {
+      "company_id": null,
+      "company_name": "Phyto Flowers B.V.",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "SQ Flora",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "FM Group B.V./SPA",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Ecuamagic S.A",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Ecuamagic S.A",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Grower"
+    },
+    {
+      "company_id": null,
+      "company_name": "blooms2go",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "blooms2go",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Importer"
+    },
+    {
+      "company_id": null,
+      "company_name": "San Francisco Gardens (L1)",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "ABloom Floral Group",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Importer"
+    },
+    {
+      "company_id": null,
+      "company_name": "Arawi Flowers",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Grower"
+    },
+    {
+      "company_id": null,
+      "company_name": "DA and Sons LLC",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Grower"
+    },
+    {
+      "company_id": null,
+      "company_name": "FLORA EXPRESS FARMS LLC",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Grower"
+    },
+    {
+      "company_id": null,
+      "company_name": "Flovers SAS",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Grower"
+    },
+    {
+      "company_id": null,
+      "company_name": "Injovac LLC",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Importer"
+    },
+    {
+      "company_id": null,
+      "company_name": "Mulrosas Cia.ltda",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Grower"
+    },
+    {
+      "company_id": null,
+      "company_name": "Royal Flowers GmbH",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Importer"
+    },
+    {
+      "company_id": null,
+      "company_name": "UNIQUE FLOWERS",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Grower"
+    },
+    {
+      "company_id": null,
+      "company_name": "Yary Flowers",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Grower"
+    },
+    {
+      "company_id": null,
+      "company_name": "B-Fresh Floral",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Holland America Bulb Farms, Inc.",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Holland America Bulb Farms, Inc.",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Grower"
+    },
+    {
+      "company_id": null,
+      "company_name": "Reeves Floral Products, Inc.",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Carbone Floral Distributors",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Can-Mex Wholesale Flowers",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Classic Floral, Inc.",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "J. Merullo Imports",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "J. Merullo Imports",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Importer"
+    },
+    {
+      "company_id": null,
+      "company_name": "Joseph & Sons Inc.",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Ocean Breeze International",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "First Choice Wholesale Floral",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Sieck-Buffalo",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Sieck-Buffalo",
+      "field": "priority_level",
+      "from": "",
+      "to": "WATCH"
+    },
+    {
+      "company_id": null,
+      "company_name": "Palm Beach Wholesale",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Mears Floral Products",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Flower Link",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "A & M Flower Growers, Inc.",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "A & M Flower Growers, Inc.",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Grower"
+    },
+    {
+      "company_id": null,
+      "company_name": "Maximum Nursery",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Maximum Nursery",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Grower"
+    },
+    {
+      "company_id": null,
+      "company_name": "Berkeley Florist Supply Co",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "L&G Wholesale",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "L.F.Schlegel & Son Greenhouse",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Myriad Flowers International",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Topstar Floral Inc.",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Eufloria Flowers",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Golden State Flower Brokers",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "FloraMax",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "West Flowers LLC",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Superior Greens & Floral",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Paseo Floral Inc",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "BW Wholesale-Keystone",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Dual Venture Farms, Inc.",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Dual Venture Farms, Inc.",
+      "field": "business_type",
+      "from": "Wholesaler",
+      "to": "Grower"
+    },
+    {
+      "company_id": null,
+      "company_name": "Petal Pushers",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "ANIC Trading",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Bluumii/SoCal Flowers",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": null,
+      "company_name": "Green Valley Floral",
+      "field": "account_class",
+      "from": "Pre-live",
+      "to": "Prospect"
+    },
+    {
+      "company_id": "825239",
+      "company_name": "Pampa Products LLC",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "822905",
+      "company_name": "GQ FLOWERS",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "816979",
+      "company_name": "MARIA SARA YANEZ TOAPANTA",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": ""
+    },
+    {
+      "company_id": "815945",
+      "company_name": "FUJI WHOLESALE FLOWERS",
+      "field": "priority_level",
+      "from": "ECOSYSTEM",
+      "to": "PARKED"
+    },
+    {
+      "company_id": "650986",
+      "company_name": "Tennessee Florist Supply - Knox",
+      "field": "priority_level",
+      "from": "",
+      "to": "IMPL"
+    }
+  ],
+  "activity": {
+    "period": "L30D",
+    "total_accounts_contacted": 38,
+    "sfdc_source": true,
+    "fathom_source": true,
+    "by_account": [
+      {
+        "company_name": "Andean Fresh LLC",
+        "company_id": "505063",
+        "sfdc_tasks": 9,
+        "sfdc_types": {
+          "Unknown": 9
+        },
+        "sfdc_last": "2026-08-26",
+        "fathom_calls": 1,
+        "fathom_titles": [
+          "Andean Fresh | Training Session  (TENTATIVE)"
+        ],
+        "total_activity": 10,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Nova Packaging Solutions, Inc.",
+        "company_id": "743217",
+        "sfdc_tasks": 8,
+        "sfdc_types": {
+          "Unknown": 7,
+          "Email": 1
+        },
+        "sfdc_last": "2026-08-26",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 8,
+        "priority_level": "IMPL",
+        "recap_needed": false
+      },
+      {
+        "company_name": "FLORA EXPRESS FARMS LLC",
+        "company_id": "None",
+        "sfdc_tasks": 7,
+        "sfdc_types": {
+          "Billing": 1,
+          "Unknown": 6
+        },
+        "sfdc_last": "2026-09-07",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 7,
+        "priority_level": "",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Allure Farms",
+        "company_id": "73730",
+        "sfdc_tasks": 7,
+        "sfdc_types": {
+          "Unknown": 7
+        },
+        "sfdc_last": "2026-08-26",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 7,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "International Fresh Group LLC",
+        "company_id": "817168",
+        "sfdc_tasks": 7,
+        "sfdc_types": {
+          "Unknown": 7
+        },
+        "sfdc_last": "2026-08-26",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 7,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Flores de la Hacienda",
+        "company_id": "584973",
+        "sfdc_tasks": 5,
+        "sfdc_types": {
+          "Unknown": 5
+        },
+        "sfdc_last": "2026-08-26",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 5,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Blossom Bliss LLC",
+        "company_id": "671046",
+        "sfdc_tasks": 4,
+        "sfdc_types": {
+          "Unknown": 4
+        },
+        "sfdc_last": "2026-08-26",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 4,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Flora Fresh Inc",
+        "company_id": "601933",
+        "sfdc_tasks": 3,
+        "sfdc_types": {
+          "Email": 1,
+          "Unknown": 2
+        },
+        "sfdc_last": "2026-08-25",
+        "fathom_calls": 1,
+        "fathom_titles": [
+          "Flora Fresh - Arrival date"
+        ],
+        "total_activity": 4,
+        "priority_level": "TA",
+        "recap_needed": true
+      },
+      {
+        "company_name": "Salter's Evergreen Supply",
+        "company_id": "615898",
+        "sfdc_tasks": 4,
+        "sfdc_types": {
+          "Unknown": 4
+        },
+        "sfdc_last": "2026-08-25",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 4,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Hyperactive Farms Inc.",
+        "company_id": "806417",
+        "sfdc_tasks": 3,
+        "sfdc_types": {
+          "Billing": 2,
+          "Unknown": 1
+        },
+        "sfdc_last": "2026-10-01",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 3,
+        "priority_level": "",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Flores San Miguel",
+        "company_id": "822938",
+        "sfdc_tasks": 3,
+        "sfdc_types": {
+          "Call": 1,
+          "Unknown": 2
+        },
+        "sfdc_last": "2026-08-31",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 3,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Faguaflowers Intl LLC",
+        "company_id": "612783",
+        "sfdc_tasks": 3,
+        "sfdc_types": {
+          "Unknown": 3
+        },
+        "sfdc_last": "2026-08-26",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 3,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Dramm & Echter, Inc",
+        "company_id": "571220",
+        "sfdc_tasks": 3,
+        "sfdc_types": {
+          "Unknown": 3
+        },
+        "sfdc_last": "2026-08-26",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 3,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "FLORISOL & COMPANY FLOWER TRADING LLC",
+        "company_id": "401680",
+        "sfdc_tasks": 3,
+        "sfdc_types": {
+          "Unknown": 3
+        },
+        "sfdc_last": "2026-08-26",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 3,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "SPRINGFIELD FLORIST SUPPLY INC",
+        "company_id": "828336",
+        "sfdc_tasks": 3,
+        "sfdc_types": {
+          "Unknown": 3
+        },
+        "sfdc_last": "2026-08-26",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 3,
+        "priority_level": "IMPL",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Gala Roses",
+        "company_id": "38582",
+        "sfdc_tasks": 2,
+        "sfdc_types": {
+          "Billing": 2
+        },
+        "sfdc_last": "2026-09-02",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 2,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "* Jet Fresh Flower Distributors Inc.",
+        "company_id": "18322",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2026-09-01",
+        "fathom_calls": 1,
+        "fathom_titles": [
+          "eShops Talk | Jet Fresh Flower Distributors | Komet Sales"
+        ],
+        "total_activity": 2,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Syrius Inc.",
+        "company_id": "828357",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Unknown": 1
+        },
+        "sfdc_last": "2026-08-25",
+        "fathom_calls": 1,
+        "fathom_titles": [
+          "Syrius Inc. | Implementation Training Session"
+        ],
+        "total_activity": 2,
+        "priority_level": "",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Maple Grove Floral",
+        "company_id": "641341",
+        "sfdc_tasks": 0,
+        "sfdc_types": {},
+        "sfdc_last": null,
+        "fathom_calls": 2,
+        "fathom_titles": [
+          "Revision Clientes Maple G /Zeidler/ Ashland A",
+          "Touchbase | Maple Grove Floral | Komet Sales"
+        ],
+        "total_activity": 2,
+        "priority_level": "P1",
+        "recap_needed": true
+      },
+      {
+        "company_name": "JFS Wholesale Floral",
+        "company_id": "808079",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2027-02-24",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "PARKED",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Pikes Peak Floral",
+        "company_id": "395357",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2027-01-15",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Matthioli Flowers Ecuador",
+        "company_id": "799014",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2027-01-06",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Southern Floral Co",
+        "company_id": "449344",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2026-12-20",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "PIPELINE",
+        "recap_needed": false
+      },
+      {
+        "company_name": "GOMEZ B.V.",
+        "company_id": "600370",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2026-11-01",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Flower List",
+        "company_id": "756140",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2026-10-13",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Farm To Canada",
+        "company_id": "1241",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2026-09-20",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "SKY FLOWERS S.A.S",
+        "company_id": "400914",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2026-09-16",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Apex Floral Distributors Mississauga",
+        "company_id": "654944",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2026-09-14",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "WE GOT FLOWERS",
+        "company_id": "735220",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2026-09-01",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "IMPL",
+        "recap_needed": false
+      },
+      {
+        "company_name": "SHAW LAKE FARMS INC.",
+        "company_id": "588417",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2026-09-01",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "New England Wholesale Florist",
+        "company_id": "742781",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2026-08-29",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "PETALS WEST, INC.",
+        "company_id": "651513",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Follow-Up": 1
+        },
+        "sfdc_last": "2026-08-27",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "ECOSYSTEM",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Alpha Fern Company, LLC",
+        "company_id": "743681",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Billing": 1
+        },
+        "sfdc_last": "2026-08-27",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Nexa Flowers Group",
+        "company_id": "831754",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Unknown": 1
+        },
+        "sfdc_last": "2026-08-25",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Valley Floral Co. of OKC - Oklahoma",
+        "company_id": "740734",
+        "sfdc_tasks": 1,
+        "sfdc_types": {
+          "Renew Subscription": 1
+        },
+        "sfdc_last": "2026-08-25",
+        "fathom_calls": 0,
+        "fathom_titles": [],
+        "total_activity": 1,
+        "priority_level": "WATCH",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Coquette Roses",
+        "company_id": "821768",
+        "sfdc_tasks": 0,
+        "sfdc_types": {},
+        "sfdc_last": null,
+        "fathom_calls": 1,
+        "fathom_titles": [
+          "Coquette Roses"
+        ],
+        "total_activity": 1,
+        "priority_level": "WATCH",
+        "recap_needed": false
+      },
+      {
+        "company_name": "Dreisbach Wholesale",
+        "company_id": "765491",
+        "sfdc_tasks": 0,
+        "sfdc_types": {},
+        "sfdc_last": null,
+        "fathom_calls": 1,
+        "fathom_titles": [
+          "Dreisbach Wholesale | Implementation"
+        ],
+        "total_activity": 1,
+        "priority_level": "TA",
+        "recap_needed": true
+      },
+      {
+        "company_name": "Zeidler Floral",
+        "company_id": "743648",
+        "sfdc_tasks": 0,
+        "sfdc_types": {},
+        "sfdc_last": null,
+        "fathom_calls": 1,
+        "fathom_titles": [
+          "Zeidler - Komet Sales Touch base"
+        ],
+        "total_activity": 1,
+        "priority_level": "P1",
+        "recap_needed": true
+      }
+    ],
+    "recap_triggers": [
+      {
+        "company_name": "Flora Fresh Inc",
+        "company_id": "601933",
+        "priority_level": "TA",
+        "fathom_calls": 1,
+        "fathom_titles": [
+          "Flora Fresh - Arrival date"
+        ],
+        "sfdc_tasks": 3
+      },
+      {
+        "company_name": "Maple Grove Floral",
+        "company_id": "641341",
+        "priority_level": "P1",
+        "fathom_calls": 2,
+        "fathom_titles": [
+          "Revision Clientes Maple G /Zeidler/ Ashland A",
+          "Touchbase | Maple Grove Floral | Komet Sales"
+        ],
+        "sfdc_tasks": 0
+      },
+      {
+        "company_name": "Dreisbach Wholesale",
+        "company_id": "765491",
+        "priority_level": "TA",
+        "fathom_calls": 1,
+        "fathom_titles": [
+          "Dreisbach Wholesale | Implementation"
+        ],
+        "sfdc_tasks": 0
+      },
+      {
+        "company_name": "Zeidler Floral",
+        "company_id": "743648",
+        "priority_level": "P1",
+        "fathom_calls": 1,
+        "fathom_titles": [
+          "Zeidler - Komet Sales Touch base"
+        ],
+        "sfdc_tasks": 0
+      }
+    ],
+    "generated_at": "2026-08-26"
+  },
+  "summary": {
+    "fee_growth_count": 10,
+    "fee_losers_count": 10,
+    "fee_debuts_count": 41,
+    "fee_debuts_validated": true,
+    "sell_gainers_count": 10,
+    "sell_losers_count": 10,
+    "sell_movers_count": 20,
+    "gone_dark_real_count": 50,
+    "gone_dark_seasonal_count": 43,
+    "went_live_count": 5,
+    "classification_changes_count": 183,
+    "activity_accounts_contacted": 38,
+    "activity_recap_triggers": 4,
+    "total_signals": 400
+  }
+}

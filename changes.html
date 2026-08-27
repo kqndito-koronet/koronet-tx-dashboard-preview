@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qué Cambió — TX Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+      font-size: 11px;
+      color: #0f172a;
+    }
+
+    /* ─── COLLAPSIBLE SECTIONS ─── */
+    .section {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .section-toggle {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      text-align: left;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      color: #0f172a;
+      transition: background 0.1s;
+    }
+    .section-toggle:hover { background: #f8fafc; }
+    .section-title-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-icon { font-size: 14px; }
+    .section-count {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+    .section-count.has-data {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+    .section-chevron {
+      font-size: 10px;
+      color: #94a3b8;
+      transition: transform 0.2s;
+    }
+    .section.open .section-chevron { transform: rotate(180deg); }
+    .section-body {
+      display: none;
+      padding: 0 16px 16px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .section.open .section-body { display: block; }
+
+    /* ─── SUB TABS (gainers / losers within fee/sell movers) ─── */
+    .subtabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .subtab {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: #475569;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      font-family: inherit;
+      transition: all 0.1s;
+    }
+    .subtab:hover { color: #0f172a; }
+    .subtab.active {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+      font-weight: 600;
+    }
+    .subtab-panel { display: none; }
+    .subtab-panel.active { display: block; }
+
+    /* ─── TABLE UTILITIES ─── */
+    .tx-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .tx-table th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #64748b;
+      padding: 6px 8px;
+      border-bottom: 2px solid #e2e8f0;
+      white-space: nowrap;
+    }
+    .tx-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #f1f5f9;
+      white-space: nowrap;
+    }
+    .tx-table tr:hover { background: #f8fafc; }
+    .tx-table tr:last-child td { border-bottom: none; }
+
+    /* Colored row backgrounds */
+    .row-gain td { background: #f0fdf4; }
+    .row-gain:hover td { background: #dcfce7; }
+    .row-loss td { background: #fef2f2; }
+    .row-loss:hover td { background: #fee2e2; }
+
+    /* ─── AMOUNT CELLS ─── */
+    .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .delta-up { color: #16a34a; font-weight: 600; }
+    .delta-down { color: #dc2626; font-weight: 600; }
+    .delta-flat { color: #94a3b8; }
+
+    /* ─── CHANNEL BADGE ─── */
+    .badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+    .badge-ecom { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+    .badge-k2k  { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+    .badge-api  { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+    .badge-gray { background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; }
+
+    /* ─── SIGNAL LABEL BADGES ─── */
+    .signal-primary {
+      display: inline-block;
+      font-size: 8px;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 3px;
+      background: #1e40af;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .signal-ctx {
+      display: inline-block;
+      font-size: 8px;
+      font-weight: 600;
+      padding: 1px 5px;
+      border-radius: 3px;
+      background: #f1f5f9;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+
+    /* ─── DECISION FLOW LABEL ─── */
+    .decision-label {
+      font-size: 9px;
+      font-weight: 500;
+      color: #7c3aed;
+      font-style: italic;
+      margin-left: 8px;
+    }
+
+    /* ─── ACTIVITY GAP ROWS ─── */
+    .row-red-flag td { background: #fef2f2; }
+    .row-red-flag:hover td { background: #fee2e2; }
+    .row-gap td { background: #fffbeb; }
+    .row-gap:hover td { background: #fef9c3; }
+
+    /* ─── ACTIVITY RECAP HIGHLIGHT ─── */
+    .row-recap-needed { border-left: 3px solid #2563eb; }
+    .row-recap-needed td:first-child { padding-left: 5px; }
+
+    /* ─── SEASONAL GONE DARK ─── */
+    .gone-dark-seasonal-sub .section-toggle {
+      background: #f8fafc;
+      font-size: 11px;
+      font-weight: 500;
+      color: #64748b;
+      padding: 8px 12px;
+    }
+    .gone-dark-seasonal-sub .section-toggle:hover { background: #f1f5f9; }
+    .gone-dark-seasonal-sub .tx-table th { color: #94a3b8; }
+    .gone-dark-seasonal-sub .tx-table td { color: #64748b; }
+
+    /* ─── DATA FRESHNESS BAR ─── */
+    .data-freshness {
+      font-size: 10px;
+      color: #64748b;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    /* ─── MULTI-DELTA CELL ─── */
+    .delta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      font-size: 10px;
+    }
+    .delta-group .d-primary { font-size: 11px; font-weight: 700; }
+    .delta-group .d-mom    { font-size: 9px; color: #475569; }
+    .delta-group .d-yoy    { font-size: 9px; color: #94a3b8; }
+
+    /* ─── EMPTY STATE ─── */
+    .empty-state {
+      text-align: center;
+      padding: 32px;
+      color: #94a3b8;
+      font-size: 12px;
+    }
+
+    /* ─── ERROR / LOADING ─── */
+    .tx-loading {
+      text-align: center;
+      padding: 48px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    .tx-error {
+      text-align: center;
+      padding: 32px;
+      color: #dc2626;
+      font-size: 12px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 6px;
+      margin: 24px;
+    }
+
+    /* ─── META BAR ─── */
+    .meta-bar {
+      font-size: 10px;
+      color: #94a3b8;
+      padding: 4px 0 12px;
+    }
+
+    /* ─── FILTER RESULT NOTE ─── */
+    .filter-note {
+      font-size: 10px;
+      color: #94a3b8;
+      padding: 4px 0 8px;
+      font-style: italic;
+    }
+
+    /* ─── ACCOUNT LINK ─── */
+    .account-link {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .account-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<!-- Nav + filter bar injected by TXShared.init -->
+<div id="filter-container"></div>
+<div id="scorecard-container"></div>
+
+<div class="tx-content">
+
+  <div id="loading-state" class="tx-loading">Loading signals…</div>
+  <div id="error-state" class="tx-error" style="display:none"></div>
+  <div id="main-content" style="display:none">
+
+    <!-- ─── SUMMARY BAR ─── -->
+    <div class="tx-summary" id="summary-bar"></div>
+
+    <!-- ─── META ─── -->
+    <div class="meta-bar" id="meta-bar"></div>
+
+    <!-- ─── DATA FRESHNESS ─── -->
+    <div id="data-freshness-bar"></div>
+
+    <!-- ─── FILTER NOTE ─── -->
+    <div class="filter-note" id="filter-note" style="display:none"></div>
+
+    <!-- ─── SECTIONS ─── -->
+
+    <!-- 1. FEE MOVERS -->
+    <div class="section open" id="section-fees">
+      <button class="section-toggle" onclick="toggleSection('section-fees')">
+        <span class="section-title-left">
+          <span class="section-icon">💸</span>
+          <span id="fees-section-title">Fee Changes</span>
+          <span class="section-count" id="count-fees">—</span>
+          <span class="decision-label">Decision: Is the fee engine growing from volume or rate catch-up?</span>
+        </span>
+        <span class="section-chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="subtabs">
+          <button class="subtab active" onclick="switchSubtab('fees', 'growth', this)">Fee Growth (existing) <span class="signal-primary">MoM%</span></button>
+          <button class="subtab" onclick="switchSubtab('fees', 'losers', this)">Losers <span class="signal-primary">vs refresh</span></button>
+          <button class="subtab" onclick="switchSubtab('fees', 'debuts', this)">New Fee Payers (41 validated)</button>
+        </div>
+        <div id="fees-growth" class="subtab-panel active"></div>
+        <div id="fees-losers" class="subtab-panel"></div>
+        <div id="fees-debuts" class="subtab-panel"></div>
+      </div>
+    </div>
+
+    <!-- 2. SELL MOVERS -->
+    <div class="section open" id="section-sell">
+      <button class="section-toggle" onclick="toggleSection('section-sell')">
+        <span class="section-title-left">
+          <span class="section-icon">📈</span>
+          <span id="sell-section-title">Sell GMV Changes</span>
+          <span class="section-count" id="count-sell">—</span>
+          <span class="decision-label">Decision: Is online GMV growing or shrinking?</span>
+        </span>
+        <span class="section-chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div class="subtabs">
+          <button class="subtab active" onclick="switchSubtab('sell', 'gainers', this)">Gainers <span class="signal-primary">MoM</span></button>
+          <button class="subtab" onclick="switchSubtab('sell', 'losers', this)">Losers <span class="signal-primary">MoM</span></button>
+        </div>
+        <div id="sell-gainers" class="subtab-panel active"></div>
+        <div id="sell-losers" class="subtab-panel"></div>
+      </div>
+    </div>
+
+    <!-- 3. ACTIVITY (L30D) — Fathom + SFDC -->
+    <div class="section open" id="section-activity">
+      <button class="section-toggle" onclick="toggleSection('section-activity')">
+        <span class="section-title-left">
+          <span class="section-icon">📞</span>
+          <span>Activity (L30D) — Fathom Calls + SFDC Tasks</span>
+          <span class="section-count" id="count-activity">—</span>
+          <span class="decision-label">Decision: Which accounts are being worked? Who needs a recap?</span>
+        </span>
+        <span class="section-chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div id="activity-l30d-table"></div>
+      </div>
+    </div>
+
+    <!-- 4. GONE DARK -->
+    <div class="section" id="section-dark">
+      <button class="section-toggle" onclick="toggleSection('section-dark')">
+        <span class="section-title-left">
+          <span class="section-icon">🌑</span>
+          <span>Gone Dark</span>
+          <span class="section-count" id="count-dark">—</span>
+          <span class="decision-label">Decision: Which accounts need re-engagement?</span>
+        </span>
+        <span class="section-chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div id="gone-dark-real-table"></div>
+        <div id="gone-dark-seasonal-container" style="margin-top:16px"></div>
+      </div>
+    </div>
+
+    <!-- 5. WENT LIVE -->
+    <div class="section" id="section-live">
+      <button class="section-toggle" onclick="toggleSection('section-live')">
+        <span class="section-title-left">
+          <span class="section-icon">✨</span>
+          <span>Went Live</span>
+          <span class="section-count" id="count-live">—</span>
+          <span class="decision-label">Decision: Are new accounts activating successfully?</span>
+        </span>
+        <span class="section-chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div id="went-live-table"></div>
+      </div>
+    </div>
+
+    <!-- 6. CLASSIFICATION CHANGES -->
+    <div class="section" id="section-class">
+      <button class="section-toggle" onclick="toggleSection('section-class')">
+        <span class="section-title-left">
+          <span class="section-icon">🏷</span>
+          <span>Classification Changes</span>
+          <span class="section-count" id="count-class">—</span>
+        </span>
+        <span class="section-chevron">▼</span>
+      </button>
+      <div class="section-body">
+        <div id="class-changes-table"></div>
+      </div>
+    </div>
+
+  </div><!-- /main-content -->
+</div><!-- /tx-content -->
+
+<script src="tx_shared.js"></script>
+<script>
+'use strict';
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+let DELTA = null;
+let ACCOUNTS = null;          // map: company_id → account record
+let CURRENT_FILTERS = null;
+
+// ─── SECTION TOGGLE ──────────────────────────────────────────────────────────
+function toggleSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle('open');
+}
+
+// ─── SUBTAB SWITCHER ─────────────────────────────────────────────────────────
+function switchSubtab(group, panel, btn) {
+  // Deactivate all subtabs/panels in this group
+  const parentSection = btn.closest('.section-body');
+  parentSection.querySelectorAll('.subtab').forEach(t => t.classList.remove('active'));
+  parentSection.querySelectorAll('.subtab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const target = document.getElementById(group + '-' + panel);
+  if (target) target.classList.add('active');
+}
+
+// ─── FORMATTING ──────────────────────────────────────────────────────────────
+const fmt = TXShared.fmtDollar;
+const fmtPct = TXShared.fmtPct;
+const fmtDelta = TXShared.fmtDelta;
+
+function fmtChannel(ch) {
+  if (!ch) return '';
+  const lower = (ch || '').toLowerCase();
+  if (lower.includes('k2k')) return '<span class="badge badge-k2k">K2K</span>';
+  if (lower.includes('api')) return '<span class="badge badge-api">API</span>';
+  if (lower.includes('ecom') || lower.includes('ecommerce')) return '<span class="badge badge-ecom">eCom</span>';
+  return `<span class="badge badge-gray">${ch}</span>`;
+}
+
+function fmtFieldName(field) {
+  const map = {
+    account_class: 'Account Class',
+    product_tier: 'Product Tier',
+    business_type: 'Business Type',
+    priority_level: 'Priority',
+  };
+  return map[field] || field;
+}
+
+function fmtEmpty(val) {
+  return val == null || val === '' ? '<em style="color:#94a3b8">—</em>' : val;
+}
+
+// ─── FILTER: get set of company_ids that pass current filters ─────────────────
+function getFilteredIds(filters) {
+  if (!ACCOUNTS) return null; // no filtering possible
+  const filtered = TXShared.applyFilters(Object.values(ACCOUNTS), filters);
+  return new Set(filtered.map(a => a.company_id));
+}
+
+// ─── RENDER HELPERS ──────────────────────────────────────────────────────────
+function emptyState(msg) {
+  return `<div class="empty-state">${msg || 'No data for current filters.'}</div>`;
+}
+
+// ─── MULTI-DELTA CELL ────────────────────────────────────────────────────────
+function fmtMultiDelta(vsSnapshot, vsSnapshotPct, mom, momPct, yoy, yoyPct) {
+  const snap = vsSnapshot != null
+    ? `<div class="d-primary">${vsSnapshot >= 0 ? '<span class="delta-up">+' : '<span class="delta-down">'}${fmt(Math.abs(vsSnapshot))}</span> <span style="font-size:9px;font-weight:400">${fmtDelta(vsSnapshotPct)}</span></div>`
+    : '<div class="d-primary"><span class="delta-flat">—</span></div>';
+  const momStr = mom != null
+    ? `<div class="d-mom">MoM ${mom >= 0 ? '<span class="delta-up">+' : '<span class="delta-down">'}${fmt(Math.abs(mom))}</span> ${fmtDelta(momPct)}</div>`
+    : '';
+  const yoyStr = yoy != null
+    ? `<div class="d-yoy">YoY ${yoy >= 0 ? '+' : ''}${fmt(yoy)} ${fmtDelta(yoyPct)}</div>`
+    : '';
+  return `<div class="delta-group">${snap}${momStr}${yoyStr}</div>`;
+}
+
+// Fee Growth — sorted by MoM% (new v2 format primary; old format also supported)
+function renderFeeGrowth(rows, filteredIds, meta) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState();
+  const snapshotDate = (meta && meta.snapshot_date) ? meta.snapshot_date : 'Aug 13';
+  const currentDate = (meta && meta.generated_at) ? meta.generated_at : 'Aug 25';
+  // Sort by MoM% descending
+  const sorted = [...visible].sort((a, b) => (b.delta_mom_pct || 0) - (a.delta_mom_pct || 0));
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th class="num">YTD 2026 Fees</th>
+          <th class="num">MoM% <span class="signal-primary">primary</span> / vs Refresh / YoY <span class="signal-ctx">ctx</span></th>
+          <th>Channel</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${sorted.map((r, i) => `
+          <tr class="row-gain">
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td class="num">${fmt(r.fees_current)}</td>
+            <td class="num">${fmtMultiDelta(
+              r.delta_mom_abs, r.delta_mom_pct,
+              r.delta_vs_snapshot_abs, r.delta_vs_snapshot_pct,
+              r.delta_yoy_abs, r.delta_yoy_pct
+            )}</td>
+            <td>${fmtChannel(r.fee_channel)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderFeeLosers(rows, filteredIds, meta) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState();
+  const snapshotDate = (meta && meta.snapshot_date) ? meta.snapshot_date : 'Aug 13';
+  const currentDate = (meta && meta.generated_at) ? meta.generated_at : 'Aug 25';
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th class="num">YTD 2026 Fees</th>
+          <th class="num">vs Refresh (${snapshotDate}→${currentDate}) <span class="signal-primary">primary</span> / MoM / YoY <span class="signal-ctx">ctx</span></th>
+          <th>Channel</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr class="row-loss">
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td class="num">${fmt(r.fees_current)}</td>
+            <td class="num">${fmtMultiDelta(
+              r.delta_vs_snapshot_abs, r.delta_vs_snapshot_pct,
+              r.delta_mom_abs, r.delta_mom_pct,
+              r.delta_yoy_abs, r.delta_yoy_pct
+            )}</td>
+            <td>${fmtChannel(r.fee_channel)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderFeeDebuts(rows, filteredIds) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState('No new fee payers for current filters.');
+  // New format: total_fees + first_fee_date. Old format: first_fee_amount + delta_vs_snapshot_abs
+  const isNewFormat = visible.length > 0 && visible[0].total_fees != null;
+  // Sort by total_fees descending
+  const sorted = [...visible].sort((a, b) => ((b.total_fees || b.first_fee_amount || 0) - (a.total_fees || a.first_fee_amount || 0)));
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th class="num">Total Fees (YTD 2026)</th>
+          <th>First Fee Date</th>
+          <th>Channel</th>
+          ${isNewFormat ? '<th style="font-size:9px;color:#94a3b8">Source</th>' : ''}
+        </tr>
+      </thead>
+      <tbody>
+        ${sorted.map((r, i) => {
+          const totalFees = r.total_fees != null ? r.total_fees : r.first_fee_amount;
+          const firstDate = r.first_fee_date || '—';
+          const source = r.validated ? '<span style="color:#16a34a;font-size:9px">✓ validated</span>' : '';
+          return `
+          <tr>
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td class="num"><span class="delta-up">${fmt(totalFees)}</span></td>
+            <td style="color:#475569">${firstDate}</td>
+            <td>${fmtChannel(r.fee_channel)}</td>
+            ${isNewFormat ? `<td>${source}</td>` : ''}
+          </tr>`;
+        }).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderSellGainers(rows, filteredIds, meta) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState();
+  const latestMonth = (meta && meta.latest_month) ? meta.latest_month : 'Current';
+  const priorMonth = (meta && meta.prior_month) ? meta.prior_month : 'Prior';
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th class="num">${latestMonth} GMV</th>
+          <th class="num">MoM vs ${priorMonth} <span class="signal-primary">primary</span> / YoY <span class="signal-ctx">ctx</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr class="row-gain">
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td class="num">${fmt(r.sell_current)}</td>
+            <td class="num">${fmtMultiDelta(
+              r.delta_mom_abs, r.delta_mom_pct,
+              null, null,
+              r.delta_yoy_abs, r.delta_yoy_pct
+            )}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderSellLosers(rows, filteredIds, meta) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState();
+  const latestMonth = (meta && meta.latest_month) ? meta.latest_month : 'Current';
+  const priorMonth = (meta && meta.prior_month) ? meta.prior_month : 'Prior';
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th class="num">${latestMonth} GMV</th>
+          <th class="num">MoM vs ${priorMonth} <span class="signal-primary">primary</span> / YoY <span class="signal-ctx">ctx</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr class="row-loss">
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td class="num">${fmt(r.sell_current)}</td>
+            <td class="num">${fmtMultiDelta(
+              r.delta_mom_abs, r.delta_mom_pct,
+              null, null,
+              r.delta_yoy_abs, r.delta_yoy_pct
+            )}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderActivityGaps(activity, filteredIds) {
+  if (!activity) return emptyState('No activity data available.');
+
+  if (activity.error) {
+    return `<div class="tx-error" style="margin:0">
+      <strong>SFDC query failed:</strong> ${activity.error}<br>
+      <span style="font-size:10px;color:#64748b">Run: sf data query --target-org koronet -q "SELECT Id, Name, LastActivityDate FROM Account ORDER BY LastActivityDate DESC LIMIT 500" --json</span>
+    </div>`;
+  }
+
+  const rows = activity.accounts_no_contact_30d || [];
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  const redFlags = visible.filter(r => r.red_flag);
+  const queryDate = activity.sfdc_query_date || '—';
+
+  if (!visible.length) return emptyState('No activity gaps found. All accounts contacted in last 30 days.');
+
+  const summaryLine = `<div style="font-size:10px;color:#64748b;padding:4px 0 8px">
+    SFDC as of ${queryDate} · ${activity.accounts_with_recent_activity ?? '?'} accounts active (30d) ·
+    <strong style="color:#dc2626">${redFlags.length} red flags</strong> (>30d + >$100K online sell)
+    ${activity.fathom_source ? '' : ' · Fathom: pending'}
+  </div>`;
+
+  return summaryLine + `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th class="num">Days Since Contact</th>
+          <th class="num">Online Sell YTD</th>
+          <th class="num">Fees YTD</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => {
+          const rowClass = r.red_flag ? 'row-red-flag' : 'row-gap';
+          const daysTxt = r.days_since_contact != null
+            ? `<span style="font-weight:700;color:${r.days_since_contact > 60 ? '#dc2626' : '#d97706'}">${r.days_since_contact}d</span>`
+            : '<span style="color:#94a3b8">unknown</span>';
+          const priority = r.red_flag
+            ? '<span style="font-weight:700;color:#dc2626">RED FLAG</span>'
+            : r.days_since_contact > 60
+              ? '<span style="color:#d97706;font-weight:600">High</span>'
+              : '<span style="color:#64748b">Watch</span>';
+          return `
+          <tr class="${rowClass}">
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td class="num">${daysTxt}</td>
+            <td class="num">${fmt(r.online_sell_ytd)}</td>
+            <td class="num">${fmt(r.fees_ytd)}</td>
+            <td>${priority}</td>
+          </tr>`;
+        }).join('')}
+      </tbody>
+    </table>`;
+}
+
+// ─── ACTIVITY L30D — new combined Fathom+SFDC renderer ───────────────────────
+function renderActivityL30D(rows, recapTriggers, activity, filteredIds) {
+  const totalContacted = activity.total_accounts_contacted || rows.length;
+  const recapCount = (recapTriggers || []).length;
+
+  if (!rows.length) {
+    return '<div class="empty-state">Activity data not available. Run generate_delta.py with SFDC+Fathom data.</div>';
+  }
+
+  // Sort by total_activity descending
+  const sorted = [...rows].sort((a, b) => (b.total_activity || 0) - (a.total_activity || 0));
+
+  const summaryHtml = `<div style="font-size:10px;color:#64748b;padding:4px 0 8px">
+    <strong>${totalContacted} accounts contacted</strong> ·
+    <strong style="color:#2563eb">${recapCount} recap triggers</strong>
+    ${activity.sfdc_source ? ' · SFDC tasks' : ''}${activity.fathom_source ? ' + Fathom calls' : ''} · L30D
+  </div>`;
+
+  const tableHtml = `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th>Priority</th>
+          <th class="num">SFDC Tasks</th>
+          <th class="num">Fathom Calls</th>
+          <th class="num">Total</th>
+          <th>Last Contact</th>
+          <th>Breakdown</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${sorted.map((r, i) => {
+          const rowClass = r.recap_needed ? 'row-recap-needed' : '';
+          const priority = r.priority_level
+            ? `<span style="font-size:10px;font-weight:600;color:#475569">${r.priority_level}</span>`
+            : '<span style="color:#94a3b8">—</span>';
+          const lastContact = r.sfdc_last || '—';
+          // Build breakdown from sfdc_types
+          const sfdcTypes = r.sfdc_types || {};
+          const typeStr = Object.entries(sfdcTypes)
+            .map(([k, v]) => `${k} ×${v}`)
+            .join(', ');
+          // Add fathom titles if present
+          const fathomTitlesStr = (r.fathom_titles && r.fathom_titles.length)
+            ? r.fathom_titles.map(t => `<span style="display:block;font-size:9px;color:#2563eb;margin-top:1px">${t}</span>`).join('')
+            : '';
+          const breakdownHtml = `<span style="font-size:9px;color:#64748b">${typeStr || '—'}</span>${fathomTitlesStr}`;
+          return `
+          <tr class="${rowClass}">
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span>${r.recap_needed ? ' <span class="signal-primary">RECAP</span>' : ''}</td>
+            <td>${priority}</td>
+            <td class="num">${r.sfdc_tasks != null ? r.sfdc_tasks : '—'}</td>
+            <td class="num">${r.fathom_calls != null ? r.fathom_calls : '—'}</td>
+            <td class="num"><strong>${r.total_activity != null ? r.total_activity : '—'}</strong></td>
+            <td style="color:#475569;font-size:10px">${lastContact}</td>
+            <td style="white-space:normal;max-width:220px">${breakdownHtml}</td>
+          </tr>`;
+        }).join('')}
+      </tbody>
+    </table>`;
+
+  return summaryHtml + tableHtml;
+}
+
+// ─── GONE DARK RENDERERS ──────────────────────────────────────────────────────
+function renderGoneDarkReal(rows) {
+  if (!rows.length) return emptyState('No accounts gone dark (real) for current filters.');
+  return `<div style="font-size:10px;font-weight:600;color:#d97706;padding:4px 0 8px">Gone Dark — Real (${rows.length}) — had activity same month last year</div>
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th>Last Active Month</th>
+          <th class="num">Peak 3-Month GMV</th>
+          <th class="num">Same Month LY GMV</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rows.map((r, i) => `
+          <tr>
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td style="color:#d97706;font-weight:600">${r.last_active_month}</td>
+            <td class="num">${fmt(r.peak_3m_gmv)}</td>
+            <td class="num" style="color:#64748b">${fmt(r.same_month_ly_gmv)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderGoneDarkSeasonal(rows) {
+  if (!rows.length) return '';
+  const sectionId = 'gone-dark-seasonal-inner';
+  return `<div class="section gone-dark-seasonal-sub" id="${sectionId}" style="border:1px solid #e2e8f0;border-radius:4px;overflow:hidden">
+    <button class="section-toggle" onclick="toggleSection('${sectionId}')">
+      <span class="section-title-left">
+        <span style="font-size:11px;font-weight:500;color:#64748b">Seasonal Normal (${rows.length}) — no activity same month LY either</span>
+      </span>
+      <span class="section-chevron" style="color:#94a3b8">▼</span>
+    </button>
+    <div class="section-body" style="padding:0 12px 12px">
+      <table class="tx-table" style="opacity:0.7">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Account</th>
+            <th>Last Active Month</th>
+            <th class="num">Peak 3-Month GMV</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map((r, i) => `
+            <tr>
+              <td style="color:#94a3b8">${i + 1}</td>
+              <td><span style="color:#64748b">${r.company_name}</span></td>
+              <td style="color:#94a3b8">${r.last_active_month}</td>
+              <td class="num" style="color:#94a3b8">${fmt(r.peak_3m_gmv)}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  </div>`;
+}
+
+// ─── LEGACY GONE DARK ────────────────────────────────────────────────────────
+function renderGoneDark(rows, filteredIds) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState('No accounts gone dark for current filters.');
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th>Last Active Month</th>
+          <th class="num">Peak 3-Month GMV</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr>
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td style="color:#d97706;font-weight:600">${r.last_active_month}</td>
+            <td class="num">${fmt(r.peak_3m_gmv)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderWentLive(rows, filteredIds) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState('No new accounts went live for current filters.');
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th>First Month</th>
+          <th class="num">Current Month GMV</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr>
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td style="color:#16a34a;font-weight:600">${r.first_month}</td>
+            <td class="num"><span class="delta-up">${fmt(r.current_month_gmv)}</span></td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderClassChanges(rows, filteredIds) {
+  const visible = filteredIds ? rows.filter(r => filteredIds.has(r.company_id)) : rows;
+  if (!visible.length) return emptyState('No classification changes for current filters.');
+  return `
+    <table class="tx-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Account</th>
+          <th>Field</th>
+          <th>From</th>
+          <th>To</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${visible.map((r, i) => `
+          <tr>
+            <td style="color:#94a3b8">${i + 1}</td>
+            <td><span class="account-link">${r.company_name}</span></td>
+            <td style="color:#475569;font-weight:500">${fmtFieldName(r.field)}</td>
+            <td>${fmtEmpty(r.from)}</td>
+            <td style="font-weight:600">${fmtEmpty(r.to)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+// ─── GONE DARK HELPERS ────────────────────────────────────────────────────────
+// Returns flat array regardless of old (array) or new (object with real/seasonal) format
+function getGoneDarkReal(delta) {
+  if (!delta.gone_dark) return [];
+  if (Array.isArray(delta.gone_dark)) return delta.gone_dark;
+  return delta.gone_dark.gone_dark_real || [];
+}
+function getGoneDarkSeasonal(delta) {
+  if (!delta.gone_dark || Array.isArray(delta.gone_dark)) return [];
+  return delta.gone_dark.gone_dark_seasonal || [];
+}
+
+// ─── FEE MOVERS HELPERS ───────────────────────────────────────────────────────
+// Returns fee growth rows: new format uses fee_growth, old format uses top_gainers/top_gainers_yoy
+function getFeeGrowthRows(delta) {
+  return delta.fee_movers.fee_growth || delta.fee_movers.top_gainers || delta.fee_movers.top_gainers_yoy || [];
+}
+function getFeeLosersRows(delta) {
+  return delta.fee_movers.top_losers || delta.fee_movers.top_losers_yoy || [];
+}
+
+// ─── SUMMARY BAR ─────────────────────────────────────────────────────────────
+function renderSummaryBar(delta, filteredIds) {
+  const s = delta.summary;
+
+  const feeGrowth = getFeeGrowthRows(delta);
+  const feeLosers = getFeeLosersRows(delta);
+  const sellGainers = delta.sell_movers.top_gainers || delta.sell_movers.top_gainers_yoy || [];
+  const sellLosers = delta.sell_movers.top_losers || delta.sell_movers.top_losers_yoy || [];
+  const goneDarkReal = getGoneDarkReal(delta);
+  const goneDarkSeasonal = getGoneDarkSeasonal(delta);
+
+  const feeCount = filteredIds
+    ? [...feeGrowth, ...feeLosers].filter(r => filteredIds.has(r.company_id)).length
+    : (s.fee_growth_count != null ? (s.fee_growth_count + (s.fee_losers_count || 0)) : s.fee_movers_count);
+  const sellCount = filteredIds
+    ? [...sellGainers, ...sellLosers].filter(r => filteredIds.has(r.company_id)).length
+    : s.sell_movers_count;
+  const darkRealCount = filteredIds
+    ? goneDarkReal.filter(r => filteredIds.has(r.company_id)).length
+    : (s.gone_dark_real_count != null ? s.gone_dark_real_count : (s.gone_dark_count || goneDarkReal.length));
+  const darkSeasonalCount = filteredIds
+    ? goneDarkSeasonal.filter(r => filteredIds.has(r.company_id)).length
+    : (s.gone_dark_seasonal_count != null ? s.gone_dark_seasonal_count : 0);
+  const liveCount = filteredIds
+    ? delta.went_live.filter(r => filteredIds.has(r.company_id)).length
+    : s.went_live_count;
+  const classCount = filteredIds
+    ? delta.classification_changes.filter(r => filteredIds.has(r.company_id)).length
+    : s.classification_changes_count;
+  const debutCount = filteredIds
+    ? (delta.fee_movers.fee_debuts || []).filter(r => filteredIds.has(r.company_id)).length
+    : s.fee_debuts_count;
+
+  // Activity: new format uses by_account, old format uses accounts_no_contact_30d
+  const activity = delta.activity || {};
+  const activityRows = activity.by_account || activity.accounts_no_contact_30d || [];
+  const recapCount = filteredIds
+    ? activityRows.filter(r => r.recap_needed && filteredIds.has(r.company_id)).length
+    : (s.activity_recap_triggers != null ? s.activity_recap_triggers : activityRows.filter(r => r.recap_needed).length);
+  const actContactedCount = filteredIds
+    ? activityRows.filter(r => filteredIds.has(r.company_id)).length
+    : (s.activity_accounts_contacted != null ? s.activity_accounts_contacted : activityRows.length);
+
+  const items = [
+    { label: 'Fee Movers', value: feeCount, color: '#2563eb' },
+    { label: 'Sell Movers', value: sellCount, color: '#2563eb' },
+    { label: 'New Fee Payers', value: debutCount, color: '#16a34a' },
+    { label: 'Gone Dark (Real)', value: darkRealCount, color: '#d97706' },
+    { label: 'Seasonal Normal', value: darkSeasonalCount, color: '#94a3b8' },
+    { label: 'Went Live', value: liveCount, color: '#16a34a' },
+    { label: 'Class Changes', value: classCount, color: '#7c3aed' },
+    { label: 'Accounts Worked', value: actContactedCount, color: '#2563eb' },
+    { label: 'Recap Triggers', value: recapCount, color: '#dc2626' },
+  ];
+
+  return items.map(item => `
+    <div class="tx-summary-item">
+      <div class="tx-summary-value" style="color:${item.color}">${item.value}</div>
+      <div class="tx-summary-label">${item.label}</div>
+    </div>
+  `).join('');
+}
+
+// ─── MAIN RENDER ─────────────────────────────────────────────────────────────
+function render(filters) {
+  if (!DELTA) return;
+
+  const filteredIds = getFilteredIds(filters);
+  const isFiltered = filteredIds !== null;
+  const meta = DELTA._meta || {};
+
+  // Support both old (top_gainers/top_gainers_yoy) and new (fee_growth) field names
+  const feeGrowth = getFeeGrowthRows(DELTA);
+  const feeLosers = getFeeLosersRows(DELTA);
+  const sellGainers = DELTA.sell_movers.top_gainers || DELTA.sell_movers.top_gainers_yoy || [];
+  const sellLosers = DELTA.sell_movers.top_losers || DELTA.sell_movers.top_losers_yoy || [];
+
+  // Summary bar
+  document.getElementById('summary-bar').innerHTML = renderSummaryBar(DELTA, filteredIds);
+
+  // Update fee section title dynamically
+  const feeTitleEl = document.getElementById('fees-section-title');
+  if (feeTitleEl && meta.snapshot_date && meta.generated_at) {
+    feeTitleEl.textContent = `Fee Changes (${meta.snapshot_date} → ${meta.generated_at})`;
+  }
+  const sellTitleEl = document.getElementById('sell-section-title');
+  if (sellTitleEl && meta.prior_month && meta.latest_month) {
+    sellTitleEl.textContent = `Sell GMV Changes (${meta.prior_month} → ${meta.latest_month})`;
+  }
+
+  // Filter note
+  const noteEl = document.getElementById('filter-note');
+  if (isFiltered && filters) {
+    const parts = [];
+    if (filters.accountClass) parts.push(`Class: ${filters.accountClass}`);
+    if (filters.businessType) parts.push(`Type: ${filters.businessType}`);
+    if (filters.productTier) parts.push(`Tier: ${filters.productTier}`);
+    if (filters.priority && filters.priority.length) parts.push(`Priority: ${filters.priority.join(', ')}`);
+    if (filters.impl && filters.impl.length) parts.push(`Impl: ${filters.impl.join(', ')}`);
+    if (filters.search) parts.push(`Search: "${filters.search}"`);
+    if (parts.length) {
+      noteEl.textContent = `Filtered by: ${parts.join(' · ')}`;
+      noteEl.style.display = '';
+    } else {
+      noteEl.style.display = 'none';
+    }
+  } else {
+    noteEl.style.display = 'none';
+  }
+
+  // ── Fee Movers ──
+  const feeDebuts = DELTA.fee_movers.fee_debuts || [];
+  const feeTotalCount = filteredIds
+    ? [...feeGrowth, ...feeLosers, ...feeDebuts]
+        .filter(r => filteredIds.has(r.company_id)).length
+    : ((DELTA.summary.fee_growth_count || DELTA.summary.fee_movers_count || 0) + (DELTA.summary.fee_losers_count || 0) + (DELTA.summary.fee_debuts_count || 0));
+  setCount('count-fees', feeTotalCount);
+  document.getElementById('fees-growth').innerHTML = renderFeeGrowth(feeGrowth, filteredIds, meta);
+  document.getElementById('fees-losers').innerHTML = renderFeeLosers(feeLosers, filteredIds, meta);
+  document.getElementById('fees-debuts').innerHTML = renderFeeDebuts(feeDebuts, filteredIds);
+
+  // ── Sell Movers ──
+  const sellTotalCount = filteredIds
+    ? [...sellGainers, ...sellLosers].filter(r => filteredIds.has(r.company_id)).length
+    : DELTA.summary.sell_movers_count;
+  setCount('count-sell', sellTotalCount);
+  document.getElementById('sell-gainers').innerHTML = renderSellGainers(sellGainers, filteredIds, meta);
+  document.getElementById('sell-losers').innerHTML = renderSellLosers(sellLosers, filteredIds, meta);
+
+  // ── Activity (L30D) — new combined Fathom+SFDC format ──
+  const activity = DELTA.activity || null;
+  // New format: by_account. Old format: accounts_no_contact_30d
+  const activityRows = (activity && (activity.by_account || activity.accounts_no_contact_30d)) || [];
+  const activityVisible = filteredIds
+    ? activityRows.filter(r => filteredIds.has(r.company_id))
+    : activityRows;
+  setCount('count-activity', activityVisible.length);
+  if (activity && activity.by_account) {
+    // New v2 format
+    const recapTriggers = (activity.recap_triggers || []);
+    document.getElementById('activity-l30d-table').innerHTML = renderActivityL30D(activityVisible, recapTriggers, activity, filteredIds);
+  } else if (activity && activity.accounts_no_contact_30d) {
+    // Old format fallback — render into same container
+    const activityForRender = { ...activity, accounts_no_contact_30d: activityVisible };
+    document.getElementById('activity-l30d-table').innerHTML = renderActivityGaps(activityForRender, null);
+  } else {
+    document.getElementById('activity-l30d-table').innerHTML = '<div class="empty-state">Activity data not available. Run generate_delta.py with SFDC+Fathom data.</div>';
+  }
+
+  // ── Gone Dark ── (new: split real/seasonal; old: flat array)
+  const goneDarkReal = getGoneDarkReal(DELTA);
+  const goneDarkSeasonal = getGoneDarkSeasonal(DELTA);
+  const darkRealVisible = filteredIds ? goneDarkReal.filter(r => filteredIds.has(r.company_id)) : goneDarkReal;
+  const darkSeasonalVisible = filteredIds ? goneDarkSeasonal.filter(r => filteredIds.has(r.company_id)) : goneDarkSeasonal;
+  setCount('count-dark', darkRealVisible.length + darkSeasonalVisible.length);
+  // Real gone dark
+  document.getElementById('gone-dark-real-table').innerHTML = renderGoneDarkReal(darkRealVisible);
+  // Seasonal gone dark — collapsible sub-section
+  document.getElementById('gone-dark-seasonal-container').innerHTML = renderGoneDarkSeasonal(darkSeasonalVisible);
+
+  // ── Went Live ──
+  const liveVisible = filteredIds
+    ? DELTA.went_live.filter(r => filteredIds.has(r.company_id))
+    : DELTA.went_live;
+  setCount('count-live', liveVisible.length);
+  document.getElementById('went-live-table').innerHTML = renderWentLive(DELTA.went_live, filteredIds);
+
+  // ── Classification Changes ──
+  const classVisible = filteredIds
+    ? DELTA.classification_changes.filter(r => filteredIds.has(r.company_id))
+    : DELTA.classification_changes;
+  setCount('count-class', classVisible.length);
+  document.getElementById('class-changes-table').innerHTML = renderClassChanges(DELTA.classification_changes, filteredIds);
+}
+
+function setCount(id, n) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = n;
+  el.classList.toggle('has-data', n > 0);
+}
+
+// ─── DATA LOADING ─────────────────────────────────────────────────────────────
+async function loadData() {
+  const loadingEl = document.getElementById('loading-state');
+  const errorEl = document.getElementById('error-state');
+  const mainEl = document.getElementById('main-content');
+
+  try {
+    // Load delta.json (required) and accounts_v3.json (for filtering)
+    const [deltaResp, accountsResp] = await Promise.allSettled([
+      fetch('data/delta.json'),
+      fetch('data/accounts_v3.json'),
+    ]);
+
+    if (deltaResp.status === 'rejected' || !deltaResp.value.ok) {
+      throw new Error(
+        'data/delta.json not found. Run scripts/generate_delta.py to generate it.'
+      );
+    }
+
+    DELTA = await deltaResp.value.json();
+
+    if (accountsResp.status === 'fulfilled' && accountsResp.value.ok) {
+      const accountData = await accountsResp.value.json();
+      const accountList = accountData.accounts || accountData;
+      ACCOUNTS = {};
+      accountList.forEach(a => { ACCOUNTS[a.company_id] = a; });
+    }
+
+    // Meta bar
+    const m = DELTA._meta || {};
+    const metaBar = document.getElementById('meta-bar');
+    const parts = [];
+    if (m.generated_at) parts.push(`Generated ${m.generated_at}`);
+    if (m.latest_month) parts.push(`Latest data: ${m.latest_month}`);
+    if (m.accounts_analyzed) parts.push(`${m.accounts_analyzed} accounts`);
+    // Show all three signal timelines
+    if (m.signals) {
+      parts.push(`vs refresh: ${m.snapshot_date || m.snapshot_compared || '—'} → ${m.generated_at || '—'} (primary)`);
+      if (m.prior_month && m.latest_month) parts.push(`MoM: ${m.prior_month} → ${m.latest_month}`);
+      if (m.yoy_month) parts.push(`YoY: ${m.yoy_month} → ${m.latest_month} (context)`);
+    } else {
+      // Fallback for old delta.json format
+      if (m.snapshot_compared) parts.push(`vs snapshot ${m.snapshot_compared}`);
+      if (m.yoy_month) parts.push(`YoY vs: ${m.yoy_month}`);
+    }
+    metaBar.textContent = parts.join(' · ');
+
+    // Data freshness bar
+    const freshnessBar = document.getElementById('data-freshness-bar');
+    if (freshnessBar && m.generated_at) {
+      freshnessBar.innerHTML = `<span class="data-freshness">Data as of: <strong>${m.generated_at}</strong></span>`;
+    }
+
+    loadingEl.style.display = 'none';
+    mainEl.style.display = '';
+
+    render(CURRENT_FILTERS);
+
+  } catch (err) {
+    loadingEl.style.display = 'none';
+    errorEl.style.display = '';
+    errorEl.innerHTML = `
+      <strong>Could not load delta data</strong><br>
+      ${err.message}<br><br>
+      <code style="font-size:10px;color:#64748b">python3 scripts/generate_delta.py</code>
+    `;
+  }
+}
+
+// ─── FILTER CHANGE HANDLER ────────────────────────────────────────────────────
+function onFilterChange(filterState) {
+  CURRENT_FILTERS = filterState;
+  render(filterState);
+}
+
+// ─── BOOT ────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  CURRENT_FILTERS = TXShared.init('changes', 'filter-container', onFilterChange);
+  TXShared.renderScorecard('scorecard-container');
+  loadData();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+{
+  "source": "Snowflake K2K_CONNECTIONS Aug 26 2026",
+  "connections": [
+    {
+      "k2k_customer_id": "200503",
+      "customer_name": "Stellar Farms",
+      "total_k2k_connections": 31,
+      "active_connections": 0,
+      "non_active_connections": 31
+    },
+    {
+      "k2k_customer_id": "44225",
+      "customer_name": "Pinnacle Flowers",
+      "total_k2k_connections": 24,
+      "active_connections": 6,
+      "non_active_connections": 18
+    },
+    {
+      "k2k_customer_id": "44225",
+      "customer_name": "PINNACLE FLOWERS",
+      "total_k2k_connections": 20,
+      "active_connections": 2,
+      "non_active_connections": 18
+    },
+    {
+      "k2k_customer_id": "7030",
+      "customer_name": "BILL DORAN INDIANAPOLIS",
+      "total_k2k_connections": 16,
+      "active_connections": 0,
+      "non_active_connections": 16
+    },
+    {
+      "k2k_customer_id": "73730",
+      "customer_name": "Allure Farms",
+      "total_k2k_connections": 33,
+      "active_connections": 21,
+      "non_active_connections": 12
+    },
+    {
+      "k2k_customer_id": "598944",
+      "customer_name": "Las Vegas Floral Wholesale",
+      "total_k2k_connections": 12,
+      "active_connections": 0,
+      "non_active_connections": 12
+    },
+    {
+      "k2k_customer_id": "454705",
+      "customer_name": "South Florals Imports",
+      "total_k2k_connections": 12,
+      "active_connections": 0,
+      "non_active_connections": 12
+    },
+    {
+      "k2k_customer_id": "395357",
+      "customer_name": "Pikes Peak of Houston",
+      "total_k2k_connections": 18,
+      "active_connections": 6,
+      "non_active_connections": 12
+    },
+    {
+      "k2k_customer_id": "635064",
+      "customer_name": "Ensign Wholesale Flower Market - Ensign Wholesale Flower Market",
+      "total_k2k_connections": 12,
+      "active_connections": 0,
+      "non_active_connections": 12
+    },
+    {
+      "k2k_customer_id": "498769",
+      "customer_name": "Melody Farms LLC",
+      "total_k2k_connections": 11,
+      "active_connections": 0,
+      "non_active_connections": 11
+    },
+    {
+      "k2k_customer_id": "454705",
+      "customer_name": "South Florals Imports, LLC",
+      "total_k2k_connections": 12,
+      "active_connections": 2,
+      "non_active_connections": 10
+    },
+    {
+      "k2k_customer_id": "598944",
+      "customer_name": "Las Vegas Floral & Plant Wholesale",
+      "total_k2k_connections": 10,
+      "active_connections": 0,
+      "non_active_connections": 10
+    },
+    {
+      "k2k_customer_id": "395357",
+      "customer_name": "PIKES PEAK OF DALLAS",
+      "total_k2k_connections": 14,
+      "active_connections": 4,
+      "non_active_connections": 10
+    },
+    {
+      "k2k_customer_id": "729684",
+      "customer_name": "Adam Flower Truck",
+      "total_k2k_connections": 10,
+      "active_connections": 0,
+      "non_active_connections": 10
+    },
+    {
+      "k2k_customer_id": "395357",
+      "customer_name": "Pikes Peak of Dallas",
+      "total_k2k_connections": 14,
+      "active_connections": 4,
+      "non_active_connections": 10
+    },
+    {
+      "k2k_customer_id": "7030",
+      "customer_name": "Bill Doran Indianapolis",
+      "total_k2k_connections": 8,
+      "active_connections": 0,
+      "non_active_connections": 8
+    },
+    {
+      "k2k_customer_id": "395357",
+      "customer_name": "PIKES PEAK OF TEXAS",
+      "total_k2k_connections": 8,
+      "active_connections": 0,
+      "non_active_connections": 8
+    },
+    {
+      "k2k_customer_id": "13989",
+      "customer_name": "Pronto Farms LLC",
+      "total_k2k_connections": 14,
+      "active_connections": 6,
+      "non_active_connections": 8
+    },
+    {
+      "k2k_customer_id": "651390",
+      "customer_name": "Tennessee Florist Supply - Roanoke",
+      "total_k2k_connections": 8,
+      "active_connections": 0,
+      "non_active_connections": 8
+    },
+    {
+      "k2k_customer_id": "762172",
+      "customer_name": "Floropolis",
+      "total_k2k_connections": 18,
+      "active_connections": 10,
+      "non_active_connections": 8
+    },
+    {
+      "k2k_customer_id": "654374",
+      "customer_name": "BOTANICA WHSLE FLORIST-HOUSTON",
+      "total_k2k_connections": 10,
+      "active_connections": 2,
+      "non_active_connections": 8
+    },
+    {
+      "k2k_customer_id": "7030",
+      "customer_name": "BILL DORAN - INDIANAPOLIS",
+      "total_k2k_connections": 8,
+      "active_connections": 0,
+      "non_active_connections": 8
+    },
+    {
+      "k2k_customer_id": "395357",
+      "customer_name": "Pikes Peak of Austin",
+      "total_k2k_connections": 16,
+      "active_connections": 8,
+      "non_active_connections": 8
+    },
+    {
+      "k2k_customer_id": "395357",
+      "customer_name": "Pikes Peak - Austin",
+      "total_k2k_connections": 12,
+      "active_connections": 4,
+      "non_active_connections": 8
+    },
+    {
+      "k2k_customer_id": "742939",
+      "customer_name": "Stemline Wholesale",
+      "total_k2k_connections": 28,
+      "active_connections": 20,
+      "non_active_connections": 8
+    },
+    {
+      "k2k_customer_id": "651390",
+      "customer_name": "TENNESSEE FLORIST SUPPLY - ROANOKE",
+      "total_k2k_connections": 7,
+      "active_connections": 0,
+      "non_active_connections": 7
+    },
+    {
+      "k2k_customer_id": "635064",
+      "customer_name": "Ensign Wholesale Flower Market",
+      "total_k2k_connections": 72,
+      "active_connections": 65,
+      "non_active_connections": 7
+    },
+    {
+      "k2k_customer_id": "651574",
+      "customer_name": "M & M CUT FLORA",
+      "total_k2k_connections": 13,
+      "active_connections": 6,
+      "non_active_connections": 7
+    },
+    {
+      "k2k_customer_id": "681879",
+      "customer_name": "A. Perri Farms",
+      "total_k2k_connections": 7,
+      "active_connections": 0,
+      "non_active_connections": 7
+    },
+    {
+      "k2k_customer_id": "496600",
+      "customer_name": "Floristcentric",
+      "total_k2k_connections": 13,
+      "active_connections": 6,
+      "non_active_connections": 7
+    }
+  ]
+}

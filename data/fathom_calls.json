@@ -1,0 +1,250 @@
+{
+  "_meta": {
+    "generated": "2026-08-25",
+    "source": "fathom_accessible_index_2026-08-04.json",
+    "count": 24,
+    "note": "24 known TX/account Fathom calls, Jul 15 - Aug 4 2026"
+  },
+  "calls": [
+    {
+      "call_id": "770046753",
+      "recording_id": "170193326",
+      "title": "Syrius Inc. | Implementation Training Session",
+      "date": "2026-08-04",
+      "url": "https://fathom.video/calls/770046753",
+      "account_hint": "Syrius Inc.",
+      "category": "ACCOUNT",
+      "participants_raw": "George Vélez | Fancy F Sales, logistica@fancyflowers.co, sales1@fancyflowers.co, Jonathan Usuga Acevedo, Christine Nickelsen"
+    },
+    {
+      "call_id": "770884173",
+      "recording_id": "170059841",
+      "title": "Coquette Roses",
+      "date": "2026-08-04",
+      "url": "https://fathom.video/calls/770884173",
+      "account_hint": "Coquette Roses",
+      "category": "ACCOUNT",
+      "participants_raw": "Manuel Szajowicz | daniel@coquetteroses.com, juanes@coquetteroses.com, liliana@coquetteroses.com, coquetterosesmiami@gmail.com"
+    },
+    {
+      "call_id": "768096135",
+      "recording_id": "169728129",
+      "title": "⭕ 🤝 Chapter TX Leaders - Weekly",
+      "date": "2026-08-03",
+      "url": "https://fathom.video/calls/768096135",
+      "account_hint": null,
+      "category": "TX",
+      "participants_raw": "Facundo Lavino | Adrian Aubone, Dan Giraldo, Catalina Rojas, Magalí Carró, Mauro Gurdulich"
+    },
+    {
+      "call_id": "768892739",
+      "recording_id": "169697272",
+      "title": "Revision cuentas TX",
+      "date": "2026-08-03",
+      "url": "https://fathom.video/calls/768892739",
+      "account_hint": null,
+      "category": "TX",
+      "participants_raw": "Juan Toro | Catalina Rojas, Facundo Lavino"
+    },
+    {
+      "call_id": "768095933",
+      "recording_id": "169698717",
+      "title": "eShops Talk | Jet Fresh Flower Distributors | Komet Sales",
+      "date": "2026-08-03",
+      "url": "https://fathom.video/calls/768095933",
+      "account_hint": "Jet Fresh Flower Distributors Inc.",
+      "category": "ACCOUNT",
+      "participants_raw": "Christian Medina | Dan Reilly"
+    },
+    {
+      "call_id": "768102793",
+      "recording_id": "169638833",
+      "title": "Revision Clientes Maple G /Zeidler/ Ashland A",
+      "date": "2026-08-03",
+      "url": "https://fathom.video/calls/768102793",
+      "account_hint": "Maple Grove Floral",
+      "category": "TX",
+      "participants_raw": "Catalina Rojas | Sebastian Rodriguez, Facundo Lavino"
+    },
+    {
+      "call_id": "768096136",
+      "recording_id": "169609630",
+      "title": "Sync Revenue Koronet",
+      "date": "2026-08-03",
+      "url": "https://fathom.video/calls/768096136",
+      "account_hint": null,
+      "category": "TX",
+      "participants_raw": "Facundo Lavino | Catalina Rojas, Felipe Mesa, Sofia Pardo, Mauro Gurdulich, Christine Nickelsen, Craig Dagnall, Mark Hollingworth, lautaro.aguiar@koronet.com"
+    },
+    {
+      "call_id": "766322955",
+      "recording_id": "169277919",
+      "title": "Gestion Cross-Surface de Ordenes",
+      "date": "2026-07-31",
+      "url": "https://fathom.video/calls/766322955",
+      "account_hint": null,
+      "category": "TX",
+      "participants_raw": "Agustin Perez Aquino | Karina Hernández, Cristina Casas, Camila Peña Ronderos, Christine Nickelsen, Facundo Lavino"
+    },
+    {
+      "call_id": "766322956",
+      "recording_id": "169264859",
+      "title": "Flujos Offline Komet",
+      "date": "2026-07-31",
+      "url": "https://fathom.video/calls/766322956",
+      "account_hint": null,
+      "category": "TX",
+      "participants_raw": "Agustin Perez Aquino | Karina Hernández, Cristina Casas, Luisina Romero, mauricio.mancini@koronet.com, Federico Darscht, Facundo Lavino"
+    },
+    {
+      "call_id": "767396416",
+      "recording_id": "169262643",
+      "title": "Call Felipe Mesa - Bloomology Global",
+      "date": "2026-07-31",
+      "url": "https://fathom.video/calls/767396416",
+      "account_hint": "Bloomology Global",
+      "category": "ACCOUNT",
+      "participants_raw": "Felipe Mesa | tj@bloomologyglobal.com"
+    },
+    {
+      "call_id": "766520199",
+      "recording_id": "169194582",
+      "title": "⭕️ Chapter TX - Initiatives Follow-Up",
+      "date": "2026-07-31",
+      "url": "https://fathom.video/calls/766520199",
+      "account_hint": null,
+      "category": "TX",
+      "participants_raw": "Christine Nickelsen | Achic Lema, Mariano Gonzalez, Adrian Aubone, pablo.gomez@koronet.com, Mauro Gurdulich, Agustin Perez Aquino, Sebastian Alderete, Nardi Rens, Magalí Carró, Dan Giraldo, Federico Darscht, Sofia Pardo, Daniela Daza, Catalina Rojas, Facundo Lavino, Camila Peña Ronderos, lautaro.aguiar@koronet.com"
+    },
+    {
+      "call_id": "767185041",
+      "recording_id": "168902593",
+      "title": "Baisch & Skinner <> Koronet — Follow-up",
+      "date": "2026-07-30",
+      "url": "https://fathom.video/calls/767185041",
+      "account_hint": "Baisch and Skinner",
+      "category": "TX",
+      "participants_raw": "Facundo Lavino | Chris Beals, jenna@baischandskinner.com"
+    },
+    {
+      "call_id": "764782344",
+      "recording_id": "168826318",
+      "title": "Dreisbach Wholesale | Implementation",
+      "date": "2026-07-30",
+      "url": "https://fathom.video/calls/764782344",
+      "account_hint": "Dreisbach Wholesale",
+      "category": "ACCOUNT",
+      "participants_raw": "Milena Mezamell | Camila Peña Ronderos, Angela Stalter, Christine Nickelsen"
+    },
+    {
+      "call_id": "762820305",
+      "recording_id": "168815931",
+      "title": "Andean Fresh | Training Session  (TENTATIVE)",
+      "date": "2026-07-30",
+      "url": "https://fathom.video/calls/762820305",
+      "account_hint": "Andean Fresh LLC",
+      "category": "ACCOUNT",
+      "participants_raw": "Christian Medina | George Vélez, sales1@fiorentinaflowers.com, Jonathan Usuga Acevedo"
+    },
+    {
+      "call_id": "763358878",
+      "recording_id": "168526360",
+      "title": "Tx plan revenue review",
+      "date": "2026-07-29",
+      "url": "https://fathom.video/calls/763358878",
+      "account_hint": null,
+      "category": "TX",
+      "participants_raw": "Christine Nickelsen | Catalina Rojas, Mauro Gurdulich, Facundo Lavino, Sofia Pardo"
+    },
+    {
+      "call_id": "763316758",
+      "recording_id": "168401847",
+      "title": "TX Fees Action Plan Proposal",
+      "date": "2026-07-29",
+      "url": "https://fathom.video/calls/763316758",
+      "account_hint": null,
+      "category": "TX",
+      "participants_raw": "Catalina Rojas | Sofia Pardo, laura.arzuaga@koronet.com, Facundo Lavino"
+    },
+    {
+      "call_id": "763316115",
+      "recording_id": "168384713",
+      "title": "Facu _ Mauro sync",
+      "date": "2026-07-29",
+      "url": "https://fathom.video/calls/763316115",
+      "account_hint": null,
+      "category": "TX",
+      "participants_raw": "Facundo Lavino | Mauro Gurdulich"
+    },
+    {
+      "call_id": "761225599",
+      "recording_id": "167858541",
+      "title": "OKR Action and Review (Leadership)",
+      "date": "2026-07-28",
+      "url": "https://fathom.video/calls/761225599",
+      "account_hint": null,
+      "category": "TX",
+      "participants_raw": "Guillermo Lopez | Adrian Aubone, Nardi Rens, Dave Sack, Chris Beals, Dan Giraldo, Jeremy Adams, Felipe Mesa, Sofia Pardo, Mauro Gurdulich, simon@koronet.com, magali.carro@koronet.com, adam@koronet.com, Catalina Rojas, Umberto Negro, Daniel Martinez, Johan Hidalgo, Sebastian Alderete, alejo.vitores@koronet.com, pablo.gomez@koronet.com, Christine Nickelsen, Craig Dagnall, Gonzalo López Grassi, santiago.colomer@koronet.com, Mark Hollingworth, Facundo Lavino, mtonina@koronet.com"
+    },
+    {
+      "call_id": "759595040",
+      "recording_id": "167644196",
+      "title": "Felipe: Facu - Weekly Call",
+      "date": "2026-07-27",
+      "url": "https://fathom.video/calls/759595040",
+      "account_hint": null,
+      "category": "TX",
+      "participants_raw": "Facundo Lavino | Felipe Mesa"
+    },
+    {
+      "call_id": "760187032",
+      "recording_id": "167595760",
+      "title": "Flora Fresh - Arrival date",
+      "date": "2026-07-27",
+      "url": "https://fathom.video/calls/760187032",
+      "account_hint": "Flora Fresh Inc",
+      "category": "ACCOUNT",
+      "participants_raw": "Valentina Espinel | gregs@florafreshinc.com, kvang@florafreshinc.com, Sebastian Rodriguez"
+    },
+    {
+      "call_id": "760083085",
+      "recording_id": "167586478",
+      "title": "Touchbase | Maple Grove Floral | Komet Sales",
+      "date": "2026-07-27",
+      "url": "https://fathom.video/calls/760083085",
+      "account_hint": "Maple Grove Floral",
+      "category": "ACCOUNT",
+      "participants_raw": "Christian Medina | mike@mgfloral.us"
+    },
+    {
+      "call_id": "759595033",
+      "recording_id": "167567428",
+      "title": "Facu <> Chris 1:1",
+      "date": "2026-07-27",
+      "url": "https://fathom.video/calls/759595033",
+      "account_hint": null,
+      "category": "TX",
+      "participants_raw": "Facundo Lavino | Chris Beals"
+    },
+    {
+      "call_id": "757843619",
+      "recording_id": "167130854",
+      "title": "Zeidler - Komet Sales Touch base",
+      "date": "2026-07-24",
+      "url": "https://fathom.video/calls/757843619",
+      "account_hint": "Zeidler Floral",
+      "category": "ACCOUNT",
+      "participants_raw": "Valentina Espinel | cbecker@zeidlers.com, kbecker@zeidlers.com, Christine Nickelsen, amandan@zeidlers.com"
+    },
+    {
+      "call_id": "758054288",
+      "recording_id": "167121615",
+      "title": "Placeholder Esmeralda Farms & Koronet — Working Session",
+      "date": "2026-07-24",
+      "url": "https://fathom.video/calls/758054288",
+      "account_hint": "Esmeralda Farms",
+      "category": "ACCOUNT",
+      "participants_raw": "Felipe Mesa | Santiago Navarro, Amy Hernandez, Facundo Lavino, Eduardo Chiriboga"
+    }
+  ]
+}

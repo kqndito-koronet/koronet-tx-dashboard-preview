@@ -1,0 +1,2529 @@
+{
+  "generated_at": "2026-08-26",
+  "source_audit": "no_fees_audit_2026-08-25.md",
+  "summary": {
+    "total_checks": 18,
+    "issue_groups": 11,
+    "errors": 2,
+    "warnings": 9,
+    "total_dollar_impact": 274965,
+    "accounts_affected": 378
+  },
+  "issues": [
+    {
+      "check_id": "BILLING_GAP",
+      "severity": "error",
+      "description": "Online sell >$10K with $0 billed fees",
+      "proposed_action": "Verificar en SFDC: billing configurado? Fee rate = $0? Fees bajo entidad padre?",
+      "decision_label": "Decision: Is billing configured correctly? (Monetization gap)",
+      "accounts": [
+        {
+          "company_id": "640251",
+          "company_name": "FreshLink",
+          "detail": "$4,552K online sell, $0 fees. At 1.5% = $68,280 potential. Tier: Core+.",
+          "dollar_impact": 68280,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "675363",
+          "company_name": "Palm Beach Whsle Flowers, Inc.",
+          "detail": "$946K online sell, $0 fees. At 1.5% = $14,190 potential. Tier: eSuite.",
+          "dollar_impact": 14190,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "651200",
+          "company_name": "Jacksonville Flower Market",
+          "detail": "$898K online sell, $0 fees. At 1.5% = $13,470 potential. Tier: eSuite.",
+          "dollar_impact": 13470,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "650536",
+          "company_name": "R&W WHOLESALE, INC.",
+          "detail": "$891K online sell, $0 fees. At 1.5% = $13,365 potential. Tier: eSuite.",
+          "dollar_impact": 13365,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "651574",
+          "company_name": "M&M CUT FLORA",
+          "detail": "$746K online sell, $0 fees. At 1.5% = $11,190 potential. Tier: eSuite.",
+          "dollar_impact": 11190,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "651216",
+          "company_name": "HARDIN'S WHLSE - LIBERTY",
+          "detail": "$596K online sell, $0 fees. At 1.5% = $8,940 potential. Tier: eSuite.",
+          "dollar_impact": 8940,
+          "proposed_action": "Check parent entity billing \u2014 likely a multi-location franchise",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664054",
+          "company_name": "TFS Bristol",
+          "detail": "$537K online sell, $0 fees. At 1.5% = $8,055 potential. Tier: eSuite.",
+          "dollar_impact": 8055,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "652551",
+          "company_name": "LD Trading/ Lawrence Developments Inc.",
+          "detail": "$503K online sell, $0 fees. At 1.5% = $7,545 potential. Tier: eSuite.",
+          "dollar_impact": 7545,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664648",
+          "company_name": "Tradewinds/ KING FLORAL SUPPLY",
+          "detail": "$494K online sell, $0 fees. At 1.5% = $7,410 potential. Tier: eSuite.",
+          "dollar_impact": 7410,
+          "proposed_action": "Check parent entity billing \u2014 likely a multi-location franchise",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "655382",
+          "company_name": "Staalduinen Floral-LTF1118",
+          "detail": "$471K online sell, $0 fees. At 1.5% = $7,065 potential. Tier: eSuite.",
+          "dollar_impact": 7065,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665261",
+          "company_name": "Tradewinds / Pristine Wholesale Floral",
+          "detail": "$416K online sell, $0 fees. At 1.5% = $6,240 potential. Tier: eSuite.",
+          "dollar_impact": 6240,
+          "proposed_action": "Check parent entity billing \u2014 likely a multi-location franchise",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664314",
+          "company_name": "Florabundance.",
+          "detail": "$413K online sell, $0 fees. At 1.5% = $6,195 potential. Tier: eSuite.",
+          "dollar_impact": 6195,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "652199",
+          "company_name": "JOHNSENS WHOLESALE FLORIST",
+          "detail": "$403K online sell, $0 fees. At 1.5% = $6,045 potential. Tier: eSuite.",
+          "dollar_impact": 6045,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664381",
+          "company_name": "Unifour Wholesale",
+          "detail": "$396K online sell, $0 fees. At 1.5% = $5,940 potential. Tier: eSuite.",
+          "dollar_impact": 5940,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "713789",
+          "company_name": "HALL'S - BIRMINGHAM",
+          "detail": "$383K online sell, $0 fees. At 1.5% = $5,745 potential. Tier: eSuite.",
+          "dollar_impact": 5745,
+          "proposed_action": "Check parent entity billing \u2014 likely a multi-location franchise",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "650721",
+          "company_name": "Alders Wholesale Florist, Inc.",
+          "detail": "$369K online sell, $0 fees. At 1.5% = $5,535 potential. Tier: eSuite.",
+          "dollar_impact": 5535,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "652302",
+          "company_name": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+          "detail": "$365K online sell, $0 fees. At 1.5% = $5,475 potential. Tier: eSuite.",
+          "dollar_impact": 5475,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "650767",
+          "company_name": "Coastal Wholesale Flowers, Inc.",
+          "detail": "$346K online sell, $0 fees. At 1.5% = $5,190 potential. Tier: eSuite.",
+          "dollar_impact": 5190,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "733807",
+          "company_name": "Metropolitan Wholesale/Cityside Flowers",
+          "detail": "$286K online sell, $0 fees. At 1.5% = $4,290 potential. Tier: eSuite.",
+          "dollar_impact": 4290,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665336",
+          "company_name": "Torchio Nursery",
+          "detail": "$277K online sell, $0 fees. At 1.5% = $4,155 potential. Tier: eSuite.",
+          "dollar_impact": 4155,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664719",
+          "company_name": "ALLIANCE FLORAL COMPANY. 6270",
+          "detail": "$276K online sell, $0 fees. At 1.5% = $4,140 potential. Tier: eSuite.",
+          "dollar_impact": 4140,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "726631",
+          "company_name": "Wolfe Wholesale Florist, Inc. Waco",
+          "detail": "$264K online sell, $0 fees. At 1.5% = $3,960 potential. Tier: eSuite.",
+          "dollar_impact": 3960,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "670675",
+          "company_name": "VELDKAMP'S FLOWERS",
+          "detail": "$260K online sell, $0 fees. At 1.5% = $3,900 potential. Tier: eSuite.",
+          "dollar_impact": 3900,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664494",
+          "company_name": "MAGNOLIA HOLDINGS 301 LLC ABSOLUTELY BEAUTIFUL FLOWERS",
+          "detail": "$259K online sell, $0 fees. At 1.5% = $3,885 potential. Tier: eSuite.",
+          "dollar_impact": 3885,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "655098",
+          "company_name": "BRIEGER WHSLE -TX.",
+          "detail": "$255K online sell, $0 fees. At 1.5% = $3,825 potential. Tier: eSuite.",
+          "dollar_impact": 3825,
+          "proposed_action": "Check parent entity billing \u2014 likely a multi-location franchise",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "740696",
+          "company_name": "Valley Floral Co. of Oklahoma LLC - Tulsa",
+          "detail": "$249K online sell, $0 fees. At 1.5% = $3,735 potential. Tier: eSuite.",
+          "dollar_impact": 3735,
+          "proposed_action": "Check parent entity billing \u2014 likely a multi-location franchise",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665080",
+          "company_name": "COWARD WHOLESALE",
+          "detail": "$237K online sell, $0 fees. At 1.5% = $3,555 potential. Tier: eSuite.",
+          "dollar_impact": 3555,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "740646",
+          "company_name": "Valley Floral Co. - Wichita",
+          "detail": "$236K online sell, $0 fees. At 1.5% = $3,540 potential. Tier: eSuite.",
+          "dollar_impact": 3540,
+          "proposed_action": "Check parent entity billing \u2014 likely a multi-location franchise",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "727605",
+          "company_name": "Lucas and Greer, Inc. dba L & G Wholesale Florist",
+          "detail": "$218K online sell, $0 fees. At 1.5% = $3,270 potential. Tier: eSuite.",
+          "dollar_impact": 3270,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664944",
+          "company_name": "POSIES TRUCK",
+          "detail": "$195K online sell, $0 fees. At 1.5% = $2,925 potential. Tier: eSuite.",
+          "dollar_impact": 2925,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "654566",
+          "company_name": "Gassafy Wholesale Florist Inc",
+          "detail": "$183K online sell, $0 fees. At 1.5% = $2,745 potential. Tier: eSuite.",
+          "dollar_impact": 2745,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665443",
+          "company_name": "POPPIES DESIGN STUDIO, LLC",
+          "detail": "$179K online sell, $0 fees. At 1.5% = $2,685 potential. Tier: eSuite.",
+          "dollar_impact": 2685,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "670701",
+          "company_name": "Webb's Wholesale Florist",
+          "detail": "$173K online sell, $0 fees. At 1.5% = $2,595 potential. Tier: eSuite.",
+          "dollar_impact": 2595,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "731381",
+          "company_name": "CHICAGO'S WHOLESALE",
+          "detail": "$162K online sell, $0 fees. At 1.5% = $2,430 potential. Tier: eSuite.",
+          "dollar_impact": 2430,
+          "proposed_action": "Check parent entity billing \u2014 likely a multi-location franchise",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665232",
+          "company_name": "The Flowerman, Inc.",
+          "detail": "$160K online sell, $0 fees. At 1.5% = $2,400 potential. Tier: eSuite.",
+          "dollar_impact": 2400,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "651959",
+          "company_name": "CINCINNATI WHSLE FLORIST INC.5643",
+          "detail": "$152K online sell, $0 fees. At 1.5% = $2,280 potential. Tier: eSuite.",
+          "dollar_impact": 2280,
+          "proposed_action": "Check parent entity billing \u2014 likely a multi-location franchise",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "704636",
+          "company_name": "UNITED WHOLESALE- FFL ENTERPRISES",
+          "detail": "$133K online sell, $0 fees. At 1.5% = $1,995 potential. Tier: eSuite.",
+          "dollar_impact": 1995,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "651513",
+          "company_name": "PETALS WEST, INC.",
+          "detail": "$129K online sell, $0 fees. At 1.5% = $1,935 potential. Tier: eSuite.",
+          "dollar_impact": 1935,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "716166",
+          "company_name": "Exclusive Wholesale",
+          "detail": "$110K online sell, $0 fees. At 1.5% = $1,650 potential. Tier: eSuite.",
+          "dollar_impact": 1650,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665358",
+          "company_name": "HIRE'S BEST FLOWERS",
+          "detail": "$107K online sell, $0 fees. At 1.5% = $1,605 potential. Tier: eSuite.",
+          "dollar_impact": 1605,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "731558",
+          "company_name": "MRS. BLOOM'S DIRECT, INC.",
+          "detail": "$59K online sell, $0 fees. At 1.5% = $885 potential. Tier: eSuite.",
+          "dollar_impact": 885,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "740734",
+          "company_name": "Valley Floral Co. of OKC - Oklahoma",
+          "detail": "$30K online sell, $0 fees. At 1.5% = $450 potential. Tier: eSuite.",
+          "dollar_impact": 450,
+          "proposed_action": "Check parent entity billing \u2014 likely a multi-location franchise",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "762172",
+          "company_name": "Floropolis",
+          "detail": "$17K online sell, $0 fees. At 1.5% = $255 potential. Tier: Core+.",
+          "dollar_impact": 255,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        }
+      ],
+      "total_dollar_impact": 274965,
+      "account_count": 43,
+      "likelihood": "HIGH"
+    },
+    {
+      "check_id": "CHECK_06_DUPLICATES",
+      "severity": "error",
+      "description": "Duplicate company_id in accounts_v3",
+      "proposed_action": "Merge or dedup in company_spine.json",
+      "decision_label": "Decision: Which record is canonical? (Data integrity)",
+      "accounts": [
+        {
+          "company_id": "None",
+          "company_name": "Phyto Flowers B.V. / SQ Flora / FM Group B.V./SPA / Ecuamagic S.A / blooms2go / San Francisco Gardens (L1) / ABloom Floral Group / Arawi Flowers / DA and Sons LLC / FLORA EXPRESS FARMS LLC / Flovers SAS / Flower Board - The Financial Company / Harmony Quality Flowers / Injovac LLC / Mulrosas Cia.ltda / Royal Flowers GmbH / UNIQUE FLOWERS / Yary Flowers / B-Fresh Floral / Holland America Bulb Farms, Inc. / Reeves Floral Products, Inc. / Carbone Floral Distributors / Can-Mex Wholesale Flowers / Classic Floral, Inc. / J. Merullo Imports / Joseph & Sons Inc. / Ocean Breeze International / First Choice Wholesale Floral / Sieck-Buffalo / Palm Beach Wholesale / Mears Floral Products / Flower Link / A & M Flower Growers, Inc. / Maximum Nursery / Berkeley Florist Supply Co / L&G Wholesale / L.F.Schlegel & Son Greenhouse / Myriad Flowers International / Topstar Floral Inc. / Eufloria Flowers / Golden State Flower Brokers / FloraMax / West Flowers LLC / Superior Greens & Floral / Paseo Floral Inc / BW Wholesale-Keystone / Dual Venture Farms, Inc. / Petal Pushers / ANIC Trading / Bluumii/SoCal Flowers / Green Valley Floral / Alaska Wholesale / Mylords Floral",
+          "detail": "company_id None appears 52 times: ['Phyto Flowers B.V.', 'SQ Flora', 'FM Group B.V./SPA', 'Ecuamagic S.A', 'blooms2go', 'San Francisco Gardens (L1)', 'ABloom Floral Group', 'Arawi Flowers', 'DA and Sons LLC', 'FLORA EXPRESS FARMS LLC', 'Flovers SAS', 'Flower Board - The Financial Company', 'Harmony Quality Flowers', 'Injovac LLC', 'Mulrosas Cia.ltda', 'Royal Flowers GmbH', 'UNIQUE FLOWERS', 'Yary Flowers', 'B-Fresh Floral', 'Holland America Bulb Farms, Inc.', 'Reeves Floral Products, Inc.', 'Carbone Floral Distributors', 'Can-Mex Wholesale Flowers', 'Classic Floral, Inc.', 'J. Merullo Imports', 'Joseph & Sons Inc.', 'Ocean Breeze International', 'First Choice Wholesale Floral', 'Sieck-Buffalo', 'Palm Beach Wholesale', 'Mears Floral Products', 'Flower Link', 'A & M Flower Growers, Inc.', 'Maximum Nursery', 'Berkeley Florist Supply Co', 'L&G Wholesale', 'L.F.Schlegel & Son Greenhouse', 'Myriad Flowers International', 'Topstar Floral Inc.', 'Eufloria Flowers', 'Golden State Flower Brokers', 'FloraMax', 'West Flowers LLC', 'Superior Greens & Floral', 'Paseo Floral Inc', 'BW Wholesale-Keystone', 'Dual Venture Farms, Inc.', 'Petal Pushers', 'ANIC Trading', 'Bluumii/SoCal Flowers', 'Green Valley Floral', 'Alaska Wholesale / Mylords Floral']",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        }
+      ],
+      "total_dollar_impact": 0,
+      "account_count": 1,
+      "likelihood": "LOW"
+    },
+    {
+      "check_id": "CHECK_02_ONLINE_PCT",
+      "severity": "warning",
+      "description": "Account shows 100% digital with no offline sales in cube",
+      "proposed_action": "Need external GMV estimate \u2014 Koronet only sees digital channel",
+      "decision_label": "Decision: Do we have accurate GMV? (Coverage gap)",
+      "accounts": [
+        {
+          "company_id": "664719",
+          "company_name": "ALLIANCE FLORAL COMPANY. 6270",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "795674",
+          "company_name": "Akarana Farms - UIO",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "650721",
+          "company_name": "Alders Wholesale Florist, Inc.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "798243",
+          "company_name": "Alison Flowers - UIO",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "655098",
+          "company_name": "BRIEGER WHSLE -TX.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "652302",
+          "company_name": "CASCADE FLOWERS DBA STADIUM FLOWERS INC",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "731381",
+          "company_name": "CHICAGO\u00b4S WHOLESALE",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "651959",
+          "company_name": "CINCINNATI WHSLE FLORIST INC.5643",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665080",
+          "company_name": "COWARD WHOLESALE",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "650767",
+          "company_name": "Coastal Wholesale Flowers, Inc.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "815425",
+          "company_name": "Coward & Glisson Whsl. Flst.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "765491",
+          "company_name": "Dreisbach Wholesale",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "769085",
+          "company_name": "Ecoroses - Floropolis",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "395159",
+          "company_name": "Equiflor LLC",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "716166",
+          "company_name": "Exclusive Wholesale",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "652793",
+          "company_name": "FALL RIVER WHOLESALE",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "670423",
+          "company_name": "FLEURIGROS QUEBEC 1995 INC.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "670450",
+          "company_name": "FLORIAD- MONTREAL CANADA INC.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "664540",
+          "company_name": "FMI, LLC.-FL",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "762941",
+          "company_name": "FOB UIO -  Alma Spray / Agrinag / Natuflor",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "541854",
+          "company_name": "Fletch Wholesale llc",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "769099",
+          "company_name": "Flodecol - Floropolis",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "153031",
+          "company_name": "FloraLink",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664314",
+          "company_name": "Florabundance.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "670311",
+          "company_name": "Floral Importers and Distributors Inc. /Buds",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "543610",
+          "company_name": "Frank Adams Wholesale Florist",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "654566",
+          "company_name": "Gassafy Wholesale Florist Inc",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "751350",
+          "company_name": "Grupo Vegaflor - Medellin",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "812869",
+          "company_name": "Gypso S.A. UIO",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "713789",
+          "company_name": "HALL\u00b4S - BIRMINGHAM",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "651216",
+          "company_name": "HARDIN\u00b4S WHLSE - LIBERTY",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665358",
+          "company_name": "HIRE`S BEST FLOWERS",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664341",
+          "company_name": "Hall\u00b4s Wholesale Florist Theodore",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "806417",
+          "company_name": "Hyperactive Farms Inc.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "652199",
+          "company_name": "JOHNSENS WHOLESALE FLORIST",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "651200",
+          "company_name": "Jacksonville Flower Market",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "800562",
+          "company_name": "Jetty USA LLC",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "652551",
+          "company_name": "LD Trading/ Lawrence Developments Inc.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "654758",
+          "company_name": "LIHML INC Fayetteville - #01235 GF Rep Kareena 19",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "35266",
+          "company_name": "Liberty Blooms",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664133",
+          "company_name": "Littlefloyd Investments, LLC",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "813947",
+          "company_name": "Llanos De Alba LLADEAL - UIO",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "727605",
+          "company_name": "Lucas and Greer, Inc. dba L & G Wholesale Florist",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "651574",
+          "company_name": "M&M CUT FLORA",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664494",
+          "company_name": "MAGNOLIA HOLDINGS 301 LLC  ABSOLUTELY BEAUTIFUL FLOWERS",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "670554",
+          "company_name": "MAHONEYS ROCKY LEDGE FARM &",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "821576",
+          "company_name": "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "731558",
+          "company_name": "MRS. BLOOM\u2019S DIRECT, INC.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "827180",
+          "company_name": "Main Wholesale Florist LLC / Clifton",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "799014",
+          "company_name": "Matthioli Flowers Ecuador",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "701220",
+          "company_name": "McCarthy Wholesale",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "751391",
+          "company_name": "MegaFlor - UIO",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "733807",
+          "company_name": "Metropolitan Wholesale/Cityside Flowers",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "375054",
+          "company_name": "Miaflora Farms",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665027",
+          "company_name": "Mideast Flowers Distributors, Inc.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "664255",
+          "company_name": "Mikes Finest Wholesale Flowers, Inc.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "751334",
+          "company_name": "Much Flowers - UIO",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "795517",
+          "company_name": "Nathalia Bloemenexport LLC - MIA",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "751341",
+          "company_name": "Olimpo Flowers Finca",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "651513",
+          "company_name": "PETALS WEST, INC.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665443",
+          "company_name": "POPPIES DESIGN STUDIO, LLC",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664944",
+          "company_name": "POSIES TRUCK",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "654661",
+          "company_name": "POTOMAC WHSLE",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "802590",
+          "company_name": "Pacifica Farms - CAL",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "675363",
+          "company_name": "Palm Beach Whsle Flowers, Inc.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "650536",
+          "company_name": "R&W WHOLESALE, INC.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "701292",
+          "company_name": "Riverdale Farms",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "557903",
+          "company_name": "Roots Peru",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "670668",
+          "company_name": "STRANGE`S FLORIST, INC.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "488495",
+          "company_name": "Sierra Flower Trading",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665425",
+          "company_name": "Specialty Cut Flowers",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "655382",
+          "company_name": "Staalduinen Floral-LTF1118",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664054",
+          "company_name": "TFS Bristol",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665232",
+          "company_name": "The Flowerman, Inc.",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "315007",
+          "company_name": "The Queens Flowers Corp",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "614448",
+          "company_name": "The Queens Flowers, Corp",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665336",
+          "company_name": "Torchio Nursery",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "665261",
+          "company_name": "Tradewinds / Pristine Wholesale Floral",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664648",
+          "company_name": "Tradewinds/ KING FLORAL SUPPLY",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "704636",
+          "company_name": "UNITED WHOLESALE- FFL  ENTERPRISES ",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664381",
+          "company_name": "Unifour Wholesale ",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "670675",
+          "company_name": "VELDKAMP\u00b4S FLOWERS",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "740646",
+          "company_name": "Valley Floral Co. - Wichita",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "740734",
+          "company_name": "Valley Floral Co. of OKC - Oklahoma",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "740696",
+          "company_name": "Valley Floral Co. of Oklahoma LLC - Tulsa",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "670701",
+          "company_name": "Webb\u2019s Wholesale Florist",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "726631",
+          "company_name": "Wolfe Wholesale Florist, Inc. Waco",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664820",
+          "company_name": "Younger & Son Inc",
+          "detail": "100.0% digital but NO offline sales in cube. Label as \"solo digital visible\".",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        }
+      ],
+      "total_dollar_impact": 0,
+      "account_count": 88,
+      "likelihood": "HIGH"
+    },
+    {
+      "check_id": "CHECK_04_GMV_PACE",
+      "severity": "warning",
+      "description": "GMV pace anomaly vs reference",
+      "proposed_action": "",
+      "decision_label": "",
+      "accounts": [
+        {
+          "company_id": "393475",
+          "company_name": "American Agroproducts",
+          "detail": "Pace $2,336 is 12x reference $192 (Baja). Likely seasonal distortion.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "821768",
+          "company_name": "Coquette Roses",
+          "detail": "Pace $490,907 is 7x reference $75,059 (Baja). Likely seasonal distortion.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "819114",
+          "company_name": "Details Direct",
+          "detail": "Pace $161,970 is 5x reference $30,043 (Baja). Likely seasonal distortion.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "811196",
+          "company_name": "Everflorals",
+          "detail": "Pace $971 is 12x reference $80 (Baja). Likely seasonal distortion.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "751350",
+          "company_name": "Grupo Vegaflor - Medellin",
+          "detail": "Pace $2,482 is 7x reference $342 (Baja). Likely seasonal distortion.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "812869",
+          "company_name": "Gypso S.A. UIO",
+          "detail": "Pace $861 is 6x reference $142 (Baja). Likely seasonal distortion.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "808527",
+          "company_name": "Hortensias Cabogana Cia Ltda",
+          "detail": "Pace $5,420 is 40x reference $137 (Baja). Likely seasonal distortion.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "817168",
+          "company_name": "International Fresh Group LLC",
+          "detail": "Pace $35,963 is 8x reference $4,542 (Baja). Likely seasonal distortion.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "813947",
+          "company_name": "Llanos De Alba LLADEAL - UIO",
+          "detail": "Pace $3,315 is 6x reference $545 (Baja). Likely seasonal distortion.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "821576",
+          "company_name": "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN",
+          "detail": "Pace $30,797 is 12x reference $2,531 (Baja). Likely seasonal distortion.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "827180",
+          "company_name": "Main Wholesale Florist LLC / Clifton",
+          "detail": "Pace $37,860 is 12x reference $3,112 (Baja). Likely seasonal distortion.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "743217",
+          "company_name": "Nova Packaging Solutions, Inc.",
+          "detail": "Pace $88,497 is 6x reference $15,080 (Baja). Likely seasonal distortion.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "816515",
+          "company_name": "Price's Floral Wholesale, LLC",
+          "detail": "Pace $1,846,994 is 12x reference $157,921 (Baja). Likely seasonal distortion.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664381",
+          "company_name": "Unifour Wholesale ",
+          "detail": "Pace $254,294 is only 8.5% of ORA $3,000,000. ORA may be inflated.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664820",
+          "company_name": "Younger & Son Inc",
+          "detail": "Pace $34,026 is only 0.9% of ORA $4,000,000. ORA may be inflated.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        }
+      ],
+      "total_dollar_impact": 0,
+      "account_count": 15,
+      "likelihood": "HIGH"
+    },
+    {
+      "check_id": "CHECK_13_SELL_GT_GMV",
+      "severity": "warning",
+      "description": "Annualized sell exceeds GMV estimate (smell test)",
+      "proposed_action": "GMV estimate too low \u2014 update external estimate or mark as Piso",
+      "decision_label": "Decision: Is our GMV estimate accurate? (Coverage gap)",
+      "accounts": [
+        {
+          "company_id": "198117",
+          "company_name": "* Continental Farms",
+          "detail": "SELL>GMV: ann_sell=$6,338,856 > gmv=$1,946,395 (Estimado) \u2014 estimate too low?",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "819114",
+          "company_name": "Details Direct",
+          "detail": "SELL>GMV: ann_sell=$45,643 > gmv=$30,042 (Estimado) \u2014 estimate too low?",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "734128",
+          "company_name": "Details Direct - Core",
+          "detail": "SELL>GMV: ann_sell=$46,500 > gmv=$27,125 (Estimado) \u2014 estimate too low?",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "153031",
+          "company_name": "FloraLink",
+          "detail": "SELL>GMV: ann_sell=$20,064,036 > gmv=$9,000,000 (Estimado) \u2014 estimate too low?",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "601280",
+          "company_name": "Flores Silvestres",
+          "detail": "SELL>GMV: ann_sell=$248 > gmv=$144 (Estimado) \u2014 estimate too low?",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "321907",
+          "company_name": "Greens and Flowers Connection",
+          "detail": "SELL>GMV: ann_sell=$10,296,648 > gmv=$4,000,000 (Estimado) \u2014 estimate too low?",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664944",
+          "company_name": "POSIES TRUCK",
+          "detail": "SELL>GMV: ann_sell=$334,458 > gmv=$300,000 (Estimado) \u2014 estimate too low?",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "650536",
+          "company_name": "R&W WHOLESALE, INC.",
+          "detail": "SELL>GMV: ann_sell=$1,527,791 > gmv=$1,000,000 (Estimado) \u2014 estimate too low?",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "588417",
+          "company_name": "SHAW LAKE FARMS INC.",
+          "detail": "SELL>GMV: ann_sell=$334,612 > gmv=$149,274 (Estimado) \u2014 estimate too low?",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "579932",
+          "company_name": "Tutuli Flower Farms",
+          "detail": "SELL>GMV: ann_sell=$262,934 > gmv=$78,397 (Estimado) \u2014 estimate too low?",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        }
+      ],
+      "total_dollar_impact": 0,
+      "account_count": 10,
+      "likelihood": "HIGH"
+    },
+    {
+      "check_id": "CHECK_13_PROPORTIONAL",
+      "severity": "warning",
+      "description": "Proportional logic anomalies (smell test)",
+      "proposed_action": "",
+      "decision_label": "",
+      "accounts": [
+        {
+          "company_id": "681739",
+          "company_name": "Fleurametz Chicago",
+          "detail": "BUY>>SELL: buy/sell=2.50 \u2014 buying more than selling, broker pattern?",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "640977",
+          "company_name": "Ninfa Flowers",
+          "detail": "BUY>>SELL: buy/sell=2.39 \u2014 buying more than selling, broker pattern?",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        }
+      ],
+      "total_dollar_impact": 0,
+      "account_count": 2,
+      "likelihood": "HIGH"
+    },
+    {
+      "check_id": "CHECK_16_TAKE_RATE",
+      "severity": "warning",
+      "description": "Take rate out of expected band (0.1%\u20135.0%)",
+      "proposed_action": "Verificar fee rates en SFDC: K2K_Fees__c, E_Commerce_Fees__c",
+      "decision_label": "Decision: Is the fee rate configured correctly? (Rate anomaly)",
+      "accounts": [
+        {
+          "company_id": "664719",
+          "company_name": "ALLIANCE FLORAL COMPANY. 6270",
+          "detail": "Take rate=0.0008% < 0.1% (fees=$2, online_sell=$276,459). Possibly mis-configured rate.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "654131",
+          "company_name": "DVFLORA SEWELL",
+          "detail": "Take rate=6.27% > 5% (fees=$879, online_sell=$14,012). Possibly double-billed or rate error.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "734128",
+          "company_name": "Details Direct - Core",
+          "detail": "Take rate=0.0419% < 0.1% (fees=$11, online_sell=$26,884). Possibly mis-configured rate.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "103078",
+          "company_name": "Mayesh Wholesale Florist Inc",
+          "detail": "Take rate=0.0219% < 0.1% (fees=$19,970, online_sell=$91,215,310). Possibly mis-configured rate.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "632322",
+          "company_name": "Northline Wholesale Flowers",
+          "detail": "Take rate=7.73% > 5% (fees=$5,837, online_sell=$75,471). Possibly double-billed or rate error.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "12941",
+          "company_name": "Rosaprima International, LLC",
+          "detail": "Take rate=0.0695% < 0.1% (fees=$72,743, online_sell=$104,694,678). Possibly mis-configured rate.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        }
+      ],
+      "total_dollar_impact": 0,
+      "account_count": 6,
+      "likelihood": "HIGH"
+    },
+    {
+      "check_id": "LIST_GAP",
+      "severity": "warning",
+      "description": "Client with online-capable tier but <5% sell online (LIST not working)",
+      "proposed_action": "Revisar configuraci\u00f3n LIST: \u00bfinventario publicado en eShop? \u00bfcategor\u00edas disponibles?",
+      "decision_label": "Decision: \u00bfEl inventario offline est\u00e1 visible online?",
+      "accounts": [
+        {
+          "company_id": "613695",
+          "company_name": "*FLORAL1 INC",
+          "detail": "Tier=Core+, sell_online=3.0% of total. Online=$23,823, total=$795,926. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "738936",
+          "company_name": "ACA Flowers",
+          "detail": "Tier=Core+, sell_online=0.6% of total. Online=$1,130, total=$177,991. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "624737",
+          "company_name": "AMORES FLORES INC",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$3,011, total=$6,293,231. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "20769",
+          "company_name": "AmeriLink Floratrader",
+          "detail": "Tier=Core+, sell_online=1.5% of total. Online=$163,200, total=$10,659,356. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "505063",
+          "company_name": "Andean Fresh LLC",
+          "detail": "Tier=Core+, sell_online=0.4% of total. Online=$6,993, total=$1,957,462. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "654944",
+          "company_name": "Apex Floral Distributors Mississauga",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$6,543,156. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "193828",
+          "company_name": "Arizona Family Florist",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$5,873,924. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "592806",
+          "company_name": "Aurum Farms LLC",
+          "detail": "Tier=Core+, sell_online=0.1% of total. Online=$561, total=$893,510. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "7030",
+          "company_name": "Bill Doran Company",
+          "detail": "Tier=Core+, sell_online=2.7% of total. Online=$5,641,153, total=$206,869,171. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "321023",
+          "company_name": "Bill Doran Company (2)",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$10,912,013. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "2516",
+          "company_name": "Brightland Farms",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$55,816,283. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "313164",
+          "company_name": "Bunches Direct Blumenimport GmbH",
+          "detail": "Tier=Core+, sell_online=0.7% of total. Online=$7,284, total=$1,066,348. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "498992",
+          "company_name": "CANTIZA FLORAL DBA NFD",
+          "detail": "Tier=Core+, sell_online=1.3% of total. Online=$1,852, total=$139,187. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "624816",
+          "company_name": "CD Wholesale",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$181, total=$3,471,179. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "617226",
+          "company_name": "CONNECTION FLOWERS SAS",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$163, total=$13,069,977,101. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "397194",
+          "company_name": "Charleston Wholesale Florist",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$3,554,517. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "453771",
+          "company_name": "Continental Floral CA LLC",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$19,187,998. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "453769",
+          "company_name": "Continental Floral FL LLC",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$8,399,570. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "41934",
+          "company_name": "Continental Floral LLC",
+          "detail": "Tier=Core+, sell_online=1.7% of total. Online=$2,738,190, total=$156,511,987. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "471458",
+          "company_name": "Continental Floral OR LLC",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$12,593,204. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "505896",
+          "company_name": "Continental Floral PNW LLC",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$66,929,744. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "821768",
+          "company_name": "Coquette Roses",
+          "detail": "Tier=Core+, sell_online=0.5% of total. Online=$410, total=$80,697. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "672205",
+          "company_name": "Del Tropico/ Ameriblooms",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$203, total=$8,641,006. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "529464",
+          "company_name": "Direct Farms, LLC",
+          "detail": "Tier=Core+, sell_online=0.2% of total. Online=$23,206, total=$9,705,062. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "640460",
+          "company_name": "Dr Delphinium",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$4,286,805. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "571220",
+          "company_name": "Dramm & Echter, Inc",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$2,591, total=$19,796,263. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "397789",
+          "company_name": "Dreaming Roses Corp",
+          "detail": "Tier=Core+, sell_online=4.4% of total. Online=$48,113, total=$1,087,328. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "20749",
+          "company_name": "EF FLOWERS",
+          "detail": "Tier=Core+, sell_online=1.0% of total. Online=$37,213, total=$3,827,322. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "146183",
+          "company_name": "EPIC FARMS USA LLC",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$410,125. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "130337",
+          "company_name": "EQR USA",
+          "detail": "Tier=Core+, sell_online=1.4% of total. Online=$2,007,303, total=$139,792,053. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "672728",
+          "company_name": "Ecuador's Origin Product",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$150, total=$9,016,830. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "594981",
+          "company_name": "Evergreen Plant Company",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$6,613,107. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "804758",
+          "company_name": "FGS.Flowers.MIA",
+          "detail": "Tier=Core+, sell_online=2.0% of total. Online=$961, total=$49,216. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "577566",
+          "company_name": "FLEUPHORIA S.A.S",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$11,729,778. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "401680",
+          "company_name": "FLORISOL & COMPANY FLOWER TRADING LLC",
+          "detail": "Tier=Core+, sell_online=0.3% of total. Online=$2,072, total=$683,066. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "46206",
+          "company_name": "FLORISOL& CO FLOWER TRADING LLC DBA MARVEL FLOWERS",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$5,626,658. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "489148",
+          "company_name": "FLOWERMART CORP",
+          "detail": "Tier=Core+, sell_online=1.8% of total. Online=$19,571, total=$1,117,244. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "153536",
+          "company_name": "Fair Trade Floral Inc.",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$6,046,547. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "189685",
+          "company_name": "Farm Fresh Exports INC",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$5,681,690. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "1241",
+          "company_name": "Farm To Canada",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$8,398, total=$17,605,659. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "610818",
+          "company_name": "Farms Connect",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$757, total=$3,266,889. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "601933",
+          "company_name": "Flora Fresh Inc",
+          "detail": "Tier=Core+, sell_online=0.5% of total. Online=$32,123, total=$5,910,181. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "584973",
+          "company_name": "Flores de la Hacienda",
+          "detail": "Tier=Core+, sell_online=2.5% of total. Online=$2,853, total=$112,273. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "296458",
+          "company_name": "Florimex Toronto Corp.",
+          "detail": "Tier=Core+, sell_online=2.6% of total. Online=$781,581, total=$30,331,519. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "756140",
+          "company_name": "Flower List",
+          "detail": "Tier=Core+, sell_online=0.2% of total. Online=$1,027, total=$614,958. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "673823",
+          "company_name": "Flowerist LLC",
+          "detail": "Tier=Core+, sell_online=3.9% of total. Online=$13,798, total=$357,925. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "492201",
+          "company_name": "Forest Flowers",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$5,488,654. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "600370",
+          "company_name": "GOMEZ B.V.",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$29, total=$11,862,051. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "603611",
+          "company_name": "GREEN OCEAN LLC",
+          "detail": "Tier=Core+, sell_online=0.2% of total. Online=$1,941, total=$958,857. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "667626",
+          "company_name": "Green Bouquet LLC",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$51, total=$5,187,605. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "194206",
+          "company_name": "H&F Greens Inc (Mariposa Growers)",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$9,047,834. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "498865",
+          "company_name": "H&T Wholesale Flowers",
+          "detail": "Tier=Core+, sell_online=0.5% of total. Online=$79,633, total=$14,770,184. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "39124",
+          "company_name": "Herradura Growers",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$4,370,687. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "MEDIUM"
+        },
+        {
+          "company_id": "640563",
+          "company_name": "Hoja Verde - Rosen Financial",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$264,012. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "572900",
+          "company_name": "IKEBANA CO SAS",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$1,051, total=$3,995,755. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "144192",
+          "company_name": "INTERNATIONAL TRADING AND SERVICES INC",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$6,704,384. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "492219",
+          "company_name": "Interflor LLC",
+          "detail": "Tier=Core+, sell_online=0.6% of total. Online=$9,078, total=$1,442,337. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "817168",
+          "company_name": "International Fresh Group LLC",
+          "detail": "Tier=Core+, sell_online=2.3% of total. Online=$206, total=$8,868. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "322928",
+          "company_name": "Inversiones Napy S.A",
+          "detail": "Tier=Core+, sell_online=0.4% of total. Online=$5,391, total=$1,273,485. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "808079",
+          "company_name": "JFS Wholesale Floral",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$144, total=$2,369,497. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "755593",
+          "company_name": "Kontikiflor BV",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$12,760. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "189419",
+          "company_name": "Legacy Flowers",
+          "detail": "Tier=Core+, sell_online=0.6% of total. Online=$258,129, total=$42,566,942. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "619847",
+          "company_name": "MACUNDO FLOWERS AND GREENS LLC",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$1,016, total=$3,086,339. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "536956",
+          "company_name": "MAGNIFICA FLOWERS",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$2,033,368. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "620453",
+          "company_name": "MALIMA USA",
+          "detail": "Tier=Core+, sell_online=4.2% of total. Online=$41,937, total=$992,454. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "394783",
+          "company_name": "Metro Flower Market LLC",
+          "detail": "Tier=Core+, sell_online=0.4% of total. Online=$41,883, total=$11,037,978. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "649745",
+          "company_name": "Miraflor LLC",
+          "detail": "Tier=Core+, sell_online=4.2% of total. Online=$338,592, total=$7,970,264. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "716378",
+          "company_name": "Moonlight Flowers",
+          "detail": "Tier=Core+, sell_online=1.0% of total. Online=$22,526, total=$2,292,524. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "193829",
+          "company_name": "Muchflowers Inc.",
+          "detail": "Tier=Core+, sell_online=2.5% of total. Online=$227,276, total=$9,137,299. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "672781",
+          "company_name": "NY Floral Supply",
+          "detail": "Tier=Core+, sell_online=1.2% of total. Online=$27,835, total=$2,376,504. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "398856",
+          "company_name": "National Floral Supply",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$1,095, total=$10,474,165. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "732448",
+          "company_name": "Nazcaflor USA, Inc",
+          "detail": "Tier=Core+, sell_online=1.1% of total. Online=$85,546, total=$7,700,942. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "742781",
+          "company_name": "New England Wholesale Florist",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$75, total=$234,210. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "640977",
+          "company_name": "Ninfa Flowers",
+          "detail": "Tier=Core+, sell_online=0.4% of total. Online=$40,824, total=$11,543,209. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "743217",
+          "company_name": "Nova Packaging Solutions, Inc.",
+          "detail": "Tier=Core+, sell_online=2.0% of total. Online=$284, total=$14,547. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "592345",
+          "company_name": "Orlando Wholesale Florist",
+          "detail": "Tier=Core+, sell_online=0.7% of total. Online=$70,117, total=$9,349,009. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "649585",
+          "company_name": "Penelope\u2019s Petals, LLC",
+          "detail": "Tier=Core+, sell_online=0.4% of total. Online=$6,509, total=$1,524,276. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "44225",
+          "company_name": "Pinnacle Flowers, LLC",
+          "detail": "Tier=Core+, sell_online=5.0% of total. Online=$692,127, total=$13,864,909. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "816515",
+          "company_name": "Price's Floral Wholesale, LLC",
+          "detail": "Tier=Core+, sell_online=2.2% of total. Online=$3,406, total=$151,808. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "33023",
+          "company_name": "Prime Petals LLC",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$14,197,914. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "13989",
+          "company_name": "Pronto Farms LLC",
+          "detail": "Tier=Core+, sell_online=1.3% of total. Online=$50,967, total=$4,064,569. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "680251",
+          "company_name": "RUMHORA GREENS LLC",
+          "detail": "Tier=Core+, sell_online=0.9% of total. Online=$22,003, total=$2,454,506. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "664096",
+          "company_name": "Riverside Wholesale Florists KY",
+          "detail": "Tier=Core+, sell_online=0.1% of total. Online=$921, total=$805,588. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "295294",
+          "company_name": "Rosamina SAS",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$3,928,652. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "712429",
+          "company_name": "Rose Runners",
+          "detail": "Tier=Core+, sell_online=0.5% of total. Online=$1,418, total=$270,034. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "327132",
+          "company_name": "Royal Flower Import Group Inc.",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$2,316,681. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "MEDIUM"
+        },
+        {
+          "company_id": "189002",
+          "company_name": "Royal Flowers S.A",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$94, total=$14,350,544. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "400914",
+          "company_name": "SKY FLOWERS S.A.S",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$8, total=$6,491,596. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "17503",
+          "company_name": "SOS Floral",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$7,732,121. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "809201",
+          "company_name": "San Jose Floral",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$125,443. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "13982",
+          "company_name": "Servicios Chilfresh Ltda.",
+          "detail": "Tier=Core+, sell_online=0.7% of total. Online=$203,716, total=$31,198,681. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "6864",
+          "company_name": "Sofi's Flowers",
+          "detail": "Tier=Core+, sell_online=0.2% of total. Online=$2,252, total=$967,367. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "742939",
+          "company_name": "Stemline Wholesale",
+          "detail": "Tier=Core+, sell_online=1.1% of total. Online=$32,232, total=$2,977,689. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "610504",
+          "company_name": "The Flower Emporium LLC",
+          "detail": "Tier=Core+, sell_online=4.0% of total. Online=$20,824, total=$523,945. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "537092",
+          "company_name": "Tropical Blooms Inc.",
+          "detail": "Tier=Core+, sell_online=0.3% of total. Online=$34,506, total=$12,510,186. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "767361",
+          "company_name": "UNIVERSAL FLOWER SERVICE CORP",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$601,425. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "6554",
+          "company_name": "Valley Springs LLC",
+          "detail": "Tier=Core+, sell_online=2.7% of total. Online=$1,200,938, total=$44,196,856. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "474847",
+          "company_name": "Vosz Floral LLC",
+          "detail": "Tier=Core+, sell_online=0.6% of total. Online=$17,122, total=$2,805,752. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "735220",
+          "company_name": "WE GOT FLOWERS",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$491, total=$4,999,685. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "713840",
+          "company_name": "WHOLESALE NORTON'S FLORIST",
+          "detail": "Tier=Core+, sell_online=0.9% of total. Online=$1,431, total=$156,103. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "642311",
+          "company_name": "White Rose Flowers & Supplies Inc.",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$4,933,033. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        },
+        {
+          "company_id": "77787",
+          "company_name": "Zoom-Bloom",
+          "detail": "Tier=Core+, sell_online=0.0% of total. Online=$0, total=$1,238,385. eShop inventory likely not published.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "HIGH"
+        }
+      ],
+      "total_dollar_impact": 0,
+      "account_count": 102,
+      "likelihood": "HIGH"
+    },
+    {
+      "check_id": "CHECK_09_CLASSIFICATION",
+      "severity": "warning",
+      "description": "Accounts with incomplete classification",
+      "proposed_action": "Research account: check SFDC + Snowflake system_type",
+      "decision_label": "Decision: What tier/type is this account? (Unknown account)",
+      "accounts": [
+        {
+          "company_id": "N/A",
+          "company_name": "81 accounts",
+          "detail": "81 accounts have Unknown or missing product_tier.",
+          "dollar_impact": 0,
+          "proposed_action": ""
+        }
+      ],
+      "total_dollar_impact": 0,
+      "account_count": 81,
+      "likelihood": "LOW"
+    },
+    {
+      "check_id": "CHECK_11_ACCOUNT_CLASS",
+      "severity": "warning",
+      "description": "Accounts missing account_class (breaks portfolio matrix filter)",
+      "proposed_action": "",
+      "decision_label": "",
+      "accounts": [
+        {
+          "company_id": "643672",
+          "company_name": "Allied Cut Flower",
+          "detail": "Non-Client wholesaler has product_tier=K2K (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "743681",
+          "company_name": "Alpha Fern Company, LLC",
+          "detail": "Non-Client wholesaler has product_tier=Core+ (class=Pre-live). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "830406",
+          "company_name": "Avon Valley Floral",
+          "detail": "Non-Client wholesaler has product_tier=Core+ (class=Pre-live). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "651277",
+          "company_name": "BAYSTATE FARM DIRECT FLOWERS - CRANSTON",
+          "detail": "Non-Client wholesaler has product_tier=Core+ (class=Pre-live). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "734065",
+          "company_name": "BlossomR",
+          "detail": "Non-Client wholesaler has product_tier=Core+ (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "664988",
+          "company_name": "CALI WHOLESALE.-CA",
+          "detail": "Non-Client wholesaler has product_tier=Procurement (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "815425",
+          "company_name": "Coward & Glisson Whsl. Flst.",
+          "detail": "Non-Client wholesaler has product_tier=eSuite (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "652793",
+          "company_name": "FALL RIVER WHOLESALE",
+          "detail": "Non-Client wholesaler has product_tier=eSuite (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "664019",
+          "company_name": "FLOWERS OF NASHVILLE",
+          "detail": "Non-Client wholesaler has product_tier=Core+ (class=Pre-live). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "664540",
+          "company_name": "FMI, LLC.-FL",
+          "detail": "Non-Client wholesaler has product_tier=eSuite (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "37745",
+          "company_name": "Floral Cooperative Purchasing Group LLC",
+          "detail": "Non-Client wholesaler has product_tier=Core+ (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "665316",
+          "company_name": "Flowers by Fudgie, Inc",
+          "detail": "Non-Client wholesaler has product_tier=Procurement (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "664341",
+          "company_name": "Hall\u00b4s Wholesale Florist Theodore",
+          "detail": "Non-Client wholesaler has product_tier=eSuite (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "469713",
+          "company_name": "KD & Company",
+          "detail": "Non-Client wholesaler has product_tier=K2K (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "731091",
+          "company_name": "KRUEGER WHOLESALE PROMO",
+          "detail": "Non-Client wholesaler has product_tier=Procurement (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "654758",
+          "company_name": "LIHML INC Fayetteville - #01235 GF Rep Kareena 19",
+          "detail": "Non-Client wholesaler has product_tier=eSuite (class=Pre-live). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "598944",
+          "company_name": "Las Vegas Floral Wholesale",
+          "detail": "Non-Client wholesaler has product_tier=K2K (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "476379",
+          "company_name": "Lone Star Flower Market",
+          "detail": "Non-Client wholesaler has product_tier=Core+ (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "821576",
+          "company_name": "MAIN WHOLESALE FLORIST LLC / PENNSAUKEN",
+          "detail": "Non-Client wholesaler has product_tier=eSuite (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "827180",
+          "company_name": "Main Wholesale Florist LLC / Clifton",
+          "detail": "Non-Client wholesaler has product_tier=eSuite (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "701220",
+          "company_name": "McCarthy Wholesale",
+          "detail": "Non-Client wholesaler has product_tier=eSuite (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "665027",
+          "company_name": "Mideast Flowers Distributors, Inc.",
+          "detail": "Non-Client wholesaler has product_tier=eSuite (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "664255",
+          "company_name": "Mikes Finest Wholesale Flowers, Inc.",
+          "detail": "Non-Client wholesaler has product_tier=eSuite (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "729666",
+          "company_name": "NORTHWEST WHOLESALE FLORIST",
+          "detail": "Non-Client wholesaler has product_tier=Core+ (class=Pre-live). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "592615",
+          "company_name": "NYC FLORAL GREENS",
+          "detail": "Non-Client wholesaler has product_tier=Core+ (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "676861",
+          "company_name": "Ontario Flower Growers Cooperative Ltd.",
+          "detail": "Non-Client wholesaler has product_tier=Core+ (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "654661",
+          "company_name": "POTOMAC WHSLE",
+          "detail": "Non-Client wholesaler has product_tier=eSuite (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "620160",
+          "company_name": "Petals Direct",
+          "detail": "Non-Client wholesaler has product_tier=Core+ (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        },
+        {
+          "company_id": "734521",
+          "company_name": "Promoflor SRL",
+          "detail": "Non-Client wholesaler has product_tier=Core+ (class=Prospect). Will be excluded from matrix.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        }
+      ],
+      "total_dollar_impact": 0,
+      "account_count": 29,
+      "likelihood": "LOW"
+    },
+    {
+      "check_id": "CHECK_14_COHORT_GAP",
+      "severity": "warning",
+      "description": "Accounts in registry but not in accounts_v3.json",
+      "proposed_action": "Add company_id to accounts_registry.md or update accounts_v3",
+      "decision_label": "Decision: Is this account in scope? (Cohort integrity)",
+      "accounts": [
+        {
+          "company_id": "551109",
+          "company_name": "ID 551109",
+          "detail": "company_id=551109 appears in accounts_registry.md but is not in accounts_v3.json.",
+          "dollar_impact": 0,
+          "proposed_action": "",
+          "likelihood": "LOW"
+        }
+      ],
+      "total_dollar_impact": 0,
+      "account_count": 1,
+      "likelihood": "LOW"
+    }
+  ]
+}
